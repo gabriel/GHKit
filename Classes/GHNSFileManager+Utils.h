@@ -12,4 +12,6 @@
 + (BOOL)gh_exist:(NSString *)filePath;
 + (NSString *)gh_temporaryFile:(NSString *)basePath deleteIfExists:(BOOL)deleteIfExists;
 
++ (NSString *)gh_uniquePathWithNumber:(NSString *)path;
+
 @end

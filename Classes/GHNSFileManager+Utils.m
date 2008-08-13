@@ -85,4 +85,23 @@
   return tmpFile;
 }
 
+/*!
+  @method gh_uniquePathWithNumber
+  @abstract Get unique filename based on the specified path. If file does not already exist, the same object is returned. 
+    Example: foo.txt and that path already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on...  
+*/
++ (NSString *)gh_uniquePathWithNumber:(NSString *)path {
+  NSInteger index = 1;
+  NSString *uniquePath = path;
+  NSString *prefixPath = nil, *pathExtension = nil;
+  
+  while([self gh_exist:uniquePath]) {
+    if (!prefixPath) prefixPath = [path stringByDeletingPathExtension];
+    if (!pathExtension) pathExtension = [path gh_fullPathExtension];
+    uniquePath = [NSString stringWithFormat:@"%@-%d%@", prefixPath, index, pathExtension];
+    index++;
+  }
+  return uniquePath;
+}
+
 @end
