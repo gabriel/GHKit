@@ -176,6 +176,20 @@ static NSDictionary *truncateMiddle = nil;
 }
 
 /*!
+ @method gh_fullPathExtension
+ @abstract Path extension with . or "" as before
+ 
+ "spliff.tiff" => ".tiff"
+ "spliff" => ""
+ 
+*/
+- (NSString *)gh_fullPathExtension {
+  NSString *extension = [self pathExtension];
+  if (![extension isEqualToString:@""]) extension = [NSString stringWithFormat:@".%@", extension];
+  return extension;
+}
+
+/*!
  @method gh_uuid
  @abstract Create UUID
 */
@@ -188,7 +202,10 @@ static NSDictionary *truncateMiddle = nil;
   return [uuid autorelease];
 }
 
-
+/*!
+  @method gh_characterSetsUnion
+  @abstract Combined character sets.
+*/
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets {
   NSMutableCharacterSet *charSet = [NSMutableCharacterSet characterSetWithCharactersInString:@""];
   for(NSCharacterSet *set in characterSets)

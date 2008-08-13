@@ -46,6 +46,8 @@
 
 - (NSString *)gh_attributize;
 
+- (NSString *)gh_fullPathExtension;
+
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 + (NSString *)gh_uuid;
 
