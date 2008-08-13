@@ -1,6 +1,9 @@
 //
 //  GHViewAnimation.m
+//
 //  From ViewAnimationTest project. (TODO: Find source)
+//  Not sure where this is from originally, and I refactored it a bunch.
+//  If anyone recognizes this code, let me know.
 //
 
 #import "GHViewAnimation.h"
