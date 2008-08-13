@@ -25,12 +25,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "GHNSString+Utils.h"
 #import "GHNSDate+Parsing.h"
 #import "GHNSFileManager+Utils.h"
 
 #import "GHNSURL+Utils.h"
 
-#import "GHNSString+Utils.h"
 #import "GHNSString+TimeInterval.h"
 #import "GHNSString+Validation.h"
 #import "GHNSString+HMAC.h"
