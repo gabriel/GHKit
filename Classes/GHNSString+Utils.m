@@ -43,8 +43,17 @@
  @result YES if string is empty (after stripping)
 */
 - (BOOL)gh_isBlank {
-  if (!self) return YES;
   return ([@"" isEqualToString:[self gh_strip]]);
+}
+
+/*!
+ @method gh_isBlank
+ @param s
+ @result YES if string is nil, empty or whitespace characters
+*/
++ (BOOL)gh_isBlank:(NSString *)s {
+  if (!s) return YES;
+  return [s gh_isBlank];
 }
 
 #ifndef TARGET_OS_IPHONE
@@ -87,6 +96,24 @@ static NSDictionary *truncateMiddle = nil;
 - (BOOL)gh_contains:(NSString *)contains options:(NSStringCompareOptions)options {
   NSRange range = [self rangeOfString:contains options:options];
   return (range.location != NSNotFound);
+}
+
+/*!
+ @method gh_splitWithString
+ @abstract 
+   Get last part of string separated by the specified string. For example, [@"foo:bar" gh_splitWithString:@":"] => bar
+   If no string is found, returns self.
+ 
+ @param s String to split on
+ @param options Options
+ @result Last part of string split by string. 
+*/
+- (NSString *)gh_splitWithString:(NSString *)s options:(NSStringCompareOptions)options {
+  NSRange range = [self rangeOfString:s options:options];
+  if (range.location != NSNotFound) {
+    return [self substringWithRange:NSMakeRange(range.location + [s length], [self length] - range.location - [s length])];
+  }
+  return self;
 }
 
 /*!

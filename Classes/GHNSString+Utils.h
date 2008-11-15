@@ -29,6 +29,7 @@
 
 - (BOOL)gh_isBlank;
 - (NSString *)gh_strip;
++ (BOOL)gh_isBlank:(NSString *)s;
 
 #ifndef TARGET_OS_IPHONE
 - (NSAttributedString *)gh_truncateMiddle;
@@ -50,5 +51,7 @@
 
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 + (NSString *)gh_uuid;
+
+- (NSString *)gh_splitWithString:(NSString *)s options:(NSStringCompareOptions)options;
 
 @end

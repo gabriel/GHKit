@@ -32,4 +32,12 @@
   STAssertTrue([valid3 gh_isEmailAddress], @"Should be valid email");
 }
 
+- (void)testSplitWithString {
+	STAssertEqualObjects(@"bar", [@"foo:bar" gh_splitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");	
+	STAssertEqualObjects(@"foobar", [@"foobar" gh_splitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");
+	
+	STAssertEqualObjects(@"foobar", [@"foobar" gh_splitWithString:@"" options:NSCaseInsensitiveSearch], @"Split is invalid");
+	STAssertEqualObjects(@"ar", [@"foobar" gh_splitWithString:@"oob" options:NSCaseInsensitiveSearch], @"Split is invalid");
+}
+	
 @end

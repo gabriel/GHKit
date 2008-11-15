@@ -27,7 +27,7 @@
 //
 
 #import "GHNSFileManager+Utils.h"
-
+#import "GHNSString+Utils.h"
 
 @implementation NSFileManager (GHUtils)
 
