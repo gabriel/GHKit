@@ -176,8 +176,6 @@
 		toView_ = view2_;
 		fromView_ = view1_;
 	}
-  
-  Debug(@"Animate: %@ => %@", view1_, view2_);
 
   // Unset the first responder. Can cause drawing artifacts since the blue glow extends beyond the view's bounds.
 	//[[container_ window] makeFirstResponder:nil];

@@ -40,7 +40,9 @@
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"
 
+#ifndef TARGET_OS_IPHONE
 #import "GHViewAnimation.h"
+#endif
 
 // This has issues for me when GC is on
 //#import "NSInvocation+ForwardedConstruction.h"

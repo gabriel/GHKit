@@ -6,9 +6,6 @@
 //  Copyright 2008 ducktyper.com. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
-
 @interface NSString (GHValidation)
 
 - (BOOL)gh_isEmailAddress;

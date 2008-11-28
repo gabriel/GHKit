@@ -2,8 +2,6 @@
 //  GHViewAnimation.h
 //
 
-#import <Cocoa/Cocoa.h>
-
 typedef enum {
 	GHViewAnimationDissolve, 
   GHViewAnimationMoveIn, 

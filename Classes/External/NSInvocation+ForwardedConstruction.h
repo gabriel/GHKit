@@ -5,8 +5,6 @@
 //  Copyright 2007 Matt Gallagher. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface NSInvocation (ForwardedConstruction)
 
 + (id)invocationWithTarget:(id)target
