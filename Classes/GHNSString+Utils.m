@@ -57,20 +57,21 @@
 }
 
 #ifndef TARGET_OS_IPHONE
-static NSDictionary *truncateMiddle = nil;
+static NSDictionary *gh_gTruncateMiddle = nil;
 
 /*!
  @method gh_truncateMiddle
  @result Attributed string to ellipsis in the middle
 */
 - (NSAttributedString *)gh_truncateMiddle {
-  if (!truncateMiddle) {
+  if (!gh_gTruncateMiddle) {
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setLineBreakMode:NSLineBreakByTruncatingMiddle];
-    truncateMiddle = [[NSDictionary alloc] initWithObjectsAndKeys:style, NSParagraphStyleAttributeName, nil];
+    gh_gTruncateMiddle = [[NSDictionary alloc] initWithObjectsAndKeys:style, NSParagraphStyleAttributeName, nil];
+		[style release];
   }
  
-  return [[[NSAttributedString alloc] initWithString:self attributes:truncateMiddle] autorelease];
+  return [[[NSAttributedString alloc] initWithString:self attributes:gh_gTruncateMiddle] autorelease];
 }
 
 /*!

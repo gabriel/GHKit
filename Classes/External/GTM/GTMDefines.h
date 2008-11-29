@@ -18,6 +18,16 @@
  
 // ============================================================================
 
+#include <AvailabilityMacros.h>
+
+// Not all MAC_OS_X_VERSION_10_X macros defined in past SDKs
+#ifndef MAC_OS_X_VERSION_10_5
+# define MAC_OS_X_VERSION_10_5 1050
+#endif
+#ifndef MAC_OS_X_VERSION_10_6
+# define MAC_OS_X_VERSION_10_6 1060
+#endif
+
 // ----------------------------------------------------------------------------
 // CPP symbols that can be overridden in a prefix to control how the toolbox
 // is compiled.
@@ -35,6 +45,13 @@
 # define GTM_HTTPFETCHER_ENABLE_INPUTSTREAM_LOGGING 0
 #endif // GTM_HTTPFETCHER_ENABLE_INPUTSTREAM_LOGGING
 
+// By setting the GTM_CONTAINERS_VALIDATION_FAILED_LOG and 
+// GTM_CONTAINERS_VALIDATION_FAILED_ASSERT macros you can control what happens
+// when a validation fails. If you implement your own validators, you may want
+// to control their internals using the same macros for consistency.
+#ifndef GTM_CONTAINERS_VALIDATION_FAILED_ASSERT
+#define GTM_CONTAINERS_VALIDATION_FAILED_ASSERT 0
+#endif
 
 // _GTMDevLog & _GTMDevAssert
 //
@@ -69,7 +86,7 @@
 // Declared here so that it can easily be used for logging tracking if
 // necessary. See GTMUnitTestDevLog.h for details.
 @class NSString;
-extern void _GTMUnittestDevLog(NSString *format, ...);
+extern void _GTMUnitTestDevLog(NSString *format, ...);
 
 #ifndef _GTMDevAssert
 // we directly invoke the NSAssert handler so we can pass on the varargs
@@ -125,6 +142,11 @@ extern void _GTMUnittestDevLog(NSString *format, ...);
 #if TARGET_OS_IPHONE // iPhone SDK
   // For iPhone specific stuff
   #define GTM_IPHONE_SDK 1
+  #if TARGET_IPHONE_SIMULATOR
+    #define GTM_IPHONE_SIMULATOR 1
+  #else
+    #define GTM_IPHONE_DEVICE 1
+  #endif  // TARGET_IPHONE_SIMULATOR
 #else
   // For MacOS specific stuff
   #define GTM_MACOS_SDK 1
@@ -164,3 +186,15 @@ extern void _GTMUnittestDevLog(NSString *format, ...);
   #define CGFLOAT_DEFINED 1
  #endif // CGFLOAT_DEFINED
 #endif  // MAC_OS_X_VERSION_MAX_ALLOWED <= MAC_OS_X_VERSION_10_4
+
+
+// Give ourselves a consistent way to do inlines.  Apple's macros even use
+// a few different actual definitions, so we're based off of the foundation
+// one.
+#if !defined(GTM_INLINE)
+ #if defined (__GNUC__) && (__GNUC__ == 4)
+  #define GTM_INLINE static __inline__ __attribute__((always_inline))
+ #else
+  #define GTM_INLINE static __inline__
+ #endif
+#endif

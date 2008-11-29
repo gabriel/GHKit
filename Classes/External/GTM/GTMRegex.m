@@ -276,7 +276,7 @@ static NSString *const kReplacementPattern =
     }
 
     result = buildResult;
-  } // COV_NF_LINE - radar 5851992 not all brackets reachable w/ obj-c exceptions and coverage
+  } // COV_NF_LINE - radar 5851992 only reachable w/ an uncaught exception which isn't testable
   @finally {
     free(regMatches);
   }
@@ -422,7 +422,7 @@ static NSString *const kReplacementPattern =
 
 - (NSString *)description {
   NSMutableString *result =
-    [NSMutableString stringWithFormat:@"%@<%p> { pattern=\"%@\", rawNumSubPatterns=%z, options=(",
+    [NSMutableString stringWithFormat:@"%@<%p> { pattern=\"%@\", rawNumSubPatterns=%zd, options=(",
       [self class], self, pattern_, regexData_.re_nsub];
   if (options_) {
     if (options_ & kGTMRegexOptionIgnoreCase)
@@ -444,13 +444,16 @@ static NSString *const kReplacementPattern =
   NSString *result = @"internal error";
 
   // size the buffer we need
-  size_t len = regerror(errCode, &regexData_, nil, 0);
-  char buffer[len];
-  // fetch the error
-  if (len == regerror(errCode, &regexData_, buffer, len)) {
-    NSString *generatedError = [NSString stringWithUTF8String:buffer];
-    if (generatedError)
-      result = generatedError;
+  size_t len = regerror(errCode, &regexData_, NULL, 0);
+  char *buffer = (char*)malloc(sizeof(char) * len);
+  if (buffer) {
+    // fetch the error
+    if (len == regerror(errCode, &regexData_, buffer, len)) {
+      NSString *generatedError = [NSString stringWithUTF8String:buffer];
+      if (generatedError)
+        result = generatedError;
+    }
+    free(buffer);
   }
   return result;
 }
@@ -649,8 +652,7 @@ static NSString *const kReplacementPattern =
                                                    isMatch:isMatch] autorelease];
       nextMatches = nil;
     }
-  } // COV_NF_START - no real way to force this in a test
-  @catch (id e) {
+  } @catch (id e) { // COV_NF_START - no real way to force this in a test
     _GTMDevLog(@"Exceptions while trying to advance enumeration (%@)", e);
     // if we still have something in our temp, free it
     if (nextMatches)
@@ -675,6 +677,8 @@ static NSString *const kReplacementPattern =
 - (id)init {
   // make sure init is never called, the class in in the header so someone
   // could try to create it by mistake.
+  // Call super init and release so we don't leak
+  [[super init] autorelease];
   [self doesNotRecognizeSelector:_cmd];
   return nil; // COV_NF_LINE - return is just here to keep gcc happy
 }

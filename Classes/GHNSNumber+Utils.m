@@ -68,16 +68,16 @@
   return nil;
 }
 
-static NSNumber *numberForNo;
-static NSNumber *numberForYes;
+static NSNumber *gh_numberForNo;
+static NSNumber *gh_numberForYes;
 
 + (NSNumber *)gh_bool:(BOOL)b {
   if (!b) {
-    if (!numberForNo) numberForNo = [[NSNumber numberWithBool:NO] retain];
-    return numberForNo;
+    if (!gh_numberForNo) gh_numberForNo = [[NSNumber numberWithBool:NO] retain];
+    return gh_numberForNo;
   } else {
-    if (!numberForYes) numberForYes = [[NSNumber numberWithBool:YES] retain];
-    return numberForYes;
+    if (!gh_numberForYes) gh_numberForYes = [[NSNumber numberWithBool:YES] retain];
+    return gh_numberForYes;
   }
 }
 

@@ -147,13 +147,13 @@ static const char kWebSafeBase64DecodeChars[] = {
 };
 
 
-// Tests a charact to see if it's a whitespace character.
+// Tests a character to see if it's a whitespace character.
 //
 // Returns:
 //   YES if the character is a whitespace character.
 //   NO if the character is not a whitespace character.
 //
-FOUNDATION_STATIC_INLINE BOOL IsSpace(unsigned char c) {
+GTM_INLINE BOOL IsSpace(unsigned char c) {
   // we use our own mapping here because we don't want anything w/ locale
   // support.
   static BOOL kSpaces[256] = {
@@ -192,8 +192,7 @@ FOUNDATION_STATIC_INLINE BOOL IsSpace(unsigned char c) {
 // Returns:
 //   The guessed encoded length for a source length
 //
-FOUNDATION_STATIC_INLINE NSUInteger CalcEncodedLength(NSUInteger srcLen,
-                                                      BOOL padded) {
+GTM_INLINE NSUInteger CalcEncodedLength(NSUInteger srcLen, BOOL padded) {
   NSUInteger intermediate_result = 8 * srcLen + 5;
   NSUInteger len = intermediate_result / 6;
   if (padded) {
@@ -203,13 +202,13 @@ FOUNDATION_STATIC_INLINE NSUInteger CalcEncodedLength(NSUInteger srcLen,
 }
 
 // Tries to calculate how long the data will be once it's base64 decoded.
-// Unlinke the above, this is always an upperbound, since the source data
+// Unlike the above, this is always an upperbound, since the source data
 // could have spaces and might end with the padding characters on them.
 //
 // Returns:
 //   The guessed decoded length for a source length
 //
-FOUNDATION_STATIC_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
+GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
   return (srcLen + 3) / 4 * 3;
 }
 
