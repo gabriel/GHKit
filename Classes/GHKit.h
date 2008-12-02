@@ -49,3 +49,5 @@
 
 // Use GTMRegex
 //#import "NSString+RegEx.h"
+
+#define GHNum(n) [NSNumber numberWithInteger:n]
