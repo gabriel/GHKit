@@ -52,6 +52,26 @@
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 + (NSString *)gh_uuid;
 
-- (NSString *)gh_splitWithString:(NSString *)s options:(NSStringCompareOptions)options;
+/*!
+ @method gh_lastSplitWithString
+ @abstract 
+   Get last part of string separated by the specified string. For example, [@"foo:bar" gh_splitWithString:@":"] => bar
+   If no string is found, returns self.
+ 
+ @param s String to split on
+ @param options Options
+ @result Last part of string split by string. 
+*/
+- (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options;
+
+/*!
+ @method gh_cutWithString
+ @abstract Cuts the word up. Like split, but all the characters are kept.
+   For example, [@"foo:bar" gh_cutWithString:@":"] => [ "foo:", "bar" ]
+ @param s String to cut on
+ @param options Options
+ @result String cut up into array
+*/
+- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options;
 
 @end

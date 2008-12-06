@@ -100,7 +100,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 }
 
 /*!
- @method gh_splitWithString
+ @method gh_lastSplitWithString
  @abstract 
    Get last part of string separated by the specified string. For example, [@"foo:bar" gh_splitWithString:@":"] => bar
    If no string is found, returns self.
@@ -109,12 +109,38 @@ static NSDictionary *gh_gTruncateMiddle = nil;
  @param options Options
  @result Last part of string split by string. 
 */
-- (NSString *)gh_splitWithString:(NSString *)s options:(NSStringCompareOptions)options {
+- (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options {
   NSRange range = [self rangeOfString:s options:options];
   if (range.location != NSNotFound) {
     return [self substringWithRange:NSMakeRange(range.location + [s length], [self length] - range.location - [s length])];
   }
   return self;
+}
+
+/*!
+ @method gh_cutWithString
+ @abstract Cuts the word up. Like split, but all the characters are kept.
+   For example, [@"foo:bar" gh_cutWithString:@":"] => [ "foo:", "bar" ]
+ @param s String to cut on
+ @param options Options
+ @result String cut up into array
+*/
+- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options {
+	NSMutableArray *words = [NSMutableArray array];
+	NSInteger location = 0;
+	
+	while(location < [self length]) {
+		NSRange previousRange = NSMakeRange(location, [self length] - location);
+		NSRange range = [self rangeOfString:cutWith options:options range:previousRange];
+		NSInteger foundLocation = 0;
+		if (range.location == NSNotFound) foundLocation = [self length];
+		else foundLocation = range.location + [cutWith length];
+		
+		[words addObject:[self substringWithRange:NSMakeRange(location, foundLocation - location)]];
+		location = foundLocation;
+  }
+	if ([words count] == 0) [words addObject:@""]; // If we fell through with nothing, was empty string
+	return words;	
 }
 
 /*!
