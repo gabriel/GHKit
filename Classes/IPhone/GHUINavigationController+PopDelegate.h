@@ -11,7 +11,10 @@
 // Adds delegate method for UINavigationControllerDelegate
 //
 //  - (void)navigationController:(UINavigationController *)navigationController 
-//          didPopViewController:(UIViewController *)controller animated:(BOOL)animated;
+//          willPopViewController:(UIViewController *)viewController animated:(BOOL)animated;
+//
+//  - (void)navigationControllerWillPopViewControllers:(UINavigationController *)navigationController 
+//                                            animated:(BOOL)animated;
 //
 @interface UINavigationController (GHPopDelegate)
 
@@ -25,5 +28,8 @@
 
 @protocol GHUINavigationControllerDelegate
 - (void)navigationController:(UINavigationController *)navigationController 
-				didPopViewController:(UIViewController *)controller animated:(BOOL)animated;
+				didPopViewController:(UIViewController *)viewController animated:(BOOL)animated;
+
+- (void)navigationControllerWillPopViewControllers:(UINavigationController *)navigationController 
+																					animated:(BOOL)animated;
 @end

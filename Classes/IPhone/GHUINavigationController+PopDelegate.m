@@ -12,9 +12,14 @@
 @implementation UINavigationController (GHPopDelegate)
 
 - (NSArray *)_popToRootViewControllerAnimated:(BOOL)animated {
+	if ([self.delegate respondsToSelector:@selector(navigationControllerWillPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationControllerWillPopViewControllers:self animated:animated];
+	}
+	
+	// Call original	
 	NSArray *poppedViewControllers = [self _popToRootViewControllerAnimated:animated];
+	
 	for (UIViewController *viewController in poppedViewControllers) {
-		
 		if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
 			[((id)self.delegate) navigationController:self didPopViewController:viewController animated:animated];
 		}
@@ -23,7 +28,13 @@
 }
 
 - (NSArray *)_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
+	if ([self.delegate respondsToSelector:@selector(navigationControllerWillPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationControllerWillPopViewControllers:self animated:animated];
+	}
+	
+	// Call original
 	NSArray *poppedViewControllers = [self _popToViewController:viewController animated:animated];
+	
 	for (UIViewController *viewController in poppedViewControllers) {
 		if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
 			[((id)self.delegate) navigationController:self didPopViewController:viewController animated:animated];
@@ -33,7 +44,13 @@
 }
 
 - (UIViewController *)_popViewControllerAnimated:(BOOL)animated {
+	if ([self.delegate respondsToSelector:@selector(navigationControllerWillPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationControllerWillPopViewControllers:self animated:animated];
+	}
+	
+	// Call original	
 	UIViewController *viewController = [self _popViewControllerAnimated:animated];
+	
 	if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
 		[((id)self.delegate) navigationController:self didPopViewController:viewController animated:animated];
 	}
