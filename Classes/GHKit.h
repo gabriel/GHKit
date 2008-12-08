@@ -51,3 +51,11 @@
 //#import "NSString+RegEx.h"
 
 #define GHNum(n) [NSNumber numberWithInteger:n]
+
+// For example, GHDebugRect(@"Some info", view.frame)
+#define GHDebugRect(fmt, rect, ...) NSLog([NSString stringWithFormat:@"%@ %@", \
+[NSString stringWithFormat:fmt, ## __VA_ARGS__], \
+[NSString stringWithFormat:@"(%0.1f, %0.1f, %0.1f, %0.1f)", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height] \
+]);
+
+#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
