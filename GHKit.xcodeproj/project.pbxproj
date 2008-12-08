@@ -27,10 +27,11 @@
 		00CBE5C60E24783400E94F7B /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CBE5C50E24783400E94F7B /* GTMDefines.h */; };
 		00CBE5C80E24784600E94F7B /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE5BD0E24780200E94F7B /* GTMBase64.m */; };
 		00CBE5C90E24784600E94F7B /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE5C20E24782000E94F7B /* GTMRegex.m */; };
+		00DB2A790EECA1C700383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2A780EECA1C700383FB6 /* JRSwizzle.m */; };
+		00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2A770EECA1C700383FB6 /* JRSwizzle.h */; };
+		00DB2A7B0EECA1C700383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2A780EECA1C700383FB6 /* JRSwizzle.m */; };
 		524837970E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.h in Headers */ = {isa = PBXBuildFile; fileRef = 524837930E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.h */; };
 		524837980E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 524837940E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.m */; };
-		524837990E30FEE700C8ECA0 /* NSString+RegEx.h in Headers */ = {isa = PBXBuildFile; fileRef = 524837950E30FEE700C8ECA0 /* NSString+RegEx.h */; };
-		5248379A0E30FEE700C8ECA0 /* NSString+RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 524837960E30FEE700C8ECA0 /* NSString+RegEx.m */; };
 		527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */; };
 		527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 527531C80E33869100AF8EDC /* GHNSNumber+Utils.m */; };
 		527531CD0E3386AC00AF8EDC /* GHNSString+Validation.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531CB0E3386AC00AF8EDC /* GHNSString+Validation.h */; };
@@ -79,6 +80,8 @@
 		00CBE5C10E24782000E94F7B /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
 		00CBE5C20E24782000E94F7B /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
 		00CBE5C50E24783400E94F7B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		00DB2A770EECA1C700383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
+		00DB2A780EECA1C700383FB6 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -86,8 +89,6 @@
 		32DBCF5E0370ADEE00C91783 /* GHKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKit_Prefix.pch; sourceTree = "<group>"; };
 		524837930E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+ForwardedConstruction.h"; path = "External/NSInvocation+ForwardedConstruction.h"; sourceTree = "<group>"; };
 		524837940E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+ForwardedConstruction.m"; path = "External/NSInvocation+ForwardedConstruction.m"; sourceTree = "<group>"; };
-		524837950E30FEE700C8ECA0 /* NSString+RegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RegEx.h"; path = "External/NSString+RegEx.h"; sourceTree = "<group>"; };
-		524837960E30FEE700C8ECA0 /* NSString+RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RegEx.m"; path = "External/NSString+RegEx.m"; sourceTree = "<group>"; };
 		527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSNumber+Utils.h"; sourceTree = "<group>"; };
 		527531C80E33869100AF8EDC /* GHNSNumber+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSNumber+Utils.m"; sourceTree = "<group>"; };
 		527531CB0E3386AC00AF8EDC /* GHNSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+Validation.h"; sourceTree = "<group>"; };
@@ -162,6 +163,15 @@
 				00CBE5BD0E24780200E94F7B /* GTMBase64.m */,
 			);
 			path = GTM;
+			sourceTree = "<group>";
+		};
+		00DB2A760EECA1C700383FB6 /* JRSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				00DB2A770EECA1C700383FB6 /* JRSwizzle.h */,
+				00DB2A780EECA1C700383FB6 /* JRSwizzle.m */,
+			);
+			path = JRSwizzle;
 			sourceTree = "<group>";
 		};
 		034768DFFF38A50411DB9C8B /* Products */ = {
@@ -275,8 +285,6 @@
 			children = (
 				524837930E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.h */,
 				524837940E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.m */,
-				524837950E30FEE700C8ECA0 /* NSString+RegEx.h */,
-				524837960E30FEE700C8ECA0 /* NSString+RegEx.m */,
 			);
 			name = Legacy;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 		52D57DD70E1C0BAD00709FB4 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				00DB2A760EECA1C700383FB6 /* JRSwizzle */,
 				00CBE5BB0E24780200E94F7B /* GTM */,
 			);
 			path = External;
@@ -328,9 +337,9 @@
 				00CBE5C30E24782000E94F7B /* GTMRegex.h in Headers */,
 				00CBE5C60E24783400E94F7B /* GTMDefines.h in Headers */,
 				524837970E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.h in Headers */,
-				524837990E30FEE700C8ECA0 /* NSString+RegEx.h in Headers */,
 				527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */,
 				527531CD0E3386AC00AF8EDC /* GHNSString+Validation.h in Headers */,
+				00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +461,7 @@
 				527531E10E338AEA00AF8EDC /* GHNSNumber+Utils.m in Sources */,
 				527531E20E338AEB00AF8EDC /* GHNSString+Validation.m in Sources */,
 				527531E30E338AEE00AF8EDC /* GHNSXMLNode+Utils.m in Sources */,
+				00DB2A790EECA1C700383FB6 /* JRSwizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,9 +484,9 @@
 				00CBE5BF0E24780200E94F7B /* GTMBase64.m in Sources */,
 				00CBE5C40E24782000E94F7B /* GTMRegex.m in Sources */,
 				524837980E30FEE700C8ECA0 /* NSInvocation+ForwardedConstruction.m in Sources */,
-				5248379A0E30FEE700C8ECA0 /* NSString+RegEx.m in Sources */,
 				527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */,
 				527531CE0E3386AC00AF8EDC /* GHNSString+Validation.m in Sources */,
+				00DB2A7B0EECA1C700383FB6 /* JRSwizzle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
