@@ -12,47 +12,54 @@
 @implementation UINavigationController (GHPopDelegate)
 
 - (NSArray *)_popToRootViewControllerAnimated:(BOOL)animated {
-	if ([self.delegate respondsToSelector:@selector(navigationControllerWillPopViewControllers:animated:)]) {
-		[((id)self.delegate) navigationControllerWillPopViewControllers:self animated:animated];
+	NSMutableArray *willPopControllers = [[self.viewControllers mutableCopy] autorelease];
+	[willPopControllers removeObject:[self.viewControllers objectAtIndex:0]];
+	
+	if ([self.delegate respondsToSelector:@selector(navigationController:willPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationController:self willPopViewControllers:willPopControllers animated:animated];
 	}
 	
 	// Call original	
 	NSArray *poppedViewControllers = [self _popToRootViewControllerAnimated:animated];
 	
-	for (UIViewController *viewController in poppedViewControllers) {
-		if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
-			[((id)self.delegate) navigationController:self didPopViewController:viewController animated:animated];
-		}
+	if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationController:self didPopViewControllers:poppedViewControllers animated:animated];
 	}
 	return poppedViewControllers;
 }
 
 - (NSArray *)_popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
-	if ([self.delegate respondsToSelector:@selector(navigationControllerWillPopViewControllers:animated:)]) {
-		[((id)self.delegate) navigationControllerWillPopViewControllers:self animated:animated];
+	NSUInteger index = [self.viewControllers indexOfObject:viewController];
+	if (index != NSNotFound && index < ([self.viewControllers count] - 1)) {	
+		NSArray *willPopControllers = [self.viewControllers subarrayWithRange:NSMakeRange(index + 1, ([self.viewControllers count] - index))];
+	
+		if ([self.delegate respondsToSelector:@selector(navigationController:willPopViewControllers:animated:)]) {
+			[((id)self.delegate) navigationController:self willPopViewControllers:willPopControllers animated:animated];
+		}
 	}
 	
 	// Call original
 	NSArray *poppedViewControllers = [self _popToViewController:viewController animated:animated];
 	
-	for (UIViewController *viewController in poppedViewControllers) {
-		if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
-			[((id)self.delegate) navigationController:self didPopViewController:viewController animated:animated];
-		}
+	if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
+		[((id)self.delegate) navigationController:self didPopViewControllers:poppedViewControllers animated:animated];
 	}
 	return poppedViewControllers;
 }
 
 - (UIViewController *)_popViewControllerAnimated:(BOOL)animated {
-	if ([self.delegate respondsToSelector:@selector(navigationControllerWillPopViewControllers:animated:)]) {
-		[((id)self.delegate) navigationControllerWillPopViewControllers:self animated:animated];
+	
+	UIViewController *willPopController = self.topViewController;
+	if ([self.delegate respondsToSelector:@selector(navigationController:willPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationController:self willPopViewControllers:[NSArray arrayWithObject:willPopController] animated:animated];
 	}
 	
 	// Call original	
 	UIViewController *viewController = [self _popViewControllerAnimated:animated];
+	NSAssert(willPopController == viewController, @"What we popped wasn't what was sent to willPop delegate");
 	
-	if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewController:animated:)]) {
-		[((id)self.delegate) navigationController:self didPopViewController:viewController animated:animated];
+	if ([self.delegate respondsToSelector:@selector(navigationController:didPopViewControllers:animated:)]) {
+		[((id)self.delegate) navigationController:self didPopViewControllers:[NSArray arrayWithObject:viewController] animated:animated];
 	}
 	return viewController;
 }

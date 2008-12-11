@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+// WARNING: The willPop delegates aren't fully tested!
+
 // Adds delegate method for UINavigationControllerDelegate
 //
 //  - (void)navigationController:(UINavigationController *)navigationController 
-//          willPopViewController:(UIViewController *)viewController animated:(BOOL)animated;
+//         didPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 //
-//  - (void)navigationControllerWillPopViewControllers:(UINavigationController *)navigationController 
-//                                            animated:(BOOL)animated;
+//  - (void)navigationController:(UINavigationController *)navigationController 
+//        willPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 //
 @interface UINavigationController (GHPopDelegate)
 
@@ -28,8 +30,8 @@
 
 @protocol GHUINavigationControllerDelegate
 - (void)navigationController:(UINavigationController *)navigationController 
-				didPopViewController:(UIViewController *)viewController animated:(BOOL)animated;
+				didPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 
-- (void)navigationControllerWillPopViewControllers:(UINavigationController *)navigationController 
-																					animated:(BOOL)animated;
+- (void)navigationController:(UINavigationController *)navigationController 
+			willPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 @end
