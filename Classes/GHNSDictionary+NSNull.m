@@ -1,7 +1,6 @@
 //
-//  GHKit.h
-//
-//  Created by Gabe on 6/30/08.
+//  GHNSDictionary+NSNull.m
+//  Created by Jae Kwon on 5/12/08.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -25,38 +24,47 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHNSString+Utils.h"
-#import "GHNSDate+Parsing.h"
-#import "GHNSFileManager+Utils.h"
-
-#import "GHNSURL+Utils.h"
-
-#import "GHNSString+TimeInterval.h"
-#import "GHNSString+Validation.h"
-#import "GHNSString+HMAC.h"
-
-#import "GHNSNumber+Utils.h"
-
-#import "GHNSArray+Utils.h"
-
 #import "GHNSDictionary+NSNull.h"
 
-#import "GHNSXMLNode+Utils.h"
-#import "GHNSXMLElement+Utils.h"
+@implementation NSDictionary (GHNSNull)
 
-#ifndef TARGET_OS_IPHONE
-#import "GHViewAnimation.h"
-#endif
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ... {
+	va_list vl;
+	va_start(vl,firstObject);
+	NSMutableArray *keys = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *values = [[[NSMutableArray alloc] init] autorelease];
+	id key = firstObject;
+	id value = va_arg(vl, id);
+	do {
+		if (value == nil)
+			value = [NSNull null];
+		[keys addObject:key];
+		[values addObject:value];
+		key = va_arg(vl,id);
+		if (key == nil)
+			break;
+		value = va_arg(vl, id);
+	} while (YES);
+	va_end(vl);
+	return [NSDictionary dictionaryWithObjects:values forKeys:keys];
+}
 
-#define GHInteger(n) [NSNumber numberWithInteger:n]
+- (id)gh_objectMaybeNilForKey:(id)key {
+	id object = [self objectForKey:key];
+	if (object == [NSNull null]) {
+		return nil;
+	}
+	return object;
+}
 
-#define GHStr(fmt, ...) \
-[NSString stringWithFormat:(fmt), ## __VA_ARGS__]
+@end
 
-#define GHDict(key, ...) \
-[NSDictionary dictionaryWithKeysAndObjectsMaybeNil: key, ## __VA_ARGS__, nil]
+@implementation NSMutableDictionary (GHNSNull)
 
-#define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
-#define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
+- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key {
+	if (object == nil)
+		object = [NSNull null];
+	[self setObject:object forKey:key];
+}
 
-#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
+@end

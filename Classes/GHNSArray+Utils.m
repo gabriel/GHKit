@@ -1,7 +1,6 @@
 //
-//  GHKit.h
-//
-//  Created by Gabe on 6/30/08.
+//  GHNSArray+Utils.m
+//  Created by Gabriel Handford on 12/11/08.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -25,38 +24,13 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHNSString+Utils.h"
-#import "GHNSDate+Parsing.h"
-#import "GHNSFileManager+Utils.h"
-
-#import "GHNSURL+Utils.h"
-
-#import "GHNSString+TimeInterval.h"
-#import "GHNSString+Validation.h"
-#import "GHNSString+HMAC.h"
-
-#import "GHNSNumber+Utils.h"
-
 #import "GHNSArray+Utils.h"
 
-#import "GHNSDictionary+NSNull.h"
 
-#import "GHNSXMLNode+Utils.h"
-#import "GHNSXMLElement+Utils.h"
+@implementation NSArray (GHUtils)
 
-#ifndef TARGET_OS_IPHONE
-#import "GHViewAnimation.h"
-#endif
+- (id)gh_first {
+	return [self objectAtIndex:0];
+}
 
-#define GHInteger(n) [NSNumber numberWithInteger:n]
-
-#define GHStr(fmt, ...) \
-[NSString stringWithFormat:(fmt), ## __VA_ARGS__]
-
-#define GHDict(key, ...) \
-[NSDictionary dictionaryWithKeysAndObjectsMaybeNil: key, ## __VA_ARGS__, nil]
-
-#define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
-#define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
-
-#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
+@end

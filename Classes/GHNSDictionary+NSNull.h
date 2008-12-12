@@ -1,7 +1,6 @@
 //
-//  GHKit.h
-//
-//  Created by Gabe on 6/30/08.
+//  GHNSDictionary+NSNull.h
+//  Created by Jae Kwon on 5/12/08.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -25,38 +24,29 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHNSString+Utils.h"
-#import "GHNSDate+Parsing.h"
-#import "GHNSFileManager+Utils.h"
+@interface NSDictionary (GHNSNull)
 
-#import "GHNSURL+Utils.h"
+/*!
+ Create dictionary which supports nil values.
+ Key is first (instead of value then key). If the value is nil it is stored internally as NSNull,
+ and when calling objectMaybeNilForKey will return nil.
+ 
+ For example,
+	[NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
+ 
+ @param firstObject... Alternating key, value pairs. Terminated when key is nil. 
+ */
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ...;
 
-#import "GHNSString+TimeInterval.h"
-#import "GHNSString+Validation.h"
-#import "GHNSString+HMAC.h"
+/*!
+ Use this method instead of objectForKey if you want nil (and not the internal NSNull).
+ */
+- (id)gh_objectMaybeNilForKey:(id)key;
 
-#import "GHNSNumber+Utils.h"
+@end
 
-#import "GHNSArray+Utils.h"
+@interface NSMutableDictionary (GHNSNull)
 
-#import "GHNSDictionary+NSNull.h"
+- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key;
 
-#import "GHNSXMLNode+Utils.h"
-#import "GHNSXMLElement+Utils.h"
-
-#ifndef TARGET_OS_IPHONE
-#import "GHViewAnimation.h"
-#endif
-
-#define GHInteger(n) [NSNumber numberWithInteger:n]
-
-#define GHStr(fmt, ...) \
-[NSString stringWithFormat:(fmt), ## __VA_ARGS__]
-
-#define GHDict(key, ...) \
-[NSDictionary dictionaryWithKeysAndObjectsMaybeNil: key, ## __VA_ARGS__, nil]
-
-#define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
-#define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
-
-#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
+@end

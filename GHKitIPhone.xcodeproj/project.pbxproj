@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007F59AD0EF243C700B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */; };
+		007F59AE0EF243C700B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */; };
 		00DB2ACA0EECA29900383FB6 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA30EECA29900383FB6 /* GTMBase64.m */; };
 		00DB2ACB0EECA29900383FB6 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA60EECA29900383FB6 /* GTMRegex.m */; };
 		00DB2ACC0EECA29900383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA90EECA29900383FB6 /* JRSwizzle.m */; };
@@ -32,6 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		007F59A40EF243B000B3005D /* GHKitIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GHKitIPhone.app; path = "build/Debug-iphoneos/GHKitIPhone.app"; sourceTree = "<group>"; };
+		007F59A90EF243C700B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
+		007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
+		007F59AB0EF243C700B3005D /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
+		007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
 		00DB2AA20EECA29900383FB6 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		00DB2AA30EECA29900383FB6 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		00DB2AA40EECA29900383FB6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		00DB2B0F0EECA51400383FB6 /* GHUINavigationController+PopDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUINavigationController+PopDelegate.h"; sourceTree = "<group>"; };
 		00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUINavigationController+PopDelegate.m"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* GHKitIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GHKitIPhone.app; path = "/Users/gabe/Projects/gh-kit/build/Debug-iphonesimulator/GHKitIPhone.app"; sourceTree = "<absolute>"; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* GHKitIPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitIPhone_Prefix.pch; sourceTree = "<group>"; };
@@ -120,6 +126,10 @@
 				00DB2ABE0EECA29900383FB6 /* GHNSXMLElement+Utils.m */,
 				00DB2ABF0EECA29900383FB6 /* GHNSXMLNode+Utils.h */,
 				00DB2AC00EECA29900383FB6 /* GHNSXMLNode+Utils.m */,
+				007F59A90EF243C700B3005D /* GHNSArray+Utils.h */,
+				007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */,
+				007F59AB0EF243C700B3005D /* GHNSDictionary+NSNull.h */,
+				007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */,
 				00DB2AC30EECA29900383FB6 /* hmac.c */,
 				00DB2AC40EECA29900383FB6 /* hmac.h */,
 				00DB2AC60EECA29900383FB6 /* sha1.c */,
@@ -191,6 +201,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				007F59A40EF243B000B3005D /* GHKitIPhone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,7 +262,7 @@
 			);
 			name = GHKitIPhone;
 			productName = GHKitIPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* GHKitIPhone.app */;
+			productReference = 007F59A40EF243B000B3005D /* GHKitIPhone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -305,6 +316,8 @@
 				00DB2AED0EECA3BA00383FB6 /* IPhoneUnitTestMain.m in Sources */,
 				00DB2AFD0EECA42500383FB6 /* IPhoneUnitTestDelegate.m in Sources */,
 				00DB2B110EECA51400383FB6 /* GHUINavigationController+PopDelegate.m in Sources */,
+				007F59AD0EF243C700B3005D /* GHNSArray+Utils.m in Sources */,
+				007F59AE0EF243C700B3005D /* GHNSDictionary+NSNull.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

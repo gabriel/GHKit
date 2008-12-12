@@ -20,6 +20,15 @@
 		005D0E740E19F26B003FAB86 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52857CBF0E1998480011DA5C /* Security.framework */; };
 		005D0E790E19F4F5003FAB86 /* NSString+TimeIntervalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857D5A0E199B530011DA5C /* NSString+TimeIntervalTest.m */; };
 		005D0E7A0E19F4F5003FAB86 /* NSString+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857D5C0E199B530011DA5C /* NSString+UtilsTest.m */; };
+		007F598B0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
+		007F598C0EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */; };
+		007F598D0EF2438900B3005D /* GHViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F598A0EF2438900B3005D /* GHViewAnimation.m */; };
+		007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59850EF2438900B3005D /* GHNSArray+Utils.h */; };
+		007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
+		007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */; };
+		007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */; };
+		007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59890EF2438900B3005D /* GHViewAnimation.h */; };
+		007F59930EF2438900B3005D /* GHViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F598A0EF2438900B3005D /* GHViewAnimation.m */; };
 		00CBE5BE0E24780200E94F7B /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CBE5BC0E24780200E94F7B /* GTMBase64.h */; };
 		00CBE5BF0E24780200E94F7B /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CBE5BD0E24780200E94F7B /* GTMBase64.m */; };
 		00CBE5C30E24782000E94F7B /* GTMRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CBE5C10E24782000E94F7B /* GTMRegex.h */; };
@@ -75,6 +84,12 @@
 /* Begin PBXFileReference section */
 		005D0C3E0E19C03B003FAB86 /* NSDate+ParsingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ParsingTest.h"; sourceTree = "<group>"; };
 		005D0C3F0E19C03B003FAB86 /* NSDate+ParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ParsingTest.m"; sourceTree = "<group>"; };
+		007F59850EF2438900B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
+		007F59860EF2438900B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
+		007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
+		007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
+		007F59890EF2438900B3005D /* GHViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHViewAnimation.h; sourceTree = "<group>"; };
+		007F598A0EF2438900B3005D /* GHViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHViewAnimation.m; sourceTree = "<group>"; };
 		00CBE5BC0E24780200E94F7B /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		00CBE5BD0E24780200E94F7B /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		00CBE5C10E24782000E94F7B /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
@@ -250,6 +265,12 @@
 				52857CA00E1997B50011DA5C /* GHNSXMLElement+Utils.m */,
 				52857CA10E1997B50011DA5C /* GHNSXMLNode+Utils.h */,
 				52857CA20E1997B50011DA5C /* GHNSXMLNode+Utils.m */,
+				007F59850EF2438900B3005D /* GHNSArray+Utils.h */,
+				007F59860EF2438900B3005D /* GHNSArray+Utils.m */,
+				007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */,
+				007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */,
+				007F59890EF2438900B3005D /* GHViewAnimation.h */,
+				007F598A0EF2438900B3005D /* GHViewAnimation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -340,6 +361,9 @@
 				527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */,
 				527531CD0E3386AC00AF8EDC /* GHNSString+Validation.h in Headers */,
 				00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */,
+				007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */,
+				007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */,
+				007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +486,9 @@
 				527531E20E338AEB00AF8EDC /* GHNSString+Validation.m in Sources */,
 				527531E30E338AEE00AF8EDC /* GHNSXMLNode+Utils.m in Sources */,
 				00DB2A790EECA1C700383FB6 /* JRSwizzle.m in Sources */,
+				007F598B0EF2438900B3005D /* GHNSArray+Utils.m in Sources */,
+				007F598C0EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */,
+				007F598D0EF2438900B3005D /* GHViewAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +514,9 @@
 				527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */,
 				527531CE0E3386AC00AF8EDC /* GHNSString+Validation.m in Sources */,
 				00DB2A7B0EECA1C700383FB6 /* JRSwizzle.m in Sources */,
+				007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */,
+				007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */,
+				007F59930EF2438900B3005D /* GHViewAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
