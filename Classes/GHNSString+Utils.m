@@ -268,4 +268,64 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return charSet;
 }
 
+- (NSArray *)gh_substringSegmentsWithinStart:(NSString *)start end:(NSString *)end {
+	NSMutableArray *segments = [NSMutableArray array];
+	BOOL within = NO;
+
+	NSScanner *scanner = [NSScanner scannerWithString:self];
+	[scanner setCharactersToBeSkipped:nil];
+
+	// If we start with start token, the scanner ignores it... 
+	if ([self gh_startsWith:start]) {
+		[scanner scanString:start intoString:nil];
+		within = YES;
+	}
+	
+	NSString *scanned = nil;
+	
+	while([scanner scanUpToString:(within ? end : start) intoString:&scanned]) {
+		if (scanned && [scanned length] > 0)
+			[segments addObject:[GHStringSegment string:scanned isMatch:within]];
+		
+		[scanner scanString:(within ? end : start) intoString:&scanned]; // Eat start or end token
+		scanned = nil;
+		within = !within;
+	}
+	NSUInteger length = [self length] - [scanner scanLocation];
+	if (length > 0)
+		[segments addObject:[GHStringSegment string:[self substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
+	return segments;
+}
+
+@end
+
+@implementation GHStringSegment
+
+@synthesize string=string_, match=isMatch_;
+
+- (id)initWithString:(NSString *)string isMatch:(BOOL)isMatch {
+	if ((self = [super init])) {
+		string_ = [string retain];
+		isMatch_ = isMatch;
+	}
+	return self;	
+}
+
++ (GHStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch {
+	return [[[self alloc] initWithString:string isMatch:isMatch] autorelease];
+}
+
+- (BOOL)isEqual:(id)obj {
+	return ([[obj string] isEqual:string_] && [obj isMatch] == isMatch_);
+}
+
+- (NSString *)description {
+	return [NSString stringWithFormat:@"string=%@, isMatch=%d", string_, isMatch_];
+}
+
+- (void)dealloc {
+	[string_ release];
+	[super dealloc];
+}
+
 @end

@@ -74,5 +74,46 @@
 	STAssertEqualObjects(expected8, cuts8, @"Cut is invalid");	
 }
 
+- (void)testSubStringSegmentsWithin {
+	
+	NSString *test1 = @"This <START>is a<END> test.";
+	NSArray *segments1 = [test1 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected1 = [NSArray arrayWithObjects:[GHStringSegment string:@"This " isMatch:NO], [GHStringSegment string:@"is a" isMatch:YES], [GHStringSegment string:@" test." isMatch:NO], nil];
+	STAssertEqualObjects(segments1, expected1, @"Segments is invalid");		
+	
+	NSString *test2 = @"This is a test.";
+	NSArray *segments2 = [test2 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected2 = [NSArray arrayWithObjects:[GHStringSegment string:@"This is a test." isMatch:NO], nil];
+	STAssertEqualObjects(segments2, expected2, @"Segments is invalid");	
+	
+	NSString *test3 = @"<START>This is a test.<END>";
+	NSArray *segments3 = [test3 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected3 = [NSArray arrayWithObjects:[GHStringSegment string:@"This is a test." isMatch:YES], nil];
+	STAssertEqualObjects(segments3, expected3, @"Segments is invalid");	
+
+	NSString *test4 = @"<START>This is a test.<END> ";
+	NSArray *segments4 = [test4 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected4 = [NSArray arrayWithObjects:[GHStringSegment string:@"This is a test." isMatch:YES], [GHStringSegment string:@" " isMatch:NO], nil];
+	STAssertEqualObjects(segments4, expected4, @"Segments is invalid");	
+	
+	NSString *test5 = @" <START>This is a test.<END> <END>";
+	NSArray *segments5 = [test5 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected5 = [NSArray arrayWithObjects:[GHStringSegment string:@" " isMatch:NO], [GHStringSegment string:@"This is a test." isMatch:YES], [GHStringSegment string:@" <END>" isMatch:NO], nil];
+	STAssertEqualObjects(segments5, expected5, @"Segments is invalid");	
+	
+	// TODO: Ok to kill the start token?
+	NSString *test6 = @"<START>This is a test.";
+	NSArray *segments6 = [test6 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected6 = [NSArray arrayWithObjects:[GHStringSegment string:@"This is a test." isMatch:YES], nil];
+	STAssertEqualObjects(segments6, expected6, @"Segments is invalid");	
+	
+	// TODO: Return nil on empty string input?
+	NSString *test7 = @"";
+	NSArray *segments7 = [test7 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
+	NSArray *expected7 = [NSArray arrayWithObjects:nil];
+	STAssertEqualObjects(segments7, expected7, @"Segments is invalid");	
+	
+}
+
 	
 @end

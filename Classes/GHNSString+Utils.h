@@ -74,4 +74,39 @@
 */
 - (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options;
 
+/*!
+ @method gh_subStringSegmentsWithinStart
+ @param start Start token
+ @param end End token
+ @result Array of GHStringSegment's
+ 
+ Use a regex engine if you can. 
+ Note: This exists because regex.h is posix only and does not support non-greedy expressions.
+ Why Apple must you not give us objc regex library?
+ 
+ Get string segments, within start and end tokens.
+ For example,
+	[@"This is <START>a test<END> string" subStringSegmentsWithinStart:@"<START>" end:@"<END>"] => [@"This is ", @"a test", @" string"]
+ 
+ */
+- (NSArray *)gh_substringSegmentsWithinStart:(NSString *)start end:(NSString *)end;
+
+@end
+
+/*!
+ Class used by gh_substringSegmentsWithinStart:end:
+ */
+@interface GHStringSegment : NSObject {
+	NSString *string_;
+	BOOL isMatch_;
+}
+
+
+@property (readonly) NSString *string;
+@property (readonly, getter=isMatch) BOOL match;
+
+- (id)initWithString:(NSString *)string isMatch:(BOOL)isMatch;
+
++ (GHStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch;
+
 @end
