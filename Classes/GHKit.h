@@ -44,6 +44,8 @@
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"
 
+#import "GHKeychainStore.h"
+
 #ifndef TARGET_OS_IPHONE
 #import "GHViewAnimation.h"
 #endif
