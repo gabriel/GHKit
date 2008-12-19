@@ -103,14 +103,18 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 	*error = nil;
 	
 	if (item) {
-		status = SecKeychainItemModifyAttributesAndData(item,
-														NULL,
-														strlen([password UTF8String]),
-														[password UTF8String]);
+		if (!password) {
+			status = SecKeychainItemDelete(item);
+		} else {			
+			status = SecKeychainItemModifyAttributesAndData(item,
+															NULL,
+															strlen([password UTF8String]),
+															[password UTF8String]);
+		}
 		
 		CFRelease(item);
 	}
-	else {
+	else if (password) {
 		status = SecKeychainAddGenericPassword(NULL,                                     
 											   strlen([serviceName UTF8String]), 
 											   [serviceName UTF8String],
@@ -127,9 +131,11 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 }
 
 + (SecKeychainItemRef) keychainItemReferenceForUsername: (NSString *) username serviceName: (NSString *) serviceName error: (NSError **) error {
+	NSParameterAssert(serviceName);
+	if (!username) return nil;
 	*error = nil;
 		
-	SecKeychainItemRef item;
+	SecKeychainItemRef item = NULL;
 	
 	OSStatus status = SecKeychainFindGenericPassword(NULL,
 													 strlen([serviceName UTF8String]),
