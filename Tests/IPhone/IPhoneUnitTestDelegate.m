@@ -9,8 +9,8 @@
 
 @implementation IPhoneUnitTestDelegate
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
-	// TODO: Load test suite
-}
+// To customize, override
+//- (void)applicationDidFinishLaunching:(UIApplication *)application {
+//}
 
 @end

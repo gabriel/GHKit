@@ -7,7 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IPhoneUnitTestDelegate : NSObject {
+#import "GTMIPhoneUnitTestDelegate.h"
+
+@interface IPhoneUnitTestDelegate : GTMIPhoneUnitTestDelegate {
 
 }
 

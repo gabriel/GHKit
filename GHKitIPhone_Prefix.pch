@@ -3,6 +3,9 @@
 //
 
 #ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-    #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+  #import <UIKit/UIKit.h>
+	#import "GTMLogger.h"
+	#import "GTMSenTestCase.h"
+	#import "GHKit.h"
 #endif
