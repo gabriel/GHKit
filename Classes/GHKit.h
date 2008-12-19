@@ -50,6 +50,10 @@
 #import "GHViewAnimation.h"
 #endif
 
+#ifdef TARGET_OS_IPHONE
+#import "GHUIColor+Utils.h"
+#endif
+
 #define GHInteger(n) [NSNumber numberWithInteger:n]
 
 #define GHStr(fmt, ...) \
@@ -60,5 +64,8 @@
 
 #define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
 #define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
+#define GHCGRectSetWidth(rect, width) CGRectMake(rect.origin.x, rect.origin.y, width, rect.size.height);
+#define GHCGRectSetHeight(rect, height) CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, height);
+#define GHCGRectSetSize(rect, size) CGRectMake(rect.origin.x, rect.origin.y, size.width, size.height);
 
 #define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
