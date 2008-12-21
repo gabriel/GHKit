@@ -407,7 +407,7 @@ static BOOL IsVerboseLoggingEnabled(void) {
 // In DEBUG builds, log everything. If we're not in a debug build we'll assume
 // that we're in a Release build.
 - (BOOL)filterAllowsMessage:(NSString *)msg level:(GTMLoggerLevel)level {
-#if DEBUG
+#ifdef DEBUG
   return YES;
 #endif
     

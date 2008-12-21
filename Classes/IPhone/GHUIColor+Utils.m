@@ -21,7 +21,7 @@
 
 	float hue = 0.0;
 	float saturation = 0.0;
-	float brightness = max;
+	float value = max;
 	
 	if (delta == 0) {
 		hue = 0.0;
@@ -41,11 +41,11 @@
 		if (hue > 1) hue -= 1;
 	}	
 	
-	GH_HSB hsb;
-	hsb.hue = hue;
-	hsb.saturation = saturation;
-	hsb.value = value;
-	return hsb;
+	GH_HSV hsv;
+	hsv.hue = hue;
+	hsv.saturation = saturation;
+	hsv.value = value;
+	return hsv;
 }
 
 - (GH_RGBA)rgba {
@@ -58,7 +58,7 @@
 	return color;
 }
 
-- (GH_HSV)hsb {
+- (GH_HSV)hsv {
 	GH_RGBA rgba = [self rgba];
 	return [self hsvFromRed:rgba.red green:rgba.green blue:rgba.blue];
 }
