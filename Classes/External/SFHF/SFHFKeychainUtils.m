@@ -32,7 +32,7 @@
 
 static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 
-#if TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IPHONE
 @interface SFHFKeychainUtils (PrivateMethods)
 + (SecKeychainItemRef) keychainItemReferenceForUsername: (NSString *) username serviceName: (NSString *) serviceName error: (NSError **) error;
 @end
@@ -40,9 +40,15 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 
 @implementation SFHFKeychainUtils
 	
-#if TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IPHONE
 
 + (NSString *) passwordForUsername: (NSString *) username serviceName: (NSString *) serviceName error: (NSError **) error {
+#if TARGET_IPHONE_SIMULATOR
+	// On simulator store and retrieve from NSUserDefaults
+	return [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"iPhoneSimulator-%@-%@", serviceName, username]];
+#endif
+
+	
 	SecKeychainItemRef item = [SFHFKeychainUtils keychainItemReferenceForUsername: username serviceName: serviceName error: error];
 	
 	if (*error || !item) {
@@ -92,6 +98,13 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 }
 
 + (void) storeUsername: (NSString *) username password: (NSString *) password serviceName: (NSString *) serviceName updateExisting: (BOOL) updateExisting error: (NSError **) error {	
+#if TARGET_IPHONE_SIMULATOR
+	// On simulator store and retrieve from NSUserDefaults
+	[[NSUserDefaults standardUserDefaults] setObject:password forKey:[NSString stringWithFormat:@"iPhoneSimulator-%@-%@", serviceName, username]];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	return;
+#endif
+	
 	OSStatus status;
 	
 	SecKeychainItemRef item = [SFHFKeychainUtils keychainItemReferenceForUsername: username serviceName: serviceName error: error];
@@ -131,6 +144,10 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 }
 
 + (SecKeychainItemRef) keychainItemReferenceForUsername: (NSString *) username serviceName: (NSString *) serviceName error: (NSError **) error {
+#if TARGET_IPHONE_SIMULATOR
+	return nil;
+#endif
+	
 	NSParameterAssert(serviceName);
 	if (!username) return nil;
 	*error = nil;
