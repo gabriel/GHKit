@@ -67,16 +67,27 @@
 	memcpy(components, CGColorGetComponents(self.CGColor), CGColorGetNumberOfComponents(self.CGColor) * sizeof(CGFloat));
 }
 
+- (NSInteger)gh_numberOfComponents {
+	size_t num = CGColorGetNumberOfComponents(self.CGColor);
+	return (NSInteger)num;
+}
+
 - (void)gh_getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
-	*red = *green = *blue = *alpha = 0.0;
+	*red = *green = *blue = 0.0;
+	*alpha = 1.0;
 	size_t num = CGColorGetNumberOfComponents(self.CGColor);
-	if (num >= 3) {
+	if (num <= 2) {
+		*red = components[0];
+		*green = components[0];
+		*blue = components[0];
+		if (num == 2) *alpha = components[1];
+	} else if (num >= 3) {
 		*red = components[0];
 		*green = components[1];
 		*blue = components[2];
-	}
-	if (num >= 4) *alpha = components[3];
+		if (num >= 4) *alpha = components[3];
+	}	
 }
 
 @end

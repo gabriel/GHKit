@@ -48,6 +48,12 @@
 	STAssertEqualStrings(GHStr(@"%0.2f", green), @"0.00", @"Should match");
 	STAssertEqualStrings(GHStr(@"%0.2f", blue), @"1.00", @"Should match");
 	STAssertEqualStrings(GHStr(@"%0.2f", alpha), @"1.00", @"Should match");	
+	
+	[[UIColor grayColor] gh_getRed:&red green:&green blue:&blue alpha:&alpha];
+	STAssertEqualStrings(GHStr(@"%0.2f", red), @"0.50", @"Should match");
+	STAssertEqualStrings(GHStr(@"%0.2f", green), @"0.50", @"Should match");
+	STAssertEqualStrings(GHStr(@"%0.2f", blue), @"0.50", @"Should match");
+	STAssertEqualStrings(GHStr(@"%0.2f", alpha), @"1.00", @"Should match");	
 }
 
 @end

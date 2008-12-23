@@ -34,6 +34,9 @@ typedef struct {
 // See NSColor#getComponents:
 - (void)gh_getComponents:(CGFloat *)components;
 
+// See NSColor#numberOfComponents
+- (NSInteger)gh_numberOfComponents;
+
 // See NSColor#getRed:green:blue:alpha
 - (void)gh_getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
 
