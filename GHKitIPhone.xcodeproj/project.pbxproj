@@ -19,6 +19,8 @@
 		0058AB030EF8C61400C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AB020EF8C61400C44386 /* GHKeychainStore.m */; };
 		007F59AD0EF243C700B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */; };
 		007F59AE0EF243C700B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */; };
+		009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129550F01752E00338B5E /* GHUIAlertView+Utils.m */; };
+		009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129570F01752E00338B5E /* GHUIView+Utils.m */; };
 		00DB2ACC0EECA29900383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA90EECA29900383FB6 /* JRSwizzle.m */; };
 		00DB2ACD0EECA29900383FB6 /* NSInvocation+ForwardedConstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AAB0EECA29900383FB6 /* NSInvocation+ForwardedConstruction.m */; };
 		00DB2ACE0EECA29900383FB6 /* GHNSDate+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AAE0EECA29900383FB6 /* GHNSDate+Parsing.m */; };
@@ -67,6 +69,10 @@
 		007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
 		007F59AB0EF243C700B3005D /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
 		007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
+		009129540F01752E00338B5E /* GHUIAlertView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIAlertView+Utils.h"; sourceTree = "<group>"; };
+		009129550F01752E00338B5E /* GHUIAlertView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIAlertView+Utils.m"; sourceTree = "<group>"; };
+		009129560F01752E00338B5E /* GHUIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIView+Utils.h"; sourceTree = "<group>"; };
+		009129570F01752E00338B5E /* GHUIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIView+Utils.m"; sourceTree = "<group>"; };
 		00DB2AA40EECA29900383FB6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		00DB2AA80EECA29900383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		00DB2AA90EECA29900383FB6 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
@@ -233,6 +239,10 @@
 		00DB2AC50EECA29900383FB6 /* IPhone */ = {
 			isa = PBXGroup;
 			children = (
+				009129540F01752E00338B5E /* GHUIAlertView+Utils.h */,
+				009129550F01752E00338B5E /* GHUIAlertView+Utils.m */,
+				009129560F01752E00338B5E /* GHUIView+Utils.h */,
+				009129570F01752E00338B5E /* GHUIView+Utils.m */,
 				00DB2B0F0EECA51400383FB6 /* GHUINavigationController+PopDelegate.h */,
 				00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */,
 				00025C680EFB5ECC007EA0A8 /* GHUIColor+Utils.h */,
@@ -313,9 +323,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* GHKitIPhone */ = {
+		1D6058900D05DD3D006BFB54 /* GHKitIPhoneTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GHKitIPhone" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GHKitIPhoneTests" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -325,7 +335,7 @@
 			);
 			dependencies = (
 			);
-			name = GHKitIPhone;
+			name = GHKitIPhoneTests;
 			productName = GHKitIPhone;
 			productReference = 007F59A40EF243B000B3005D /* GHKitIPhone.app */;
 			productType = "com.apple.product-type.application";
@@ -342,7 +352,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* GHKitIPhone */,
+				1D6058900D05DD3D006BFB54 /* GHKitIPhoneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,6 +400,8 @@
 				00025C970EFB6781007EA0A8 /* GTMRegex.m in Sources */,
 				00025C9C0EFB67CF007EA0A8 /* GTMLogger.m in Sources */,
 				00025D070EFB6A3F007EA0A8 /* GTMSenTestCase.m in Sources */,
+				009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */,
+				009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GHKitIPhone" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "GHKitIPhoneTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,

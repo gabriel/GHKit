@@ -25,12 +25,16 @@ typedef struct {
 
 @interface UIColor (GHUtils)
 
-- (GH_RGBA)rgba;
+- (GH_RGBA)gh_rgba;
 
-- (GH_HSV)hsv;
+- (GH_HSV)gh_hsv;
 
-- (GH_HSV)hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;
+- (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;
 
-- (void)getComponents:(CGFloat *)components;
+// See NSColor#getComponents:
+- (void)gh_getComponents:(CGFloat *)components;
+
+// See NSColor#getRed:green:blue:alpha
+- (void)gh_getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
 
 @end
