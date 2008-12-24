@@ -44,7 +44,7 @@
 	float saturation = 0.0;
 	float value = max;
 	
-	if (delta == 0) {
+	if (delta <= GH_EPSILON) {
 		hue = 0.0;
 		saturation = 0.0;
 	} else {
@@ -54,9 +54,9 @@
 		float deltaG = (((max - green) / 6.0) + (max/2.0)) / delta;
 		float deltaB = (((max - blue) / 6.0) + (max/2.0)) / delta;
 		
-		if (red == max) hue = deltaB - deltaG;
-		else if (green == max) hue = (1.0/3.0) + deltaR - deltaB;
-		else if (blue == max) hue = (2.0/3.0) + deltaG - deltaR;
+		if (red <= (max+GH_EPSILON) && red >= (max-GH_EPSILON)) hue = deltaB - deltaG;
+		else if (green <= (max+GH_EPSILON)  && green >= (max-GH_EPSILON)) hue = (1.0/3.0) + deltaR - deltaB;
+		else if (blue <= (max+GH_EPSILON) && blue >= (max-GH_EPSILON)) hue = (2.0/3.0) + deltaG - deltaR;
 		
 		if (hue < 0) hue += 1;
 		if (hue > 1) hue -= 1;

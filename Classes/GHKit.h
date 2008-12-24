@@ -68,3 +68,6 @@
 #define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
 
 #define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
+
+// Default epsilon for float comparisons; May not always apply, epsilon may be larger depending on how many operations you do
+#define GH_EPSILON 1.0E-5

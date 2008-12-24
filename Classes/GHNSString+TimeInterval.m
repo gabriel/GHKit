@@ -39,14 +39,13 @@
  @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
  @result Time ago in words
 */
-+ (NSString *)gh_stringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds
-{
++ (NSString *)gh_stringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds {
   NSTimeInterval intervalInSeconds = fabs(interval);
   double intervalInMinutes = round(intervalInSeconds/60.0);
   
   if (intervalInMinutes >= 0 && intervalInMinutes <= 1)
   {
-    if (!includeSeconds) return intervalInMinutes == 0 ? @"less than a minute" : @"1 minute";
+    if (!includeSeconds) return intervalInMinutes <= 0 ? @"less than a minute" : @"1 minute";
     if (intervalInSeconds >= 0 && intervalInSeconds < 5) return @"less than 5 seconds";
     else if (intervalInSeconds >= 5 && intervalInSeconds < 10) return @"less than 10 seconds";
     else if (intervalInSeconds >= 10 && intervalInSeconds < 20) return @"less than 20 seconds";
