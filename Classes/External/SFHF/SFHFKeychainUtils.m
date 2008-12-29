@@ -45,7 +45,9 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 + (NSString *) passwordForUsername: (NSString *) username serviceName: (NSString *) serviceName error: (NSError **) error {
 #if TARGET_IPHONE_SIMULATOR
 	// On simulator store and retrieve from NSUserDefaults
-	return [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"iPhoneSimulator-%@-%@", serviceName, username]];
+	NSString *key = [NSString stringWithFormat:@"iPhoneSimulator-%@-%@", serviceName, username];	
+	NSString *value = [[NSUserDefaults standardUserDefaults] stringForKey:key];
+	return value;
 #endif
 
 	
@@ -100,7 +102,9 @@ static NSString *SFHFKeychainUtilsErrorDomain = @"SFHFKeychainUtilsErrorDomain";
 + (void) storeUsername: (NSString *) username password: (NSString *) password serviceName: (NSString *) serviceName updateExisting: (BOOL) updateExisting error: (NSError **) error {	
 #if TARGET_IPHONE_SIMULATOR
 	// On simulator store and retrieve from NSUserDefaults
-	[[NSUserDefaults standardUserDefaults] setObject:password forKey:[NSString stringWithFormat:@"iPhoneSimulator-%@-%@", serviceName, username]];
+	if (!username) return;
+	NSString *key = [NSString stringWithFormat:@"iPhoneSimulator-%@-%@", serviceName, username];
+	[[NSUserDefaults standardUserDefaults] setObject:password forKey:key];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	return;
 #endif
