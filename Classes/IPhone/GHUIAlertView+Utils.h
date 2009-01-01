@@ -1,6 +1,5 @@
 //
 //  GHUIAlertView+Utils.h
-//  ShrubIPhone
 //
 //  Created by Gabriel Handford on 12/21/08.
 //  Copyright 2008 Gabriel Handford
