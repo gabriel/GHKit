@@ -21,6 +21,9 @@
 		007F59AE0EF243C700B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */; };
 		009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129550F01752E00338B5E /* GHUIAlertView+Utils.m */; };
 		009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129570F01752E00338B5E /* GHUIView+Utils.m */; };
+		00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A100F0C424400B083F6 /* GHUIButton.m */; };
+		00A97A150F0C424400B083F6 /* GHUITableViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A130F0C424400B083F6 /* GHUITableViewController+Utils.m */; };
+		00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A1A0F0C436700B083F6 /* GHCGUtils.m */; };
 		00DB2ACC0EECA29900383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA90EECA29900383FB6 /* JRSwizzle.m */; };
 		00DB2ACD0EECA29900383FB6 /* NSInvocation+ForwardedConstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AAB0EECA29900383FB6 /* NSInvocation+ForwardedConstruction.m */; };
 		00DB2ACE0EECA29900383FB6 /* GHNSDate+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AAE0EECA29900383FB6 /* GHNSDate+Parsing.m */; };
@@ -73,6 +76,12 @@
 		009129550F01752E00338B5E /* GHUIAlertView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIAlertView+Utils.m"; sourceTree = "<group>"; };
 		009129560F01752E00338B5E /* GHUIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIView+Utils.h"; sourceTree = "<group>"; };
 		009129570F01752E00338B5E /* GHUIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIView+Utils.m"; sourceTree = "<group>"; };
+		00A97A100F0C424400B083F6 /* GHUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIButton.m; sourceTree = "<group>"; };
+		00A97A110F0C424400B083F6 /* GHUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIButton.h; sourceTree = "<group>"; };
+		00A97A120F0C424400B083F6 /* GHUITableViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUITableViewController+Utils.h"; sourceTree = "<group>"; };
+		00A97A130F0C424400B083F6 /* GHUITableViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUITableViewController+Utils.m"; sourceTree = "<group>"; };
+		00A97A1A0F0C436700B083F6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
+		00A97A1B0F0C436700B083F6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		00DB2AA40EECA29900383FB6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		00DB2AA80EECA29900383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		00DB2AA90EECA29900383FB6 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
@@ -197,6 +206,8 @@
 				007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */,
 				0058AB010EF8C61400C44386 /* GHKeychainStore.h */,
 				0058AB020EF8C61400C44386 /* GHKeychainStore.m */,
+				00A97A1A0F0C436700B083F6 /* GHCGUtils.m */,
+				00A97A1B0F0C436700B083F6 /* GHCGUtils.h */,
 				00DB2AC30EECA29900383FB6 /* hmac.c */,
 				00DB2AC40EECA29900383FB6 /* hmac.h */,
 				00DB2AC60EECA29900383FB6 /* sha1.c */,
@@ -239,6 +250,10 @@
 		00DB2AC50EECA29900383FB6 /* IPhone */ = {
 			isa = PBXGroup;
 			children = (
+				00A97A100F0C424400B083F6 /* GHUIButton.m */,
+				00A97A110F0C424400B083F6 /* GHUIButton.h */,
+				00A97A120F0C424400B083F6 /* GHUITableViewController+Utils.h */,
+				00A97A130F0C424400B083F6 /* GHUITableViewController+Utils.m */,
 				009129540F01752E00338B5E /* GHUIAlertView+Utils.h */,
 				009129550F01752E00338B5E /* GHUIAlertView+Utils.m */,
 				009129560F01752E00338B5E /* GHUIView+Utils.h */,
@@ -402,6 +417,9 @@
 				00025D070EFB6A3F007EA0A8 /* GTMSenTestCase.m in Sources */,
 				009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */,
 				009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */,
+				00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */,
+				00A97A150F0C424400B083F6 /* GHUITableViewController+Utils.m in Sources */,
+				00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
