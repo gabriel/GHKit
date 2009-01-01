@@ -55,6 +55,7 @@
 #import "GHUIAlertView+Utils.h"
 #import "GHUIView+Utils.h"
 #import "GHUITableViewController+Utils.h"
+#import "GHUIButton.h"
 #endif
 
 #define GHInteger(n) [NSNumber numberWithInteger:n]
