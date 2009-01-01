@@ -32,6 +32,8 @@
 void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth) {	
 	CGFloat fw, fh;
 		
+	// Stroke happens from the middle of the path; In order to prevent rounded corners from getting clipped
+	// you need to inset by half the stroke amount.
 	CGRect insetRect = CGRectInset(rect, strokeWidth/2.0, strokeWidth/2.0);
 	
 	CGContextBeginPath(context);
