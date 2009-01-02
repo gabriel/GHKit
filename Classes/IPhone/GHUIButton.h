@@ -41,26 +41,26 @@ typedef enum {
 
 @interface GHUIButton : UIControl {
 
-	NSString *_title;
-	UIColor *_titleColor;
-	UIFont *_titleFont;
+	NSString *title_;
+	UIColor *titleColor_;
+	UIFont *titleFont_;
 	
-	UIColor *_color;
-	UIColor *_alternateColor;
+	UIColor *color_;
+	UIColor *alternateColor_;
 	
-	UIColor *_highlightedTitleColor;
-	UIColor *_highlightedColor;
-	UIColor *_highlightedAlternateColor;
+	UIColor *highlightedTitleColor_;
+	UIColor *highlightedColor_;
+	UIColor *highlightedAlternateColor_;
 	
-	UIColor *_borderColor;
+	UIColor *borderColor_;
 	
-	CGFloat _strokeWidth;
-	CGFloat _cornerRadius;
+	CGFloat strokeWidth_;
+	CGFloat cornerRadius_;
 	
-	GHUIButtonShadingType _shadingType;
-	GHUIButtonShadingType _highlightedShadingType;
+	GHUIButtonShadingType shadingType_;
+	GHUIButtonShadingType highlightedShadingType_;
 	
-	BOOL _etchedTitle;
+	UIColor *etchedColor_;
 	
 }
 
@@ -82,7 +82,7 @@ typedef enum {
 @property (assign, nonatomic) CGFloat strokeWidth;
 @property (assign, nonatomic) CGFloat cornerRadius;
 
-@property (assign, nonatomic) BOOL etchedTitle;
+@property (retain, nonatomic) UIColor *etchedColor;
 
 + (GHUIButton *)button;
 
@@ -94,5 +94,8 @@ typedef enum {
 
 // Button with white text on black edge shaded background
 + (GHUIButton *)blackButtonWithTitle:(NSString *)title frame:(CGRect)frame;
+
+// Button with dark gray text on gray linear shaded background
++ (GHUIButton *)grayButtonWithTitle:(NSString *)title frame:(CGRect)frame;
 
 @end

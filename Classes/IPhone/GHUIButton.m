@@ -31,9 +31,10 @@
 
 @implementation GHUIButton
 
-@synthesize title=_title, titleColor=_titleColor, titleFont=_titleFont, highlightedTitleColor=_highlightedTitleColor, strokeWidth=_strokeWidth, cornerRadius=_cornerRadius,
-highlightedColor=_highlightedColor, highlightedAlternateColor=_highlightedAlternateColor, color=_color, alternateColor=_alternateColor, highlightedShadingType=_highlightedShadingType,
-shadingType=_shadingType, borderColor=_borderColor, etchedTitle=_etchedTitle;
+@synthesize title=title_, titleColor=titleColor_, titleFont=titleFont_, highlightedTitleColor=highlightedTitleColor_, strokeWidth=strokeWidth_, 
+cornerRadius=cornerRadius_, highlightedColor=highlightedColor_, highlightedAlternateColor=highlightedAlternateColor_, color=color_, 
+alternateColor=alternateColor_, highlightedShadingType=highlightedShadingType_, shadingType=shadingType_, borderColor=borderColor_, 
+etchedColor=etchedColor_;
 
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
@@ -60,6 +61,20 @@ shadingType=_shadingType, borderColor=_borderColor, etchedTitle=_etchedTitle;
 	return self;
 }
 
+- (void)dealloc {
+	[title_ release];
+	[titleFont_ release];
+	[titleColor_ release];
+	[color_ release];
+	[alternateColor_ release];
+	[highlightedTitleColor_ release];
+	[highlightedColor_ release];
+	[highlightedAlternateColor_ release];
+	[borderColor_ release];	
+	[etchedColor_ release];
+	[super dealloc];
+}
+
 + (GHUIButton *)button {
 	return [[[GHUIButton alloc] initWithFrame:CGRectZero] autorelease];
 }
@@ -78,7 +93,7 @@ shadingType=_shadingType, borderColor=_borderColor, etchedTitle=_etchedTitle;
 	GHUIButton *button = [[[GHUIButton alloc] initWithFrame:frame] autorelease];
 	button.title = title;
 	button.cornerRadius = 6.0;
-	button.etchedTitle = YES;
+	button.etchedColor = [UIColor blackColor];
 	button.titleColor = [UIColor whiteColor];
 	button.color = [UIColor colorWithRed:0.0 green:0.322 blue:0.8 alpha:1.0];
 	button.alternateColor = [UIColor colorWithRed:0.0 green:0.059 blue:0.8 alpha:1.0];
@@ -90,13 +105,26 @@ shadingType=_shadingType, borderColor=_borderColor, etchedTitle=_etchedTitle;
 	GHUIButton *button = [[[GHUIButton alloc] initWithFrame:frame] autorelease];
 	button.title = title;
 	button.cornerRadius = 6.0;
-	button.etchedTitle = YES;	
+	button.etchedColor = [UIColor darkGrayColor];
 	button.titleColor = [UIColor whiteColor];
 	button.shadingType = GHUIButtonShadingTypeHorizontalEdge;
 	button.color = [UIColor blackColor];
 	button.alternateColor = [UIColor blackColor];		
 	return button;	
 }
+
++ (GHUIButton *)grayButtonWithTitle:(NSString *)title frame:(CGRect)frame {
+	GHUIButton *button = [[[GHUIButton alloc] initWithFrame:frame] autorelease];
+	button.title = title;
+	button.cornerRadius = 6.0;
+	button.etchedColor = [UIColor whiteColor];
+	button.titleColor = [UIColor grayColor];
+	button.color = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0];
+	button.alternateColor = [UIColor colorWithRed:0.796 green:0.796 blue:0.796 alpha:1.0];
+	button.shadingType = GHUIButtonShadingTypeLinear;
+	return button;
+}
+
 
 // For shading
 typedef struct {
@@ -173,51 +201,52 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 	CGRect bounds = self.bounds;	
 	CGSize size = bounds.size;
 	
-	GHUIButtonShadingType shadingType = _shadingType;
-	UIColor *color = _color;
-	UIColor *alternateColor = _alternateColor;
+	GHUIButtonShadingType shadingType = shadingType_;
+	UIColor *color = color_;
+	UIColor *alternateColor = alternateColor_;
 		
 	if (state == UIControlStateHighlighted || self.isTracking) {
-		shadingType = _highlightedShadingType;
-		color = _highlightedColor;
-		alternateColor = _highlightedAlternateColor;
+		shadingType = highlightedShadingType_;
+		color = highlightedColor_;
+		alternateColor = highlightedAlternateColor_;
 	}
 	
 	UIColor *fillColor = color;
 	
 	if (color && shadingType != GHUIButtonShadingTypeNone) {
-		GHContextAddRoundedRect(context, bounds, _cornerRadius, _cornerRadius, _strokeWidth);
+		GHContextAddRoundedRect(context, bounds, cornerRadius_, cornerRadius_, strokeWidth_);
 		CGContextClip(context);
 		DrawShading(context, color, alternateColor, self.bounds.size, shadingType);
 		fillColor = nil;
 	}
 	
-	GHContextDrawRoundedRect(context, bounds, [fillColor CGColor], [_borderColor CGColor], _strokeWidth, _cornerRadius, _cornerRadius);
+	GHContextDrawRoundedRect(context, bounds, [fillColor CGColor], [borderColor_ CGColor], strokeWidth_, cornerRadius_, cornerRadius_);
 	
 	CGColorRef textColor = NULL;
+	BOOL isHighlighted = (state == UIControlStateHighlighted);
 	
-	if (_highlightedTitleColor && state == UIControlStateHighlighted) {
-		textColor = _highlightedTitleColor.CGColor;
-	} else if (_titleColor) {
-		textColor = _titleColor.CGColor;
+	if (highlightedTitleColor_ && isHighlighted) {
+		textColor = highlightedTitleColor_.CGColor;
+	} else if (titleColor_) {
+		textColor = titleColor_.CGColor;
 	} else {
 		textColor = [UIColor blackColor].CGColor;
 	}
 	
-	UIFont *font = _titleFont;
+	UIFont *font = titleFont_;
 	if (!font) font = [UIFont boldSystemFontOfSize:14.0];
 	
 	NSArray *lines;
 	
-	if ([_title gh_contains:@"\n" options:0]) {
-		lines = [_title componentsSeparatedByString:@"\n"];	
+	if ([title_ gh_contains:@"\n" options:0]) {
+		lines = [title_ componentsSeparatedByString:@"\n"];	
 		
 // // Auto wrapping; Untested
 //	} else if (titleSize.height > size.height) {
 //		lines = [NSMutableArray array];
 //		NSMutableString *line = [NSMutableString string];
 //		CGFloat currentWidth = 0;		
-//		for(NSString *word in [_title gh_cutWithString:@" " options:0]) {
+//		for(NSString *word in [title_ gh_cutWithString:@" " options:0]) {
 //			CGSize wordSize = [word sizeWithFont:font];
 //			if ((wordSize.width + currentWidth) > size.width) {
 //				[lines addObject:line];
@@ -230,7 +259,7 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 //		}
 		
 	} else {
-		lines = [NSArray arrayWithObject:_title];
+		lines = [NSArray arrayWithObject:title_];
 	}
 
 	CGFloat lineHeight = font.pointSize;
@@ -242,7 +271,7 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 	if ([lines count] > 1) {
 		y = size.height/2.0 - ((lineHeight * [lines count]) + (lineGap * ([lines count] - 1)))/2.0;	
 	} else {
-		CGSize titleSize = [_title sizeWithFont:font];
+		CGSize titleSize = [title_ sizeWithFont:font];
 		y = size.height/2.0 - titleSize.height/2.0;
 	}
 	
@@ -250,8 +279,8 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 		CGSize lineSize = [line sizeWithFont:font];
 		CGFloat x = size.width/2.0 - lineSize.width/2.0;
 		
-		if (_etchedTitle) {
-			CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+		if (etchedColor_ && !isHighlighted) {
+			CGContextSetFillColorWithColor(context, etchedColor_.CGColor);
 			[line drawAtPoint:CGPointMake(x+1, y) forWidth:size.width withFont:font lineBreakMode:UILineBreakModeWordWrap];
 		}
 		
