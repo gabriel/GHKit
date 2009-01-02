@@ -31,6 +31,7 @@
 
 @interface UIAlertView (GHUtils)
 
+// Show alert with OK button
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
