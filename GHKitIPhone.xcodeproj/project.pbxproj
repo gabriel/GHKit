@@ -44,6 +44,7 @@
 		00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */; };
 		00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248400F15E37D00C06C63 /* GHUITableViewCell.m */; };
 		00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */; };
+		00E24A390F16BEBD00C06C63 /* GHNSString+UIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -127,6 +128,8 @@
 		00E248400F15E37D00C06C63 /* GHUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewCell.m; sourceTree = "<group>"; };
 		00E248410F15E37D00C06C63 /* GHUITableViewStatusDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewStatusDelegate.h; sourceTree = "<group>"; };
 		00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewStatusDelegate.m; sourceTree = "<group>"; };
+		00E24A370F16BEBD00C06C63 /* GHNSString+UIKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+UIKitUtils.h"; sourceTree = "<group>"; };
+		00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+UIKitUtils.m"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -277,6 +280,8 @@
 				00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */,
 				00025C680EFB5ECC007EA0A8 /* GHUIColor+Utils.h */,
 				00025C690EFB5ECC007EA0A8 /* GHUIColor+Utils.m */,
+				00E24A370F16BEBD00C06C63 /* GHNSString+UIKitUtils.h */,
+				00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */,
 			);
 			path = IPhone;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */,
 				00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */,
 				00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */,
+				00E24A390F16BEBD00C06C63 /* GHNSString+UIKitUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
