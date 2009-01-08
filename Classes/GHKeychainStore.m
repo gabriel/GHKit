@@ -49,13 +49,13 @@
   return [keychainItem password];  
 }
 
-- (void)saveToKeychain:(NSString *)serviceName accessKey:(NSString *)accessKey secretAccessKey:(NSString *)secretAccessKey error:(NSError **)error {  
-  if (!secretAccessKey) return; // TODO: Handle as error
-  EMGenericKeychainItem *keychainItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:serviceName withUsername:accessKey];
+- (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {  
+  if (!secret) return; // TODO: Handle as error
+  EMGenericKeychainItem *keychainItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:serviceName withUsername:key];
   if (!keychainItem) {
-    [[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:serviceName withUsername:accessKey password:secretAccessKey];
+    [[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:serviceName withUsername:key password:secret];
   } else
-    [keychainItem setPassword:secretAccessKey];  
+    [keychainItem setPassword:secret];  
 }
 
 @end
@@ -70,12 +70,12 @@
 	return [[[GHSFHFKeychainStore alloc] init] autorelease];
 }
 
-- (NSString *)secretFromKeychain:(NSString *)accessKey serviceName:(NSString *)serviceName error:(NSError **)error {
-	return [SFHFKeychainUtils passwordForUsername:accessKey serviceName:serviceName error:error];
+- (NSString *)secretFromKeychain:(NSString *)key serviceName:(NSString *)serviceName error:(NSError **)error {
+	return [SFHFKeychainUtils passwordForUsername:key serviceName:serviceName error:error];
 }
 
-- (void)saveToKeychain:(NSString *)serviceName accessKey:(NSString *)accessKey secretAccessKey:(NSString *)secretAccessKey error:(NSError **)error {
-	[SFHFKeychainUtils storeUsername:accessKey password:secretAccessKey serviceName:serviceName updateExisting:YES error:error];
+- (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {
+	[SFHFKeychainUtils storeUsername:key password:secret serviceName:serviceName updateExisting:YES error:error];
 }
 
 @end

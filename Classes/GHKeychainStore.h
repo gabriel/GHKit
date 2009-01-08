@@ -30,8 +30,8 @@
 
 @protocol GHKeychainStore
 + (id)keychain;
-- (NSString *)secretFromKeychain:(NSString *)accessKey serviceName:(NSString *)serviceName error:(NSError **)error;
-- (void)saveToKeychain:(NSString *)serviceName accessKey:(NSString *)accessKey secretAccessKey:(NSString *)secretAccessKey error:(NSError **)error;
+- (NSString *)secretFromKeychain:(NSString *)key serviceName:(NSString *)serviceName error:(NSError **)error;
+- (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error;
 
 @end
 
