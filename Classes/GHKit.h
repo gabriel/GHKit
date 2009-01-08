@@ -56,6 +56,7 @@
 #import "GHUIView+Utils.h"
 #import "GHUITableViewController+Utils.h"
 #import "GHUIButton.h"
+#import "GHUIKitUtils.h"
 #endif
 
 #define GHInteger(n) [NSNumber numberWithInteger:n]
@@ -67,6 +68,7 @@
 [NSDictionary dictionaryWithKeysAndObjectsMaybeNil: key, ## __VA_ARGS__, nil]
 
 #define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
+#define GHCGSizeToString(size) NSStringFromSize(NSSizeFromCGSize(size))
 #define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
 
 #define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");

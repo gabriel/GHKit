@@ -41,6 +41,9 @@
 		00DB2AED0EECA3BA00383FB6 /* IPhoneUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AE40EECA3BA00383FB6 /* IPhoneUnitTestMain.m */; };
 		00DB2AFD0EECA42500383FB6 /* IPhoneUnitTestDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AFC0EECA42500383FB6 /* IPhoneUnitTestDelegate.m */; };
 		00DB2B110EECA51400383FB6 /* GHUINavigationController+PopDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */; };
+		00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */; };
+		00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248400F15E37D00C06C63 /* GHUITableViewCell.m */; };
+		00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -118,6 +121,12 @@
 		00DB2AFC0EECA42500383FB6 /* IPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneUnitTestDelegate.m; sourceTree = "<group>"; };
 		00DB2B0F0EECA51400383FB6 /* GHUINavigationController+PopDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUINavigationController+PopDelegate.h"; sourceTree = "<group>"; };
 		00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUINavigationController+PopDelegate.m"; sourceTree = "<group>"; };
+		00E2483D0F15E37D00C06C63 /* GHUIKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIKitUtils.h; sourceTree = "<group>"; };
+		00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIKitUtils.m; sourceTree = "<group>"; };
+		00E2483F0F15E37D00C06C63 /* GHUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewCell.h; sourceTree = "<group>"; };
+		00E248400F15E37D00C06C63 /* GHUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewCell.m; sourceTree = "<group>"; };
+		00E248410F15E37D00C06C63 /* GHUITableViewStatusDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewStatusDelegate.h; sourceTree = "<group>"; };
+		00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewStatusDelegate.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -250,6 +259,12 @@
 		00DB2AC50EECA29900383FB6 /* IPhone */ = {
 			isa = PBXGroup;
 			children = (
+				00E2483D0F15E37D00C06C63 /* GHUIKitUtils.h */,
+				00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */,
+				00E2483F0F15E37D00C06C63 /* GHUITableViewCell.h */,
+				00E248400F15E37D00C06C63 /* GHUITableViewCell.m */,
+				00E248410F15E37D00C06C63 /* GHUITableViewStatusDelegate.h */,
+				00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */,
 				00A97A100F0C424400B083F6 /* GHUIButton.m */,
 				00A97A110F0C424400B083F6 /* GHUIButton.h */,
 				00A97A120F0C424400B083F6 /* GHUITableViewController+Utils.h */,
@@ -420,6 +435,9 @@
 				00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */,
 				00A97A150F0C424400B083F6 /* GHUITableViewController+Utils.m in Sources */,
 				00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */,
+				00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */,
+				00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */,
+				00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
