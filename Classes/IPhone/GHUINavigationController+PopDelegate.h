@@ -49,7 +49,7 @@
 
 @end
 
-@protocol GHUINavigationControllerDelegate
+@protocol GHUINavigationControllerDelegate <NSObject>
 - (void)navigationController:(UINavigationController *)navigationController 
 				didPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 

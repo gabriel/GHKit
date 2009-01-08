@@ -28,7 +28,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol GHKeychainStore
+@protocol GHKeychainStore <NSObject>
 + (id)keychain;
 - (NSString *)secretFromKeychain:(NSString *)key serviceName:(NSString *)serviceName error:(NSError **)error;
 - (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error;
