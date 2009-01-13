@@ -26,6 +26,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "GHUIKitUtils.h"
 
 @implementation GHUIKitUtils
 
