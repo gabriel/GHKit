@@ -19,10 +19,10 @@
 		0058AB030EF8C61400C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AB020EF8C61400C44386 /* GHKeychainStore.m */; };
 		007F59AD0EF243C700B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */; };
 		007F59AE0EF243C700B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */; };
+		008488CF0F19944900EB7732 /* GHUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 008488CE0F19944900EB7732 /* GHUITextField.m */; };
 		009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129550F01752E00338B5E /* GHUIAlertView+Utils.m */; };
 		009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129570F01752E00338B5E /* GHUIView+Utils.m */; };
 		00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A100F0C424400B083F6 /* GHUIButton.m */; };
-		00A97A150F0C424400B083F6 /* GHUITableViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A130F0C424400B083F6 /* GHUITableViewController+Utils.m */; };
 		00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A1A0F0C436700B083F6 /* GHCGUtils.m */; };
 		00DB2ACC0EECA29900383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA90EECA29900383FB6 /* JRSwizzle.m */; };
 		00DB2ACD0EECA29900383FB6 /* NSInvocation+ForwardedConstruction.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AAB0EECA29900383FB6 /* NSInvocation+ForwardedConstruction.m */; };
@@ -45,6 +45,8 @@
 		00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248400F15E37D00C06C63 /* GHUITableViewCell.m */; };
 		00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */; };
 		00E24A390F16BEBD00C06C63 /* GHNSString+UIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */; };
+		00E7119A0F1C82BF00A4EEBA /* GHUINavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E711970F1C82BF00A4EEBA /* GHUINavigationController+Utils.m */; };
+		00E7119B0F1C82BF00A4EEBA /* GHUITableView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E711990F1C82BF00A4EEBA /* GHUITableView+Utils.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
@@ -76,14 +78,15 @@
 		007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
 		007F59AB0EF243C700B3005D /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
 		007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
+		008488B30F19921700EB7732 /* GHUIResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIResponder.h; sourceTree = "<group>"; };
+		008488CD0F19944900EB7732 /* GHUITextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITextField.h; sourceTree = "<group>"; };
+		008488CE0F19944900EB7732 /* GHUITextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITextField.m; sourceTree = "<group>"; };
 		009129540F01752E00338B5E /* GHUIAlertView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIAlertView+Utils.h"; sourceTree = "<group>"; };
 		009129550F01752E00338B5E /* GHUIAlertView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIAlertView+Utils.m"; sourceTree = "<group>"; };
 		009129560F01752E00338B5E /* GHUIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIView+Utils.h"; sourceTree = "<group>"; };
 		009129570F01752E00338B5E /* GHUIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIView+Utils.m"; sourceTree = "<group>"; };
 		00A97A100F0C424400B083F6 /* GHUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIButton.m; sourceTree = "<group>"; };
 		00A97A110F0C424400B083F6 /* GHUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIButton.h; sourceTree = "<group>"; };
-		00A97A120F0C424400B083F6 /* GHUITableViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUITableViewController+Utils.h"; sourceTree = "<group>"; };
-		00A97A130F0C424400B083F6 /* GHUITableViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUITableViewController+Utils.m"; sourceTree = "<group>"; };
 		00A97A1A0F0C436700B083F6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
 		00A97A1B0F0C436700B083F6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		00DB2AA40EECA29900383FB6 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -130,6 +133,11 @@
 		00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewStatusDelegate.m; sourceTree = "<group>"; };
 		00E24A370F16BEBD00C06C63 /* GHNSString+UIKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+UIKitUtils.h"; sourceTree = "<group>"; };
 		00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+UIKitUtils.m"; sourceTree = "<group>"; };
+		00E711950F1C82BF00A4EEBA /* GHKitIPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitIPhone.h; sourceTree = "<group>"; };
+		00E711960F1C82BF00A4EEBA /* GHUINavigationController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUINavigationController+Utils.h"; sourceTree = "<group>"; };
+		00E711970F1C82BF00A4EEBA /* GHUINavigationController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUINavigationController+Utils.m"; sourceTree = "<group>"; };
+		00E711980F1C82BF00A4EEBA /* GHUITableView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUITableView+Utils.h"; sourceTree = "<group>"; };
+		00E711990F1C82BF00A4EEBA /* GHUITableView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUITableView+Utils.m"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -262,6 +270,11 @@
 		00DB2AC50EECA29900383FB6 /* IPhone */ = {
 			isa = PBXGroup;
 			children = (
+				00E711950F1C82BF00A4EEBA /* GHKitIPhone.h */,
+				00E711960F1C82BF00A4EEBA /* GHUINavigationController+Utils.h */,
+				00E711970F1C82BF00A4EEBA /* GHUINavigationController+Utils.m */,
+				00E711980F1C82BF00A4EEBA /* GHUITableView+Utils.h */,
+				00E711990F1C82BF00A4EEBA /* GHUITableView+Utils.m */,
 				00E2483D0F15E37D00C06C63 /* GHUIKitUtils.h */,
 				00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */,
 				00E2483F0F15E37D00C06C63 /* GHUITableViewCell.h */,
@@ -270,8 +283,6 @@
 				00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */,
 				00A97A100F0C424400B083F6 /* GHUIButton.m */,
 				00A97A110F0C424400B083F6 /* GHUIButton.h */,
-				00A97A120F0C424400B083F6 /* GHUITableViewController+Utils.h */,
-				00A97A130F0C424400B083F6 /* GHUITableViewController+Utils.m */,
 				009129540F01752E00338B5E /* GHUIAlertView+Utils.h */,
 				009129550F01752E00338B5E /* GHUIAlertView+Utils.m */,
 				009129560F01752E00338B5E /* GHUIView+Utils.h */,
@@ -282,6 +293,9 @@
 				00025C690EFB5ECC007EA0A8 /* GHUIColor+Utils.m */,
 				00E24A370F16BEBD00C06C63 /* GHNSString+UIKitUtils.h */,
 				00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */,
+				008488B30F19921700EB7732 /* GHUIResponder.h */,
+				008488CD0F19944900EB7732 /* GHUITextField.h */,
+				008488CE0F19944900EB7732 /* GHUITextField.m */,
 			);
 			path = IPhone;
 			sourceTree = "<group>";
@@ -438,12 +452,14 @@
 				009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */,
 				009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */,
 				00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */,
-				00A97A150F0C424400B083F6 /* GHUITableViewController+Utils.m in Sources */,
 				00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */,
 				00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */,
 				00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */,
 				00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */,
 				00E24A390F16BEBD00C06C63 /* GHNSString+UIKitUtils.m in Sources */,
+				008488CF0F19944900EB7732 /* GHUITextField.m in Sources */,
+				00E7119A0F1C82BF00A4EEBA /* GHUINavigationController+Utils.m in Sources */,
+				00E7119B0F1C82BF00A4EEBA /* GHUITableView+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
