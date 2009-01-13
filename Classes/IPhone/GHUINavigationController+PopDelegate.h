@@ -31,6 +31,9 @@
 
 // WARNING: The willPop delegates aren't fully tested!
 
+// To enable the pop delegate, you need to setup the swizzled (aliased) methods by calling:
+//   [UINavigationController addPopDelegate:nil];
+//
 // Adds delegate method for UINavigationControllerDelegate
 //
 //  - (void)navigationController:(UINavigationController *)navigationController 
