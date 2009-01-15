@@ -58,6 +58,9 @@
 		00A97A8F0F0C467600B083F6 /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A770F0C467600B083F6 /* GTMObjC2Runtime.m */; };
 		00A97A900F0C467600B083F6 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A790F0C467600B083F6 /* GTMRegex.m */; };
 		00A97A910F0C467600B083F6 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A7B0F0C467600B083F6 /* GTMStackTrace.m */; };
+		00B599E40F1D259200359A10 /* NSURL+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */; };
+		00B599E50F1D259200359A10 /* NSURL+UtilsTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B599E20F1D259200359A10 /* NSURL+UtilsTest.h */; };
+		00B599E60F1D259200359A10 /* NSURL+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */; };
 		00CBE5C60E24783400E94F7B /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CBE5C50E24783400E94F7B /* GTMDefines.h */; };
 		00DB2A790EECA1C700383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2A780EECA1C700383FB6 /* JRSwizzle.m */; };
 		00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2A770EECA1C700383FB6 /* JRSwizzle.h */; };
@@ -130,6 +133,8 @@
 		00A97A790F0C467600B083F6 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
 		00A97A7A0F0C467600B083F6 /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
 		00A97A7B0F0C467600B083F6 /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
+		00B599E20F1D259200359A10 /* NSURL+UtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UtilsTest.h"; sourceTree = "<group>"; };
+		00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UtilsTest.m"; sourceTree = "<group>"; };
 		00CBE5C50E24783400E94F7B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		00DB2A770EECA1C700383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		00DB2A780EECA1C700383FB6 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
@@ -389,6 +394,8 @@
 				005D0C3F0E19C03B003FAB86 /* NSDate+ParsingTest.m */,
 				52D57E540E1C0E8200709FB4 /* NSString+HMACTest.h */,
 				52D57E550E1C0E8200709FB4 /* NSString+HMACTest.m */,
+				00B599E20F1D259200359A10 /* NSURL+UtilsTest.h */,
+				00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -440,6 +447,7 @@
 				00A97A850F0C467600B083F6 /* GTMObjC2Runtime.h in Headers */,
 				00A97A870F0C467600B083F6 /* GTMRegex.h in Headers */,
 				00A97A890F0C467600B083F6 /* GTMStackTrace.h in Headers */,
+				00B599E50F1D259200359A10 /* NSURL+UtilsTest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +579,7 @@
 				00A97A8F0F0C467600B083F6 /* GTMObjC2Runtime.m in Sources */,
 				00A97A900F0C467600B083F6 /* GTMRegex.m in Sources */,
 				00A97A910F0C467600B083F6 /* GTMStackTrace.m in Sources */,
+				00B599E40F1D259200359A10 /* NSURL+UtilsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +614,7 @@
 				00A97A860F0C467600B083F6 /* GTMObjC2Runtime.m in Sources */,
 				00A97A880F0C467600B083F6 /* GTMRegex.m in Sources */,
 				00A97A8A0F0C467600B083F6 /* GTMStackTrace.m in Sources */,
+				00B599E60F1D259200359A10 /* NSURL+UtilsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
