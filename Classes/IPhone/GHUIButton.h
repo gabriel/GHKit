@@ -33,6 +33,7 @@
 
 // Button shading types
 typedef enum {
+	GHUIButtonShadingTypeUnknown = 0,
 	GHUIButtonShadingTypeNone,
 	GHUIButtonShadingTypeLinear,
 	GHUIButtonShadingTypeHorizontalEdge
@@ -41,24 +42,28 @@ typedef enum {
 
 @interface GHUIButton : UIControl {
 
-	NSString *title_;
-	UIColor *titleColor_;
+	NSString *title_;	
 	UIFont *titleFont_;
 	
 	UIColor *color_;
+	UIColor *titleColor_;
 	UIColor *alternateColor_;
+	GHUIButtonShadingType shadingType_;
 	
 	UIColor *highlightedTitleColor_;
 	UIColor *highlightedColor_;
 	UIColor *highlightedAlternateColor_;
+	GHUIButtonShadingType highlightedShadingType_;
+	
+	UIColor *disabledTitleColor_;
+	UIColor *disabledColor_;
+	UIColor *disabledAlternateColor_;	
+	GHUIButtonShadingType disabledShadingType_;
 	
 	UIColor *borderColor_;
 	
 	CGFloat strokeWidth_;
 	CGFloat cornerRadius_;
-	
-	GHUIButtonShadingType shadingType_;
-	GHUIButtonShadingType highlightedShadingType_;
 	
 	UIColor *etchedColor_;
 	
@@ -76,6 +81,11 @@ typedef enum {
 @property (retain, nonatomic) UIColor *highlightedColor;
 @property (retain, nonatomic) UIColor *highlightedAlternateColor;
 @property (assign, nonatomic) GHUIButtonShadingType highlightedShadingType;
+
+@property (retain, nonatomic) UIColor *disabledTitleColor;
+@property (retain, nonatomic) UIColor *disabledColor;
+@property (retain, nonatomic) UIColor *disabledAlternateColor;
+@property (assign, nonatomic) GHUIButtonShadingType disabledShadingType;
 
 @property (retain, nonatomic) UIColor *borderColor;
 

@@ -31,10 +31,10 @@
 
 @implementation GHUIButton
 
-@synthesize title=title_, titleColor=titleColor_, titleFont=titleFont_, highlightedTitleColor=highlightedTitleColor_, strokeWidth=strokeWidth_, 
-cornerRadius=cornerRadius_, highlightedColor=highlightedColor_, highlightedAlternateColor=highlightedAlternateColor_, color=color_, 
-alternateColor=alternateColor_, highlightedShadingType=highlightedShadingType_, shadingType=shadingType_, borderColor=borderColor_, 
-etchedColor=etchedColor_;
+@synthesize title=title_, titleFont=titleFont_, strokeWidth=strokeWidth_, borderColor=borderColor_, etchedColor=etchedColor_, cornerRadius=cornerRadius_, 
+color=color_, titleColor=titleColor_, alternateColor=alternateColor_, shadingType=shadingType_, 
+highlightedColor=highlightedColor_, highlightedTitleColor=highlightedTitleColor_, highlightedAlternateColor=highlightedAlternateColor_, highlightedShadingType=highlightedShadingType_, 
+disabledTitleColor=disabledTitleColor_, disabledColor=disabledColor_, disabledAlternateColor=disabledAlternateColor_, disabledShadingType=disabledShadingType_;
 
 - (id)initWithFrame:(CGRect)frame {
 	if ((self = [super initWithFrame:frame])) {
@@ -193,6 +193,17 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 	CGColorSpaceRelease(colorSpace);
 }	
 
+- (UIColor *)textColorForState:(UIControlState)state {
+	if (highlightedTitleColor_ && (state == UIControlStateHighlighted)) {
+		return highlightedTitleColor_;
+	} else if (disabledTitleColor_ && (state == UIControlStateDisabled)) {
+		return disabledTitleColor_;
+	} else if (titleColor_) {
+		return titleColor_;
+	} else {
+		return [UIColor blackColor];
+	}
+}
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext();	
@@ -201,14 +212,21 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 	CGRect bounds = self.bounds;	
 	CGSize size = bounds.size;
 	
+	BOOL isHighlighted = (state == UIControlStateHighlighted);
+	BOOL isDisabled = (state == UIControlStateDisabled);
+	
 	GHUIButtonShadingType shadingType = shadingType_;
 	UIColor *color = color_;
 	UIColor *alternateColor = alternateColor_;
 		
-	if (state == UIControlStateHighlighted || self.isTracking) {
-		shadingType = highlightedShadingType_;
-		color = highlightedColor_;
-		alternateColor = highlightedAlternateColor_;
+	if (isDisabled) {
+		if (disabledShadingType_ != GHUIButtonShadingTypeUnknown) shadingType = disabledShadingType_;
+		if (disabledColor_) color = disabledColor_;
+		if (disabledAlternateColor_) alternateColor = disabledAlternateColor_;		
+	} else if (isHighlighted || self.isTracking) {
+		if (highlightedShadingType_ != GHUIButtonShadingTypeUnknown) shadingType = highlightedShadingType_;
+		if (highlightedColor_) color = highlightedColor_;
+		if (highlightedAlternateColor_) alternateColor = highlightedAlternateColor_;
 	}
 	
 	UIColor *fillColor = color;
@@ -222,16 +240,7 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 	
 	GHContextDrawRoundedRect(context, bounds, [fillColor CGColor], [borderColor_ CGColor], strokeWidth_, cornerRadius_, cornerRadius_);
 	
-	CGColorRef textColor = NULL;
-	BOOL isHighlighted = (state == UIControlStateHighlighted);
-	
-	if (highlightedTitleColor_ && isHighlighted) {
-		textColor = highlightedTitleColor_.CGColor;
-	} else if (titleColor_) {
-		textColor = titleColor_.CGColor;
-	} else {
-		textColor = [UIColor blackColor].CGColor;
-	}
+	CGColorRef textColor = [self textColorForState:state].CGColor;
 	
 	UIFont *font = titleFont_;
 	if (!font) font = [UIFont boldSystemFontOfSize:14.0];
@@ -279,7 +288,7 @@ void DrawShading(CGContextRef context, UIColor *color, UIColor *alternateColor, 
 		CGSize lineSize = [line sizeWithFont:font];
 		CGFloat x = size.width/2.0 - lineSize.width/2.0;
 		
-		if (etchedColor_ && !isHighlighted) {
+		if (etchedColor_ && !isHighlighted && !isDisabled) {
 			CGContextSetFillColorWithColor(context, etchedColor_.CGColor);
 			[line drawAtPoint:CGPointMake(x+1, y) forWidth:size.width withFont:font lineBreakMode:UILineBreakModeWordWrap];
 		}
