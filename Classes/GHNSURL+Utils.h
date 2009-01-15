@@ -26,19 +26,91 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-
-
 @interface NSURL (GHUtils)
 
-+ (NSString *)paramsToString:(NSDictionary *)params;
-+ (NSString *)escape:(NSString *)s;
-+ (NSString *)escapeAll:(NSString *)s;
+/*!
+ Get parameters (dictionary).
+ */
+- (NSDictionary *)gh_parameters;
+
+/*!
+ @method gh_paramsToString
+ @abstract Dictionary to params string. Escapes any url specific characters.
+ @param params Dictionary of key value params
+ @result Param string, ?key1=value1&key2=value2
+ */
++ (NSString *)gh_paramsToString:(NSDictionary *)params;
+
+/*!
+ Convert url params to dictionary.
+ @method gh_stringToParams
+ @param string URL params string, key1=value1&key2=value2
+ @result Dictionary
+ */
++ (NSDictionary *)gh_stringToParams:(NSString *)string;
+
+/*!
+ Encode URL string.
+ 
+  "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C
+ 
+ Doesn't encode: ~!@#$&*()=:/,;?+'
+ Does encode: %^{}[]"\
+ 
+ Should be the same as javascript's encodeURI().
+ See http://xkr.us/articles/javascript/encode-compare/
+ 
+ @method gh_encode
+ @param s String to escape
+ @result Encode string
+ */
++ (NSString *)gh_encode:(NSString *)s;
+
+/*!
+ Encode URL string (for escaping url key/value params).
+ 
+ "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C
+ 
+ Doesn't encode: ~!*()'
+ Does encode: @#$%^&{}[]=:/,;?+"\
+ 
+ Should be the same as javascript's encodeURIComponent().
+ See http://xkr.us/articles/javascript/encode-compare/
+ 
+ @method escapeAll
+ @param s String to escape
+ @result Encode string
+ */
++ (NSString *)gh_encodeAll:(NSString *)s;
+
+/*!
+ Decode URL string.
+ @param url URL string
+ @result Decoded URL string
+ */
++ (NSString *)gh_decode:(NSString *)url;
 
 #ifndef TARGET_OS_IPHONE
-- (void)copyLinkToPasteboard;
-+ (void)openFile:(NSString *)path;
-+ (void)openContainingFolder:(NSString *)path;
+
+/*!
+ @method copyLinkToPasteboard
+ @abstract Copy url to pasteboard
+ */
+- (void)gh_copyLinkToPasteboard;
+
+/*!
+ @method openFile
+ @param path Path to open
+ @abstract Open file path
+ */
++ (void)gh_openFile:(NSString *)path;
+
+/*!
+ @method openContaingFolder
+ @param path
+ @abstract Open folder (in Finder probably) for file path.
+ */
++ (void)gh_openContainingFolder:(NSString *)path;
 #endif
 
 @end

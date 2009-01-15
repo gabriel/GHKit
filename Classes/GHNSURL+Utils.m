@@ -32,82 +32,74 @@
 
 @implementation NSURL (GHUtils)
 
-/*!
- @method paramsToString
- @abstract Dictionary to params string. Escapes any url specific characters.
- @param params Dictionary of key value params
- @result Param string, ?key1=value1&key2=value2
-*/
-+ (NSString *)paramsToString:(NSDictionary *)params {
-  if (!params || [params count] == 0) return nil;
+- (NSDictionary *)gh_parameters {
+	return [NSURL gh_stringToParams:[self parameterString]];
+}
+
++ (NSString *)gh_paramsToString:(NSDictionary *)params {
+  if (!params) return nil;
+	if ([params count] == 0) return @"";
   
   NSMutableArray *paramStrings = [NSMutableArray arrayWithCapacity:[params count]];
   for(NSString *key in params) {
     NSString *value = [params valueForKey:key];
-    NSString *newKey = [self escapeAll:key];
-    NSString *newValue = [self escapeAll:value];
+    NSString *newKey = [self gh_encodeAll:key];
+    NSString *newValue = [self gh_encodeAll:value];
     [paramStrings addObject:[NSString stringWithFormat:@"%@=%@", newKey, newValue]];
   }
   return [paramStrings componentsJoinedByString:@"&"];
 }
 
-/*!
- @method escape
- @param s String to escape
- @abstract Escape url characters (all except /)
- @result Escaped string
-*/
-+ (NSString *)escape:(NSString *)s {
-  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR(",+?&="), kCFStringEncodingUTF8) autorelease];
++ (NSDictionary *)gh_stringToParams:(NSString *)string {
+	NSArray *paramsList = [string componentsSeparatedByString:@"&"];
+	
+	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:[paramsList count]];
+	for(NSString *paramString in paramsList) {
+		NSRange range = [paramString rangeOfString:@"="];
+		if (range.location == NSNotFound) {
+			
+		} else {
+			NSString *key = [paramString substringToIndex:range.location];
+			NSString *value = [paramString substringFromIndex:range.location + 1];
+			[params setObject:value forKey:key];
+		}
+	}
+	return params;
 }
 
-/*!
- @method escapeAll
- @param s String to escape
- @abstract Escape all url characters
- @result Escaped string
- */
-+ (NSString *)escapeAll:(NSString *)s {  
-  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8) autorelease];
++ (NSString *)gh_encode:(NSString *)s {	
+	return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("~!@#$&*()=:/,;?+'"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8) autorelease];
 }
 
++ (NSString *)gh_encodeAll:(NSString *)s {  
+  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("~!*()'"), CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8) autorelease];
+}
+
++ (NSString *)gh_decode:(NSString *)url {
+	return [(NSString *)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef) self, CFSTR("")) autorelease];
+}
 
 #ifndef TARGET_OS_IPHONE
 
-/*!
- @method copyLinkToPasteboard
- @abstract Copy url to pasteboard
- */
-- (void)copyLinkToPasteboard {  
+- (void)gh_copyLinkToPasteboard {  
   NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
   [pasteboard declareTypes:[NSArray arrayWithObjects:NSURLPboardType, NSStringPboardType, nil] owner:self];
   [self writeToPasteboard:pasteboard]; // For NSURLPBoardType
   [pasteboard setString:[self absoluteString] forType:NSStringPboardType];
 }
 
-/*!
- @method openFile
- @param path Path to open
- @abstract Open file path
- */
-+ (void)openFile:(NSString *)path {
-  NSString *fileURL = [NSString stringWithFormat:@"file://%@", [self escape:path]];
++ (void)gh_openFile:(NSString *)path {
+  NSString *fileURL = [NSString stringWithFormat:@"file://%@", [self gh_encode:path]];
   NSURL *url = [NSURL URLWithString:fileURL];
   [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
-
-/*!
- @method openContaingFolder
- @param path
- @abstract Open folder (in Finder probably) for file path.
- */
-+ (void)openContainingFolder:(NSString *)path {
++ (void)gh_openContainingFolder:(NSString *)path {
   BOOL isDir;
   if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:&isDir] && isDir)
-    [self openFile:path];
+    [self gh_openFile:path];
   else
-    [self openFile:[path stringByDeletingLastPathComponent]];
+    [self gh_openFile:[path stringByDeletingLastPathComponent]];
 }
 
 #endif
