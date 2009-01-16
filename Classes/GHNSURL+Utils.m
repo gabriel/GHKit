@@ -68,11 +68,13 @@
 }
 
 + (NSString *)gh_encode:(NSString *)s {	
-	return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("~!@#$&*()=:/,;?+'"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8) autorelease];
+	// Characters to maybe leave unescaped? CFSTR("~!@#$&*()=:/,;?+'")
+	return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("#"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8) autorelease];
 }
 
 + (NSString *)gh_encodeAll:(NSString *)s {  
-  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("~!*()'"), CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8) autorelease];
+	// Characters to maybe leave unescaped? CFSTR("~!*()'")
+  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8) autorelease];
 }
 
 + (NSString *)gh_decode:(NSString *)url {

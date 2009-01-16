@@ -26,7 +26,7 @@
 }
 
 - (void)testParamsToString {
-	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2"];
+	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
 	NSString *s = [NSURL gh_paramsToString:dict];
 	STAssertEqualObjects(@"key1=value1&key2=value2", s, @"Error");
 }
@@ -35,6 +35,11 @@
 	NSDictionary *dict = [NSURL gh_stringToParams:@"key1=value1&key2=value2"];
 	STAssertEqualObjects(@"value1", [dict objectForKey:@"key1"], @"Error");
 	STAssertEqualObjects(@"value2", [dict objectForKey:@"key2"], @"Error");
+	
+	NSDictionary *dict2 = [NSURL gh_stringToParams:@"key1==value1&&key2=value2&key3=value3=more"];
+	STAssertEqualObjects(@"=value1", [dict2 objectForKey:@"key1"], @"Error");
+	STAssertEqualObjects(@"value2", [dict2 objectForKey:@"key2"], @"Error");
+	STAssertEqualObjects(@"value3=more", [dict2 objectForKey:@"key3"], @"Error");
 }
 
 
