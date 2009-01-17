@@ -5,10 +5,9 @@
 //  Created by Gabriel Handford on 1/13/09.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "GHTestCase.h"
 
-
-@interface NSURLUtilsTest : SenTestCase {
+@interface NSURLUtilsTest : GHTestCase {
 
 }
 

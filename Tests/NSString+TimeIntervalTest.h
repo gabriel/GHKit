@@ -5,10 +5,9 @@
 //  Copyright 2008 ducktyper.com. Some rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "GHTestCase.h"
 
-
-@interface NSStringTimeIntervalTest : SenTestCase {
+@interface NSStringTimeIntervalTest : GHTestCase {
 
 }
 

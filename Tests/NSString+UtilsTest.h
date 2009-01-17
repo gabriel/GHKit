@@ -6,10 +6,9 @@
 //  Copyright 2008 ducktyper.com. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "GHTestCase.h"
 
-
-@interface NSStringUtilsTest : SenTestCase {
+@interface NSStringUtilsTest : GHTestCase {
 
 }
 

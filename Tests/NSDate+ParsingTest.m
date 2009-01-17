@@ -16,7 +16,7 @@
   NSString *rfc822 = @"Sun, 06 Nov 1994 08:49:37 +0000";
   NSDate *date = [[NSDate alloc] initWithString:@"1994-11-06 08:49:37 +0000"];
   NSString *formatted = [date gh_formatRFC822];
-  STAssertEqualObjects(formatted, rfc822, @"Should conform to RFC822 date");  
+  GHAssertEqualObjects(formatted, rfc822, @"Should conform to RFC822 date");  
 }
 
 - (void)testParseHTTPDate {
@@ -29,13 +29,13 @@
   NSDate *parsed = nil;
   
   parsed = [NSDate gh_parseHTTP:rfc1123];
-  STAssertEqualObjects(parsed, date, @"Should conform to RFC1123 date");
+  GHAssertEqualObjects(parsed, date, @"Should conform to RFC1123 date");
   
   parsed = [NSDate gh_parseHTTP:rfc850];
-  STAssertEqualObjects(parsed, date, @"Should conform to RFC850/1036 date");
+  GHAssertEqualObjects(parsed, date, @"Should conform to RFC850/1036 date");
   
   parsed = [NSDate gh_parseHTTP:ascTime];
-  STAssertEqualObjects(parsed, date, @"Should conform to ASCTime date");
+  GHAssertEqualObjects(parsed, date, @"Should conform to ASCTime date");
 }
 
 @end
