@@ -37,11 +37,18 @@
 }
 
 + (NSString *)gh_paramsToString:(NSDictionary *)params {
+	return [self gh_paramsToString:params sort:NO];
+}
+
++ (NSString *)gh_paramsToString:(NSDictionary *)params sort:(BOOL)sort {
   if (!params) return nil;
 	if ([params count] == 0) return @"";
   
   NSMutableArray *paramStrings = [NSMutableArray arrayWithCapacity:[params count]];
-  for(NSString *key in params) {
+	id enumerator = params;
+	if (sort) enumerator = [[params allKeys] sortedArrayUsingSelector:@selector(compare:)];
+	
+  for(NSString *key in enumerator) {
     NSString *value = [params valueForKey:key];
     NSString *newKey = [self gh_encodeAll:key];
     NSString *newValue = [self gh_encodeAll:value];

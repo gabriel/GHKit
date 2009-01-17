@@ -37,9 +37,18 @@
  @method gh_paramsToString
  @abstract Dictionary to params string. Escapes any url specific characters.
  @param params Dictionary of key value params
- @result Param string, ?key1=value1&key2=value2
+ @result Param string, key1=value1&key2=value2
  */
 + (NSString *)gh_paramsToString:(NSDictionary *)params;
+
+/*!
+ @method gh_paramsToString
+ @abstract Dictionary to params string. Escapes any url specific characters.
+ @param params Dictionary of key value params
+ @param sort Sort
+ @result Param string, key1=value1&key2=value2
+ */
++ (NSString *)gh_paramsToString:(NSDictionary *)params sort:(BOOL)sort;
 
 /*!
  Convert url params to dictionary.
