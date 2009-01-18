@@ -2,7 +2,7 @@
 //  NSStringTimeIntervalTest.m
 //
 //  Created by Gabe on 6/6/08.
-//  Copyright 2008 ducktyper.com. Some rights reserved.
+//  Copyright 2008 rel.me. Some rights reserved.
 //
 
 #import "NSString+TimeIntervalTest.h"
