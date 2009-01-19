@@ -1,8 +1,8 @@
 //
-//  GHCGUtils.h
+//  GHTestAppDelegate.h
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 11/28/08.
+//  Copyright 2008. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,8 +26,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "GHTestAppDelegate.h"
+#import "GHTestWindowController.h"
+#import "GHTestRunner.h"
 
-void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
+@interface GHTestAppDelegate : NSObject <GHTestRunnerDelegate> {
+	GHTestWindowController *windowController_;
+}
 
-void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+- (void)runTests;
+
+@end

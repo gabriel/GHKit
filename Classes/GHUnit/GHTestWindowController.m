@@ -1,8 +1,9 @@
 //
-//  GHCGUtils.h
+//  GHTestWindowController.m
+//  GHKit
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 1/17/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,8 +27,27 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "GHTestWindowController.h"
 
-void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
 
-void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+@implementation GHTestWindowController
+
+@synthesize viewController=viewController_;
+
+- (id)init {
+	if ((self = [super initWithWindowNibName:@"GHTestWindow"])) {
+		
+	}
+	return self;
+}
+
+- (void)awakeFromNib {
+	self.window.contentView = viewController_.view;
+}
+
+- (void)dealloc {
+	[viewController_ release];
+	[super dealloc];
+}
+
+@end

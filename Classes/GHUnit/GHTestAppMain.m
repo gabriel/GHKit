@@ -1,8 +1,8 @@
 //
-//  GHTestRunner.h
+//  GHTestMain.m
 //
-//  Created by Gabriel Handford on 1/16/09.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 1/17/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -25,29 +25,39 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
-//
-// Portions of this file fall under the following license, marked with:
-// GTM_BEGIN : GTM_END
-//
-//  Copyright 2008 Google Inc.
-//
-//  Licensed under the Apache License, Version 2.0 (the "License"); you may not
-//  use this file except in compliance with the License.  You may obtain a copy
-//  of the License at
-// 
-//  http://www.apache.org/licenses/LICENSE-2.0
-// 
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-//  WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-//  License for the specific language governing permissions and limitations under
-//  the License.
-//
+
+// Runs tests in GUI
+// To run on with standard output, define GHUNIT_NO_GUI
 
 #import <Foundation/Foundation.h>
 
-@interface GHTestRunner : NSObject { }
+#import <Foundation/NSDebug.h>
 
-- (void)runTests;
+#import "GTMStackTrace.h"
 
-@end
+#ifdef GHUNIT_NO_GUI
+#import "GHTestRunner.h"
+#endif
+
+void exceptionHandler(NSException *exception) {
+	NSLog(@"%@", GTMStackTraceFromException(exception));
+}
+
+int main(int argc, char *argv[]) {
+	
+	NSDebugEnabled = YES;
+	NSZombieEnabled = YES;
+	NSDeallocateZombies = NO;
+	NSHangOnUncaughtException = YES;
+	[NSAutoreleasePool enableFreedObjectCheck:YES];
+	NSSetUncaughtExceptionHandler(&exceptionHandler);
+	
+#ifdef GHUNIT_NO_GUI
+	GHTestRunner *runner = [[GHTestRunner alloc] init];
+	[runner runTests];
+#else
+	[NSApplication sharedApplication];
+	[NSBundle loadNibNamed:@"GHTestApp" owner:NSApp];
+	[NSApp run];
+#endif
+}

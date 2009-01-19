@@ -44,6 +44,9 @@
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"
 
+#import "GHNSInvocation+Utils.h"
+#import "GHNSObject+Invocation.h"
+
 #ifdef TARGET_OS_IPHONE
 #import "GHKitIPhone.h"
 #endif
@@ -60,7 +63,9 @@
 #define GHCGSizeToString(size) NSStringFromSize(NSSizeFromCGSize(size))
 #define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
 
-#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread");
+#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread")
 
-// Default epsilon for float comparisons; May not always apply, epsilon may be larger depending on how many operations you do
+// Default epsilon for float comparisons
 #define GH_EPSILON 1.0E-5
+
+#define GHDescription(obj, ...) [[obj dictionaryWithValuesForKeys:[NSArray arrayWithObjects:__VA_ARGS__, nil]] description]

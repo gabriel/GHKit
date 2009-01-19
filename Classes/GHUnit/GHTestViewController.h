@@ -1,8 +1,9 @@
 //
-//  GHTestViewDelegate.m
+//  GHTestViewController.h
+//  GHKit
 //
-//  Created by Gabriel Handford on 11/28/08.
-//  Copyright 2008. All rights reserved.
+//  Created by Gabriel Handford on 1/17/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,34 +27,35 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHTestViewDelegate.h"
+#import "GHTestViewModel.h"
+#import "GHTestSuite.h"
 
-#import "GHTestRunner.h"
-
-@implementation GHTestViewDelegate
-
-+ (void)load {
-  NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-  NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-  [nc addObserver:self
-         selector:@selector(appFinishedLaunchingHandler:)
-             name:NSApplicationDidFinishLaunchingNotification
-           object:nil];
-  [pool release];
+@interface GHTestViewController : NSViewController {
+	NSSplitView *splitView_;
+	NSView *statusView_;
+	NSView *detailsView_;
+	
+	NSTextField *statusLabel_;
+	NSProgressIndicator *progressIndicator_;
+	NSOutlineView *outlineView_;
+	
+	NSTextView *detailsTextView_;
+	
+	GHTestViewModel *model_;
 }
 
-+ (void)appFinishedLaunchingHandler:(NSNotification *)notification {
-	NSLog(@"Application launched");
-	[NSThread detachNewThreadSelector:@selector(runTests) toTarget:self withObject:nil];	
-}
+@property (retain, nonatomic) IBOutlet NSSplitView *splitView;
+@property (retain, nonatomic) IBOutlet NSView *statusView;
+@property (retain, nonatomic) IBOutlet NSView *detailsView;
+@property (retain, nonatomic) IBOutlet NSTextField *statusLabel;
+@property (retain, nonatomic) IBOutlet NSProgressIndicator *progressIndicator;
+@property (retain, nonatomic) IBOutlet NSOutlineView *outlineView;
+@property (retain, nonatomic) IBOutlet NSTextView *detailsTextView;
 
-+ (void)runTests {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];	
-	NSLog(@"Running tests");
-	GHTestRunner *runner = [[GHTestRunner alloc] init];
-	[runner runTests];
-	NSLog(@"Tests done");		
-	[pool release];
-}
+@property (copy, nonatomic) NSString *status;
+
+- (void)addTest:(GHTest *)test;
+
+- (void)testSuite:(GHTestSuite *)testSuite didUpdateTest:(GHTest *)test;
 
 @end

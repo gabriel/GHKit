@@ -1,7 +1,8 @@
 //
-//  GHTestMain.m
+//  GHTestSuite.h
+//  GHKit
 //
-//  Created by Gabriel Handford on 1/17/09.
+//  Created by Gabriel Handford on 1/18/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -26,19 +27,36 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import "GHTestCase.h"
 
-#import <Foundation/NSDebug.h>
-
-int main(int argc, char *argv[]) {
+@interface GHTestSuite : NSObject <GHTestCaseDelegate> {
+	NSArray *testCases_; // of GHTestCase
 	
-	NSDebugEnabled = YES;
-	NSZombieEnabled = YES;
-	NSDeallocateZombies = NO;
-	NSHangOnUncaughtException = YES;
-	[NSAutoreleasePool enableFreedObjectCheck:YES];
+	NSTimeInterval interval_;
 	
-	[NSApplication sharedApplication];
-	[NSBundle loadNibNamed:@"GHTestApp" owner:NSApp];
-	[NSApp run];
+	id<GHTestCaseDelegate> delegate_;
+	
+	NSInteger runCount_;
+	NSInteger failedCount_;
+	NSInteger totalCount_;	
 }
+
+@property (readonly, nonatomic) NSString *name;
+@property (readonly) NSInteger failedCount;
+@property (readonly) NSInteger runCount;
+@property (readonly) NSInteger totalCount;
+@property (readonly) NSTimeInterval interval;
+
+@property (assign) id<GHTestCaseDelegate> delegate;
+
+- (id)initWithTestCases:(NSArray *)testCases;
+
++ (GHTestSuite *)allTestCases;
+
++ (BOOL)isTestFixture:(Class)aClass;
+
++ (NSArray *)loadTestCases;
+
+- (BOOL)run;
+
+@end

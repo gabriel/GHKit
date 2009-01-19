@@ -23,12 +23,6 @@
 		004D50D80F21DAAA00C916F1 /* GHNSURL+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857C9E0E1997B50011DA5C /* GHNSURL+Utils.m */; };
 		004D50D90F21DAAB00C916F1 /* GHNSXMLElement+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857CA00E1997B50011DA5C /* GHNSXMLElement+Utils.m */; };
 		004D50DA0F21DAAC00C916F1 /* GHNSXMLNode+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857CA20E1997B50011DA5C /* GHNSXMLNode+Utils.m */; };
-		004D50DB0F21DAAD00C916F1 /* GHTestApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004D50920F21D93400C916F1 /* GHTestApp.xib */; };
-		004D50DC0F21DAAD00C916F1 /* GHTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D50940F21D93400C916F1 /* GHTestCase.m */; };
-		004D50DD0F21DAAE00C916F1 /* GHTestMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D50960F21D93400C916F1 /* GHTestMacros.m */; };
-		004D50DE0F21DAB000C916F1 /* GHTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D50970F21D93400C916F1 /* GHTestMain.m */; };
-		004D50DF0F21DAB200C916F1 /* GHTestRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D50990F21D93400C916F1 /* GHTestRunner.m */; };
-		004D50E00F21DAB300C916F1 /* GHTestViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D509B0F21D93400C916F1 /* GHTestViewDelegate.m */; };
 		004D50E10F21DAB300C916F1 /* GHViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F598A0EF2438900B3005D /* GHViewAnimation.m */; };
 		004D50E20F21DAB400C916F1 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A720F0C467600B083F6 /* GTMBase64.m */; };
 		004D50E30F21DAB500C916F1 /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A750F0C467600B083F6 /* GTMLogger.m */; };
@@ -50,6 +44,22 @@
 		0058AAB20EF8C12100C44386 /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAAC0EF8C12100C44386 /* EMKeychainProxy.m */; };
 		0058AAEE0EF8C4D900C44386 /* GHKeychainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 0058AAEC0EF8C4D900C44386 /* GHKeychainStore.h */; };
 		0058AAEF0EF8C4D900C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAED0EF8C4D900C44386 /* GHKeychainStore.m */; };
+		005B0A9F0F22B7A80004F351 /* GHNSInvocation+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 005B0A9D0F22B7A80004F351 /* GHNSInvocation+Utils.h */; };
+		005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */; };
+		005B0AA10F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */; };
+		005B0AAD0F22C09F0004F351 /* NSInvocation+UtilsTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 005B0AAB0F22C09F0004F351 /* NSInvocation+UtilsTest.h */; };
+		005B0AAE0F22C09F0004F351 /* NSInvocation+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */; };
+		005B0AAF0F22C09F0004F351 /* NSInvocation+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */; };
+		005B0BA40F230B040004F351 /* GHTestApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B0B9A0F230B040004F351 /* GHTestApp.xib */; };
+		005B0BA50F230B040004F351 /* GHTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0B9C0F230B040004F351 /* GHTestAppDelegate.m */; };
+		005B0BA60F230B040004F351 /* GHTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0B9E0F230B040004F351 /* GHTestCase.m */; };
+		005B0BA70F230B040004F351 /* GHTestMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BA00F230B040004F351 /* GHTestMacros.m */; };
+		005B0BA90F230B040004F351 /* GHTestRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BA30F230B040004F351 /* GHTestRunner.m */; };
+		005B0BAD0F230FA80004F351 /* GHTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BAC0F230FA80004F351 /* GHTestViewController.m */; };
+		005B0BAF0F230FCB0004F351 /* GHTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B0BAE0F230FCB0004F351 /* GHTestView.xib */; };
+		005B0BB40F2312040004F351 /* GHTestWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BB30F2312040004F351 /* GHTestWindowController.m */; };
+		005B0BE70F2315230004F351 /* GHTestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BE60F2315230004F351 /* GHTestViewModel.m */; };
+		005B0C560F2323220004F351 /* GHTestWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 005B0C550F2323220004F351 /* GHTestWindow.xib */; };
 		007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59850EF2438900B3005D /* GHNSArray+Utils.h */; };
 		007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
 		007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */; };
@@ -70,6 +80,13 @@
 		00A97A890F0C467600B083F6 /* GTMStackTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A97A7A0F0C467600B083F6 /* GTMStackTrace.h */; };
 		00A97A8A0F0C467600B083F6 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A7B0F0C467600B083F6 /* GTMStackTrace.m */; };
 		00CBE5C60E24783400E94F7B /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CBE5C50E24783400E94F7B /* GTMDefines.h */; };
+		00CE8AAD0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */; };
+		00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */; };
+		00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */; };
+		00CE8BCD0F243A8400DD6464 /* GHTestViewModelTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8BCC0F243A8400DD6464 /* GHTestViewModelTest.m */; };
+		00CE8BE10F243E3000DD6464 /* GHTestAppMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BA10F230B040004F351 /* GHTestAppMain.m */; };
+		00CE8C210F245A7000DD6464 /* GHTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8C200F245A7000DD6464 /* GHTest.m */; };
+		00CE8C240F245B1F00DD6464 /* GHTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8C230F245B1F00DD6464 /* GHTestSuite.m */; };
 		00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2A770EECA1C700383FB6 /* JRSwizzle.h */; };
 		00DB2A7B0EECA1C700383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2A780EECA1C700383FB6 /* JRSwizzle.m */; };
 		527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */; };
@@ -104,16 +121,6 @@
 
 /* Begin PBXFileReference section */
 		004D508D0F21D91D00C916F1 /* TestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
-		004D50920F21D93400C916F1 /* GHTestApp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHTestApp.xib; sourceTree = "<group>"; };
-		004D50930F21D93400C916F1 /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestCase.h; sourceTree = "<group>"; };
-		004D50940F21D93400C916F1 /* GHTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestCase.m; sourceTree = "<group>"; };
-		004D50950F21D93400C916F1 /* GHTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestMacros.h; sourceTree = "<group>"; };
-		004D50960F21D93400C916F1 /* GHTestMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestMacros.m; sourceTree = "<group>"; };
-		004D50970F21D93400C916F1 /* GHTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestMain.m; sourceTree = "<group>"; };
-		004D50980F21D93400C916F1 /* GHTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestRunner.h; sourceTree = "<group>"; };
-		004D50990F21D93400C916F1 /* GHTestRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestRunner.m; sourceTree = "<group>"; };
-		004D509A0F21D93400C916F1 /* GHTestViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestViewDelegate.h; sourceTree = "<group>"; };
-		004D509B0F21D93400C916F1 /* GHTestViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestViewDelegate.m; sourceTree = "<group>"; };
 		004D50C50F21DA7200C916F1 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0058AAA90EF8C12100C44386 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		0058AAAA0EF8C12100C44386 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
@@ -121,6 +128,28 @@
 		0058AAAC0EF8C12100C44386 /* EMKeychainProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainProxy.m; sourceTree = "<group>"; };
 		0058AAEC0EF8C4D900C44386 /* GHKeychainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKeychainStore.h; sourceTree = "<group>"; };
 		0058AAED0EF8C4D900C44386 /* GHKeychainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHKeychainStore.m; sourceTree = "<group>"; };
+		005B0A9D0F22B7A80004F351 /* GHNSInvocation+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSInvocation+Utils.h"; sourceTree = "<group>"; };
+		005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSInvocation+Utils.m"; sourceTree = "<group>"; };
+		005B0AAB0F22C09F0004F351 /* NSInvocation+UtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+UtilsTest.h"; sourceTree = "<group>"; };
+		005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+UtilsTest.m"; sourceTree = "<group>"; };
+		005B0B9A0F230B040004F351 /* GHTestApp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHTestApp.xib; sourceTree = "<group>"; };
+		005B0B9B0F230B040004F351 /* GHTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestAppDelegate.h; sourceTree = "<group>"; };
+		005B0B9C0F230B040004F351 /* GHTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestAppDelegate.m; sourceTree = "<group>"; };
+		005B0B9D0F230B040004F351 /* GHTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestCase.h; sourceTree = "<group>"; };
+		005B0B9E0F230B040004F351 /* GHTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestCase.m; sourceTree = "<group>"; };
+		005B0B9F0F230B040004F351 /* GHTestMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestMacros.h; sourceTree = "<group>"; };
+		005B0BA00F230B040004F351 /* GHTestMacros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestMacros.m; sourceTree = "<group>"; };
+		005B0BA10F230B040004F351 /* GHTestAppMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestAppMain.m; sourceTree = "<group>"; };
+		005B0BA20F230B040004F351 /* GHTestRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestRunner.h; sourceTree = "<group>"; };
+		005B0BA30F230B040004F351 /* GHTestRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestRunner.m; sourceTree = "<group>"; };
+		005B0BAB0F230FA80004F351 /* GHTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestViewController.h; sourceTree = "<group>"; };
+		005B0BAC0F230FA80004F351 /* GHTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestViewController.m; sourceTree = "<group>"; };
+		005B0BAE0F230FCB0004F351 /* GHTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHTestView.xib; sourceTree = "<group>"; };
+		005B0BB20F2312040004F351 /* GHTestWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestWindowController.h; sourceTree = "<group>"; };
+		005B0BB30F2312040004F351 /* GHTestWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestWindowController.m; sourceTree = "<group>"; };
+		005B0BE50F2315230004F351 /* GHTestViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestViewModel.h; sourceTree = "<group>"; };
+		005B0BE60F2315230004F351 /* GHTestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestViewModel.m; sourceTree = "<group>"; };
+		005B0C550F2323220004F351 /* GHTestWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GHTestWindow.xib; sourceTree = "<group>"; };
 		005D0C3E0E19C03B003FAB86 /* NSDate+ParsingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ParsingTest.h"; sourceTree = "<group>"; };
 		005D0C3F0E19C03B003FAB86 /* NSDate+ParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ParsingTest.m"; sourceTree = "<group>"; };
 		007F59850EF2438900B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
@@ -145,6 +174,15 @@
 		00B599E20F1D259200359A10 /* NSURL+UtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+UtilsTest.h"; sourceTree = "<group>"; };
 		00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UtilsTest.m"; sourceTree = "<group>"; };
 		00CBE5C50E24783400E94F7B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		00CE89910F23E9F000DD6464 /* GHUnit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnit_Prefix.pch; sourceTree = "<group>"; };
+		00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Invocation.h"; sourceTree = "<group>"; };
+		00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Invocation.m"; sourceTree = "<group>"; };
+		00CE8BCB0F243A8400DD6464 /* GHTestViewModelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestViewModelTest.h; sourceTree = "<group>"; };
+		00CE8BCC0F243A8400DD6464 /* GHTestViewModelTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestViewModelTest.m; sourceTree = "<group>"; };
+		00CE8C1F0F245A7000DD6464 /* GHTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTest.h; sourceTree = "<group>"; };
+		00CE8C200F245A7000DD6464 /* GHTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTest.m; sourceTree = "<group>"; };
+		00CE8C220F245B1F00DD6464 /* GHTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestSuite.h; sourceTree = "<group>"; };
+		00CE8C230F245B1F00DD6464 /* GHTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestSuite.m; sourceTree = "<group>"; };
 		00DB2A770EECA1C700383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		00DB2A780EECA1C700383FB6 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -211,23 +249,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		004D50910F21D93400C916F1 /* UnitTesting */ = {
-			isa = PBXGroup;
-			children = (
-				004D50920F21D93400C916F1 /* GHTestApp.xib */,
-				004D50930F21D93400C916F1 /* GHTestCase.h */,
-				004D50940F21D93400C916F1 /* GHTestCase.m */,
-				004D50950F21D93400C916F1 /* GHTestMacros.h */,
-				004D50960F21D93400C916F1 /* GHTestMacros.m */,
-				004D50970F21D93400C916F1 /* GHTestMain.m */,
-				004D50980F21D93400C916F1 /* GHTestRunner.h */,
-				004D50990F21D93400C916F1 /* GHTestRunner.m */,
-				004D509A0F21D93400C916F1 /* GHTestViewDelegate.h */,
-				004D509B0F21D93400C916F1 /* GHTestViewDelegate.m */,
-			);
-			path = UnitTesting;
-			sourceTree = "<group>";
-		};
 		0058AAA80EF8C12100C44386 /* ExtendMac */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +258,36 @@
 				0058AAAC0EF8C12100C44386 /* EMKeychainProxy.m */,
 			);
 			path = ExtendMac;
+			sourceTree = "<group>";
+		};
+		005B0B990F230B040004F351 /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				00CE8C220F245B1F00DD6464 /* GHTestSuite.h */,
+				00CE8C230F245B1F00DD6464 /* GHTestSuite.m */,
+				005B0B9D0F230B040004F351 /* GHTestCase.h */,
+				005B0B9E0F230B040004F351 /* GHTestCase.m */,
+				005B0B9F0F230B040004F351 /* GHTestMacros.h */,
+				005B0BA00F230B040004F351 /* GHTestMacros.m */,
+				00CE8C1F0F245A7000DD6464 /* GHTest.h */,
+				00CE8C200F245A7000DD6464 /* GHTest.m */,
+				005B0BA20F230B040004F351 /* GHTestRunner.h */,
+				005B0BA30F230B040004F351 /* GHTestRunner.m */,
+				005B0BA10F230B040004F351 /* GHTestAppMain.m */,
+				005B0B9B0F230B040004F351 /* GHTestAppDelegate.h */,
+				005B0B9C0F230B040004F351 /* GHTestAppDelegate.m */,
+				005B0B9A0F230B040004F351 /* GHTestApp.xib */,
+				005B0BB20F2312040004F351 /* GHTestWindowController.h */,
+				005B0BB30F2312040004F351 /* GHTestWindowController.m */,
+				005B0C550F2323220004F351 /* GHTestWindow.xib */,
+				005B0BAB0F230FA80004F351 /* GHTestViewController.h */,
+				005B0BAC0F230FA80004F351 /* GHTestViewController.m */,
+				005B0BAE0F230FCB0004F351 /* GHTestView.xib */,
+				005B0BE50F2315230004F351 /* GHTestViewModel.h */,
+				005B0BE60F2315230004F351 /* GHTestViewModel.m */,
+				00CE89910F23E9F000DD6464 /* GHUnit_Prefix.pch */,
+			);
+			path = GHUnit;
 			sourceTree = "<group>";
 		};
 		00A97A700F0C467600B083F6 /* Foundation */ = {
@@ -264,6 +315,15 @@
 				00CBE5C50E24783400E94F7B /* GTMDefines.h */,
 			);
 			path = GTM;
+			sourceTree = "<group>";
+		};
+		00CE8BCA0F243A6100DD6464 /* GHUnit */ = {
+			isa = PBXGroup;
+			children = (
+				00CE8BCB0F243A8400DD6464 /* GHTestViewModelTest.h */,
+				00CE8BCC0F243A8400DD6464 /* GHTestViewModelTest.m */,
+			);
+			path = GHUnit;
 			sourceTree = "<group>";
 		};
 		00DB2A760EECA1C700383FB6 /* JRSwizzle */ = {
@@ -320,7 +380,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				004D50910F21D93400C916F1 /* UnitTesting */,
+				005B0B990F230B040004F351 /* GHUnit */,
 				52D57DD70E1C0BAD00709FB4 /* External */,
 				52857C8E0E1997B50011DA5C /* GHKit.h */,
 				52857C8F0E1997B50011DA5C /* GHNSDate+Parsing.h */,
@@ -357,6 +417,10 @@
 				0058AAED0EF8C4D900C44386 /* GHKeychainStore.m */,
 				00A97A630F0C464700B083F6 /* GHCGUtils.m */,
 				00A97A640F0C464700B083F6 /* GHCGUtils.h */,
+				005B0A9D0F22B7A80004F351 /* GHNSInvocation+Utils.h */,
+				005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */,
+				00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */,
+				00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -391,6 +455,7 @@
 		52857D580E199B530011DA5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00CE8BCA0F243A6100DD6464 /* GHUnit */,
 				52857D590E199B530011DA5C /* NSString+TimeIntervalTest.h */,
 				52857D5A0E199B530011DA5C /* NSString+TimeIntervalTest.m */,
 				52857D5B0E199B530011DA5C /* NSString+UtilsTest.h */,
@@ -401,6 +466,8 @@
 				52D57E550E1C0E8200709FB4 /* NSString+HMACTest.m */,
 				00B599E20F1D259200359A10 /* NSURL+UtilsTest.h */,
 				00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */,
+				005B0AAB0F22C09F0004F351 /* NSInvocation+UtilsTest.h */,
+				005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -450,15 +517,18 @@
 				00A97A850F0C467600B083F6 /* GTMObjC2Runtime.h in Headers */,
 				00A97A870F0C467600B083F6 /* GTMRegex.h in Headers */,
 				00A97A890F0C467600B083F6 /* GTMStackTrace.h in Headers */,
+				005B0A9F0F22B7A80004F351 /* GHNSInvocation+Utils.h in Headers */,
+				005B0AAD0F22C09F0004F351 /* NSInvocation+UtilsTest.h in Headers */,
+				00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		004D50C40F21DA7200C916F1 /* TestApp */ = {
+		004D50C40F21DA7200C916F1 /* GHUnit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 004D514B0F21DAFD00C916F1 /* Build configuration list for PBXNativeTarget "TestApp" */;
+			buildConfigurationList = 004D514B0F21DAFD00C916F1 /* Build configuration list for PBXNativeTarget "GHUnit" */;
 			buildPhases = (
 				004D50C10F21DA7200C916F1 /* Resources */,
 				004D50C20F21DA7200C916F1 /* Sources */,
@@ -468,7 +538,7 @@
 			);
 			dependencies = (
 			);
-			name = TestApp;
+			name = GHUnit;
 			productName = TestApp;
 			productReference = 004D50C50F21DA7200C916F1 /* TestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -506,7 +576,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* GHKit */,
-				004D50C40F21DA7200C916F1 /* TestApp */,
+				004D50C40F21DA7200C916F1 /* GHUnit */,
 			);
 		};
 /* End PBXProject section */
@@ -516,7 +586,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004D50DB0F21DAAD00C916F1 /* GHTestApp.xib in Resources */,
+				005B0BA40F230B040004F351 /* GHTestApp.xib in Resources */,
+				005B0BAF0F230FCB0004F351 /* GHTestView.xib in Resources */,
+				005B0C560F2323220004F351 /* GHTestWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,11 +623,6 @@
 				004D50D80F21DAAA00C916F1 /* GHNSURL+Utils.m in Sources */,
 				004D50D90F21DAAB00C916F1 /* GHNSXMLElement+Utils.m in Sources */,
 				004D50DA0F21DAAC00C916F1 /* GHNSXMLNode+Utils.m in Sources */,
-				004D50DC0F21DAAD00C916F1 /* GHTestCase.m in Sources */,
-				004D50DD0F21DAAE00C916F1 /* GHTestMacros.m in Sources */,
-				004D50DE0F21DAB000C916F1 /* GHTestMain.m in Sources */,
-				004D50DF0F21DAB200C916F1 /* GHTestRunner.m in Sources */,
-				004D50E00F21DAB300C916F1 /* GHTestViewDelegate.m in Sources */,
 				004D50E10F21DAB300C916F1 /* GHViewAnimation.m in Sources */,
 				004D50E20F21DAB400C916F1 /* GTMBase64.m in Sources */,
 				004D50E30F21DAB500C916F1 /* GTMLogger.m in Sources */,
@@ -570,6 +637,20 @@
 				004D514E0F21DB1400C916F1 /* NSString+TimeIntervalTest.m in Sources */,
 				004D514F0F21DB1400C916F1 /* NSString+UtilsTest.m in Sources */,
 				004D51500F21DB1500C916F1 /* NSURL+UtilsTest.m in Sources */,
+				005B0AA10F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */,
+				005B0AAF0F22C09F0004F351 /* NSInvocation+UtilsTest.m in Sources */,
+				005B0BA50F230B040004F351 /* GHTestAppDelegate.m in Sources */,
+				005B0BA60F230B040004F351 /* GHTestCase.m in Sources */,
+				005B0BA70F230B040004F351 /* GHTestMacros.m in Sources */,
+				005B0BA90F230B040004F351 /* GHTestRunner.m in Sources */,
+				005B0BAD0F230FA80004F351 /* GHTestViewController.m in Sources */,
+				005B0BB40F2312040004F351 /* GHTestWindowController.m in Sources */,
+				005B0BE70F2315230004F351 /* GHTestViewModel.m in Sources */,
+				00CE8AAD0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */,
+				00CE8BCD0F243A8400DD6464 /* GHTestViewModelTest.m in Sources */,
+				00CE8BE10F243E3000DD6464 /* GHTestAppMain.m in Sources */,
+				00CE8C210F245A7000DD6464 /* GHTest.m in Sources */,
+				00CE8C240F245B1F00DD6464 /* GHTestSuite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,6 +683,9 @@
 				00A97A860F0C467600B083F6 /* GTMObjC2Runtime.m in Sources */,
 				00A97A880F0C467600B083F6 /* GTMRegex.m in Sources */,
 				00A97A8A0F0C467600B083F6 /* GTMStackTrace.m in Sources */,
+				005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */,
+				005B0AAE0F22C09F0004F351 /* NSInvocation+UtilsTest.m in Sources */,
+				00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +713,8 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = GHKit_Prefix.pch;
+				GCC_PREFIX_HEADER = Classes/GHUnit/GHUnit_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				INFOPLIST_FILE = "TestApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -652,7 +737,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = GHKit_Prefix.pch;
+				GCC_PREFIX_HEADER = Classes/GHUnit/GHUnit_Prefix.pch;
 				INFOPLIST_FILE = "TestApp-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
@@ -664,6 +749,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = TestApp;
 				ZERO_LINK = NO;
+				newSetting = "";
 			};
 			name = Release;
 		};
@@ -747,7 +833,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		004D514B0F21DAFD00C916F1 /* Build configuration list for PBXNativeTarget "TestApp" */ = {
+		004D514B0F21DAFD00C916F1 /* Build configuration list for PBXNativeTarget "GHUnit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				004D50C70F21DA7300C916F1 /* Debug */,

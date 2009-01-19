@@ -1,8 +1,9 @@
 //
-//  GHTestViewDelegate.h
+//  GHTestWindowController.h
+//  GHKit
 //
-//  Created by Gabriel Handford on 11/28/08.
-//  Copyright 2008. All rights reserved.
+//  Created by Gabriel Handford on 1/17/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,10 +27,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHTestViewDelegate.h"
+#import "GHTestViewController.h"
 
-@interface GHTestViewDelegate : NSObject {
-
+@interface GHTestWindowController : NSWindowController {
+	GHTestViewController *viewController_;
 }
+
+@property (retain, nonatomic) IBOutlet GHTestViewController *viewController;
 
 @end
