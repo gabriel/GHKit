@@ -67,11 +67,16 @@
 
 - (id)initWithTestSuite:(GHTestSuite *)testSuite {
 	if ((self = [super init])) {
-		testSuite_ = testSuite;
+		testSuite_ = [testSuite retain];
 		testSuite_.delegate = self;
 		delegateOnMainThread_ = YES;
 	}
 	return self;
+}
+
+- (void)dealloc {
+	[testSuite_ release];
+	[super dealloc];
 }
 
 - (BOOL)run {
@@ -86,6 +91,9 @@
 - (void)_log:(NSString *)message {
 	fputs([[message stringByAppendingString:@"\n"] UTF8String], stderr);
   fflush(stderr);
+	
+	if ([delegate_ respondsToSelector:@selector(testRunner:didLog:)]) 
+		[delegate_ testRunner:self didLog:message];
 }
 
 #define kGHTestRunnerInvokeWaitUntilDone YES
@@ -107,7 +115,7 @@
 - (void)testCase:(GHTestCase *)testCase didFinishTest:(GHTest *)test passed:(BOOL)passed {
 	
 	NSString *message = [NSString stringWithFormat:@"Test '-[%@ %@]' %@ (%0.3f seconds).",
-											 testCase.name, test.name, passed ? @"passed" : @"failed", test.interval];
+											 testCase.name, test.name, passed ? @"passed" : @"failed", test.interval];	
 	[self _log:message];
 	
 	if ([delegate_ respondsToSelector:@selector(testRunner:didUpdateTest:)])

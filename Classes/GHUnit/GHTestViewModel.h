@@ -33,6 +33,8 @@
 @class GHTestItem;
 
 @interface GHTestViewModel : NSObject {
+	GHTestSuite *testSuite_;
+	
 	NSMutableArray *testCaseItems_; // of GHTestCaseItem	
 	NSMutableDictionary *testCaseMap_; // of (GHTestCase -> GHTestCaseItem)
 	GHTestCaseItem *currentTestCaseItem_;	
@@ -40,6 +42,9 @@
 
 @property (readonly) NSArray *testCaseItems;
 @property (retain) GHTestCaseItem *currentTestCaseItem;
+@property (readonly) GHTestStatus status;
+
+- (id)initWithTestSuite:(GHTestSuite *)testSuite;
 
 - (BOOL)isCurrentTestCase:(GHTestCase *)testCase;
 - (void)addTestCaseItem:(GHTestCaseItem *)testCaseItem;
@@ -62,11 +67,12 @@
 	NSString *name_;
 }
 
-- (id)initWithTestCase:(GHTestCase *)testCase;
-+ (id)testCaseItemWithTestCase:(GHTestCase *)testCase;
-
 @property (readonly, nonatomic) GHTestCase *testCase;
 @property (readonly, nonatomic) NSArray *testItems; // of GHTestItem
+@property (readonly) GHTestStatus status;
+
+- (id)initWithTestCase:(GHTestCase *)testCase;
++ (id)testCaseItemWithTestCase:(GHTestCase *)testCase;
 
 - (void)addTestItem:(GHTestItem *)test;
 - (NSInteger)numberOfChildren;
@@ -84,6 +90,7 @@
 }
 
 @property (readonly) GHTest *test;
+@property (readonly) GHTestStatus status;
 
 - (id)initWithTest:(GHTest *)test;
 + (id)testItemWithTest:(GHTest *)test;

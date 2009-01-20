@@ -52,31 +52,41 @@
 
 @implementation GHTestSuite
 
-@synthesize failedCount=failedCount_, totalCount=totalCount_, runCount=runCount_, delegate=delegate_, interval=interval_;
+@synthesize status=status_, name=name_, failedCount=failedCount_, totalCount=totalCount_, runCount=runCount_, 
+delegate=delegate_, interval=interval_;
+
+- (id)init {
+	if ((self = [super init])) {		
+		name_ = @"Tests"; //[[[NSBundle mainBundle] bundleIdentifier] retain];
+	}
+	return self;	
+}
 
 - (id)initWithTestCases:(NSArray *)testCases {
-	if ((self = [super init])) {
+	if ([self init]) {
 		testCases_ = [testCases retain];
 	}
-	return self;
+	return self;	
 }
 
 - (void)dealloc {
-	[testCases_ retain];
+	[testCases_ release];
+	[name_ release];
 	[super dealloc];
 }
 
-- (NSString *)name {
-	return @"TestSuite"; // TODO(gabe):
-}
+- (NSString *)statusString {
+	return [NSString stringWithFormat:@"%@ (%0.3fs)", [GHTest stringFromStatus:status_ withDefault:@""], interval_];
+}	
 
 + (GHTestSuite *)allTestCases {
-	NSArray *testCases = [self loadTestCases];
-	
-	return [[[GHTestSuite alloc] initWithTestCases:testCases] autorelease];
+	GHTestSuite *testSuite = [[GHTestSuite alloc] init];	
+	[testSuite loadTestCases];
+	return testSuite;
 }
 
 - (BOOL)run {
+	status_ = GHTestStatusRunning;
 	NSDate *startDate = [NSDate date];
 	BOOL passedAll = YES;
 		
@@ -90,7 +100,11 @@
 		BOOL passed = [testCase run];
 		failedCount_ = failedCount_ + testCase.failedCount;
 		passedAll = (passedAll && passed);
+		interval_ = [[NSDate date] timeIntervalSinceDate:startDate];
 	}
+	
+	if (passedAll) status_ = GHTestStatusPassed;
+	else status_ = GHTestStatusFailed;
 	
 	interval_ = [[NSDate date] timeIntervalSinceDate:startDate];
 	
@@ -131,7 +145,7 @@
   return iscase;
 }
 
-+ (NSArray *)loadTestCases {
+- (void)loadTestCases {
 	NSMutableArray *testCases = [NSMutableArray array];
 	
 	int count = objc_getClassList(NULL, 0);
@@ -142,8 +156,8 @@
 
   for (int i = 0; i < count; ++i) {
     Class currClass = classes[i];
-    if ([self isTestFixture:currClass]) {			
-      id testcase = [[currClass alloc] init];
+    if ([GHTestSuite isTestFixture:currClass]) {			
+      id testcase = [[currClass alloc] initWithTestSuite:self];
 			
       _GTMDevAssert(testcase, @"Unable to instantiate Test Suite: '%@'\n",
                     NSStringFromClass(currClass));
@@ -153,7 +167,8 @@
       [testcase release];      
     }
   }
-	return testCases;
+	[testCases_ release];
+	testCases_ = [testCases retain];	
 }	
 
 // GTM_END

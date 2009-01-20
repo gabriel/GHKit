@@ -47,6 +47,7 @@
 #import <Foundation/Foundation.h>
 
 #import "GHTestMacros.h"
+
 #import "GHTest.h"
 
 @class GHTestCase;
@@ -59,7 +60,81 @@
 - (void)testCaseDidFinish:(GHTestCase *)testCase;
 @end
 
+@class GHTestSuite;
+
+/*!
+ GHTestCase is the base class for testing.
+ Create method that start with 'test', take no arguments and return void.
+ 
+ For example,
+ 
+ @interface MyTest : GHTestCase { }
+ @end
+ 
+ @implementation MyTest
+ 
+ - (void)setUp {
+   // Run before each test method
+ }
+ 
+ - (void)tearDown {
+	// Run after each test method
+ }
+ 
+ - (void)testFoo {
+	// Assert a is not NULL, with no custom error description
+	GHAssertNotNULL(a, nil);
+ 
+	// Assert equal objects, add custom error description
+	GHAssertEqualObjects(a, b, @"Foo should be equal to: %@. Something bad happened", bar);
+ }
+ 
+ - (void)testBar {
+	// Another test
+ }
+ 
+ @end
+ 
+ 
+ Test macros:
+ 
+		GHAssertNoErr(a1, description, ...)
+		GHAssertErr(a1, a2, description, ...)
+		GHAssertNotNULL(a1, description, ...)
+		GHAssertNULL(a1, description, ...)
+		GHAssertNotEquals(a1, a2, description, ...)
+		GHAssertNotEqualObjects(a1, a2, desc, ...)
+		GHAssertOperation(a1, a2, op, description, ...)
+		GHAssertGreaterThan(a1, a2, description, ...)
+		GHAssertGreaterThanOrEqual(a1, a2, description, ...)
+		GHAssertLessThan(a1, a2, description, ...)
+		GHAssertLessThanOrEqual(a1, a2, description, ...)
+		GHAssertEqualStrings(a1, a2, description, ...)
+		GHAssertNotEqualStrings(a1, a2, description, ...)
+		GHAssertEqualCStrings(a1, a2, description, ...)
+		GHAssertNotEqualCStrings(a1, a2, description, ...)
+		GHAssertEqualObjects(a1, a2, description, ...)
+		GHAssertEquals(a1, a2, description, ...)
+		GHAbsoluteDifference(left,right) (MAX(left,right)-MIN(left,right))
+		GHAssertEqualsWithAccuracy(a1, a2, accuracy, description, ...)
+		GHFail(description, ...)
+		GHAssertNil(a1, description, ...)
+		GHAssertNotNil(a1, description, ...)
+		GHAssertTrue(expr, description, ...)
+		GHAssertTrueNoThrow(expr, description, ...)
+		GHAssertFalse(expr, description, ...)
+		GHAssertFalseNoThrow(expr, description, ...)
+		GHAssertThrows(expr, description, ...)
+		GHAssertThrowsSpecific(expr, specificException, description, ...)
+		GHAssertThrowsSpecificNamed(expr, specificException, aName, description, ...)
+		GHAssertNoThrow(expr, description, ...)
+		GHAssertNoThrowSpecific(expr, specificException, description, ...)
+		GHAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...)
+
+ */
 @interface GHTestCase : NSObject {
+	
+	GHTestSuite *testSuite_;
 	
 	NSArray *tests_;	
 	GHTest *currentTest_;
@@ -71,19 +146,29 @@
 	NSTimeInterval interval_;
 	
 	NSInteger failedCount_;
+	
+	GHTestStatus status_;
+	
+	BOOL testsLoaded_;
 }
 
+- (id)initWithTestSuite:(GHTestSuite *)testSuite;
+
+@property (readonly) GHTestSuite *testSuite;
 @property (assign) id<GHTestCaseDelegate> delegate;
 @property (readonly) NSString *name;
 @property (readonly) NSInteger failedCount;
 @property (readonly) NSInteger totalCount;
 @property (readonly) NSTimeInterval interval;
+@property (readonly) GHTestStatus status;
 
 /*!
  Run all tests in test case.
  @result YES if all passed
  */
 - (BOOL)run;
+
+- (NSString *)statusString;
 
 // GTM_BEGIN
 - (void)setUp;

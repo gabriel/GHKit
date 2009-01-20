@@ -61,6 +61,8 @@
 - (void)testRunner:(GHTestRunner *)runner didUpdateTest:(GHTest *)test;
 - (void)testRunner:(GHTestRunner *)runner didFinishTestCase:(GHTestCase *)testCase;
 - (void)testRunnerDidFinish:(GHTestRunner *)runner;
+
+- (void)testRunner:(GHTestRunner *)runner didLog:(NSString *)message;
 @end
 
 @interface GHTestRunner : NSObject <GHTestCaseDelegate> { 

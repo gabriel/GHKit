@@ -63,6 +63,10 @@
 
 #pragma mark Delegates (GHTestRunner)
 
+- (void)testRunner:(GHTestRunner *)runner didLog:(NSString *)message {
+	[windowController_.viewController log:message];
+}
+
 - (void)testRunner:(GHTestRunner *)runner didStartTest:(GHTest *)test {
 	GTMLoggerDebug(@"Add test: %@", test);
 	[windowController_.viewController addTest:test];
@@ -72,11 +76,16 @@
 	[windowController_.viewController testSuite:runner.testSuite didUpdateTest:test];
 }
 
-- (void)testRunner:(GHTestRunner *)runner didStartTestCase:(GHTestCase *)testCase { }
-- (void)testRunner:(GHTestRunner *)runner didFinishTestCase:(GHTestCase *)testCase { }
+- (void)testRunner:(GHTestRunner *)runner didStartTestCase:(GHTestCase *)testCase { 
+	[windowController_.viewController testSuite:runner.testSuite didUpdateTestCase:testCase];
+}
+
+- (void)testRunner:(GHTestRunner *)runner didFinishTestCase:(GHTestCase *)testCase { 
+	[windowController_.viewController testSuite:runner.testSuite didUpdateTestCase:testCase];
+}
 
 - (void)testRunnerDidFinish:(GHTestRunner *)runner {
-	windowController_.viewController.status = @"Finished";
+	[windowController_.viewController testSuiteDidFinish:runner.testSuite];
 	//[[NSApplication sharedApplication] terminate:nil];
 }
 

@@ -40,7 +40,10 @@ typedef enum {
 	GHTestCase *testCase_;
 	SEL selector_;
 	NSTimeInterval interval_;
-	NSException *exception_; // if errored
+	
+	// If errored
+	NSException *exception_; 
+	NSString *backTrace_;
 	
 	GHTestStatus status_;
 	
@@ -56,11 +59,13 @@ typedef enum {
 @property (readonly) SEL selector;
 @property (readonly) NSTimeInterval interval;
 @property (readonly) NSException *exception;
+@property (readonly) NSString *backTrace;
 
 @property (readonly) NSString *name;
 @property (readonly) NSString *statusString;
 
 @property (assign) GHTestStatus status;
+@property (readonly) BOOL failed;
 
 /*!
  Run the test.
@@ -68,5 +73,7 @@ typedef enum {
  @result Yes if passed, NO otherwise
  */
 - (BOOL)run;
+
++ (NSString *)stringFromStatus:(GHTestStatus)status withDefault:(NSString *)defaultValue;
 
 @end

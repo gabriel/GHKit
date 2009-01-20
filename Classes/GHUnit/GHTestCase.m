@@ -53,7 +53,7 @@
 @interface GHTestCase (Private)
 // our method of logging errors
 + (void)printException:(NSException *)exception fromTestName:(NSString *)name;
-- (void)_loadTests;
+- (void)_loadTests:(BOOL)reload;
 @end
 
 // Used for sorting methods below
@@ -67,18 +67,28 @@ static int MethodSort(const void *a, const void *b) {
 
 @implementation GHTestCase
 
-@synthesize delegate=delegate_, failedCount=failedCount_, interval=interval_;
+@synthesize testSuite=testSuite_, delegate=delegate_, failedCount=failedCount_, interval=interval_, status=status_;
 
 - (id)init {
 	if ((self = [super init])) {
 		className_ = [NSStringFromClass([self class]) retain];
+		failedCount_ = 0;
+	}
+	return self;	
+}
+
+- (id)initWithTestSuite:(GHTestSuite *)testSuite {
+	if ([self init]) {
+		testSuite_ = [testSuite retain];
+		[self _loadTests:NO];
 	}
 	return self;
 }
 
 - (void)dealloc {
-	[tests_ retain];
-	[className_ retain];
+	[testSuite_ release];
+	[tests_ release];
+	[className_ release];
 	[super dealloc];
 }
 
@@ -90,10 +100,15 @@ static int MethodSort(const void *a, const void *b) {
 	return [tests_ count];
 }
 
-- (BOOL)run {
-	[self _loadTests];
-	NSDate *startDate = [NSDate date];
+- (NSString *)statusString {
+	return [NSString stringWithFormat:@"%@ (%0.3fs)", [GHTest stringFromStatus:status_ withDefault:@""], interval_];
+}
+
+- (BOOL)run {	
+	[self _loadTests:NO];
 	
+	status_ = GHTestStatusRunning;
+	NSDate *startDate = [NSDate date];	
 	if ([delegate_ respondsToSelector:@selector(testCaseDidStart:)]) 
 		[delegate_ testCaseDidStart:self];
 	
@@ -104,18 +119,21 @@ static int MethodSort(const void *a, const void *b) {
 			[delegate_ testCase:self didStartTest:test];
 
 		BOOL passed = [test run];
-		if (!passed) {
+		if (!passed) {			
 			failedCount_++;
 			[self failWithException:test.exception];
 		}
+		
 		passedAll = (passedAll && passed);
+		interval_ = [[NSDate date] timeIntervalSinceDate:startDate];
 		
 		if ([delegate_ respondsToSelector:@selector(testCase:didFinishTest:passed:)]) 
 			[delegate_ testCase:self didFinishTest:test passed:passed];
 	}
-		
-	interval_ = [[NSDate date] timeIntervalSinceDate:startDate];
 	
+	if (passedAll) status_ = GHTestStatusPassed;
+	else status_ = GHTestStatusFailed;
+		
 	if ([delegate_ respondsToSelector:@selector(testCaseDidFinish:)]) 
 		[delegate_ testCaseDidFinish:self];
 	
@@ -133,7 +151,8 @@ static int MethodSort(const void *a, const void *b) {
 
 // GTM_BEGIN
 
-- (void)_loadTests {
+- (void)_loadTests:(BOOL)reload {
+	if (testsLoaded_ && !reload) return;
 	
 	NSMutableArray *tests = [NSMutableArray array];
 	
@@ -176,7 +195,9 @@ static int MethodSort(const void *a, const void *b) {
 		}
 	}
 	
+	[tests_ release];
 	tests_ = [tests retain];
+	testsLoaded_ = YES;
 }
 
 - (void)failWithException:(NSException*)exception {

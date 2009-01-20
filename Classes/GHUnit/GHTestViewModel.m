@@ -33,8 +33,9 @@
 
 @synthesize testCaseItems=testCaseItems_, currentTestCaseItem=currentTestCaseItem_;
 
-- (id)init {
+- (id)initWithTestSuite:(GHTestSuite *)testSuite {
 	if ((self = [super init])) {
+		testSuite_ = [testSuite retain];
 		testCaseItems_ = [[NSMutableArray array] retain];
 		testCaseMap_ = [[NSMutableDictionary dictionary] retain];
 	}
@@ -42,6 +43,7 @@
 }
 
 - (void)dealloc {
+	[testSuite_ release];
 	[testCaseMap_ release];
 	[testCaseItems_ release];
 	[currentTestCaseItem_ release];
@@ -77,11 +79,15 @@
 }
 
 - (NSString *)name {
-	return @"Tests";
+	return [testSuite_ name];
 }
 
 - (NSString *)statusString {
-	return @"";
+	return [testSuite_ statusString];
+}
+
+- (GHTestStatus)status {
+	return [testSuite_ status];
 }
 
 @end
@@ -135,7 +141,11 @@
 }
 
 - (NSString *)statusString {
-	return @"";
+	return [testCase_ statusString];
+}
+
+- (GHTestStatus)status {
+	return [testCase_ status];
 }
 
 - (GHTestItem *)findTestItem:(GHTest *)test {
@@ -174,6 +184,10 @@
 
 - (NSString *)statusString {
 	return test_.statusString;
+}
+
+- (GHTestStatus)status {
+	return [test_ status];
 }
 
 - (NSInteger)numberOfChildren {

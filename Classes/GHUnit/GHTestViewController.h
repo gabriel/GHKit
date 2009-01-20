@@ -39,23 +39,29 @@
 	NSProgressIndicator *progressIndicator_;
 	NSOutlineView *outlineView_;
 	
-	NSTextView *detailsTextView_;
+	NSTextField *detailsTextView_;
+	NSTextField *consoleTestView_;
 	
 	GHTestViewModel *model_;
 }
 
-@property (retain, nonatomic) IBOutlet NSSplitView *splitView;
-@property (retain, nonatomic) IBOutlet NSView *statusView;
-@property (retain, nonatomic) IBOutlet NSView *detailsView;
-@property (retain, nonatomic) IBOutlet NSTextField *statusLabel;
-@property (retain, nonatomic) IBOutlet NSProgressIndicator *progressIndicator;
-@property (retain, nonatomic) IBOutlet NSOutlineView *outlineView;
-@property (retain, nonatomic) IBOutlet NSTextView *detailsTextView;
+// Assign since they are retained as subviews
+@property (assign, nonatomic) IBOutlet NSSplitView *splitView;
+@property (assign, nonatomic) IBOutlet NSView *statusView;
+@property (assign, nonatomic) IBOutlet NSView *detailsView;
+@property (assign, nonatomic) IBOutlet NSTextField *statusLabel;
+@property (assign, nonatomic) IBOutlet NSProgressIndicator *progressIndicator;
+@property (assign, nonatomic) IBOutlet NSOutlineView *outlineView;
+@property (assign, nonatomic) IBOutlet NSTextField *detailsTextView;
+@property (assign, nonatomic) IBOutlet NSTextField *consoleTestView;
 
 @property (copy, nonatomic) NSString *status;
 
 - (void)addTest:(GHTest *)test;
+- (void)log:(NSString *)log;
 
 - (void)testSuite:(GHTestSuite *)testSuite didUpdateTest:(GHTest *)test;
+- (void)testSuite:(GHTestSuite *)testSuite didUpdateTestCase:(GHTestCase *)testCase;
+- (void)testSuiteDidFinish:(GHTestSuite *)testSuite;
 
 @end

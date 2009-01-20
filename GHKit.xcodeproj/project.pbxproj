@@ -87,6 +87,7 @@
 		00CE8BE10F243E3000DD6464 /* GHTestAppMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0BA10F230B040004F351 /* GHTestAppMain.m */; };
 		00CE8C210F245A7000DD6464 /* GHTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8C200F245A7000DD6464 /* GHTest.m */; };
 		00CE8C240F245B1F00DD6464 /* GHTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8C230F245B1F00DD6464 /* GHTestSuite.m */; };
+		00CE8DD40F251E6100DD6464 /* GHTestFailed.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8DD30F251E6100DD6464 /* GHTestFailed.m */; };
 		00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2A770EECA1C700383FB6 /* JRSwizzle.h */; };
 		00DB2A7B0EECA1C700383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2A780EECA1C700383FB6 /* JRSwizzle.m */; };
 		527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */; };
@@ -183,6 +184,9 @@
 		00CE8C200F245A7000DD6464 /* GHTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTest.m; sourceTree = "<group>"; };
 		00CE8C220F245B1F00DD6464 /* GHTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestSuite.h; sourceTree = "<group>"; };
 		00CE8C230F245B1F00DD6464 /* GHTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestSuite.m; sourceTree = "<group>"; };
+		00CE8DD20F251E6100DD6464 /* GHTestFailed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHTestFailed.h; sourceTree = "<group>"; };
+		00CE8DD30F251E6100DD6464 /* GHTestFailed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHTestFailed.m; sourceTree = "<group>"; };
+		00CE8EA50F252AEB00DD6464 /* GHUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUnit.h; sourceTree = "<group>"; };
 		00DB2A770EECA1C700383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
 		00DB2A780EECA1C700383FB6 /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSwizzle.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -263,6 +267,7 @@
 		005B0B990F230B040004F351 /* GHUnit */ = {
 			isa = PBXGroup;
 			children = (
+				00CE8EA50F252AEB00DD6464 /* GHUnit.h */,
 				00CE8C220F245B1F00DD6464 /* GHTestSuite.h */,
 				00CE8C230F245B1F00DD6464 /* GHTestSuite.m */,
 				005B0B9D0F230B040004F351 /* GHTestCase.h */,
@@ -322,6 +327,8 @@
 			children = (
 				00CE8BCB0F243A8400DD6464 /* GHTestViewModelTest.h */,
 				00CE8BCC0F243A8400DD6464 /* GHTestViewModelTest.m */,
+				00CE8DD20F251E6100DD6464 /* GHTestFailed.h */,
+				00CE8DD30F251E6100DD6464 /* GHTestFailed.m */,
 			);
 			path = GHUnit;
 			sourceTree = "<group>";
@@ -651,6 +658,7 @@
 				00CE8BE10F243E3000DD6464 /* GHTestAppMain.m in Sources */,
 				00CE8C210F245A7000DD6464 /* GHTest.m in Sources */,
 				00CE8C240F245B1F00DD6464 /* GHTestSuite.m in Sources */,
+				00CE8DD40F251E6100DD6464 /* GHTestFailed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

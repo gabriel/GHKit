@@ -47,6 +47,7 @@
 
 #import "GHTest.h"
 
+#import "GTMStackTrace.h"
 
 @implementation GHTest
 
@@ -76,6 +77,7 @@
 - (void)dealloc {
 	[testCase_ release];
 	[exception_ release];
+	[backTrace_ release];
 	[selectorName_ release];
 	[super dealloc];
 }
@@ -92,14 +94,27 @@
 	return selectorName_;
 }
 
-- (NSString *)statusString {
-	switch(status_) {
-		case GHTestStatusNone: return @"None";
++ (NSString *)stringFromStatus:(GHTestStatus)status withDefault:(NSString *)defaultValue {
+	switch(status) {
 		case GHTestStatusRunning: return @"Running";
 		case GHTestStatusPassed: return @"Passed";
 		case GHTestStatusFailed: return @"Failed";
 	}			
-	return @"";
+	return defaultValue;
+}	
+
+- (BOOL)failed {
+	return (status_ == GHTestStatusFailed);
+}
+
+- (NSString *)backTrace {
+	if (!backTrace_ && exception_)
+		backTrace_ = [GTMStackTraceFromException(exception_) retain];
+	return backTrace_;
+}
+
+- (NSString *)statusString {
+	return [NSString stringWithFormat:@"%@ (%0.3fs)", [GHTest stringFromStatus:status_ withDefault:@""], interval_];
 }
 
 - (BOOL)run {

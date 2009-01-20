@@ -38,14 +38,19 @@
 	
 	NSInteger runCount_;
 	NSInteger failedCount_;
-	NSInteger totalCount_;	
+	NSInteger totalCount_;
+	
+	NSString *name_;
+	GHTestStatus status_;
 }
 
-@property (readonly, nonatomic) NSString *name;
+@property (readonly) NSString *name;
 @property (readonly) NSInteger failedCount;
 @property (readonly) NSInteger runCount;
 @property (readonly) NSInteger totalCount;
 @property (readonly) NSTimeInterval interval;
+@property (readonly) GHTestStatus status;
+@property (readonly) NSString *statusString;
 
 @property (assign) id<GHTestCaseDelegate> delegate;
 
@@ -55,7 +60,7 @@
 
 + (BOOL)isTestFixture:(Class)aClass;
 
-+ (NSArray *)loadTestCases;
+- (void)loadTestCases;
 
 - (BOOL)run;
 

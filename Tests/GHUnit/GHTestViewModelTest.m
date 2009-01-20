@@ -27,14 +27,14 @@
 	GHTestCaseItem *testCaseItem = [[GHTestCaseItem alloc] initWithTestCase:mock];	
 	[mock release];
 	[model addTestCaseItem:testCaseItem];	
-	GHAssertTrue([model numberOfChildren] == 1, @"Error");	
+	GHAssertTrue([model numberOfChildren] == 1, nil);	
 	
-	GHAssertEqualObjects([model objectAtIndex:0], testCaseItem, @"Error");
+	GHAssertEqualObjects([model objectAtIndex:0], testCaseItem, nil);
 	
 	GHTestCaseItem *found = [model findTestCaseItem:mock];
-	GHAssertNotNULL(found, @"Error");
+	GHAssertNotNULL(found, nil);
 	
-	GHAssertEqualObjects(found, testCaseItem, @"Error");
+	GHAssertEqualObjects(found, testCaseItem, nil);
 }
 
 @end

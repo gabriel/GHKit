@@ -567,7 +567,7 @@ withDescription:GHComposeString(description, ##__VA_ARGS__)]]; \
 }\
 } while(0)
 
-#define STAbsoluteDifference(left,right) (MAX(left,right)-MIN(left,right))
+#define GHAbsoluteDifference(left,right) (MAX(left,right)-MIN(left,right))
 
 
 /*" Generates a failure when a1 is not equal to a2 within + or - accuracy is false. 
@@ -593,7 +593,7 @@ withDescription:[@"Type mismatch -- " stringByAppendingString:GHComposeString(de
 __typeof__(a1) a1value = (a1); \
 __typeof__(a2) a2value = (a2); \
 __typeof__(accuracy) accuracyvalue = (accuracy); \
-if (STAbsoluteDifference(a1value, a2value) > accuracyvalue) { \
+if (GHAbsoluteDifference(a1value, a2value) > accuracyvalue) { \
 NSValue *a1encoded = [NSValue value:&a1value withObjCType:@encode(__typeof__(a1))]; \
 NSValue *a2encoded = [NSValue value:&a2value withObjCType:@encode(__typeof__(a2))]; \
 NSValue *accuracyencoded = [NSValue value:&accuracyvalue withObjCType:@encode(__typeof__(accuracy))]; \

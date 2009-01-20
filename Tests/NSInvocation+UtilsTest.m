@@ -21,9 +21,9 @@
 }
 	 
 - (void)_invokeTesting1:(NSNumber *)number1 withObject:number2 withObject:number3 {
-	GHAssertEqualObjects([NSNumber numberWithInteger:1], number1, @"Error");
-	GHAssertEqualObjects([NSNumber numberWithInteger:2], number2, @"Error");
-	GHAssertEqualObjects([NSNumber numberWithInteger:3], number3, @"Error");
+	GHAssertEqualObjects([NSNumber numberWithInteger:1], number1, nil);
+	GHAssertEqualObjects([NSNumber numberWithInteger:2], number2, nil);
+	GHAssertEqualObjects([NSNumber numberWithInteger:3], number3, nil);
 	invokeTesting1Called_ = YES;
 }
 
@@ -35,9 +35,9 @@
 }
 
 - (void)_invokeTesting2:(NSNumber *)number1 withObject:nilValue withObject:number3 {
-	GHAssertEqualObjects([NSNumber numberWithInteger:1], number1, @"Error");
+	GHAssertEqualObjects([NSNumber numberWithInteger:1], number1, nil);
 	GHAssertNULL(nilValue, @"Should be nil");
-	GHAssertEqualObjects([NSNumber numberWithInteger:3], number3, @"Error");
+	GHAssertEqualObjects([NSNumber numberWithInteger:3], number3, nil);
 	invokeTesting2Called_ = YES;
 }
 
