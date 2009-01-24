@@ -30,3 +30,4 @@
 #import "GHUINavigationController+PopDelegate.h"
 #import "GHUINavigationController+Utils.h"
 #import "GHUITableView+Utils.h"
+#import "GHNSString+UIKitUtils.h"
