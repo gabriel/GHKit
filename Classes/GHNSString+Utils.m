@@ -28,29 +28,27 @@
 
 #import "GHNSString+Utils.h"
 
+#import "GTMRegex.h"
+
 @implementation NSString (GHUtils)
 
-/*!
- @method gh_isStrip
- @result String with characters trimmed
-*/
 - (NSString *)gh_strip {
   return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
-/*!
- @method gh_isBlank
- @result YES if string is empty (after stripping)
-*/
+- (NSString *)gh_rightStrip {
+	return [self gtm_stringByReplacingMatchesOfPattern:@"[ \t]+$" withReplacement:@""];
+}
+
+- (NSString *)gh_leftStrip {
+	return [self gtm_stringByReplacingMatchesOfPattern:@"^[ \t]+" withReplacement:@""];
+}
+
+
 - (BOOL)gh_isBlank {
   return ([@"" isEqualToString:[self gh_strip]]);
 }
 
-/*!
- @method gh_isBlank
- @param s
- @result YES if string is nil, empty or whitespace characters
-*/
 + (BOOL)gh_isBlank:(NSString *)s {
   if (!s) return YES;
   return [s gh_isBlank];
@@ -117,15 +115,11 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return self;
 }
 
-/*!
- @method gh_cutWithString
- @abstract Cuts the word up. Like split, but all the characters are kept.
-   For example, [@"foo:bar" gh_cutWithString:@":"] => [ "foo:", "bar" ]
- @param s String to cut on
- @param options Options
- @result String cut up into array
-*/
 - (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options {
+	return [self gh_cutWithString:cutWith options:options cutAfter:YES];
+}
+
+- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
 	NSMutableArray *words = [NSMutableArray array];
 	NSInteger location = 0;
 	
@@ -133,11 +127,20 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 		NSRange previousRange = NSMakeRange(location, [self length] - location);
 		NSRange range = [self rangeOfString:cutWith options:options range:previousRange];
 		NSInteger foundLocation = 0;
-		if (range.location == NSNotFound) foundLocation = [self length];
-		else foundLocation = range.location + [cutWith length];
+		if (range.location == NSNotFound) {
+			foundLocation = [self length];
+		} else {
+			foundLocation = range.location;
+			if (cutAfter) foundLocation += [cutWith length];
+		}
+		if (!cutAfter) location -= [cutWith length];
 		
-		[words addObject:[self substringWithRange:NSMakeRange(location, foundLocation - location)]];
+		NSInteger length = foundLocation - location;
+		[words addObject:[self substringWithRange:NSMakeRange(location, length)]];
 		location = foundLocation;
+		if (!cutAfter) {
+			location += [cutWith length];
+		}
   }
 	if ([words count] == 0) [words addObject:@""]; // If we fell through with nothing, was empty string
 	return words;	
