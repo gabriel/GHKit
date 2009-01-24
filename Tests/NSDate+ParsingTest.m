@@ -6,9 +6,10 @@
 //  Copyright 2008 rel.me. All rights reserved.
 //
 
-#import "NSDate+ParsingTest.h"
-
 #import "GHNSDate+Parsing.h"
+
+@interface NSDateParsingTest : SenTestCase { }
+@end
 
 @implementation NSDateParsingTest
 
@@ -16,7 +17,7 @@
   NSString *rfc822 = @"Sun, 06 Nov 1994 08:49:37 +0000";
   NSDate *date = [[NSDate alloc] initWithString:@"1994-11-06 08:49:37 +0000"];
   NSString *formatted = [date gh_formatRFC822];
-  GHAssertEqualObjects(formatted, rfc822, @"Should conform to RFC822 date");  
+  STAssertEqualObjects(formatted, rfc822, @"Should conform to RFC822 date");  
 }
 
 - (void)testParseHTTPDate {
@@ -29,13 +30,13 @@
   NSDate *parsed = nil;
   
   parsed = [NSDate gh_parseHTTP:rfc1123];
-  GHAssertEqualObjects(parsed, date, @"Should conform to RFC1123 date");
+  STAssertEqualObjects(parsed, date, @"Should conform to RFC1123 date");
   
   parsed = [NSDate gh_parseHTTP:rfc850];
-  GHAssertEqualObjects(parsed, date, @"Should conform to RFC850/1036 date");
+  STAssertEqualObjects(parsed, date, @"Should conform to RFC850/1036 date");
   
   parsed = [NSDate gh_parseHTTP:ascTime];
-  GHAssertEqualObjects(parsed, date, @"Should conform to ASCTime date");
+  STAssertEqualObjects(parsed, date, @"Should conform to ASCTime date");
 }
 
 @end

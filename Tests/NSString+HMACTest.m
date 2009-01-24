@@ -6,9 +6,10 @@
 //  Copyright 2008 rel.me. All rights reserved.
 //
 
-#import "NSString+HMACTest.h"
-
 #import "GHNSString+HMAC.h"
+
+@interface NSStringHMACTest : SenTestCase { }
+@end
 
 @implementation NSStringHMACTest
 
@@ -21,7 +22,7 @@
   NSString *secretKey = @"uV3F3YluFJax1cknvbcGwgjvx4QpvB+leU8dUj2o";
   
   NSString *signature = [stringToSign gh_hmacSha1:secretKey];
-  GHAssertEqualObjects(@"xXjDGYUmKxnwqr5KXNPGldn5LbA=", signature, @"HMAC SHA1 signature is not correct");
+  STAssertEqualObjects(@"xXjDGYUmKxnwqr5KXNPGldn5LbA=", signature, @"HMAC SHA1 signature is not correct");
 }
 
 @end
