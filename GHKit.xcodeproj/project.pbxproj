@@ -15,6 +15,40 @@
 		0058AAEF0EF8C4D900C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAED0EF8C4D900C44386 /* GHKeychainStore.m */; };
 		005B0A9F0F22B7A80004F351 /* GHNSInvocation+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 005B0A9D0F22B7A80004F351 /* GHNSInvocation+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */; };
+		0062B69A0F2C08AD00B0562A /* DebugiPhone.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6760F2C08AD00B0562A /* DebugiPhone.xcconfig */; };
+		0062B69B0F2C08AD00B0562A /* DebugiPhone20.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6770F2C08AD00B0562A /* DebugiPhone20.xcconfig */; };
+		0062B69C0F2C08AD00B0562A /* DebugiPhone21.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6780F2C08AD00B0562A /* DebugiPhone21.xcconfig */; };
+		0062B69D0F2C08AD00B0562A /* DebugLeopardOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6790F2C08AD00B0562A /* DebugLeopardOrLater.xcconfig */; };
+		0062B69E0F2C08AD00B0562A /* DebugSnowLeopardOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B67A0F2C08AD00B0562A /* DebugSnowLeopardOrLater.xcconfig */; };
+		0062B69F0F2C08AD00B0562A /* DebugTigerOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B67B0F2C08AD00B0562A /* DebugTigerOrLater.xcconfig */; };
+		0062B6A00F2C08AD00B0562A /* ReleaseiPhone.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B67C0F2C08AD00B0562A /* ReleaseiPhone.xcconfig */; };
+		0062B6A10F2C08AD00B0562A /* ReleaseiPhone20.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B67D0F2C08AD00B0562A /* ReleaseiPhone20.xcconfig */; };
+		0062B6A20F2C08AD00B0562A /* ReleaseiPhone21.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B67E0F2C08AD00B0562A /* ReleaseiPhone21.xcconfig */; };
+		0062B6A30F2C08AD00B0562A /* ReleaseLeopardOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B67F0F2C08AD00B0562A /* ReleaseLeopardOrLater.xcconfig */; };
+		0062B6A40F2C08AD00B0562A /* ReleaseSnowLeopardOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6800F2C08AD00B0562A /* ReleaseSnowLeopardOrLater.xcconfig */; };
+		0062B6A50F2C08AD00B0562A /* ReleaseTigerOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6810F2C08AD00B0562A /* ReleaseTigerOrLater.xcconfig */; };
+		0062B6A60F2C08AD00B0562A /* CodeCoverage.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6830F2C08AD00B0562A /* CodeCoverage.xcconfig */; };
+		0062B6A70F2C08AD00B0562A /* CodeCoverageStatic.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6840F2C08AD00B0562A /* CodeCoverageStatic.xcconfig */; };
+		0062B6A80F2C08AD00B0562A /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6850F2C08AD00B0562A /* Debug.xcconfig */; };
+		0062B6A90F2C08AD00B0562A /* GCSupported.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6860F2C08AD00B0562A /* GCSupported.xcconfig */; };
+		0062B6AA0F2C08AD00B0562A /* General.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6870F2C08AD00B0562A /* General.xcconfig */; };
+		0062B6AB0F2C08AD00B0562A /* GTMMerge.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6880F2C08AD00B0562A /* GTMMerge.xcconfig */; };
+		0062B6AC0F2C08AD00B0562A /* iPhone20.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6890F2C08AD00B0562A /* iPhone20.xcconfig */; };
+		0062B6AD0F2C08AD00B0562A /* iPhone21.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B68A0F2C08AD00B0562A /* iPhone21.xcconfig */; };
+		0062B6AE0F2C08AD00B0562A /* LeopardOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B68B0F2C08AD00B0562A /* LeopardOrLater.xcconfig */; };
+		0062B6AF0F2C08AD00B0562A /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B68C0F2C08AD00B0562A /* Release.xcconfig */; };
+		0062B6B00F2C08AD00B0562A /* SnowLeopardOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B68D0F2C08AD00B0562A /* SnowLeopardOrLater.xcconfig */; };
+		0062B6B10F2C08AD00B0562A /* TigerOrLater.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B68E0F2C08AD00B0562A /* TigerOrLater.xcconfig */; };
+		0062B6B20F2C08AD00B0562A /* Unittest.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B68F0F2C08AD00B0562A /* Unittest.xcconfig */; };
+		0062B6B30F2C08AD00B0562A /* DebugUnittest.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6910F2C08AD00B0562A /* DebugUnittest.xcconfig */; };
+		0062B6B40F2C08AD00B0562A /* LoadableBundle.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6920F2C08AD00B0562A /* LoadableBundle.xcconfig */; };
+		0062B6B50F2C08AD00B0562A /* LoadableBundleGCSupported.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6930F2C08AD00B0562A /* LoadableBundleGCSupported.xcconfig */; };
+		0062B6B60F2C08AD00B0562A /* ReleaseUnittest.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6940F2C08AD00B0562A /* ReleaseUnittest.xcconfig */; };
+		0062B6B70F2C08AD00B0562A /* SharedLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6950F2C08AD00B0562A /* SharedLibrary.xcconfig */; };
+		0062B6B80F2C08AD00B0562A /* SharedLibraryGCSupported.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6960F2C08AD00B0562A /* SharedLibraryGCSupported.xcconfig */; };
+		0062B6B90F2C08AD00B0562A /* StaticLibrary.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6970F2C08AD00B0562A /* StaticLibrary.xcconfig */; };
+		0062B6BA0F2C08AD00B0562A /* StaticLibraryGCSupported.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6980F2C08AD00B0562A /* StaticLibraryGCSupported.xcconfig */; };
+		0062B6BB0F2C08AD00B0562A /* xcconfigs-readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0062B6990F2C08AD00B0562A /* xcconfigs-readme.txt */; };
 		007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59850EF2438900B3005D /* GHNSArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
 		007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,6 +115,40 @@
 		005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSInvocation+Utils.m"; sourceTree = "<group>"; };
 		005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+UtilsTest.m"; sourceTree = "<group>"; };
 		005D0C3F0E19C03B003FAB86 /* NSDate+ParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ParsingTest.m"; sourceTree = "<group>"; };
+		0062B6760F2C08AD00B0562A /* DebugiPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugiPhone.xcconfig; sourceTree = "<group>"; };
+		0062B6770F2C08AD00B0562A /* DebugiPhone20.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugiPhone20.xcconfig; sourceTree = "<group>"; };
+		0062B6780F2C08AD00B0562A /* DebugiPhone21.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugiPhone21.xcconfig; sourceTree = "<group>"; };
+		0062B6790F2C08AD00B0562A /* DebugLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugLeopardOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B67A0F2C08AD00B0562A /* DebugSnowLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugSnowLeopardOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B67B0F2C08AD00B0562A /* DebugTigerOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugTigerOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B67C0F2C08AD00B0562A /* ReleaseiPhone.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseiPhone.xcconfig; sourceTree = "<group>"; };
+		0062B67D0F2C08AD00B0562A /* ReleaseiPhone20.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseiPhone20.xcconfig; sourceTree = "<group>"; };
+		0062B67E0F2C08AD00B0562A /* ReleaseiPhone21.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseiPhone21.xcconfig; sourceTree = "<group>"; };
+		0062B67F0F2C08AD00B0562A /* ReleaseLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseLeopardOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B6800F2C08AD00B0562A /* ReleaseSnowLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseSnowLeopardOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B6810F2C08AD00B0562A /* ReleaseTigerOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseTigerOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B6830F2C08AD00B0562A /* CodeCoverage.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CodeCoverage.xcconfig; sourceTree = "<group>"; };
+		0062B6840F2C08AD00B0562A /* CodeCoverageStatic.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CodeCoverageStatic.xcconfig; sourceTree = "<group>"; };
+		0062B6850F2C08AD00B0562A /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		0062B6860F2C08AD00B0562A /* GCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = GCSupported.xcconfig; sourceTree = "<group>"; };
+		0062B6870F2C08AD00B0562A /* General.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = General.xcconfig; sourceTree = "<group>"; };
+		0062B6880F2C08AD00B0562A /* GTMMerge.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = GTMMerge.xcconfig; sourceTree = "<group>"; };
+		0062B6890F2C08AD00B0562A /* iPhone20.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = iPhone20.xcconfig; sourceTree = "<group>"; };
+		0062B68A0F2C08AD00B0562A /* iPhone21.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = iPhone21.xcconfig; sourceTree = "<group>"; };
+		0062B68B0F2C08AD00B0562A /* LeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LeopardOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B68C0F2C08AD00B0562A /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		0062B68D0F2C08AD00B0562A /* SnowLeopardOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SnowLeopardOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B68E0F2C08AD00B0562A /* TigerOrLater.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = TigerOrLater.xcconfig; sourceTree = "<group>"; };
+		0062B68F0F2C08AD00B0562A /* Unittest.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Unittest.xcconfig; sourceTree = "<group>"; };
+		0062B6910F2C08AD00B0562A /* DebugUnittest.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = DebugUnittest.xcconfig; sourceTree = "<group>"; };
+		0062B6920F2C08AD00B0562A /* LoadableBundle.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LoadableBundle.xcconfig; sourceTree = "<group>"; };
+		0062B6930F2C08AD00B0562A /* LoadableBundleGCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = LoadableBundleGCSupported.xcconfig; sourceTree = "<group>"; };
+		0062B6940F2C08AD00B0562A /* ReleaseUnittest.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ReleaseUnittest.xcconfig; sourceTree = "<group>"; };
+		0062B6950F2C08AD00B0562A /* SharedLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SharedLibrary.xcconfig; sourceTree = "<group>"; };
+		0062B6960F2C08AD00B0562A /* SharedLibraryGCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SharedLibraryGCSupported.xcconfig; sourceTree = "<group>"; };
+		0062B6970F2C08AD00B0562A /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		0062B6980F2C08AD00B0562A /* StaticLibraryGCSupported.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = StaticLibraryGCSupported.xcconfig; sourceTree = "<group>"; };
+		0062B6990F2C08AD00B0562A /* xcconfigs-readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "xcconfigs-readme.txt"; sourceTree = "<group>"; };
 		007F59850EF2438900B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
 		007F59860EF2438900B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
 		007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
@@ -170,6 +238,71 @@
 			path = ExtendMac;
 			sourceTree = "<group>";
 		};
+		0062B6740F2C08AD00B0562A /* XcodeConfig */ = {
+			isa = PBXGroup;
+			children = (
+				0062B6750F2C08AD00B0562A /* Project */,
+				0062B6820F2C08AD00B0562A /* subconfig */,
+				0062B6900F2C08AD00B0562A /* Target */,
+				0062B6990F2C08AD00B0562A /* xcconfigs-readme.txt */,
+			);
+			path = XcodeConfig;
+			sourceTree = "<group>";
+		};
+		0062B6750F2C08AD00B0562A /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				0062B6760F2C08AD00B0562A /* DebugiPhone.xcconfig */,
+				0062B6770F2C08AD00B0562A /* DebugiPhone20.xcconfig */,
+				0062B6780F2C08AD00B0562A /* DebugiPhone21.xcconfig */,
+				0062B6790F2C08AD00B0562A /* DebugLeopardOrLater.xcconfig */,
+				0062B67A0F2C08AD00B0562A /* DebugSnowLeopardOrLater.xcconfig */,
+				0062B67B0F2C08AD00B0562A /* DebugTigerOrLater.xcconfig */,
+				0062B67C0F2C08AD00B0562A /* ReleaseiPhone.xcconfig */,
+				0062B67D0F2C08AD00B0562A /* ReleaseiPhone20.xcconfig */,
+				0062B67E0F2C08AD00B0562A /* ReleaseiPhone21.xcconfig */,
+				0062B67F0F2C08AD00B0562A /* ReleaseLeopardOrLater.xcconfig */,
+				0062B6800F2C08AD00B0562A /* ReleaseSnowLeopardOrLater.xcconfig */,
+				0062B6810F2C08AD00B0562A /* ReleaseTigerOrLater.xcconfig */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		0062B6820F2C08AD00B0562A /* subconfig */ = {
+			isa = PBXGroup;
+			children = (
+				0062B6830F2C08AD00B0562A /* CodeCoverage.xcconfig */,
+				0062B6840F2C08AD00B0562A /* CodeCoverageStatic.xcconfig */,
+				0062B6850F2C08AD00B0562A /* Debug.xcconfig */,
+				0062B6860F2C08AD00B0562A /* GCSupported.xcconfig */,
+				0062B6870F2C08AD00B0562A /* General.xcconfig */,
+				0062B6880F2C08AD00B0562A /* GTMMerge.xcconfig */,
+				0062B6890F2C08AD00B0562A /* iPhone20.xcconfig */,
+				0062B68A0F2C08AD00B0562A /* iPhone21.xcconfig */,
+				0062B68B0F2C08AD00B0562A /* LeopardOrLater.xcconfig */,
+				0062B68C0F2C08AD00B0562A /* Release.xcconfig */,
+				0062B68D0F2C08AD00B0562A /* SnowLeopardOrLater.xcconfig */,
+				0062B68E0F2C08AD00B0562A /* TigerOrLater.xcconfig */,
+				0062B68F0F2C08AD00B0562A /* Unittest.xcconfig */,
+			);
+			path = subconfig;
+			sourceTree = "<group>";
+		};
+		0062B6900F2C08AD00B0562A /* Target */ = {
+			isa = PBXGroup;
+			children = (
+				0062B6910F2C08AD00B0562A /* DebugUnittest.xcconfig */,
+				0062B6920F2C08AD00B0562A /* LoadableBundle.xcconfig */,
+				0062B6930F2C08AD00B0562A /* LoadableBundleGCSupported.xcconfig */,
+				0062B6940F2C08AD00B0562A /* ReleaseUnittest.xcconfig */,
+				0062B6950F2C08AD00B0562A /* SharedLibrary.xcconfig */,
+				0062B6960F2C08AD00B0562A /* SharedLibraryGCSupported.xcconfig */,
+				0062B6970F2C08AD00B0562A /* StaticLibrary.xcconfig */,
+				0062B6980F2C08AD00B0562A /* StaticLibraryGCSupported.xcconfig */,
+			);
+			path = Target;
+			sourceTree = "<group>";
+		};
 		00A97A700F0C467600B083F6 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +352,7 @@
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				52857D580E199B530011DA5C /* Tests */,
+				0062B6740F2C08AD00B0562A /* XcodeConfig */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
@@ -430,6 +564,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				0062B69A0F2C08AD00B0562A /* DebugiPhone.xcconfig in Resources */,
+				0062B69B0F2C08AD00B0562A /* DebugiPhone20.xcconfig in Resources */,
+				0062B69C0F2C08AD00B0562A /* DebugiPhone21.xcconfig in Resources */,
+				0062B69D0F2C08AD00B0562A /* DebugLeopardOrLater.xcconfig in Resources */,
+				0062B69E0F2C08AD00B0562A /* DebugSnowLeopardOrLater.xcconfig in Resources */,
+				0062B69F0F2C08AD00B0562A /* DebugTigerOrLater.xcconfig in Resources */,
+				0062B6A00F2C08AD00B0562A /* ReleaseiPhone.xcconfig in Resources */,
+				0062B6A10F2C08AD00B0562A /* ReleaseiPhone20.xcconfig in Resources */,
+				0062B6A20F2C08AD00B0562A /* ReleaseiPhone21.xcconfig in Resources */,
+				0062B6A30F2C08AD00B0562A /* ReleaseLeopardOrLater.xcconfig in Resources */,
+				0062B6A40F2C08AD00B0562A /* ReleaseSnowLeopardOrLater.xcconfig in Resources */,
+				0062B6A50F2C08AD00B0562A /* ReleaseTigerOrLater.xcconfig in Resources */,
+				0062B6A60F2C08AD00B0562A /* CodeCoverage.xcconfig in Resources */,
+				0062B6A70F2C08AD00B0562A /* CodeCoverageStatic.xcconfig in Resources */,
+				0062B6A80F2C08AD00B0562A /* Debug.xcconfig in Resources */,
+				0062B6A90F2C08AD00B0562A /* GCSupported.xcconfig in Resources */,
+				0062B6AA0F2C08AD00B0562A /* General.xcconfig in Resources */,
+				0062B6AB0F2C08AD00B0562A /* GTMMerge.xcconfig in Resources */,
+				0062B6AC0F2C08AD00B0562A /* iPhone20.xcconfig in Resources */,
+				0062B6AD0F2C08AD00B0562A /* iPhone21.xcconfig in Resources */,
+				0062B6AE0F2C08AD00B0562A /* LeopardOrLater.xcconfig in Resources */,
+				0062B6AF0F2C08AD00B0562A /* Release.xcconfig in Resources */,
+				0062B6B00F2C08AD00B0562A /* SnowLeopardOrLater.xcconfig in Resources */,
+				0062B6B10F2C08AD00B0562A /* TigerOrLater.xcconfig in Resources */,
+				0062B6B20F2C08AD00B0562A /* Unittest.xcconfig in Resources */,
+				0062B6B30F2C08AD00B0562A /* DebugUnittest.xcconfig in Resources */,
+				0062B6B40F2C08AD00B0562A /* LoadableBundle.xcconfig in Resources */,
+				0062B6B50F2C08AD00B0562A /* LoadableBundleGCSupported.xcconfig in Resources */,
+				0062B6B60F2C08AD00B0562A /* ReleaseUnittest.xcconfig in Resources */,
+				0062B6B70F2C08AD00B0562A /* SharedLibrary.xcconfig in Resources */,
+				0062B6B80F2C08AD00B0562A /* SharedLibraryGCSupported.xcconfig in Resources */,
+				0062B6B90F2C08AD00B0562A /* StaticLibrary.xcconfig in Resources */,
+				0062B6BA0F2C08AD00B0562A /* StaticLibraryGCSupported.xcconfig in Resources */,
+				0062B6BB0F2C08AD00B0562A /* xcconfigs-readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +654,7 @@
 /* Begin XCBuildConfiguration section */
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0062B6790F2C08AD00B0562A /* DebugLeopardOrLater.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -511,6 +680,7 @@
 		};
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0062B68C0F2C08AD00B0562A /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -524,6 +694,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GHKit_Prefix.pch;
+				GTM_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast  -Wnested-externs -Wold-style-definition";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
 				PRODUCT_NAME = GHKit;

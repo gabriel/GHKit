@@ -141,9 +141,7 @@
 		00DB2AC40EECA29900383FB6 /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
 		00DB2AC60EECA29900383FB6 /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
 		00DB2AC70EECA29900383FB6 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
-		00DB2AE30EECA3BA00383FB6 /* IPhoneUnitTestMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneUnitTestMain.h; sourceTree = "<group>"; };
 		00DB2AE40EECA3BA00383FB6 /* IPhoneUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneUnitTestMain.m; sourceTree = "<group>"; };
-		00DB2AFB0EECA42500383FB6 /* IPhoneUnitTestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPhoneUnitTestDelegate.h; sourceTree = "<group>"; };
 		00DB2AFC0EECA42500383FB6 /* IPhoneUnitTestDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPhoneUnitTestDelegate.m; sourceTree = "<group>"; };
 		00DB2B0F0EECA51400383FB6 /* GHUINavigationController+PopDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUINavigationController+PopDelegate.h"; sourceTree = "<group>"; };
 		00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUINavigationController+PopDelegate.m"; sourceTree = "<group>"; };
@@ -345,9 +343,7 @@
 		00DB2AE20EECA3BA00383FB6 /* IPhone */ = {
 			isa = PBXGroup;
 			children = (
-				00DB2AFB0EECA42500383FB6 /* IPhoneUnitTestDelegate.h */,
 				00DB2AFC0EECA42500383FB6 /* IPhoneUnitTestDelegate.m */,
-				00DB2AE30EECA3BA00383FB6 /* IPhoneUnitTestMain.h */,
 				00DB2AE40EECA3BA00383FB6 /* IPhoneUnitTestMain.m */,
 				00025C850EFB654C007EA0A8 /* GHUIColorUtilsTest.m */,
 				00970D4E0F29234900189A9D /* GHNSStringUIKitUtilsTest.m */,

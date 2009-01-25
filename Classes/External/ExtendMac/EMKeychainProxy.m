@@ -65,7 +65,7 @@ static EMKeychainProxy* sharedProxy;
 	char *password = nil;
 	
 	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainFindGenericPassword(NULL, strlen(serviceName), serviceName, strlen(username), username, &passwordLength, (void **)&password, &item);
+	OSStatus returnStatus = SecKeychainFindGenericPassword(NULL, (UInt32)strlen(serviceName), serviceName, (UInt32)strlen(username), username, &passwordLength, (void **)&password, &item);
 	if (returnStatus != noErr || !item)
 	{
 		if (_logErrors)
@@ -79,41 +79,6 @@ static EMKeychainProxy* sharedProxy;
 	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
 
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
-}
-- (EMInternetKeychainItem *)internetKeychainItemForServer:(NSString *)serverString withUsername:(NSString *)usernameString path:(NSString *)pathString port:(int)port protocol:(SecProtocolType)protocol
-{
-	if (!usernameString || [usernameString length] == 0 || !serverString || [serverString length] == 0)
-	{
-		return nil;
-	}
-	const char *server = [serverString UTF8String];
-	const char *username = [usernameString UTF8String];
-	const char *path = [pathString UTF8String];
-	
-	if (!pathString || [pathString length] == 0)
-	{
-		path = "";
-	}
-	
-	UInt32 passwordLength = 0;
-	char *password = nil;
-	
-	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainFindInternetPassword(NULL, strlen(server), server, 0, NULL, strlen(username), username, strlen(path), path, port, protocol, kSecAuthenticationTypeDefault, &passwordLength, (void **)&password, &item);
-	
-	if (returnStatus != noErr || !item)
-	{
-		if (_logErrors)
-		{
-#ifndef TARGET_OS_IPHONE
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
-#endif
-		}
-		return nil;
-	}
-	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
-	
-	return [EMInternetKeychainItem internetKeychainItem:item forServer:serverString username:usernameString password:passwordString path:pathString port:port protocol:protocol];
 }
 
 #pragma mark -
@@ -129,7 +94,7 @@ static EMKeychainProxy* sharedProxy;
 	const char *password = [passwordString UTF8String];
 	
 	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainAddGenericPassword(NULL, strlen(serviceName), serviceName, strlen(username), username, strlen(password), (void *)password, &item);
+	OSStatus returnStatus = SecKeychainAddGenericPassword(NULL, (UInt32)strlen(serviceName), serviceName, (UInt32)strlen(username), username, (UInt32)strlen(password), (void *)password, &item);
 	
 	if (returnStatus != noErr || !item)
 	{
@@ -140,32 +105,5 @@ static EMKeychainProxy* sharedProxy;
 	}
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
 }
-- (EMInternetKeychainItem *)addInternetKeychainItemForServer:(NSString *)serverString withUsername:(NSString *)usernameString password:(NSString *)passwordString path:(NSString *)pathString port:(int)port protocol:(SecProtocolType)protocol
-{
-	if (!usernameString || [usernameString length] == 0 || !serverString || [serverString length] == 0 || !passwordString || [passwordString length] == 0)
-	{
-		return nil;
-	}	
-	const char *server = [serverString UTF8String];
-	const char *username = [usernameString UTF8String];
-	const char *password = [passwordString UTF8String];
-	const char *path = [pathString UTF8String];
-	
-	if (!pathString || [pathString length] == 0)
-	{
-		path = "";
-	}
 
-	SecKeychainItemRef item = nil;
-	OSStatus returnStatus = SecKeychainAddInternetPassword(NULL, strlen(server), server, 0, NULL, strlen(username), username, strlen(path), path, port, protocol, kSecAuthenticationTypeDefault, strlen(password), (void *)password, &item);
-	
-	if (returnStatus != noErr || !item)
-	{
-#ifndef TARGET_OS_IPHONE
-		NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
-#endif
-		return nil;
-	}
-	return [EMInternetKeychainItem internetKeychainItem:item forServer:serverString username:usernameString password:passwordString path:pathString port:port protocol:protocol];
-}
 @end

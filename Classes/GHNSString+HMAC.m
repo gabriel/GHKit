@@ -43,7 +43,7 @@
   NSData *secretData = [secret dataUsingEncoding:NSUTF8StringEncoding];  
   
   unsigned char digest[20];
-  HMAC_SHA1(digest, (unsigned char *)[clearTextData bytes], [clearTextData length], (unsigned char *)[secretData bytes], [secretData length]);
+  HMAC_SHA1(digest, (unsigned char *)[clearTextData bytes], (unsigned int)[clearTextData length], (unsigned char *)[secretData bytes], (unsigned int)[secretData length]);
   
   NSData *data = [GTMBase64 encodeBytes:digest length:20]; 
   return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];

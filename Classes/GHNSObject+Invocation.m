@@ -11,6 +11,11 @@
 
 @implementation NSObject (GHInvocation)
 
+- (id)gh_performIfRespondsToSelector:(SEL)selector {
+	if ([self respondsToSelector:selector]) return [self performSelector:selector];
+	return nil;
+}
+
 - (id)gh_performIfRespondsToSelector:(SEL)selector withObjects:object, ... {
 	if ([self respondsToSelector:selector]) {
 		GHConvertVarArgs(object);

@@ -61,7 +61,7 @@
 	[self didChangeValueForKey:@"password"];
 	
 	const char *newPassword = [newPasswordString UTF8String];
-	OSStatus returnStatus = SecKeychainItemModifyAttributesAndData(coreKeychainItem, NULL, strlen(newPassword), (void *)newPassword);
+	OSStatus returnStatus = SecKeychainItemModifyAttributesAndData(coreKeychainItem, NULL, (UInt32)strlen(newPassword), (void *)newPassword);
 	return (returnStatus == noErr);	
 }
 - (BOOL)setUsername:(NSString *)newUsername
@@ -90,7 +90,7 @@
 	const char *newValue = [newStringValue UTF8String];
 	SecKeychainAttribute attributes[1];
 	attributes[0].tag = attributeTag;
-	attributes[0].length = strlen(newValue);
+	attributes[0].length = (UInt32)strlen(newValue);
 	attributes[0].data = (void *)newValue;
 	
 	SecKeychainAttributeList list;
@@ -129,85 +129,5 @@
 	[self didChangeValueForKey:@"serviceName"];	
 	
 	return [self modifyAttributeWithTag:kSecServiceItemAttr toBeString:newServiceName];
-}
-@end
-
-@implementation EMInternetKeychainItem
-- (id)initWithCoreKeychainItem:(SecKeychainItemRef)item server:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
-{
-	if ((self = [super initWithCoreKeychainItem:item username:username password:password]))
-	{
-		[self setValue:server forKey:@"myServer"];
-		[self setValue:path forKey:@"myPath"];
-		[self setValue:[NSNumber numberWithInt:port] forKey:@"myPort"];
-		[self setValue:[NSNumber numberWithInt:protocol] forKey:@"myProtocol"];
-		return self;
-	}
-	return nil;
-}
-+ (id)internetKeychainItem:(SecKeychainItemRef)item forServer:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
-{
-	return [[[EMInternetKeychainItem alloc] initWithCoreKeychainItem:item server:server username:username password:password path:path port:port protocol:protocol] autorelease];
-}
-- (NSString *)server
-{
-	return myServer;
-}
-- (NSString *)path
-{
-	return myPath;
-}
-- (int)port
-{
-	return myPort;
-}
-- (SecProtocolType)protocol
-{
-	return myProtocol;
-}
-
-- (BOOL)setServer:(NSString *)newServer
-{
-	[self willChangeValueForKey:@"server"];
-	[myServer autorelease];
-	myServer = [newServer copy];	
-	[self didChangeValueForKey:@"server"];
-	
-	return [self modifyAttributeWithTag:kSecServerItemAttr toBeString:newServer];
-}
-- (BOOL)setPath:(NSString *)newPath
-{
-	[self willChangeValueForKey:@"path"];
-	[myPath autorelease];
-	myPath = [newPath copy];
-	[self didChangeValueForKey:@"path"];
-	
-	return [self modifyAttributeWithTag:kSecPathItemAttr toBeString:newPath];
-}
-- (BOOL)setPort:(int)newPort
-{
-	[self willChangeValueForKey:@"port"];
-	myPort = newPort;
-	[self didChangeValueForKey:@"port"];
-	
-	return [self modifyAttributeWithTag:kSecPortItemAttr toBeString:[NSString stringWithFormat:@"%i", newPort]];
-}
-- (BOOL)setProtocol:(SecProtocolType)newProtocol
-{
-	[self willChangeValueForKey:@"protocol"];
-	myProtocol = newProtocol;
-	[self didChangeValueForKey:@"protocol"];
-	
-	SecKeychainAttribute attributes[1];
-	attributes[0].tag = kSecProtocolItemAttr;
-	attributes[0].length = sizeof(newProtocol);
-	attributes[0].data = (void *)newProtocol;
-	
-	SecKeychainAttributeList list;
-	list.count = 1;
-	list.attr = attributes;
-	
-	OSStatus returnStatus = SecKeychainItemModifyAttributesAndData(coreKeychainItem, &list, 0, NULL);
-	return (returnStatus == noErr);
 }
 @end
