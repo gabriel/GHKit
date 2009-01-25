@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002E75800F2C424C00427636 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E757E0F2C424C00427636 /* GHLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		002E75810F2C424C00427636 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E757F0F2C424C00427636 /* GHLogger.m */; };
 		0058AAAF0EF8C12100C44386 /* EMKeychainItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0058AAA90EF8C12100C44386 /* EMKeychainItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0058AAB00EF8C12100C44386 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAAA0EF8C12100C44386 /* EMKeychainItem.m */; };
 		0058AAB10EF8C12100C44386 /* EMKeychainProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0058AAAB0EF8C12100C44386 /* EMKeychainProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -104,6 +106,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002E757E0F2C424C00427636 /* GHLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogger.h; sourceTree = "<group>"; };
+		002E757F0F2C424C00427636 /* GHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLogger.m; sourceTree = "<group>"; };
+		002E759E0F2C45DD00427636 /* GHLoggerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLoggerTest.m; sourceTree = "<group>"; };
 		004D508D0F21D91D00C916F1 /* TestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		0058AAA90EF8C12100C44386 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		0058AAAA0EF8C12100C44386 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
@@ -424,6 +429,8 @@
 				005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */,
 				00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */,
 				00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */,
+				002E757E0F2C424C00427636 /* GHLogger.h */,
+				002E757F0F2C424C00427636 /* GHLogger.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -464,6 +471,7 @@
 				52D57E550E1C0E8200709FB4 /* NSString+HMACTest.m */,
 				00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */,
 				005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */,
+				002E759E0F2C45DD00427636 /* GHLoggerTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -515,6 +523,7 @@
 				00A97A890F0C467600B083F6 /* GTMStackTrace.h in Headers */,
 				005B0A9F0F22B7A80004F351 /* GHNSInvocation+Utils.h in Headers */,
 				00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */,
+				002E75800F2C424C00427636 /* GHLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +644,7 @@
 				00A97A8A0F0C467600B083F6 /* GTMStackTrace.m in Sources */,
 				005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */,
 				00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */,
+				002E75810F2C424C00427636 /* GHLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,7 +690,6 @@
 		};
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0062B68C0F2C08AD00B0562A /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
