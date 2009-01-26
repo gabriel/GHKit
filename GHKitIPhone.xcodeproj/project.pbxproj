@@ -25,12 +25,6 @@
 		00970D4F0F29234900189A9D /* GHNSStringUIKitUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D4E0F29234900189A9D /* GHNSStringUIKitUtilsTest.m */; };
 		00970D590F29240E00189A9D /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D550F29240E00189A9D /* GTMStackTrace.m */; };
 		00970D5A0F29240E00189A9D /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D570F29240E00189A9D /* GTMObjC2Runtime.m */; };
-		009A95720F2930C300C5B773 /* NSInvocation+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A95660F2930C300C5B773 /* NSInvocation+UtilsTest.m */; };
-		009A95730F2930C300C5B773 /* NSURL+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A95670F2930C300C5B773 /* NSURL+UtilsTest.m */; };
-		009A95740F2930C300C5B773 /* NSString+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A95690F2930C300C5B773 /* NSString+UtilsTest.m */; };
-		009A95750F2930C300C5B773 /* NSString+TimeIntervalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A956B0F2930C300C5B773 /* NSString+TimeIntervalTest.m */; };
-		009A95760F2930C300C5B773 /* NSString+HMACTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A956D0F2930C300C5B773 /* NSString+HMACTest.m */; };
-		009A95770F2930C300C5B773 /* NSDate+ParsingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A956F0F2930C300C5B773 /* NSDate+ParsingTest.m */; };
 		009A95820F29320D00C5B773 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A957E0F29320D00C5B773 /* GHNSInvocation+Utils.m */; };
 		009A95830F29320D00C5B773 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A957F0F29320D00C5B773 /* GHNSObject+Invocation.m */; };
 		00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A100F0C424400B083F6 /* GHUIButton.m */; };
@@ -99,12 +93,6 @@
 		00970D560F29240E00189A9D /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
 		00970D570F29240E00189A9D /* GTMObjC2Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMObjC2Runtime.m; sourceTree = "<group>"; };
 		00970D580F29240E00189A9D /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
-		009A95660F2930C300C5B773 /* NSInvocation+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+UtilsTest.m"; sourceTree = "<group>"; };
-		009A95670F2930C300C5B773 /* NSURL+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UtilsTest.m"; sourceTree = "<group>"; };
-		009A95690F2930C300C5B773 /* NSString+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UtilsTest.m"; sourceTree = "<group>"; };
-		009A956B0F2930C300C5B773 /* NSString+TimeIntervalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TimeIntervalTest.m"; sourceTree = "<group>"; };
-		009A956D0F2930C300C5B773 /* NSString+HMACTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HMACTest.m"; sourceTree = "<group>"; };
-		009A956F0F2930C300C5B773 /* NSDate+ParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ParsingTest.m"; sourceTree = "<group>"; };
 		009A957E0F29320D00C5B773 /* GHNSInvocation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSInvocation+Utils.m"; sourceTree = "<group>"; };
 		009A957F0F29320D00C5B773 /* GHNSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Invocation.m"; sourceTree = "<group>"; };
 		009A95800F29320D00C5B773 /* GHNSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Invocation.h"; sourceTree = "<group>"; };
@@ -329,12 +317,6 @@
 		00DB2AE10EECA3BA00383FB6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				009A95660F2930C300C5B773 /* NSInvocation+UtilsTest.m */,
-				009A95670F2930C300C5B773 /* NSURL+UtilsTest.m */,
-				009A95690F2930C300C5B773 /* NSString+UtilsTest.m */,
-				009A956B0F2930C300C5B773 /* NSString+TimeIntervalTest.m */,
-				009A956D0F2930C300C5B773 /* NSString+HMACTest.m */,
-				009A956F0F2930C300C5B773 /* NSDate+ParsingTest.m */,
 				00DB2AE20EECA3BA00383FB6 /* IPhone */,
 			);
 			path = Tests;
@@ -492,12 +474,6 @@
 				00970D4F0F29234900189A9D /* GHNSStringUIKitUtilsTest.m in Sources */,
 				00970D590F29240E00189A9D /* GTMStackTrace.m in Sources */,
 				00970D5A0F29240E00189A9D /* GTMObjC2Runtime.m in Sources */,
-				009A95720F2930C300C5B773 /* NSInvocation+UtilsTest.m in Sources */,
-				009A95730F2930C300C5B773 /* NSURL+UtilsTest.m in Sources */,
-				009A95740F2930C300C5B773 /* NSString+UtilsTest.m in Sources */,
-				009A95750F2930C300C5B773 /* NSString+TimeIntervalTest.m in Sources */,
-				009A95760F2930C300C5B773 /* NSString+HMACTest.m in Sources */,
-				009A95770F2930C300C5B773 /* NSDate+ParsingTest.m in Sources */,
 				009A95820F29320D00C5B773 /* GHNSInvocation+Utils.m in Sources */,
 				009A95830F29320D00C5B773 /* GHNSObject+Invocation.m in Sources */,
 			);

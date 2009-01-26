@@ -1,0 +1,9 @@
+
+//
+// Prefix header for all source files of the 'GHKitTests' target in the 'GHKit' project.
+//
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#import <GHUnit/GHUnit.h>
+#endif

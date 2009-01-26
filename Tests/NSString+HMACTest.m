@@ -8,7 +8,7 @@
 
 #import "GHNSString+HMAC.h"
 
-@interface NSStringHMACTest : SenTestCase { }
+@interface NSStringHMACTest : GHTestCase { }
 @end
 
 @implementation NSStringHMACTest
@@ -18,11 +18,11 @@
   // http://docs.amazonwebservices.com/AmazonS3/2006-03-01/RESTAuthentication.html
   
   NSString *stringToSign = @"GET\n\n\nTue, 27 Mar 2007 19:36:42 +0000\n/johnsmith/photos/puppy.jpg";  
-  NSLog(@"String to sign: %@", stringToSign);
+  GHDebug(@"String to sign: %@", stringToSign);
   NSString *secretKey = @"uV3F3YluFJax1cknvbcGwgjvx4QpvB+leU8dUj2o";
   
   NSString *signature = [stringToSign gh_hmacSha1:secretKey];
-  STAssertEqualObjects(@"xXjDGYUmKxnwqr5KXNPGldn5LbA=", signature, @"HMAC SHA1 signature is not correct");
+  GHAssertEqualObjects(@"xXjDGYUmKxnwqr5KXNPGldn5LbA=", signature, @"HMAC SHA1 signature is not correct");
 }
 
 @end

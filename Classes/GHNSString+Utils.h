@@ -114,7 +114,7 @@
  @method gh_subStringSegmentsWithinStart
  @param start Start token
  @param end End token
- @result Array of GHStringSegment's
+ @result Array of GHNSStringSegment's
  
  Use a regex engine if you can. 
  Note: This exists because regex.h is posix only and does not support non-greedy expressions.
@@ -132,7 +132,7 @@
 /*!
  Class used by gh_substringSegmentsWithinStart:end:
  */
-@interface GHStringSegment : NSObject {
+@interface GHNSStringSegment : NSObject {
 	NSString *string_;
 	BOOL isMatch_;
 }
@@ -143,6 +143,6 @@
 
 - (id)initWithString:(NSString *)string isMatch:(BOOL)isMatch;
 
-+ (GHStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch;
++ (GHNSStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch;
 
 @end

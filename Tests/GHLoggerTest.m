@@ -6,7 +6,7 @@
 //  Copyright 2009. All rights reserved.
 //
 
-@interface GHLoggerTest : SenTestCase { }
+@interface GHLoggerTest : GHTestCase { }
 @end
 
 @implementation GHLoggerTest

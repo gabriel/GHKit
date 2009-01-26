@@ -288,7 +288,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	
 	while([scanner scanUpToString:(within ? end : start) intoString:&scanned]) {
 		if (scanned && [scanned length] > 0)
-			[segments addObject:[GHStringSegment string:scanned isMatch:within]];
+			[segments addObject:[GHNSStringSegment string:scanned isMatch:within]];
 		
 		[scanner scanString:(within ? end : start) intoString:&scanned]; // Eat start or end token
 		scanned = nil;
@@ -296,13 +296,13 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	}
 	NSUInteger length = [self length] - [scanner scanLocation];
 	if (length > 0)
-		[segments addObject:[GHStringSegment string:[self substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
+		[segments addObject:[GHNSStringSegment string:[self substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
 	return segments;
 }
 
 @end
 
-@implementation GHStringSegment
+@implementation GHNSStringSegment
 
 @synthesize string=string_, match=isMatch_;
 
@@ -314,7 +314,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	return self;	
 }
 
-+ (GHStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch {
++ (GHNSStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch {
 	return [[[self alloc] initWithString:string isMatch:isMatch] autorelease];
 }
 
