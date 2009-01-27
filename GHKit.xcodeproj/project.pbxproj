@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0029B8A90F2EF172003EAFC1 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0029B8A80F2EF172003EAFC1 /* GHUnit.framework */; };
+		0029B8DE0F2EF218003EAFC1 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0029B8A80F2EF172003EAFC1 /* GHUnit.framework */; };
 		002E75800F2C424C00427636 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E757E0F2C424C00427636 /* GHLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		002E75810F2C424C00427636 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E757F0F2C424C00427636 /* GHLogger.m */; };
 		0058AAAF0EF8C12100C44386 /* EMKeychainItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0058AAA90EF8C12100C44386 /* EMKeychainItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,7 +39,6 @@
 		00A97A890F0C467600B083F6 /* GTMStackTrace.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A97A7A0F0C467600B083F6 /* GTMStackTrace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00A97A8A0F0C467600B083F6 /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A7B0F0C467600B083F6 /* GTMStackTrace.m */; };
 		00AF10E70F2D5277009F0ABA /* TestsMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AF10E60F2D5277009F0ABA /* TestsMain.m */; };
-		00AF116C0F2D7D22009F0ABA /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AF11400F2D555F009F0ABA /* GHUnit.framework */; };
 		00AF116F0F2D7D43009F0ABA /* NSURL+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */; };
 		00AF118C0F2D7EE2009F0ABA /* NSString+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857D5C0E199B530011DA5C /* NSString+UtilsTest.m */; };
 		00AF118D0F2D7EE3009F0ABA /* NSString+TimeIntervalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857D5A0E199B530011DA5C /* NSString+TimeIntervalTest.m */; };
@@ -86,12 +87,26 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* GHKit */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = GHKit;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0029B8C40F2EF1DC003EAFC1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(TARGET_BUILD_DIR)";
+			dstSubfolderSpec = 0;
+			files = (
+				0029B8DE0F2EF218003EAFC1 /* GHUnit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0029B8A80F2EF172003EAFC1 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = DEVELOPER_DIR; };
 		002E757E0F2C424C00427636 /* GHLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogger.h; sourceTree = "<group>"; };
 		002E757F0F2C424C00427636 /* GHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLogger.m; sourceTree = "<group>"; };
 		002E759E0F2C45DD00427636 /* GHLoggerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLoggerTest.m; sourceTree = "<group>"; };
@@ -163,7 +178,6 @@
 		00AF10D00F2D5179009F0ABA /* GHKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AF10D20F2D5179009F0ABA /* GHKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHKitTests-Info.plist"; sourceTree = "<group>"; };
 		00AF10E60F2D5277009F0ABA /* TestsMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestsMain.m; sourceTree = "<group>"; };
-		00AF11400F2D555F009F0ABA /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = Library/Frameworks/GHUnit.framework; sourceTree = SDKROOT; };
 		00AF11760F2D7DF8009F0ABA /* GHKitTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitTests_Prefix.pch; sourceTree = "<group>"; };
 		00B599E30F1D259200359A10 /* NSURL+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+UtilsTest.m"; sourceTree = "<group>"; };
 		00CBE5C50E24783400E94F7B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -215,8 +229,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00AF116C0F2D7D22009F0ABA /* GHUnit.framework in Frameworks */,
 				00AF12580F2D8389009F0ABA /* GHKit.framework in Frameworks */,
+				0029B8A90F2EF172003EAFC1 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +380,6 @@
 				52857D700E199B940011DA5C /* Tests-Info.plist */,
 				004D508D0F21D91D00C916F1 /* TestApp-Info.plist */,
 				00AF10D20F2D5179009F0ABA /* GHKitTests-Info.plist */,
-				00AF11400F2D555F009F0ABA /* GHUnit.framework */,
 			);
 			name = GHKit;
 			sourceTree = "<group>";
@@ -374,6 +387,7 @@
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				0029B8A80F2EF172003EAFC1 /* GHUnit.framework */,
 				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
 				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
 			);
@@ -542,6 +556,7 @@
 				00AF10CC0F2D5179009F0ABA /* Resources */,
 				00AF10CD0F2D5179009F0ABA /* Sources */,
 				00AF10CE0F2D5179009F0ABA /* Frameworks */,
+				0029B8C40F2EF1DC003EAFC1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -691,6 +706,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../gh-unit/Frameworks\"",
 					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -721,6 +737,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../gh-unit/Frameworks\"",
 					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
