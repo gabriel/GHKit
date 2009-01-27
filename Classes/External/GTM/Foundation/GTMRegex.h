@@ -64,6 +64,7 @@ typedef NSUInteger GTMRegexOptions;
 #define _INITIALIZE_AS(x)
 #endif
 
+NSString* kGTMRegexErrorDomain;
 _EXTERN NSString* kGTMRegexErrorDomain _INITIALIZE_AS(@"com.google.mactoolbox.RegexDomain");
 
 enum {
@@ -71,6 +72,8 @@ enum {
 };
 
 // Keys for the userInfo from a kGTMRegexErrorDomain/kGTMRegexPatternParseFailedError error
+NSString* kGTMRegexPatternErrorPattern;
+NSString *kGTMRegexPatternErrorErrorString;
 _EXTERN NSString* kGTMRegexPatternErrorPattern _INITIALIZE_AS(@"pattern");
 _EXTERN NSString* kGTMRegexPatternErrorErrorString _INITIALIZE_AS(@"patternError");
 
