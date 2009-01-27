@@ -6,7 +6,7 @@
 //  Copyright 2009. All rights reserved.
 //
 
-@interface GHNSStringUIKitUtilsTest : GTMTestCase { }
+@interface GHNSStringUIKitUtilsTest : GHTestCase { }
 @end
 
 @implementation GHNSStringUIKitUtilsTest
@@ -23,7 +23,7 @@
 														@"adipisicing",
 														@"elit, sed do", nil];
 	
-	//STAssertTrue([lines isEqualToArray:expectedLines], nil);
+	GHAssertTrue([lines isEqualToArray:expectedLines], nil);
 }
 
 @end
