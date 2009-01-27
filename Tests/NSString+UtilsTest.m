@@ -75,20 +75,18 @@
 	GHAssertEqualObjects(expected8, cuts8, @"Cut is invalid");	
 }
 
-- (void)testCut {
-	
+- (void)testCut {	
 	NSString *text = @"Lorem ipsum dolor sit amet";
 	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:YES];
 	NSArray *expected = [NSArray arrayWithObjects:@"Lorem ", @"ipsum ", @"dolor ", @"sit ", @"amet", nil];
 	GHAssertEqualObjects(cuts, expected, nil);
 }
 
-- (void)testCutBefore {
-	
-//	NSString *text = @"Lorem ipsum dolor sit amet";
-//	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:NO];
-//	NSArray *expected = [NSArray arrayWithObjects:@"Lorem", @" ipsum", @" dolor", @" sit", @" amet", nil];	
-	//GHAssertEqualObjects(cuts, expected, nil);
+- (void)testCutBefore {	
+	NSString *text = @"Lorem ipsum dolor sit amet";
+	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:NO];
+	NSArray *expected = [NSArray arrayWithObjects:@"Lorem", @" ipsum", @" dolor", @" sit", @" amet", nil];	
+	GHAssertEqualObjects(cuts, expected, nil);
 }
 
 - (void)testSubStringSegmentsWithin {
