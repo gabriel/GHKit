@@ -133,7 +133,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 			foundLocation = range.location;
 			if (cutAfter) foundLocation += [cutWith length];
 		}
-		if (!cutAfter) location -= [cutWith length];
+		if (!cutAfter && location != 0) location -= [cutWith length];
 		
 		NSInteger length = foundLocation - location;
 		[words addObject:[self substringWithRange:NSMakeRange(location, length)]];
