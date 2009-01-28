@@ -35,6 +35,7 @@
 //
 #define GHConvertVarArgs(object) \
 NSMutableArray *arguments = [NSMutableArray array]; \
+do { \
 id arg; \
 va_list args; \
 if (object) { \
@@ -43,7 +44,8 @@ va_start(args, object); \
 while ((arg = va_arg(args, id))) \
 [arguments addObject:arg]; \
 va_end(args); \
-}
+} \
+} while(0); 
 
 @interface NSInvocation (GHUtils)
 
