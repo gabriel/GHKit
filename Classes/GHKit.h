@@ -66,23 +66,5 @@
 #import "GHKitIPhone.h"
 #endif
 
-// Defines
-
-#define GHInteger(n) [NSNumber numberWithInteger:n]
-
-#define GHStr(fmt, ...) \
-[NSString stringWithFormat:(fmt), ## __VA_ARGS__]
-
-#define GHDict(key, ...) \
-[NSDictionary dictionaryWithKeysAndObjectsMaybeNil: key, ## __VA_ARGS__, nil]
-
-#define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
-#define GHCGSizeToString(size) NSStringFromSize(NSSizeFromCGSize(size))
-#define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
-
-#define GHAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread")
-
-// Default epsilon for float comparisons
-#define GH_EPSILON 1.0E-5
-
-#define GHDescription(obj, ...) [[obj dictionaryWithValuesForKeys:[NSArray arrayWithObjects:__VA_ARGS__, nil]] description]
+// Macros
+#import "GHKitMacros.h"

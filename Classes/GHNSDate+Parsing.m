@@ -33,17 +33,18 @@
 
 @implementation NSDate (GHParsing)
 
-/*!
-*/
 + (NSDate *)gh_parseISO8601:(NSString *)dateString { 
+	if (!dateString) return nil;
   return [[self gh_iso8601DateFormatter] dateFromString:dateString];
 }
 
 + (NSDate *)gh_parseRFC822:(NSString *)dateString {
+	if (!dateString) return nil;
   return [[self gh_rfc822DateFormatter] dateFromString:dateString];
 }
 
 + (NSDate *)gh_parseHTTP:(NSString *)dateString {  
+	if (!dateString) return nil;
   NSDate *parsed = nil;
   parsed = [[self gh_rfc1123DateFormatter] dateFromString:dateString];
   if (parsed) return parsed;

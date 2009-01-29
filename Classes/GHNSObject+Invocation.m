@@ -62,6 +62,10 @@
 
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... {
 	GHConvertVarArgs(object);
+	[self gh_performSelector:selector onMainThread:onMainThread waitUntilDone:waitUntilDone arguments:arguments];
+}	
+
+- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone arguments:(NSArray *)arguments {
 	if (!onMainThread) {
 		[NSInvocation gh_invokeWithTarget:self selector:selector arguments:arguments];	
 	} else {
