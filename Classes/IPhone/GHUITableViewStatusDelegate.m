@@ -66,7 +66,9 @@
 #pragma mark Delegates (UITableView)
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return tableView.frame.size.height;
+	// Do not return 0 here, will freeze the app
+	if (tableView.frame.size.height > 0) return tableView.frame.size.height;
+	return 460.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
