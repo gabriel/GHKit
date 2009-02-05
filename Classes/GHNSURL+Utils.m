@@ -50,8 +50,8 @@
 	
   for(NSString *key in enumerator) {
     NSString *value = [params valueForKey:key];
-    NSString *newKey = [self gh_encodeAll:key];
-    NSString *newValue = [self gh_encodeAll:value];
+    NSString *newKey = [self gh_encodeComponent:key];
+    NSString *newValue = [self gh_encodeComponent:value];
     [paramStrings addObject:[NSString stringWithFormat:@"%@=%@", newKey, newValue]];
   }
   return [paramStrings componentsJoinedByString:@"&"];
@@ -79,9 +79,14 @@
 	return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("#"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8) autorelease];
 }
 
-+ (NSString *)gh_encodeAll:(NSString *)s {  
++ (NSString *)gh_encodeComponent:(NSString *)s {  
 	// Characters to maybe leave unescaped? CFSTR("~!*()'")
   return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8) autorelease];
+}
+
++ (NSString *)gh_escapeAll:(NSString *)s {
+	// Characters to escape: @#$%^&{}[]=:/,;?+"\~!*()'
+  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\~!*()'"), kCFStringEncodingUTF8) autorelease];	
 }
 
 + (NSString *)gh_decode:(NSString *)url {

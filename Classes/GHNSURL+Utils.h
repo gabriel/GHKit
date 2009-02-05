@@ -86,11 +86,22 @@
  Should be the same as javascript's encodeURIComponent().
  See http://xkr.us/articles/javascript/encode-compare/
  
- @method escapeAll
- @param s String to escape
- @result Encode string
+ @method gh_encodeComponent
+ @param s String to encode
+ @result Encoded string
  */
-+ (NSString *)gh_encodeAll:(NSString *)s;
++ (NSString *)gh_encodeComponent:(NSString *)s;
+
+/*!
+ Encode URL string.
+ 
+ Encodes: @#$%^&{}[]=:/,;?+"\~!*()'
+ 
+ @method gh_escapeAll
+ @param s String to encode
+ @result Encoded string
+ */ 
++ (NSString *)gh_escapeAll:(NSString *)s;
 
 /*!
  Decode URL string.

@@ -19,10 +19,17 @@
 	GHAssertEqualObjects(escaped1, expected1, nil);			
 }
 
-- (void)testEncodeAll {	
+- (void)testEncodeComponent {	
 	NSString *test1 = @"~!@#$%^&*(){}[]=:/,;?+'\"\\";
-	NSString *escaped1 = [NSURL gh_encodeAll:test1];
+	NSString *escaped1 = [NSURL gh_encodeComponent:test1];
 	NSArray *expected1 = @"~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C";
+	GHAssertEqualObjects(escaped1, expected1, nil);		
+}
+
+- (void)testEscapeAll {	
+	NSString *test1 = @"~!@#$%^&*(){}[]=:/,;?+'\"\\~!*()'";
+	NSString *escaped1 = [NSURL gh_escapeAll:test1];
+	NSArray *expected1 = @"%7E%21%40%23%24%25%5E%26%2A%28%29%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B%27%22%5C%7E%21%2A%28%29%27";
 	GHAssertEqualObjects(escaped1, expected1, nil);		
 }
 
