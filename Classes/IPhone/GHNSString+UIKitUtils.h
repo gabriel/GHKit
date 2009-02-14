@@ -27,8 +27,11 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-enum {
-	GHTailTruncation = 1,
+enum {	
+	GHNSStringSizeNone = 0,
+	GHNSStringSizeAddEllipsis = 1, // Adds ellipsis after last fittable word
+	GHNSStringSizeWrap = 2, // Just stops after last fittable word
+	GHNSStringSizePad = 3 // Leave some padding on last line
 };
 typedef NSUInteger GHNSStringSizeOptions;
 

@@ -25,6 +25,7 @@
 		00970D5A0F29240E00189A9D /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D570F29240E00189A9D /* GTMObjC2Runtime.m */; };
 		009A95820F29320D00C5B773 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A957E0F29320D00C5B773 /* GHNSInvocation+Utils.m */; };
 		009A95830F29320D00C5B773 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 009A957F0F29320D00C5B773 /* GHNSObject+Invocation.m */; };
+		00A081280F46266B00932C19 /* GHTestUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A081260F46266B00932C19 /* GHTestUtils.m */; };
 		00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A100F0C424400B083F6 /* GHUIButton.m */; };
 		00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A1A0F0C436700B083F6 /* GHCGUtils.m */; };
 		00DB2ACC0EECA29900383FB6 /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AA90EECA29900383FB6 /* JRSwizzle.m */; };
@@ -100,6 +101,8 @@
 		009A957F0F29320D00C5B773 /* GHNSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Invocation.m"; sourceTree = "<group>"; };
 		009A95800F29320D00C5B773 /* GHNSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Invocation.h"; sourceTree = "<group>"; };
 		009A95810F29320D00C5B773 /* GHNSInvocation+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSInvocation+Utils.h"; sourceTree = "<group>"; };
+		00A081260F46266B00932C19 /* GHTestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHTestUtils.m; path = "../gh-unit/Classes/GHTestUtils.m"; sourceTree = SOURCE_ROOT; };
+		00A081270F46266B00932C19 /* GHTestUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GHTestUtils.h; path = "../gh-unit/Classes/GHTestUtils.h"; sourceTree = SOURCE_ROOT; };
 		00A97A100F0C424400B083F6 /* GHUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIButton.m; sourceTree = "<group>"; };
 		00A97A110F0C424400B083F6 /* GHUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIButton.h; sourceTree = "<group>"; };
 		00A97A1A0F0C436700B083F6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 		00E92A010F2FA1B900112D7E /* gh-unit */ = {
 			isa = PBXGroup;
 			children = (
+				00A081260F46266B00932C19 /* GHTestUtils.m */,
+				00A081270F46266B00932C19 /* GHTestUtils.h */,
 				00E92A020F2FA1B900112D7E /* GHTest.h */,
 				00E92A030F2FA1B900112D7E /* GHTest.m */,
 				00E92A040F2FA1B900112D7E /* GHTestCase.h */,
@@ -536,6 +541,7 @@
 				00E92A2D0F2FA1B900112D7E /* GHUnitIPhoneTestMain.m in Sources */,
 				00E92A2E0F2FA1B900112D7E /* GHUnitIPhoneViewController.m in Sources */,
 				00E92A2F0F2FA1B900112D7E /* GHTestViewModel.m in Sources */,
+				00A081280F46266B00932C19 /* GHTestUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

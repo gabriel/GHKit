@@ -68,9 +68,23 @@
 				
 				BOOL hitMaxLineCount = (maxLineCount != -1 && ([wrappedLines count] + 1) >= maxLineCount);
 				
-				BOOL needsTruncate = (hitMaxLineCount && (options & GHTailTruncation == GHTailTruncation));
-				if (needsTruncate) [line appendString:@"…"];
-				if (hitMaxLineCount) {
+				if (hitMaxLineCount) {					
+					
+					// If we are leaving some padding, then check and remove last 6 characters
+					CGFloat paddingAmount = 40.0;
+					NSInteger padCharacterCount = 6;
+					if  (options & GHNSStringSizePad == GHNSStringSizePad) {
+						if ((x + paddingAmount) > width) {
+							if ([line length] > padCharacterCount) {
+								[line deleteCharactersInRange:NSMakeRange([line length] - padCharacterCount, padCharacterCount)];
+							} else {
+								line = @"";
+							}
+						}
+					}
+						
+					if  (options & GHNSStringSizeAddEllipsis == GHNSStringSizeAddEllipsis) [line appendString:@"…"];
+					
 					if (truncated) *truncated = YES;
 					// Line will be added at the end for us
 					break;
@@ -86,7 +100,7 @@
 			
 			// Strip leading white space for word, if we are on a new line
 			word = [word gh_leftStrip];
-			size = [word sizeWithFont:font];
+			size = [word sizeWithFont:font];			
 		}
 		
 		if (lines) {
