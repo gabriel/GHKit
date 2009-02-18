@@ -29,34 +29,36 @@
 @interface NSURL (GHUtils)
 
 /*!
- Get parameters (dictionary).
+ Get dictionary from NSURL query parameter.
+ @result Dictionary of key, value pairs from parsing query parameter
  */
-- (NSDictionary *)gh_parameters;
+- (NSDictionary *)gh_queryDictionary;
 
 /*!
- @method gh_paramsToString
- @abstract Dictionary to params string. Escapes any url specific characters.
- @param params Dictionary of key value params
- @result Param string, key1=value1&key2=value2
+ @method gh_dictionaryToQueryString
+ @abstract Dictionary to query string. Escapes any encoded characters.
+ @param queryDictionary Dictionary of key value params
+ @result Query string, key1=value1&key2=value2
  */
-+ (NSString *)gh_paramsToString:(NSDictionary *)params;
++ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary;
 
 /*!
- @method gh_paramsToString
- @abstract Dictionary to params string. Escapes any url specific characters.
- @param params Dictionary of key value params
- @param sort Sort
- @result Param string, key1=value1&key2=value2
+ Convert dictionary to url query string.
+ @method gh_dictionaryToQueryString
+ @abstract Dictionary to params string. Escapes any encoded characters.
+ @param queryDictionary Dictionary
+ @param sort If YES, will sort items
+ @result Query string, key1=value1&key2=value2
  */
-+ (NSString *)gh_paramsToString:(NSDictionary *)params sort:(BOOL)sort;
++ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort;
 
 /*!
- Convert url params to dictionary.
- @method gh_stringToParams
+ Convert url query string to dictionary.
+ @method gh_queryStringToDictionary
  @param string URL params string, key1=value1&key2=value2
  @result Dictionary
  */
-+ (NSDictionary *)gh_stringToParams:(NSString *)string;
++ (NSDictionary *)gh_queryStringToDictionary:(NSString *)string;
 
 /*!
  Encode URL string.
@@ -105,10 +107,10 @@
 
 /*!
  Decode URL string.
- @param url URL string
+ @param s String to decode
  @result Decoded URL string
  */
-+ (NSString *)gh_decode:(NSString *)url;
++ (NSString *)gh_decode:(NSString *)s;
 
 #ifndef TARGET_OS_IPHONE
 

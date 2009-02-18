@@ -1,7 +1,8 @@
 //
-//  GHKit.h
+//  GHNSString+URL.m
+//  GHKit
 //
-//  Created by Gabe on 6/30/08.
+//  Created by Gabriel Handford on 2/18/09.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -25,47 +26,13 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// Categories
-#import "GHNSString+Utils.h"
-#import "GHNSDate+Parsing.h"
-#import "GHNSFileManager+Utils.h"
-#import "GHNSURL+Utils.h"
-#import "GHNSString+TimeInterval.h"
-#import "GHNSString+Validation.h"
-#import "GHNSString+HMAC.h"
-#import "GHNSNumber+Utils.h"
-#import "GHNSArray+Utils.h"
-#import "GHNSDictionary+NSNull.h"
-#import "GHNSXMLNode+Utils.h"
-#import "GHNSXMLElement+Utils.h"
-#import "GHNSInvocation+Utils.h"
-#import "GHNSObject+Invocation.h"
-#import "GHNSURL+Utils.h"
+#import "GHNSString+URL.h"
 
-// Utilities
-#import "GHKeychainStore.h"
-#import "GHCGUtils.h"
-#import "GHLogger.h"
 
-// Non-iPhone
-#ifndef TARGET_OS_IPHONE
-#import "GHViewAnimation.h"
-#endif
+@implementation NSString (GHURL)
 
-// From GTM
-#import "GTMDefines.h"
-#import "GTMBase64.h"
-#import "GTMRegex.h"
-#import "GTMLogger.h"
-#import "GTMStackTrace.h"
+- (NSString *)gh_urlDecode {
+	return [NSURL gh_decode:self];
+}
 
-// JRSwizzle
-#import "JRSwizzle.h"
-
-// iPhone Only
-#ifdef TARGET_OS_IPHONE
-#import "GHKitIPhone.h"
-#endif
-
-// Macros
-#import "GHKitMacros.h"
+@end

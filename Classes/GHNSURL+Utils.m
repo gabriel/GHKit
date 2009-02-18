@@ -32,46 +32,44 @@
 
 @implementation NSURL (GHUtils)
 
-- (NSDictionary *)gh_parameters {
-	return [NSURL gh_stringToParams:[self parameterString]];
+- (NSDictionary *)gh_queryDictionary {
+	return [NSURL gh_queryStringToDictionary:[self query]];
 }
 
-+ (NSString *)gh_paramsToString:(NSDictionary *)params {
-	return [self gh_paramsToString:params sort:NO];
++ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary {
+	return [self gh_dictionaryToQueryString:queryDictionary sort:NO];
 }
 
-+ (NSString *)gh_paramsToString:(NSDictionary *)params sort:(BOOL)sort {
-  if (!params) return nil;
-	if ([params count] == 0) return @"";
++ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort {
+  if (!queryDictionary) return nil;
+	if ([queryDictionary count] == 0) return @"";
   
-  NSMutableArray *paramStrings = [NSMutableArray arrayWithCapacity:[params count]];
-	id enumerator = params;
-	if (sort) enumerator = [[params allKeys] sortedArrayUsingSelector:@selector(compare:)];
+  NSMutableArray *queryStrings = [NSMutableArray arrayWithCapacity:[queryDictionary count]];
+	id enumerator = queryDictionary;
+	if (sort) enumerator = [[queryDictionary allKeys] sortedArrayUsingSelector:@selector(compare:)];
 	
   for(NSString *key in enumerator) {
-    NSString *value = [params valueForKey:key];
-    NSString *newKey = [self gh_encodeComponent:key];
-    NSString *newValue = [self gh_encodeComponent:value];
-    [paramStrings addObject:[NSString stringWithFormat:@"%@=%@", newKey, newValue]];
+    NSString *value = [queryDictionary valueForKey:key];
+    NSString *encodedKey = [self gh_encodeComponent:key];
+    NSString *encodedValue = [self gh_encodeComponent:value];
+    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", encodedKey, encodedValue]];
   }
-  return [paramStrings componentsJoinedByString:@"&"];
+  return [queryStrings componentsJoinedByString:@"&"];
 }
 
-+ (NSDictionary *)gh_stringToParams:(NSString *)string {
-	NSArray *paramsList = [string componentsSeparatedByString:@"&"];
++ (NSDictionary *)gh_queryStringToDictionary:(NSString *)string {
+	NSArray *queryItemStrings = [string componentsSeparatedByString:@"&"];
 	
-	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:[paramsList count]];
-	for(NSString *paramString in paramsList) {
-		NSRange range = [paramString rangeOfString:@"="];
-		if (range.location == NSNotFound) {
-			
-		} else {
-			NSString *key = [paramString substringToIndex:range.location];
-			NSString *value = [paramString substringFromIndex:range.location + 1];
-			[params setObject:value forKey:key];
+	NSMutableDictionary *queryDictionary = [NSMutableDictionary dictionaryWithCapacity:[queryItemStrings count]];
+	for(NSString *queryItemString in queryItemStrings) {
+		NSRange range = [queryItemString rangeOfString:@"="];
+		if (range.location != NSNotFound) {
+			NSString *key = [NSURL gh_decode:[queryItemString substringToIndex:range.location]];
+			NSString *value = [NSURL gh_decode:[queryItemString substringFromIndex:range.location + 1]];
+			[queryDictionary setObject:value forKey:key];
 		}
 	}
-	return params;
+	return queryDictionary;
 }
 
 + (NSString *)gh_encode:(NSString *)s {	
@@ -89,8 +87,9 @@
   return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\~!*()'"), kCFStringEncodingUTF8) autorelease];	
 }
 
-+ (NSString *)gh_decode:(NSString *)url {
-	return [(NSString *)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef) self, CFSTR("")) autorelease];
++ (NSString *)gh_decode:(NSString *)s {
+	if (!s) return nil;
+	return [(NSString *)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR("")) autorelease];
 }
 
 #ifndef TARGET_OS_IPHONE

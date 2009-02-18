@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		002E75800F2C424C00427636 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E757E0F2C424C00427636 /* GHLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		002E75810F2C424C00427636 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E757F0F2C424C00427636 /* GHLogger.m */; };
+		003489A40F4BFDD10072C2F1 /* GHNSString+URL.h in Headers */ = {isa = PBXBuildFile; fileRef = 003489A20F4BFDD10072C2F1 /* GHNSString+URL.h */; };
+		003489A50F4BFDD10072C2F1 /* GHNSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 003489A30F4BFDD10072C2F1 /* GHNSString+URL.m */; };
 		0058AAAF0EF8C12100C44386 /* EMKeychainItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0058AAA90EF8C12100C44386 /* EMKeychainItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0058AAB00EF8C12100C44386 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAAA0EF8C12100C44386 /* EMKeychainItem.m */; };
 		0058AAB10EF8C12100C44386 /* EMKeychainProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0058AAAB0EF8C12100C44386 /* EMKeychainProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -108,6 +110,8 @@
 		002E757E0F2C424C00427636 /* GHLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogger.h; sourceTree = "<group>"; };
 		002E757F0F2C424C00427636 /* GHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLogger.m; sourceTree = "<group>"; };
 		002E759E0F2C45DD00427636 /* GHLoggerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLoggerTest.m; sourceTree = "<group>"; };
+		003489A20F4BFDD10072C2F1 /* GHNSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+URL.h"; sourceTree = "<group>"; };
+		003489A30F4BFDD10072C2F1 /* GHNSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+URL.m"; sourceTree = "<group>"; };
 		004D508D0F21D91D00C916F1 /* TestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		0058AAA90EF8C12100C44386 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
 		0058AAAA0EF8C12100C44386 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 				00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */,
 				002E757E0F2C424C00427636 /* GHLogger.h */,
 				002E757F0F2C424C00427636 /* GHLogger.m */,
+				003489A20F4BFDD10072C2F1 /* GHNSString+URL.h */,
+				003489A30F4BFDD10072C2F1 /* GHNSString+URL.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 				00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */,
 				002E75800F2C424C00427636 /* GHLogger.h in Headers */,
 				00BB7B010F3175E500B3924D /* GHKitMacros.h in Headers */,
+				003489A40F4BFDD10072C2F1 /* GHNSString+URL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +683,7 @@
 				005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */,
 				00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */,
 				002E75810F2C424C00427636 /* GHLogger.m in Sources */,
+				003489A50F4BFDD10072C2F1 /* GHNSString+URL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
