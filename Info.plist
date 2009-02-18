@@ -20,6 +20,8 @@
 	<string>GABE</string>
 	<key>CFBundleVersion</key>
 	<string>0.3.1</string>
+	<key>NSMainNibFile</key>
+	<string>GHUnitIPhone</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>
