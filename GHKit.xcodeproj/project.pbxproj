@@ -26,6 +26,9 @@
 		007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */; };
 		007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59890EF2438900B3005D /* GHViewAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F59930EF2438900B3005D /* GHViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F598A0EF2438900B3005D /* GHViewAnimation.m */; };
+		00939A7C0F4CA05D00E41365 /* GHNSDate+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */; };
+		00939A7D0F4CA05D00E41365 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */; };
+		00939AA30F4CC09600E41365 /* NSDate+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939AA20F4CC09600E41365 /* NSDate+UtilsTest.m */; };
 		00A97A650F0C464700B083F6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A630F0C464700B083F6 /* GHCGUtils.m */; };
 		00A97A660F0C464700B083F6 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A97A640F0C464700B083F6 /* GHCGUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00A97A800F0C467600B083F6 /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A97A710F0C467600B083F6 /* GTMBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -164,6 +167,9 @@
 		007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
 		007F59890EF2438900B3005D /* GHViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHViewAnimation.h; sourceTree = "<group>"; };
 		007F598A0EF2438900B3005D /* GHViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHViewAnimation.m; sourceTree = "<group>"; };
+		00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Utils.h"; sourceTree = "<group>"; };
+		00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Utils.m"; sourceTree = "<group>"; };
+		00939AA20F4CC09600E41365 /* NSDate+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+UtilsTest.m"; sourceTree = "<group>"; };
 		00970A140F2836A100189A9D /* GHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A97A630F0C464700B083F6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
 		00A97A640F0C464700B083F6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
@@ -457,6 +463,8 @@
 				002E757F0F2C424C00427636 /* GHLogger.m */,
 				003489A20F4BFDD10072C2F1 /* GHNSString+URL.h */,
 				003489A30F4BFDD10072C2F1 /* GHNSString+URL.m */,
+				00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */,
+				00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -500,6 +508,7 @@
 				005B0AAC0F22C09F0004F351 /* NSInvocation+UtilsTest.m */,
 				002E759E0F2C45DD00427636 /* GHLoggerTest.m */,
 				00AF10E60F2D5277009F0ABA /* TestsMain.m */,
+				00939AA20F4CC09600E41365 /* NSDate+UtilsTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -554,6 +563,7 @@
 				002E75800F2C424C00427636 /* GHLogger.h in Headers */,
 				00BB7B010F3175E500B3924D /* GHKitMacros.h in Headers */,
 				003489A40F4BFDD10072C2F1 /* GHNSString+URL.h in Headers */,
+				00939A7C0F4CA05D00E41365 /* GHNSDate+Utils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +658,7 @@
 				00AF118F0F2D7EE5009F0ABA /* NSInvocation+UtilsTest.m in Sources */,
 				00AF11900F2D7EE6009F0ABA /* NSDate+ParsingTest.m in Sources */,
 				00AF11910F2D7EE6009F0ABA /* GHLoggerTest.m in Sources */,
+				00939AA30F4CC09600E41365 /* NSDate+UtilsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +695,7 @@
 				00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */,
 				002E75810F2C424C00427636 /* GHLogger.m in Sources */,
 				003489A50F4BFDD10072C2F1 /* GHNSString+URL.m in Sources */,
+				00939A7D0F4CA05D00E41365 /* GHNSDate+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

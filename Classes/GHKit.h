@@ -28,11 +28,13 @@
 // Categories
 #import "GHNSString+Utils.h"
 #import "GHNSDate+Parsing.h"
+#import "GHNSDate+Utils.h"
 #import "GHNSFileManager+Utils.h"
 #import "GHNSURL+Utils.h"
 #import "GHNSString+TimeInterval.h"
 #import "GHNSString+Validation.h"
 #import "GHNSString+HMAC.h"
+#import "GHNSString+URL.h"
 #import "GHNSNumber+Utils.h"
 #import "GHNSArray+Utils.h"
 #import "GHNSDictionary+NSNull.h"
@@ -40,7 +42,6 @@
 #import "GHNSXMLElement+Utils.h"
 #import "GHNSInvocation+Utils.h"
 #import "GHNSObject+Invocation.h"
-#import "GHNSURL+Utils.h"
 
 // Utilities
 #import "GHKeychainStore.h"
