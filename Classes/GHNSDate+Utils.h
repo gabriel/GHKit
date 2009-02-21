@@ -78,4 +78,13 @@
  */
 - (NSString *)gh_weekday:(NSDateFormatter *)formatter;
 
+/*!
+ Time ago in words.
+ For more info, especially on localization, see GHNSString+TimeInterval.h.
+ 
+ @param includeSeconds If YES, will include seconds (30 seconds ago), otherwise will say something like 'Less than a minute'
+ @result Time ago in words
+ */
+- (NSString *)gh_timeAgo:(BOOL)includeSeconds;
+
 @end

@@ -25,7 +25,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
+
 #import "GHNSDate+Utils.h"
+#import "GHNSString+TimeInterval.h"
 
 @implementation NSDate (GHUtils)
 
@@ -81,6 +83,10 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 	
 	NSInteger weekday = [[[NSCalendar currentCalendar] components:kUnitFlags fromDate:self] weekday] - 1;
 	return [[formatter weekdaySymbols] objectAtIndex:weekday];
+}
+
+- (NSString *)gh_timeAgo:(BOOL)includeSeconds {	
+	return [NSString gh_stringForTimeInterval:[self timeIntervalSinceNow] includeSeconds:includeSeconds];
 }
 
 @end
