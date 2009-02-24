@@ -121,6 +121,8 @@
 - (void)gh_copyLinkToPasteboard;
 
 /*!
+ Open file url. 
+ Opens path in Finder or whatever is registered for the file:// scheme.
  @method openFile
  @param path Path to open
  @abstract Open file path
@@ -128,11 +130,14 @@
 + (void)gh_openFile:(NSString *)path;
 
 /*!
- @method openContaingFolder
+ Opens directory of file at path (or the path itself if it is a directory),
+ in the Finder or whatever is registered for the file:// scheme.
+ @method openContainingFolder
  @param path
  @abstract Open folder (in Finder probably) for file path.
  */
 + (void)gh_openContainingFolder:(NSString *)path;
+
 #endif
 
 @end
