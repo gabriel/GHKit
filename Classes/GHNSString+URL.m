@@ -35,4 +35,16 @@
 	return [NSURL gh_decode:self];
 }
 
+- (NSString *)gh_urlEncode {	
+	return [NSURL gh_encode:self];
+}
+
+- (NSString *)gh_urlEncodeComponent {  
+	return [NSURL gh_encodeComponent:self];
+}
+
+- (NSString *)gh_urlEscapeAll {
+	return [NSURL gh_escapeAll:self];
+}
+
 @end

@@ -29,6 +29,28 @@
 
 @interface NSString (GHURL)
 
+/*!
+ Decode URL encoded string.
+ @see NSURL#gh_decode:
+ */
 - (NSString *)gh_urlDecode;
+
+/*!
+ Encode URL string.
+ @see NSURL#gh_encode:
+ */
+- (NSString *)gh_urlEncode;
+
+/*!
+ Encode URL string component.
+ @see NSURL#gh_encodeComponent:
+ */
+- (NSString *)gh_urlEncodeComponent;
+
+/*!
+ Encode URL string (all characters).
+ @see NSURL#gh_escapeAll:
+ */
+- (NSString *)gh_urlEscapeAll;
 
 @end
