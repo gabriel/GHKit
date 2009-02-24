@@ -29,6 +29,9 @@
 #import "GHNSDate+Utils.h"
 #import "GHNSString+TimeInterval.h"
 
+// Common date formats
+NSString *const kDateFormatShortMonthFullYearTime = @"LLL d, yyyy hh:mm a";
+
 @implementation NSDate (GHUtils)
 
 NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSWeekdayCalendarUnit;
@@ -83,6 +86,18 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 	
 	NSInteger weekday = [[[NSCalendar currentCalendar] components:kUnitFlags fromDate:self] weekday] - 1;
 	return [[formatter weekdaySymbols] objectAtIndex:weekday];
+}
+
+- (NSString *)gh_format:(NSString *)format useWeekday:(BOOL)useWeekday {
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	[dateFormatter setDateFormat:format]; 
+	NSString *formatted = [dateFormatter stringFromDate:self];
+	if (useWeekday) {
+		NSString *specialWeekday = [self gh_weekday:dateFormatter]; 
+	 formatted = [NSString stringWithFormat:@"%@, %@", specialWeekday, formatted];
+	}
+	[dateFormatter release];
+	return formatted;
 }
 
 - (NSString *)gh_timeAgo:(BOOL)includeSeconds {	

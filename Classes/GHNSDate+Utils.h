@@ -26,10 +26,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+// Common date formats
+extern NSString *const kDateFormatShortMonthFullYearTime; // 'Dec 12, 2008 4:34 PM'
+
+
 @interface NSDate (GHUtils)
 
 /*!
- Add (or subtract) days from date.
+ Return new date by adding (or subtracting) days from date.
  @param days +/- N days
  @result Date with days added or subtracted
  */
@@ -77,6 +81,13 @@
  @result 'Yesterday', 'Today' and 'Tomorrow' or weekday symbol for specified formatter 
  */
 - (NSString *)gh_weekday:(NSDateFormatter *)formatter;
+
+/*!
+ Format date.
+ @param format
+ @param useWeekday If YES, will prepend weekday (or 'Today', 'Tomorrow', 'Yesterday')
+ */
+- (NSString *)gh_format:(NSString *)format useWeekday:(BOOL)useWeekday;
 
 /*!
  Time ago in words.
