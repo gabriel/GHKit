@@ -62,6 +62,10 @@
   return [[[self class] gh_rfc1123DateFormatter] stringFromDate:self];
 }
 
+- (NSString *)gh_formatISO8601 {
+	return [[[self class] gh_iso8601DateFormatter] stringFromDate:self];
+}
+
 + (NSDateFormatter *)gh_rfc822DateFormatter {  
   NSDateFormatter *gh_rfc822DateFormatter = [[[NSDateFormatter alloc] init] autorelease];     
   [gh_rfc822DateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];

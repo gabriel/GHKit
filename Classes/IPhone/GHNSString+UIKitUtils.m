@@ -51,10 +51,11 @@
 	CGFloat maxLineHeight = 0;
 	CGFloat maxLineWidth = 0;
 	
-	NSMutableArray *wrappedLines = nil;
+	NSMutableArray *wrappedLines = [NSMutableArray array];
 	NSMutableString *line = [NSMutableString string];
 	if (truncated) *truncated = NO;
 	
+	NSString *lastWord = nil; // Last word (if we need to backtrack)
 	for(NSString *word in [self gh_cutWithString:@" " options:0 cutAfter:NO]) {
 		if ([word isEqualToString:@""]) continue;
 		
@@ -64,7 +65,6 @@
 		// If word does not fit on current line
 		if (x + size.width > width) {			
 			if (lines) {
-				if (!wrappedLines) wrappedLines = [NSMutableArray array];
 				
 				BOOL hitMaxLineCount = (maxLineCount != -1 && ([wrappedLines count] + 1) >= maxLineCount);
 				
@@ -105,6 +105,7 @@
 		
 		if (lines) {
 			[line appendString:word];
+			lastWord = word; // Keep track of last word we appended
 		}		
 		
 		x += size.width;
@@ -137,7 +138,7 @@
 		if (center >= 0) y = center;
 	} 
 	
-	[self drawAtPoint:CGPointMake(x, y) withFont:font];	
+	[self drawAtPoint:CGPointMake(x, y) forWidth:size.width withFont:font lineBreakMode:lineBreakMode];	
 }
 
 @end

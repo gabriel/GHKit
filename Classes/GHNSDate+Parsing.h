@@ -66,6 +66,13 @@
 - (NSString *)gh_formatHTTP;
 
 /*!
+ @method gh_formatISO8601
+ @abstract Get date formatted for ISO8601 (XML date)
+ @result The date string, like ... TODO(gabe)
+ */
+- (NSString *)gh_formatISO8601;
+
+/*!
  @method gh_iso8601DateFormatter
  @abstract For example, '2007-10-18T16:05:10.000Z'. Returns a new autoreleased formatter since NSDateFormatter is not thread-safe.
  @result Date formatter for ISO8601

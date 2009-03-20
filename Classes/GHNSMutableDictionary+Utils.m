@@ -1,7 +1,9 @@
 //
-//  GHKit.h
+//  GHNSMutableDictionary+Utils.m
+//  GHKit
 //
-//  Created by Gabe on 6/30/08.
+//  Created by Gabriel Handford on 3/12/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -25,51 +27,20 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// Categories
-#import "GHNSString+Utils.h"
-#import "GHNSDate+Parsing.h"
-#import "GHNSDate+Utils.h"
-#import "GHNSFileManager+Utils.h"
-#import "GHNSURL+Utils.h"
-#import "GHNSString+TimeInterval.h"
-#import "GHNSString+Validation.h"
-#import "GHNSString+HMAC.h"
-#import "GHNSString+URL.h"
-#import "GHNSNumber+Utils.h"
-#import "GHNSArray+Utils.h"
-#import "GHNSDictionary+NSNull.h"
-#import "GHNSDictionary+Utils.h"
-#import "GHMutableNSDictionary+Utils.h"
-#import "GHNSXMLNode+Utils.h"
-#import "GHNSXMLElement+Utils.h"
-#import "GHNSInvocation+Utils.h"
-#import "GHNSObject+Invocation.h"
-#import "GHNSError+Utils.h"
+#import "GHNSMutableDictionary+Utils.h"
 
-// Utilities
-#import "GHKeychainStore.h"
-#import "GHCGUtils.h"
-#import "GHLogger.h"
+@implementation NSMutableDictionary (GHUtils)
 
-// Non-iPhone
-#ifndef TARGET_OS_IPHONE
-#import "GHViewAnimation.h"
-#endif
+- (void)gh_setDouble:(double)d forKey:(id)key {
+	[self setObject:[NSNumber numberWithDouble:d] forKey:key];
+}
 
-// From GTM
-#import "GTMDefines.h"
-#import "GTMBase64.h"
-#import "GTMRegex.h"
-#import "GTMLogger.h"
-#import "GTMStackTrace.h"
+- (void)gh_setInteger:(NSInteger)n forKey:(id)key {
+	[self setObject:[NSNumber numberWithInteger:n] forKey:key];
+}	 
 
-// JRSwizzle
-#import "JRSwizzle.h"
+- (void)gh_setBool:(BOOL)b forKey:(id)key {
+	[self setObject:[NSNumber numberWithBool:b] forKey:key];
+}
 
-// iPhone Only
-#ifdef TARGET_OS_IPHONE
-#import "GHKitIPhone.h"
-#endif
-
-// Macros
-#import "GHKitMacros.h"
+@end

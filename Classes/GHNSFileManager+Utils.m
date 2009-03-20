@@ -28,6 +28,7 @@
 
 #import "GHNSFileManager+Utils.h"
 #import "GHNSString+Utils.h"
+#import "GHNSError+Utils.h"
 
 @implementation NSFileManager (GHUtils)
 
@@ -68,21 +69,27 @@
   return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
 
-/*!
- @method gh_temporaryFile
- @abstract Get path to temporary file
- @param basePath Path base name (to append to temporary directory name)
- @param deleteIfExists Will delete existing file if it is in the way
- @result Path for temporary file
-*/
-+ (NSString *)gh_temporaryFile:(NSString *)basePath deleteIfExists:(BOOL)deleteIfExists {
-  NSString *tmpFile = [NSTemporaryDirectory() stringByAppendingPathComponent:basePath];
++ (NSString *)gh_temporaryFile:(NSString *)appendPath deleteIfExists:(BOOL)deleteIfExists error:(NSError **)error {
+  NSString *tmpFile = NSTemporaryDirectory();
+	if (appendPath) tmpFile = [tmpFile stringByAppendingPathComponent:appendPath];
   if (deleteIfExists && [self gh_exist:tmpFile]) {
-    NSError *error = nil;
-    [[NSFileManager defaultManager] removeItemAtPath:tmpFile error:&error];
-    // TODO: Handle error
+    [[NSFileManager defaultManager] removeItemAtPath:tmpFile error:error];
   }
   return tmpFile;
+}
+
++ (BOOL)gh_ensureDirectoryExists:(NSString *)directory created:(BOOL *)created error:(NSError **)error {
+	if (![self gh_exist:directory]) {
+		BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:error];
+		if (success && created) *created = YES;
+		return success;
+	} else if (![self gh_isDirectory:directory]) {
+		if (error) *error = [NSError gh_errorWithDomain:@"GHNSFileManager" code:-1 localizedDescription:@"Path exists but is not a directory"];
+		return NO;
+	} else {
+		// Path existed and was a directory
+		return YES;
+	}
 }
 
 /*!

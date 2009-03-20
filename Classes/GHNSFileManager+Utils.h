@@ -31,8 +31,25 @@
 + (NSNumber *)gh_fileSize:(NSString *)filePath;
 + (BOOL)gh_isDirectory:(NSString *)filePath;
 + (BOOL)gh_exist:(NSString *)filePath;
-+ (NSString *)gh_temporaryFile:(NSString *)basePath deleteIfExists:(BOOL)deleteIfExists;
+
+/*!
+ @method gh_temporaryFile
+ @abstract Get path to temporary file
+ @param appendPath Path to append to temporary directory name, if not nil
+ @param deleteIfExists Will delete existing file if it is in the way
+ @param error If not nil, will be set if an error occurs
+ @result Path for temporary file
+ */
++ (NSString *)gh_temporaryFile:(NSString *)appendPath deleteIfExists:(BOOL)deleteIfExists error:(NSError **)error;
 
 + (NSString *)gh_uniquePathWithNumber:(NSString *)path;
+
+/*!
+ Ensure directory exists.
+ @param directory
+ @param error If not nil, will set if error occurs
+ @result YES If directory exists or was created
+ */
++ (BOOL)gh_ensureDirectoryExists:(NSString *)directory created:(BOOL *)created error:(NSError **)error;
 
 @end
