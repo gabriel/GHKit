@@ -39,7 +39,7 @@
 #import "GHNSArray+Utils.h"
 #import "GHNSDictionary+NSNull.h"
 #import "GHNSDictionary+Utils.h"
-#import "GHMutableNSDictionary+Utils.h"
+#import "GHNSMutableDictionary+Utils.h"
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"
 #import "GHNSInvocation+Utils.h"

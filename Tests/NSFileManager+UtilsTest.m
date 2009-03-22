@@ -16,9 +16,9 @@
 
 - (void)testEnsureDirectory {
 	NSError *error = nil;
-	NSString *path = [NSFileManager gh_temporaryFile:nil deleteIfExists:YES error:error];
+	NSString *path = [NSFileManager gh_temporaryFile:nil deleteIfExists:YES error:&error];
 	if (error) GHFail(@"Error: %@", error);
-	BOOL success = [NSFileManager gh_ensureDirectoryExists:path created:nil error:error];
+	BOOL success = [NSFileManager gh_ensureDirectoryExists:path created:nil error:&error];
 	if (error) GHFail(@"Error: %@", error);
 	GHAssertTrue(success, nil);
 }

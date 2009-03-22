@@ -59,6 +59,7 @@
 		00AF11910F2D7EE6009F0ABA /* GHLoggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E759E0F2C45DD00427636 /* GHLoggerTest.m */; };
 		00BB7B010F3175E500B3924D /* GHKitMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BB7AD80F3173BB00B3924D /* GHKitMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CBE5C60E24783400E94F7B /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CBE5C50E24783400E94F7B /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00CDDDE10F77018F0089C60E /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */; };
 		00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */; };
 		00DB2A7A0EECA1C700383FB6 /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2A770EECA1C700383FB6 /* JRSwizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -203,6 +204,7 @@
 		00BB7AD80F3173BB00B3924D /* GHKitMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitMacros.h; sourceTree = "<group>"; };
 		00BB7B060F31769200B3924D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		00CBE5C50E24783400E94F7B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
 		00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Invocation.h"; sourceTree = "<group>"; };
 		00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Invocation.m"; sourceTree = "<group>"; };
 		00DB2A770EECA1C700383FB6 /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSwizzle.h; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 		52857D580E199B530011DA5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */,
 				52857D5A0E199B530011DA5C /* NSString+TimeIntervalTest.m */,
 				52857D5C0E199B530011DA5C /* NSString+UtilsTest.m */,
 				005D0C3F0E19C03B003FAB86 /* NSDate+ParsingTest.m */,
@@ -676,6 +679,7 @@
 				00AF11910F2D7EE6009F0ABA /* GHLoggerTest.m in Sources */,
 				00939AA30F4CC09600E41365 /* NSDate+UtilsTest.m in Sources */,
 				0024E7A20F65949A007E5C51 /* NSFileManager+UtilsTest.m in Sources */,
+				00CDDDE10F77018F0089C60E /* GHUnitTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
