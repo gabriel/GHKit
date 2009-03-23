@@ -1,6 +1,4 @@
 
-TEST_TARGET=GHKitTests
-SDK=macosx10.5
 COMMAND=xcodebuild
 
 default:
@@ -11,5 +9,7 @@ clean:
 	-rm -rf build/*
 
 test:
-	GHUNIT_CLI=1 $(COMMAND) -target $(TEST_TARGET) -configuration Debug -sdk $(SDK) -project GHKit.xcodeproj
+	GHUNIT_CLI=1 $(COMMAND) -target GHKitTests -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
 	
+test-iphone:
+	GHUNIT_CLI=1 $(COMMAND) -target GHKitIPhoneTests -configuration Debug -sdk iphonesimulator2.2 -project GHKitIPhone.xcodeproj

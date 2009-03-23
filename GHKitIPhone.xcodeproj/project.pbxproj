@@ -28,6 +28,7 @@
 		008488CF0F19944900EB7732 /* GHUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 008488CE0F19944900EB7732 /* GHUITextField.m */; };
 		009129580F01752E00338B5E /* GHUIAlertView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129550F01752E00338B5E /* GHUIAlertView+Utils.m */; };
 		009129590F01752E00338B5E /* GHUIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 009129570F01752E00338B5E /* GHUIView+Utils.m */; };
+		00915B240F77489A008B854A /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = 00915B230F77489A008B854A /* RunTests.sh */; };
 		00970D4F0F29234900189A9D /* GHNSStringUIKitUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D4E0F29234900189A9D /* GHNSStringUIKitUtilsTest.m */; };
 		00970D590F29240E00189A9D /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D550F29240E00189A9D /* GTMStackTrace.m */; };
 		00970D5A0F29240E00189A9D /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00970D570F29240E00189A9D /* GTMObjC2Runtime.m */; };
@@ -115,6 +116,7 @@
 		009129550F01752E00338B5E /* GHUIAlertView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIAlertView+Utils.m"; sourceTree = "<group>"; };
 		009129560F01752E00338B5E /* GHUIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIView+Utils.h"; sourceTree = "<group>"; };
 		009129570F01752E00338B5E /* GHUIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIView+Utils.m"; sourceTree = "<group>"; };
+		00915B230F77489A008B854A /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		00970D4E0F29234900189A9D /* GHNSStringUIKitUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringUIKitUtilsTest.m; sourceTree = "<group>"; };
 		00970D550F29240E00189A9D /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
 		00970D560F29240E00189A9D /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 		00DB2AE10EECA3BA00383FB6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00915B230F77489A008B854A /* RunTests.sh */,
 				00DB2AE20EECA3BA00383FB6 /* IPhone */,
 			);
 			path = Tests;
@@ -488,6 +491,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				00915B150F774812008B854A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -521,10 +525,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				000223C80F4C00340046234D /* GHUnitIPhone.xib in Resources */,
+				00915B240F77489A008B854A /* RunTests.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00915B150F774812008B854A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = Tests/RunTests.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
