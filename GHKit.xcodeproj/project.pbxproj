@@ -34,6 +34,7 @@
 		007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */; };
 		007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59890EF2438900B3005D /* GHViewAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F59930EF2438900B3005D /* GHViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F598A0EF2438900B3005D /* GHViewAnimation.m */; };
+		00915AF80F774793008B854A /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = 00915AF70F774793008B854A /* RunTests.sh */; };
 		00939A7C0F4CA05D00E41365 /* GHNSDate+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00939A7D0F4CA05D00E41365 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */; };
 		00939AA30F4CC09600E41365 /* NSDate+UtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939AA20F4CC09600E41365 /* NSDate+UtilsTest.m */; };
@@ -104,18 +105,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		0029B8C40F2EF1DC003EAFC1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(TARGET_BUILD_DIR)";
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		000ACD3A0F69B2770086708A /* GHNSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+Utils.h"; sourceTree = "<group>"; };
 		000ACD3B0F69B2770086708A /* GHNSDictionary+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+Utils.m"; sourceTree = "<group>"; };
@@ -180,6 +169,7 @@
 		007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
 		007F59890EF2438900B3005D /* GHViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHViewAnimation.h; sourceTree = "<group>"; };
 		007F598A0EF2438900B3005D /* GHViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHViewAnimation.m; sourceTree = "<group>"; };
+		00915AF70F774793008B854A /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Utils.h"; sourceTree = "<group>"; };
 		00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Utils.m"; sourceTree = "<group>"; };
 		00939AA20F4CC09600E41365 /* NSDate+UtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+UtilsTest.m"; sourceTree = "<group>"; };
@@ -516,6 +506,7 @@
 		52857D580E199B530011DA5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00915AF70F774793008B854A /* RunTests.sh */,
 				00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */,
 				52857D5A0E199B530011DA5C /* NSString+TimeIntervalTest.m */,
 				52857D5C0E199B530011DA5C /* NSString+UtilsTest.m */,
@@ -597,7 +588,7 @@
 				00AF10CC0F2D5179009F0ABA /* Resources */,
 				00AF10CD0F2D5179009F0ABA /* Sources */,
 				00AF10CE0F2D5179009F0ABA /* Frameworks */,
-				0029B8C40F2EF1DC003EAFC1 /* CopyFiles */,
+				00915AEF0F774740008B854A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -652,6 +643,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00915AF80F774793008B854A /* RunTests.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -664,6 +656,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00915AEF0F774740008B854A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = Tests/RunTests.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		00AF10CD0F2D5179009F0ABA /* Sources */ = {
