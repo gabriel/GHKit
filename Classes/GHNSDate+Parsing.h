@@ -52,6 +52,13 @@
 + (NSDate *)gh_parseHTTP:(NSString *)dateString;
 
 /*!
+ Parse time since epoch.
+ @param timeSinceEpoch An NSNumber or NSString (responds to longLongValue)
+ @result NSDate or nil if timeSinceEpoch was nil
+ */
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch;
+
+/*!
   @method gh_formatRFC822
   @abstract Get date formatted for RFC822
   @result The date string, like "Wed, 01 Mar 2006 12:00:00 -0400"

@@ -54,6 +54,11 @@
   return parsed;
 }
 
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch {
+	if (!timeSinceEpoch) return timeSinceEpoch;
+	return [NSDate dateWithTimeIntervalSince1970:[timeSinceEpoch longLongValue]];
+}
+
 - (NSString *)gh_formatRFC822 {
   return [[[self class] gh_rfc822DateFormatter] stringFromDate:self];
 }
