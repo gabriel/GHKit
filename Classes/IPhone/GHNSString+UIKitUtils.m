@@ -35,14 +35,14 @@
 	return [self gh_sizeWithFont:font forWidth:width lineGap:lineGap lines:nil maxLineCount:-1 truncated:nil options:0];
 }
 
-- (NSArray *)gh_linesWithFont:(UIFont *)font forWidth:(CGFloat)width maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated options:(GHNSStringSizeOptions)options {
-	NSArray *lines = nil;
+- (NSMutableArray *)gh_linesWithFont:(UIFont *)font forWidth:(CGFloat)width maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated options:(GHNSStringSizeOptions)options {
+	NSMutableArray *lines = nil;
 	[self gh_sizeWithFont:font forWidth:width lineGap:0 lines:&lines maxLineCount:maxLineCount truncated:truncated options:options];
 	return lines;
 }
 
 - (CGSize)gh_sizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineGap:(CGFloat)lineGap 
-										lines:(NSArray **)lines maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated
+										lines:(NSMutableArray **)lines maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated
 									options:(GHNSStringSizeOptions)options {
 	
 	CGFloat originX = 0;
@@ -55,15 +55,21 @@
 	NSMutableString *line = [NSMutableString string];
 	if (truncated) *truncated = NO;
 	
-	NSString *lastWord = nil; // Last word (if we need to backtrack)
-	for(NSString *word in [self gh_cutWithString:@" " options:0 cutAfter:NO]) {
+	for(NSString *word in [self gh_cutWithCharacterFromSet:[NSCharacterSet whitespaceAndNewlineCharacterSet] options:0 cutAfter:NO]) {
 		if ([word isEqualToString:@""]) continue;
+
+		BOOL forceWrap = NO;
+		// If we start with newline
+		if ([word rangeOfString:@"\n"].location == 0) {			
+			word = [word substringFromIndex:1];
+			forceWrap = ([line length] > 0); // Only wrap if we are not already on an empty line
+		}
 		
 		CGSize size = [word sizeWithFont:font];
 		if (size.height > maxLineHeight) maxLineHeight = size.height;
 		
 		// If word does not fit on current line
-		if (x + size.width > width) {			
+		if (x + size.width > width || forceWrap) {			
 			if (lines) {
 				
 				BOOL hitMaxLineCount = (maxLineCount != -1 && ([wrappedLines count] + 1) >= maxLineCount);
@@ -72,8 +78,8 @@
 					
 					// If we are leaving some padding, then check and remove last 6 characters
 					CGFloat paddingAmount = 40.0;
-					NSInteger padCharacterCount = 6;
-					if  (options & GHNSStringSizePad == GHNSStringSizePad) {
+					NSInteger padCharacterCount = 9;
+					if  (options & GHNSStringSizeTruncatePad == GHNSStringSizeTruncatePad) {
 						if ((x + paddingAmount) > width) {
 							if ([line length] > padCharacterCount) {
 								[line deleteCharactersInRange:NSMakeRange([line length] - padCharacterCount, padCharacterCount)];
@@ -83,7 +89,7 @@
 						}
 					}
 						
-					if  (options & GHNSStringSizeAddEllipsis == GHNSStringSizeAddEllipsis) [line appendString:@"…"];
+					if  (options & GHNSStringSizeTruncateAddEllipsis == GHNSStringSizeTruncateAddEllipsis) [line appendString:@"…"];
 					
 					if (truncated) *truncated = YES;
 					// Line will be added at the end for us
@@ -105,7 +111,6 @@
 		
 		if (lines) {
 			[line appendString:word];
-			lastWord = word; // Keep track of last word we appended
 		}		
 		
 		x += size.width;

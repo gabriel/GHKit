@@ -29,9 +29,9 @@
 
 enum {	
 	GHNSStringSizeNone = 0,
-	GHNSStringSizeAddEllipsis = 1, // Adds ellipsis after last fittable word
-	GHNSStringSizeWrap = 2, // Just stops after last fittable word
-	GHNSStringSizePad = 3 // Leave some padding on last line
+	GHNSStringSizeTruncateAddEllipsis = 1, // Adds ellipsis after last fittable word
+	GHNSStringSizeTruncateWrap = 2, // Just stops after last fittable word
+	GHNSStringSizeTruncatePad = 3 // Leave some padding on last line
 };
 typedef NSUInteger GHNSStringSizeOptions;
 
@@ -75,7 +75,7 @@ typedef NSUInteger GHNSStringDrawOptions;
  @result Size to draw string
  */
 - (CGSize)gh_sizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineGap:(CGFloat)lineGap 
-										lines:(NSArray **)lines maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated
+										lines:(NSMutableArray **)lines maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated
 									options:(GHNSStringSizeOptions)options;
 
 /*!
@@ -86,8 +86,8 @@ typedef NSUInteger GHNSStringDrawOptions;
  @param truncated If not nil, will set to YES if we fit ok, or NO if we hit the max line count
  @param options Additional options on how to process and output
  */
-- (NSArray *)gh_linesWithFont:(UIFont *)font forWidth:(CGFloat)width maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated
-											options:(GHNSStringSizeOptions)options;
+- (NSMutableArray *)gh_linesWithFont:(UIFont *)font forWidth:(CGFloat)width maxLineCount:(NSInteger)maxLineCount truncated:(BOOL *)truncated
+														 options:(GHNSStringSizeOptions)options;
 
 /*!
  Draw string at center point of rect. Use options to specify to center horizontally, vertically, or both.
