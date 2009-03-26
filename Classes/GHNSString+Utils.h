@@ -111,6 +111,10 @@
 - (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter;
 
 /*!
+ */
+- (NSArray *)gh_cutWithCharacterFromSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter;
+
+/*!
  @method gh_subStringSegmentsWithinStart
  @param start Start token
  @param end End token

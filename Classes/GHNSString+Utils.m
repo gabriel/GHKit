@@ -119,31 +119,50 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	return [self gh_cutWithString:cutWith options:options cutAfter:YES];
 }
 
-- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
+- (NSArray *)_gh_cutWithString:(NSString *)cutWith characterSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {	
 	NSMutableArray *words = [NSMutableArray array];
 	NSInteger location = 0;
 	
 	while(location < [self length]) {
 		NSRange previousRange = NSMakeRange(location, [self length] - location);
-		NSRange range = [self rangeOfString:cutWith options:options range:previousRange];
+		NSRange range;
+		if (cutWith) range = [self rangeOfString:cutWith options:options range:previousRange];
+		if (characterSet) range = [self rangeOfCharacterFromSet:characterSet options:options range:previousRange];
+		
 		NSInteger foundLocation = 0;
 		if (range.location == NSNotFound) {
 			foundLocation = [self length];
 		} else {
 			foundLocation = range.location;
-			if (cutAfter) foundLocation += [cutWith length];
+			if (cutAfter) {
+				if (cutWith) foundLocation += [cutWith length];
+				else foundLocation += 1;
+			}			
 		}
-		if (!cutAfter && location != 0) location -= [cutWith length];
+		if (!cutAfter && location != 0) {
+			if (cutWith) location -= [cutWith length];
+			else location -= 1;
+		}
 		
 		NSInteger length = foundLocation - location;
-		[words addObject:[self substringWithRange:NSMakeRange(location, length)]];
+		NSString *word = [self substringWithRange:NSMakeRange(location, length)];
+		[words addObject:word];
 		location = foundLocation;
 		if (!cutAfter) {
-			location += [cutWith length];
+			if (cutWith) location += [cutWith length];
+			else location += 1;
 		}
   }
 	if ([words count] == 0) [words addObject:@""]; // If we fell through with nothing, was empty string
 	return words;	
+}
+
+- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
+	return [self _gh_cutWithString:cutWith characterSet:nil options:options cutAfter:cutAfter];
+}
+
+- (NSArray *)gh_cutWithCharacterFromSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
+	return [self _gh_cutWithString:nil characterSet:characterSet options:options cutAfter:cutAfter];
 }
 
 /*!
