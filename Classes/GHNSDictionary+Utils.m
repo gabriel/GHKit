@@ -33,7 +33,7 @@
 
 - (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue {
 	id value = [self objectForKey:key];
-	if (!value) return defaultValue;
+	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
 	return [value doubleValue];
 }
 
@@ -43,7 +43,7 @@
 
 - (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue {
 	id value = [self objectForKey:key];
-	if (!value) return defaultValue;
+	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
 	return [value integerValue];
 }
 
@@ -53,7 +53,7 @@
 
 - (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue {
 	id value = [self objectForKey:key];
-	if (!value) return defaultValue;
+	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
 	return [value boolValue];
 }
 

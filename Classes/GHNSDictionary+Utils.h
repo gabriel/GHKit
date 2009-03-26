@@ -29,12 +29,25 @@
 
 @interface NSDictionary (GHUtils)
 
+/*! 
+ @param key
+ @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ */
 - (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue;
+
 - (double)gh_doubleForKey:(id)key;
 
+/*! 
+ @param key
+ @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ */
 - (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
 - (NSInteger)gh_integerForKey:(id)key;
 
+/*! 
+ @param key
+ @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ */
 - (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
 - (NSInteger)gh_boolForKey:(id)key;
 
