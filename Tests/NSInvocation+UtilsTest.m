@@ -11,6 +11,7 @@
 @interface NSInvocationUtilsTest : GHTestCase {
 	BOOL invokeTesting1Called_;
 	BOOL invokeTesting2Called_;
+	BOOL invokeTesting3Called_;
 }
 
 @end
@@ -24,7 +25,7 @@
 	
 	GHAssertTrue(invokeTesting1Called_, @"Method was not called");
 }
-	 
+
 - (void)_invokeTesting1:(NSNumber *)number1 withObject:number2 withObject:number3 {
 	GHAssertEqualObjects([NSNumber numberWithInteger:1], number1, nil);
 	GHAssertEqualObjects([NSNumber numberWithInteger:2], number2, nil);
@@ -45,5 +46,23 @@
 	GHAssertEqualObjects([NSNumber numberWithInteger:3], number3, nil);
 	invokeTesting2Called_ = YES;
 }
+
+- (void)testInvokeWithDelay {
+	
+	[NSInvocation gh_invokeWithTarget:self 
+													 selector:@selector(_invokeTesting3:) 
+												 afterDelay:0.1
+													arguments:[NSArray arrayWithObjects:[NSNumber numberWithInteger:1], nil]];
+	
+	GHAssertFalse(invokeTesting3Called_, @"Method should be delayed");
+	[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+	GHAssertTrue(invokeTesting3Called_, @"Method was not called");
+}
+
+- (void)_invokeTesting3:(NSNumber *)number1 {
+	GHAssertEqualObjects([NSNumber numberWithInteger:1], number1, nil);
+	invokeTesting3Called_ = YES;
+}
+
 
 @end
