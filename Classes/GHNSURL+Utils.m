@@ -32,7 +32,7 @@
 
 @implementation NSURL (GHUtils)
 
-- (NSDictionary *)gh_queryDictionary {
+- (NSMutableDictionary *)gh_queryDictionary {
 	return [NSURL gh_queryStringToDictionary:[self query]];
 }
 
@@ -40,7 +40,7 @@
 	return [self gh_dictionaryToQueryString:queryDictionary sort:NO];
 }
 
-+ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort {
++ (NSArray *)gh_dictionaryToQueryArray:(NSDictionary *)queryDictionary sort:(BOOL)sort encoded:(BOOL)encoded {
   if (!queryDictionary) return nil;
 	if ([queryDictionary count] == 0) return @"";
   
@@ -49,15 +49,19 @@
 	if (sort) enumerator = [[queryDictionary allKeys] sortedArrayUsingSelector:@selector(compare:)];
 	
   for(NSString *key in enumerator) {
-    NSString *value = [queryDictionary valueForKey:key];
-    NSString *encodedKey = [self gh_encodeComponent:key];
-    NSString *encodedValue = [self gh_encodeComponent:value];
-    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", encodedKey, encodedValue]];
+    NSString *value = [[queryDictionary valueForKey:key] description];
+		if (encoded) key = [self gh_encodeComponent:key];
+		if (encoded) value = [self gh_encodeComponent:value];
+    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", key, value]];
   }
-  return [queryStrings componentsJoinedByString:@"&"];
+  return queryStrings;
 }
 
-+ (NSDictionary *)gh_queryStringToDictionary:(NSString *)string {
++ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort {
+  return [[self gh_dictionaryToQueryArray:queryDictionary sort:sort encoded:YES] componentsJoinedByString:@"&"];
+}
+
++ (NSMutableDictionary *)gh_queryStringToDictionary:(NSString *)string {
 	NSArray *queryItemStrings = [string componentsSeparatedByString:@"&"];
 	
 	NSMutableDictionary *queryDictionary = [NSMutableDictionary dictionaryWithCapacity:[queryItemStrings count]];
@@ -70,6 +74,36 @@
 		}
 	}
 	return queryDictionary;
+}
+
+- (NSString *)gh_sortedQuery {
+	return [NSURL gh_dictionaryToQueryString:[self gh_queryDictionary] sort:YES];
+}
+
+- (NSURL *)gh_deriveWithQuery:(NSString *)query {
+	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@://", [self scheme]];
+	if ([self user] && [self password]) [urlString appendFormat:@"%@:%@@", [self user], [self password]];
+	[urlString appendString:[self host]];
+	if ([self port]) [urlString appendFormat:@":%d", [[self port] integerValue]];
+	[urlString appendString:[self path]];
+	if (query) [urlString appendFormat:@"?%@", query];
+	if ([self fragment]) [urlString appendFormat:@"#%@", [self fragment]];	
+	return [NSURL URLWithString:urlString];
+}
+
+- (NSURL *)gh_canonical {
+	return [self gh_canonicalWithIgnore:nil];
+}
+
+- (NSURL *)gh_canonicalWithIgnore:(NSArray *)ignore {
+	NSString *query = nil;
+	if ([self query]) {
+		NSMutableDictionary *queryParams = [self gh_queryDictionary];
+		for(NSString *key in ignore) [queryParams removeObjectForKey:key];
+		query = [NSURL gh_dictionaryToQueryString:queryParams sort:YES];
+	}
+	
+	return [self gh_deriveWithQuery:query];
 }
 
 + (NSString *)gh_encode:(NSString *)s {	

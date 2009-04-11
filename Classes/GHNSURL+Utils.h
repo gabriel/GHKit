@@ -32,7 +32,7 @@
  Get dictionary from NSURL query parameter.
  @result Dictionary of key, value pairs from parsing query parameter
  */
-- (NSDictionary *)gh_queryDictionary;
+- (NSMutableDictionary *)gh_queryDictionary;
 
 /*!
  @method gh_dictionaryToQueryString
@@ -53,12 +53,48 @@
 + (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort;
 
 /*!
+ Convert dictionary to array of query strings.
+ @param queryDictionary Dictionary
+ @param sort If YES, will sort items
+ @param encoded If YES, will be URL component encoded
+ @result Query strings, ['key1=value1', 'key2=value2']
+ */
++ (NSArray *)gh_dictionaryToQueryArray:(NSDictionary *)queryDictionary sort:(BOOL)sort encoded:(BOOL)encoded;
+
+/*!
  Convert url query string to dictionary.
  @method gh_queryStringToDictionary
  @param string URL params string, key1=value1&key2=value2
  @result Dictionary
  */
-+ (NSDictionary *)gh_queryStringToDictionary:(NSString *)string;
++ (NSMutableDictionary *)gh_queryStringToDictionary:(NSString *)string;
+
+/*!
+ Get query string, sorted by key. 
+ For example, "b=c&a=d" is returned as "a=d&b=c". 
+ @result Sorted query string
+ */
+- (NSString *)gh_sortedQuery;
+
+/*!
+ Derive new URL with a new query. All other fields should be the same.
+ @param query
+ @result URL with new query
+ */
+- (NSURL *)gh_deriveWithQuery:(NSString *)query;
+
+/*!
+ Canonical form of URL.
+ @result Canonical url
+ */
+- (NSURL *)gh_canonical;
+
+/*!
+ Canonical form of URL.
+ @param ignore Do not include the set of query params
+ @result Canonical url
+ */
+- (NSURL *)gh_canonicalWithIgnore:(NSArray *)ignore;
 
 /*!
  Encode URL string.
