@@ -76,9 +76,9 @@
 				
 				if (hitMaxLineCount) {					
 					
-					// If we are leaving some padding, then check and remove last 6 characters
-					CGFloat paddingAmount = 40.0;
-					NSInteger padCharacterCount = 9;
+					// If we are leaving some padding, then check and remove last 4 characters
+					CGFloat paddingAmount = 50.0;
+					NSInteger padCharacterCount = 4;
 					if  (options & GHNSStringSizeTruncatePad == GHNSStringSizeTruncatePad) {
 						if ((x + paddingAmount) > width) {
 							if ([line length] > padCharacterCount) {
@@ -135,12 +135,12 @@
 	
 	if (options == GHCenterHorizontal || options == GHCenterBoth) {
 		CGFloat center = rect.size.width / 2.0 - size.width / 2.0;
-		if (center >= 0) x = center;
+		if (center >= 0) x += center;
 	} 
 	
 	if (options == GHCenterVertical || options == GHCenterBoth) {
 		CGFloat center = rect.size.height / 2.0 - size.height / 2.0;
-		if (center >= 0) y = center;
+		if (center >= 0) y += center;
 	} 
 	
 	[self drawAtPoint:CGPointMake(x, y) forWidth:size.width withFont:font lineBreakMode:lineBreakMode];	
