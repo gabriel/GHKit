@@ -45,7 +45,7 @@
 	BOOL hasReturnValue = NO;
 	NSInvocation *invocation = [self gh_invocationWithTarget:target selector:selector hasReturnValue:&hasReturnValue arguments:arguments];
 	if (delay >= 0) {
-		[invocation performSelector:@selector(invoke) withObject:nil afterDelay:0];
+		[invocation performSelector:@selector(invoke) withObject:nil afterDelay:delay];
 	} else {
 		[invocation invoke];
 	
