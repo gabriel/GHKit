@@ -21,6 +21,8 @@
 		0058AAC30EF8C15F00C44386 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAC20EF8C15F00C44386 /* SFHFKeychainUtils.m */; };
 		0058AACE0EF8C18600C44386 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0058AACD0EF8C18600C44386 /* Security.framework */; };
 		0058AB030EF8C61400C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AB020EF8C61400C44386 /* GHKeychainStore.m */; };
+		0064CAE70FA04B6D00E5FA70 /* GHCLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0064CAE60FA04B6D00E5FA70 /* GHCLUtils.m */; };
+		0064CB0E0FA04E0800E5FA70 /* GHCLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0064CB0D0FA04E0800E5FA70 /* GHCLUtilsTest.m */; };
 		007F59AD0EF243C700B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */; };
 		007F59AE0EF243C700B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59AC0EF243C700B3005D /* GHNSDictionary+NSNull.m */; };
 		008488CF0F19944900EB7732 /* GHUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 008488CE0F19944900EB7732 /* GHUITextField.m */; };
@@ -99,6 +101,9 @@
 		0058AACD0EF8C18600C44386 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0058AB010EF8C61400C44386 /* GHKeychainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKeychainStore.h; sourceTree = "<group>"; };
 		0058AB020EF8C61400C44386 /* GHKeychainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHKeychainStore.m; sourceTree = "<group>"; };
+		0064CAE50FA04B6D00E5FA70 /* GHCLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCLUtils.h; sourceTree = "<group>"; };
+		0064CAE60FA04B6D00E5FA70 /* GHCLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCLUtils.m; sourceTree = "<group>"; };
+		0064CB0D0FA04E0800E5FA70 /* GHCLUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCLUtilsTest.m; sourceTree = "<group>"; };
 		007F59A40EF243B000B3005D /* GHKitIPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHKitIPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		007F59A90EF243C700B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
 		007F59AA0EF243C700B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
@@ -296,9 +301,9 @@
 				00DB2AC40EECA29900383FB6 /* hmac.h */,
 				00DB2AC60EECA29900383FB6 /* sha1.c */,
 				00DB2AC70EECA29900383FB6 /* sha1.h */,
-				009A957E0F29320D00C5B773 /* GHNSInvocation+Utils.m */,
 				009A957F0F29320D00C5B773 /* GHNSObject+Invocation.m */,
 				009A95800F29320D00C5B773 /* GHNSObject+Invocation.h */,
+				009A957E0F29320D00C5B773 /* GHNSInvocation+Utils.m */,
 				009A95810F29320D00C5B773 /* GHNSInvocation+Utils.h */,
 				000223AF0F4BFFBE0046234D /* GHKitMacros.h */,
 				000223B00F4BFFBE0046234D /* GHLogger.h */,
@@ -368,6 +373,8 @@
 				008488B30F19921700EB7732 /* GHUIResponder.h */,
 				008488CD0F19944900EB7732 /* GHUITextField.h */,
 				008488CE0F19944900EB7732 /* GHUITextField.m */,
+				0064CAE50FA04B6D00E5FA70 /* GHCLUtils.h */,
+				0064CAE60FA04B6D00E5FA70 /* GHCLUtils.m */,
 			);
 			path = IPhone;
 			sourceTree = "<group>";
@@ -385,6 +392,7 @@
 			children = (
 				00025C850EFB654C007EA0A8 /* GHUIColorUtilsTest.m */,
 				00970D4E0F29234900189A9D /* GHNSStringUIKitUtilsTest.m */,
+				0064CB0D0FA04E0800E5FA70 /* GHCLUtilsTest.m */,
 			);
 			path = IPhone;
 			sourceTree = "<group>";
@@ -555,6 +563,8 @@
 				00CDDE020F77023C0089C60E /* GHNSDictionary+Utils.m in Sources */,
 				00CDDE030F77023C0089C60E /* GHNSMutableDictionary+Utils.m in Sources */,
 				00264A920F91608F007E9425 /* GHUnitIPhoneTestMain.m in Sources */,
+				0064CAE70FA04B6D00E5FA70 /* GHCLUtils.m in Sources */,
+				0064CB0E0FA04E0800E5FA70 /* GHCLUtilsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
