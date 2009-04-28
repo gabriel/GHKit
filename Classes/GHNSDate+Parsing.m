@@ -55,7 +55,11 @@
 }
 
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch {
-	if (!timeSinceEpoch) return timeSinceEpoch;
+	return [self gh_parseTimeSinceEpoch:timeSinceEpoch withDefault:timeSinceEpoch];
+}
+
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value {
+	if (!timeSinceEpoch) return value;
 	return [NSDate dateWithTimeIntervalSince1970:[timeSinceEpoch longLongValue]];
 }
 

@@ -1,8 +1,8 @@
 //
-//  GHNSDictionary+Utils.h
+//  GHTestWindowController.h
 //  GHKit
 //
-//  Created by Gabriel Handford on 3/12/09.
+//  Created by Gabriel Handford on 1/17/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,30 +27,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHUtils)
+#import "GHTestViewController.h"
 
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
- */
-- (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue;
+@interface GHTestWindowController : NSWindowController {
+	GHTestViewController *viewController_;
+}
 
-- (double)gh_doubleForKey:(id)key;
-
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
- */
-- (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
-- (NSInteger)gh_integerForKey:(id)key;
-
-- (NSNumber *)gh_numberForKey:(id)key withDefault:(NSInteger)defaultValue;
-
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
- */
-- (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
-- (NSInteger)gh_boolForKey:(id)key;
+@property (retain, nonatomic) IBOutlet GHTestViewController *viewController;
 
 @end

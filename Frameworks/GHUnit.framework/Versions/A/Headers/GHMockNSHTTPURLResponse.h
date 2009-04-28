@@ -1,8 +1,8 @@
 //
-//  GHNSDictionary+Utils.h
-//  GHKit
+//  GHMockNSHTTPURLResponse.h
+//  GHUnit
 //
-//  Created by Gabriel Handford on 3/12/09.
+//  Created by Gabriel Handford on 4/9/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,30 +27,20 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHUtils)
+#import <Foundation/Foundation.h>
 
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
+/*!
+ NSHTTPURLResponse for use with mocking.
+ Allows us to manually set the status code and headers in the response.
  */
-- (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue;
+@interface GHMockNSHTTPURLResponse : NSHTTPURLResponse {
+	NSInteger statusCode_;
+	NSDictionary *headers_;
+}
 
-- (double)gh_doubleForKey:(id)key;
+- (id)initWithStatusCode:(NSInteger)statusCode headers:(NSDictionary *)headers;
 
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
- */
-- (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
-- (NSInteger)gh_integerForKey:(id)key;
-
-- (NSNumber *)gh_numberForKey:(id)key withDefault:(NSInteger)defaultValue;
-
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
- */
-- (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
-- (NSInteger)gh_boolForKey:(id)key;
+- (void)setStatusCode:(NSInteger)code;
+- (void)setHeaders:(NSDictionary *)headers;
 
 @end

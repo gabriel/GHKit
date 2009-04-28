@@ -1,8 +1,8 @@
 //
-//  GHNSDictionary+Utils.h
-//  GHKit
+//  GHMockNSLocale.h
+//  GHUnitIPhone
 //
-//  Created by Gabriel Handford on 3/12/09.
+//  Created by Gabriel Handford on 4/13/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,30 +27,33 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHUtils)
+/*!
+ Category for overriding the current locale at runtime.
 
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ @code
+ #import "GHNSLocale+Mock.h"
+ // This aliases the currentLocale method and with the specified locale identifier
+ [NSLocale gh_setLocaleIdentifier:@"en_GB"];
+  
+ [[NSLocale currentLocale] localeIdentifier] == "en_GB"
+ @endcode
  */
-- (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue;
+@interface NSLocale (GHMock)
 
-- (double)gh_doubleForKey:(id)key;
++ (void)gh_setLocaleIdentifier:(NSString *)localeIdentifier;
 
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
+/*!
+ Aliases to currentLocale with locale set from gh_setLocaleIdentifier.
+ If not set, defaults to NSLocale with identifier en_US.
  */
-- (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
-- (NSInteger)gh_integerForKey:(id)key;
++ (NSLocale *)gh_currentLocale;
 
-- (NSNumber *)gh_numberForKey:(id)key withDefault:(NSInteger)defaultValue;
++ (void)gh_setPreferredLanguages:(NSArray *)preferredLanguages;
 
-/*! 
- @param key
- @param withDefault If value for key is nil or [NSNull null] this default is returned.
+/*!
+ Aliases to preferredLanguages set from gh_setPreferredLanguages.
+ If not set, defaults to [@"en"].
  */
-- (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
-- (NSInteger)gh_boolForKey:(id)key;
++ (NSArray *)gh_preferredLanguages;
 
 @end

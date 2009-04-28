@@ -58,6 +58,8 @@
  */
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch;
 
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value;
+
 /*!
   @method gh_formatRFC822
   @abstract Get date formatted for RFC822
