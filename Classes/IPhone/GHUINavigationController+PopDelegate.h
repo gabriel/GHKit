@@ -48,7 +48,7 @@
 - (NSArray *)_popToViewController:(UIViewController *)viewController animated:(BOOL)animated;
 - (UIViewController *)_popViewControllerAnimated:(BOOL)animated;
 
-+ (void)addPopDelegate:(NSError **)error;
++ (void)addPopDelegate;
 
 @end
 

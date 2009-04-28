@@ -63,9 +63,6 @@
 #import "GTMLogger.h"
 #import "GTMStackTrace.h"
 
-// JRSwizzle
-#import "JRSwizzle.h"
-
 // iPhone Only
 #ifdef TARGET_OS_IPHONE
 #import "GHKitIPhone.h"

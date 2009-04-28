@@ -28,7 +28,7 @@
 //
 
 #import "GHUINavigationController+PopDelegate.h"
-#import "JRSwizzle.h"
+#import "GHNSObject+Swizzle.h"
 
 @implementation UINavigationController (GHPopDelegate)
 
@@ -85,10 +85,10 @@
 	return viewController;
 }
 
-+ (void)addPopDelegate:(NSError **)error {
-	[UINavigationController jr_swizzleMethod:@selector(popToRootViewControllerAnimated:) withMethod:@selector(_popToRootViewControllerAnimated:) error:error];
-	[UINavigationController jr_swizzleMethod:@selector(popToViewController:animated:) withMethod:@selector(_popToViewController:animated:) error:error];
-	[UINavigationController jr_swizzleMethod:@selector(popViewControllerAnimated:) withMethod:@selector(_popViewControllerAnimated:) error:error];	
++ (void)addPopDelegate {
+	[UINavigationController gh_swizzleMethod:@selector(popToRootViewControllerAnimated:) withMethod:@selector(_popToRootViewControllerAnimated:)];
+	[UINavigationController gh_swizzleMethod:@selector(popToViewController:animated:) withMethod:@selector(_popToViewController:animated:)];
+	[UINavigationController gh_swizzleMethod:@selector(popViewControllerAnimated:) withMethod:@selector(_popViewControllerAnimated:)];	
 }
 
 @end
