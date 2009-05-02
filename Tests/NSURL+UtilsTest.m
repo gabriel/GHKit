@@ -82,4 +82,11 @@
 	GHAssertEqualObjects(canonical2, [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?a=d&b=c#myfrag"], nil);
 }
 
+- (void)testQueryDictionaryWithArray {
+	NSArray *array1 = [NSArray arrayWithObjects:@"va", @"vb", @"vc", nil];
+	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:array1, @"key1", @"value2", @"key2", nil];
+	NSString *s = [NSURL gh_dictionaryToQueryString:dict];
+	GHAssertEqualObjects(s, @"key1=va%2Cvb%2Cvc&key2=value2", nil);	
+}
+
 @end

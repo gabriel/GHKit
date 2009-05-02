@@ -49,10 +49,19 @@
 	if (sort) enumerator = [[queryDictionary allKeys] sortedArrayUsingSelector:@selector(compare:)];
 	
   for(NSString *key in enumerator) {
-    NSString *value = [[queryDictionary valueForKey:key] description];
+    id value = [queryDictionary valueForKey:key];
+		NSString *valueDescription = nil;
+		if ([value isKindOfClass:[NSArray class]]) {
+			valueDescription = [value componentsJoinedByString:@","];
+		} else {
+			valueDescription = [value description];
+		}
+		
+		NSAssert(valueDescription, @"No value description");
+		
 		if (encoded) key = [self gh_encodeComponent:key];
-		if (encoded) value = [self gh_encodeComponent:value];
-    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", key, value]];
+		if (encoded) valueDescription = [self gh_encodeComponent:valueDescription];
+    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", key, valueDescription]];
   }
   return queryStrings;
 }
