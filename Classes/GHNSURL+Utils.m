@@ -42,7 +42,7 @@
 
 + (NSArray *)gh_dictionaryToQueryArray:(NSDictionary *)queryDictionary sort:(BOOL)sort encoded:(BOOL)encoded {
   if (!queryDictionary) return nil;
-	if ([queryDictionary count] == 0) return @"";
+	if ([queryDictionary count] == 0) return [NSArray array];
   
   NSMutableArray *queryStrings = [NSMutableArray arrayWithCapacity:[queryDictionary count]];
 	id enumerator = queryDictionary;
