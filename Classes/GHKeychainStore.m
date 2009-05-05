@@ -71,11 +71,11 @@
 }
 
 - (NSString *)secretFromKeychain:(NSString *)key serviceName:(NSString *)serviceName error:(NSError **)error {
-	return [SFHFKeychainUtils passwordForUsername:key serviceName:serviceName error:error];
+	return [SFHFKeychainUtils getPasswordForUsername:key andServiceName:serviceName error:error];
 }
 
 - (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {
-	[SFHFKeychainUtils storeUsername:key password:secret serviceName:serviceName updateExisting:YES error:error];
+	[SFHFKeychainUtils storeUsername:key andPassword:secret forServiceName:serviceName updateExisting:YES error:error];
 }
 
 @end

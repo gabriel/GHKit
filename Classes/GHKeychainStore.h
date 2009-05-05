@@ -40,6 +40,6 @@
 @end
 
 // Uses EMKeychainProxy (Cocoa)
-@interface GHEMKeychainStore : NSObject <GHKeychainStore> { }
+@interface GHEMKeychainStore : NSObject <GHKeychainStore> {}
 @end
 
