@@ -53,4 +53,20 @@
 - (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
 - (NSInteger)gh_boolForKey:(id)key;
 
+/*!
+ Object for key with default value, if entry is NSNull or entry does not exist.
+ @param key
+ @param defaultValue
+ @result Value for key with default value, if entry is NSNull or entry does not exist
+ */
+- (id)gh_objectForKey:(id)key withDefault:(id)defaultValue;
+
+/*!
+ Object for key or NSNull.
+ Helpful when used with key/value coding.
+ @param key
+ @result Value or NSNull#null if not set
+ */
+- (id)gh_objectForKeyOrNSNull:(id)key;
+
 @end

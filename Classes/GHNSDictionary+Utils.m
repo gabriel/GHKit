@@ -68,4 +68,14 @@
 	return [self gh_boolForKey:key withDefault:NO];
 }
 
+- (id)gh_objectForKey:(id)key withDefault:(id)defaultValue {
+	id value = [self objectForKey:key];
+	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
+	return value;
+}
+
+- (id)gh_objectForKeyOrNSNull:(id)key {
+	return [self gh_objectForKey:key withDefault:[NSNull null]];
+}
+
 @end
