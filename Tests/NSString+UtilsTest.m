@@ -82,6 +82,13 @@
 	GHAssertEqualObjects(cuts, expected, nil);
 }
 
+- (void)testCutEndInSpace {	
+	NSString *text = @"Lorem ";
+	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:NO];
+	NSArray *expected = [NSArray arrayWithObjects:@"Lorem", @" ", nil];
+	GHAssertEqualObjects(cuts, expected, nil);
+}
+
 - (void)testCutBefore {	
 	NSString *text = @"Lorem ipsum dolor sit amet";
 	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:NO];

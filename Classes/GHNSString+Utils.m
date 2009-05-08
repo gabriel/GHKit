@@ -123,7 +123,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	NSMutableArray *words = [NSMutableArray array];
 	NSInteger location = 0;
 	
-	while(location < [self length]) {
+	while(location <= [self length]) {
 		NSRange previousRange = NSMakeRange(location, [self length] - location);
 		NSRange range;
 		if (cutWith) range = [self rangeOfString:cutWith options:options range:previousRange];
@@ -145,9 +145,12 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 		}
 		
 		NSInteger length = foundLocation - location;
-		NSString *word = [self substringWithRange:NSMakeRange(location, length)];
+		
+		NSRange substringRange = NSMakeRange(location, length);		
+		NSString *word = [self substringWithRange:substringRange];
 		[words addObject:word];
 		location = foundLocation;
+		//NSLog(@"self=%@, word=%@, range=%@, substringRange=%@, location=%d", self, word, NSStringFromRange(range), NSStringFromRange(substringRange), location);
 		if (!cutAfter) {
 			if (cutWith) location += [cutWith length];
 			else location += 1;
