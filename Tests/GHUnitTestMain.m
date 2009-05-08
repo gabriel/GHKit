@@ -44,21 +44,20 @@ int main(int argc, char *argv[]) {
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
-	// If using GHLogger
-	//[GHLogger setLogLevel:kGTMLoggerLevelDebug];
-
 	// Register any special test case classes
 	//[[GHTesting sharedInstance] registerClassName:@"GHSpecialTestCase"];	
 	
 	int retVal = 0;
 	// If GHUNIT_CLI is set we are using the command line interface and run the tests
 	// Otherwise load the GUI app
-	if (getenv("GHUNIT_CLI")) {
-		GHTestRunner *testRunner = [GHTestRunner runnerForAllTests];
-		[testRunner run];
-		retVal = testRunner.stats.failureCount;
+	if (getenv("GHUNIT_CLI")) {		
+		retVal = [GHTestRunner run];
 	} else {
+		// To run all tests (from ENV)
 		GHTestApp *app = [[GHTestApp alloc] init];
+		// To run a different test suite:
+		//GHTestSuite *suite = [GHTestSuite suiteWithTestFilter:@"GHSlowTest,GHAsyncTestCaseTest"];
+		//GHTestApp *app = [[GHTestApp alloc] initWithSuite:suite];
 		[NSApp run];
 		[app release];		
 	}
