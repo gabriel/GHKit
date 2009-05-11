@@ -102,3 +102,12 @@ va_end(args); \
 + (NSInvocation *)gh_invocationWithTarget:target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue arguments:(NSArray *)arguments;
 
 @end
+
+
+@interface GHArg : NSObject {
+	void *_value;
+}
+
++ (GHArg *)argWithInteger:(NSInteger)n;
+
+@end

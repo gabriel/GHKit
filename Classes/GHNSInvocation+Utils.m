@@ -71,7 +71,7 @@
 + (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments {
 	NSInvocation *invocation = [self gh_invocationWithTarget:target selector:selector hasReturnValue:nil arguments:arguments];
 	if (delay >= 0) {
-		SEL selector = selector = @selector(gh_invokeOnMainThreadAndWaitUntilDone);
+		SEL selector = @selector(gh_invokeOnMainThreadAndWaitUntilDone);
 		if (!waitUntilDone) selector = @selector(gh_invokeOnMainThread);	
 		[invocation performSelector:selector withObject:nil afterDelay:delay];
 	} else {
@@ -112,8 +112,9 @@
 	NSInteger selectorArgCount = [methodSignature numberOfArguments] - 2;
 	for(NSInteger i = 0; i < selectorArgCount && i < [arguments count]; i++) {
 		id arg = [arguments objectAtIndex:i];
-		if (arg != [NSNull null])
+		if (![arg isEqual:[NSNull null]]) {
 			[invocation setArgument:&arg atIndex:(i + 2)];
+		}
 	}
 	[invocation setTarget:target];
 	[invocation setSelector:selector];
