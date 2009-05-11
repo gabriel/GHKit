@@ -7,13 +7,19 @@
 //
 
 #import "GHNSInvocation+Utils.h"
+#import "GHNSObject+Invocation.h"
 
 @interface NSInvocationUtilsTest : GHTestCase {
 	BOOL invokeTesting1Called_;
 	BOOL invokeTesting2Called_;
 	BOOL invokeTesting3Called_;
+	BOOL invokeTesting4Called_;
 }
 
+@end
+
+@interface NSInvocationUtilsTest (Private)
+- (void)_invokeTesting4:(NSInteger)n;
 @end
 
 @implementation NSInvocationUtilsTest
@@ -64,5 +70,18 @@
 	invokeTesting3Called_ = YES;
 }
 
+
+- (void)testInvokeProxy {
+	[[self gh_proxyAfterDelay:0.1] _invokeTesting4:1];
+	
+	GHAssertFalse(invokeTesting4Called_, @"Method should be delayed");
+	[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+	GHAssertTrue(invokeTesting4Called_, @"Method was not called");
+}
+
+- (void)_invokeTesting4:(NSInteger)n {
+	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
+	invokeTesting4Called_ = YES;
+}
 
 @end

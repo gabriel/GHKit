@@ -19,6 +19,11 @@
   GHAssertEqualObjects(@"application/pdf", mimeType, @"Should be pdf mime type");
 }
 
+- (void)testContainsAny {
+	NSString *s = @"TestUppercase";
+	GHAssertTrue([s gh_containsAny:[NSCharacterSet uppercaseLetterCharacterSet]], nil);
+}
+
 - (void)testValidateEmail {
   NSString *valid = @"gabrielh@gmail.com";  
   GHAssertTrue([valid gh_isEmailAddress], @"Should be valid email");
@@ -41,38 +46,52 @@
 	GHAssertEqualObjects(@"ar", [@"foobar" gh_lastSplitWithString:@"oob" options:NSCaseInsensitiveSearch], @"Split is invalid");
 }
 
-- (void)testCutWithString {
+- (void)testCutWithString1 {
 	NSArray *expected = [NSArray arrayWithObjects:@"foo:", @"bar", nil];
 	NSArray *cuts = [@"foo:bar" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected, cuts, @"Cut is invalid");	
+	GHAssertEqualObjects(expected, cuts, @"Cut is invalid (1)");	
+}
 
+- (void)testCutWithString2 {
 	NSArray *expected2 = [NSArray arrayWithObjects:@"foobar", nil];
 	NSArray *cuts2 = [@"foobar" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected2, cuts2, @"Cut is invalid");	
-	
+	GHAssertEqualObjects(expected2, cuts2, @"Cut is invalid (2)");	
+}
+
+- (void)testCutWithString3 {	
 	NSArray *expected3 = [NSArray arrayWithObjects:@"foo:", nil];
 	NSArray *cuts3 = [@"foo:" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected3, cuts3, @"Cut is invalid");	
+	GHAssertEqualObjects(expected3, cuts3, @"Cut is invalid (3)");	
+}
 
+- (void)testCutWithString4 {
 	NSArray *expected4 = [NSArray arrayWithObjects:@"", nil];
 	NSArray *cuts4 = [@"" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected4, cuts4, @"Cut is invalid");	
-	
+	GHAssertEqualObjects(expected4, cuts4, @"Cut is invalid (4)");	
+}
+
+- (void)testCutWithString5 {
 	NSArray *expected5 = [NSArray arrayWithObjects:@":", nil];
 	NSArray *cuts5 = [@":" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected5, cuts5, @"Cut is invalid");	
-	
+	GHAssertEqualObjects(expected5, cuts5, @"Cut is invalid (5)");	
+}
+
+- (void)testCutWithString6 {
 	NSArray *expected6 = [NSArray arrayWithObjects:@":", @":", nil];
 	NSArray *cuts6 = [@"::" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected6, cuts6, @"Cut is invalid");	
-	
+	GHAssertEqualObjects(expected6, cuts6, @"Cut is invalid (6)");	
+}
+
+- (void)testCutWithString7 {
 	NSArray *expected7 = [NSArray arrayWithObjects:@":", @"foo:", nil];
 	NSArray *cuts7 = [@":foo:" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected7, cuts7, @"Cut is invalid");	
-	
+	GHAssertEqualObjects(expected7, cuts7, @"Cut is invalid (7)");	
+}
+
+- (void)testCutWithString8 {
 	NSArray *expected8 = [NSArray arrayWithObjects:@"foo---", @"bar", nil];
 	NSArray *cuts8 = [@"foo---bar" gh_cutWithString:@"---" options:0];
-	GHAssertEqualObjects(expected8, cuts8, @"Cut is invalid");	
+	GHAssertEqualObjects(expected8, cuts8, @"Cut is invalid (8)");	
 }
 
 - (void)testCut {	
