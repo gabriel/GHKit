@@ -83,4 +83,13 @@
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone 
 								afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
 
+
+// Invocation proxies
+
+- (id)gh_proxyOnMainThread;
+- (id)gh_proxyOnMainThreadAndWaitUntilDone:(BOOL)waitUntilDone;
+- (id)gh_proxyOnThread:(NSThread *)thread;
+- (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone;
+- (id)gh_proxyAfterDelay:(NSTimeInterval)delay;
+
 @end

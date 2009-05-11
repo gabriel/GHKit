@@ -29,6 +29,7 @@
 
 #import "GHNSObject+Invocation.h"
 
+#import "GHNSInvocationProxy.h"
 
 @implementation NSObject (GHInvocation)
 
@@ -82,6 +83,37 @@
 	} else {
 		[NSInvocation gh_invokeTargetOnMainThread:self selector:selector waitUntilDone:waitUntilDone afterDelay:delay arguments:arguments];	
 	}
+}
+
+// From DDFoundation, NSObject+DDExtensions 
+// (Changed namespaced to make it easier to include in static library without conflicting)
+
+- (id)gh_proxyOnMainThread {
+	return [self gh_proxyOnMainThreadAndWaitUntilDone:NO];
+}
+
+- (id)gh_proxyOnMainThreadAndWaitUntilDone:(BOOL)waitUntilDone {
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	proxy.forwardInvokesOnMainThread = YES;
+	proxy.waitUntilDone = waitUntilDone;
+	return [proxy prepareWithInvocationTarget:self];
+}
+
+- (id)gh_proxyOnThread:(NSThread *)thread {
+	return [self gh_proxyOnThread:thread waitUntilDone:NO];
+}
+
+- (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone {
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	proxy.thread = thread;
+	proxy.waitUntilDone = waitUntilDone;
+	return [proxy prepareWithInvocationTarget:self];
+}
+
+- (id)gh_proxyAfterDelay:(NSTimeInterval)delay {
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	proxy.delay = delay;
+	return [proxy prepareWithInvocationTarget:self];	
 }
 
 @end
