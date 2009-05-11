@@ -121,43 +121,42 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 
 - (NSArray *)_gh_cutWithString:(NSString *)cutWith characterSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {	
 	NSMutableArray *words = [NSMutableArray array];
-	NSInteger location = 0;
+	NSScanner *scanner = [[NSScanner alloc] initWithString:self];
+	scanner.charactersToBeSkipped = nil;
+	NSString *prependCuts = nil;
+	while(!scanner.isAtEnd) {
+		NSString *s = nil;
+		NSString *cuts = nil;
+		if (characterSet) {
+			[scanner scanUpToCharactersFromSet:characterSet intoString:&s];
+			[scanner scanCharactersFromSet:characterSet intoString:&cuts];
+		} else if (cutWith) {
+			[scanner scanUpToString:cutWith intoString:&s];
+			[scanner scanString:cutWith intoString:&cuts];
+		}
+		//NSLog(@"s=%@, cuts=%@", s, cuts);
+		if (s) {
+			if (prependCuts) {
+				s = [prependCuts stringByAppendingString:s];
+				prependCuts = nil;
+			}
+			
+			if (cutAfter && cuts) {
+				s = [s stringByAppendingString:cuts];
+			} else if (!cutAfter && cuts) {
+				prependCuts = cuts;
+			}
+			[words addObject:s];
+		} else if (cuts) {
+			[words addObject:cuts];
+		}
+	}
+	if (prependCuts) [words addObject:prependCuts];
 	
-	while(location <= [self length]) {
-		NSRange previousRange = NSMakeRange(location, [self length] - location);
-		NSRange range;
-		if (cutWith) range = [self rangeOfString:cutWith options:options range:previousRange];
-		if (characterSet) range = [self rangeOfCharacterFromSet:characterSet options:options range:previousRange];
-		
-		NSInteger foundLocation = 0;
-		if (range.location == NSNotFound) {
-			foundLocation = [self length];
-		} else {
-			foundLocation = range.location;
-			if (cutAfter) {
-				if (cutWith) foundLocation += [cutWith length];
-				else foundLocation += 1;
-			}			
-		}
-		if (!cutAfter && location != 0) {
-			if (cutWith) location -= [cutWith length];
-			else location -= 1;
-		}
-		
-		NSInteger length = foundLocation - location;
-		
-		NSRange substringRange = NSMakeRange(location, length);		
-		NSString *word = [self substringWithRange:substringRange];
-		[words addObject:word];
-		location = foundLocation;
-		//NSLog(@"self=%@, word=%@, range=%@, substringRange=%@, location=%d", self, word, NSStringFromRange(range), NSStringFromRange(substringRange), location);
-		if (!cutAfter) {
-			if (cutWith) location += [cutWith length];
-			else location += 1;
-		}
-  }
-	if ([words count] == 0) [words addObject:@""]; // If we fell through with nothing, was empty string
-	return words;	
+	if ([words count] == 0 && [self length] > 0) [words addObject:self];
+	if ([words count] == 0) [words addObject:@""];
+	[scanner release];
+	return words;
 }
 
 - (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
