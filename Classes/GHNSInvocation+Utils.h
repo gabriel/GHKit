@@ -56,29 +56,57 @@ va_end(args); \
 - (void)gh_invokeOnMainThread:(BOOL)waitUntilDone;
 
 /*!
- Invoke selector on target with multiple arguments.
+ Invoke target selector with multiple arguments.
  @param target Invocation target
  @param selector Method
  @param withObjects (Variable) Arguments list
  */
 + (id)gh_invokeWithTarget:(id)target selector:(SEL)selector withObjects:object, ...;
 
+/*!
+ Invoke target selector with multiple arguments.
+ @param target Invocation target
+ @param selector Method
+ @param arguments Arguments list
+ */
 + (id)gh_invokeWithTarget:(id)target selector:(SEL)selector arguments:(NSArray *)arguments;
 
+/*!
+ Invoke target selector with multiple arguments.
+ @param target Invocation target
+ @param selector Method
+ @param afterDelay Time interval for delay (in seconds)
+ @param arguments Arguments list
+ */
 + (id)gh_invokeWithTarget:(id)target selector:(SEL)selector afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
 
 /*!
- Invoke selector on target on main thread with multiple arguments.
+ Invoke target selector on main thread with multiple arguments.
  Use [NSNull null] for nil arguments.
- @param target
- @param selector
- @param waitUntilDone
- @param withObjects
+ @param target Target
+ @param selector Action
+ @param waitUntilDone Whether to wait for call to finish
+ @param withObjects Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments
  */
 + (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ...;
 
+/*!
+ Invoke target selector on main thread with multiple arguments.
+ @param target Target
+ @param selector Action
+ @param waitUntilDone Whether to wait for call to finish
+ @param arguments Arguments list
+ */
 + (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone arguments:(NSArray *)arguments;
 
+/*!
+Invoke target selector on main thread with multiple arguments.
+ @param target Target
+ @param selector Action
+ @param waitUntilDone Whether to wait for call to finish
+ @param afterDelay Time interval for delay (in seconds)
+ @param arguments Arguments list
+ */
 + (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
 
 /*!
@@ -100,14 +128,5 @@ va_end(args); \
  @param arguments Arguments array
  */
 + (NSInvocation *)gh_invocationWithTarget:target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue arguments:(NSArray *)arguments;
-
-@end
-
-
-@interface GHArg : NSObject {
-	void *_value;
-}
-
-+ (GHArg *)argWithInteger:(NSInteger)n;
 
 @end

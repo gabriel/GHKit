@@ -15,6 +15,7 @@
 		00264A920F91608F007E9425 /* GHUnitIPhoneTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 00264A8F0F91608F007E9425 /* GHUnitIPhoneTestMain.m */; };
 		00264A930F91608F007E9425 /* libGHUnitIPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00264A900F91608F007E9425 /* libGHUnitIPhone.a */; };
 		00264A940F91608F007E9425 /* RunTests.sh in Resources */ = {isa = PBXBuildFile; fileRef = 00264A910F91608F007E9425 /* RunTests.sh */; };
+		002CDE4E0FBD04D40071FB1E /* GHUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002CDE4D0FBD04D40071FB1E /* GHUITableViewCell.m */; };
 		0058AACE0EF8C18600C44386 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0058AACD0EF8C18600C44386 /* Security.framework */; };
 		0058AB030EF8C61400C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AB020EF8C61400C44386 /* GHKeychainStore.m */; };
 		0064CAE70FA04B6D00E5FA70 /* GHCLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0064CAE60FA04B6D00E5FA70 /* GHCLUtils.m */; };
@@ -57,7 +58,6 @@
 		00DB2ADA0EECA29900383FB6 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AC60EECA29900383FB6 /* sha1.c */; };
 		00DB2B110EECA51400383FB6 /* GHUINavigationController+PopDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */; };
 		00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */; };
-		00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248400F15E37D00C06C63 /* GHUITableViewCell.m */; };
 		00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */; };
 		00E24A390F16BEBD00C06C63 /* GHNSString+UIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E24A380F16BEBD00C06C63 /* GHNSString+UIKitUtils.m */; };
 		00E7119A0F1C82BF00A4EEBA /* GHUINavigationController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E711970F1C82BF00A4EEBA /* GHUINavigationController+Utils.m */; };
@@ -93,6 +93,8 @@
 		00264A8F0F91608F007E9425 /* GHUnitIPhoneTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIPhoneTestMain.m; sourceTree = "<group>"; };
 		00264A900F91608F007E9425 /* libGHUnitIPhone.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGHUnitIPhone.a; sourceTree = "<group>"; };
 		00264A910F91608F007E9425 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
+		002CDE4C0FBD04D40071FB1E /* GHUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewCell.h; sourceTree = "<group>"; };
+		002CDE4D0FBD04D40071FB1E /* GHUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewCell.m; sourceTree = "<group>"; };
 		0058AACD0EF8C18600C44386 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0058AB010EF8C61400C44386 /* GHKeychainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKeychainStore.h; sourceTree = "<group>"; };
 		0058AB020EF8C61400C44386 /* GHKeychainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHKeychainStore.m; sourceTree = "<group>"; };
@@ -180,8 +182,6 @@
 		00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUINavigationController+PopDelegate.m"; sourceTree = "<group>"; };
 		00E2483D0F15E37D00C06C63 /* GHUIKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIKitUtils.h; sourceTree = "<group>"; };
 		00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIKitUtils.m; sourceTree = "<group>"; };
-		00E2483F0F15E37D00C06C63 /* GHUITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewCell.h; sourceTree = "<group>"; };
-		00E248400F15E37D00C06C63 /* GHUITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewCell.m; sourceTree = "<group>"; };
 		00E248410F15E37D00C06C63 /* GHUITableViewStatusDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUITableViewStatusDelegate.h; sourceTree = "<group>"; };
 		00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUITableViewStatusDelegate.m; sourceTree = "<group>"; };
 		00E24A370F16BEBD00C06C63 /* GHNSString+UIKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+UIKitUtils.h"; sourceTree = "<group>"; };
@@ -316,10 +316,10 @@
 		00DB2A9B0EECA29900383FB6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				00A943790FA6F4A10080CFF3 /* GHNSBundle+Utils.h */,
-				00A9437A0FA6F4A10080CFF3 /* GHNSBundle+Utils.m */,
 				00A9437B0FA6F4A10080CFF3 /* Swizzle */,
 				00DB2AC50EECA29900383FB6 /* IPhone */,
+				00A943790FA6F4A10080CFF3 /* GHNSBundle+Utils.h */,
+				00A9437A0FA6F4A10080CFF3 /* GHNSBundle+Utils.m */,
 				00CDDDFB0F77023C0089C60E /* GHNSDate+Utils.h */,
 				00CDDDFC0F77023C0089C60E /* GHNSDate+Utils.m */,
 				00CDDDFD0F77023C0089C60E /* GHNSDictionary+Utils.h */,
@@ -384,12 +384,12 @@
 				00E711990F1C82BF00A4EEBA /* GHUITableView+Utils.m */,
 				00E2483D0F15E37D00C06C63 /* GHUIKitUtils.h */,
 				00E2483E0F15E37D00C06C63 /* GHUIKitUtils.m */,
-				00E2483F0F15E37D00C06C63 /* GHUITableViewCell.h */,
-				00E248400F15E37D00C06C63 /* GHUITableViewCell.m */,
+				002CDE4C0FBD04D40071FB1E /* GHUITableViewCell.h */,
+				002CDE4D0FBD04D40071FB1E /* GHUITableViewCell.m */,
 				00E248410F15E37D00C06C63 /* GHUITableViewStatusDelegate.h */,
 				00E248420F15E37D00C06C63 /* GHUITableViewStatusDelegate.m */,
-				00A97A100F0C424400B083F6 /* GHUIButton.m */,
 				00A97A110F0C424400B083F6 /* GHUIButton.h */,
+				00A97A100F0C424400B083F6 /* GHUIButton.m */,
 				009129540F01752E00338B5E /* GHUIAlertView+Utils.h */,
 				009129550F01752E00338B5E /* GHUIAlertView+Utils.m */,
 				009129560F01752E00338B5E /* GHUIView+Utils.h */,
@@ -570,7 +570,6 @@
 				00A97A140F0C424400B083F6 /* GHUIButton.m in Sources */,
 				00A97A1C0F0C436700B083F6 /* GHCGUtils.m in Sources */,
 				00E248430F15E37D00C06C63 /* GHUIKitUtils.m in Sources */,
-				00E248440F15E37D00C06C63 /* GHUITableViewCell.m in Sources */,
 				00E248450F15E37D00C06C63 /* GHUITableViewStatusDelegate.m in Sources */,
 				00E24A390F16BEBD00C06C63 /* GHNSString+UIKitUtils.m in Sources */,
 				008488CF0F19944900EB7732 /* GHUITextField.m in Sources */,
@@ -599,6 +598,7 @@
 				00A9436E0FA6F4640080CFF3 /* SFHFKeychainUtils.m in Sources */,
 				00A9437E0FA6F4A10080CFF3 /* GHNSBundle+Utils.m in Sources */,
 				00A9437F0FA6F4A10080CFF3 /* GHNSObject+Swizzle.m in Sources */,
+				002CDE4E0FBD04D40071FB1E /* GHUITableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

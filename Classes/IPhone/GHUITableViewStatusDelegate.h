@@ -27,40 +27,48 @@
 //
 
 
-// A table view (data source and view) delegate that shows an alternate view.
-// This allows you to temporarily set your table view delegate to this special
-// status delegate (that can show "Loading...", for example).
-//
-// Its a cool pattern originally from the Min Kim.
-// 
-// Create the delegate with a view. GHUITableViewStatusView is an example status
-// view with an activity indicator and loading label. You can create your own
-// view; It just has to implement GHUITableViewStatusView protocol. 
-// 
-// For example, in your UITableViewController subclass, create the GHUITableViewStatusDelegate:
-//
-//	 GHUITableViewStatusView *statusView = [[GHUITableViewStatusView alloc] init];
-//   statusDelegate_ = [[GHUITableViewStatusDelegate alloc] initWithStatusView:statusView]; 
-//	 [statusView release];
-//
-// Then you can swap your existing table view delegate for the status delegate, and back again, while
-// keeping your real datasource and view delegates from being polluted. Here is an example of what
-// that might look like:
-//
-// - (void)setStatusDelegateEnabled:(BOOL)enabled {
-//   statusDelegate_.loading = enabled;
-//   if (enabled) {
-//			self.tableView.dataSource = statusDelegate_;
-//			self.tableView.delegate = statusDelegate_;		
-//			[self.tableView setUserInteractionEnabled:NO];
-//		} else {
-//			self.tableView.dataSource = self;
-//			self.tableView.delegate = self;		
-//			[self.tableView setUserInteractionEnabled:YES];
-//		}	
-//		[self.tableView reloadData];
-//  }
-//
+/*!
+ A table view (data source and view) delegate that shows an alternate view.
+ This allows you to temporarily set your table view delegate to this special
+ status delegate (that can show "Loading...", for example).
+
+ Its a cool pattern originally from the Min Kim.
+ 
+ Create the delegate with a view. GHUITableViewStatusView is an example status
+ view with an activity indicator and loading label. You can create your own
+ view; It just has to implement GHUITableViewStatusView protocol. 
+ 
+ For example, in your UITableViewController subclass, create the GHUITableViewStatusDelegate:
+
+ @code
+	 GHUITableViewStatusView *statusView = [[GHUITableViewStatusView alloc] init];
+   statusDelegate_ = [[GHUITableViewStatusDelegate alloc] initWithStatusView:statusView]; 
+	 [statusView release];
+ @endcode
+
+ Then you can swap your existing table view delegate for the status delegate, and back again, while
+ keeping your real datasource and view delegates from being polluted. Here is an example of what
+ that might look like:
+
+ @code
+ - (void)setStatusDelegateEnabled:(BOOL)enabled {
+   statusDelegate_.loading = enabled;
+   if (enabled) {
+			self.tableView.dataSource = statusDelegate_;
+			self.tableView.delegate = statusDelegate_;		
+			[self.tableView setUserInteractionEnabled:NO];
+		} else {
+			self.tableView.dataSource = self;
+			self.tableView.delegate = self;		
+			[self.tableView setUserInteractionEnabled:YES];
+		}	
+		[self.tableView reloadData];
+ }
+ @endcode
+ TODO(gabe): This is obsoleted by YelpKit which is not released yet.
+ @ingroup iPhone
+ */
+
 
 @protocol GHUITableViewStatusView <NSObject>
 - (void)setText:(NSString *)text;

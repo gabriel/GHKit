@@ -26,9 +26,16 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
+/*!
+ Utility category for UITableView.
+ @ingroup iPhone
+ */
 @interface UITableView (GHUtils)
 
+/*!
+ Deselect currently selected row.
+ @param animated
+ */
 - (void)gh_deselectRow:(BOOL)animated;
 
 @end

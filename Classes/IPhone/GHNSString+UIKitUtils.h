@@ -42,6 +42,10 @@ enum {
 };
 typedef NSUInteger GHNSStringDrawOptions;
 
+/*!
+ UIKit utility category for NSString
+ @ingroup iPhone
+ */
 @interface NSString (GHUIKitUtils)
 
 /*!

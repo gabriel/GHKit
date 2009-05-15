@@ -163,7 +163,7 @@
  @param path Path to open
  @abstract Open file path
  */
-+ (void)gh_openFile:(NSString *)path;
++ (BOOL)gh_openFile:(NSString *)path;
 
 /*!
  Opens directory of file at path (or the path itself if it is a directory),

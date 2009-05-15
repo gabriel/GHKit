@@ -26,9 +26,16 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// Utilities for UIKit
+/*!
+ Utilities for UIKit.
+ @ingroup iPhone
+ */
 @interface GHUIKitUtils : NSObject { }
 
+/*!
+ Get the path to the applications Documents directory.
+ @result Full path to writable documents directory
+ */
 + (NSString *)documentsDirectory;
 
 @end

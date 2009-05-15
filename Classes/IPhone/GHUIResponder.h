@@ -28,6 +28,10 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ Custom responder protocol used by GHUITextField.
+ @ingroup iPhone
+ */
 @protocol GHUIResponder 
 // We need a different return type than nextResponder, so we use nextToRespond and previousToRespond,
 // instead of using UIResponder.

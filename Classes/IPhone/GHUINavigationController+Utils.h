@@ -27,8 +27,16 @@
 //
 
 
+/*!
+ Utility category for UINavigationController.
+ @ingroup iPhone
+ */
 @interface UINavigationController (GHUtils)
 
+/*!
+ Clear the list of view controllers and set the specified view controller as the root.
+ @param controller New root controller
+ */
 - (void)gh_resetWithRootController:(UIViewController *)controller;
 
 @end

@@ -26,7 +26,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// A UITableViewCell wrapper for a UIView
+/*!
+ UITableViewCell that wraps a UIView.
+
+ TODO(gabe): This is obsoleted by YelpKit which is not released yet.
+ @ingroup iPhone
+ */
 @interface GHUITableViewCell : UITableViewCell { 
 	UIView *cellView_;
 }

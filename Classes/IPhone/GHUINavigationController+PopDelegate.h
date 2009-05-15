@@ -29,19 +29,24 @@
 
 #import <Foundation/Foundation.h>
 
-// WARNING: The willPop delegates aren't fully tested!
+/*!
+ To enable the pop delegate, you need to setup the swizzled (aliased) methods by calling:
+ 
+ @code
+   [UINavigationController addPopDelegate:nil];
+ @endcode
+ 
+ Adds delegate method for UINavigationControllerDelegate
+ 
+ @code
+  - (void)navigationController:(UINavigationController *)navigationController 
+         didPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
 
-// To enable the pop delegate, you need to setup the swizzled (aliased) methods by calling:
-//   [UINavigationController addPopDelegate:nil];
-//
-// Adds delegate method for UINavigationControllerDelegate
-//
-//  - (void)navigationController:(UINavigationController *)navigationController 
-//         didPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
-//
-//  - (void)navigationController:(UINavigationController *)navigationController 
-//        willPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
-//
+  - (void)navigationController:(UINavigationController *)navigationController 
+        willPopViewControllers:(NSArray *)viewControllers animated:(BOOL)animated;
+ @endcode
+ WARNING: The willPop delegates aren't fully tested!
+ */
 @interface UINavigationController (GHPopDelegate)
 
 - (NSArray *)_popToRootViewControllerAnimated:(BOOL)animated;

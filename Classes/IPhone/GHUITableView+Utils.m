@@ -32,7 +32,9 @@
 @implementation UITableView (GHUtils)
 
 - (void)gh_deselectRow:(BOOL)animated {
-	[self deselectRowAtIndexPath:[self indexPathForSelectedRow] animated:animated];
+	NSIndexPath *indexPath = [self indexPathForSelectedRow];
+	if (indexPath)
+		[self deselectRowAtIndexPath:indexPath animated:animated];
 }
 
 @end

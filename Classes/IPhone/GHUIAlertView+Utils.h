@@ -28,10 +28,19 @@
 
 #import <Foundation/Foundation.h>
 
-
+/*! 
+ Utility category for UIAlertView.
+ 
+ TODO(gabe): This is obsoleted by YelpKit which is not released yet.
+ @ingroup iPhone
+ */
 @interface UIAlertView (GHUtils)
 
-// Show alert with OK button
+/*!
+ Show alert with OK button
+ @param title
+ @param message
+ */
 + (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end

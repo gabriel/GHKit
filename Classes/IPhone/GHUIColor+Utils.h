@@ -44,6 +44,10 @@ typedef struct {
 } GH_HSV;
 
 
+/*!
+ Utility category for UIColor.
+ @ingroup iPhone
+ */
 @interface UIColor (GHUtils)
 
 - (GH_RGBA)gh_rgba;

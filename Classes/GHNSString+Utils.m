@@ -44,7 +44,6 @@
 	return [self gtm_stringByReplacingMatchesOfPattern:@"^[ \t]+" withReplacement:@""];
 }
 
-
 - (BOOL)gh_isBlank {
   return ([@"" isEqualToString:[self gh_strip]]);
 }
@@ -78,8 +77,9 @@ static NSDictionary *gh_gTruncateMiddle = nil;
  @result Mime type
 */
 - (NSString *)gh_mimeTypeForExtension {
-  CFStringRef uti = UTTypeCreatePreferredIdentifierForTag (kUTTagClassFilenameExtension, (CFStringRef)self, NULL);    
-  NSString *mime = (NSString *)UTTypeCopyPreferredTagWithClass (uti, kUTTagClassMIMEType);
+	// TODO(gabe): Doesn't look like css extension gets the mime type?
+  CFStringRef uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)self, NULL);    
+  NSString *mime = (NSString *)UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType);
   CFRelease(uti);
   return [mime autorelease];
 }

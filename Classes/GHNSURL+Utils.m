@@ -144,10 +144,10 @@
   [pasteboard setString:[self absoluteString] forType:NSStringPboardType];
 }
 
-+ (void)gh_openFile:(NSString *)path {
++ (BOOL)gh_openFile:(NSString *)path {
   NSString *fileURL = [NSString stringWithFormat:@"file://%@", [self gh_encode:path]];
   NSURL *url = [NSURL URLWithString:fileURL];
-  [[NSWorkspace sharedWorkspace] openURL:url];
+  return [[NSWorkspace sharedWorkspace] openURL:url];
 }
 
 + (void)gh_openContainingFolder:(NSString *)path {

@@ -19,9 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>GABE</string>
 	<key>CFBundleVersion</key>
-	<string>0.3.4</string>
+	<string>0.3.7</string>
 	<key>NSMainNibFile</key>
-	<string>GHUnitIPhone</string>
+	<string></string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>

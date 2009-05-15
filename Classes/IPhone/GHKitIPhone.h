@@ -24,6 +24,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/*! @defgroup iPhone */
+
 #import "GHUIColor+Utils.h"
 #import "GHUIAlertView+Utils.h"
 #import "GHUIView+Utils.h"

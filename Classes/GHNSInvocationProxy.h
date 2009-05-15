@@ -66,21 +66,34 @@
  */
 
 /*!
- Proxy that invokes on a separate thread, or with a delay.
+ Proxy that allows invocation on a separate thread, or with a delay.
  
- Used with GHNSObject+Invocation:
+ Use with the GHNSObject+Invocation category:
  
  @code
- [[self gh_proxyAfterDelay:0.1] foo:1];
- [[self gh_proxyOnThread:someThread waitUntilDone:NO] bar:2 foo:YES];
+ NSMutableArray *array = ...; 
+ // Adds object to array after 5 seconds
+ [[array gh_proxyAfterDelay:5.0] addObject:@"test"];
+ 
+ 
+ NSThread *thread = ...
+ // Remove all objects from another thread
+ [[array gh_proxyOnThread:thread waitUntilDone:NO] removeAllObjects];
  @endcode
  
- @code
- GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
- proxy.target = bar;
- proxy.thread = thread;
- proxy.waitUntilDone = waitUntilDone;
- [proxy foo:1];
+ Create invocation proxy for a NSMutableArray.
+ 
+ @code 
+ NSMutableArray *array = ...;
+ NSThread *thread = ...
+ 
+ GHNSInvocationProxy *arrayProxy = [GHNSInvocationProxy invocation];
+ arrayProxy.target = array;
+ arrayProxy.thread = thread;
+ arrayProxy.waitUntilDone = NO;
+
+ // Performs method on thread and doesn't wait for return
+ [arrayProxy addObject:@"test"];
  @endcode
  */
 @interface GHNSInvocationProxy : NSProxy {
@@ -102,8 +115,17 @@
 @property (assign, nonatomic) BOOL waitUntilDone;
 @property (assign, nonatomic) NSTimeInterval delay;
 
+/*!
+ Create autoreleased empty invocation proxy.
+ @result Invocation proxy
+ */
 + (id)invocation;
 
+/*!
+ Create invocation proxy with target.
+ @param target
+ @result Invocation proxy
+ */
 - (id)prepareWithInvocationTarget:(id)target;
 
 @end

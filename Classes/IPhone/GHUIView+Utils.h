@@ -28,7 +28,10 @@
 
 #import <Foundation/Foundation.h>
 
-
+/*!
+ Utility category for UIView.
+ @ingroup iPhone
+ */
 @interface UIView (GHUtils)
 
 - (NSInteger)gh_removeAllSubviews;

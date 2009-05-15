@@ -40,6 +40,12 @@ typedef enum {
 } GHUIButtonShadingType;
 	
 
+/*! 
+ Custom UI button.
+ 
+ TODO(gabe): This is obsoleted by YelpKit which is not released yet.
+ @ingroup iPhone
+ */
 @interface GHUIButton : UIControl {
 
 	NSString *title_;	

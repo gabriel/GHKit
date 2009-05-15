@@ -43,7 +43,7 @@
 		005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */; };
 		0071E6140FB361A1001D2CF3 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
 		0071E6190FB361A7001D2CF3 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
-		0071EE370FB63AE7001D2CF3 /* GHNSInvocationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */; };
+		0071EE370FB63AE7001D2CF3 /* GHNSInvocationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0071EE380FB63AE7001D2CF3 /* GHNSInvocationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */; };
 		007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59850EF2438900B3005D /* GHNSArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
@@ -461,7 +461,6 @@
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
-				00AF10D20F2D5179009F0ABA /* GHKitTests-Info.plist */,
 			);
 			name = GHKit;
 			sourceTree = "<group>";
@@ -479,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				00AF10D20F2D5179009F0ABA /* GHKitTests-Info.plist */,
 				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
 			);
 			name = Resources;
@@ -487,11 +487,11 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				000E760D0FA61B830085BC13 /* Swizzle */,
 				0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */,
 				0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */,
 				00150F2D0FAD1281009A8633 /* GHLogger.h */,
 				00150F2E0FAD1281009A8633 /* GHLogger.m */,
-				000E760D0FA61B830085BC13 /* Swizzle */,
 				52857C8E0E1997B50011DA5C /* GHKit.h */,
 				00BB7AD80F3173BB00B3924D /* GHKitMacros.h */,
 				52857C8F0E1997B50011DA5C /* GHNSDate+Parsing.h */,

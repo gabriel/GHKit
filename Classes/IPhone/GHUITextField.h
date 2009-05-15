@@ -30,7 +30,10 @@
 
 #import "GHUIResponder.h"
 
-// Adds GHUIResponder implementation
+/*!
+ Custom GHUITextField that adds GHUIResponder implementation.
+ @ingroup iPhone
+ */
 @interface GHUITextField : UITextField <GHUIResponder> {
 	id<GHUIResponder> nextToRespond_; // weak
 	id<GHUIResponder> previousToRespond_; // weak
