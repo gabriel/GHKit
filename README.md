@@ -4,7 +4,7 @@
 
 ## Installation
 
-There are a few options. You can install it globally in /Library/Frameworks or with a little extra effort embed it with your project.
+There are a few options. You can install it globally in `/Library/Frameworks` or with a little extra effort embed it with your project.
 
 ### Installing in /Library/Frameworks
 
@@ -14,10 +14,14 @@ There are a few options. You can install it globally in /Library/Frameworks or w
 
 ### Installing in your project
 
-- Copy `GHKit.framework` to your project directory (maybe in MyProject/Frameworks/.)
-- Add the `GHKit.framekwork` (from MyProject/Frameworks/) to the your target. It should now be visible as a `Linked Framework` in the target. 
-- Under Build Settings, add `@loader_path/../Frameworks` to `Runpath Search Paths`
+- Copy `GHKit.framework` to your project directory (maybe in `MyProject/Frameworks/.`)
+- Add the `GHKit.framekwork` (from `MyProject/Frameworks/`) to the your target. It should now be visible as a `Linked Framework` in the target. 
+- Under `Build Settings`, add `@loader_path/../Frameworks` to `Runpath Search Paths`
 - Add `New Build Phase` | `New Copy Files Build Phase`. 
-	- Change the Destination to `Frameworks`.
+	- Change the `Destination` to `Frameworks`.
 	- Drag `GHKit.framework` into the the build phase
-	- Make sure the phase appears before any `Run Script` phases 
+	- Make sure the copy phase appears before any `Run Script` phases 
+
+### Installing as a Static Library (iPhone)
+
+Coming soon.
