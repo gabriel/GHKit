@@ -51,10 +51,13 @@
 
 // Log to your test case logger.
 // For example, GHTestLog(@"Some debug info, %@", obj)
-#define GHTestLog(...) [self _log:[NSString stringWithFormat:__VA_ARGS__, nil]]
+#define GHTestLog(...) [self log:[NSString stringWithFormat:__VA_ARGS__, nil]]
 
 /*!
- @brief The base class for a test case.
+ The base class for a test case. 
+ 
+ Tests run in a separate thread, so if you are running a UI test, you may want to
+ use the GHUITestCase.
 
  @code
  @interface MyTest : GHTestCase {}
@@ -120,7 +123,21 @@
 //! Run after the tests (once per test case)
 - (void)tearDownClass;
 
+/*!
+ Whether to run the tests on a separate thread.
+ Defaults to NO. Test is run on a separate thread.
+ @result If YES runs on the main thread
+ */
+- (BOOL)shouldRunOnMainThread;
+
 //! Any special handling of exceptions after they are thrown; By default logs stack trace to standard out.
 - (void)handleException:(NSException *)exception;
+
+/*!
+ Log a message, which notifies the log delegate.
+ This is not meant to be used directly, see GHTestLog(...) macro.
+ @param message
+ */
+- (void)log:(NSString *)message;
 
 @end

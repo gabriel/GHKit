@@ -1,8 +1,8 @@
 //
-//  GHUnit.h
-//  GHUnit
+//  GHUITestCase.h
+//  GHUnitIPhone
 //
-//  Created by Gabriel Handford on 1/19/09.
+//  Created by Gabriel Handford on 5/19/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -28,10 +28,14 @@
 //
 
 #import "GHTestCase.h"
-#import "GHAsyncTestCase.h"
-#import "GHTestSuite.h"
-#import "GHTestMacros.h"
-#import "GHTestRunner.h"
 
-#import "GHMockNSURLConnection.h"
-#import "GHMockNSHTTPURLResponse.h"
+/*!
+ Base class for UI tests.
+ 
+ TODO(gabe): UI test helpers
+ */
+@interface GHUITestCase : GHTestCase {
+
+}
+
+@end

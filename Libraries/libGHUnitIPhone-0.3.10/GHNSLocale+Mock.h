@@ -1,8 +1,8 @@
 //
-//  GHMockNSHTTPURLResponse.h
-//  GHUnit
+//  GHMockNSLocale.h
+//  GHUnitIPhone
 //
-//  Created by Gabriel Handford on 4/9/09.
+//  Created by Gabriel Handford on 4/13/09.
 //  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
@@ -27,19 +27,33 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+/*!
+ Category for overriding the current locale at runtime.
 
+ @code
+ #import "GHNSLocale+Mock.h"
+ // This aliases the currentLocale method and with the specified locale identifier
+ [NSLocale gh_setLocaleIdentifier:@"en_GB"];
+  
+ [[NSLocale currentLocale] localeIdentifier] == "en_GB"
+ @endcode
+ */
+@interface NSLocale (GHMock)
 
-// The NSHTTPURLResponse doesn't have a way to set the status code or headers, 
-// so we'll subclass and add setters for the statusCode and allHeaderFields properties.
-@interface GHMockNSHTTPURLResponse : NSHTTPURLResponse {
-	NSInteger statusCode_;
-	NSDictionary *headers_;
-}
++ (void)gh_setLocaleIdentifier:(NSString *)localeIdentifier;
 
-- (id)initWithStatusCode:(NSInteger)statusCode headers:(NSDictionary *)headers;
+/*!
+ Aliases to currentLocale with locale set from gh_setLocaleIdentifier.
+ If not set, defaults to NSLocale with identifier en_US.
+ */
++ (NSLocale *)gh_currentLocale;
 
-- (void)setStatusCode:(int)code;
-- (void)setHeaders:(NSDictionary *)headers;
++ (void)gh_setPreferredLanguages:(NSArray *)preferredLanguages;
+
+/*!
+ Aliases to preferredLanguages set from gh_setPreferredLanguages.
+ If not set, defaults to [@"en"].
+ */
++ (NSArray *)gh_preferredLanguages;
 
 @end
