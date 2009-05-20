@@ -8,6 +8,7 @@
 
 #import "GHNSInvocation+Utils.h"
 #import "GHNSObject+Invocation.h"
+#import "GHNSInvocationProxy.h"
 
 @interface NSInvocationUtilsTest : GHTestCase {
 	BOOL invokeTesting1Called_;
@@ -20,6 +21,7 @@
 
 @interface NSInvocationUtilsTest (Private)
 - (void)_invokeTesting4:(NSInteger)n;
+- (void)_invokeTestProxyTimed;
 @end
 
 @implementation NSInvocationUtilsTest
@@ -82,6 +84,20 @@
 - (void)_invokeTesting4:(NSInteger)n {
 	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
 	invokeTesting4Called_ = YES;
+}
+
+- (void)testProxyTimed {
+	NSTimeInterval time;
+	GHNSInvocationProxy *proxy = nil;
+	id target = [self gh_debugProxy:&time proxy:&proxy];
+	proxy.thread = [NSThread mainThread];
+	proxy.waitUntilDone = YES;
+	[target _invokeTestProxyTimed];	
+	NSLog(@"Took %0.2fs", time);
+}
+
+- (void)_invokeTestProxyTimed {
+	[NSThread sleepForTimeInterval:0.5];
 }
 
 @end

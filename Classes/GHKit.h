@@ -40,8 +40,6 @@
 #import "GHNSDictionary+NSNull.h"
 #import "GHNSDictionary+Utils.h"
 #import "GHNSMutableDictionary+Utils.h"
-#import "GHNSXMLNode+Utils.h"
-#import "GHNSXMLElement+Utils.h"
 #import "GHNSInvocation+Utils.h"
 #import "GHNSObject+Invocation.h"
 #import "GHNSError+Utils.h"
@@ -52,8 +50,10 @@
 #import "GHLogger.h"
 
 // Non-iPhone
-#ifndef TARGET_OS_IPHONE
+#if !TARGET_OS_IPHONE
 #import "GHViewAnimation.h"
+#import "GHNSXMLNode+Utils.h"
+#import "GHNSXMLElement+Utils.h"
 #endif
 
 // From GTM
@@ -64,7 +64,7 @@
 #import "GTMStackTrace.h"
 
 // iPhone Only
-#ifdef TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE
 #import "GHKitIPhone.h"
 #endif
 

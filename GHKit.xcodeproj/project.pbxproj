@@ -488,8 +488,6 @@
 			isa = PBXGroup;
 			children = (
 				000E760D0FA61B830085BC13 /* Swizzle */,
-				0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */,
-				0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */,
 				00150F2D0FAD1281009A8633 /* GHLogger.h */,
 				00150F2E0FAD1281009A8633 /* GHLogger.m */,
 				52857C8E0E1997B50011DA5C /* GHKit.h */,
@@ -544,6 +542,8 @@
 				000ACD450F69B34D0086708A /* GHNSMutableDictionary+Utils.m */,
 				00DBCD390FA674BD00893D19 /* GHNSBundle+Utils.h */,
 				00DBCD3A0FA674BD00893D19 /* GHNSBundle+Utils.m */,
+				0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */,
+				0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

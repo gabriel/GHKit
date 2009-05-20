@@ -99,11 +99,13 @@
 @interface GHNSInvocationProxy : NSProxy {
 	
 	id target_;
-		
-	BOOL forwardInvokesOnMainThread_;
+
 	NSThread *thread_;
 	BOOL waitUntilDone_;
 	NSTimeInterval delay_;
+	
+	// If debuging time to set
+	NSTimeInterval *time_;
 	
 	NSInvocation *invocation_;
 }
@@ -111,9 +113,9 @@
 @property (retain, nonatomic) id target;
 @property (retain, nonatomic) NSInvocation *invocation;
 @property (retain, nonatomic) NSThread *thread;
-@property (assign, nonatomic) BOOL forwardInvokesOnMainThread;
 @property (assign, nonatomic) BOOL waitUntilDone;
 @property (assign, nonatomic) NSTimeInterval delay;
+@property (assign, nonatomic) NSTimeInterval *time;
 
 /*!
  Create autoreleased empty invocation proxy.

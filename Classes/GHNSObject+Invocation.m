@@ -29,9 +29,7 @@
 
 #import "GHNSObject+Invocation.h"
 
-#import "GHNSInvocationProxy.h"
-
-@implementation NSObject (GHInvocation)
+@implementation NSObject (GHInvocation_GHKIT)
 
 - (id)gh_performIfRespondsToSelector:(SEL)selector {
 	if ([self respondsToSelector:selector]) return [self performSelector:selector];
@@ -89,12 +87,12 @@
 // (Changed namespaced to make it easier to include in static library without conflicting)
 
 - (id)gh_proxyOnMainThread {
-	return [self gh_proxyOnMainThreadAndWaitUntilDone:NO];
+	return [self gh_proxyOnMainThread:NO];
 }
 
-- (id)gh_proxyOnMainThreadAndWaitUntilDone:(BOOL)waitUntilDone {
+- (id)gh_proxyOnMainThread:(BOOL)waitUntilDone {
 	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
-	proxy.forwardInvokesOnMainThread = YES;
+	proxy.thread = [NSThread mainThread];
 	proxy.waitUntilDone = waitUntilDone;
 	return [proxy prepareWithInvocationTarget:self];
 }
@@ -114,6 +112,17 @@
 	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
 	proxy.delay = delay;
 	return [proxy prepareWithInvocationTarget:self];	
+}
+
+- (id)gh_timedProxy:(NSTimeInterval *)time {
+	return [self gh_debugProxy:time proxy:nil];
+}
+
+- (id)gh_debugProxy:(NSTimeInterval *)time proxy:(GHNSInvocationProxy **)proxy {
+	GHNSInvocationProxy *lproxy = [GHNSInvocationProxy invocation];
+	if (proxy) *proxy = lproxy;
+	lproxy.time = time;	
+	return [lproxy prepareWithInvocationTarget:self];		
 }
 
 @end

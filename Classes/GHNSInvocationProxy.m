@@ -70,8 +70,7 @@
 
 @implementation GHNSInvocationProxy
 
-@synthesize target=target_, invocation=invocation_, forwardInvokesOnMainThread=forwardInvokesOnMainThread_, 
-waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_;
+@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_, time=time_;
 
 + (id)invocation {
 	return([[[self alloc] init] autorelease]);
@@ -93,9 +92,6 @@ waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_;
 	[super dealloc];
 }
 
-- (void)_invoke {
-}
-
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
 	return [[self target] methodSignatureForSelector:selector];
 }
@@ -105,14 +101,13 @@ waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_;
 	
 	invocation.target = target_;
 	
-	BOOL invokeOnOtherThread = forwardInvokesOnMainThread_ || thread_ || delay_ > 0;
+	BOOL invokeOnOtherThread = (thread_ && ![thread_ isEqual:[NSThread currentThread]]) || delay_ > 0;
 	if (invokeOnOtherThread && !waitUntilDone_) {
 		[invocation retainArguments];
 	}
 	
-	if (forwardInvokesOnMainThread_) {
-		[invocation_ performSelectorOnMainThread:@selector(invoke) withObject:nil waitUntilDone:waitUntilDone_];
-	} else if (thread_) {
+	NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
+	if (thread_) {
 		[invocation_ performSelector:@selector(invoke) onThread:thread_ withObject:nil waitUntilDone:waitUntilDone_];
 	} else {
 		if (delay_) {
@@ -121,6 +116,8 @@ waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_;
 			[invocation_ performSelector:@selector(invoke) withObject:nil];
 		}
 	}
+	NSTimeInterval endTime = [NSDate timeIntervalSinceReferenceDate];
+	if (time_) *time_ = (endTime - startTime);
 }
 
 @end
