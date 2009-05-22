@@ -85,16 +85,63 @@
 								afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
 
 
-// Invocation proxies
+#pragma mark Invocation proxies
 
+/*!
+ Proxy for invoking on main thread (without waiting until done).
+ @result Proxy
+ */
 - (id)gh_proxyOnMainThread;
+
+/*!
+ Proxy for invoking on main thread.
+ @param waitUntilDone Whether to block until call is finished
+ @result Proxy
+ */
 - (id)gh_proxyOnMainThread:(BOOL)waitUntilDone;
+
+/*!
+ Proxy on thread (without blocking until done).
+ @param thread Thread to invoke on
+ @result Proxy
+ */
 - (id)gh_proxyOnThread:(NSThread *)thread;
+
+/*!
+ Proxy for invoking on thread.
+ @param thread Thread to invoke on
+ @param waitUntilDone Whether to block until call is finished
+ @result Proxy
+ */
 - (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone;
+
+/*!
+ Proxy for invoking after delay.
+ 
+ @code 
+ NSMutableArray array = [NSMutableArray array];
+ // Inserts object after 2 second delay
+ [[array gh_proxyAfterDelay:2.0] insertObject:@"foo" atIndex:0];
+ @endcode
+ 
+ @param delay Time (in seconds) to wait before calling.
+ @result proxy
+ */
 - (id)gh_proxyAfterDelay:(NSTimeInterval)delay;
 
-// Debug proxies
+/*!
+ Proxy for measuring invocation time.
+ @param time If not nil, will set the time on completion
+ @result Proxy
+ */
 - (id)gh_timedProxy:(NSTimeInterval *)time;
+
+/*!
+ Proxy for debugging.
+ @param time If not nil, will set the time after invoke
+ @param proxy The generated proxy, if we need to modify it before invoking methods on it
+ @result Proxy
+ */
 - (id)gh_debugProxy:(NSTimeInterval *)time proxy:(GHNSInvocationProxy **)proxy;
 
 @end
