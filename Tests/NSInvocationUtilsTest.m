@@ -15,8 +15,15 @@
 	BOOL invokeTesting2Called_;
 	BOOL invokeTesting3Called_;
 	BOOL invokeTesting4Called_;
+	BOOL invokeTestProxyCalled_;
 }
 
+@end
+
+@interface TestWithDelegate : NSObject { 
+	id delegate_;
+}
+@property (assign, nonatomic) id delegate;
 @end
 
 @interface NSInvocationUtilsTest (Private)
@@ -98,6 +105,43 @@
 
 - (void)_invokeTestProxyTimed {
 	[NSThread sleepForTimeInterval:0.5];
+}
+
+- (void)testProxyDelegate {
+	TestWithDelegate *test = [[TestWithDelegate alloc] init];
+	GHTestLog(@"Setting delegate");
+	test.delegate = [self gh_proxyOnMainThread];
+	
+	GHTestLog(@"Creating thread");
+	NSThread* thread = [[NSThread alloc] initWithTarget:self												
+																						 selector:@selector(_threadMain:)
+																								 object:test];
+	
+	GHTestLog(@"Starting thread");
+	[thread start];
+	// Wait for thread to call
+	[NSThread sleepForTimeInterval:0.3];
+	GHAssertTrue(invokeTestProxyCalled_, nil);
+}
+
+- (void)_threadMain:(id)test {
+	[test run];
+}
+
+- (void)_invokeTestProxyDelegate {
+	GHTestLog(@"Invoked on main thread? %d", [NSThread isMainThread]);
+	GHAssertTrue([NSThread isMainThread], @"Delegate should have called back on main thread");
+	invokeTestProxyCalled_ = YES;
+}
+
+@end
+
+@implementation TestWithDelegate
+
+@synthesize delegate=delegate_;
+
+- (void)run {	
+	[delegate_ _invokeTestProxyDelegate];
 }
 
 @end
