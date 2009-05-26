@@ -15,7 +15,8 @@
 	BOOL invokeTesting2Called_;
 	BOOL invokeTesting3Called_;
 	BOOL invokeTesting4Called_;
-	BOOL invokeTestProxyCalled_;
+	BOOL invokeTestProxyDelegateCalled_;
+	BOOL invokeTestArgumentProxyCalled_;
 }
 
 @end
@@ -29,6 +30,10 @@
 @interface NSInvocationUtilsTest (Private)
 - (void)_invokeTesting4:(NSInteger)n;
 - (void)_invokeTestProxyTimed;
+@end
+
+@protocol TestArgumentProxy 
+- (void)s:(NSString *)s n:(NSInteger)n b:(BOOL)b;
 @end
 
 @implementation NSInvocationUtilsTest
@@ -121,7 +126,7 @@
 	[thread start];
 	// Wait for thread to call
 	[NSThread sleepForTimeInterval:0.3];
-	GHAssertTrue(invokeTestProxyCalled_, nil);
+	GHAssertTrue(invokeTestProxyDelegateCalled_, nil);
 }
 
 - (void)_threadMain:(id)test {
@@ -131,7 +136,20 @@
 - (void)_invokeTestProxyDelegate {
 	GHTestLog(@"Invoked on main thread? %d", [NSThread isMainThread]);
 	GHAssertTrue([NSThread isMainThread], @"Delegate should have called back on main thread");
-	invokeTestProxyCalled_ = YES;
+	invokeTestProxyDelegateCalled_ = YES;
+}
+
+- (void)testArgumentProxy {
+	SEL selector = @selector(_invokeTestArgumentProxy:n:b:);
+	[[self gh_argumentProxy:selector] s:@"test" n:20 b:NO];
+	GHAssertTrue(invokeTestArgumentProxyCalled_, nil);
+}
+
+- (void)_invokeTestArgumentProxy:(NSString *)s n:(NSInteger)n b:(BOOL)b {
+	GHAssertEqualStrings(@"test", s, nil);
+	GHAssertTrue(20 == n, nil);
+	GHAssertFalse(b, nil);
+	invokeTestArgumentProxyCalled_ = YES;
 }
 
 @end

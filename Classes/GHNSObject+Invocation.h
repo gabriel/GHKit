@@ -144,4 +144,24 @@
  */
 - (id)gh_debugProxy:(NSTimeInterval *)time proxy:(GHNSInvocationProxy **)proxy;
 
+/*!
+ Proxy for selector.
+ For calling a selector with any type and number of arguments.
+ 
+ Overriding the selector only make sense when using the "argument proxy".
+ For example, 
+ 
+ SEL selector = @selector(bar:baz:);
+ [foo gh_argumentProxy:selector] arg:10 arg:YES];
+ 
+ Will call [foo bar:10 baz:YES];  (and not arg:arg: selector which doesn't exist).
+ 
+ This allows you to call a selector variable with primitive and multi arguments, 
+ whereas before you would have to use a manually constructed NSInvocation (or 
+ performSelector if you had only object arguments).
+ 
+ @param selector
+ */
+- (id)gh_argumentProxy:(SEL)selector;
+
 @end

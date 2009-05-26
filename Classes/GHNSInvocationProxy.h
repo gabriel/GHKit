@@ -99,6 +99,10 @@
 @interface GHNSInvocationProxy : NSProxy {
 	
 	id target_;
+	
+	// If not forwarding to target selector, we can use this to override the
+	// selector called
+	SEL selector_; 
 
 	NSThread *thread_;
 	BOOL waitUntilDone_;
@@ -111,6 +115,7 @@
 }
 
 @property (retain, nonatomic) id target;
+@property (assign, nonatomic) SEL selector;
 @property (retain, nonatomic) NSInvocation *invocation;
 @property (retain, nonatomic) NSThread *thread;
 @property (assign, nonatomic) BOOL waitUntilDone;
@@ -129,5 +134,28 @@
  @result Invocation proxy
  */
 - (id)prepareWithInvocationTarget:(id)target;
+
+/*!
+ Create invocation proxy with target and overriding selector.
+ 
+ Overriding the selector only make sense when using the "argument proxy".
+ For example, 
+
+ id target = ...;
+ SEL selector = @selector(bar:baz:);
+ [[[GHNSInvocationProxy invocation] prepareWithInvocationTarget:target selector:selector] arg:10 arg:20];
+ 
+ Will call [target bar:10 baz:20];  (and not arg:arg: selector which doesn't exist).
+ 
+ This allows you to call a selector variable with primitive and multi arguments, 
+ whereas before you would have to use a manually constructed NSInvocation.
+ 
+ See GHNSObject+Invocation#gh_argumentProxy for the shorthand.
+ 
+ @param target
+ @param selector
+ @result Invocation proxy
+ */
+- (id)prepareWithInvocationTarget:(id)target selector:(SEL)selector;
 
 @end

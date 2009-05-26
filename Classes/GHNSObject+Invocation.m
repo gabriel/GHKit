@@ -125,4 +125,9 @@
 	return [lproxy prepareWithInvocationTarget:self];		
 }
 
+- (id)gh_argumentProxy:(SEL)selector {
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	return [proxy prepareWithInvocationTarget:self selector:selector];		
+}
+
 @end

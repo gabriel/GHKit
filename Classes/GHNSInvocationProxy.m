@@ -70,10 +70,10 @@
 
 @implementation GHNSInvocationProxy
 
-@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_, time=time_;
+@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_, time=time_, selector=selector_;
 
 + (id)invocation {
-	return([[[self alloc] init] autorelease]);
+	return [[[self alloc] init] autorelease];
 }
 
 - (id)init {
@@ -85,6 +85,12 @@
 	return self;
 }
 
+- (id)prepareWithInvocationTarget:(id)target selector:(SEL)selector {
+	self.target = target;
+	self.selector = selector;
+	return self;
+}
+
 - (void)dealloc {
 	[target_ release];
 	[invocation_ release];
@@ -93,6 +99,9 @@
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
+	// For argument proxy, if we are overriding the invoking selector
+	if (selector_ != NULL) selector = selector_;
+	
 	return [[self target] methodSignatureForSelector:selector];
 }
 
@@ -100,6 +109,8 @@
 	self.invocation = invocation;
 	
 	invocation.target = target_;
+	// For argument proxy, if we are overriding the invoking selector
+	if (selector_ != NULL) invocation.selector = selector_;
 	
 	BOOL invokeOnOtherThread = (thread_ && ![thread_ isEqual:[NSThread currentThread]]) || delay_ > 0;
 	if (invokeOnOtherThread && !waitUntilDone_) {
