@@ -26,11 +26,17 @@
 
 #import "GHNSArray+Utils.h"
 
-
 @implementation NSArray (GHUtils)
 
 - (id)gh_first {
 	return [self objectAtIndex:0];
+}
+
+- (id)gh_random {
+	if ([self count] == 0) return nil;
+	srand(time(0));
+	int index = rand() % [self count];
+	return [self objectAtIndex:index];
 }
 
 @end

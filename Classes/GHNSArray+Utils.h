@@ -28,4 +28,6 @@
 
 - (id)gh_first;
 
+- (id)gh_random;
+
 @end
