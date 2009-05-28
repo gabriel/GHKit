@@ -58,13 +58,13 @@
 	return value;
 }
 
-- (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue {
+- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue {
 	id value = [self objectForKey:key];
 	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
 	return [value boolValue];
 }
 
-- (NSInteger)gh_boolForKey:(id)key {
+- (BOOL)gh_boolForKey:(id)key {
 	return [self gh_boolForKey:key withDefault:NO];
 }
 

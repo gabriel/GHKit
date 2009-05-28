@@ -50,8 +50,8 @@
  @param key
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
  */
-- (NSInteger)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
-- (NSInteger)gh_boolForKey:(id)key;
+- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
+- (BOOL)gh_boolForKey:(id)key;
 
 /*!
  Object for key with default value, if entry is NSNull or entry does not exist.
