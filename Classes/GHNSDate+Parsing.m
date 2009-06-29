@@ -60,7 +60,7 @@
 
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value {
 	if (!timeSinceEpoch) return value;
-	return [NSDate dateWithTimeIntervalSince1970:[timeSinceEpoch longLongValue]];
+	return [NSDate dateWithTimeIntervalSince1970:[timeSinceEpoch doubleValue]];
 }
 
 - (NSString *)gh_formatRFC822 {
@@ -100,7 +100,7 @@
   // Example: "Wed, 01 Mar 2006 12:00:00 GMT"
   NSDateFormatter *gh_rfc1123DateFormatter = [[[NSDateFormatter alloc] init] autorelease];     
   [gh_rfc1123DateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-  // Need to force US locale when generating otherwise it might not be 822 compatible
+  // Need to force US locale when generating otherwise it might not be 1123 compatible
   [gh_rfc1123DateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];    
   [gh_rfc1123DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
   [gh_rfc1123DateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];	

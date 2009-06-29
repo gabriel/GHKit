@@ -53,7 +53,7 @@
 
 /*!
  Parse time since epoch.
- @param timeSinceEpoch An NSNumber or NSString (responds to longLongValue)
+ @param timeSinceEpoch An NSNumber or NSString (responds to doubleValue)
  @result NSDate or nil if timeSinceEpoch was nil
  */
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch;
