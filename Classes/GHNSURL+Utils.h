@@ -43,7 +43,7 @@
 + (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary;
 
 /*!
- Convert dictionary to url query string.
+ Convert dictionary to URL query string.
  @method gh_dictionaryToQueryString
  @abstract Dictionary to params string. Escapes any encoded characters.
  @param queryDictionary Dictionary
@@ -62,7 +62,7 @@
 + (NSArray *)gh_dictionaryToQueryArray:(NSDictionary *)queryDictionary sort:(BOOL)sort encoded:(BOOL)encoded;
 
 /*!
- Convert url query string to dictionary.
+ Convert URL query string to dictionary.
  @method gh_queryStringToDictionary
  @param string URL params string, key1=value1&key2=value2
  @result Dictionary
@@ -85,14 +85,14 @@
 
 /*!
  Canonical form of URL.
- @result Canonical url
+ @result Canonical URL
  */
 - (NSURL *)gh_canonical;
 
 /*!
  Canonical form of URL.
  @param ignore Do not include the set of query params
- @result Canonical url
+ @result Canonical URL
  */
 - (NSURL *)gh_canonicalWithIgnore:(NSArray *)ignore;
 
@@ -114,7 +114,7 @@
 + (NSString *)gh_encode:(NSString *)s;
 
 /*!
- Encode URL string (for escaping url key/value params).
+ Encode URL string (for escaping URL key/value params).
  
  "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C
  
@@ -152,12 +152,12 @@
 
 /*!
  @method copyLinkToPasteboard
- @abstract Copy url to pasteboard
+ @abstract Copy URL to pasteboard
  */
 - (void)gh_copyLinkToPasteboard;
 
 /*!
- Open file url. 
+ Open file URL. 
  Opens path in Finder or whatever is registered for the file:// scheme.
  @method openFile
  @param path Path to open

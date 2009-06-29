@@ -90,14 +90,14 @@
 }
 
 - (NSURL *)gh_deriveWithQuery:(NSString *)query {
-	NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@://", [self scheme]];
-	if ([self user] && [self password]) [urlString appendFormat:@"%@:%@@", [self user], [self password]];
-	[urlString appendString:[self host]];
-	if ([self port]) [urlString appendFormat:@":%d", [[self port] integerValue]];
-	[urlString appendString:[self path]];
-	if (query) [urlString appendFormat:@"?%@", query];
-	if ([self fragment]) [urlString appendFormat:@"#%@", [self fragment]];	
-	return [NSURL URLWithString:urlString];
+	NSMutableString *URLString = [NSMutableString stringWithFormat:@"%@://", [self scheme]];
+	if ([self user] && [self password]) [URLString appendFormat:@"%@:%@@", [self user], [self password]];
+	[URLString appendString:[self host]];
+	if ([self port]) [URLString appendFormat:@":%d", [[self port] integerValue]];
+	[URLString appendString:[self path]];
+	if (query) [URLString appendFormat:@"?%@", query];
+	if ([self fragment]) [URLString appendFormat:@"#%@", [self fragment]];	
+	return [NSURL URLWithString:URLString];
 }
 
 - (NSURL *)gh_canonical {
@@ -146,8 +146,8 @@
 
 + (BOOL)gh_openFile:(NSString *)path {
   NSString *fileURL = [NSString stringWithFormat:@"file://%@", [self gh_encode:path]];
-  NSURL *url = [NSURL URLWithString:fileURL];
-  return [[NSWorkspace sharedWorkspace] openURL:url];
+  NSURL *URL = [NSURL URLWithString:fileURL];
+  return [[NSWorkspace sharedWorkspace] openURL:URL];
 }
 
 + (void)gh_openContainingFolder:(NSString *)path {
