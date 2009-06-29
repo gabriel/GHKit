@@ -50,6 +50,19 @@
 - (NSString *)gh_leftStrip;
 
 /*!
+ Reverse the string.
+ @result Reversed
+ */
+- (NSString *)gh_reverse;
+
+/*!
+ Count the number of times a string appears.
+ @param s
+ @result Number of times it appears
+ */
+- (NSInteger)gh_count:(NSString *)s;
+
+/*!
  @method gh_isBlank
  @param s
  @result YES if string is nil, empty or whitespace characters
@@ -78,41 +91,30 @@
 + (NSString *)gh_uuid;
 
 /*!
- @method gh_lastSplitWithString
- @abstract 
-   Get last part of string separated by the specified string. For example, [@"foo:bar" gh_splitWithString:@":"] => bar
-   If no string is found, returns self.
+ Get last part of string separated by the specified string. 
  
+ @code
+ [@"foo:bar" gh_lastSplitWithString:@":" options:0] => bar
+ @endcode
+  
  @param s String to split on
  @param options Options
- @result Last part of string split by string. 
+ @result Last part of string split by string. If no string is found, returns self.
 */
 - (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options;
 
 /*!
- @method gh_cutWithString
- @abstract Cuts the word up. Like split, but all the characters are kept.
-   For example, [@"foo:bar" gh_cutWithString:@":"] => [ "foo:", "bar" ]
- @param s String to cut on
- @param options Options
- @result String cut up into array
-*/
-- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options;
-
-/*!
- @method gh_cutWithString
- @abstract Cuts the word up. Like split, but all the characters are kept.
- For example, [@"foo:bar" gh_cutWithString:@":"] => [ "foo:", "bar" ]
- @param s String to cut on
- @param options Options
- @param cutAfter If YES, then [ "foo:", "bar" ], otherwise [ "foo", ":bar" ]
- @result String cut up into array
+ Components separated by string with option to include separator.
+ 
+ @code
+ [@"foo::bar" gh_componentsSeparatedByString:@":" include:YES] => [@"foo", @":", @":", @"bar"];
+ @endcode
+ 
+ @param s String to separate
+ @param include Whether to include separator
+ @result Components
  */
-- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter;
-
-/*!
- */
-- (NSArray *)gh_cutWithCharacterFromSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter;
+- (NSArray *)gh_componentsSeparatedByString:(NSString *)s include:(BOOL)include;
 
 /*!
  @method gh_subStringSegmentsWithinStart

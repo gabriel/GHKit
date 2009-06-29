@@ -97,16 +97,6 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return (range.location != NSNotFound);
 }
 
-/*!
- @method gh_lastSplitWithString
- @abstract 
-   Get last part of string separated by the specified string. For example, [@"foo:bar" gh_splitWithString:@":"] => bar
-   If no string is found, returns self.
- 
- @param s String to split on
- @param options Options
- @result Last part of string split by string. 
-*/
 - (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options {
   NSRange range = [self rangeOfString:s options:options];
   if (range.location != NSNotFound) {
@@ -115,56 +105,18 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return self;
 }
 
-- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options {
-	return [self gh_cutWithString:cutWith options:options cutAfter:YES];
-}
-
-- (NSArray *)_gh_cutWithString:(NSString *)cutWith characterSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {	
-	NSMutableArray *words = [NSMutableArray array];
-	NSScanner *scanner = [[NSScanner alloc] initWithString:self];
-	scanner.charactersToBeSkipped = nil;
-	NSString *prependCuts = nil;
-	while(!scanner.isAtEnd) {
-		NSString *s = nil;
-		NSString *cuts = nil;
-		if (characterSet) {
-			[scanner scanUpToCharactersFromSet:characterSet intoString:&s];
-			[scanner scanCharactersFromSet:characterSet intoString:&cuts];
-		} else if (cutWith) {
-			[scanner scanUpToString:cutWith intoString:&s];
-			[scanner scanString:cutWith intoString:&cuts];
-		}
-		//NSLog(@"s=%@, cuts=%@", s, cuts);
-		if (s) {
-			if (prependCuts) {
-				s = [prependCuts stringByAppendingString:s];
-				prependCuts = nil;
-			}
-			
-			if (cutAfter && cuts) {
-				s = [s stringByAppendingString:cuts];
-			} else if (!cutAfter && cuts) {
-				prependCuts = cuts;
-			}
-			[words addObject:s];
-		} else if (cuts) {
-			[words addObject:cuts];
-		}
+- (NSArray *)gh_componentsSeparatedByString:(NSString *)separator include:(BOOL)include {
+	if (!include) return [self componentsSeparatedByString:separator];
+	NSArray *strings = [self componentsSeparatedByString:separator];
+	NSMutableArray *components = [NSMutableArray arrayWithCapacity:[strings count] * 2];
+	NSInteger i = -1;
+	NSInteger count = [strings count];
+	for(NSString *s in strings) {
+		i++;
+		if (![s isEqualToString:@""]) [components addObject:s];
+		if ((i+1) < count) [components addObject:separator];
 	}
-	if (prependCuts) [words addObject:prependCuts];
-	
-	if ([words count] == 0 && [self length] > 0) [words addObject:self];
-	if ([words count] == 0) [words addObject:@""];
-	[scanner release];
-	return words;
-}
-
-- (NSArray *)gh_cutWithString:(NSString *)cutWith options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
-	return [self _gh_cutWithString:cutWith characterSet:nil options:options cutAfter:cutAfter];
-}
-
-- (NSArray *)gh_cutWithCharacterFromSet:(NSCharacterSet *)characterSet options:(NSStringCompareOptions)options cutAfter:(BOOL)cutAfter {
-	return [self _gh_cutWithString:nil characterSet:characterSet options:options cutAfter:cutAfter];
+	return components;
 }
 
 /*!
@@ -214,7 +166,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
  @result YES if string starts with string
 */
 - (BOOL)gh_startsWith:(NSString *)startsWith {
-  return [self gh_startsWith:startsWith options:0];
+  return [self hasPrefix:startsWith];
 }
 
 /*!
@@ -278,6 +230,35 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   CFRelease(uuidRef);
   
   return [uuid autorelease];
+}
+
+- (NSString *)gh_reverse {
+	NSInteger length = [self length];
+	unichar *buffer = calloc(length, sizeof(unichar));
+	
+	// TODO(gabe): Apparently getCharacters: is really slow
+	[self getCharacters:buffer range:NSMakeRange(0, length)];
+	
+	for(int i = 0, mid = ceil(length/2.0); i < mid; i++) {
+		unichar c = buffer[i];
+		buffer[i] = buffer[length-i-1];
+		buffer[length-i-1] = c;
+	}
+	
+	return [[[NSString alloc] initWithCharacters:buffer length:length] autorelease];
+}
+
+- (NSInteger)gh_count:(NSString *)s {
+	NSRange inRange = NSMakeRange(0, [self length]);
+	NSInteger count = 0;
+	while(YES) {
+		NSRange range = [self rangeOfString:s options:0 range:inRange];
+		if (range.location == NSNotFound) break;
+		inRange.location = range.location + range.length;
+		inRange.length = [self length] - range.location - 1;
+		count++;
+	}
+	return count;
 }
 
 /*!
