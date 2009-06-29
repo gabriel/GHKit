@@ -61,24 +61,24 @@
 }
 
 - (void)testDeriveWithQuery {
-	NSURL *url = [NSURL URLWithString:@"http://api.yelp.com/path?key1=value1&key2=value2"];
-	NSURL *derivedURL = [url gh_deriveWithQuery:@"key3=value3&key4=value4"];
+	NSURL *URL = [NSURL URLWithString:@"http://api.yelp.com/path?key1=value1&key2=value2"];
+	NSURL *derivedURL = [URL gh_deriveWithQuery:@"key3=value3&key4=value4"];
 	GHAssertEqualStrings([derivedURL description], @"http://api.yelp.com/path?key3=value3&key4=value4", nil);	
 }
 
 - (void)testDeriveComplexWithQuery {
-	NSURL *url = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?key1=value1&key2=value2#myfrag"];
-	NSURL *derivedURL = [url gh_deriveWithQuery:@"key3=value3&key4=value4"];
+	NSURL *URL = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?key1=value1&key2=value2#myfrag"];
+	NSURL *derivedURL = [URL gh_deriveWithQuery:@"key3=value3&key4=value4"];
 	GHAssertEqualStrings([derivedURL description], @"https://user:pass@api.yelp.com:400/path?key3=value3&key4=value4#myfrag", nil);	
 }
 
 - (void)testCanonical {
-	NSURL *url = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?b=c&a=d#myfrag"];
-	NSURL *canonical = [url gh_canonical];
+	NSURL *URL = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?b=c&a=d#myfrag"];
+	NSURL *canonical = [URL gh_canonical];
 	GHAssertEqualObjects(canonical, [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?a=d&b=c#myfrag"], nil);
 
-	NSURL *url2 = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?b=c&a=d&ignore=ignored#myfrag"];
-	NSURL *canonical2 = [url2 gh_canonicalWithIgnore:[NSArray arrayWithObject:@"ignore"]];
+	NSURL *URL2 = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?b=c&a=d&ignore=ignored#myfrag"];
+	NSURL *canonical2 = [URL2 gh_canonicalWithIgnore:[NSArray arrayWithObject:@"ignore"]];
 	GHAssertEqualObjects(canonical2, [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?a=d&b=c#myfrag"], nil);
 }
 
