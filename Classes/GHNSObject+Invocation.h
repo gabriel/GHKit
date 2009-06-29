@@ -164,4 +164,6 @@
  */
 - (id)gh_argumentProxy:(SEL)selector;
 
+- (id)gh_logProxy;
+
 @end

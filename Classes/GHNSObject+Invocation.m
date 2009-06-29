@@ -130,4 +130,11 @@
 	return [proxy prepareWithInvocationTarget:self selector:selector];		
 }
 
+- (id)gh_logProxy {
+	NSLog(@"Tracing: %@", self);
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	proxy.tracer = [GHNSLogInvocationTracer shared];
+	return [proxy prepareWithInvocationTarget:self];
+}
+
 @end

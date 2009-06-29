@@ -25,6 +25,7 @@
 	id delegate_;
 }
 @property (assign, nonatomic) id delegate;
+- (void)runInvokeTestProxyDelegate;
 @end
 
 @interface NSInvocationUtilsTest (Private)
@@ -130,7 +131,7 @@
 }
 
 - (void)_threadMain:(id)test {
-	[test run];
+	[test runInvokeTestProxyDelegate];
 }
 
 - (void)_invokeTestProxyDelegate {
@@ -158,7 +159,7 @@
 
 @synthesize delegate=delegate_;
 
-- (void)run {	
+- (void)runInvokeTestProxyDelegate {	
 	[delegate_ _invokeTestProxyDelegate];
 }
 

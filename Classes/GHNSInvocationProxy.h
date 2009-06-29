@@ -65,6 +65,17 @@
  *
  */
 
+@class GHNSInvocationProxy;
+
+@protocol GHNSInvocationTracer <NSObject>
+- (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation;
+- (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation;
+@end
+
+@interface GHNSLogInvocationTracer : NSObject <GHNSInvocationTracer> {}
++ (GHNSLogInvocationTracer *)shared;
+@end
+
 /*!
  Proxy that allows invocation on a separate thread, or with a delay.
  
@@ -107,6 +118,7 @@
 	NSThread *thread_;
 	BOOL waitUntilDone_;
 	NSTimeInterval delay_;
+	id<GHNSInvocationTracer> tracer_; // weak
 	
 	// If debuging time to set
 	NSTimeInterval *time_;
@@ -121,6 +133,7 @@
 @property (assign, nonatomic) BOOL waitUntilDone;
 @property (assign, nonatomic) NSTimeInterval delay;
 @property (assign, nonatomic) NSTimeInterval *time;
+@property (assign, nonatomic) id<GHNSInvocationTracer> tracer;
 
 /*!
  Create autoreleased empty invocation proxy.

@@ -70,7 +70,7 @@
 
 @implementation GHNSInvocationProxy
 
-@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_, time=time_, selector=selector_;
+@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_, time=time_, selector=selector_, tracer=tracer_;
 
 + (id)invocation {
 	return [[[self alloc] init] autorelease];
@@ -117,6 +117,7 @@
 		[invocation retainArguments];
 	}
 	
+	[tracer_ proxy:self willInvoke:invocation];
 	NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
 	if (thread_) {
 		[invocation_ performSelector:@selector(invoke) onThread:thread_ withObject:nil waitUntilDone:waitUntilDone_];
@@ -127,8 +128,42 @@
 			[invocation_ performSelector:@selector(invoke) withObject:nil];
 		}
 	}
+	
+	[tracer_ proxy:self didInvoke:invocation];
+	
 	NSTimeInterval endTime = [NSDate timeIntervalSinceReferenceDate];
 	if (time_) *time_ = (endTime - startTime);
+}
+
+@end
+
+
+@implementation GHNSLogInvocationTracer
+
+static GHNSLogInvocationTracer *gGHNSLogInvocationTracer = NULL;
+
++ (GHNSLogInvocationTracer *)shared {
+	@synchronized([self class]) {
+		if (gGHNSLogInvocationTracer == NULL) {
+			gGHNSLogInvocationTracer = [[GHNSLogInvocationTracer alloc] init];
+		}
+	}
+	return gGHNSLogInvocationTracer;
+}
+
+
+- (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation {
+	NSLog(@"[TRACE] [%@ %@]", NSStringFromClass([invocation.target class]), NSStringFromSelector(invocation.selector));
+}
+
+- (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation {
+	NSUInteger length = [[invocation methodSignature] methodReturnLength];
+	if (length == 0) NSLog(@"[TRACE] No return");
+	else {
+		const char *returnType = [[invocation methodSignature] methodReturnType];
+		NSString *returnTypeString = [[[NSString alloc] initWithCString:returnType encoding:NSUTF8StringEncoding] autorelease];
+		NSLog(@"[TRACE] Return type: %@", returnTypeString);
+	}	
 }
 
 @end
