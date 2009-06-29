@@ -46,73 +46,39 @@
 	GHAssertEqualObjects(@"ar", [@"foobar" gh_lastSplitWithString:@"oob" options:NSCaseInsensitiveSearch], @"Split is invalid");
 }
 
-- (void)testCutWithString1 {
-	NSArray *expected = [NSArray arrayWithObjects:@"foo:", @"bar", nil];
-	NSArray *cuts = [@"foo:bar" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected, cuts, @"Cut is invalid (1)");	
+- (void)testSeparate1 {	
+	NSArray *expected = [NSArray arrayWithObjects:@"foo", @":", @":", @"bar", nil];	
+	NSArray *separated = [@"foo::bar" gh_componentsSeparatedByString:@":" include:YES];
+	GHAssertEqualObjects(separated, expected, nil);
 }
 
-- (void)testCutWithString2 {
-	NSArray *expected2 = [NSArray arrayWithObjects:@"foobar", nil];
-	NSArray *cuts2 = [@"foobar" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected2, cuts2, @"Cut is invalid (2)");	
+- (void)testSeparate2 {	
+	NSArray *expected = [NSArray arrayWithObjects:@"foo", @"\n", @"bar", nil];	
+	NSArray *separated = [@"foo\nbar" gh_componentsSeparatedByString:@"\n" include:YES];
+	GHAssertEqualObjects(separated, expected, nil);
 }
 
-- (void)testCutWithString3 {	
-	NSArray *expected3 = [NSArray arrayWithObjects:@"foo:", nil];
-	NSArray *cuts3 = [@"foo:" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected3, cuts3, @"Cut is invalid (3)");	
+- (void)testSeparate3 {	
+	NSArray *expected = [NSArray arrayWithObjects:@"foo", @"\n", @"\n", @"bar", @"\n", nil];	
+	NSArray *separated = [@"foo\n\nbar\n" gh_componentsSeparatedByString:@"\n" include:YES];
+	GHAssertEqualObjects(separated, expected, nil);
 }
 
-- (void)testCutWithString4 {
-	NSArray *expected4 = [NSArray arrayWithObjects:@"", nil];
-	NSArray *cuts4 = [@"" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected4, cuts4, @"Cut is invalid (4)");	
+- (void)testUUID {
+	GHTestLog([NSString gh_uuid]);
+	// TODO(gabe): Test
 }
 
-- (void)testCutWithString5 {
-	NSArray *expected5 = [NSArray arrayWithObjects:@":", nil];
-	NSArray *cuts5 = [@":" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected5, cuts5, @"Cut is invalid (5)");	
+- (void)testReverse {
+	GHAssertEqualStrings([@"reversetest" gh_reverse], @"tsetesrever", nil); // odd # of letters
+	GHAssertEqualStrings([@"reverseit!" gh_reverse], @"!tiesrever", nil); // even # of letters
 }
 
-- (void)testCutWithString6 {
-	NSArray *expected6 = [NSArray arrayWithObjects:@":", @":", nil];
-	NSArray *cuts6 = [@"::" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected6, cuts6, @"Cut is invalid (6)");	
-}
-
-- (void)testCutWithString7 {
-	NSArray *expected7 = [NSArray arrayWithObjects:@":", @"foo:", nil];
-	NSArray *cuts7 = [@":foo:" gh_cutWithString:@":" options:0];
-	GHAssertEqualObjects(expected7, cuts7, @"Cut is invalid (7)");	
-}
-
-- (void)testCutWithString8 {
-	NSArray *expected8 = [NSArray arrayWithObjects:@"foo---", @"bar", nil];
-	NSArray *cuts8 = [@"foo---bar" gh_cutWithString:@"---" options:0];
-	GHAssertEqualObjects(expected8, cuts8, @"Cut is invalid (8)");	
-}
-
-- (void)testCut {	
-	NSString *text = @"Lorem ipsum dolor sit amet";
-	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:YES];
-	NSArray *expected = [NSArray arrayWithObjects:@"Lorem ", @"ipsum ", @"dolor ", @"sit ", @"amet", nil];
-	GHAssertEqualObjects(cuts, expected, nil);
-}
-
-- (void)testCutEndInSpace {	
-	NSString *text = @"Lorem ";
-	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:NO];
-	NSArray *expected = [NSArray arrayWithObjects:@"Lorem", @" ", nil];
-	GHAssertEqualObjects(cuts, expected, nil);
-}
-
-- (void)testCutBefore {	
-	NSString *text = @"Lorem ipsum dolor sit amet";
-	NSArray *cuts = [text gh_cutWithString:@" " options:0 cutAfter:NO];
-	NSArray *expected = [NSArray arrayWithObjects:@"Lorem", @" ipsum", @" dolor", @" sit", @" amet", nil];	
-	GHAssertEqualObjects(cuts, expected, nil);
+- (void)testCount {
+	GHAssertTrue([@"\n \n\n   \n" gh_count:@"\n"] == 4, @"1");
+	GHAssertTrue([@"\n" gh_count:@"\n"] == 1, @"2");
+	GHAssertTrue([@"" gh_count:@"\n"] == 0, @"3");
+	GHAssertTrue([@" " gh_count:@"\n"] == 0, @"4");
 }
 
 - (void)testSubStringSegmentsWithin {
