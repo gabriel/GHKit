@@ -69,4 +69,15 @@
  */
 - (id)gh_objectForKeyOrNSNull:(id)key;
 
+/*!
+ Get boolean value (represented by NSNumber).
+ Usefuly for coercing any object that responds to boolValue into an object for use with Key Value coding.
+ @param key
+ @param defaultValue Default if value is missing or [NSNull null]
+ */ 
+- (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)defaultValue;
+- (NSNumber *)gh_boolValueForKey:(id)key;
+
+- (BOOL)gh_hasAllKeys:(NSString *)firstKey, ...;
+
 @end

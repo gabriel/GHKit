@@ -68,6 +68,16 @@
 	return [self gh_boolForKey:key withDefault:NO];
 }
 
+- (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)defaultValue {
+	id value = [self objectForKey:key];
+	if (!value || [value isEqual:[NSNull null]]) return [NSNumber numberWithBool:defaultValue];
+	return [NSNumber numberWithBool:[value boolValue]];
+}
+
+- (NSNumber *)gh_boolValueForKey:(id)key {
+	return [self gh_boolValueForKey:key withDefault:NO];
+}
+
 - (id)gh_objectForKey:(id)key withDefault:(id)defaultValue {
 	id value = [self objectForKey:key];
 	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
@@ -77,5 +87,18 @@
 - (id)gh_objectForKeyOrNSNull:(id)key {
 	return [self gh_objectForKey:key withDefault:[NSNull null]];
 }
+
+- (BOOL)gh_hasAllKeys:(NSString *)firstKey, ... {
+	va_list vl;
+	va_start(vl, firstKey);
+	id key = firstKey;
+	while(key != nil) {
+		id value = [self objectForKey:key];
+		if (!value || [value isEqual:[NSNull null]]) return NO;
+		key = va_arg(vl, NSString *);
+	}
+	va_end(vl);
+	return YES;
+}	
 
 @end
