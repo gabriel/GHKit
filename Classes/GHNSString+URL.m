@@ -31,19 +31,19 @@
 
 @implementation NSString (GHURL)
 
-- (NSString *)gh_urlDecode {
+- (NSString *)gh_URLDecode {
 	return [NSURL gh_decode:self];
 }
 
-- (NSString *)gh_urlEncode {	
+- (NSString *)gh_URLEncode {	
 	return [NSURL gh_encode:self];
 }
 
-- (NSString *)gh_urlEncodeComponent {  
+- (NSString *)gh_URLEncodeComponent {  
 	return [NSURL gh_encodeComponent:self];
 }
 
-- (NSString *)gh_urlEscapeAll {
+- (NSString *)gh_URLEscapeAll {
 	return [NSURL gh_escapeAll:self];
 }
 

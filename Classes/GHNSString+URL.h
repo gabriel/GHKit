@@ -33,24 +33,24 @@
  Decode URL encoded string.
  @see NSURL#gh_decode:
  */
-- (NSString *)gh_urlDecode;
+- (NSString *)gh_URLDecode;
 
 /*!
  Encode URL string.
  @see NSURL#gh_encode:
  */
-- (NSString *)gh_urlEncode;
+- (NSString *)gh_URLEncode;
 
 /*!
  Encode URL string component.
  @see NSURL#gh_encodeComponent:
  */
-- (NSString *)gh_urlEncodeComponent;
+- (NSString *)gh_URLEncodeComponent;
 
 /*!
  Encode URL string (all characters).
  @see NSURL#gh_escapeAll:
  */
-- (NSString *)gh_urlEscapeAll;
+- (NSString *)gh_URLEscapeAll;
 
 @end
