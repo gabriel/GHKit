@@ -34,9 +34,11 @@
  For example,
 	[NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
  
- @param firstObject... Alternating key, value pairs. Terminated when key is nil. 
+ @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
  */
 + (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ...;
+
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args;
 
 /*!
  Use this method instead of objectForKey if you want nil (and not the internal NSNull).

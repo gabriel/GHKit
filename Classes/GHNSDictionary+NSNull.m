@@ -28,25 +28,31 @@
 
 @implementation NSDictionary (GHNSNull)
 
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ... {
-	va_list vl;
-	va_start(vl,firstObject);
-	NSMutableArray *keys = [[[NSMutableArray alloc] init] autorelease];
-	NSMutableArray *values = [[[NSMutableArray alloc] init] autorelease];
-	id key = firstObject;
-	id value = va_arg(vl, id);
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args {
+	if (!firstKey) return [NSDictionary dictionary];
+	
+	NSMutableArray *keys = [[NSMutableArray alloc] init];
+	NSMutableArray *values = [[NSMutableArray alloc] init];
+	id key = firstKey;	
 	do {
-		if (value == nil)
-			value = [NSNull null];
+		id value = va_arg(args, id);
+		if (!value) value = [NSNull null];
 		[keys addObject:key];
 		[values addObject:value];
-		key = va_arg(vl,id);
-		if (key == nil)
-			break;
-		value = va_arg(vl, id);
-	} while (YES);
-	va_end(vl);
-	return [NSDictionary dictionaryWithObjects:values forKeys:keys];
+		key = va_arg(args,id);
+	} while(key);
+	NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+	[keys release];
+	[values release];
+	return dict;
+}
+
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstKey, ... {	
+	va_list args;
+  va_start(args, firstKey);
+	NSDictionary *dict = [self gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:firstKey args:args];
+	va_end(args);
+	return dict;
 }
 
 - (id)gh_objectMaybeNilForKey:(id)key {
