@@ -245,7 +245,9 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 		buffer[length-i-1] = c;
 	}
 	
-	return [[[NSString alloc] initWithCharacters:buffer length:length] autorelease];
+	NSString *s = [[NSString alloc] initWithCharacters:buffer length:length];
+	free(buffer);
+	return [s autorelease];
 }
 
 - (NSInteger)gh_count:(NSString *)s {
