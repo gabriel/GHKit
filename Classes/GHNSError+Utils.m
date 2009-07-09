@@ -37,4 +37,10 @@
 	return [NSError errorWithDomain:domain code:code userInfo:userInfo];
 }
 
++ (NSError *)gh_errorFromException:(NSException *)exception {
+	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:exception.reason forKey:NSLocalizedDescriptionKey];
+	return [NSError errorWithDomain:exception.name code:-1 userInfo:userInfo];
+	
+}
+
 @end

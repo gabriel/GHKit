@@ -38,4 +38,6 @@
  */
 + (NSError *)gh_errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription;
 
++ (NSError *)gh_errorFromException:(NSException *)exception;
+
 @end
