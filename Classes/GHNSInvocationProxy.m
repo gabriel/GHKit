@@ -70,13 +70,15 @@
 
 @implementation GHNSInvocationProxy
 
-@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, delay=delay_, time=time_, selector=selector_, tracer=tracer_;
+@synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, 
+delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_;
 
 + (id)invocation {
 	return [[[self alloc] init] autorelease];
 }
 
 - (id)init {
+	delay_ = -1;
 	return self;
 }
 
@@ -95,6 +97,7 @@
 	[target_ release];
 	[invocation_ release];
 	[thread_ release];
+	[detachCallback_ release];
 	[super dealloc];
 }
 
@@ -112,17 +115,18 @@
 	// For argument proxy, if we are overriding the invoking selector
 	if (selector_ != NULL) invocation.selector = selector_;
 	
-	BOOL invokeOnOtherThread = (thread_ && ![thread_ isEqual:[NSThread currentThread]]) || delay_ > 0;
+	BOOL invokeOnOtherThread = (thread_ && ![thread_ isEqual:[NSThread currentThread]]) || delay_ >= 0 || detachCallback_;
 	if (invokeOnOtherThread && !waitUntilDone_) {
 		[invocation retainArguments];
 	}
 	
 	[tracer_ proxy:self willInvoke:invocation];
-	NSTimeInterval startTime = [NSDate timeIntervalSinceReferenceDate];
 	if (thread_) {
 		[invocation_ performSelector:@selector(invoke) onThread:thread_ withObject:nil waitUntilDone:waitUntilDone_];
+	} else if (detachCallback_) {		
+		[NSThread detachNewThreadSelector:@selector(invoke:) toTarget:detachCallback_ withObject:invocation_];
 	} else {
-		if (delay_) {
+		if (delay_ >= 0) {
 			[invocation_ performSelector:@selector(invoke) withObject:nil afterDelay:delay_];
 		} else {
 			[invocation_ performSelector:@selector(invoke) withObject:nil];
@@ -130,9 +134,37 @@
 	}
 	
 	[tracer_ proxy:self didInvoke:invocation];
-	
-	NSTimeInterval endTime = [NSDate timeIntervalSinceReferenceDate];
-	if (time_) *time_ = (endTime - startTime);
+}
+
+
+
+@end
+
+
+@implementation GHNSInvocationProxyCallback 
+
+- (id)initWithTarget:(id)target action:(SEL)action context:(id)context {
+	if ((self = [super init])) {
+		target_ = [target retain];
+		action_ = action;
+		context_ = [context retain];
+		thread_ = [[NSThread currentThread] retain];
+	}
+	return self;
+}
+
+- (void)invoke:(NSInvocation *)invocation {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	[invocation invoke];
+	[self performSelector:@selector(_callback) onThread:thread_ withObject:nil waitUntilDone:YES];
+	[pool release];
+}
+
+- (void)_callback {
+	[target_ performSelector:action_ withObject:context_];
+	[target_ release];
+	[thread_ release];
+	[context_ release];
 }
 
 @end
@@ -154,15 +186,17 @@ static GHNSLogInvocationTracer *gGHNSLogInvocationTracer = NULL;
 
 - (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation {
 	NSLog(@"[TRACE] [%@ %@]", NSStringFromClass([invocation.target class]), NSStringFromSelector(invocation.selector));
+	_interval = [NSDate timeIntervalSinceReferenceDate];
 }
 
 - (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation {
+	_interval -= -[NSDate timeIntervalSinceReferenceDate];
 	NSUInteger length = [[invocation methodSignature] methodReturnLength];
-	if (length == 0) NSLog(@"[TRACE] No return");
+	if (length == 0) NSLog(@"[TRACE] (%0.4fs)", _interval);
 	else {
 		const char *returnType = [[invocation methodSignature] methodReturnType];
 		NSString *returnTypeString = [[[NSString alloc] initWithCString:returnType encoding:NSUTF8StringEncoding] autorelease];
-		NSLog(@"[TRACE] Return type: %@", returnTypeString);
+		NSLog(@"[TRACE] %@ (%0.4fs)", returnTypeString, _interval);
 	}	
 }
 

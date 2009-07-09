@@ -101,6 +101,14 @@
 	return [self gh_proxyOnThread:thread waitUntilDone:NO];
 }
 
+- (id)gh_proxyDetachThreadWithCallback:(id)target action:(SEL)action context:(id)context {
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxyCallback *callback = [[GHNSInvocationProxyCallback alloc] initWithTarget:target action:action context:context];
+	proxy.detachCallback = callback;
+	[callback release];
+	return [proxy prepareWithInvocationTarget:self];
+}
+
 - (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone {
 	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
 	proxy.thread = thread;
@@ -114,19 +122,15 @@
 	return [proxy prepareWithInvocationTarget:self];	
 }
 
-- (id)gh_timedProxy:(NSTimeInterval *)time {
-	return [self gh_debugProxy:time proxy:nil];
-}
-
-- (id)gh_debugProxy:(NSTimeInterval *)time proxy:(GHNSInvocationProxy **)proxy {
-	GHNSInvocationProxy *lproxy = [GHNSInvocationProxy invocation];
-	if (proxy) *proxy = lproxy;
-	lproxy.time = time;	
-	return [lproxy prepareWithInvocationTarget:self];		
-}
-
 - (id)gh_argumentProxy:(SEL)selector {
 	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	return [proxy prepareWithInvocationTarget:self selector:selector];		
+}
+
+- (id)gh_argumentProxy:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone {
+	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	proxy.thread = [NSThread mainThread];
+	proxy.waitUntilDone = waitUntilDone;
 	return [proxy prepareWithInvocationTarget:self selector:selector];		
 }
 

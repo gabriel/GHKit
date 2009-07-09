@@ -130,21 +130,6 @@
 - (id)gh_proxyAfterDelay:(NSTimeInterval)delay;
 
 /*!
- Proxy for measuring invocation time.
- @param time If not nil, will set the time on completion
- @result Proxy
- */
-- (id)gh_timedProxy:(NSTimeInterval *)time;
-
-/*!
- Proxy for debugging.
- @param time If not nil, will set the time after invoke
- @param proxy The generated proxy, if we need to modify it before invoking methods on it
- @result Proxy
- */
-- (id)gh_debugProxy:(NSTimeInterval *)time proxy:(GHNSInvocationProxy **)proxy;
-
-/*!
  Proxy for selector.
  For calling a selector with any type and number of arguments.
  
@@ -161,9 +146,28 @@
  performSelector if you had only object arguments).
  
  @param selector
+ @result proxy
  */
 - (id)gh_argumentProxy:(SEL)selector;
 
+/*!
+ Proxy for selector on main thread.
+ */
+- (id)gh_argumentProxy:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone;
+
+/*!
+ Special logging proxy; In progress.
+ */
 - (id)gh_logProxy;
+
+/*!
+ Proxy call on new thread.
+ Calls are responsible for setting up their own NSAutoreleasePool's.
+ @param target Callback target
+ @param action Callback action
+ @param context Callback argument
+ @result proxy
+ */ 
+- (id)gh_proxyDetachThreadWithCallback:(id)target action:(SEL)action context:(id)context;
 
 @end

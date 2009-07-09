@@ -66,13 +66,16 @@
  */
 
 @class GHNSInvocationProxy;
+@class GHNSInvocationProxyCallback;
 
 @protocol GHNSInvocationTracer <NSObject>
 - (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation;
 - (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation;
 @end
 
-@interface GHNSLogInvocationTracer : NSObject <GHNSInvocationTracer> {}
+@interface GHNSLogInvocationTracer : NSObject <GHNSInvocationTracer> {
+	NSTimeInterval _interval;
+}
 + (GHNSLogInvocationTracer *)shared;
 @end
 
@@ -117,12 +120,13 @@
 
 	NSThread *thread_;
 	BOOL waitUntilDone_;
-	NSTimeInterval delay_;
+	NSTimeInterval delay_; // Defaults to -1 (no delay)
+
 	id<GHNSInvocationTracer> tracer_; // weak
 	
-	// If debuging time to set
-	NSTimeInterval *time_;
-	
+	// If detaching on new thread
+	GHNSInvocationProxyCallback *detachCallback_;
+		
 	NSInvocation *invocation_;
 }
 
@@ -132,8 +136,8 @@
 @property (retain, nonatomic) NSThread *thread;
 @property (assign, nonatomic) BOOL waitUntilDone;
 @property (assign, nonatomic) NSTimeInterval delay;
-@property (assign, nonatomic) NSTimeInterval *time;
 @property (assign, nonatomic) id<GHNSInvocationTracer> tracer;
+@property (retain, nonatomic) GHNSInvocationProxyCallback *detachCallback;
 
 /*!
  Create autoreleased empty invocation proxy.
@@ -172,3 +176,16 @@
 - (id)prepareWithInvocationTarget:(id)target selector:(SEL)selector;
 
 @end
+
+
+@interface GHNSInvocationProxyCallback : NSObject {
+	id target_; // Retained until after callback
+	SEL action_;
+	id context_; // Retained until after callback
+	NSThread *thread_; // Retained until after callback
+}
+
+- (id)initWithTarget:(id)target action:(SEL)action context:(id)context;
+
+@end
+	

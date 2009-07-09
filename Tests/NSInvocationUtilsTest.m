@@ -17,6 +17,7 @@
 	BOOL invokeTesting4Called_;
 	BOOL invokeTestProxyDelegateCalled_;
 	BOOL invokeTestArgumentProxyCalled_;
+	BOOL invokeDetachCalled_;
 }
 
 @end
@@ -31,6 +32,7 @@
 @interface NSInvocationUtilsTest (Private)
 - (void)_invokeTesting4:(NSInteger)n;
 - (void)_invokeTestProxyTimed;
+- (void)_invokeDetach:(NSInteger)n;
 @end
 
 @protocol TestArgumentProxy 
@@ -99,20 +101,6 @@
 	invokeTesting4Called_ = YES;
 }
 
-- (void)testProxyTimed {
-	NSTimeInterval time;
-	GHNSInvocationProxy *proxy = nil;
-	id target = [self gh_debugProxy:&time proxy:&proxy];
-	proxy.thread = [NSThread mainThread];
-	proxy.waitUntilDone = YES;
-	[target _invokeTestProxyTimed];	
-	NSLog(@"Took %0.2fs", time);
-}
-
-- (void)_invokeTestProxyTimed {
-	[NSThread sleepForTimeInterval:0.5];
-}
-
 - (void)testProxyDelegate {
 	TestWithDelegate *test = [[TestWithDelegate alloc] init];
 	GHTestLog(@"Setting delegate");
@@ -152,6 +140,25 @@
 	GHAssertFalse(b, nil);
 	invokeTestArgumentProxyCalled_ = YES;
 }
+
+- (void)testDetach {
+	GHTestLog(@"Calling on thread: %@", [NSThread currentThread]);
+	[[self gh_proxyDetachThreadWithCallback:self action:@selector(_detachCallback:) context:nil] _invokeDetach:1];
+	// Wait for thread to call back
+	[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+	[NSThread sleepForTimeInterval:0.1];
+	GHAssertTrue(invokeDetachCalled_, nil);
+}
+
+- (void)_invokeDetach:(NSInteger)n {
+	GHTestLog(@"Detached thread: %@", [NSThread currentThread]);
+	[NSNumber numberWithInteger:n]; // Create object to make sure we have autorelease pool
+	GHAssertTrue(1 == n, nil);
+	invokeDetachCalled_ = YES;
+}
+
+// TODO(gabe): Fix test so this does something, but seems to work
+- (void)_detachCallback:(id)context {  }
 
 @end
 
