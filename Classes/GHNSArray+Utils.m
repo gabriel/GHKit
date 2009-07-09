@@ -28,11 +28,11 @@
 
 @implementation NSArray (GHUtils)
 
-- (id)gh_first {
+- (id)gh_firstObject {
 	return [self objectAtIndex:0];
 }
 
-- (id)gh_random {
+- (id)gh_randomObject {
 	if ([self count] == 0) return nil;
 	srand(time(0));
 	int index = rand() % [self count];

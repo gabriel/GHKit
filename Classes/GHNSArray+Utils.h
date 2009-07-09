@@ -26,8 +26,8 @@
 
 @interface NSArray (GHUtils)
 
-- (id)gh_first;
+- (id)gh_firstObject;
 
-- (id)gh_random;
+- (id)gh_randomObject;
 
 @end
