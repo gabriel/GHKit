@@ -47,37 +47,35 @@
  @result '904 b', '32 KB', '1.1 MB', 
  */
 - (NSString *)gh_humanSizeWithDelimiter:(NSString *)delimiter {
-  double num = [self doubleValue];
-  double byteTest = 1024;
-  double kilobyteTest = 1024 * byteTest;
-  double megaByteTest = 1024 * kilobyteTest;
-  double gigaByteTest = 1024 * megaByteTest;
+  double value = [self doubleValue];
+	double byteTest = 1024;
+	double kilobyteTest = 1024 * byteTest;
+	double megaByteTest = 1024 * kilobyteTest;
   
-  if (num < byteTest) {
-    return [NSString stringWithFormat:@"%.0f%@B", num, delimiter];
-  } else if (num < kilobyteTest) {
-    num = num / byteTest;
-    return [NSString stringWithFormat:@"%.0f%@KB", num, delimiter];
-  } else if (num < megaByteTest) {
-    num = num / kilobyteTest;        
-    return [NSString stringWithFormat:@"%.1f%@MB", num, delimiter];
-  } else if (num < gigaByteTest) {
-    num = num / megaByteTest;
-    return [NSString stringWithFormat:@"%.2f%@GB", num, delimiter];
+  if (value < byteTest) {
+    return [NSString stringWithFormat:@"%.0f%@B", value, delimiter];
+  } else if (value < kilobyteTest) {
+    double d = value / byteTest;
+    return [NSString stringWithFormat:@"%.0f%@KB", d, delimiter];
+  } else if (value < megaByteTest) {
+    double d = value / kilobyteTest;        
+    return [NSString stringWithFormat:@"%.1f%@MB", d, delimiter];
+  } else {
+		double d = value / megaByteTest;
+		return [NSString stringWithFormat:@"%.2f%@GB", d, delimiter];
   }
   return nil;
 }
 
-static NSNumber *gh_numberForNo;
-static NSNumber *gh_numberForYes;
-
-+ (NSNumber *)gh_bool:(BOOL)b {
++ (NSNumber *)gh_bool:(BOOL)b {		
   if (!b) {
-    if (!gh_numberForNo) gh_numberForNo = [[NSNumber numberWithBool:NO] retain];
-    return gh_numberForNo;
+		static NSNumber *NumberForNo = NULL;
+		if (NumberForNo == NULL) NumberForNo = [[NSNumber numberWithBool:NO] retain];
+    return NumberForNo;
   } else {
-    if (!gh_numberForYes) gh_numberForYes = [[NSNumber numberWithBool:YES] retain];
-    return gh_numberForYes;
+		static NSNumber *NumberForYes = NULL;
+    if (NumberForYes == NULL) NumberForYes = [[NSNumber numberWithBool:YES] retain];
+    return NumberForYes;
   }
 }
 
