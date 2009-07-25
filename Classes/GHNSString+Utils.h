@@ -34,6 +34,13 @@
 - (BOOL)gh_isBlank;
 
 /*!
+ Check if equals ignoring case.
+ @param s
+ @result True if equal regardless of case
+ */
+- (BOOL)gh_isEqualIgnoreCase:(NSString *)s;
+
+/*!
  @method gh_strip
  @result String with characters trimmed
  */

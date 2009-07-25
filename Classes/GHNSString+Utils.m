@@ -53,6 +53,10 @@
   return [s gh_isBlank];
 }
 
+- (BOOL)gh_isEqualIgnoreCase:(NSString *)s {
+	return [self compare:s options:NSCaseInsensitiveSearch] == NSOrderedSame;
+}
+
 #ifndef TARGET_OS_IPHONE
 static NSDictionary *gh_gTruncateMiddle = nil;
 
