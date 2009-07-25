@@ -30,7 +30,7 @@
 @interface NSXMLElement (GHUtils)
 
 - (NSString *)stringAt:(NSString *)name;
-- (NSNumber *)numberAt:(NSString *)name;
+- (NSNumber *)longLongAt:(NSString *)name;
 - (NSXMLElement *)elementAt:(NSString *)name;
 
 @end

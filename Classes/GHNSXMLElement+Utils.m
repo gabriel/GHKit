@@ -40,9 +40,9 @@
   return nil;
 }
 
-- (NSNumber *)numberAt:(NSString *)name {
+- (NSNumber *)longLongAt:(NSString *)name {
   NSString *s = [self stringAt:name];
-  if (s) return [NSNumber numberWithLong:[s longLongValue]];
+  if (s) return [NSNumber numberWithLongLong:[s longLongValue]];
   return nil;
 }
 
