@@ -46,10 +46,12 @@
 		0058AAEF0EF8C4D900C44386 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0058AAED0EF8C4D900C44386 /* GHKeychainStore.m */; };
 		005B0A9F0F22B7A80004F351 /* GHNSInvocation+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 005B0A9D0F22B7A80004F351 /* GHNSInvocation+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */; };
+		00640FC3100717F60052BB61 /* NSNumberUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00640FC2100717F60052BB61 /* NSNumberUtilsTest.m */; };
 		0071E6140FB361A1001D2CF3 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
 		0071E6190FB361A7001D2CF3 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
 		0071EE370FB63AE7001D2CF3 /* GHNSInvocationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0071EE380FB63AE7001D2CF3 /* GHNSInvocationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */; };
+		0075FB4210066DEE00F6ED5A /* NSArrayUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */; };
 		007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59850EF2438900B3005D /* GHNSArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
 		007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -185,9 +187,11 @@
 		005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSInvocation+Utils.m"; sourceTree = "<group>"; };
 		005B0AAC0F22C09F0004F351 /* NSInvocationUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSInvocationUtilsTest.m; sourceTree = "<group>"; };
 		005D0C3F0E19C03B003FAB86 /* NSDateParsingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateParsingTest.m; sourceTree = "<group>"; };
+		00640FC2100717F60052BB61 /* NSNumberUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSNumberUtilsTest.m; sourceTree = "<group>"; };
 		0071E6130FB361A1001D2CF3 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
 		0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHNSInvocationProxy.h; sourceTree = "<group>"; };
 		0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSInvocationProxy.m; sourceTree = "<group>"; };
+		0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayUtilsTest.m; sourceTree = "<group>"; };
 		007F59850EF2438900B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
 		007F59860EF2438900B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
 		007F59870EF2438900B3005D /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
@@ -204,7 +208,6 @@
 		00A97A640F0C464700B083F6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		00AA126D1005578600667B93 /* GHNSObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Utils.h"; sourceTree = "<group>"; };
 		00AA126E1005578600667B93 /* GHNSObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Utils.m"; sourceTree = "<group>"; };
-		00AA12B81005586B00667B93 /* NSObjectUtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectUtilsTest.h; sourceTree = "<group>"; };
 		00AA12B91005586B00667B93 /* NSObjectUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectUtilsTest.m; sourceTree = "<group>"; };
 		00AF10D00F2D5179009F0ABA /* GHKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AF10D20F2D5179009F0ABA /* GHKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHKitTests-Info.plist"; sourceTree = "<group>"; };
@@ -539,8 +542,9 @@
 				003647CB0FFBE4CB00A2DCB5 /* NSMutableArrayUtilsTest.m */,
 				003648350FFC095B00A2DCB5 /* NSDictionaryNSNullTest.m */,
 				004B5848100441BE00C630B3 /* NSErrorUtilsTest.m */,
-				00AA12B81005586B00667B93 /* NSObjectUtilsTest.h */,
 				00AA12B91005586B00667B93 /* NSObjectUtilsTest.m */,
+				0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */,
+				00640FC2100717F60052BB61 /* NSNumberUtilsTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -720,6 +724,8 @@
 				003648360FFC095B00A2DCB5 /* NSDictionaryNSNullTest.m in Sources */,
 				004B5849100441BE00C630B3 /* NSErrorUtilsTest.m in Sources */,
 				00AA12BA1005586B00667B93 /* NSObjectUtilsTest.m in Sources */,
+				0075FB4210066DEE00F6ED5A /* NSArrayUtilsTest.m in Sources */,
+				00640FC3100717F60052BB61 /* NSNumberUtilsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
