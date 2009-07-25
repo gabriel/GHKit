@@ -142,5 +142,9 @@
 	GHAssertEqualStrings([text gh_leftStrip], expected, nil);
 	
 }
+
+- (void)testIsEqualIgnoreCase {
+	GHAssertTrue([@"FOoO" gh_isEqualIgnoreCase:@"fooO"], nil);
+}
 	
 @end

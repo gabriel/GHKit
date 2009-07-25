@@ -15,6 +15,7 @@
 	BOOL invokeTesting2Called_;
 	BOOL invokeTesting3Called_;
 	BOOL invokeTesting4Called_;
+	BOOL invokeTestingNestedCalled_;
 	BOOL invokeTestProxyDelegateCalled_;
 	BOOL invokeTestArgumentProxyCalled_;
 	BOOL invokeDetachCalled_;
@@ -31,6 +32,7 @@
 
 @interface NSInvocationUtilsTest (Private)
 - (void)_invokeTesting4:(NSInteger)n;
+- (void)_invokeTestingNested:(NSInteger)n;
 - (void)_invokeTestProxyTimed;
 - (void)_invokeDetach:(NSInteger)n;
 @end
@@ -99,6 +101,19 @@
 - (void)_invokeTesting4:(NSInteger)n {
 	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
 	invokeTesting4Called_ = YES;
+}
+
+- (void)testInvokeNestedProxy {
+	[[[self gh_proxyOnMainThread:YES] gh_proxyAfterDelay:0.1] _invokeTestingNested:1];
+	
+	GHAssertFalse(invokeTestingNestedCalled_, @"Method should be delayed");
+	[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+	GHAssertTrue(invokeTestingNestedCalled_, @"Method was not called");
+}
+
+- (void)_invokeTestingNested:(NSInteger)n {
+	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
+	invokeTestingNestedCalled_ = YES;
 }
 
 - (void)testProxyDelegate {
