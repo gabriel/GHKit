@@ -115,10 +115,7 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 	// For argument proxy, if we are overriding the invoking selector
 	if (selector_ != NULL) invocation.selector = selector_;
 	
-	BOOL invokeOnOtherThread = (thread_ && ![thread_ isEqual:[NSThread currentThread]]) || delay_ >= 0 || detachCallback_;
-	if (invokeOnOtherThread && !waitUntilDone_) {
-		[invocation retainArguments];
-	}
+	[invocation retainArguments];
 	
 	[tracer_ proxy:self willInvoke:invocation];
 	if (thread_) {
