@@ -86,15 +86,30 @@
 // From DDFoundation, NSObject+DDExtensions 
 // (Changed namespaced to make it easier to include in static library without conflicting)
 
+/*!
+ Create a proxy, or if the proxy is nesting calls detect and return ourselves.
+ */
+- (GHNSInvocationProxy *)_initProxyOrChain {
+	GHNSInvocationProxy *proxy = nil;
+	// If we are nesting proxies modify the existing one
+	if ([self isKindOfClass:[GHNSInvocationProxy class]]) {
+		proxy = (GHNSInvocationProxy *)self;
+	} else {
+		proxy = [GHNSInvocationProxy invocation];
+		[proxy prepareWithInvocationTarget:self];
+	}
+	return proxy;
+}
+
 - (id)gh_proxyOnMainThread {
 	return [self gh_proxyOnMainThread:NO];
 }
 
 - (id)gh_proxyOnMainThread:(BOOL)waitUntilDone {
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];
 	proxy.thread = [NSThread mainThread];
 	proxy.waitUntilDone = waitUntilDone;
-	return [proxy prepareWithInvocationTarget:self];
+	return proxy;
 }
 
 - (id)gh_proxyOnThread:(NSThread *)thread {
@@ -102,41 +117,43 @@
 }
 
 - (id)gh_proxyDetachThreadWithCallback:(id)target action:(SEL)action context:(id)context {
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];
 	GHNSInvocationProxyCallback *callback = [[GHNSInvocationProxyCallback alloc] initWithTarget:target action:action context:context];
 	proxy.detachCallback = callback;
 	[callback release];
-	return [proxy prepareWithInvocationTarget:self];
+	return proxy;
 }
 
 - (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone {
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];
 	proxy.thread = thread;
 	proxy.waitUntilDone = waitUntilDone;
-	return [proxy prepareWithInvocationTarget:self];
+	return proxy;
 }
 
 - (id)gh_proxyAfterDelay:(NSTimeInterval)delay {
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];			
 	proxy.delay = delay;
-	return [proxy prepareWithInvocationTarget:self];	
+	return proxy;
 }
 
 - (id)gh_argumentProxy:(SEL)selector {
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
-	return [proxy prepareWithInvocationTarget:self selector:selector];		
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];
+	proxy.selector = selector;
+	return proxy;
 }
 
 - (id)gh_argumentProxy:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone {
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];
+	proxy.selector = selector;
 	proxy.thread = [NSThread mainThread];
 	proxy.waitUntilDone = waitUntilDone;
-	return [proxy prepareWithInvocationTarget:self selector:selector];		
+	return proxy;
 }
 
 - (id)gh_logProxy {
 	NSLog(@"Tracing: %@", self);
-	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
+	GHNSInvocationProxy *proxy = [self _initProxyOrChain];
 	proxy.tracer = [GHNSLogInvocationTracer shared];
 	return [proxy prepareWithInvocationTarget:self];
 }
