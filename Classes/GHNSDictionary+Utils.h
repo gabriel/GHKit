@@ -44,7 +44,7 @@
 - (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
 - (NSInteger)gh_integerForKey:(id)key;
 
-- (NSNumber *)gh_numberForKey:(id)key withDefault:(NSInteger)defaultValue;
+- (NSNumber *)gh_numberForKey:(id)key withDefaultInteger:(NSInteger)defaultValue;
 
 /*! 
  @param key
