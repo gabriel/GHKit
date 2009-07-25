@@ -32,11 +32,25 @@
 	return [self objectAtIndex:0];
 }
 
-- (id)gh_randomObject {
+- (id)gh_firstObjectIfExists {
+	if ([self count] > 0)
+		return [self objectAtIndex:0];
+	return nil;
+}
+
+- (id)gh_randomObject:(unsigned int)seed {
 	if ([self count] == 0) return nil;
-	srand(time(0));
+	srand(seed == 0 ? time(0) : seed);
 	int index = rand() % [self count];
 	return [self objectAtIndex:index];
+}
+
+- (NSArray *)gh_arrayByReversingArray {
+	NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+	for(id obj in [self reverseObjectEnumerator]) {
+		[array addObject:obj];
+	}
+	return array;
 }
 
 @end

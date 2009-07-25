@@ -26,8 +26,30 @@
 
 @interface NSArray (GHUtils)
 
+/*!
+ First object.
+ @result Object at index 0
+ */
 - (id)gh_firstObject;
 
-- (id)gh_randomObject;
+/*!
+ First object or nil.
+ @result Object at index 0, if it exists, otherwise nil
+ */
+- (id)gh_firstObjectIfExists;
+
+/*!
+ Random object in the array.
+ @param seed Seed, if 0, will use the current time to seed
+ @result Random object
+ */
+- (id)gh_randomObject:(unsigned int)seed;
+
+/*!
+ Return new reversed array.
+ Use reverseObjectEnumerator if you want to enumerate values in reverse.
+ @result Reversed array
+ */
+- (NSArray *)gh_arrayByReversingArray;
 
 @end
