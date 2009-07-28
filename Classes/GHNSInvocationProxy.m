@@ -67,7 +67,6 @@
 
 #import "GHNSInvocationProxy.h"
 
-
 @implementation GHNSInvocationProxy
 
 @synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, 
@@ -108,6 +107,10 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 	return [[self target] methodSignatureForSelector:selector];
 }
 
+- (NSString *)invocationDescription:(NSInvocation *)invocation {
+	return [NSString stringWithFormat:@"target=%@, selector=%@, signature=%@", invocation.target, NSStringFromSelector(invocation.selector), [invocation methodSignature]];
+}
+
 - (void)forwardInvocation:(NSInvocation *)invocation {	
 	self.invocation = invocation;
 	
@@ -116,6 +119,14 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 	if (selector_ != NULL) invocation.selector = selector_;
 	
 	[invocation retainArguments];
+	
+	// Check for unsupported combinations
+	if (thread_ && delay_ >= 0)
+		[NSException raise:NSInvalidArgumentException format:@"Running on thread with delay is not supported at the same time"];
+	if (thread_ && detachCallback_)
+		[NSException raise:NSInvalidArgumentException format:@"Running on thread with detached callback is not supported at the same time"];
+	if (detachCallback_ && delay_ >= 0)
+		[NSException raise:NSInvalidArgumentException format:@"Running with delay and detached callback is not supported at the same time"];
 	
 	[tracer_ proxy:self willInvoke:invocation];
 	if (thread_) {

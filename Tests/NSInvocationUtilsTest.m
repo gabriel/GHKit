@@ -15,6 +15,7 @@
 	BOOL invokeTesting2Called_;
 	BOOL invokeTesting3Called_;
 	BOOL invokeTesting4Called_;
+	BOOL invokeTestingMainThreadCalled_;
 	BOOL invokeTestingNestedCalled_;
 	BOOL invokeTestProxyDelegateCalled_;
 	BOOL invokeTestArgumentProxyCalled_;
@@ -33,6 +34,7 @@
 @interface NSInvocationUtilsTest (Private)
 - (void)_invokeTesting4:(NSInteger)n;
 - (void)_invokeTestingNested:(NSInteger)n;
+- (void)_invokeTestingMainThread:(NSInteger)n;
 - (void)_invokeTestProxyTimed;
 - (void)_invokeDetach:(NSInteger)n;
 @end
@@ -103,6 +105,18 @@
 	invokeTesting4Called_ = YES;
 }
 
+- (void)testInvokeOnMainThread {
+	[[self gh_proxyOnMainThread:YES] _invokeTestingMainThread:1];
+	[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];
+	GHAssertTrue(invokeTestingMainThreadCalled_, @"Method was not called");
+}
+
+- (void)_invokeTestingMainThread:(NSInteger)n {
+	GHAssertTrue([NSThread isMainThread], nil);
+	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
+	invokeTestingMainThreadCalled_ = YES;
+}
+
 - (void)testInvokeNestedProxy {
 	[[[self gh_proxyOnMainThread:YES] gh_proxyAfterDelay:0.1] _invokeTestingNested:1];
 	
@@ -112,6 +126,7 @@
 }
 
 - (void)_invokeTestingNested:(NSInteger)n {
+	GHAssertTrue([NSThread isMainThread], nil);
 	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
 	invokeTestingNestedCalled_ = YES;
 }
