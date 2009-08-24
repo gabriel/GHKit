@@ -33,12 +33,6 @@
 - (id)gh_firstObject;
 
 /*!
- First object or nil.
- @result Object at index 0, if it exists, otherwise nil
- */
-- (id)gh_firstObjectIfExists;
-
-/*!
  Random object in the array.
  @param seed Seed, if 0, will use the current time to seed
  @result Random object

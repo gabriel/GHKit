@@ -29,10 +29,6 @@
 @implementation NSArray (GHUtils)
 
 - (id)gh_firstObject {
-	return [self objectAtIndex:0];
-}
-
-- (id)gh_firstObjectIfExists {
 	if ([self count] > 0)
 		return [self objectAtIndex:0];
 	return nil;
