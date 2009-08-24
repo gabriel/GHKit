@@ -22,4 +22,13 @@
 	}
 }
 
+- (void)testFullDescription {
+	NSError *detailedError = [NSError errorWithDomain:@"Detail" code:-2 userInfo:nil];
+	
+	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:detailedError] forKey:@"NSDetailedErrors"];
+	NSError *error = [NSError errorWithDomain:@"Test" code:-1 userInfo:userInfo];
+	NSString *fullDescription = [error gh_fullDescription];
+	GHTestLog(@"Full description: %@", fullDescription);
+}
+
 @end
