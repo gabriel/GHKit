@@ -58,6 +58,13 @@
 	return value;
 }
 
+- (NSNumber *)gh_numberForKey:(id)key withDefaultDouble:(double)defaultValue {
+	id value = [self objectForKey:key];
+	if (!value || [value isEqual:[NSNull null]]) return [NSNumber numberWithDouble:defaultValue];
+	NSAssert([value isKindOfClass:[NSNumber class]], @"Value must be a NSNumber");
+	return value;
+}
+
 - (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue {
 	id value = [self objectForKey:key];
 	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
