@@ -87,4 +87,9 @@
   return [self gh_bool:YES];
 }
 
++ (NSInteger)gh_randomInteger {
+	double r = (double)rand()/INT_MAX;
+	return NSIntegerMax * r;
+}
+
 @end

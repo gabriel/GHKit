@@ -36,4 +36,6 @@
 + (NSNumber *)gh_no;
 + (NSNumber *)gh_yes;
 
++ (NSInteger)gh_randomInteger;
+
 @end
