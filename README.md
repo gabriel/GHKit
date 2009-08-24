@@ -1,6 +1,6 @@
 ## Download
 
-[GHKit-0.3.10.zip](http://rel.me.s3.amazonaws.com/gh-kit/GHKit-0.3.10.zip) GHKit.framework (2009/07/02)
+[GHKit-0.3.11.zip](http://rel.me.s3.amazonaws.com/gh-kit/GHKit-0.3.11.zip) GHKit.framework (2009/08/23)
 
 ## Installation
 
