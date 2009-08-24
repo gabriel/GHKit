@@ -44,7 +44,7 @@
 	float saturation = 0.0;
 	float value = max;
 	
-	if (delta <= GH_EPSILON) {
+	if (delta <= 1.0E-5) {
 		hue = 0.0;
 		saturation = 0.0;
 	} else {
@@ -54,9 +54,9 @@
 		float deltaG = (((max - green) / 6.0) + (max/2.0)) / delta;
 		float deltaB = (((max - blue) / 6.0) + (max/2.0)) / delta;
 		
-		if (red <= (max+GH_EPSILON) && red >= (max-GH_EPSILON)) hue = deltaB - deltaG;
-		else if (green <= (max+GH_EPSILON)  && green >= (max-GH_EPSILON)) hue = (1.0/3.0) + deltaR - deltaB;
-		else if (blue <= (max+GH_EPSILON) && blue >= (max-GH_EPSILON)) hue = (2.0/3.0) + deltaG - deltaR;
+		if (red <= (max+1.0E-5) && red >= (max-1.0E-5)) hue = deltaB - deltaG;
+		else if (green <= (max+1.0E-5)  && green >= (max-1.0E-5)) hue = (1.0/3.0) + deltaR - deltaB;
+		else if (blue <= (max+1.0E-5) && blue >= (max-1.0E-5)) hue = (2.0/3.0) + deltaG - deltaR;
 		
 		if (hue < 0) hue += 1;
 		if (hue > 1) hue -= 1;
@@ -72,10 +72,20 @@
 - (GH_RGBA)gh_rgba {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
 	GH_RGBA color;
-	color.red = components[0];
-	color.green = components[1];
-	color.blue = components[2];
-	color.alpha = components[3];
+	CGColorSpaceModel colorSpaceModel = CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
+	if (colorSpaceModel == kCGColorSpaceModelRGB) {
+		color.red = components[0];
+		color.green = components[1];
+		color.blue = components[2];
+		color.alpha = components[3];
+	} else if (colorSpaceModel == kCGColorSpaceModelMonochrome) {
+		color.red = components[0];
+		color.green = components[0];
+		color.blue = components[0];
+		color.alpha = components[1];
+	} else {
+		NSAssert(NO, @"Unable to convert to RGBA from color space");
+	}
 	return color;
 }
 
