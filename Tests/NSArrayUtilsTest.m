@@ -15,7 +15,10 @@
 @implementation NSArrayUtilsTest
 
 - (void)testRandom {
-	[[NSArray arrayWithObjects:@"1", @"2", @"3", nil] gh_randomObject:0];
+	NSSet *set = [NSSet setWithObjects:@"1", @"2", @"3", nil];
+	
+	NSString *obj = [[set allObjects] gh_randomObject:0];
+	GHAssertTrue([set containsObject:obj], nil);
 }
 
 - (void)testReveresed {
