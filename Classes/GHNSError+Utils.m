@@ -40,7 +40,38 @@
 + (NSError *)gh_errorFromException:(NSException *)exception {
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:exception.reason forKey:NSLocalizedDescriptionKey];
 	return [NSError errorWithDomain:exception.name code:-1 userInfo:userInfo];
-	
 }
+
+- (void)gh_fullDescription:(NSMutableString *)errorDescription level:(NSInteger)level {
+	[errorDescription appendFormat:@"%@\n", [self localizedDescription]];
+	
+	if (level > 0) [errorDescription appendFormat:@"--\n", level];
+	level++;
+	for(id userInfoKey in [self userInfo]) {	
+		id userInfoEntry = [[self userInfo] objectForKey:userInfoKey];
+		if (userInfoEntry == self) continue;
+		[errorDescription appendFormat:@" %@: ", userInfoKey];		
+		if ([userInfoEntry isKindOfClass:[NSArray class]]) { 
+			for(id userInfoEntryItem in userInfoEntry) {
+				if ([userInfoEntryItem isKindOfClass:[NSError class]]) {					
+					[(NSError *)userInfoEntryItem gh_fullDescription:errorDescription level:level];
+				} else {					
+					[errorDescription appendFormat:@"%@: %@", [userInfoEntryItem description]];
+				}
+			}
+		} else if ([userInfoEntry isKindOfClass:[NSError class]]) {
+			[(NSError *)userInfoEntry gh_fullDescription:errorDescription level:level];
+		} else {
+			[errorDescription appendString:[userInfoEntry description]];
+		}
+	}
+}
+
+- (NSString *)gh_fullDescription {
+	NSMutableString *errorDescription = [[NSMutableString alloc] init];
+	[self gh_fullDescription:errorDescription level:0];
+	return [errorDescription autorelease];
+}
+
 
 @end

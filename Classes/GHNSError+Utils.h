@@ -40,4 +40,11 @@
 
 + (NSError *)gh_errorFromException:(NSException *)exception;
 
+/*!
+ Get full error description, recusively for any errors within the userInfo.
+ Useful for getting at CoreData validation errors, for example.
+ @result Full error description
+ */
+- (NSString *)gh_fullDescription;
+
 @end
