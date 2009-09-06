@@ -76,7 +76,16 @@ static EMKeychainProxy* sharedProxy;
 		}
 		return nil;
 	}
-	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
+	
+	NSString *passwordString = nil;
+
+	if (password != NULL) {
+		char passwordBuffer[1024];
+		if (passwordLength > 1023) passwordLength = 1023; // Ensure room for the NULL character.
+		strncpy(passwordBuffer, password, passwordLength);
+		passwordBuffer[passwordLength] = '\0';
+		passwordString = [NSString stringWithUTF8String:passwordBuffer];
+	}
 
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
 }

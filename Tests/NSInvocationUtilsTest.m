@@ -126,7 +126,7 @@
 }
 
 - (void)_invokeTestingNested:(NSInteger)n {
-	GHAssertTrue([NSThread isMainThread], nil);
+	GHAssertTrue([NSThread isMainThread], @"Should be on main thread; This is currently an expected failure!");
 	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
 	invokeTestingNestedCalled_ = YES;
 }

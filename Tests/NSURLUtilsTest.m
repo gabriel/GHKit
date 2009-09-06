@@ -15,27 +15,27 @@
 - (void)testEncode {	
 	NSString *test1 = @"~!@#$%^&*(){}[]=:/,;?+'\"\\";
 	NSString *escaped1 = [NSURL gh_encode:test1];
-	NSArray *expected1 = @"~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C";
+	NSString *expected1 = @"~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C";
 	GHAssertEqualObjects(escaped1, expected1, nil);			
 }
 
 - (void)testEncodeComponent {	
 	NSString *test1 = @"~!@#$%^&*(){}[]=:/,;?+'\"\\";
 	NSString *escaped1 = [NSURL gh_encodeComponent:test1];
-	NSArray *expected1 = @"~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C";
+	NSString *expected1 = @"~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C";
 	GHAssertEqualObjects(escaped1, expected1, nil);		
 }
 
 - (void)testEscapeAll {	
 	NSString *test1 = @"~!@#$%^&*(){}[]=:/,;?+'\"\\~!*()'";
 	NSString *escaped1 = [NSURL gh_escapeAll:test1];
-	NSArray *expected1 = @"%7E%21%40%23%24%25%5E%26%2A%28%29%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B%27%22%5C%7E%21%2A%28%29%27";
+	NSString *expected1 = @"%7E%21%40%23%24%25%5E%26%2A%28%29%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B%27%22%5C%7E%21%2A%28%29%27";
 	GHAssertEqualObjects(escaped1, expected1, nil);		
 }
 
 - (void)testDictionaryToQueryString {
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"key1", @"value2", @"key2", nil];
-	NSString *s = [NSURL gh_dictionaryToQueryString:dict];
+	NSString *s = [NSURL gh_dictionaryToQueryString:dict sort:YES];
 	GHAssertEqualObjects(s, @"key1=value1&key2=value2", nil);
 	
 	NSDictionary *dict2 = [NSDictionary dictionaryWithObjectsAndKeys:@"value1", @"AAA", @"value2", @"BBB", @"value3", @"CCC", nil];
@@ -45,7 +45,7 @@
 
 - (void)testDictionaryWithObjectsToQueryString {
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:1], @"key1", @"[]", @"key2", nil];
-	NSString *s = [NSURL gh_dictionaryToQueryString:dict];
+	NSString *s = [NSURL gh_dictionaryToQueryString:dict sort:YES];
 	GHAssertEqualObjects(s, @"key1=1&key2=%5B%5D", nil);
 }
 
@@ -85,7 +85,7 @@
 - (void)testQueryDictionaryWithArray {
 	NSArray *array1 = [NSArray arrayWithObjects:@"va", @"vb", @"vc", nil];
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:array1, @"key1", @"value2", @"key2", nil];
-	NSString *s = [NSURL gh_dictionaryToQueryString:dict];
+	NSString *s = [NSURL gh_dictionaryToQueryString:dict sort:YES];
 	GHAssertEqualObjects(s, @"key1=va%2Cvb%2Cvc&key2=value2", nil);	
 }
 
