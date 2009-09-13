@@ -871,6 +871,7 @@
 			baseConfigurationReference = 009222DB0FCC954B0070C33B /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 0;
 				DYLIB_CURRENT_VERSION = "${GHKIT_VERSION}";
@@ -891,6 +892,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Libraries/GHUnit-IPhone\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = GHKit;
 				WRAPPER_EXTENSION = framework;
 			};
@@ -901,6 +903,7 @@
 			baseConfigurationReference = 009222DB0FCC954B0070C33B /* Shared.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 0;
 				DYLIB_CURRENT_VERSION = "${GHKIT_VERSION}";
