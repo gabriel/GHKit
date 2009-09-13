@@ -28,6 +28,7 @@
 
 #import "GHUIButton.h"
 #import "GHCGUtils.h"
+#import "GHUIColor+Utils.h"
 
 @implementation GHUIButton
 
