@@ -28,54 +28,100 @@
 
 #import "GHKeychainStore.h"
 
-//
-// For Cocoa target, for GHKeychainStore uses EMKeychainProxy.
-// For iPhone target, for GHKeychainStore uses SFHFKeychainUtils.
-//
+#import "GHNSError+Utils.h"
 
-#ifndef TARGET_OS_IPHONE
+NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
+
+@implementation GHKeychainStore
+
+- (id)init {
+	if ((self = [super init])) {
+#if TARGET_OS_IPHONE
+		_keychainStore = [[GHSFHFKeychainStore alloc] init];
+#else
+		_keychainStore = [[GHEMKeychainStore alloc] init];
+#endif
+	}
+	return self;
+}
+
+- (void)dealloc {
+	[_keychainStore release];
+	[super dealloc];
+}
+
+- (NSString *)secretFromKeychainForServiceName:(NSString *)serviceName key:(NSString *)key error:(NSError **)error {
+	return [_keychainStore secretFromKeychainForServiceName:serviceName key:key error:error];
+}
+
+- (BOOL)saveToKeychainWithServiceName:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {
+	return [_keychainStore saveToKeychainWithServiceName:serviceName key:key secret:secret error:error];
+}
+
+
+@end
+
+#if !TARGET_OS_IPHONE
 
 #import "EMKeychainProxy.h"
 
 @implementation GHEMKeychainStore
 
-+ (id)keychain {
-	return [[[GHEMKeychainStore alloc] init] autorelease];
-}
-
-// TODO: Set error on failure modes
-- (NSString *)secretFromKeychain:(NSString *)accessKey serviceName:(NSString *)serviceName error:(NSError **)error {
-  EMGenericKeychainItem *keychainItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:serviceName withUsername:accessKey];    
+- (NSString *)secretFromKeychainForServiceName:(NSString *)serviceName key:(NSString *)key error:(NSError **)error {
+	// TODO: Set error on failure modes from EMGenericKeychainItem (which doesn't have any)
+  EMGenericKeychainItem *keychainItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:serviceName withUsername:key];    
   return [keychainItem password];  
 }
 
-- (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {  
-  if (!secret) return; // TODO: Handle as error
+- (BOOL)saveToKeychainWithServiceName:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {  
+  if (!secret) {
+		if (error) *error = [NSError gh_errorWithDomain:GHEMKeychainStoreErrorDomain code:GHEMKeychainStoreErrorCodeInvalidSecret localizedDescription:@"Invalid secret"];
+		return NO;
+	}
   EMGenericKeychainItem *keychainItem = [[EMKeychainProxy sharedProxy] genericKeychainItemForService:serviceName withUsername:key];
   if (!keychainItem) {
     [[EMKeychainProxy sharedProxy] addGenericKeychainItemForService:serviceName withUsername:key password:secret];
   } else
-    [keychainItem setPassword:secret];  
+    [keychainItem setPassword:secret];
+  
+	return YES;
 }
 
 @end
 
-#else
+#endif
+
+
+#if TARGET_OS_IPHONE
 
 #import "SFHFKeychainUtils.h"
 
 @implementation GHSFHFKeychainStore
 
-+ (id)keychain {
-	return [[[GHSFHFKeychainStore alloc] init] autorelease];
-}
-
-- (NSString *)secretFromKeychain:(NSString *)key serviceName:(NSString *)serviceName error:(NSError **)error {
+- (NSString *)secretFromKeychainForServiceName:(NSString *)serviceName key:(NSString *)key error:(NSError **)error {
+	
+	if (!error) {
+		NSError *errorTmp = nil;
+		error = &errorTmp;
+	}
+	
 	return [SFHFKeychainUtils getPasswordForUsername:key andServiceName:serviceName error:error];
 }
 
-- (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {
+- (BOOL)saveToKeychainWithServiceName:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {
+	if (!secret) {
+		if (error) *error = [NSError gh_errorWithDomain:GHEMKeychainStoreErrorDomain code:GHEMKeychainStoreErrorCodeInvalidSecret localizedDescription:@"Invalid secret"];
+		return NO;
+	}
+	
+	if (!error) {
+		NSError *errorTmp = nil;
+		error = &errorTmp;
+	}
+	
 	[SFHFKeychainUtils storeUsername:key andPassword:secret forServiceName:serviceName updateExisting:YES error:error];
+	if (error && *error) return NO;
+	return YES;
 }
 
 @end

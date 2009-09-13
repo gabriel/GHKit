@@ -32,6 +32,7 @@
 		00150F300FAD1281009A8633 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00150F2E0FAD1281009A8633 /* GHLogger.m */; };
 		00150F330FAD128D009A8633 /* GTMLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00150F310FAD128D009A8633 /* GTMLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00150F340FAD128D009A8633 /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00150F320FAD128D009A8633 /* GTMLogger.m */; };
+		001C8966105CB1FB005E25A1 /* GHEMKeychainStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C8965105CB1FB005E25A1 /* GHEMKeychainStoreTest.m */; };
 		002239CC0FD07D62005645DE /* ReadonlyCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002239CB0FD07D62005645DE /* ReadonlyCopyTest.m */; };
 		0024E7950F65942F007E5C51 /* GHNSError+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0024E7890F659428007E5C51 /* GHNSError+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0024E7960F65942F007E5C51 /* GHNSError+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0024E78A0F659428007E5C51 /* GHNSError+Utils.m */; };
@@ -170,6 +171,7 @@
 		00150F2E0FAD1281009A8633 /* GHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLogger.m; sourceTree = "<group>"; };
 		00150F310FAD128D009A8633 /* GTMLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMLogger.h; sourceTree = "<group>"; };
 		00150F320FAD128D009A8633 /* GTMLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMLogger.m; sourceTree = "<group>"; };
+		001C8965105CB1FB005E25A1 /* GHEMKeychainStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHEMKeychainStoreTest.m; sourceTree = "<group>"; };
 		002239CB0FD07D62005645DE /* ReadonlyCopyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadonlyCopyTest.m; sourceTree = "<group>"; };
 		0024E7890F659428007E5C51 /* GHNSError+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSError+Utils.h"; sourceTree = "<group>"; tabWidth = 2; };
 		0024E78A0F659428007E5C51 /* GHNSError+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSError+Utils.m"; sourceTree = "<group>"; tabWidth = 2; };
@@ -545,6 +547,7 @@
 				00AA12B91005586B00667B93 /* NSObjectUtilsTest.m */,
 				0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */,
 				00640FC2100717F60052BB61 /* NSNumberUtilsTest.m */,
+				001C8965105CB1FB005E25A1 /* GHEMKeychainStoreTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -726,6 +729,7 @@
 				00AA12BA1005586B00667B93 /* NSObjectUtilsTest.m in Sources */,
 				0075FB4210066DEE00F6ED5A /* NSArrayUtilsTest.m in Sources */,
 				00640FC3100717F60052BB61 /* NSNumberUtilsTest.m in Sources */,
+				001C8966105CB1FB005E25A1 /* GHEMKeychainStoreTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

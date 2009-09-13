@@ -13,6 +13,7 @@
 		00025C860EFB654C007EA0A8 /* GHUIColorUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00025C850EFB654C007EA0A8 /* GHUIColorUtilsTest.m */; };
 		00178C450FC37D5200CA6A07 /* GHNSInvocationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00178C440FC37D5200CA6A07 /* GHNSInvocationProxy.m */; };
 		00178E810FC39A1900CA6A07 /* NSInvocationUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00178E800FC39A1900CA6A07 /* NSInvocationUtilsTest.m */; };
+		001C89C3105CB7D7005E25A1 /* GHEMKeychainStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C89C2105CB7D7005E25A1 /* GHEMKeychainStoreTest.m */; };
 		0022F2A2105C809500EF9FC5 /* NSURLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0022F290105C809500EF9FC5 /* NSURLUtilsTest.m */; };
 		0022F2A3105C809500EF9FC5 /* NSErrorUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0022F291105C809500EF9FC5 /* NSErrorUtilsTest.m */; };
 		0022F2A4105C809500EF9FC5 /* NSArrayUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0022F292105C809500EF9FC5 /* NSArrayUtilsTest.m */; };
@@ -99,6 +100,7 @@
 		00178C430FC37D5200CA6A07 /* GHNSInvocationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHNSInvocationProxy.h; sourceTree = "<group>"; };
 		00178C440FC37D5200CA6A07 /* GHNSInvocationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSInvocationProxy.m; sourceTree = "<group>"; };
 		00178E800FC39A1900CA6A07 /* NSInvocationUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSInvocationUtilsTest.m; sourceTree = "<group>"; };
+		001C89C2105CB7D7005E25A1 /* GHEMKeychainStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHEMKeychainStoreTest.m; sourceTree = "<group>"; };
 		0022F290105C809500EF9FC5 /* NSURLUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLUtilsTest.m; sourceTree = "<group>"; };
 		0022F291105C809500EF9FC5 /* NSErrorUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSErrorUtilsTest.m; sourceTree = "<group>"; };
 		0022F292105C809500EF9FC5 /* NSArrayUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayUtilsTest.m; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 		00DB2AE10EECA3BA00383FB6 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				001C89C2105CB7D7005E25A1 /* GHEMKeychainStoreTest.m */,
 				0022F290105C809500EF9FC5 /* NSURLUtilsTest.m */,
 				0022F291105C809500EF9FC5 /* NSErrorUtilsTest.m */,
 				0022F292105C809500EF9FC5 /* NSArrayUtilsTest.m */,
@@ -685,6 +688,7 @@
 				0022F2BF105C80C100EF9FC5 /* GHNSStringEnumerator.m in Sources */,
 				0022F2C0105C80C100EF9FC5 /* GHNSMutableArray+Utils.m in Sources */,
 				00ED868C105C8CF600EEA5AB /* GHUnitIPhoneTestMain.m in Sources */,
+				001C89C3105CB7D7005E25A1 /* GHEMKeychainStoreTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

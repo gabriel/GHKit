@@ -28,13 +28,49 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const GHEMKeychainStoreErrorDomain;
+
+typedef enum {
+	GHEMKeychainStoreErrorCodeInvalidSecret = 1
+} GHEMKeychainStoreErrorCode;
+
 /*!
  Protocol for keychain storage. 
  */
 @protocol GHKeychainStore <NSObject>
-+ (id)keychain;
-- (NSString *)secretFromKeychain:(NSString *)key serviceName:(NSString *)serviceName error:(NSError **)error;
-- (void)saveToKeychain:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error;
+
+/*!
+ Get secret from keychain.
+ @param key
+ @param serviceName
+ @param error
+ @result Secret
+ */
+- (NSString *)secretFromKeychainForServiceName:(NSString *)serviceName key:(NSString *)key error:(NSError **)error;
+
+/*!
+ Save secret to keychain.
+ @param serviceName
+ @param key
+ @param secret
+ @param error
+ @result NO if there was an error, YES otherwise
+ */
+- (BOOL)saveToKeychainWithServiceName:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error;
+
+@end
+
+/*!
+ Runtime based keychain store.
+ 
+ Forwards to:
+	- GHEMKeychainStore for Mac OS X.
+	- GHSFHFKeychainStore for iPhone.
+
+ */
+@interface GHKeychainStore : NSObject <GHKeychainStore> {
+	id<GHKeychainStore> _keychainStore;
+}
 
 @end
 
