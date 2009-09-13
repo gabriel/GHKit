@@ -28,6 +28,6 @@
 
 #import <Foundation/Foundation.h>
 
-void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
+extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
 
-void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
