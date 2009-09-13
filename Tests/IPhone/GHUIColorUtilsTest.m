@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "GHUIColor+Utils.h"
+
 @interface GHUIColorUtilsTest : GHTestCase { }
 @end
 
