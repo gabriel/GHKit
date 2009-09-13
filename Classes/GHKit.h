@@ -77,8 +77,3 @@
 #import "GTMRegex.h"
 #import "GTMLogger.h"
 #import "GTMStackTrace.h"
-
-// iPhone Only
-#if TARGET_OS_IPHONE
-#import "GHKitIPhone.h"
-#endif
