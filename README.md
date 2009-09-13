@@ -1,6 +1,6 @@
 ## Download
 
-[GHKit-0.3.11.zip](http://rel.me.s3.amazonaws.com/gh-kit/GHKit-0.3.11.zip) GHKit.framework (2009/08/23)
+[GHKit-0.3.12.zip](http://rel.me.s3.amazonaws.com/gh-kit/GHKit-0.3.12.zip) GHKit.framework (2009/09/12)
 
 ## Installation
 
@@ -24,4 +24,4 @@ There are a few options. You can install it globally in `/Library/Frameworks` or
 
 ### Installing as a Static Library (iPhone)
 
-Coming soon.
+Coming Soon!
