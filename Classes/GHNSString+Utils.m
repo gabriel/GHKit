@@ -85,7 +85,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   CFStringRef uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)self, NULL);    
   NSString *mime = (NSString *)UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType);
   CFRelease(uti);
-  return [mime autorelease];
+  return [NSMakeCollectable(mime) autorelease];
 }
 #endif
 
@@ -233,7 +233,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   NSString *uuid = (NSString *)CFUUIDCreateString(nil, uuidRef);
   CFRelease(uuidRef);
   
-  return [uuid autorelease];
+  return [NSMakeCollectable(uuid) autorelease];
 }
 
 - (NSString *)gh_reverse {
