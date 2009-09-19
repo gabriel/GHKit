@@ -35,7 +35,7 @@
   rect = [tempView bounds];
   [tempView setHidden:hide];
   [view setFrame:rect];
-  return tempView;
+  return [tempView autorelease];
 }
 
 - (void)prepareSubviewOfView:(NSView *)view {
