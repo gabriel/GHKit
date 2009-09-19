@@ -46,4 +46,13 @@
  */
 - (NSArray *)gh_arrayByReversingArray;
 
+/*!
+ Safe subarrayWithRange that checks range.
+ If the length is out of bounds will return all elements from location to the end.
+ If the location is out of bounds will return nil.
+ @param range
+ @result Sub-array
+ */
+- (NSArray *)gh_subarrayWithRange:(NSRange)range;
+
 @end

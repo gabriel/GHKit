@@ -49,4 +49,12 @@
 	return array;
 }
 
+- (NSArray *)gh_subarrayWithRange:(NSRange)range {
+	if (range.location >= [self count]) return nil;
+	NSInteger length = range.length;
+	if ((range.location + length) >= [self count]) length = [self count] - range.location;
+	
+	return [self subarrayWithRange:NSMakeRange(range.location, length)];
+}
+
 @end
