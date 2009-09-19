@@ -117,22 +117,22 @@
 
 + (NSString *)gh_encode:(NSString *)s {	
 	// Characters to maybe leave unescaped? CFSTR("~!@#$&*()=:/,;?+'")
-	return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("#"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8) autorelease];
+	return [NSMakeCollectable(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("#"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8)) autorelease];
 }
 
 + (NSString *)gh_encodeComponent:(NSString *)s {  
 	// Characters to maybe leave unescaped? CFSTR("~!*()'")
-  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8) autorelease];
+  return [NSMakeCollectable(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8)) autorelease];
 }
 
 + (NSString *)gh_escapeAll:(NSString *)s {
 	// Characters to escape: @#$%^&{}[]=:/,;?+"\~!*()'
-  return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\~!*()'"), kCFStringEncodingUTF8) autorelease];	
+  return [NSMakeCollectable(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\~!*()'"), kCFStringEncodingUTF8)) autorelease];	
 }
 
 + (NSString *)gh_decode:(NSString *)s {
 	if (!s) return nil;
-	return [(NSString *)CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR("")) autorelease];
+	return [NSMakeCollectable(CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR(""))) autorelease];
 }
 
 #ifndef TARGET_OS_IPHONE
