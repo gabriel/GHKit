@@ -40,7 +40,7 @@
 - (NSString *)stringAtXQuery:(NSString *)xQuery error:(NSError **)error {
   NSArray *objects = [self objectsForXQuery:xQuery constants:nil error:error];
   
-  if (*error) return nil;
+  if (error && *error) return nil;
   
   if (objects && [objects count] > 0)
     return [[objects objectAtIndex:0] stringValue];
