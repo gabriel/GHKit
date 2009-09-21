@@ -104,4 +104,14 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 	return [NSString gh_stringForTimeInterval:[self timeIntervalSinceNow] includeSeconds:includeSeconds];
 }
 
+- (long long)gh_millisSince1970 {
+	NSTimeInterval secondsSince1970 = [self timeIntervalSince1970];
+	return (long long)round(secondsSince1970 * 1000);
+}
+
+- (NSNumber *)gh_millisNumberSince1970 {
+	long long millis = [self gh_millisSince1970];
+	return [NSNumber numberWithLongLong:millis];
+}
+
 @end
