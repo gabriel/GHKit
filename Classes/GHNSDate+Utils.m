@@ -114,4 +114,14 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 	return [NSNumber numberWithLongLong:millis];
 }
 
+- (long long)gh_secondsSince1970 {
+	NSTimeInterval secondsSince1970 = [self timeIntervalSince1970];
+	return (long long)round(secondsSince1970);
+}
+
+- (NSNumber *)gh_secondsNumberSince1970 {
+	long long seconds = [self gh_secondsSince1970];
+	return [NSNumber numberWithLongLong:seconds];
+}
+
 @end

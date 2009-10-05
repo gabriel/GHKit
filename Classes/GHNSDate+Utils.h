@@ -110,4 +110,16 @@ extern NSString *const kDateFormatShortMonthFullYearTime; // 'Dec 12, 2008 4:34 
  */
 - (NSNumber *)gh_millisNumberSince1970;
 
+/*!
+ Seconds since 1970.
+ @result Seconds since 1970 GMT (rounded)
+ */
+- (long long)gh_secondsSince1970;
+
+/*!
+ Seconds since 1970 (NSNumber).
+ @result Seconds since 1970 GMT (rounded)
+ */
+- (NSNumber *)gh_secondsNumberSince1970;
+
 @end
