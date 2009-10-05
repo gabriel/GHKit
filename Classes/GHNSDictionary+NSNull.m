@@ -29,7 +29,7 @@
 @implementation NSDictionary (GHNSNull)
 
 + (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args {
-	if (!firstKey) return [NSDictionary dictionary];
+	if (!firstKey) return [self dictionary];
 	
 	NSMutableArray *keys = [[NSMutableArray alloc] init];
 	NSMutableArray *values = [[NSMutableArray alloc] init];
@@ -41,7 +41,7 @@
 		[values addObject:value];
 		key = va_arg(args,id);
 	} while(key);
-	NSDictionary *dict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+	NSDictionary *dict = [self dictionaryWithObjects:values forKeys:keys];
 	[keys release];
 	[values release];
 	return dict;
@@ -57,9 +57,9 @@
 
 - (id)gh_objectMaybeNilForKey:(id)key {
 	id object = [self objectForKey:key];
-	if (object == [NSNull null]) {
+	if (object == [NSNull null] || [object isEqual:[NSNull null]])
 		return nil;
-	}
+
 	return object;
 }
 
@@ -68,8 +68,7 @@
 @implementation NSMutableDictionary (GHNSNull)
 
 - (void)gh_setObjectMaybeNil:(id)object forKey:(id)key {
-	if (object == nil)
-		object = [NSNull null];
+	if (!object) object = [NSNull null];
 	[self setObject:object forKey:key];
 }
 
