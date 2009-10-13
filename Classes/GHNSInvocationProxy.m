@@ -183,7 +183,7 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 static GHNSLogInvocationTracer *gGHNSLogInvocationTracer = NULL;
 
 + (GHNSLogInvocationTracer *)shared {
-	@synchronized([self class]) {
+	@synchronized([GHNSLogInvocationTracer class]) {
 		if (gGHNSLogInvocationTracer == NULL) {
 			gGHNSLogInvocationTracer = [[GHNSLogInvocationTracer alloc] init];
 		}
