@@ -31,21 +31,10 @@
 
 @implementation NSNumber (GHUtils)
 
-/*!
- @method gh_humanSize
- @abstract File size label
- @result '904 b', '32 KB', '1.1 MB', 
- */
 - (NSString *)gh_humanSize {
   return [self gh_humanSizeWithDelimiter:@" "];
 }
 
-/*!
- @method gh_humanSize
- @abstract File size label
- @param delimiter In between numeric and unit
- @result '904 b', '32 KB', '1.1 MB', 
- */
 - (NSString *)gh_humanSizeWithDelimiter:(NSString *)delimiter {
   double value = [self doubleValue];
 	double byteTest = 1024;
@@ -65,6 +54,32 @@
 		return [NSString stringWithFormat:@"%.2f%@GB", d, delimiter];
   }
   return nil;
+}
+
+- (NSString *)gh_ordinalize {
+  return [NSNumber gh_ordinalize:[self integerValue]];
+}
+
++ (NSString *)gh_ordinalize:(NSInteger)value {
+  NSString *suffix = nil;
+  switch(value % 10) {
+    case 1: suffix = @"st"; break;
+    case 2: suffix = @"nd"; break;
+    case 3: suffix = @"rd"; break;
+    case 0:
+    case 4: 
+    case 5: 
+    case 6: 
+    case 7: 
+    case 8: 
+    case 9: 
+      suffix = @"th"; break;
+  }
+  
+  if (value % 100 >= 11 && value % 100 <= 13) suffix = @"th"; // Handle 11-13
+  if (value == 0) suffix = nil;
+  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
+  return [NSString stringWithFormat:@"%d", value];
 }
 
 + (NSNumber *)gh_bool:(BOOL)b {		

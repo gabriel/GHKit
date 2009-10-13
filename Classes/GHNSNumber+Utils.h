@@ -29,8 +29,39 @@
 
 @interface NSNumber (GHUtils)
 
+/*!
+ @method gh_humanSize
+ @abstract File size label
+ @result '904 b', '32 KB', '1.1 MB', 
+ */
 - (NSString *)gh_humanSize;
+
+/*!
+ @method gh_humanSize
+ @abstract File size label
+ @param delimiter In between numeric and unit
+ @result '904 b', '32 KB', '1.1 MB', 
+ */
 - (NSString *)gh_humanSizeWithDelimiter:(NSString *)delimiter;
+
+/*!
+ Ordinalize.
+ @result Ordinal string for integer.
+ 0 => nil
+ 1 => "1st"
+ 2 => "2nd"
+ 3 => "3rd"
+ 4-9 -> "4th", "5th", ...
+ Ending in 11, 12 or 13 => "111th", "212th", ...
+ */
+- (NSString *)gh_ordinalize;
+
+/*!
+ Ordinalize. 
+ @result Ordinal string for integer.
+ @see gh_ordinalize
+ */
++ (NSString *)gh_ordinalize:(NSInteger)value;
 
 + (NSNumber *)gh_bool:(BOOL)b;
 + (NSNumber *)gh_no;
