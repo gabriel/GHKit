@@ -86,13 +86,6 @@
 		00DBCC8D0FA6670A00893D19 /* NSInvocationUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0AAC0F22C09F0004F351 /* NSInvocationUtilsTest.m */; };
 		00DBCD3B0FA674BD00893D19 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DBCD390FA674BD00893D19 /* GHNSBundle+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00DBCD3C0FA674BD00893D19 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DBCD3A0FA674BD00893D19 /* GHNSBundle+Utils.m */; };
-		00DBCD450FA6757200893D19 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DBCD3E0FA6757200893D19 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00DBCD460FA6757200893D19 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DBCD3F0FA6757200893D19 /* NSObject+SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00DBCD470FA6757200893D19 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DBCD400FA6757200893D19 /* NSObject+SBJSON.m */; };
-		00DBCD480FA6757200893D19 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DBCD410FA6757200893D19 /* NSString+SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00DBCD490FA6757200893D19 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DBCD420FA6757200893D19 /* NSString+SBJSON.m */; };
-		00DBCD4A0FA6757200893D19 /* SBJSONScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DBCD430FA6757200893D19 /* SBJSONScanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00DBCD4B0FA6757200893D19 /* SBJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DBCD440FA6757200893D19 /* SBJSONScanner.m */; };
 		527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 527531C80E33869100AF8EDC /* GHNSNumber+Utils.m */; };
 		527531CD0E3386AC00AF8EDC /* GHNSString+Validation.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531CB0E3386AC00AF8EDC /* GHNSString+Validation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -227,13 +220,6 @@
 		00D313930FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSMutableArray+Utils.m"; sourceTree = "<group>"; };
 		00DBCD390FA674BD00893D19 /* GHNSBundle+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSBundle+Utils.h"; sourceTree = "<group>"; };
 		00DBCD3A0FA674BD00893D19 /* GHNSBundle+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSBundle+Utils.m"; sourceTree = "<group>"; };
-		00DBCD3E0FA6757200893D19 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		00DBCD3F0FA6757200893D19 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		00DBCD400FA6757200893D19 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		00DBCD410FA6757200893D19 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		00DBCD420FA6757200893D19 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		00DBCD430FA6757200893D19 /* SBJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSONScanner.h; sourceTree = "<group>"; };
-		00DBCD440FA6757200893D19 /* SBJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSONScanner.m; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -297,7 +283,6 @@
 		000E75C60FA61B630085BC13 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				00DBCD3D0FA6757200893D19 /* SBJSON */,
 				000E75C70FA61B630085BC13 /* ExtendMac */,
 				000E75DB0FA61B630085BC13 /* GTM */,
 			);
@@ -365,20 +350,6 @@
 				009222DB0FCC954B0070C33B /* Shared.xcconfig */,
 			);
 			path = XcodeConfig;
-			sourceTree = "<group>";
-		};
-		00DBCD3D0FA6757200893D19 /* SBJSON */ = {
-			isa = PBXGroup;
-			children = (
-				00DBCD3E0FA6757200893D19 /* JSON.h */,
-				00DBCD3F0FA6757200893D19 /* NSObject+SBJSON.h */,
-				00DBCD400FA6757200893D19 /* NSObject+SBJSON.m */,
-				00DBCD410FA6757200893D19 /* NSString+SBJSON.h */,
-				00DBCD420FA6757200893D19 /* NSString+SBJSON.m */,
-				00DBCD430FA6757200893D19 /* SBJSONScanner.h */,
-				00DBCD440FA6757200893D19 /* SBJSONScanner.m */,
-			);
-			path = SBJSON;
 			sourceTree = "<group>";
 		};
 		034768DFFF38A50411DB9C8B /* Products */ = {
@@ -595,10 +566,6 @@
 				000E760A0FA61B630085BC13 /* GTMDefines.h in Headers */,
 				000E76100FA61B830085BC13 /* GHNSObject+Swizzle.h in Headers */,
 				00DBCD3B0FA674BD00893D19 /* GHNSBundle+Utils.h in Headers */,
-				00DBCD450FA6757200893D19 /* JSON.h in Headers */,
-				00DBCD460FA6757200893D19 /* NSObject+SBJSON.h in Headers */,
-				00DBCD480FA6757200893D19 /* NSString+SBJSON.h in Headers */,
-				00DBCD4A0FA6757200893D19 /* SBJSONScanner.h in Headers */,
 				00150F2F0FAD1281009A8633 /* GHLogger.h in Headers */,
 				00150F330FAD128D009A8633 /* GTMLogger.h in Headers */,
 				0071EE370FB63AE7001D2CF3 /* GHNSInvocationProxy.h in Headers */,
@@ -769,9 +736,6 @@
 				000E76090FA61B630085BC13 /* GTMStackTrace.m in Sources */,
 				000E76110FA61B830085BC13 /* GHNSObject+Swizzle.m in Sources */,
 				00DBCD3C0FA674BD00893D19 /* GHNSBundle+Utils.m in Sources */,
-				00DBCD470FA6757200893D19 /* NSObject+SBJSON.m in Sources */,
-				00DBCD490FA6757200893D19 /* NSString+SBJSON.m in Sources */,
-				00DBCD4B0FA6757200893D19 /* SBJSONScanner.m in Sources */,
 				00150F300FAD1281009A8633 /* GHLogger.m in Sources */,
 				00150F340FAD128D009A8633 /* GTMLogger.m in Sources */,
 				0071EE380FB63AE7001D2CF3 /* GHNSInvocationProxy.m in Sources */,
