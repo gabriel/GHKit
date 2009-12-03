@@ -51,8 +51,30 @@
 	
 	// Test location overflow -> nil
 	NSArray *subarray5 = [array gh_subarrayWithRange:NSMakeRange(3, 0)];
-	GHAssertNil(subarray5, nil);
-	
+	GHAssertNil(subarray5, nil);	
+}
+
+- (void)testCompact {
+  NSArray *array = [[NSArray arrayWithObjects:@"1", @"2", [NSNull null], nil] gh_compact];
+	NSArray *expected = [NSArray arrayWithObjects:@"1", @"2", nil];
+	GHAssertEqualObjects(array, expected, nil);
+
+  NSArray *array2 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
+  NSArray *compactArray2 = [array2 gh_compact];
+	NSArray *expected2 = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
+	GHAssertEqualObjects(compactArray2, expected2, nil);
+  GHAssertEquals(array2, compactArray2, nil); // Will also be ==
+
+  NSArray *array3 = [NSArray array];
+  NSArray *compactArray3 = [array3 gh_compact];
+	NSArray *expected3 = [NSArray array];
+	GHAssertEqualObjects(compactArray3, expected3, nil);
+  GHAssertEquals(array3, compactArray3, nil); // Will also be ==
+
+  NSArray *array4 = [NSArray arrayWithObject:[NSNull null]];
+  NSArray *compactArray4 = [array4 gh_compact];
+	NSArray *expected4 = [NSArray array];
+	GHAssertEqualObjects(compactArray4, expected4, nil);
 }
 
 @end

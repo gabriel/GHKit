@@ -57,4 +57,21 @@
 	return [self subarrayWithRange:NSMakeRange(range.location, length)];
 }
 
+- (NSArray *)gh_compact {
+  if ([self count] == 0) return self;
+  NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[self count]];
+  BOOL found = NO;
+  for(id obj in self) {
+    if (![obj isEqual:[NSNull null]]) [array addObject:obj];
+    else found = YES;
+  }
+  if (found) {
+    return [array autorelease];
+  } else {
+    // No NSNulls were found so release array copy and return self
+    [array release];
+    return self;
+  }  
+}
+
 @end

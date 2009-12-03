@@ -31,4 +31,10 @@
 
 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index;
 
+/*!
+ Compact.
+ Remove all instances NSNull.
+ */
+- (void)gh_mutableCompact;
+
 @end

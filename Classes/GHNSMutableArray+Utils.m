@@ -37,4 +37,8 @@
 	[indexes release];
 }
 
+- (void)gh_mutableCompact {
+  [self removeObjectIdenticalTo:[NSNull null]];
+}
+
 @end

@@ -33,5 +33,27 @@
 	GHAssertEqualObjects(array, expected, nil);
 }	
 
+- (void)testCompact {
+  NSMutableArray *array = [NSMutableArray arrayWithObjects:@"1", @"2", [NSNull null], nil];
+  [array gh_mutableCompact];
+	NSMutableArray *expected = [NSMutableArray arrayWithObjects:@"1", @"2", nil];
+	GHAssertEqualObjects(array, expected, nil);
+  
+  NSMutableArray *array2 = [NSMutableArray arrayWithObjects:@"1", @"2", @"3", nil];
+  [array2 gh_mutableCompact];
+	NSMutableArray *expected2 = [NSMutableArray arrayWithObjects:@"1", @"2", @"3", nil];
+	GHAssertEqualObjects(array2, expected2, nil);
+  
+  NSMutableArray *array3 = [NSMutableArray array];
+  [array3 gh_mutableCompact];
+	NSMutableArray *expected3 = [NSMutableArray array];
+	GHAssertEqualObjects(array3, expected3, nil);
+  
+  NSMutableArray *array4 = [NSMutableArray arrayWithObject:[NSNull null]];
+  [array4 gh_mutableCompact];
+	NSMutableArray *expected4 = [NSMutableArray array];
+	GHAssertEqualObjects(array4, expected4, nil);
+}
+
 @end
 

@@ -55,4 +55,10 @@
  */
 - (NSArray *)gh_subarrayWithRange:(NSRange)range;
 
+/*!
+ Remove all instances of NSNull.
+ @result New array with instances removed; Or self if no NSNull's were found
+ */
+- (NSArray *)gh_compact;
+
 @end
