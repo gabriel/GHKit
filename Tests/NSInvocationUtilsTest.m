@@ -146,6 +146,8 @@
 	// Wait for thread to call
 	[NSThread sleepForTimeInterval:0.3];
 	GHAssertTrue(invokeTestProxyDelegateCalled_, nil);
+  [thread autorelease];
+  [test autorelease];
 }
 
 - (void)_threadMain:(id)test {
