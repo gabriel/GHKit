@@ -10,6 +10,6 @@
 
 - (NSData *)gh_loadDataFromResource:(NSString *)resource;
 - (NSString *)gh_loadStringDataFromResource:(NSString *)resource;
-- (id)gh_loadJSONFromResource:(NSString *)resource;
+- (NSURL *)gh_URLForResource:(NSString *)resource;
 
 @end

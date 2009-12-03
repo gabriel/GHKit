@@ -8,8 +8,6 @@
 
 #import "GHNSBundle+Utils.h"
 
-#import "NSString+SBJSON.h"
-
 @implementation NSBundle (GHUtils)
 
 - (NSData *)gh_loadDataFromResource:(NSString *)resource {
@@ -26,9 +24,10 @@
 	return [[[NSString alloc] initWithData:[self gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding] autorelease];
 }
 
-- (id)gh_loadJSONFromResource:(NSString *)resource {
-	return [[self gh_loadStringDataFromResource:resource] JSONValue];
+- (NSURL *)gh_URLForResource:(NSString *)resource {
+  NSParameterAssert(resource);
+	NSString *resourcePath = [self pathForResource:[resource stringByDeletingPathExtension] ofType:[resource pathExtension]];	
+  return [NSURL fileURLWithPath:resourcePath];
 }
-
 
 @end
