@@ -39,4 +39,15 @@
   GHAssertEqualObjects(parsed, date, @"Should conform to ASCTime date");
 }
 
+- (void)testOffset {
+  // Set local time zone to eastern time
+  [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithName:@"America/New_York"]];
+  NSDate *date = [NSDate date];
+  NSDate *newDate = [NSDate gh_parseTimeSinceEpoch:[NSNumber numberWithDouble:[date timeIntervalSince1970]] withDefault:nil offsetForTimeZone:[NSTimeZone timeZoneWithName:@"America/Los_Angeles"]];
+  // Times should be three hours (in seconds) apart
+  GHAssertEqualsWithAccuracy(([newDate timeIntervalSince1970] - [date timeIntervalSince1970]), (3.0 * 60.0 * 60.0), 0.01, nil);
+}
+
+
+
 @end

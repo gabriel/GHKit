@@ -59,8 +59,22 @@
 }
 
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value {
-	if (!timeSinceEpoch) return value;
-	return [NSDate dateWithTimeIntervalSince1970:[timeSinceEpoch doubleValue]];
+  return [self gh_parseTimeSinceEpoch:timeSinceEpoch withDefault:value offsetForTimeZone:nil];
+}
+
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value offsetForTimeZone:(NSTimeZone *)timeZone {
+  if (!timeSinceEpoch) return value;
+	NSDate *normalDate = [NSDate dateWithTimeIntervalSince1970:[timeSinceEpoch doubleValue]];
+  if (!timeZone)
+    return normalDate;
+  NSTimeZone *localTimeZone = [NSTimeZone localTimeZone];
+  if ([localTimeZone isEqualToTimeZone:timeZone])
+    return normalDate;
+  // The following adapted from http://stackoverflow.com/questions/1081647/how-to-convert-time-to-the-timezone-of-the-iphone-device/1082179#1082179
+  NSInteger offset = [timeZone secondsFromGMTForDate:normalDate];
+  NSInteger localOffset = [localTimeZone secondsFromGMTForDate:normalDate];
+  NSTimeInterval difference = localOffset - offset;
+  return [[[NSDate alloc] initWithTimeInterval:difference sinceDate:normalDate] autorelease];
 }
 
 - (NSString *)gh_formatRFC822 {
