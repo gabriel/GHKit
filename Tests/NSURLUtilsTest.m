@@ -6,6 +6,7 @@
 //
 
 #import "GHNSURL+Utils.h"
+#import "GHNSDictionary+NSNull.h"
 
 @interface NSURLUtilsTest : GHTestCase { }
 @end
@@ -47,6 +48,12 @@
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:1], @"key1", @"[]", @"key2", nil];
 	NSString *s = [NSURL gh_dictionaryToQueryString:dict sort:YES];
 	GHAssertEqualObjects(s, @"key1=1&key2=%5B%5D", nil);
+}
+
+- (void)testDictionaryWithNSNull {
+	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", @"value1", @"key2", nil, nil];
+	NSString *s = [NSURL gh_dictionaryToQueryString:dict sort:YES];
+	GHAssertEqualObjects(s, @"key1=value1", nil);
 }
 
 - (void)testQueryStringToDictionary {
