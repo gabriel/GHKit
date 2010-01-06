@@ -56,7 +56,7 @@
 				if ([userInfoEntryItem isKindOfClass:[NSError class]]) {					
 					[(NSError *)userInfoEntryItem gh_fullDescription:errorDescription level:level];
 				} else {					
-					[errorDescription appendFormat:@"%@: %@", [userInfoEntryItem description]];
+					[errorDescription appendFormat:@"%@\n", [userInfoEntryItem description]];
 				}
 			}
 		} else if ([userInfoEntry isKindOfClass:[NSError class]]) {
