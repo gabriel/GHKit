@@ -36,7 +36,7 @@
  
  @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
  */
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ...;
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
 + (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args;
 

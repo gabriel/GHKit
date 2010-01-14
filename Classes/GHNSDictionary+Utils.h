@@ -92,6 +92,6 @@
 - (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)defaultValue;
 - (NSNumber *)gh_boolValueForKey:(id)key;
 
-- (BOOL)gh_hasAllKeys:(NSString *)firstKey, ...;
+- (BOOL)gh_hasAllKeys:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end

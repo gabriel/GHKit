@@ -61,7 +61,7 @@ va_end(args); \
  @param selector Method
  @param withObjects (Variable) Arguments list
  */
-+ (id)gh_invokeWithTarget:(id)target selector:(SEL)selector withObjects:object, ...;
++ (id)gh_invokeWithTarget:(id)target selector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke target selector with multiple arguments.
@@ -88,7 +88,7 @@ va_end(args); \
  @param waitUntilDone Whether to wait for call to finish
  @param withObjects Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments
  */
-+ (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ...;
++ (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke target selector on main thread with multiple arguments.
@@ -117,7 +117,7 @@ Invoke target selector on main thread with multiple arguments.
  @param hasReturnValue Will be set to YES, if there is a return value
  @param withObjects (Variable) Arguments list
  */
-+ (NSInvocation *)gh_invocationWithTarget:(id)target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue withObjects:object, ...;
++ (NSInvocation *)gh_invocationWithTarget:(id)target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Create invocation with variable arguments.
