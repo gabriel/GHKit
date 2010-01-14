@@ -34,6 +34,11 @@
 	return nil;
 }
 
++ (NSArray *)gh_arrayWithObject:(id)obj {
+  if (!obj) return [NSArray array];
+  return [NSArray arrayWithObject:obj];
+}
+
 - (id)gh_randomObject:(unsigned int)seed {
 	if ([self count] == 0) return nil;
 	srand(seed == 0 ? time(0) : seed);

@@ -61,4 +61,10 @@
  */
 - (NSArray *)gh_compact;
 
+/*!
+ Safe array with object.
+ Returns empty if obj is null.
+ */
++ (NSArray *)gh_arrayWithObject:(id)obj;
+
 @end
