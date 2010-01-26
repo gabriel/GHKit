@@ -28,7 +28,7 @@
 //
 
 #import "GHNSInvocation+Utils.h"
-
+#import "GHKitDefines.h"
 
 @implementation NSInvocation (GHUtils_GHKIT)
 

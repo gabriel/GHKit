@@ -27,25 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
 
-//
-// Creates arguments NSArray from var args, with first object named 'object'
-// - (void)methodName:(id)arg1 withObjects:object, ...
-//
-#define GHConvertVarArgs(object) \
-NSMutableArray *arguments = [NSMutableArray array]; \
-do { \
-id arg; \
-va_list args; \
-if (object) { \
-[arguments addObject:object]; \
-va_start(args, object); \
-while ((arg = va_arg(args, id))) \
-[arguments addObject:arg]; \
-va_end(args); \
-} \
-} while(0); 
+
 
 @interface NSInvocation (GHUtils_GHKIT)
 
