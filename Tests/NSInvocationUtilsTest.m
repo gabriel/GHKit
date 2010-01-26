@@ -31,11 +31,10 @@
 - (void)runInvokeTestProxyDelegate;
 @end
 
-@interface NSInvocationUtilsTest (Private)
+@interface NSInvocationUtilsTest ()
 - (void)_invokeTesting4:(NSInteger)n;
 - (void)_invokeTestingNested:(NSInteger)n;
 - (void)_invokeTestingMainThread:(NSInteger)n;
-- (void)_invokeTestProxyTimed;
 - (void)_invokeDetach:(NSInteger)n;
 @end
 
@@ -44,6 +43,18 @@
 @end
 
 @implementation NSInvocationUtilsTest
+
+- (void)setUpClass {
+  invokeTesting1Called_ = NO;
+  invokeTesting2Called_ = NO;
+  invokeTesting3Called_ = NO;
+  invokeTesting4Called_ = NO;
+  invokeTestingMainThreadCalled_ = NO;
+  invokeTestingNestedCalled_ = NO;
+  invokeTestProxyDelegateCalled_ = NO;
+  invokeTestArgumentProxyCalled_ = NO;
+  invokeDetachCalled_ = NO;
+}
 
 - (void)testInvoke {
 	
@@ -126,6 +137,7 @@
 }
 
 - (void)_invokeTestingNested:(NSInteger)n {
+  GHTestLog(@"invokeTestingNestedCalled on main thread: %d", [NSThread isMainThread]);
 	GHAssertTrue([NSThread isMainThread], @"Should be on main thread; This is currently an expected failure!");
 	GHAssertTrue(n == 1, @"Should be equal to 1 but was %d", n);
 	invokeTestingNestedCalled_ = YES;

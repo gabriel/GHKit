@@ -28,6 +28,7 @@
 //
 
 #import "GHNSObject+Invocation.h"
+#import "GHKitDefines.h"
 
 @implementation NSObject (GHInvocation_GHKIT)
 

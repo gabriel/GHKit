@@ -14,10 +14,12 @@
 
 @implementation NSStringUtilsTest
 
+#ifndef TARGET_OS_IPHONE
 - (void)testMimeTypes {
   NSString *mimeType = [@"pdf" gh_mimeTypeForExtension];
   GHAssertEqualObjects(@"application/pdf", mimeType, @"Should be pdf mime type");
 }
+#endif
 
 - (void)testContainsAny {
 	NSString *s = @"TestUppercase";

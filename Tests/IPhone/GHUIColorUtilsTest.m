@@ -28,6 +28,7 @@
 //
 
 #import "GHUIColor+Utils.h"
+#import "GHKitDefines.h"
 
 @interface GHUIColorUtilsTest : GHTestCase { }
 @end
