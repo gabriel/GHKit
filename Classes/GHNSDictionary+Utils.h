@@ -94,4 +94,10 @@
 
 - (BOOL)gh_hasAllKeys:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
+/*!
+ Return dictionary with subset of keys.
+ @param keys
+ */
+- (NSDictionary *)gh_dictionarySubsetWithKeys:(NSArray *)keys;
+
 @end

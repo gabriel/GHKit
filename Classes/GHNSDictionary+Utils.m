@@ -106,6 +106,15 @@
 	}
 	va_end(vl);
 	return YES;
-}	
+}
+
+- (NSDictionary *)gh_dictionarySubsetWithKeys:(NSArray *)keys {
+  NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:[keys count]];
+  for(id key in keys) {
+    id value = [self objectForKey:key];
+    if (value) [dict setObject:value forKey:key];
+  }
+  return dict;
+}
 
 @end
