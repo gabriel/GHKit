@@ -39,6 +39,15 @@
   return [NSArray arrayWithObject:obj];
 }
 
+- (id)gh_objectAtIndex:(NSInteger)index {
+  return [self gh_objectAtIndex:index withDefault:nil];
+}
+
+- (id)gh_objectAtIndex:(NSInteger)index withDefault:(id)defaultValue {
+  if (index >= 0 && index < [self count]) return [self objectAtIndex:index];
+  return defaultValue;
+}
+
 - (id)gh_randomObject:(unsigned int)seed {
 	if ([self count] == 0) return nil;
 	srand(seed == 0 ? time(0) : seed);
@@ -60,6 +69,12 @@
 	if ((range.location + length) >= [self count]) length = [self count] - range.location;
 	
 	return [self subarrayWithRange:NSMakeRange(range.location, length)];
+}
+
+- (NSArray *)gh_subarrayFromLocation:(NSInteger)location {
+  if (location == 0) return self;
+  if (location >= [self count]) return [NSArray array];
+  return [self subarrayWithRange:NSMakeRange(location, [self count]-location)];
 }
 
 - (NSArray *)gh_compact {

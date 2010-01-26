@@ -56,6 +56,13 @@
 - (NSArray *)gh_subarrayWithRange:(NSRange)range;
 
 /*!
+ Get sub-array from location to end.
+ @param location
+ @result Sub-array
+ */
+- (NSArray *)gh_subarrayFromLocation:(NSInteger)location;
+
+/*!
  Remove all instances of NSNull.
  @result New array with instances removed; Or self if no NSNull's were found
  */
@@ -66,5 +73,20 @@
  Returns empty if obj is null.
  */
 + (NSArray *)gh_arrayWithObject:(id)obj;
+
+/*!
+ Safe object at index.
+ @param index
+ @result Object at index, or nil if index < 0 or >= count
+ */
+- (id)gh_objectAtIndex:(NSInteger)index;
+
+/*!
+ Safe object at index with default.
+ @param index
+ @param withDefault
+ @result Object at index, or default value if index < 0 or >= count
+ */
+- (id)gh_objectAtIndex:(NSInteger)index withDefault:(id)defaultValue;
 
 @end
