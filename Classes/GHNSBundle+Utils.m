@@ -26,8 +26,8 @@
 
 - (NSURL *)gh_URLForResource:(NSString *)resource {
   NSParameterAssert(resource);
-	NSString *resourcePath = [self pathForResource:[resource stringByDeletingPathExtension] ofType:[resource pathExtension]];	
-  return [NSURL fileURLWithPath:resourcePath];
+  NSString *resourcePath = [self pathForResource:[resource stringByDeletingPathExtension] ofType:[resource pathExtension]];	
+  return resourcePath ? [NSURL fileURLWithPath:resourcePath] : nil;
 }
 
 @end
