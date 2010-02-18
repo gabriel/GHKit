@@ -51,4 +51,20 @@
 	GHAssertFalse(b, nil);
 }
 
+- (void)testSubsetWithKeys {
+  NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+												@"1", @"key1", 
+                        @"2", @"key2", 
+												nil];
+  
+  NSDictionary *dictSubset = [dict gh_dictionarySubsetWithKeys:[NSArray arrayWithObject:@"key1"]];
+  NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:@"1", @"key1", nil];
+  GHAssertEqualObjects(dictSubset, expected, nil);
+  
+  // Test missing key
+  NSDictionary *dictSubset2 = [dict gh_dictionarySubsetWithKeys:[NSArray arrayWithObject:@"key3"]];
+  NSDictionary *expected2 = [NSDictionary dictionary];
+  GHAssertEqualObjects(dictSubset2, expected2, nil);  
+}
+
 @end

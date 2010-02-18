@@ -53,6 +53,8 @@
 		NSString *valueDescription = nil;
 		if ([value isKindOfClass:[NSArray class]]) {
 			valueDescription = [value componentsJoinedByString:@","];
+    } else if ([value isEqual:[NSNull null]]) {
+      continue;
 		} else {
 			valueDescription = [value description];
 		}

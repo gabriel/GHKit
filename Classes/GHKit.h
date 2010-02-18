@@ -25,8 +25,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// Macros
-#import "GHKitMacros.h"
+// Defines
+#import "GHKitDefines.h"
 
 // Categories
 #import "GHNSDate+Parsing.h"

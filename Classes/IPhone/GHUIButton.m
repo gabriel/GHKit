@@ -144,12 +144,12 @@ void _horizontalEdgeColorBlendFunction(void *info, const float *in, float *out) 
 		*out++ = 1.0 - v + twoColors->red1 * v;
 		*out++ = 1.0 - v + twoColors->green1 * v;
 		*out++ = 1.0 - v + twoColors->blue1 * v;
-		*out++ = 1.0 - v + twoColors->alpha1 * v;
+		*out++ = 1.0 - v + twoColors->alpha1 * v; *out;
 	} else {
 		*out++ = twoColors->red2;
 		*out++ = twoColors->green2;
 		*out++ = twoColors->blue2;
-		*out++ = twoColors->alpha2;
+		*out++ = twoColors->alpha2; *out;
 	}
 }
 

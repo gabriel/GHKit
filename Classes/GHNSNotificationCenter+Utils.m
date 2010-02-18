@@ -1,6 +1,9 @@
 //
-//  GHNSDictionary+NSNull.h
-//  Created by Jae Kwon on 5/12/08.
+//  GHNSNotificationCenter+Utils.m
+//  GHKit
+//
+//  Created by Gabriel Handford on 12/7/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -24,31 +27,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHNSNull)
+#import "GHNSNotificationCenter+Utils.h"
 
-/*!
- Create dictionary which supports nil values.
- Key is first (instead of value then key). If the value is nil it is stored internally as NSNull,
- and when calling objectMaybeNilForKey will return nil.
- 
- For example,
-	[NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
- 
- @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
- */
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args;
+@implementation NSNotificationCenter (GHUtils)
 
-/*!
- Use this method instead of objectForKey if you want nil (and not the internal NSNull).
- */
-- (id)gh_objectMaybeNilForKey:(id)key;
-
-@end
-
-@interface NSMutableDictionary (GHNSNull)
-
-- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key;
+- (void)gh_replaceObserver:(id)observer selector:(SEL)selector name:(NSString *)name object:(id)object {
+  [self removeObserver:observer name:name object:object];
+  [self addObserver:observer selector:selector name:name object:object];
+}
 
 @end

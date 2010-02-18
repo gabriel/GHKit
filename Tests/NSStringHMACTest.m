@@ -7,6 +7,7 @@
 //
 
 #import "GHNSString+HMAC.h"
+#import "GHLogger.h"
 
 @interface NSStringHMACTest : GHTestCase { }
 @end

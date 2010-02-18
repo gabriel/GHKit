@@ -49,16 +49,16 @@
  @param withObjects nil terminated variable argument list 
  @result nil if we don't respond to the selector, otherwise the selector result
  */
-- (id)gh_performIfRespondsToSelector:(SEL)selector withObjects:object, ...;
+- (id)gh_performIfRespondsToSelector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments.
  @param selector
  @param withObjects nil terminated variable argument list 
  */
-- (id)gh_performSelector:(SEL)selector withObjects:object, ...;
+- (id)gh_performSelector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
-- (id)gh_performSelector:(SEL)selector afterDelay:(NSTimeInterval)delay withObjects:object, ...;
+- (id)gh_performSelector:(SEL)selector afterDelay:(NSTimeInterval)delay withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments on main thread.
@@ -66,7 +66,7 @@
  @param selector
  @param withObjects nil terminated variable argument list 
  */
-- (void)gh_performSelectorOnMainThread:(SEL)selector withObjects:object, ...;
+- (void)gh_performSelectorOnMainThread:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments on main thread.
@@ -74,10 +74,10 @@
  @param waitUntilDone Whether to join on selector and wait for it to finish.
  @param withObjects nil terminated variable argument list 
  */
-- (void)gh_performSelectorOnMainThread:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ...;
+- (void)gh_performSelectorOnMainThread:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 
-- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:object, ...;
+- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone arguments:(NSArray *)arguments;
 

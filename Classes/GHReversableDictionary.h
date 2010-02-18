@@ -1,6 +1,9 @@
 //
-//  GHNSDictionary+NSNull.h
-//  Created by Jae Kwon on 5/12/08.
+//  GHReversableDictionary.h
+//  GHKit
+//
+//  Created by Gabriel Handford on 1/25/10.
+//  Copyright 2010. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -24,31 +27,22 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHNSNull)
-
 /*!
- Create dictionary which supports nil values.
- Key is first (instead of value then key). If the value is nil it is stored internally as NSNull,
- and when calling objectMaybeNilForKey will return nil.
- 
- For example,
-	[NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
- 
- @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
+ Reversable dictionary, where keys and values point to each other.
  */
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
+@interface GHReversableDictionary : NSObject {
+  NSMutableDictionary *_dict;
+  NSMutableDictionary *_reversedDict;
+}
 
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args;
+- (id)initWithCapacity:(NSInteger)capacity;
 
-/*!
- Use this method instead of objectForKey if you want nil (and not the internal NSNull).
- */
-- (id)gh_objectMaybeNilForKey:(id)key;
+- (id)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
-@end
+- (id)keyForObject:(id)obj;
 
-@interface NSMutableDictionary (GHNSNull)
+- (void)setObject:(id)obj forKey:(id)key;
 
-- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key;
+- (id)objectForKey:(id)key;
 
 @end

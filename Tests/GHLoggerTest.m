@@ -6,6 +6,8 @@
 //  Copyright 2009. All rights reserved.
 //
 
+#import "GHLogger.h"
+
 @interface GHLoggerTest : GHTestCase { }
 @end
 

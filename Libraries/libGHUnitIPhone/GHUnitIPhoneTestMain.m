@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 #import "GHUnit.h"
+#import "GHTesting.h"
+
+// Default exception handler
+void exceptionHandler(NSException *exception) {	
+	NSLog(@"%@\n%@", [exception reason], GHUStackTraceFromException(exception));
+}
 
 int main(int argc, char *argv[]) {
 	
@@ -32,6 +38,8 @@ int main(int argc, char *argv[]) {
 	 
 	 For malloc debugging see: http://developer.apple.com/mac/library/documentation/Performance/Conceptual/ManagingMemory/Articles/MallocDebug.html
 	 */
+	
+	NSSetUncaughtExceptionHandler(&exceptionHandler);
 	
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	
