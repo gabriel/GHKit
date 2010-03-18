@@ -41,4 +41,8 @@
   [self removeObjectIdenticalTo:[NSNull null]];
 }
 
+- (void)gh_addObjectIfNotNil:(id)obj {
+  if (obj) [self addObject:obj];
+}
+
 @end

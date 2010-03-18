@@ -55,5 +55,12 @@
 	GHAssertEqualObjects(array4, expected4, nil);
 }
 
+- (void)testAddObjectIfNotNil {
+  NSMutableArray *array = [NSMutableArray array];
+  [array gh_addObjectIfNotNil:nil];
+  [array gh_addObjectIfNotNil:@"1"];
+  GHAssertTrue([array count] == 1, nil);
+}
+
 @end
 

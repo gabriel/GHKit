@@ -37,4 +37,10 @@
  */
 - (void)gh_mutableCompact;
 
+/*!
+ Add object if not nil. Safe add object.
+ @param obj
+ */
+- (void)gh_addObjectIfNotNil:(id)obj;
+
 @end
