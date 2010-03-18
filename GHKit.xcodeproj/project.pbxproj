@@ -795,7 +795,6 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../gh-unit/Frameworks\"",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
@@ -829,7 +828,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../gh-unit/Frameworks\"",
 					"\"$(SRCROOT)/Frameworks\"",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
@@ -874,10 +872,7 @@
 				GCC_PREFIX_HEADER = GHKit_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Libraries/GHUnit-IPhone\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = GHKit;
 				WRAPPER_EXTENSION = framework;
@@ -901,10 +896,7 @@
 				GTM_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast  -Wnested-externs -Wold-style-definition";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Libraries/GHUnit-IPhone\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = GHKit;
 				WRAPPER_EXTENSION = framework;
 			};

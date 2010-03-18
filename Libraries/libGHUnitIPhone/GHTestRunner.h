@@ -80,6 +80,8 @@
 	BOOL running_;
 	BOOL cancelling_;
   
+  NSTimeInterval startInterval_;
+  
 	NSOperationQueue *operationQueue_; //! If running a suite in operation queue
 }
 
@@ -89,6 +91,7 @@
 @property (readonly) GHTestStats stats;
 @property (readonly, getter=isRunning) BOOL running;
 @property (readonly, getter=isCancelling) BOOL cancelling;
+@property (readonly) NSTimeInterval interval;
 @property (retain, nonatomic) NSOperationQueue *operationQueue;
 
 
