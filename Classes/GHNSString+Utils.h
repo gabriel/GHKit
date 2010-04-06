@@ -28,6 +28,14 @@
 @interface NSString (GHUtils)
 
 /*!
+ Create string with format from array of arguments.
+ Arguments must be objective-c objects.
+ @param format
+ @param arguments
+ */
++ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments;
+
+/*!
  @method gh_isBlank
  @result YES if string is empty (after stripping)
  */
@@ -139,6 +147,14 @@
  
  */
 - (NSArray *)gh_substringSegmentsWithinStart:(NSString *)start end:(NSString *)end;
+
+/*!
+ Rot13.
+ Based on code by powidl
+ http://www.codecollector.net/view/4900E3BB-032E-4E89-81C7-34097E98C286
+ @param input
+ */
++ (NSString *)gh_rot13:(NSString *)input;
 
 @end
 

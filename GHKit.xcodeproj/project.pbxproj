@@ -86,6 +86,11 @@
 		00CDDDE10F77018F0089C60E /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */; };
 		00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */; };
+		00D17004116A988C00D025EF /* GHNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D17002116A988C00D025EF /* GHNSString+XML.h */; };
+		00D17005116A988C00D025EF /* GHNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D17003116A988C00D025EF /* GHNSString+XML.m */; };
+		00D1702F116AA6C200D025EF /* GTMNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D1702D116AA6C200D025EF /* GTMNSString+XML.h */; };
+		00D17030116AA6C200D025EF /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D1702E116AA6C200D025EF /* GTMNSString+XML.m */; };
+		00D17047116AA84800D025EF /* GHNSStringXMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D17046116AA84800D025EF /* GHNSStringXMLTest.m */; };
 		00D313940FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D313920FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D313950FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D313930FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m */; };
 		00DBCC8D0FA6670A00893D19 /* NSInvocationUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0AAC0F22C09F0004F351 /* NSInvocationUtilsTest.m */; };
@@ -226,6 +231,11 @@
 		00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitTestMain.m; sourceTree = "<group>"; };
 		00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Invocation.h"; sourceTree = "<group>"; };
 		00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Invocation.m"; sourceTree = "<group>"; };
+		00D17002116A988C00D025EF /* GHNSString+XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+XML.h"; sourceTree = "<group>"; };
+		00D17003116A988C00D025EF /* GHNSString+XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+XML.m"; sourceTree = "<group>"; };
+		00D1702D116AA6C200D025EF /* GTMNSString+XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+XML.h"; sourceTree = "<group>"; };
+		00D1702E116AA6C200D025EF /* GTMNSString+XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+XML.m"; sourceTree = "<group>"; };
+		00D17046116AA84800D025EF /* GHNSStringXMLTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringXMLTest.m; sourceTree = "<group>"; };
 		00D313920FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSMutableArray+Utils.h"; sourceTree = "<group>"; };
 		00D313930FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSMutableArray+Utils.m"; sourceTree = "<group>"; };
 		00DBCD390FA674BD00893D19 /* GHNSBundle+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSBundle+Utils.h"; sourceTree = "<group>"; };
@@ -322,6 +332,8 @@
 		000E75DC0FA61B630085BC13 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				00D1702D116AA6C200D025EF /* GTMNSString+XML.h */,
+				00D1702E116AA6C200D025EF /* GTMNSString+XML.m */,
 				00150F310FAD128D009A8633 /* GTMLogger.h */,
 				00150F320FAD128D009A8633 /* GTMLogger.m */,
 				000E75DD0FA61B630085BC13 /* GTMBase64.h */,
@@ -478,6 +490,8 @@
 				00B8498610CD843C0057AE19 /* GHNSNotificationCenter+Utils.m */,
 				003ED036110E630B00D57720 /* GHReversableDictionary.h */,
 				003ED037110E630B00D57720 /* GHReversableDictionary.m */,
+				00D17002116A988C00D025EF /* GHNSString+XML.h */,
+				00D17003116A988C00D025EF /* GHNSString+XML.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -534,6 +548,7 @@
 				00640FC2100717F60052BB61 /* NSNumberUtilsTest.m */,
 				001C8965105CB1FB005E25A1 /* GHEMKeychainStoreTest.m */,
 				003ED04C110E656100D57720 /* GHReversableDictionaryTest.m */,
+				00D17046116AA84800D025EF /* GHNSStringXMLTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -589,6 +604,8 @@
 				00AA126F1005578600667B93 /* GHNSObject+Utils.h in Headers */,
 				00B8498710CD843C0057AE19 /* GHNSNotificationCenter+Utils.h in Headers */,
 				003ED038110E630B00D57720 /* GHReversableDictionary.h in Headers */,
+				00D17004116A988C00D025EF /* GHNSString+XML.h in Headers */,
+				00D1702F116AA6C200D025EF /* GTMNSString+XML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +732,7 @@
 				00640FC3100717F60052BB61 /* NSNumberUtilsTest.m in Sources */,
 				001C8966105CB1FB005E25A1 /* GHEMKeychainStoreTest.m in Sources */,
 				003ED04D110E656100D57720 /* GHReversableDictionaryTest.m in Sources */,
+				00D17047116AA84800D025EF /* GHNSStringXMLTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -762,6 +780,8 @@
 				00AA12701005578600667B93 /* GHNSObject+Utils.m in Sources */,
 				00B8498810CD843C0057AE19 /* GHNSNotificationCenter+Utils.m in Sources */,
 				003ED039110E630B00D57720 /* GHReversableDictionary.m in Sources */,
+				00D17005116A988C00D025EF /* GHNSString+XML.m in Sources */,
+				00D17030116AA6C200D025EF /* GTMNSString+XML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

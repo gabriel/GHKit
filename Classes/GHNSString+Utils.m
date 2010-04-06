@@ -32,6 +32,14 @@
 
 @implementation NSString (GHUtils)
 
++ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments {
+  char *argList = (char *)malloc(sizeof(NSString *) * [arguments count]);
+  [arguments getObjects:(id *)argList];
+  NSString *result = [[[NSString alloc] initWithFormat:format arguments:argList] autorelease];
+  free(argList);
+  return result;
+}
+
 - (NSString *)gh_strip {
   return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
@@ -306,6 +314,31 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	if (length > 0)
 		[segments addObject:[GHNSStringSegment string:[self substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
 	return segments;
+}
+
+// Based on code by powidl
+// http://www.codecollector.net/view/4900E3BB-032E-4E89-81C7-34097E98C286
++ (NSString *)gh_rot13:(NSString *)input {
+  const char *cString = [input cStringUsingEncoding:NSASCIIStringEncoding];
+  NSInteger stringLength = [input length];
+  char newString[stringLength+1];
+  
+  NSInteger i;
+  for (i = 0; i < stringLength; i++) {
+    unsigned char character = cString[i];
+    // Check if character is A - Z
+    if(0x40 < character && character < 0x5B)
+      newString[i] = (((character - 0x41) + 0x0D) % 0x1A) + 0x41;
+    // Check if character is a - z
+    else if( 0x60 < character && character < 0x7B )
+      newString[i] = (((character - 0x61) + 0x0D) % 0x1A) + 0x61;
+    else
+      newString[i] = character;
+  }
+  
+  newString[i] = '\0';
+  
+  return [NSString stringWithCString:newString encoding:NSASCIIStringEncoding];
 }
 
 @end
