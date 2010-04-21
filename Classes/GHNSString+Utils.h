@@ -30,6 +30,7 @@
 /*!
  Create string with format from array of arguments.
  Arguments must be objective-c objects.
+ WARNING: This assumption seems totally dangerous.
  @param format
  @param arguments
  */
