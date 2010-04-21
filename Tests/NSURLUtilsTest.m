@@ -96,4 +96,11 @@
 	GHAssertEqualObjects(s, @"key1=va%2Cvb%2Cvc&key2=value2", nil);	
 }
 
+- (void)testQueryDictionaryWithSet {
+	NSSet *set1 = [NSSet setWithObjects:@"va", @"vb", nil];
+	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:set1, @"key1", nil];
+	NSString *s = [NSURL gh_dictionaryToQueryString:dict sort:YES];
+	GHAssertTrue([s isEqualToString:@"key1=va%2Cvb"] || [s isEqualToString:@"key1=vb%2Cva"], nil);	
+}
+
 @end

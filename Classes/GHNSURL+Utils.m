@@ -50,19 +50,21 @@
 	
   for(NSString *key in enumerator) {
     id value = [queryDictionary valueForKey:key];
-		NSString *valueDescription = nil;
-		if ([value isKindOfClass:[NSArray class]]) {
-			valueDescription = [value componentsJoinedByString:@","];
+    NSString *valueDescription = nil;
+    
+    if ([value respondsToSelector:@selector(objectEnumerator)]) {
+      NSEnumerator *enumerator = [value objectEnumerator];
+      valueDescription = [[enumerator allObjects] componentsJoinedByString:@","];
     } else if ([value isEqual:[NSNull null]]) {
       continue;
-		} else {
-			valueDescription = [value description];
-		}
-		
-		NSAssert(valueDescription, @"No value description");
-		
-		if (encoded) key = [self gh_encodeComponent:key];
-		if (encoded) valueDescription = [self gh_encodeComponent:valueDescription];
+    } else {
+      valueDescription = [value description];
+    }
+    
+    if (!valueDescription) continue;
+    
+    if (encoded) key = [self gh_encodeComponent:key];
+    if (encoded) valueDescription = [self gh_encodeComponent:valueDescription];
     [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", key, valueDescription]];
   }
   return queryStrings;
