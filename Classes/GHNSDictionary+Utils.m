@@ -51,6 +51,16 @@
 	return [self gh_integerForKey:key withDefault:0];
 }
 
+- (NSUInteger)gh_unsignedIntegerForKey:(id)key withDefault:(NSUInteger)defaultValue {
+	id value = [self objectForKey:key];
+	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
+	return [value unsignedIntegerValue];
+}
+
+- (NSUInteger)gh_unsignedIntegerForKey:(id)key {
+	return [self gh_unsignedIntegerForKey:key withDefault:0];
+}
+
 - (NSNumber *)gh_numberForKey:(id)key withDefaultInteger:(NSInteger)defaultValue {
 	id value = [self objectForKey:key];
 	if (!value || [value isEqual:[NSNull null]]) return [NSNumber numberWithInteger:defaultValue];

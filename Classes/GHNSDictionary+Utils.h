@@ -38,11 +38,32 @@
 - (double)gh_doubleForKey:(id)key;
 
 /*! 
+ Integer for key.
  @param key
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
  */
 - (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
+
+/*! 
+ Integer for key.
+ If value for key is nil or [NSNull null], 0 is returned.
+ @param key
+ */
 - (NSInteger)gh_integerForKey:(id)key;
+
+/*! 
+ Unsigned integer for key.
+ @param key
+ @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ */
+- (NSUInteger)gh_unsignedIntegerForKey:(id)key withDefault:(NSUInteger)defaultValue;
+
+/*! 
+ Unsigned integer for key.
+ If value for key is nil or [NSNull null], 0 is returned.
+ @param key
+ */
+- (NSUInteger)gh_unsignedIntegerForKey:(id)key;
 
 /*!
  Number for key with default double value.
