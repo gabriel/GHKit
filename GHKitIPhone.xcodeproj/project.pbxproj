@@ -27,6 +27,10 @@
 		000223B50F4BFFBE0046234D /* GHNSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 000223B30F4BFFBE0046234D /* GHNSString+URL.m */; };
 		00025C6A0EFB5ECC007EA0A8 /* GHUIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00025C690EFB5ECC007EA0A8 /* GHUIColor+Utils.m */; };
 		00025C860EFB654C007EA0A8 /* GHUIColorUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00025C850EFB654C007EA0A8 /* GHUIColorUtilsTest.m */; };
+		00028640118146FE00D74BBD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0002863F118146FE00D74BBD /* CoreGraphics.framework */; };
+		00028642118146FE00D74BBD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00028641118146FE00D74BBD /* Foundation.framework */; };
+		000286B81181471500D74BBD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000286B71181471500D74BBD /* Security.framework */; };
+		000286C91181472300D74BBD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 000286C81181472300D74BBD /* UIKit.framework */; };
 		00178C450FC37D5200CA6A07 /* GHNSInvocationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00178C440FC37D5200CA6A07 /* GHNSInvocationProxy.m */; };
 		00178E810FC39A1900CA6A07 /* NSInvocationUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00178E800FC39A1900CA6A07 /* NSInvocationUtilsTest.m */; };
 		001C89C3105CB7D7005E25A1 /* GHEMKeychainStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 001C89C2105CB7D7005E25A1 /* GHEMKeychainStoreTest.m */; };
@@ -160,12 +164,6 @@
 		001C8B1E105CBD66005E25A1 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2AC40EECA29900383FB6 /* hmac.h */; };
 		001C8B1F105CBD66005E25A1 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AC60EECA29900383FB6 /* sha1.c */; };
 		001C8B23105CBD68005E25A1 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DB2AC70EECA29900383FB6 /* sha1.h */; };
-		001C8B5C105CC072005E25A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C8B5B105CC072005E25A1 /* CoreGraphics.framework */; };
-		001C8B5E105CC072005E25A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C8B5D105CC072005E25A1 /* Foundation.framework */; };
-		001C8B60105CC072005E25A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C8B5F105CC072005E25A1 /* UIKit.framework */; };
-		001C8B62105CC083005E25A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C8B61105CC083005E25A1 /* CoreGraphics.framework */; };
-		001C8B64105CC083005E25A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C8B63105CC083005E25A1 /* Foundation.framework */; };
-		001C8B66105CC083005E25A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001C8B65105CC083005E25A1 /* UIKit.framework */; };
 		001C8BB8105CC33E005E25A1 /* GHNSError+Utils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0024E7090F659183007E5C51 /* GHNSError+Utils.h */; };
 		001C8BB9105CC344005E25A1 /* GHLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 000223B00F4BFFBE0046234D /* GHLogger.h */; };
 		001C8BBA105CC344005E25A1 /* GHNSString+URL.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 000223B20F4BFFBE0046234D /* GHNSString+URL.h */; };
@@ -268,10 +266,6 @@
 		00DB2AD90EECA29900383FB6 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AC30EECA29900383FB6 /* hmac.c */; };
 		00DB2ADA0EECA29900383FB6 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2AC60EECA29900383FB6 /* sha1.c */; };
 		00DB2B110EECA51400383FB6 /* GHUINavigationController+PopDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */; };
-		00ED869A105C8D4400EEA5AB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ED8699105C8D4400EEA5AB /* CoreGraphics.framework */; };
-		00ED869C105C8D4400EEA5AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ED869B105C8D4400EEA5AB /* Foundation.framework */; };
-		00ED869E105C8D4400EEA5AB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ED869D105C8D4400EEA5AB /* UIKit.framework */; };
-		00ED86A5105C8D5000EEA5AB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ED86A4105C8D5000EEA5AB /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,6 +343,10 @@
 		00025C680EFB5ECC007EA0A8 /* GHUIColor+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIColor+Utils.h"; sourceTree = "<group>"; };
 		00025C690EFB5ECC007EA0A8 /* GHUIColor+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIColor+Utils.m"; sourceTree = "<group>"; };
 		00025C850EFB654C007EA0A8 /* GHUIColorUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIColorUtilsTest.m; sourceTree = "<group>"; };
+		0002863F118146FE00D74BBD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		00028641118146FE00D74BBD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		000286B71181471500D74BBD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		000286C81181472300D74BBD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		00178C430FC37D5200CA6A07 /* GHNSInvocationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHNSInvocationProxy.h; sourceTree = "<group>"; };
 		00178C440FC37D5200CA6A07 /* GHNSInvocationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSInvocationProxy.m; sourceTree = "<group>"; };
 		00178E800FC39A1900CA6A07 /* NSInvocationUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSInvocationUtilsTest.m; sourceTree = "<group>"; };
@@ -356,12 +354,6 @@
 		001C8A58105CBBD3005E25A1 /* libGHKitIPhoneSimulator3_0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGHKitIPhoneSimulator3_0.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C8AC8105CBD1E005E25A1 /* libGHKitIPhoneDevice3_0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGHKitIPhoneDevice3_0.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		001C8B49105CBE58005E25A1 /* CombineStaticIPhoneLibs.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = CombineStaticIPhoneLibs.sh; sourceTree = "<group>"; };
-		001C8B5B105CC072005E25A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		001C8B5D105CC072005E25A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		001C8B5F105CC072005E25A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		001C8B61105CC083005E25A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		001C8B63105CC083005E25A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		001C8B65105CC083005E25A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0022F290105C809500EF9FC5 /* NSURLUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLUtilsTest.m; sourceTree = "<group>"; };
 		0022F291105C809500EF9FC5 /* NSErrorUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSErrorUtilsTest.m; sourceTree = "<group>"; };
 		0022F292105C809500EF9FC5 /* NSArrayUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayUtilsTest.m; sourceTree = "<group>"; };
@@ -477,10 +469,6 @@
 		00DB2AC70EECA29900383FB6 /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 		00DB2B0F0EECA51400383FB6 /* GHUINavigationController+PopDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUINavigationController+PopDelegate.h"; sourceTree = "<group>"; };
 		00DB2B100EECA51400383FB6 /* GHUINavigationController+PopDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUINavigationController+PopDelegate.m"; sourceTree = "<group>"; };
-		00ED8699105C8D4400EEA5AB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		00ED869B105C8D4400EEA5AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		00ED869D105C8D4400EEA5AB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		00ED86A4105C8D5000EEA5AB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* GHKitIPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitIPhone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -490,9 +478,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C8B5C105CC072005E25A1 /* CoreGraphics.framework in Frameworks */,
-				001C8B5E105CC072005E25A1 /* Foundation.framework in Frameworks */,
-				001C8B60105CC072005E25A1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,9 +485,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				001C8B62105CC083005E25A1 /* CoreGraphics.framework in Frameworks */,
-				001C8B64105CC083005E25A1 /* Foundation.framework in Frameworks */,
-				001C8B66105CC083005E25A1 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,11 +492,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00ED869A105C8D4400EEA5AB /* CoreGraphics.framework in Frameworks */,
-				00ED869C105C8D4400EEA5AB /* Foundation.framework in Frameworks */,
-				00ED869E105C8D4400EEA5AB /* UIKit.framework in Frameworks */,
-				00ED86A5105C8D5000EEA5AB /* Security.framework in Frameworks */,
 				003ED230110EA88500D57720 /* libGHUnitIPhone3_0.a in Frameworks */,
+				00028640118146FE00D74BBD /* CoreGraphics.framework in Frameworks */,
+				00028642118146FE00D74BBD /* Foundation.framework in Frameworks */,
+				000286B81181471500D74BBD /* Security.framework in Frameworks */,
+				000286C91181472300D74BBD /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,16 +741,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				00ED8699105C8D4400EEA5AB /* CoreGraphics.framework */,
-				00ED869B105C8D4400EEA5AB /* Foundation.framework */,
-				00ED869D105C8D4400EEA5AB /* UIKit.framework */,
-				00ED86A4105C8D5000EEA5AB /* Security.framework */,
-				001C8B5B105CC072005E25A1 /* CoreGraphics.framework */,
-				001C8B5D105CC072005E25A1 /* Foundation.framework */,
-				001C8B5F105CC072005E25A1 /* UIKit.framework */,
-				001C8B61105CC083005E25A1 /* CoreGraphics.framework */,
-				001C8B63105CC083005E25A1 /* Foundation.framework */,
-				001C8B65105CC083005E25A1 /* UIKit.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -793,6 +765,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				000286C81181472300D74BBD /* UIKit.framework */,
+				000286B71181471500D74BBD /* Security.framework */,
+				0002863F118146FE00D74BBD /* CoreGraphics.framework */,
+				00028641118146FE00D74BBD /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1318,7 +1294,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -1331,7 +1307,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
