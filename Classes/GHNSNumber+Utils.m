@@ -103,7 +103,7 @@
 }
 
 + (NSInteger)gh_randomInteger {
-	double r = (double)rand()/INT_MAX;
+	double r = (double)arc4random()/INT_MAX;
 	return NSIntegerMax * r;
 }
 

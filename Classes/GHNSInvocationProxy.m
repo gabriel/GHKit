@@ -165,7 +165,7 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	[invocation invoke];
 	[self performSelector:@selector(_callback) onThread:thread_ withObject:nil waitUntilDone:YES];
-	[pool release];
+	[pool drain];
 }
 
 - (void)_callback {

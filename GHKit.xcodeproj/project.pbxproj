@@ -55,6 +55,7 @@
 		0071E6190FB361A7001D2CF3 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
 		0071EE370FB63AE7001D2CF3 /* GHNSInvocationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0071EE380FB63AE7001D2CF3 /* GHNSInvocationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */; };
+		0075E2061186B3FB00FF050F /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 0075E2051186B3FB00FF050F /* Debug.xcconfig */; };
 		0075FB4210066DEE00F6ED5A /* NSArrayUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */; };
 		007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59850EF2438900B3005D /* GHNSArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59860EF2438900B3005D /* GHNSArray+Utils.m */; };
@@ -62,7 +63,6 @@
 		007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */; };
 		007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 007F59890EF2438900B3005D /* GHViewAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		007F59930EF2438900B3005D /* GHViewAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F598A0EF2438900B3005D /* GHViewAnimation.m */; };
-		009222DC0FCC954B0070C33B /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 009222DB0FCC954B0070C33B /* Shared.xcconfig */; };
 		00939A7C0F4CA05D00E41365 /* GHNSDate+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00939A7D0F4CA05D00E41365 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */; };
 		00939AA30F4CC09600E41365 /* NSDateUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939AA20F4CC09600E41365 /* NSDateUtilsTest.m */; };
@@ -199,6 +199,7 @@
 		0071E6130FB361A1001D2CF3 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
 		0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHNSInvocationProxy.h; sourceTree = "<group>"; };
 		0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSInvocationProxy.m; sourceTree = "<group>"; };
+		0075E2051186B3FB00FF050F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayUtilsTest.m; sourceTree = "<group>"; };
 		007F59850EF2438900B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
 		007F59860EF2438900B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
@@ -370,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				009222DB0FCC954B0070C33B /* Shared.xcconfig */,
+				0075E2051186B3FB00FF050F /* Debug.xcconfig */,
 			);
 			path = XcodeConfig;
 			sourceTree = "<group>";
@@ -675,6 +677,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0075E2061186B3FB00FF050F /* Debug.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,7 +686,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
-				009222DC0FCC954B0070C33B /* Shared.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -872,30 +874,8 @@
 		};
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 009222DB0FCC954B0070C33B /* Shared.xcconfig */;
+			baseConfigurationReference = 0075E2051186B3FB00FF050F /* Debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				COPY_PHASE_STRIP = NO;
-				DYLIB_COMPATIBILITY_VERSION = 0;
-				DYLIB_CURRENT_VERSION = "${GHKIT_VERSION}";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
-				);
-				FRAMEWORK_VERSION = A;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = GHKit_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = GHKit;
-				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
 		};
@@ -903,22 +883,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 009222DB0FCC954B0070C33B /* Shared.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DYLIB_COMPATIBILITY_VERSION = 0;
-				DYLIB_CURRENT_VERSION = "${GHKIT_VERSION}";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				FRAMEWORK_VERSION = A;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = GHKit_Prefix.pch;
-				GTM_GENERAL_OTHER_CFLAGS = "-Wdiv-by-zero -Wbad-function-cast  -Wnested-externs -Wold-style-definition";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@rpath";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				PRODUCT_NAME = GHKit;
-				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
 		};
