@@ -28,8 +28,27 @@
 
 @interface NSFileManager (GHUtils)
 
-+ (NSNumber *)gh_fileSize:(NSString *)filePath;
+/*!
+ @method gh_fileSize
+ @abstract Get size of file
+ @param filePath Path
+ @result File size
+ */
++ (NSNumber *)gh_fileSize:(NSString *)filePath error:(NSError **)error;
+
+/*!
+ @method gh_isDirectory
+ @param filePath Path
+ @abstract Check if is directory
+ @result YES if directory, NO otherwise
+ */
 + (BOOL)gh_isDirectory:(NSString *)filePath;
+
+/*!
+ @method gh_exist 
+ @param filePath Path
+ @result YES if exists, NO otherwise
+ */
 + (BOOL)gh_exist:(NSString *)filePath;
 
 /*!
@@ -42,6 +61,11 @@
  */
 + (NSString *)gh_temporaryFile:(NSString *)appendPath deleteIfExists:(BOOL)deleteIfExists error:(NSError **)error;
 
+/*!
+ @method gh_uniquePathWithNumber
+ @abstract Get unique filename based on the specified path. If file does not already exist, the same object is returned. 
+ Example: foo.txt and that path already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on...  
+ */
 + (NSString *)gh_uniquePathWithNumber:(NSString *)path;
 
 /*!
@@ -51,5 +75,10 @@
  @result YES If directory exists or was created
  */
 + (BOOL)gh_ensureDirectoryExists:(NSString *)directory created:(BOOL *)created error:(NSError **)error;
+
+/*!
+ Path to resource in bundle.
+ */
++ (NSString *)gh_pathToResource:(NSString *)path;
 
 @end

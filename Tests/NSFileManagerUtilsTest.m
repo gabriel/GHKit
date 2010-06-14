@@ -23,4 +23,11 @@
 	GHAssertTrue(success, nil);
 }
 
+- (void)testFileSize {
+  NSString *path = [NSFileManager gh_pathToResource:@"test.file"];
+  GHAssertTrue([NSFileManager gh_exist:path], nil);
+  NSNumber *fileSize = [NSFileManager gh_fileSize:path error:nil];
+  GHAssertEquals([fileSize longValue], 10L, nil);
+}
+
 @end

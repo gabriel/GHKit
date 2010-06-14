@@ -32,39 +32,22 @@
 
 @implementation NSFileManager (GHUtils)
 
-/*!
- @method gh_fileSize
- @abstract Get size of file
- @param filePath Path
- @result File size
-*/
-+ (NSNumber *)gh_fileSize:(NSString *)filePath {
++ (NSNumber *)gh_fileSize:(NSString *)filePath error:(NSError **)error {
   NSFileManager *fileManager = [NSFileManager defaultManager];
   BOOL isDir;
   if ([fileManager fileExistsAtPath:filePath isDirectory:&isDir] && !isDir) {
-    NSDictionary *fileAttributes = [fileManager fileAttributesAtPath:filePath traverseLink:YES];    
+    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:filePath error:error];    
     if (fileAttributes) 
       return [fileAttributes objectForKey:NSFileSize];
   }    
   return nil;
 }
 
-/*!
- @method gh_isDirectory
- @param filePath Path
- @abstract Check if is directory
- @result YES if directory, NO otherwise
-*/
 + (BOOL)gh_isDirectory:(NSString *)filePath {
   BOOL isDir;
   return ([[NSFileManager defaultManager] fileExistsAtPath:filePath isDirectory:&isDir] && isDir);
 }
 
-/*!
- @method gh_exist 
- @param filePath Path
- @result YES if exists, NO otherwise
-*/
 + (BOOL)gh_exist:(NSString *)filePath {
   return [[NSFileManager defaultManager] fileExistsAtPath:filePath];
 }
@@ -92,11 +75,6 @@
 	}
 }
 
-/*!
-  @method gh_uniquePathWithNumber
-  @abstract Get unique filename based on the specified path. If file does not already exist, the same object is returned. 
-    Example: foo.txt and that path already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on...  
-*/
 + (NSString *)gh_uniquePathWithNumber:(NSString *)path {
   NSInteger index = 1;
   NSString *uniquePath = path;
@@ -110,5 +88,11 @@
   }
   return uniquePath;
 }
+
++ (NSString *)gh_pathToResource:(NSString *)path {
+  if (!path) return nil;
+  return [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:path];
+}
+
 
 @end

@@ -1223,6 +1223,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = CombineLibs;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
