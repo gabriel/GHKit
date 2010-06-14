@@ -332,15 +332,9 @@ static GTMLogger *gSharedLogger = nil;
                  withFormat:(NSString *)fmt
                      valist:(va_list)args 
                       level:(GTMLoggerLevel)level {
-  // Performance note: since we always have to create a new NSString from the 
-  // returned CFStringRef, we may want to do a quick check here to see if |fmt|
+  // Performance note: We may want to do a quick check here to see if |fmt|
   // contains a '%', and if not, simply return 'fmt'. 
-  CFStringRef cfmsg = NULL;  
-  cfmsg = CFStringCreateWithFormatAndArguments(kCFAllocatorDefault, 
-                                               NULL,  // format options
-                                               (CFStringRef)fmt, 
-                                               args);
-  return GTMCFAutorelease(cfmsg);
+  return [[[NSString alloc] initWithFormat:fmt arguments:args] autorelease];
 }
 
 @end  // GTMLogBasicFormatter

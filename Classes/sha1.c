@@ -95,8 +95,6 @@ void SHA1Transform(unsigned long state[5], unsigned char buffer[64])
   state[2] += c;
   state[3] += d;
   state[4] += e;
-  /* Wipe variables */
-  a = b = c = d = e = 0; a; b; c; d; e;
 }
 
 
@@ -140,7 +138,7 @@ void SHA1Update(SHA1_CTX* context, unsigned char* data, unsigned int len)
 
 void SHA1Final(unsigned char digest[20], SHA1_CTX* context)
 {
-  unsigned long i, j;
+  unsigned long i;
   unsigned char finalcount[8];
   
   for (i = 0; i < 8; i++) {
@@ -157,7 +155,6 @@ void SHA1Final(unsigned char digest[20], SHA1_CTX* context)
     ((context->state[i>>2] >> ((3-(i & 3)) * 8) ) & 255);
   }
   /* Wipe variables */
-  i = j = 0; i; j;
   memset(context->buffer, 0, 64);
   memset(context->state, 0, 20);
   memset(context->count, 0, 8);
