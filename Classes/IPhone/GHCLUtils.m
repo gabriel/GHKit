@@ -58,7 +58,7 @@ CLLocationCoordinate2D GHLocationAtDistance(CLLocationCoordinate2D coordinate, C
 	double sigma = s / (b * A);
 	double sigmaP = 2 * M_PI;
 	
-	double cos2SigmaM, sinSigma, cosSigma;
+	double cos2SigmaM = 0, sinSigma = 0, cosSigma = 0;
 	
 	while(abs(sigma - sigmaP) > 1e-12) {
 		cos2SigmaM = cos(2 * sigma1 + sigma);
@@ -69,7 +69,7 @@ CLLocationCoordinate2D GHLocationAtDistance(CLLocationCoordinate2D coordinate, C
 		sigma = s / (b * A) + deltaSigma;
 	}
 	
-	double tmp = sinU1 * sinSigma - cosU1 * cosSigma * cosAlpha1;
+	double tmp = (sinU1 * sinSigma) - (cosU1 * cosSigma * cosAlpha1);
 	double lat2 = atan2(sinU1 * cosSigma + cosU1 * sinSigma * cosAlpha1, (1 - f) * sqrt(sinAlpha * sinAlpha + tmp * tmp));
 	double lambda = atan2(sinSigma * sinAlpha1, cosU1 * cosSigma - sinU1 * sinSigma * cosAlpha1);
 	double C = f / 16 * cosSqAlpha * (4 + f * (4 - 3 * cosSqAlpha));
