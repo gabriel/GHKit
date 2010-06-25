@@ -153,9 +153,13 @@
  Rot13.
  Based on code by powidl
  http://www.codecollector.net/view/4900E3BB-032E-4E89-81C7-34097E98C286
- @param input
  */
-+ (NSString *)gh_rot13:(NSString *)input;
+- (NSString *)gh_rot13;
+
+/*!
+ MD5.
+ */
+- (NSString *)gh_MD5;
 
 @end
 

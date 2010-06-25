@@ -29,6 +29,7 @@
 #import "GHNSString+Utils.h"
 
 #import "GTMRegex.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (GHUtils)
 
@@ -318,10 +319,10 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 
 // Based on code by powidl
 // http://www.codecollector.net/view/4900E3BB-032E-4E89-81C7-34097E98C286
-+ (NSString *)gh_rot13:(NSString *)input {
-  const char *cString = [input cStringUsingEncoding:NSASCIIStringEncoding];
-  NSInteger stringLength = [input length];
-  char newString[stringLength+1];
+- (NSString *)gh_rot13 {
+  const char *cString = [self cStringUsingEncoding:NSASCIIStringEncoding];
+  NSInteger stringLength = [self length];
+  char newString[stringLength + 1];
   
   NSInteger i;
   for (i = 0; i < stringLength; i++) {
@@ -339,6 +340,16 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   newString[i] = '\0';
   
   return [NSString stringWithCString:newString encoding:NSASCIIStringEncoding];
+}
+
+- (NSString *)gh_MD5 {
+  const char *str = [self UTF8String];
+  unsigned char result[CC_MD5_DIGEST_LENGTH];
+  CC_MD5(str, strlen(str), result);  
+  return [NSString stringWithFormat:
+          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+          result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7],
+          result[8], result[9], result[10], result[11], result[12], result[13], result[14], result[15]];
 }
 
 @end
