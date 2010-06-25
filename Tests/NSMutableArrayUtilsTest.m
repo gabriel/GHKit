@@ -62,5 +62,32 @@
   GHAssertTrue([array count] == 1, nil);
 }
 
+- (void)testReplaceObject {
+  NSUInteger index;
+
+  NSMutableArray *emptyArray = [NSMutableArray array];
+  index = [emptyArray gh_replaceObject:@"1" withObject:nil];
+  GHAssertEquals(index, (NSUInteger)NSNotFound, nil);
+  
+  NSMutableArray *array = [NSMutableArray arrayWithObject:@"1"];
+  index = [array gh_replaceObject:@"1" withObject:@"2"];
+  GHAssertEquals(index, 0U, nil);
+  NSMutableArray *expected1 = [NSMutableArray arrayWithObject:@"2"];
+	GHAssertEqualObjects(array, expected1, nil);
+  
+  index = [array gh_replaceObject:@"1" withObject:@"3"];
+  GHAssertEquals(index, (NSUInteger)NSNotFound, nil);
+	GHAssertEqualObjects(array, expected1, nil);
+}
+
+- (void)testRemoveLastObject {
+  NSMutableArray *array = [NSMutableArray arrayWithObject:@"1"];
+  id obj = [array gh_removeLastObject];
+  GHAssertEqualObjects(obj, @"1", nil);
+  NSMutableArray *expected = [NSMutableArray array];
+	GHAssertEqualObjects(array, expected, nil);
+  GHAssertNil([array gh_removeLastObject], nil);
+}
+
 @end
 
