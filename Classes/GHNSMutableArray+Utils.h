@@ -32,6 +32,14 @@
 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index;
 
 /*!
+ Replace object with another object.
+ @param objectToReplace Object to replace
+ @param object Object that will replace
+ @result Index object was set; NSNotFound if objectToReplace was not found
+ */
+- (NSUInteger)gh_replaceObject:(id)objectToReplace withObject:(id)object;
+
+/*!
  Compact.
  Remove all instances NSNull.
  */
@@ -42,5 +50,11 @@
  @param obj
  */
 - (void)gh_addObjectIfNotNil:(id)obj;
+
+/*!
+ Remove last object.
+ @result Last object removed
+ */
+- (id)gh_removeLastObject;
 
 @end

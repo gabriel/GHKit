@@ -37,12 +37,26 @@
 	[indexes release];
 }
 
+- (NSUInteger)gh_replaceObject:(id)objectToReplace withObject:(id)object {
+  NSUInteger index = [self indexOfObject:objectToReplace];
+  if (index != NSNotFound) {
+    [self replaceObjectAtIndex:index withObject:object];
+  }
+  return index;
+}
+
 - (void)gh_mutableCompact {
   [self removeObjectIdenticalTo:[NSNull null]];
 }
 
 - (void)gh_addObjectIfNotNil:(id)obj {
   if (obj) [self addObject:obj];
+}
+
+- (id)gh_removeLastObject {  
+  id obj = [[self lastObject] retain];
+  if (obj) [self removeLastObject];
+  return [obj autorelease];
 }
 
 @end
