@@ -67,4 +67,18 @@
   GHAssertEqualObjects(dictSubset2, expected2, nil);  
 }
 
+- (void)testCompact {
+	NSMutableDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               @"1", @"key1",
+                               [NSNull null], @"key2", 
+                               nil];
+  
+  NSMutableDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:
+                                   @"1", @"key1",
+                                   nil];
+
+	NSDictionary *after = [dict gh_compactDictionary];
+  GHAssertEqualObjects(after, expected, nil);
+}
+
 @end

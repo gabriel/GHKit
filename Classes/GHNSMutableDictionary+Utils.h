@@ -35,4 +35,12 @@
 
 - (void)gh_setBool:(BOOL)b forKey:(id)key;
 
+- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key;
+
+/*!
+ Compact.
+ Remove all value with instances NSNull.
+ */
+- (void)gh_mutableCompact;
+
 @end

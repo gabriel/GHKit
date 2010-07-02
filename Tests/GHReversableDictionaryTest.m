@@ -3,7 +3,7 @@
 //  GHKit
 //
 //  Created by Gabriel Handford on 1/25/10.
-//  Copyright 2010 Yelp. All rights reserved.
+//  Copyright 2010. All rights reserved.
 //
 
 #import "GHReversableDictionary.h"

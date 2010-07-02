@@ -64,12 +64,3 @@
 }
 
 @end
-
-@implementation NSMutableDictionary (GHNSNull)
-
-- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key {
-	if (!object) object = [NSNull null];
-	[self setObject:object forKey:key];
-}
-
-@end

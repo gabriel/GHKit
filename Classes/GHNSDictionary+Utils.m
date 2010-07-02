@@ -127,4 +127,14 @@
   return dict;
 }
 
+- (NSDictionary *)gh_compactDictionary {
+  NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithCapacity:[self count]];
+  for (id key in self) {
+    id obj = [self objectForKey:key];
+    if (obj != [NSNull null])
+      [dict setObject:obj forKey:key];
+  }
+  return [dict autorelease];
+}
+
 @end

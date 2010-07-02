@@ -43,4 +43,19 @@
 	[self setObject:[NSNumber numberWithBool:b] forKey:key];
 }
 
+- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key {
+	if (!object) object = [NSNull null];
+	[self setObject:object forKey:key];
+}
+
+- (void)gh_mutableCompact {
+  NSMutableArray *keysToRemove = [[NSMutableArray alloc] initWithCapacity:[self count]];
+  for (id key in self) {
+    if ([self objectForKey:key] == [NSNull null])
+      [keysToRemove addObject:key];
+  }
+  [self removeObjectsForKeys:keysToRemove];
+  [keysToRemove release];
+}
+
 @end

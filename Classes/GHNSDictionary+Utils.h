@@ -121,4 +121,9 @@
  */
 - (NSDictionary *)gh_dictionarySubsetWithKeys:(NSArray *)keys;
 
+/*!
+ @result Dictionary without entries for keys with NSNull values
+ */
+- (NSDictionary *)gh_compactDictionary;
+
 @end

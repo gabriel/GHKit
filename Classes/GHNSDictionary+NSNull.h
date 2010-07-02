@@ -46,9 +46,3 @@
 - (id)gh_objectMaybeNilForKey:(id)key;
 
 @end
-
-@interface NSMutableDictionary (GHNSNull)
-
-- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key;
-
-@end
