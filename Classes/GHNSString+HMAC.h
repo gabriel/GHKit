@@ -28,6 +28,19 @@
 
 @interface NSString (GHHMAC)
 
-- (NSString *)gh_hmacSha1:(NSString *)secret;
+/*!
+ HMAC SHA1 digest.
+ 
+ For Base 64 encoder you can user GTMBase64.
+ 
+ @code
+ ["stringtosign" gh_HMACSHA1:@"mysecret" base64Encoder:[GTMBase64 class]];
+ @endcode
+ 
+ @param secret Secret key to sign with
+ @param base64Encoder Base64 encoder, that implements: (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
+ @result Base64 encoded HMAC SHA1 digest
+ */
+- (NSString *)gh_HMACSHA1:(NSString *)secret base64Encoder:(id)base64Encoder;
 
 @end

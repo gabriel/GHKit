@@ -25,19 +25,15 @@
 
 #import "GHNSString+HMAC.h"
 
-#import "GTMBase64.h"
-
 #import "hmac.h" 
+
+@protocol GHBase64Encoder
+- (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
+@end
 
 @implementation NSString (GHHMAC)
 
-/*!
- @method gh_hmacSha1
- @abstract Get HMAC SHA1 digest
- @param secret Secret key to sign with
- @result Base64 encoded HMAC SHA1 digest
- */
-- (NSString *)gh_hmacSha1:(NSString *)secret {
+- (NSString *)gh_HMACSHA1:(NSString *)secret base64Encoder:(id)base64Encoder {
   
   NSData *clearTextData = [self dataUsingEncoding:NSUTF8StringEncoding];
   NSData *secretData = [secret dataUsingEncoding:NSUTF8StringEncoding];  
@@ -45,7 +41,7 @@
   unsigned char digest[20];
   HMAC_SHA1(digest, (unsigned char *)[clearTextData bytes], (unsigned int)[clearTextData length], (unsigned char *)[secretData bytes], (unsigned int)[secretData length]);
   
-  NSData *data = [GTMBase64 encodeBytes:digest length:20]; 
+  NSData *data = [(id<GHBase64Encoder>)base64Encoder encodeBytes:digest length:20]; 
   return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
 }
 

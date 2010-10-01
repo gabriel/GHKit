@@ -31,7 +31,7 @@
 
 /*!
  String format, and escape strings for use in XML.
- Arguments MUST BE objective-C objects!.
+ Arguments MUST BE objective-C objects!
  @param format
  */
 + (id)gh_stringWithFormatForXML:(NSString *)format, ... NS_REQUIRES_NIL_TERMINATION;

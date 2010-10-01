@@ -28,9 +28,12 @@
 //
 
 #import "GHNSString+XML.h"
-#import "GTMNSString+XML.h"
 #import "GHNSString+Utils.h"
 #import "GHKitDefines.h"
+
+@protocol GHXML_NSStringSanitizer <NSObject>
+- (NSString *)gtm_stringBySanitizingAndEscapingForXML;
+@end
 
 @implementation NSString (GHXML)
 
@@ -40,7 +43,11 @@
   for (id obj in arguments) {
     if (obj == format) continue; // Skip first argument == format
     if ([obj isKindOfClass:[NSString class]]) {
-      [escapedArguments addObject:[obj gtm_stringBySanitizingAndEscapingForXML]];
+      if ([obj respondsToSelector:@selector(gtm_stringBySanitizingAndEscapingForXML)]) {
+        [escapedArguments addObject:[obj gtm_stringBySanitizingAndEscapingForXML]];
+      } else {
+        [NSException raise:NSDestinationInvalidException format:@"No XML sanitizer available. You need to #import \"GTMNSString+XML.h\""];
+      }
     } else {
       [escapedArguments addObject:obj];
     }

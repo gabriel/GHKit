@@ -8,6 +8,7 @@
 
 #import "GHNSString+HMAC.h"
 #import "GHLogger.h"
+#import "GTMBase64.h"
 
 @interface NSStringHMACTest : GHTestCase { }
 @end
@@ -22,7 +23,7 @@
   GHDebug(@"String to sign: %@", stringToSign);
   NSString *secretKey = @"uV3F3YluFJax1cknvbcGwgjvx4QpvB+leU8dUj2o";
   
-  NSString *signature = [stringToSign gh_hmacSha1:secretKey];
+  NSString *signature = [stringToSign gh_HMACSHA1:secretKey base64Encoder:[GTMBase64 class]];
   GHAssertEqualObjects(@"xXjDGYUmKxnwqr5KXNPGldn5LbA=", signature, @"HMAC SHA1 signature is not correct");
 }
 

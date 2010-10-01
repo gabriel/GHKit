@@ -1,5 +1,5 @@
 //
-//  GHNSString+Validation.h
+//  GHValidators.m
 //
 //  Created by Gabe on 7/20/08.
 //  Copyright 2008 Gabriel Handford
@@ -25,8 +25,29 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
-@interface NSString (GHValidation)
 
-- (BOOL)gh_isEmailAddress;
+#import "GHValidators.h"
+
+@protocol GHValidators_GTMRegex
++ (id)regexWithPattern:(NSString *)pattern options:(NSUInteger)options;
+- (BOOL)matchesString:(NSString *)str;
+@end  
+
+@implementation GHValidators
+
++ (id)regexWithPattern:(NSString *)pattern options:(NSUInteger)options {
+  Class regexClass = NSClassFromString(@"GTMRegex");
+  if (regexClass == NULL) 
+    [NSException raise:NSDestinationInvalidException format:@"Must include GTMRegex in order to use this validator."];
+  return [regexClass regexWithPattern:pattern options:options];  
+}  
+
++ (BOOL)isEmailAddress:(NSString *)str {
+  // Simple regex from http://www.regular-expressions.info/email.html
+  NSString *emailRegexPattern = @"^[A-Z0-9._%+-\\'\"]+@[A-Z0-9.-]+\\.[A-Z]+$";  
+  NSUInteger options = 0x01; // kGTMRegexOptionIgnoreCase
+  id regex = [self regexWithPattern:emailRegexPattern options:options];
+  return [regex matchesString:str];
+}
 
 @end

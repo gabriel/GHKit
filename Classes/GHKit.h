@@ -35,7 +35,6 @@
 #import "GHNSString+HMAC.h"
 #import "GHNSString+TimeInterval.h"
 #import "GHNSString+Utils.h"
-#import "GHNSString+Validation.h"
 #import "GHNSString+URL.h"
 
 #import "GHNSNumber+Utils.h"
@@ -74,10 +73,3 @@
 #endif
 
 #import "GHNSObject+Utils.h"
-
-// From GTM
-#import "GTMDefines.h"
-#import "GTMBase64.h"
-#import "GTMRegex.h"
-#import "GTMLogger.h"
-#import "GTMStackTrace.h"

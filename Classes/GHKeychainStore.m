@@ -94,9 +94,19 @@ NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
 
 #if TARGET_OS_IPHONE
 
-#import "SFHFKeychainUtils.h"
+@protocol GHKit_SFHFKeychainUtils
++ (NSString *)getPasswordForUsername:(NSString *)username andServiceName:(NSString *)serviceName error:(NSError **)error;
++ (void) storeUsername:(NSString *)username andPassword:(NSString *)password forServiceName:(NSString *)serviceName updateExisting:(BOOL)updateExisting error:(NSError **) error;
+@end
 
 @implementation GHSFHFKeychainStore
+
+- (Class)keychainUtilsClass {
+  Class keychainUtilsClass = NSClassFromString(@"SFHFKeychainUtils");
+  if (keychainUtilsClass == NULL) 
+    [NSException raise:NSDestinationInvalidException format:@"Must import SFHFKeychainUtils to use the keychain store"];
+  return keychainUtilsClass;
+}
 
 - (NSString *)secretFromKeychainForServiceName:(NSString *)serviceName key:(NSString *)key error:(NSError **)error {
 	
@@ -105,7 +115,7 @@ NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
 		error = &errorTmp;
 	}
 	
-	return [SFHFKeychainUtils getPasswordForUsername:key andServiceName:serviceName error:error];
+	return [[self keychainUtilsClass] getPasswordForUsername:key andServiceName:serviceName error:error];
 }
 
 - (BOOL)saveToKeychainWithServiceName:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error {
@@ -119,7 +129,7 @@ NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
 		error = &errorTmp;
 	}
 	
-	[SFHFKeychainUtils storeUsername:key andPassword:secret forServiceName:serviceName updateExisting:YES error:error];
+	[[self keychainUtilsClass] storeUsername:key andPassword:secret forServiceName:serviceName updateExisting:YES error:error];
 	if (error && *error) return NO;
 	return YES;
 }

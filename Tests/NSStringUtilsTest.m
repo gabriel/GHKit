@@ -7,7 +7,6 @@
 //
 
 #import "GHNSString+Utils.h"
-#import "GHNSString+Validation.h"
 
 @interface NSStringUtilsTest : GHTestCase { }
 @end
@@ -24,20 +23,6 @@
 - (void)testContainsAny {
 	NSString *s = @"TestUppercase";
 	GHAssertTrue([s gh_containsAny:[NSCharacterSet uppercaseLetterCharacterSet]], nil);
-}
-
-- (void)testValidateEmail {
-  NSString *valid = @"gabrielh@gmail.com";  
-  GHAssertTrue([valid gh_isEmailAddress], @"Should be valid email");
-  
-  NSString *invalid = @"foo";
-  GHAssertFalse([invalid gh_isEmailAddress], @"Should be invalid email");
-  
-  NSString *invalid2 = @"~gabrielh@gmail.com";  
-  GHAssertFalse([invalid2 gh_isEmailAddress], @"Should be invalid email");
-  
-  NSString *valid3 = @"gabrielh@gmail.commmmmmm";  
-  GHAssertTrue([valid3 gh_isEmailAddress], @"Should be valid email");
 }
 
 - (void)testLastSplitWithString {
