@@ -25,10 +25,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// Defines
 #import "GHKitDefines.h"
 
-// Categories
 #import "GHNSDate+Parsing.h"
 #import "GHNSDate+Utils.h"
 
@@ -49,6 +47,7 @@
 #import "GHNSDictionary+Utils.h"
 #import "GHNSMutableDictionary+Utils.h"
 #import "GHNSDictionary+NSNull.h"
+#import "GHReversableDictionary.h"
 
 #import "GHNSInvocationProxy.h"
 #import "GHNSInvocation+Utils.h"
@@ -57,13 +56,18 @@
 #import "GHNSBundle+Utils.h"
 #import "GHNSStringEnumerator.h"
 
-// Utilities
+#import "GHNSNotificationCenter+Utils.h"
+#import "GHNSObject+Swizzle.h"
+
 #import "GHLogger.h"
 #import "GHKeychainStore.h"
 #import "GHCGUtils.h"
 
-// Non-iPhone
-#if !TARGET_OS_IPHONE
+// iPhone
+#if TARGET_OS_IPHONE
+#import "GHNSString+UIKitUtils.h"
+#import "GHUIColor+Utils.h"
+#else
 #import "GHViewAnimation.h"
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"

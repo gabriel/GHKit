@@ -60,26 +60,69 @@
   return [NSNumber gh_ordinalize:[self integerValue]];
 }
 
-+ (NSString *)gh_ordinalize:(NSInteger)value {
+- (NSString *)gh_ordinalizeMasculine:(BOOL)masculine {
+  return [NSNumber gh_ordinalize:[self integerValue] masculine:masculine];
+}
+
++ (NSString *)gh_ordinalizeEn:(NSInteger)value {
   NSString *suffix = nil;
   switch(value % 10) {
+    case 0: break;
     case 1: suffix = @"st"; break;
     case 2: suffix = @"nd"; break;
     case 3: suffix = @"rd"; break;
-    case 0:
-    case 4: 
-    case 5: 
-    case 6: 
-    case 7: 
-    case 8: 
-    case 9: 
-      suffix = @"th"; break;
+    default: suffix = @"th"; break;
   }
-  
   if (value % 100 >= 11 && value % 100 <= 13) suffix = @"th"; // Handle 11-13
-  if (value == 0) suffix = nil;
   if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
   return [NSString stringWithFormat:@"%d", value];
+}
+
+// NOTE(johnb): Ignoring plural forms of ordinals (ers / res / es)
++ (NSString *)gh_ordinalizeFr:(NSInteger)value masculine:(BOOL)masculine {
+  NSString *suffix = nil;
+  switch(value) {
+    case 0: break;
+    case 1: suffix = masculine ? @"er" : @"re"; break;
+    default: suffix = @"e"; break;
+  }
+  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
+  return [NSString stringWithFormat:@"%d", value];
+}
+
++ (NSString *)gh_ordinalizeDe:(NSInteger)value {
+  return [NSString stringWithFormat:@"%d.", value];
+}
+
+// NOTE(johnb): Ignoring plural forms or ordinals (os / as)
++ (NSString *)gh_ordinalizeEs:(NSInteger)value masculine:(BOOL)masculine {
+  NSString *suffix = nil;
+  switch(value) {
+    case 0: break;
+    default: suffix = masculine ? @"º" : @"ª"; break;
+  }
+  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
+  return [NSString stringWithFormat:@"%d", value];
+}
+
+// The following OpenOffice wiki page is helpful for information about ordinals
+// http://wiki.services.openoffice.org/wiki/Localized_AutoCorrection_of_Ordinal_Numbers_(1st_2nd)#French
++ (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine {
+  NSString *languageCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+  if ([languageCode isEqual:@"en"]) {
+    return [NSNumber gh_ordinalizeEn:value];
+  } else if ([languageCode isEqual:@"fr"]) {
+    return [NSNumber gh_ordinalizeFr:value masculine:masculine];
+  } else if ([languageCode isEqual:@"de"]) {
+    return [NSNumber gh_ordinalizeDe:value];
+  } else if ([languageCode isEqual:@"es"]) {
+    return [NSNumber gh_ordinalizeEs:value masculine:masculine];
+  }
+  return [NSString stringWithFormat:@"%d", value];
+}
+
++ (NSString *)gh_ordinalize:(NSInteger)value {
+  return [NSNumber gh_ordinalize:value masculine:YES];
 }
 
 + (NSNumber *)gh_bool:(BOOL)b {		

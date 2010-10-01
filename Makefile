@@ -1,9 +1,14 @@
 
 COMMAND=xcodebuild
-COMMAND30=/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/xcodebuild
 
-default:
+macosx:
 	$(COMMAND) -target GHKit -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
+
+ios:
+	xcodebuild -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator4.1 -project GHKitIPhone.xcodeproj build
+	xcodebuild -target "GHKitIPhone (Device)" -configuration Release -sdk iphoneos4.1 -project GHKitIPhone.xcodeproj build
+	BUILD_DIR="build" BUILD_STYLE="Release" sh Scripts/CombineLibs.sh
+	sh Scripts/iPhoneFramework.sh
 
 docs:
 	/Applications/Doxygen.app/Contents/Resources/doxygen
@@ -15,8 +20,5 @@ clean:
 test:
 	GHUNIT_CLI=1 $(COMMAND) -target GHKitTests -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
 	
-test-iphone:
-	GHUNIT_CLI=1 $(COMMAND) -target GHKitIPhoneTests -configuration Debug -sdk iphonesimulator2.2 -project GHKitIPhone.xcodeproj
-
-test-iphone-3_0:
-	GHUNIT_CLI=1 $(COMMAND30) -target GHKitIPhoneTests -configuration Debug -sdk iphonesimulator3.0 -project GHKitIPhone.xcodeproj
+test-ios:
+	GHUNIT_CLI=1 $(COMMAND) -target Tests -configuration Debug -sdk iphonesimulator4.1 -project GHKitIPhone.xcodeproj

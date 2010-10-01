@@ -57,11 +57,28 @@
 - (NSString *)gh_ordinalize;
 
 /*!
- Ordinalize. 
+ Ordinalize (masculine).
+ @param masuline If YES will format for masculine
+ @result Ordinal string for integer
+ */
+- (NSString *)gh_ordinalizeMasculine:(BOOL)masculine;
+
+/*!
+ Ordinalize.
+ @param value
  @result Ordinal string for integer.
  @see gh_ordinalize
  */
 + (NSString *)gh_ordinalize:(NSInteger)value;
+
+/*!
+ Ordinalize.
+ @param value
+ @param masculine
+ @result Ordinal string for integer.
+ @see gh_ordinalizeMasculine:
+ */
++ (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine;
 
 + (NSNumber *)gh_bool:(BOOL)b;
 + (NSNumber *)gh_no;
