@@ -7,7 +7,6 @@
 //
 
 #import "GHNSString+HMAC.h"
-#import "GHLogger.h"
 #import "GTMBase64.h"
 
 @interface NSStringHMACTest : GHTestCase { }
@@ -20,7 +19,7 @@
   // http://docs.amazonwebservices.com/AmazonS3/2006-03-01/RESTAuthentication.html
   
   NSString *stringToSign = @"GET\n\n\nTue, 27 Mar 2007 19:36:42 +0000\n/johnsmith/photos/puppy.jpg";  
-  GHDebug(@"String to sign: %@", stringToSign);
+  GHTestLog(@"String to sign: %@", stringToSign);
   NSString *secretKey = @"uV3F3YluFJax1cknvbcGwgjvx4QpvB+leU8dUj2o";
   
   NSString *signature = [stringToSign gh_HMACSHA1:secretKey base64Encoder:[GTMBase64 class]];

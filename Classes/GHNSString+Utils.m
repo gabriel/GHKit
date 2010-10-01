@@ -28,8 +28,11 @@
 
 #import "GHNSString+Utils.h"
 
-#import "GTMRegex.h"
 #import <CommonCrypto/CommonDigest.h>
+
+@protocol GHKit_NSString_GTMRegex
+- (NSString *)gtm_stringByReplacingMatchesOfPattern:(NSString *)pattern withReplacement:(NSString *)replacementPattern;
+@end
 
 @implementation NSString (GHUtils)
 
@@ -46,11 +49,16 @@
 }
 
 - (NSString *)gh_rightStrip {
-	return [self gtm_stringByReplacingMatchesOfPattern:@"[ \t]+$" withReplacement:@""];
+  if (![self respondsToSelector:@selector(gtm_stringByReplacingMatchesOfPattern:withReplacement:)])
+    [NSException raise:NSDestinationInvalidException format:@"This method required GTMRegexAdditions from GTMRegex."];
+  return [(id)self gtm_stringByReplacingMatchesOfPattern:@"[ \t]+$" withReplacement:@""];
 }
 
 - (NSString *)gh_leftStrip {
-	return [self gtm_stringByReplacingMatchesOfPattern:@"^[ \t]+" withReplacement:@""];
+  if (![self respondsToSelector:@selector(gtm_stringByReplacingMatchesOfPattern:withReplacement:)])
+    [NSException raise:NSDestinationInvalidException format:@"This method required GTMRegexAdditions from GTMRegex."];
+
+	return [(id)self gtm_stringByReplacingMatchesOfPattern:@"^[ \t]+" withReplacement:@""];
 }
 
 - (BOOL)gh_isBlank {

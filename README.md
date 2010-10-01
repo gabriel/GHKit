@@ -28,7 +28,7 @@ There are a few options. You can install it globally in `/Library/Frameworks` or
 
 To use the framework:
 
-  #import <GHKit/GHKit.h>
+	#import <GHKit/GHKit.h>
 
 ## Install (iOS)
 
@@ -43,4 +43,9 @@ To use the framework:
 
 To use the framework:
 
-  #import <GHKitIOS/GHKitIOS.h>
+	#import <GHKitIOS/GHKitIOS.h>
+
+## Building (iOS)
+
+To build, run `make ios`. The framework will be in `build/Framework/`.
+

@@ -58,9 +58,10 @@
 #import "GHNSNotificationCenter+Utils.h"
 #import "GHNSObject+Swizzle.h"
 
-#import "GHLogger.h"
 #import "GHKeychainStore.h"
 #import "GHCGUtils.h"
+
+#import "GHValidators.h"
 
 // iPhone
 #if TARGET_OS_IPHONE

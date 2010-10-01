@@ -66,15 +66,16 @@
 
 + (NSString *)gh_ordinalizeEn:(NSInteger)value {
   NSString *suffix = nil;
-  switch(value % 10) {
-    case 0: break;
-    case 1: suffix = @"st"; break;
-    case 2: suffix = @"nd"; break;
-    case 3: suffix = @"rd"; break;
-    default: suffix = @"th"; break;
+  if (value > 0) {
+    switch(value % 10) {
+      case 1: suffix = @"st"; break;
+      case 2: suffix = @"nd"; break;
+      case 3: suffix = @"rd"; break;
+      default: suffix = @"th"; break;
+    }
+    if (value % 100 >= 11 && value % 100 <= 13) suffix = @"th"; // Handle 11-13
+    if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
   }
-  if (value % 100 >= 11 && value % 100 <= 13) suffix = @"th"; // Handle 11-13
-  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
   return [NSString stringWithFormat:@"%d", value];
 }
 
