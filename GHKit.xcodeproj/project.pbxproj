@@ -41,7 +41,7 @@
 		003489A50F4BFDD10072C2F1 /* GHNSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 003489A30F4BFDD10072C2F1 /* GHNSString+URL.m */; };
 		003647CC0FFBE4CB00A2DCB5 /* NSMutableArrayUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 003647CB0FFBE4CB00A2DCB5 /* NSMutableArrayUtilsTest.m */; };
 		003648360FFC095B00A2DCB5 /* NSDictionaryNSNullTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 003648350FFC095B00A2DCB5 /* NSDictionaryNSNullTest.m */; };
-		003ED038110E630B00D57720 /* GHReversableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 003ED036110E630B00D57720 /* GHReversableDictionary.h */; };
+		003ED038110E630B00D57720 /* GHReversableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 003ED036110E630B00D57720 /* GHReversableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		003ED039110E630B00D57720 /* GHReversableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 003ED037110E630B00D57720 /* GHReversableDictionary.m */; };
 		003ED04D110E656100D57720 /* GHReversableDictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 003ED04C110E656100D57720 /* GHReversableDictionaryTest.m */; };
 		004B5849100441BE00C630B3 /* NSErrorUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 004B5848100441BE00C630B3 /* NSErrorUtilsTest.m */; };
@@ -71,13 +71,15 @@
 		00AA126F1005578600667B93 /* GHNSObject+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00AA126D1005578600667B93 /* GHNSObject+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00AA12701005578600667B93 /* GHNSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA126E1005578600667B93 /* GHNSObject+Utils.m */; };
 		00AA12BA1005586B00667B93 /* NSObjectUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA12B91005586B00667B93 /* NSObjectUtilsTest.m */; };
+		00AA4070125C5A2700CB3F6B /* GHValidators.h in Headers */ = {isa = PBXBuildFile; fileRef = 00AA406E125C5A2700CB3F6B /* GHValidators.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00AA4071125C5A2700CB3F6B /* GHValidators.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AA406F125C5A2700CB3F6B /* GHValidators.m */; };
 		00AF116F0F2D7D43009F0ABA /* NSURLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B599E30F1D259200359A10 /* NSURLUtilsTest.m */; };
 		00AF118C0F2D7EE2009F0ABA /* NSStringUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857D5C0E199B530011DA5C /* NSStringUtilsTest.m */; };
 		00AF118D0F2D7EE3009F0ABA /* NSStringTimeIntervalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857D5A0E199B530011DA5C /* NSStringTimeIntervalTest.m */; };
 		00AF118E0F2D7EE4009F0ABA /* NSStringHMACTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D57E550E1C0E8200709FB4 /* NSStringHMACTest.m */; };
 		00AF11900F2D7EE6009F0ABA /* NSDateParsingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 005D0C3F0E19C03B003FAB86 /* NSDateParsingTest.m */; };
 		00AF11910F2D7EE6009F0ABA /* GHLoggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E759E0F2C45DD00427636 /* GHLoggerTest.m */; };
-		00B8498710CD843C0057AE19 /* GHNSNotificationCenter+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8498510CD843C0057AE19 /* GHNSNotificationCenter+Utils.h */; };
+		00B8498710CD843C0057AE19 /* GHNSNotificationCenter+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B8498510CD843C0057AE19 /* GHNSNotificationCenter+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00B8498810CD843C0057AE19 /* GHNSNotificationCenter+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B8498610CD843C0057AE19 /* GHNSNotificationCenter+Utils.m */; };
 		00BB7B010F3175E500B3924D /* GHKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00BB7AD80F3173BB00B3924D /* GHKitDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00C4FA020FE37B5A003CE908 /* GHNSStringEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 00C4FA000FE37B5A003CE908 /* GHNSStringEnumerator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -86,9 +88,9 @@
 		00CDDDE10F77018F0089C60E /* GHUnitTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */; };
 		00CE8AAE0F24028900DD6464 /* GHNSObject+Invocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 00CE8AAB0F24028900DD6464 /* GHNSObject+Invocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CE8AAF0F24028900DD6464 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CE8AAC0F24028900DD6464 /* GHNSObject+Invocation.m */; };
-		00D17004116A988C00D025EF /* GHNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D17002116A988C00D025EF /* GHNSString+XML.h */; };
+		00D17004116A988C00D025EF /* GHNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D17002116A988C00D025EF /* GHNSString+XML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D17005116A988C00D025EF /* GHNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D17003116A988C00D025EF /* GHNSString+XML.m */; };
-		00D1702F116AA6C200D025EF /* GTMNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D1702D116AA6C200D025EF /* GTMNSString+XML.h */; };
+		00D1702F116AA6C200D025EF /* GTMNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D1702D116AA6C200D025EF /* GTMNSString+XML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D17030116AA6C200D025EF /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D1702E116AA6C200D025EF /* GTMNSString+XML.m */; };
 		00D17047116AA84800D025EF /* GHNSStringXMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D17046116AA84800D025EF /* GHNSStringXMLTest.m */; };
 		00D313940FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D313920FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,8 +100,6 @@
 		00DBCD3C0FA674BD00893D19 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DBCD3A0FA674BD00893D19 /* GHNSBundle+Utils.m */; };
 		527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 527531C80E33869100AF8EDC /* GHNSNumber+Utils.m */; };
-		527531CD0E3386AC00AF8EDC /* GHNSString+Validation.h in Headers */ = {isa = PBXBuildFile; fileRef = 527531CB0E3386AC00AF8EDC /* GHNSString+Validation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		527531CE0E3386AC00AF8EDC /* GHNSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 527531CC0E3386AC00AF8EDC /* GHNSString+Validation.m */; };
 		52857CA70E1997B50011DA5C /* GHKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 52857C8E0E1997B50011DA5C /* GHKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52857CA80E1997B50011DA5C /* GHNSDate+Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 52857C8F0E1997B50011DA5C /* GHNSDate+Parsing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52857CA90E1997B50011DA5C /* GHNSDate+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857C900E1997B50011DA5C /* GHNSDate+Parsing.m */; };
@@ -200,7 +200,6 @@
 		0071E6130FB361A1001D2CF3 /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnit.framework; sourceTree = "<group>"; };
 		0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHNSInvocationProxy.h; sourceTree = "<group>"; };
 		0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSInvocationProxy.m; sourceTree = "<group>"; };
-		0075E2051186B3FB00FF050F /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayUtilsTest.m; sourceTree = "<group>"; };
 		007F59850EF2438900B3005D /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
 		007F59860EF2438900B3005D /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
@@ -208,7 +207,6 @@
 		007F59880EF2438900B3005D /* GHNSDictionary+NSNull.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+NSNull.m"; sourceTree = "<group>"; };
 		007F59890EF2438900B3005D /* GHViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHViewAnimation.h; sourceTree = "<group>"; };
 		007F598A0EF2438900B3005D /* GHViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHViewAnimation.m; sourceTree = "<group>"; };
-		009222DB0FCC954B0070C33B /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Utils.h"; sourceTree = "<group>"; };
 		00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Utils.m"; sourceTree = "<group>"; };
 		00939AA20F4CC09600E41365 /* NSDateUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilsTest.m; sourceTree = "<group>"; };
@@ -219,6 +217,14 @@
 		00AA126D1005578600667B93 /* GHNSObject+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Utils.h"; sourceTree = "<group>"; };
 		00AA126E1005578600667B93 /* GHNSObject+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Utils.m"; sourceTree = "<group>"; };
 		00AA12B91005586B00667B93 /* NSObjectUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectUtilsTest.m; sourceTree = "<group>"; };
+		00AA4068125C59F600CB3F6B /* Debug-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Debug-iOS.xcconfig"; sourceTree = "<group>"; };
+		00AA4069125C59F600CB3F6B /* Debug-MacOSX.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Debug-MacOSX.xcconfig"; sourceTree = "<group>"; };
+		00AA406A125C59F600CB3F6B /* Shared-iOS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-iOS.xcconfig"; sourceTree = "<group>"; };
+		00AA406B125C59F600CB3F6B /* Shared-MacOSX.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Shared-MacOSX.xcconfig"; sourceTree = "<group>"; };
+		00AA406C125C59F600CB3F6B /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
+		00AA406E125C5A2700CB3F6B /* GHValidators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHValidators.h; sourceTree = "<group>"; };
+		00AA406F125C5A2700CB3F6B /* GHValidators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHValidators.m; sourceTree = "<group>"; };
+		00AA4108125C5FC400CB3F6B /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		00AF10D00F2D5179009F0ABA /* GHKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00AF10D20F2D5179009F0ABA /* GHKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GHKitTests-Info.plist"; sourceTree = "<group>"; };
 		00AF11760F2D7DF8009F0ABA /* GHKitTests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitTests_Prefix.pch; sourceTree = "<group>"; };
@@ -249,8 +255,6 @@
 		32DBCF5E0370ADEE00C91783 /* GHKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKit_Prefix.pch; sourceTree = "<group>"; };
 		527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSNumber+Utils.h"; sourceTree = "<group>"; };
 		527531C80E33869100AF8EDC /* GHNSNumber+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSNumber+Utils.m"; sourceTree = "<group>"; };
-		527531CB0E3386AC00AF8EDC /* GHNSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+Validation.h"; sourceTree = "<group>"; };
-		527531CC0E3386AC00AF8EDC /* GHNSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+Validation.m"; sourceTree = "<group>"; };
 		52857C8E0E1997B50011DA5C /* GHKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKit.h; sourceTree = "<group>"; };
 		52857C8F0E1997B50011DA5C /* GHNSDate+Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Parsing.h"; sourceTree = "<group>"; };
 		52857C900E1997B50011DA5C /* GHNSDate+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Parsing.m"; sourceTree = "<group>"; };
@@ -368,13 +372,16 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		0062B6740F2C08AD00B0562A /* XcodeConfig */ = {
+		00AA4067125C59F600CB3F6B /* XCConfig */ = {
 			isa = PBXGroup;
 			children = (
-				009222DB0FCC954B0070C33B /* Shared.xcconfig */,
-				0075E2051186B3FB00FF050F /* Debug.xcconfig */,
+				00AA4068125C59F600CB3F6B /* Debug-iOS.xcconfig */,
+				00AA4069125C59F600CB3F6B /* Debug-MacOSX.xcconfig */,
+				00AA406A125C59F600CB3F6B /* Shared-iOS.xcconfig */,
+				00AA406B125C59F600CB3F6B /* Shared-MacOSX.xcconfig */,
+				00AA406C125C59F600CB3F6B /* Shared.xcconfig */,
 			);
-			path = XcodeConfig;
+			path = XCConfig;
 			sourceTree = "<group>";
 		};
 		034768DFFF38A50411DB9C8B /* Products */ = {
@@ -395,8 +402,8 @@
 				000E75C60FA61B630085BC13 /* Libraries */,
 				000E78E60FA65D370085BC13 /* Frameworks */,
 				52857D580E199B530011DA5C /* Tests */,
-				0062B6740F2C08AD00B0562A /* XcodeConfig */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
+				00AA4067125C59F600CB3F6B /* XCConfig */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -431,6 +438,8 @@
 				000E760D0FA61B830085BC13 /* Swizzle */,
 				52857C8F0E1997B50011DA5C /* GHNSDate+Parsing.h */,
 				52857C900E1997B50011DA5C /* GHNSDate+Parsing.m */,
+				00AA406E125C5A2700CB3F6B /* GHValidators.h */,
+				00AA406F125C5A2700CB3F6B /* GHValidators.m */,
 				00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */,
 				00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */,
 				52857C910E1997B50011DA5C /* GHNSFileManager+Utils.h */,
@@ -445,8 +454,6 @@
 				52857C9A0E1997B50011DA5C /* GHNSString+TimeInterval.m */,
 				52857C9B0E1997B50011DA5C /* GHNSString+Utils.h */,
 				52857C9C0E1997B50011DA5C /* GHNSString+Utils.m */,
-				527531CB0E3386AC00AF8EDC /* GHNSString+Validation.h */,
-				527531CC0E3386AC00AF8EDC /* GHNSString+Validation.m */,
 				003489A20F4BFDD10072C2F1 /* GHNSString+URL.h */,
 				003489A30F4BFDD10072C2F1 /* GHNSString+URL.m */,
 				527531C70E33869100AF8EDC /* GHNSNumber+Utils.h */,
@@ -530,6 +537,7 @@
 		52857D580E199B530011DA5C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				00AA4108125C5FC400CB3F6B /* RunTests.sh */,
 				00512F9811C6B96000A46E09 /* test.file */,
 				00CDDDE00F77018F0089C60E /* GHUnitTestMain.m */,
 				52857D5A0E199B530011DA5C /* NSStringTimeIntervalTest.m */,
@@ -576,7 +584,6 @@
 				52A425220E1C2F170092797C /* sha1.h in Headers */,
 				52A425270E1C2F1F0092797C /* hmac.h in Headers */,
 				527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */,
-				527531CD0E3386AC00AF8EDC /* GHNSString+Validation.h in Headers */,
 				007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */,
 				007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */,
 				007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */,
@@ -610,6 +617,7 @@
 				003ED038110E630B00D57720 /* GHReversableDictionary.h in Headers */,
 				00D17004116A988C00D025EF /* GHNSString+XML.h in Headers */,
 				00D1702F116AA6C200D025EF /* GTMNSString+XML.h in Headers */,
+				00AA4070125C5A2700CB3F6B /* GHValidators.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +670,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "GHKit" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* GHKit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -755,7 +770,6 @@
 				52A425210E1C2F170092797C /* sha1.c in Sources */,
 				52A425260E1C2F1F0092797C /* hmac.c in Sources */,
 				527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */,
-				527531CE0E3386AC00AF8EDC /* GHNSString+Validation.m in Sources */,
 				007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */,
 				007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */,
 				007F59930EF2438900B3005D /* GHViewAnimation.m in Sources */,
@@ -786,6 +800,7 @@
 				003ED039110E630B00D57720 /* GHReversableDictionary.m in Sources */,
 				00D17005116A988C00D025EF /* GHNSString+XML.m in Sources */,
 				00D17030116AA6C200D025EF /* GTMNSString+XML.m in Sources */,
+				00AA4071125C5A2700CB3F6B /* GHValidators.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,7 +891,7 @@
 		};
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0075E2051186B3FB00FF050F /* Debug.xcconfig */;
+			baseConfigurationReference = 00AA4069125C59F600CB3F6B /* Debug-MacOSX.xcconfig */;
 			buildSettings = {
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 			};
@@ -884,7 +899,7 @@
 		};
 		1DEB91AF08733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 009222DB0FCC954B0070C33B /* Shared.xcconfig */;
+			baseConfigurationReference = 00AA406B125C59F600CB3F6B /* Shared-MacOSX.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;

@@ -46,20 +46,24 @@
 //  the License.
 //
 
+#ifdef __cplusplus
+extern "C" NSString *GHUStackTraceFromException(NSException *e);
+#else
 extern NSString *GHUStackTraceFromException(NSException *e);
+#endif
 
 // GTM_BEGIN
 BOOL isTestFixtureOfClass(Class aClass, Class testCaseClass);
 // GTM_END
 
-/*!	
+/*! 
  Utility test for loading and running tests.
  @note Much of this is borrowed from GTM/UnitTesting.
  */
 @interface GHTesting : NSObject { 
 
-	NSMutableArray/* of NSString*/ *testCaseClassNames_;
-	
+  NSMutableArray/* of NSString*/ *testCaseClassNames_;
+  
 }
 
 /*!

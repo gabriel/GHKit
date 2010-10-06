@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "GTMLogger.h"
+
 // Alias for GTMLoggerDebug
 #define GHDebug(...) GTMLoggerDebug(__VA_ARGS__)
 
