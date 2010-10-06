@@ -12,6 +12,8 @@ ios:
 
 docs:
 	/Applications/Doxygen.app/Contents/Resources/doxygen
+	# TODO(gabe): Get doxyclean working
+	cd Documentation/html && make install
 
 # If you need to clean a specific target/configuration: $(COMMAND) -target $(TARGET) -configuration DebugOrRelease -sdk $(SDK) clean
 clean:

@@ -158,11 +158,13 @@
  Overriding the selector only make sense when using the "argument proxy".
  For example, 
 
+ @code
  id target = ...;
  SEL selector = @selector(bar:baz:);
  [[[GHNSInvocationProxy invocation] prepareWithInvocationTarget:target selector:selector] arg:10 arg:20];
+ @endcode
  
- Will call [target bar:10 baz:20];  (and not arg:arg: selector which doesn't exist).
+ Will call @code[target bar:10 baz:20];@endcode  (and not arg:arg: selector which doesn't exist).
  
  This allows you to call a selector variable with primitive and multi arguments, 
  whereas before you would have to use a manually constructed NSInvocation.
