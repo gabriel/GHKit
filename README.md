@@ -4,7 +4,15 @@ The GHKit framework is a set of extensions and utilities for Mac OS X and iOS.
 
 ## Download
 
-See Downloads
+See Downloads.
+
+## Docset
+
+Download and install to docset to `~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset`
+
+The documentation will appear within XCode:
+
+![GHKit-Docset](http://rel.me.s3.amazonaws.com/gh-kit/images/docset.png)
 
 ## Installation
 
