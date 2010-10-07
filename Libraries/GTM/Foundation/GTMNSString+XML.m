@@ -169,7 +169,7 @@ static NSString *AutoreleasedCloneForXML(NSString *src, BOOL escaping) {
   return finalString;
 } // AutoreleasedCloneForXML
 
-@implementation NSString (GTMNSStringXMLAdditions)
+@implementation NSString(GTMNSStringXMLAdditions)
 
 - (NSString *)gtm_stringBySanitizingAndEscapingForXML {
   return AutoreleasedCloneForXML(self, YES);

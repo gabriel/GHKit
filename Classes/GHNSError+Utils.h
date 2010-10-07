@@ -27,7 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSError (GHUtils)
+/*!
+ Utilities for generating errors.
+ */
+@interface NSError(GHUtils)
 
 /*!
  Create error with localized description. (userInfo includes NSLocalizedDescriptionKey=localizedDescription)

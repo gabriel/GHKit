@@ -33,7 +33,7 @@
 
 BOOL GH_PerformSwizzle(Class klass, SEL origSel, SEL altSel, BOOL forInstance);
 
-@implementation NSObject (GHSwizzle)
+@implementation NSObject(GHSwizzle)
 
 + (void)gh_swizzleMethod:(SEL)original withMethod:(SEL)alternate {
 	GH_PerformSwizzle([self class], original, alternate, YES);

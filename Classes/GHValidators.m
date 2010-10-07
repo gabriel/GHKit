@@ -28,10 +28,14 @@
 
 #import "GHValidators.h"
 
+//! @cond DEV
+
 @protocol GHValidators_GTMRegex
 + (id)regexWithPattern:(NSString *)pattern options:(NSUInteger)options;
 - (BOOL)matchesString:(NSString *)str;
 @end  
+
+//! @endcond
 
 @implementation GHValidators
 

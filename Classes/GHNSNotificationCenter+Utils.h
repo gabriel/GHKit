@@ -27,8 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-@interface NSNotificationCenter (GHUtils)
+/*!
+ Utilities for NSNotificationCenter.
+ */
+@interface NSNotificationCenter(GHUtils)
 
 - (void)gh_replaceObserver:(id)observer selector:(SEL)selector name:(NSString *)name object:(id)object;
 

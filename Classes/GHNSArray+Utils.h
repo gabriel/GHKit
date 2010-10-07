@@ -24,7 +24,11 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSArray (GHUtils)
+/*!
+ Utilities for arrays, for example, first object, reversed, subarray, compact
+ and safe \c objectAtIndex:.
+ */
+@interface NSArray(GHUtils)
 
 /*!
  First object.

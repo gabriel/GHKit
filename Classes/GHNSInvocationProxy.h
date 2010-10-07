@@ -68,19 +68,44 @@
 @class GHNSInvocationProxy;
 @class GHNSInvocationProxyCallback;
 
-@protocol GHNSInvocationTracer <NSObject>
-- (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation;
-- (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation;
-@end
+/*!
+ Delegate for invocation proxy, notified before and after invocation.
+ */
+@protocol GHNSInvocationProxyDelegate <NSObject>
 
-@interface GHNSLogInvocationTracer : NSObject <GHNSInvocationTracer> {
-	NSTimeInterval _interval;
-}
-+ (GHNSLogInvocationTracer *)shared;
+/*!
+ Called when proxy is about to invoke.
+ @param proxy Sender
+ @param invocation Invocation
+ */
+- (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation;
+
+/*!
+ Called after proxy invoked.
+ @param proxy Sender
+ @param invocation Invocation
+ */
+- (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation;
+
 @end
 
 /*!
- Proxy that allows invocation on a separate thread, or with a delay.
+ An example invocation proxy delegate that logs timing information.
+ */
+@interface GHNSInvocationProxyLogger : NSObject <GHNSInvocationProxyDelegate> {
+	NSTimeInterval interval_;
+}
+
+/*!
+ Shared instance for invocation proxy logger.
+ */
++ (GHNSInvocationProxyLogger *)shared;
+
+@end
+
+/*!
+ Proxy that allows invocation on a separate thread, with a delay and or multiple 
+ arguments including primitives.
  
  Use with the GHNSObject+Invocation category:
  
@@ -122,7 +147,7 @@
 	BOOL waitUntilDone_;
 	NSTimeInterval delay_; // Defaults to -1 (no delay)
 
-	id<GHNSInvocationTracer> tracer_; // weak
+	id<GHNSInvocationProxyDelegate> delegate_; //! Delegate for invocation proxy
 	
 	// If detaching on new thread
 	GHNSInvocationProxyCallback *detachCallback_;
@@ -130,14 +155,14 @@
 	NSInvocation *invocation_;
 }
 
-@property (retain, nonatomic) id target;
-@property (assign, nonatomic) SEL selector;
-@property (retain, nonatomic) NSInvocation *invocation;
-@property (retain, nonatomic) NSThread *thread;
-@property (assign, nonatomic) BOOL waitUntilDone;
-@property (assign, nonatomic) NSTimeInterval delay;
-@property (assign, nonatomic) id<GHNSInvocationTracer> tracer;
-@property (retain, nonatomic) GHNSInvocationProxyCallback *detachCallback;
+@property (retain, nonatomic) id target; //! Target for invocation
+@property (assign, nonatomic) SEL selector; //! Action for invocation
+@property (readonly, retain, nonatomic) NSInvocation *invocation; // Forwarded invocation
+@property (retain, nonatomic) NSThread *thread; //! Thread to invoke on
+@property (assign, nonatomic) BOOL waitUntilDone; //! Whether to wait until invocation is done
+@property (assign, nonatomic) NSTimeInterval delay; //! Delay for invocation
+@property (assign, nonatomic) id<GHNSInvocationProxyDelegate> delegate; //! Delegate
+@property (retain, nonatomic) GHNSInvocationProxyCallback *detachCallback; // Callback to occur after invocation
 
 /*!
  Create autoreleased empty invocation proxy.
@@ -179,7 +204,10 @@
 
 @end
 
-
+/*!
+ Invocation proxy callback represents a target, selector, context (selector arg) and thread,
+ which if set on invocation proxy will call back on this thread after invoking on the proxy.
+ */
 @interface GHNSInvocationProxyCallback : NSObject {
 	id target_; // Retained until after callback
 	SEL action_;

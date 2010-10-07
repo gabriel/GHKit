@@ -30,7 +30,7 @@
 #import "GHNSObject+Invocation.h"
 #import "GHKitDefines.h"
 
-@implementation NSObject (GHInvocation_GHKIT)
+@implementation NSObject(GHInvocation_GHKIT)
 
 - (id)gh_performIfRespondsToSelector:(SEL)selector {
 	if ([self respondsToSelector:selector]) return [self performSelector:selector];
@@ -149,7 +149,7 @@
 - (id)gh_logProxy {
 	NSLog(@"Tracing: %@", self);
 	GHNSInvocationProxy *proxy = [self _initProxy];
-	proxy.tracer = [GHNSLogInvocationTracer shared];
+	proxy.delegate = [GHNSInvocationProxyLogger shared];
 	return [proxy prepareWithInvocationTarget:self];
 }
 

@@ -27,14 +27,24 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHUtils)
+/*!
+ Utilities for dictionaries.
+ */
+@interface NSDictionary(GHUtils)
 
 /*! 
+ Get double value for key.
  @param key
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ @result Double value
  */
 - (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue;
 
+/*! 
+ Get double value for key.
+ @param key
+ @result Double value
+ */
 - (double)gh_doubleForKey:(id)key;
 
 /*! 
@@ -81,11 +91,19 @@
  */
 - (NSNumber *)gh_numberForKey:(id)key withDefaultDouble:(double)defaultValue;
 
-/*! 
+/*!
+ Get BOOL value for key.
  @param key
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
+ @result BOOL value
  */
 - (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
+
+/*!
+ Get BOOL value for key.
+ @param key
+ @result BOOL value
+ */
 - (BOOL)gh_boolForKey:(id)key;
 
 /*!
@@ -109,10 +127,23 @@
  Usefuly for coercing any object that responds to boolValue into an object for use with Key Value coding.
  @param key
  @param defaultValue Default if value is missing or [NSNull null]
+ @result Number
  */ 
 - (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)defaultValue;
+
+/*!
+ Get boolean value (represented by NSNumber).
+ Usefuly for coercing any object that responds to boolValue into an object for use with Key Value coding.
+ @param key
+ @result Number
+ */ 
 - (NSNumber *)gh_boolValueForKey:(id)key;
 
+/*!
+ Check if dictionary has all keys.
+ @param firstKey
+ @result YES if dictionary has all the keys
+ */
 - (BOOL)gh_hasAllKeys:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!

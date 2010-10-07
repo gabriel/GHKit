@@ -29,7 +29,7 @@
 
 #import "GHNSString+UIKitUtils.h"
 
-@implementation NSString (GHUIKitUtils)
+@implementation NSString(GHUIKitUtils)
 
 - (void)gh_drawInRect:(CGRect)rect font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(GHNSStringAlignment)alignment {
 	

@@ -26,19 +26,19 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-@interface NSNumber (GHUtils)
+/*!
+ Utilites for dealing with numbers, for example, human readable file size, ordinals, random numbers.
+ */
+@interface NSNumber(GHUtils)
 
 /*!
- @method gh_humanSize
- @abstract File size label
+ File size label.
  @result '904 b', '32 KB', '1.1 MB', 
  */
 - (NSString *)gh_humanSize;
 
 /*!
- @method gh_humanSize
- @abstract File size label
+ File size label.
  @param delimiter In between numeric and unit
  @result '904 b', '32 KB', '1.1 MB', 
  */
@@ -47,12 +47,15 @@
 /*!
  Ordinalize.
  @result Ordinal string for integer.
+ 
+ @verbatim
  0 => nil
  1 => "1st"
  2 => "2nd"
  3 => "3rd"
  4-9 -> "4th", "5th", ...
  Ending in 11, 12 or 13 => "111th", "212th", ...
+ @endverbatim
  */
 - (NSString *)gh_ordinalize;
 
@@ -80,10 +83,25 @@
  */
 + (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine;
 
+/*!
+ Shared bool number instance.
+ */
 + (NSNumber *)gh_bool:(BOOL)b;
+
+/*!
+ Shared bool number instance representing NO.
+ */
 + (NSNumber *)gh_no;
+
+/*!
+ Shared bool number instance representing NO.
+ */
 + (NSNumber *)gh_yes;
 
+/*!
+ Random number.
+ @result Random integer
+ */
 + (NSInteger)gh_randomInteger;
 
 @end

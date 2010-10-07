@@ -19,7 +19,7 @@
 #import <Foundation/Foundation.h>
 
 /// Utilities for NSStrings containing XML
-@interface NSString (GTMNSStringXMLAdditions)
+@interface NSString(GTMNSStringXMLAdditions)
 
 /// Get a string where characters that need escaping for XML are escaped and invalid characters removed
 //

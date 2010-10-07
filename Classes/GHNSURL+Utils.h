@@ -26,7 +26,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSURL (GHUtils)
+/*!
+ Utilities for URLs, for example, encoding, escaping, parsing or sorting query params, and more.
+ */
+@interface NSURL(GHUtils)
 
 /*!
  Get dictionary from NSURL query parameter.

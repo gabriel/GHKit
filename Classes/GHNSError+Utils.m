@@ -30,7 +30,7 @@
 #import "GHNSError+Utils.h"
 
 
-@implementation NSError (GHUtils)
+@implementation NSError(GHUtils)
 
 + (NSError *)gh_errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription {
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:localizedDescription forKey:NSLocalizedDescriptionKey];

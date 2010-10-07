@@ -24,7 +24,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSDictionary (GHNSNull)
+/*!
+ For supporting dictionaries with nil values.
+ */
+@interface NSDictionary(GHNSNull)
 
 /*!
  Create dictionary which supports nil values.

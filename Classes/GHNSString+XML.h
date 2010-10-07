@@ -27,7 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSString (GHXML)
+/*!
+ Utilities for XML string formatting.
+ */
+@interface NSString(GHXML)
 
 /*!
  String format, and escape strings for use in XML.

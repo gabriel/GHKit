@@ -30,7 +30,7 @@
 
 #import <math.h>
 
-@implementation NSString (GHTimeInterval)
+@implementation NSString(GHTimeInterval)
 
 #define GHIntervalLocalize(key, defaultValue) NSLocalizedStringWithDefaultValue(key, tableName, bundle, defaultValue, nil)
 

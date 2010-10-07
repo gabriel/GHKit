@@ -28,11 +28,10 @@
 
 #import "GHNSXMLNode+Utils.h"
 
-@implementation NSXMLNode (GHUtils)
+@implementation NSXMLNode(GHUtils)
 
 /*!
- @method stringAtXQuery
- @abstract Get string value at XQuery
+ Get string value at XQuery.
  @param xQuery
  @param error
  @result String at xquery

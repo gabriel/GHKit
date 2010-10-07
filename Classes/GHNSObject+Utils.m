@@ -31,7 +31,7 @@
 #import "GHNSObject+Utils.h"
 
 
-@implementation NSObject (GHUtils)
+@implementation NSObject(GHUtils)
 
 - (BOOL)gh_isNotNSNull {
 	return ![self isEqual:[NSNull null]];

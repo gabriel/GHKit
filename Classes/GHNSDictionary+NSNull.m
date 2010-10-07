@@ -26,7 +26,7 @@
 
 #import "GHNSDictionary+NSNull.h"
 
-@implementation NSDictionary (GHNSNull)
+@implementation NSDictionary(GHNSNull)
 
 + (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args {
 	if (!firstKey) return [self dictionary];

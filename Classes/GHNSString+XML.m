@@ -31,11 +31,15 @@
 #import "GHNSString+Utils.h"
 #import "GHKitDefines.h"
 
+//! @cond DEV
+
 @protocol GHXML_NSStringSanitizer <NSObject>
 - (NSString *)gtm_stringBySanitizingAndEscapingForXML;
 @end
 
-@implementation NSString (GHXML)
+//! @endcond
+
+@implementation NSString(GHXML)
 
 + (id)gh_stringWithFormatForXML:(NSString *)format, ... {
   GHConvertVarArgs(format);  

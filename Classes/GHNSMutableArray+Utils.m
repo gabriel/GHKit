@@ -29,7 +29,7 @@
 #import "GHNSMutableArray+Utils.h"
 
 
-@implementation NSMutableArray (GHUtils)
+@implementation NSMutableArray(GHUtils)
 
 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index {
 	NSIndexSet *indexes = [[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(index, [objects count])];

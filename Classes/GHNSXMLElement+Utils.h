@@ -26,8 +26,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-@interface NSXMLElement (GHUtils)
+/*!
+ Utilities for NSXMLElement.
+ */
+@interface NSXMLElement(GHUtils)
 
 - (NSString *)stringAt:(NSString *)name;
 - (NSNumber *)longLongAt:(NSString *)name;

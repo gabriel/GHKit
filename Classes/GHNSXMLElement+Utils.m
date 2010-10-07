@@ -30,7 +30,7 @@
 #import "GHNSXMLElement+Utils.h"
 
 
-@implementation NSXMLElement (GHUtils)
+@implementation NSXMLElement(GHUtils)
 
 - (NSString *)stringAt:(NSString *)name {
   NSArray *objects = [self elementsForName:name];

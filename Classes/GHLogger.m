@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
+
 #import "GHLogger.h"
 
 @implementation GHLogger
@@ -53,3 +55,5 @@
 }
 
 @end
+
+//! @endcond

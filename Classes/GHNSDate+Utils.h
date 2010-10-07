@@ -26,11 +26,13 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-// Common date formats
-extern NSString *const kDateFormatShortMonthFullYearTime; // 'Dec 12, 2008 4:34 PM'
+// Common date format constant: 'Dec 12, 2008 4:34 PM'
+extern NSString *const kDateFormatShortMonthFullYearTime;
 
-
-@interface NSDate (GHUtils)
+/*!
+ Utilities for dates, for date component arithmentic (adding days), tomorrow, yesterday, and more.
+ */
+@interface NSDate(GHUtils)
 
 /*!
  Return new date by adding (or subtracting) days from date.

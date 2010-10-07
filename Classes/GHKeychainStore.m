@@ -32,6 +32,18 @@
 
 NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
 
+//! @cond DEV
+
+// Uses SFHFKeychainUtils (iPhone)
+@interface GHSFHFKeychainStore : NSObject <GHKeychainStore> {}
+@end
+
+// Uses EMKeychainProxy (Cocoa)
+@interface GHEMKeychainStore : NSObject <GHKeychainStore> {}
+@end
+
+//! @endcond
+
 @implementation GHKeychainStore
 
 - (id)init {
@@ -60,6 +72,8 @@ NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
 
 
 @end
+
+//! @cond DEV
 
 #if !TARGET_OS_IPHONE
 
@@ -137,3 +151,5 @@ NSString *const GHEMKeychainStoreErrorDomain = @"GHEMKeychainStoreErrorDomain";
 @end
 
 #endif
+
+//! @endcond DEV

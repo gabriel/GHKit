@@ -10,6 +10,9 @@ typedef enum {
   GHViewAnimationWipe
 } GHViewAnimationType;
 
+/*!
+ Helper for NSView animating.
+ */
 @interface GHViewAnimation : NSObject {
 
   NSView *container_;  

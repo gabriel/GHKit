@@ -32,7 +32,7 @@
 // Common date formats
 NSString *const kDateFormatShortMonthFullYearTime = @"LLL d, yyyy hh:mm a";
 
-@implementation NSDate (GHUtils)
+@implementation NSDate(GHUtils)
 
 NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSWeekdayCalendarUnit;
 

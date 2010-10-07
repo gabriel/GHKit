@@ -28,8 +28,10 @@
 //
 
 
-
-@interface NSObject (GHUtils)
+/*!
+ Utilities for NSObject.
+ */
+@interface NSObject(GHUtils)
 
 /*!
  Check if not equal to NSNull.

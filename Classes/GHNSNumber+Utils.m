@@ -29,7 +29,7 @@
 
 #import "GHNSNumber+Utils.h"
 
-@implementation NSNumber (GHUtils)
+@implementation NSNumber(GHUtils)
 
 - (NSString *)gh_humanSize {
   return [self gh_humanSizeWithDelimiter:@" "];

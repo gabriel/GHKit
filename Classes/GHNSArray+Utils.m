@@ -26,7 +26,7 @@
 
 #import "GHNSArray+Utils.h"
 
-@implementation NSArray (GHUtils)
+@implementation NSArray(GHUtils)
 
 - (id)gh_firstObject {
 	if ([self count] > 0)

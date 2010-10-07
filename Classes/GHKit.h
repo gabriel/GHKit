@@ -25,6 +25,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/*! 
+ @mainpage GHKit
+ 
+ GHKit defines various categories and general purpose utilities
+ for example, parsing date strings, generating time ago in words,
+ generating SHA1-HMAC, MD5, or special invocation proxies.
+ */
+
 #import "GHKitDefines.h"
 
 #import "GHNSDate+Parsing.h"

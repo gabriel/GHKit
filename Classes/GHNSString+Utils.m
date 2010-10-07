@@ -30,11 +30,15 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
+//! @cond DEV
+
 @protocol GHKit_NSString_GTMRegex
 - (NSString *)gtm_stringByReplacingMatchesOfPattern:(NSString *)pattern withReplacement:(NSString *)replacementPattern;
 @end
 
-@implementation NSString (GHUtils)
+//! @endcond
+
+@implementation NSString(GHUtils)
 
 + (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments {
   char *argList = (char *)malloc(sizeof(NSString *) * [arguments count]);
@@ -140,110 +144,52 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	return components;
 }
 
-/*!
- @method gh_containsCharacters
- @abstract Check if self contains any of the characters in the specified string
- @param characters Characters to look for
- @result YES if string has any of the characters
-*/
 - (BOOL)gh_containsCharacters:(NSString *)characters {
   return [self gh_containsAny:[NSCharacterSet characterSetWithCharactersInString:characters]];
 }
 
-/*!
- @method gh_containsAny
- @param charSet Character set
- @result YES if string contains any characters from the set
-*/
 - (BOOL)gh_containsAny:(NSCharacterSet *)charSet {
   NSRange range = [self rangeOfCharacterFromSet:charSet];
   return (range.location != NSNotFound);
 }
 
-/*!
- @method gh_only
- @abstract Check if string has only characters from set
- @param charSet Character set
- @result YES if string has only characters from the specified set.
-*/
 - (BOOL)gh_only:(NSCharacterSet *)charSet {
   return ![self gh_containsAny:[charSet invertedSet]];
 }
 
-/*!
- @method gh_startsWithAny
- @param charSet Character set
- @result YES if the first character is in the set
-*/
 - (BOOL)gh_startsWithAny:(NSCharacterSet *)charSet {
   NSString *firstChar = [self substringToIndex:1];
   return [firstChar gh_containsAny:charSet];
 }
 
-/*!
- @method gh_startsWith
- @param startsWith
- @abstract Check if string starts with string
- @result YES if string starts with string
-*/
 - (BOOL)gh_startsWith:(NSString *)startsWith {
   return [self hasPrefix:startsWith];
 }
 
-/*!
- @method gh_startsWith
- @param startsWith
- @param options
- @abstract Check if string starts with string
- @result YES if string starts with string
- */
 - (BOOL)gh_startsWith:(NSString *)startsWith options:(NSStringCompareOptions)options {
   if ([self length] < [startsWith length]) return NO;
   NSString *beginning = [self substringToIndex:[startsWith length]];
   return ([beginning compare:startsWith options:options] == NSOrderedSame);  
 }
 
-/*!
- @method gh_endsWith
- @param endsWith
- @abstract Check if string ends with string
- @result YES if string ends with string
- */
 - (BOOL)gh_endsWith:(NSString *)endsWith options:(NSStringCompareOptions)options {
   if ([self length] < [endsWith length]) return NO;
   NSString *lastString = [self substringFromIndex:[self length] - 1];
   return ([lastString compare:endsWith options:options] == NSOrderedSame);
 }
 
-/*!
- @method gh_attributize
- @abstract Turn string into attribute
- @result With first letter lower-cased
-*/
 - (NSString *)gh_attributize {
   NSString *end = [self substringFromIndex:1];
   NSString *start = [[self substringToIndex:1] lowercaseString];
   return [start stringByAppendingString:end];
 }
 
-/*!
- @method gh_fullPathExtension
- @abstract Path extension with . or "" as before
- 
- "spliff.tiff" => ".tiff"
- "spliff" => ""
- 
-*/
 - (NSString *)gh_fullPathExtension {
   NSString *extension = [self pathExtension];
   if (![extension isEqualToString:@""]) extension = [NSString stringWithFormat:@".%@", extension];
   return extension;
 }
 
-/*!
- @method gh_uuid
- @abstract Create UUID
-*/
 + (NSString *)gh_uuid {
   CFUUIDRef	uuidRef = CFUUIDCreate(nil);
   
@@ -284,10 +230,6 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	return count;
 }
 
-/*!
-  @method gh_characterSetsUnion
-  @abstract Combined character sets.
-*/
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets {
   NSMutableCharacterSet *charSet = [NSMutableCharacterSet characterSetWithCharactersInString:@""];
   for(NSCharacterSet *set in characterSets)

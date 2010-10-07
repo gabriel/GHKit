@@ -26,8 +26,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-@interface NSMutableArray (GHUtils)
+/*!
+ Utilities for mutable arrays, for example, inserting, replacing at index, and more.
+ */
+@interface NSMutableArray(GHUtils)
 
 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index;
 

@@ -26,7 +26,11 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSFileManager (GHUtils)
+/*!
+ Utilities for NSFileManager, for example, file size, exists, generating temporary or unique
+ file paths.
+ */
+@interface NSFileManager(GHUtils)
 
 /*!
  @method gh_fileSize

@@ -30,7 +30,7 @@
 #import "GHNSURL+Utils.h"
 
 
-@implementation NSURL (GHUtils)
+@implementation NSURL(GHUtils)
 
 - (NSMutableDictionary *)gh_queryDictionary {
 	return [NSURL gh_queryStringToDictionary:[self query]];

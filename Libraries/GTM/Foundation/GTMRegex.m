@@ -769,7 +769,7 @@ static NSString *const kReplacementPattern =
 
 @end
 
-@implementation NSString (GTMRegexAdditions)
+@implementation NSString(GTMRegexAdditions)
 
 - (BOOL)gtm_matchesPattern:(NSString *)pattern {
   GTMRegex *regex = [GTMRegex regexWithPattern:pattern];

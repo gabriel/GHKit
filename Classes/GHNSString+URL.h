@@ -25,9 +25,13 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
+
 #import "GHNSURL+Utils.h"
 
-@interface NSString (GHURL)
+/*!
+ Utilities for URL encoding/decoding.
+ */
+@interface NSString(GHURL)
 
 /*!
  Decode URL encoded string.
@@ -43,13 +47,13 @@
 
 /*!
  Encode URL string component.
- @see NSURL#gh_encodeComponent:
+ @see NSURL#gh_encodeComponent
  */
 - (NSString *)gh_URLEncodeComponent;
 
 /*!
  Encode URL string (all characters).
- @see NSURL#gh_escapeAll:
+ @see NSURL#gh_escapeAll
  */
 - (NSString *)gh_URLEscapeAll;
 

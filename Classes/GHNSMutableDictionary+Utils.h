@@ -27,7 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-@interface NSMutableDictionary (GHUtils)
+/*!
+ Utilities for NSMutableDictionary.
+ */
+@interface NSMutableDictionary(GHUtils)
 
 - (void)gh_setDouble:(double)d forKey:(id)key;
 

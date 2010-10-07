@@ -334,7 +334,7 @@ _EXTERN NSString* kGTMRegexPatternErrorErrorString _INITIALIZE_AS(@"patternError
 //                                    withReplacement:@"<i>\\1</i><b>\\2</b>"];
 //   ....
 //
-@interface NSString (GTMRegexAdditions)
+@interface NSString(GTMRegexAdditions)
 
 /// Returns YES if the full string matches regex |pattern| using the default match options
 - (BOOL)gtm_matchesPattern:(NSString *)pattern;

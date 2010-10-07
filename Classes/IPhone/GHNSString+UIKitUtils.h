@@ -33,7 +33,11 @@ enum {
 };
 typedef NSUInteger GHNSStringAlignment;
 
-@interface NSString (GHUIKitUtils)
+/*!
+ Utilities for drawing strings in UIKit.
+ @ingroup iPhone
+ */
+@interface NSString(GHUIKitUtils)
 
 /*!
  Draw string in rect.

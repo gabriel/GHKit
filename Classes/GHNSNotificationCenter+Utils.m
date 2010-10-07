@@ -30,7 +30,7 @@
 #import "GHNSNotificationCenter+Utils.h"
 
 
-@implementation NSNotificationCenter (GHUtils)
+@implementation NSNotificationCenter(GHUtils)
 
 - (void)gh_replaceObserver:(id)observer selector:(SEL)selector name:(NSString *)name object:(id)object {
   [self removeObserver:observer name:name object:object];

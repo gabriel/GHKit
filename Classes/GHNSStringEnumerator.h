@@ -27,10 +27,11 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
 #import <Foundation/Foundation.h>
 
-
+/*!
+ For scanning, and enumerating strings.
+ */
 @interface GHNSStringEnumerator : NSEnumerator {
 	NSScanner *_scanner;
 	

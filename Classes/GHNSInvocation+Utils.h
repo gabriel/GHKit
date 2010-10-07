@@ -27,10 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-
-
-
-@interface NSInvocation (GHUtils_GHKIT)
+/*!
+ Invocation helper.
+ */
+@interface NSInvocation(GHUtils_GHKIT)
 
 /*!
  Invoke on main thread.

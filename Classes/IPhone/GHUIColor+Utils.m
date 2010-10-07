@@ -31,10 +31,10 @@
 
 #import <math.h>
 
-@implementation UIColor (GHUtils)
+@implementation UIColor(GHUtils)
 
 // From http://www.easyrgb.com/index.php?X=MATH&H=20#text20
-- (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue {
++ (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue {
 	
 	float min = fminf(fminf(red, green), blue);
 	float max = fmaxf(fmaxf(red, green), blue);

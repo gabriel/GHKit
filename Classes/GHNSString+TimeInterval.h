@@ -27,11 +27,13 @@
 //
 
 
-@interface NSString (GHTimeInterval)
+/*!
+ Utilities for generating time ago in words.
+ */
+@interface NSString(GHTimeInterval)
 
 /*!
- @method gh_stringForTimeInterval
- @abstract Get time ago in words
+ Time ago in words.
  @param interval
  @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
  @result Time ago in words
@@ -42,9 +44,7 @@
 + (NSString *)gh_stringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds;
 
 /*! 
- Localized string for time interval. (Time ago in words.)
- @method gh_localizedStringForTimeInterval
- @abstract Get time ago in words
+ Time ago in words (localized).
  @param interval
  @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
  @param tableName Table name for localized string
@@ -53,6 +53,7 @@
  
  These are the localized defaults, that you can override:
  
+ @verbatim
  LessThanAMinute = "less than a minute";
  LessThanXSeconds = "less than %d seconds";
  HalfMinute = "half a minute";
@@ -66,6 +67,7 @@
  XMonths = "%.0f months";
  About1Year = "about 1 year";
  OverXYears = "over %.0f years";
+ @endverbatim
  */
 + (NSString *)gh_localizedStringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds tableName:(NSString *)tableName bundle:(NSBundle *)bundle;
 

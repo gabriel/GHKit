@@ -29,7 +29,7 @@
 
 #import "GHNSDictionary+Utils.h"
 
-@implementation NSDictionary (GHUtils)
+@implementation NSDictionary(GHUtils)
 
 - (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue {
 	id value = [self objectForKey:key];

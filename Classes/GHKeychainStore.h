@@ -61,24 +61,15 @@ typedef enum {
 @end
 
 /*!
- Runtime based keychain store.
+ Keychain store adapter which works on both iOS and Mac OS X.
  
  Forwards to:
 	- GHEMKeychainStore for Mac OS X.
 	- GHSFHFKeychainStore for iPhone.
-
  */
 @interface GHKeychainStore : NSObject <GHKeychainStore> {
 	id<GHKeychainStore> _keychainStore;
 }
 
-@end
-
-// Uses SFHFKeychainUtils (iPhone)
-@interface GHSFHFKeychainStore : NSObject <GHKeychainStore> {}
-@end
-
-// Uses EMKeychainProxy (Cocoa)
-@interface GHEMKeychainStore : NSObject <GHKeychainStore> {}
 @end
 

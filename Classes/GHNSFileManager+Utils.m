@@ -30,7 +30,7 @@
 #import "GHNSString+Utils.h"
 #import "GHNSError+Utils.h"
 
-@implementation NSFileManager (GHUtils)
+@implementation NSFileManager(GHUtils)
 
 + (NSNumber *)gh_fileSize:(NSString *)filePath error:(NSError **)error {
   NSFileManager *fileManager = [NSFileManager defaultManager];

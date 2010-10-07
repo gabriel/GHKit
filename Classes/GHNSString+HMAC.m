@@ -27,11 +27,14 @@
 
 #import "hmac.h" 
 
+/*!
+ Protocol for a Base64 encoder required by GHKit.
+ */
 @protocol GHBase64Encoder
 - (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
 @end
 
-@implementation NSString (GHHMAC)
+@implementation NSString(GHHMAC)
 
 - (NSString *)gh_HMACSHA1:(NSString *)secret base64Encoder:(id)base64Encoder {
   

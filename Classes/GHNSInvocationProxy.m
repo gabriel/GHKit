@@ -67,10 +67,16 @@
 
 #import "GHNSInvocationProxy.h"
 
+
+@interface GHNSInvocationProxy ()
+@property (retain, nonatomic) NSInvocation *invocation;
+@end
+
+
 @implementation GHNSInvocationProxy
 
 @synthesize target=target_, invocation=invocation_, waitUntilDone=waitUntilDone_, thread=thread_, 
-delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_;
+delay=delay_, selector=selector_, delegate=delegate_, detachCallback=detachCallback_;
 
 + (id)invocation {
 	return [[[self alloc] init] autorelease];
@@ -128,7 +134,7 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 	if (detachCallback_ && delay_ >= 0)
 		[NSException raise:NSInvalidArgumentException format:@"Running with delay and detached callback is not supported at the same time"];
 	
-	[tracer_ proxy:self willInvoke:invocation];
+	[delegate_ proxy:self willInvoke:invocation];
 	if (thread_) {
 		[invocation_ performSelector:@selector(invoke) onThread:thread_ withObject:nil waitUntilDone:waitUntilDone_];
 	} else if (detachCallback_) {		
@@ -141,7 +147,7 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 		}
 	}
 	
-	[tracer_ proxy:self didInvoke:invocation];
+	[delegate_ proxy:self didInvoke:invocation];
 }
 
 
@@ -178,33 +184,33 @@ delay=delay_, selector=selector_, tracer=tracer_, detachCallback=detachCallback_
 @end
 
 
-@implementation GHNSLogInvocationTracer
+@implementation GHNSInvocationProxyLogger
 
-static GHNSLogInvocationTracer *gGHNSLogInvocationTracer = NULL;
+static GHNSInvocationProxyLogger *gInvocationProxyLogger = NULL;
 
-+ (GHNSLogInvocationTracer *)shared {
-	@synchronized([GHNSLogInvocationTracer class]) {
-		if (gGHNSLogInvocationTracer == NULL) {
-			gGHNSLogInvocationTracer = [[GHNSLogInvocationTracer alloc] init];
++ (GHNSInvocationProxyLogger *)shared {
+	@synchronized([GHNSInvocationProxyLogger class]) {
+		if (gInvocationProxyLogger == NULL) {
+			gInvocationProxyLogger = [[GHNSInvocationProxyLogger alloc] init];
 		}
 	}
-	return gGHNSLogInvocationTracer;
+	return gInvocationProxyLogger;
 }
 
 
 - (void)proxy:(GHNSInvocationProxy *)proxy willInvoke:(NSInvocation *)invocation {
 	NSLog(@"[TRACE] [%@ %@]", NSStringFromClass([invocation.target class]), NSStringFromSelector(invocation.selector));
-	_interval = [NSDate timeIntervalSinceReferenceDate];
+	interval_ = [NSDate timeIntervalSinceReferenceDate];
 }
 
 - (void)proxy:(GHNSInvocationProxy *)proxy didInvoke:(NSInvocation *)invocation {
-	_interval -= -[NSDate timeIntervalSinceReferenceDate];
+	interval_ -= -[NSDate timeIntervalSinceReferenceDate];
 	NSUInteger length = [[invocation methodSignature] methodReturnLength];
-	if (length == 0) NSLog(@"[TRACE] (%0.4fs)", _interval);
+	if (length == 0) NSLog(@"[TRACE] (%0.4fs)", interval_);
 	else {
 		const char *returnType = [[invocation methodSignature] methodReturnType];
 		NSString *returnTypeString = [[[NSString alloc] initWithCString:returnType encoding:NSUTF8StringEncoding] autorelease];
-		NSLog(@"[TRACE] %@ (%0.4fs)", returnTypeString, _interval);
+		NSLog(@"[TRACE] %@ (%0.4fs)", returnTypeString, interval_);
 	}	
 }
 

@@ -29,7 +29,7 @@
 
 #import "GHNSMutableDictionary+Utils.h"
 
-@implementation NSMutableDictionary (GHUtils)
+@implementation NSMutableDictionary(GHUtils)
 
 - (void)gh_setDouble:(double)d forKey:(id)key {
 	[self setObject:[NSNumber numberWithDouble:d] forKey:key];

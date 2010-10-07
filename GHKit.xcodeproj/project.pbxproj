@@ -438,10 +438,10 @@
 				000E760D0FA61B830085BC13 /* Swizzle */,
 				52857C8F0E1997B50011DA5C /* GHNSDate+Parsing.h */,
 				52857C900E1997B50011DA5C /* GHNSDate+Parsing.m */,
-				00AA406E125C5A2700CB3F6B /* GHValidators.h */,
-				00AA406F125C5A2700CB3F6B /* GHValidators.m */,
 				00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */,
 				00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */,
+				00AA406E125C5A2700CB3F6B /* GHValidators.h */,
+				00AA406F125C5A2700CB3F6B /* GHValidators.m */,
 				52857C910E1997B50011DA5C /* GHNSFileManager+Utils.h */,
 				52857C920E1997B50011DA5C /* GHNSFileManager+Utils.m */,
 				52857C950E1997B50011DA5C /* GHNSString+HMAC.h */,
@@ -652,6 +652,7 @@
 				8DC2EF520486A6940098B216 /* Resources */,
 				8DC2EF540486A6940098B216 /* Sources */,
 				8DC2EF560486A6940098B216 /* Frameworks */,
+				000124D4125D89B6004B9B8B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -709,6 +710,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		000124D4125D89B6004B9B8B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make docs";
+			showEnvVarsInLog = 0;
+		};
 		00915AEF0F774740008B854A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

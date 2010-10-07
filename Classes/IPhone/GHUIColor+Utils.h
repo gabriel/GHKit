@@ -30,6 +30,9 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
+/*!
+ Represents an RGBA value.
+ */
 typedef struct {
 	CGFloat red;
 	CGFloat green;
@@ -37,7 +40,11 @@ typedef struct {
 	CGFloat alpha;
 } GH_RGBA;
 
-// HSV is the same as HSB
+/*!
+ Represents an HSV value.
+ 
+ HSV is the same as HSB.
+ */
 typedef struct {
 	float hue;
 	float saturation;
@@ -46,16 +53,31 @@ typedef struct {
 
 
 /*!
- Utility category for UIColor.
+ Utilities for UIColor.
  @ingroup iPhone
  */
-@interface UIColor (GHUtils)
+@interface UIColor(GHUtils)
 
+/*!
+ RGBA value.
+ @result RGBA
+ */
 - (GH_RGBA)gh_rgba;
 
+/*!
+ HSV value.
+ @result HSV
+ */
 - (GH_HSV)gh_hsv;
 
-- (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;
+/*!
+ HSV value from RGB.
+ @param red
+ @param green
+ @param blue
+ @result HSV
+ */
++ (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;
 
 // See NSColor#getComponents:
 - (void)gh_getComponents:(CGFloat *)components;

@@ -29,7 +29,7 @@
 #import "GHNSString+URL.h"
 
 
-@implementation NSString (GHURL)
+@implementation NSString(GHURL)
 
 - (NSString *)gh_URLDecode {
 	return [NSURL gh_decode:self];

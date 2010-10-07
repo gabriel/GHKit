@@ -31,7 +31,7 @@
 // Date formatters are not cached since they are not thread-safe. (Thanks Jae!)
 // TODO: Investigate synchronized access to cached formatters.
 
-@implementation NSDate (GHParsing)
+@implementation NSDate(GHParsing)
 
 + (NSDate *)gh_parseISO8601:(NSString *)dateString { 
 	if (!dateString) return nil;
