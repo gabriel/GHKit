@@ -91,7 +91,7 @@
 
 - (GH_HSV)gh_hsv {
 	GH_RGBA rgba = [self gh_rgba];
-	return [self gh_hsvFromRed:rgba.red green:rgba.green blue:rgba.blue];
+	return [UIColor gh_hsvFromRed:rgba.red green:rgba.green blue:rgba.blue];
 }
 
 - (void)gh_getComponents:(CGFloat *)components {
