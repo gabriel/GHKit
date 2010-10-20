@@ -109,7 +109,7 @@
 // The following OpenOffice wiki page is helpful for information about ordinals
 // http://wiki.services.openoffice.org/wiki/Localized_AutoCorrection_of_Ordinal_Numbers_(1st_2nd)#French
 + (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine {
-  NSString *languageCode = [[NSLocale currentLocale] objectForKey:NSLocaleLanguageCode];
+  NSString *languageCode = [[NSLocale preferredLanguages] gh_firstObject];
   if ([languageCode isEqual:@"en"]) {
     return [NSNumber gh_ordinalizeEn:value];
   } else if ([languageCode isEqual:@"fr"]) {
