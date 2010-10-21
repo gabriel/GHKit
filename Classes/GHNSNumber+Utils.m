@@ -28,6 +28,8 @@
 
 
 #import "GHNSNumber+Utils.h"
+#import "GHNSArray+Utils.h"
+
 
 @implementation NSNumber(GHUtils)
 

@@ -22,6 +22,7 @@ docs-gh: docs
 	git checkout gh-pages
 	cp -R Documentation/html/* .
 	rm -rf Documentation
+	git add .
 	git commit -a -m 'Updating docs' && git push origin gh-pages
 	git checkout master
 

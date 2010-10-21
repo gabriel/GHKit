@@ -65,7 +65,7 @@
  *
  */
 
-//! @internal
+//! @cond DEV
 
 @class GHNSInvocationProxy;
 @class GHNSInvocationProxyCallback;
@@ -105,7 +105,7 @@
 
 @end
 
-//! @endinternal
+//! @endcond
 
 /*!
  Proxy that allows invocation on a separate thread, with a delay and or multiple 
@@ -208,7 +208,7 @@
 
 @end
 
-//! @internal
+//! @cond DEV
 
 /*!
  Invocation proxy callback represents a target, selector, context (selector arg) and thread,
@@ -225,4 +225,4 @@
 
 @end
 
-//! @endinternal
+//! @endcond

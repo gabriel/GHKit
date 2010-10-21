@@ -244,7 +244,7 @@
 
 @end
 
-//! @internal
+//! @cond DEV
 
 /*!
  Class used by gh_substringSegmentsWithinStart:end:
@@ -264,4 +264,4 @@
 
 @end
 
-//! @endinternal
+//! @endcond

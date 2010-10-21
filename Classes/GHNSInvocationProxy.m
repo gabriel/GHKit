@@ -154,7 +154,7 @@ delay=delay_, selector=selector_, delegate=delegate_, detachCallback=detachCallb
 
 @end
 
-//! @internal
+//! @cond DEV
 
 
 @implementation GHNSInvocationProxyCallback 
@@ -216,6 +216,6 @@ static GHNSInvocationProxyLogger *gInvocationProxyLogger = NULL;
 	}	
 }
 
-//! @endinternal
+//! @endcond
 
 @end
