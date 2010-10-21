@@ -129,6 +129,7 @@
  [@"abc" gh_reverse]; // @"cba"
  
  [@"  some text " gh_strip]; // @"some text"
+ @endcode
 
  @section URLs
  
