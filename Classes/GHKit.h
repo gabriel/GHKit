@@ -83,6 +83,10 @@
  For example, parsing date strings, generating time ago in words,
  generating SHA1-HMAC, MD5, or special invocation proxies.
  
+ http://github.com/gabriel/gh-kit
+ 
+ View docs online: http://gabriel.github.com/gh-kit/
+ 
  To use the framework (for iOS):
  
  @code
