@@ -17,6 +17,11 @@ docs:
 	cd ~/Library/Developer/Shared/Documentation/DocSets/ && tar zcvpf GHKit.docset.tgz GHKit.docset
 	mv ~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset.tgz Documentation
 
+docs-gh: docs
+	git checkout gh-pages
+	cp -R Documentation/html/* .
+	rm -rf Documentation
+
 # If you need to clean a specific target/configuration: $(COMMAND) -target $(TARGET) -configuration DebugOrRelease -sdk $(SDK) clean
 clean:
 	-rm -rf build/*
