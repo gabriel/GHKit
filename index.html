@@ -72,13 +72,10 @@ Strings</h2>
  [<span class="stringliteral">@&quot;abc&quot;</span> gh_reverse]; <span class="comment">// @&quot;cba&quot;</span>
  
  [<span class="stringliteral">@&quot;  some text &quot;</span> gh_strip]; <span class="comment">// @&quot;some text&quot;</span>
-
- @section URLs
- 
- &lt;tt&gt;GHNSURL+Utils.h&lt;/tt&gt;: Encoding, escaping, parsing, splitting out or sorting query params, and more.
- 
- @code
- NSDictionary *dict = [<span class="stringliteral">@&quot;c=d&amp;a=b&quot;</span> gh_queryStringToDictionary]; <span class="comment">// Dictionary with a =&gt; b, c =&gt; d</span>
+</pre></div><h2><a class="anchor" id="URLs"></a>
+URLs</h2>
+<p><code>GHNSURL+Utils.h</code>: Encoding, escaping, parsing, splitting out or sorting query params, and more.</p>
+<div class="fragment"><pre class="fragment"> NSDictionary *dict = [<span class="stringliteral">@&quot;c=d&amp;a=b&quot;</span> gh_queryStringToDictionary]; <span class="comment">// Dictionary with a =&gt; b, c =&gt; d</span>
  [NSDictionary gh_dictionaryToQueryString:dict sort:YES]; <span class="comment">// @&quot;a=b&amp;c=d&quot;</span>
 </pre></div><h2><a class="anchor" id="Invocation"></a>
 Invocation</h2>
@@ -116,7 +113,7 @@ And more...</h2>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 22:50:04 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 22:56:27 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
