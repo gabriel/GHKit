@@ -286,7 +286,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00255"></a>00255     
 <a name="l00256"></a>00256     <span class="keywordflow">while</span>([scanner scanUpToString:(within ? end : start) intoString:&amp;scanned]) {
 <a name="l00257"></a>00257         <span class="keywordflow">if</span> (scanned &amp;&amp; [scanned length] &gt; 0)
-<a name="l00258"></a>00258             [segments addObject:[<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> string:scanned isMatch:within]];
+<a name="l00258"></a>00258             [segments addObject:[GHNSStringSegment string:scanned isMatch:within]];
 <a name="l00259"></a>00259         
 <a name="l00260"></a>00260         [scanner scanString:(within ? end : start) intoString:&amp;scanned]; <span class="comment">// Eat start or end token</span>
 <a name="l00261"></a>00261         scanned = nil;
@@ -294,7 +294,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00263"></a>00263     }
 <a name="l00264"></a>00264     NSUInteger length = [<span class="keyword">self</span> length] - [scanner scanLocation];
 <a name="l00265"></a>00265     <span class="keywordflow">if</span> (length &gt; 0)
-<a name="l00266"></a>00266         [segments addObject:[<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> string:[<span class="keyword">self</span> substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
+<a name="l00266"></a>00266         [segments addObject:[GHNSStringSegment string:[<span class="keyword">self</span> substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
 <a name="l00267"></a>00267     <span class="keywordflow">return</span> segments;
 <a name="l00268"></a>00268 }
 <a name="l00269"></a>00269 
@@ -335,7 +335,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00304"></a>00304 
 <a name="l00305"></a>00305 <span class="keyword">@end</span>
 <a name="l00306"></a>00306 
-<a name="l00307"></a>00307 <span class="keyword">@implementation </span><a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a>
+<a name="l00307"></a>00307 <span class="keyword">@implementation </span>GHNSStringSegment
 <a name="l00308"></a>00308 
 <a name="l00309"></a>00309 <span class="keyword">@synthesize</span> <span class="keywordtype">string</span>=string_, match=isMatch_;
 <a name="l00310"></a>00310 
@@ -347,7 +347,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00316"></a>00316     <span class="keywordflow">return</span> <span class="keyword">self</span>;    
 <a name="l00317"></a>00317 }
 <a name="l00318"></a>00318 
-<a name="l00319"></a>00319 + (<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> *)string:(NSString *)string isMatch:(BOOL)isMatch {
+<a name="l00319"></a>00319 + (GHNSStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch {
 <a name="l00320"></a>00320     <span class="keywordflow">return</span> [[[<span class="keyword">self</span> alloc] initWithString:string isMatch:isMatch] autorelease];
 <a name="l00321"></a>00321 }
 <a name="l00322"></a>00322 
@@ -381,7 +381,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

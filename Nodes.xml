@@ -38,24 +38,8 @@
           <Path>interface_g_h_n_s_invocation_proxy.html</Path>
          </Node>
          <Node>
-          <Name>GHNSInvocationProxyCallback</Name>
-          <Path>interface_g_h_n_s_invocation_proxy_callback.html</Path>
-         </Node>
-         <Node>
-          <Name>&lt;GHNSInvocationProxyDelegate&gt;</Name>
-          <Path>protocol_g_h_n_s_invocation_proxy_delegate-p.html</Path>
-         </Node>
-         <Node>
-          <Name>GHNSInvocationProxyLogger</Name>
-          <Path>interface_g_h_n_s_invocation_proxy_logger.html</Path>
-         </Node>
-         <Node>
           <Name>GHNSStringEnumerator</Name>
           <Path>interface_g_h_n_s_string_enumerator.html</Path>
-         </Node>
-         <Node>
-          <Name>GHNSStringSegment</Name>
-          <Path>interface_g_h_n_s_string_segment.html</Path>
          </Node>
          <Node>
           <Name>GHReversableDictionary</Name>
@@ -206,26 +190,8 @@
           <Path>interface_g_h_n_s_invocation_proxy.html</Path>
          </Node>
          <Node>
-          <Name>GHNSInvocationProxyCallback</Name>
-          <Path>interface_g_h_n_s_invocation_proxy_callback.html</Path>
-         </Node>
-         <Node>
-          <Name>&lt;GHNSInvocationProxyDelegate&gt;</Name>
-          <Path>protocol_g_h_n_s_invocation_proxy_delegate-p.html</Path>
-          <Subnodes>
-           <Node>
-            <Name>GHNSInvocationProxyLogger</Name>
-            <Path>interface_g_h_n_s_invocation_proxy_logger.html</Path>
-           </Node>
-          </Subnodes>
-         </Node>
-         <Node>
           <Name>GHNSStringEnumerator</Name>
           <Path>interface_g_h_n_s_string_enumerator.html</Path>
-         </Node>
-         <Node>
-          <Name>GHNSStringSegment</Name>
-          <Path>interface_g_h_n_s_string_segment.html</Path>
          </Node>
          <Node>
           <Name>GHReversableDictionary</Name>

@@ -136,8 +136,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00087"></a>00087 <span class="comment">// From DDFoundation, NSObject+DDExtensions </span>
 <a name="l00088"></a>00088 <span class="comment">// (Changed namespaced to make it easier to include in static library without conflicting)</span>
 <a name="l00089"></a>00089 
-<a name="l00093"></a>00093 - (<a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *)_initProxy {   
-<a name="l00094"></a>00094     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a05ee0a403b4283edefb59dc4f55ff262" title="Action for invocation.">invocation</a>];
+<a name="l00093"></a>00093 - (<a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *)_initProxy {   
+<a name="l00094"></a>00094     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a05ee0a403b4283edefb59dc4f55ff262" title="Action for invocation.">invocation</a>];
 <a name="l00095"></a>00095     proxy.target = <span class="keyword">self</span>;
 <a name="l00096"></a>00096     <span class="keywordflow">return</span> proxy;
 <a name="l00097"></a>00097 }
@@ -147,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00101"></a>00101 }
 <a name="l00102"></a>00102 
 <a name="l00103"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a7ae4f800041b654e489402127d92a260">00103</a> - (id)gh_proxyOnMainThread:(BOOL)waitUntilDone {
-<a name="l00104"></a>00104     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
+<a name="l00104"></a>00104     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
 <a name="l00105"></a>00105     proxy.thread = [NSThread mainThread];
 <a name="l00106"></a>00106     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2" title="Thread to invoke on.">waitUntilDone</a> = waitUntilDone;
 <a name="l00107"></a>00107     <span class="keywordflow">return</span> proxy;
@@ -158,34 +158,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00112"></a>00112 }
 <a name="l00113"></a>00113 
 <a name="l00114"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a23f0f50e56c06e6a3e6635927abe1275">00114</a> - (id)gh_proxyDetachThreadWithCallback:(<span class="keywordtype">id</span>)target action:(<span class="keywordtype">SEL</span>)action context:(<span class="keywordtype">id</span>)context {
-<a name="l00115"></a>00115     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
-<a name="l00116"></a>00116     <a class="code" href="interface_g_h_n_s_invocation_proxy_callback.html" title="Invocation proxy callback represents a target, selector, context (selector arg) and thread...">GHNSInvocationProxyCallback</a> *callback = [[<a class="code" href="interface_g_h_n_s_invocation_proxy_callback.html" title="Invocation proxy callback represents a target, selector, context (selector arg) and thread...">GHNSInvocationProxyCallback</a> alloc] initWithTarget:target action:action context:context];
+<a name="l00115"></a>00115     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
+<a name="l00116"></a>00116     GHNSInvocationProxyCallback *callback = [[GHNSInvocationProxyCallback alloc] initWithTarget:target action:action context:context];
 <a name="l00117"></a>00117     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a0f3cbe45c51f1fffb45be4f2bae535ac" title="Delegate.">detachCallback</a> = callback;
 <a name="l00118"></a>00118     [callback release];
 <a name="l00119"></a>00119     <span class="keywordflow">return</span> proxy;
 <a name="l00120"></a>00120 }
 <a name="l00121"></a>00121 
 <a name="l00122"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#ae4a115fdbd7422ebc226bf00d0c0f6e5">00122</a> - (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone {
-<a name="l00123"></a>00123     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
+<a name="l00123"></a>00123     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
 <a name="l00124"></a>00124     proxy.thread = thread;
 <a name="l00125"></a>00125     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2" title="Thread to invoke on.">waitUntilDone</a> = waitUntilDone;
 <a name="l00126"></a>00126     <span class="keywordflow">return</span> proxy;
 <a name="l00127"></a>00127 }
 <a name="l00128"></a>00128 
 <a name="l00129"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a84d8be450ca8607be19ba01507424771">00129</a> - (id)gh_proxyAfterDelay:(NSTimeInterval)delay {
-<a name="l00130"></a>00130     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];         
+<a name="l00130"></a>00130     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];         
 <a name="l00131"></a>00131     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a98caac92f9f31eaa88dab43a24e3a80a" title="Whether to wait until invocation is done.">delay</a> = delay;
 <a name="l00132"></a>00132     <span class="keywordflow">return</span> proxy;
 <a name="l00133"></a>00133 }
 <a name="l00134"></a>00134 
 <a name="l00135"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#ad58504f82e67f634104dad804a3590b2">00135</a> - (id)gh_argumentProxy:(<span class="keywordtype">SEL</span>)selector {
-<a name="l00136"></a>00136     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
+<a name="l00136"></a>00136     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
 <a name="l00137"></a>00137     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a91a30653de1185ca2f483c83118ebb58" title="Target for invocation.">selector</a> = selector;
 <a name="l00138"></a>00138     <span class="keywordflow">return</span> proxy;
 <a name="l00139"></a>00139 }
 <a name="l00140"></a>00140 
 <a name="l00141"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#ac548e4c0242ab29494ac16d3851d0455">00141</a> - (id)gh_argumentProxy:(<span class="keywordtype">SEL</span>)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone {
-<a name="l00142"></a>00142     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
+<a name="l00142"></a>00142     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
 <a name="l00143"></a>00143     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a91a30653de1185ca2f483c83118ebb58" title="Target for invocation.">selector</a> = selector;
 <a name="l00144"></a>00144     proxy.thread = [NSThread mainThread];
 <a name="l00145"></a>00145     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2" title="Thread to invoke on.">waitUntilDone</a> = waitUntilDone;
@@ -194,8 +194,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00148"></a>00148 
 <a name="l00149"></a><a class="code" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#ad6a0c2e710d41b90429831af0a3539ae">00149</a> - (id)gh_logProxy {
 <a name="l00150"></a>00150     NSLog(<span class="stringliteral">@&quot;Tracing: %@&quot;</span>, <span class="keyword">self</span>);
-<a name="l00151"></a>00151     <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
-<a name="l00152"></a>00152     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a9140d8a915fa596382f44fc3678fd4d5" title="Delay for invocation.">delegate</a> = [<a class="code" href="interface_g_h_n_s_invocation_proxy_logger.html" title="An example invocation proxy delegate that logs timing information.">GHNSInvocationProxyLogger</a> <a class="code" href="interface_g_h_n_s_invocation_proxy_logger.html#a6bf4db01554aff0e0c07e0c92a31b891" title="Shared instance for invocation proxy logger.">shared</a>];
+<a name="l00151"></a>00151     <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *proxy = [<span class="keyword">self</span> _initProxy];
+<a name="l00152"></a>00152     proxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a9140d8a915fa596382f44fc3678fd4d5" title="Delay for invocation.">delegate</a> = [GHNSInvocationProxyLogger shared];
 <a name="l00153"></a>00153     <span class="keywordflow">return</span> [proxy <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a3c72328d9cff40e7245a95e4c93872d2" title="Create invocation proxy with target.">prepareWithInvocationTarget</a>:self];
 <a name="l00154"></a>00154 }
 <a name="l00155"></a>00155 
@@ -216,7 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

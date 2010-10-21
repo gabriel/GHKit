@@ -122,36 +122,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>proxy:willInvoke:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>intfm</Type>
-    </TokenIdentifier>
-    <Path>protocol_g_h_n_s_invocation_proxy_delegate-p.html</Path>
-    <Anchor>af32c2946e57c9d59000fd2d44ad7aa84</Anchor>
-    <Abstract>Called when proxy is about to invoke.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>proxy:didInvoke:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>intfm</Type>
-    </TokenIdentifier>
-    <Path>protocol_g_h_n_s_invocation_proxy_delegate-p.html</Path>
-    <Anchor>a86f61e52ab42ed6f1e04555f3cc3f86a</Anchor>
-    <Abstract>Called after proxy invoked.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>shared</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-    </TokenIdentifier>
-    <Path>interface_g_h_n_s_invocation_proxy_logger.html</Path>
-    <Anchor>a6bf4db01554aff0e0c07e0c92a31b891</Anchor>
-    <Abstract>Shared instance for invocation proxy logger.</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>initWithString:separatorCharacterSet:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
