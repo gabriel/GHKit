@@ -83,7 +83,7 @@
  For example, parsing date strings, generating time ago in words,
  generating SHA1-HMAC, MD5, or special invocation proxies.
  
- http://github.com/gabriel/gh-kit
+ Source: http://github.com/gabriel/gh-kit
  
  View docs online: http://gabriel.github.com/gh-kit/
  
@@ -149,7 +149,7 @@
  <tt>GHNSObject+Invocation.h</tt>: 
  
  @code
- [[obj gh_proxyOnMainThread] myMethodWithInteger:4 string:@"string"]; // Call myMethod on main method
+ [[obj gh_proxyOnMainThread] myMethodWithInteger:4 string:@"string"]; // Call myMethod on main thread
  
  [[array gh_proxyAfterDelay:2.0] insertObject:@"foo" atIndex:0]; // Inserts object after 2 second delay
  
