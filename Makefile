@@ -14,7 +14,6 @@ docs:
 	/Applications/Doxygen.app/Contents/Resources/doxygen
 	# TODO(gabe): Get doxyclean working
 	cd Documentation/html && make install
-	cd ~/Library/Developer/Shared/Documentation/DocSets/ && tar zcvpf GHKit.docset.tgz GHKit.docset
 	mv ~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset.tgz Documentation
 
 docs-gh: docs
