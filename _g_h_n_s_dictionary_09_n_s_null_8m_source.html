@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/GHNSDictionary+NSNull.m</h1>  </div>
 </div>
 <div class="contents">
-<a href="_g_h_n_s_dictionary_09_n_s_null_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  GHNSDictionary+NSNull.m</span>
 <a name="l00003"></a>00003 <span class="comment">//  Created by Jae Kwon on 5/12/08.</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
@@ -74,11 +73,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00024"></a>00024 <span class="comment">//  OTHER DEALINGS IN THE SOFTWARE.</span>
 <a name="l00025"></a>00025 <span class="comment">//</span>
 <a name="l00026"></a>00026 
-<a name="l00027"></a>00027 <span class="preprocessor">#import &quot;<a class="code" href="_g_h_n_s_dictionary_09_n_s_null_8h.html">GHNSDictionary+NSNull.h</a>&quot;</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#import &quot;GHNSDictionary+NSNull.h&quot;</span>
 <a name="l00028"></a>00028 
 <a name="l00029"></a>00029 <span class="keyword">@implementation </span>NSDictionary(GHNSNull)
 <a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="interface_n_s_dictionary_07_g_h_n_s_null_08.html#ae86936537d571cb70000839d2a93cbc3">00031</a> + (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(<span class="keywordtype">id</span>)firstKey args:(va_list)args {
+<a name="l00031"></a>00031 + (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(<span class="keywordtype">id</span>)firstKey args:(va_list)args {
 <a name="l00032"></a>00032     <span class="keywordflow">if</span> (!firstKey) <span class="keywordflow">return</span> [<span class="keyword">self</span> dictionary];
 <a name="l00033"></a>00033     
 <a name="l00034"></a>00034     NSMutableArray *keys = [[NSMutableArray alloc] init];
@@ -100,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00050"></a><a class="code" href="interface_n_s_dictionary_07_g_h_n_s_null_08.html#afd1c3bf98b5b80b84ff8ea91b893e479">00050</a> + (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(<span class="keywordtype">id</span>)firstKey, ... {   
 <a name="l00051"></a>00051     va_list args;
 <a name="l00052"></a>00052   va_start(args, firstKey);
-<a name="l00053"></a>00053     NSDictionary *dict = [<span class="keyword">self</span> <a class="code" href="interface_n_s_dictionary_07_g_h_n_s_null_08.html#ae86936537d571cb70000839d2a93cbc3">gh_dictionaryWithKeysAndObjectsMaybeNilWithKey</a>:firstKey <a class="code" href="interface_n_s_dictionary_07_g_h_n_s_null_08.html#ae86936537d571cb70000839d2a93cbc3">args</a>:args];
+<a name="l00053"></a>00053     NSDictionary *dict = [<span class="keyword">self</span> gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:firstKey args:args];
 <a name="l00054"></a>00054     va_end(args);
 <a name="l00055"></a>00055     <span class="keywordflow">return</span> dict;
 <a name="l00056"></a>00056 }
@@ -121,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -130,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -56,7 +56,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="contents">
 <!-- doxytag: class="GHNSInvocationProxy" -->
-<p>Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including primitives.  
+<p> 
 <a href="#_details">More...</a></p>
 
 <p><code>#import &lt;<a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>&gt;</code></p>
@@ -75,56 +75,72 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create autoreleased empty invocation proxy.  <a href="#aee06a5dfabaa24c88ccba249bd91c647"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">id&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a172161f321cbeb3d7824ddd9ca36e5b2">target_</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">SEL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#ae09499c1076a0df39417f96703a87609">selector_</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSThread *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a1b96baa304d4f28301c5220b0a659511">thread_</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#ad6652c4ec8dd78d1c64d8c1518c6376e">waitUntilDone_</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSTimeInterval&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a69d146805ec7a0bce0d0af7dd321b636">delay_</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_g_h_n_s_invocation_proxy_delegate-p.html">GHNSInvocationProxyDelegate</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a19a5e08b15829a78da211e939f066313">delegate_</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_h_n_s_invocation_proxy_callback.html">GHNSInvocationProxyCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#ab4c1e371752cf44350a49918490725b0">detachCallback_</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delegate for invocation proxy.  <a href="#ab4c1e371752cf44350a49918490725b0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSInvocation *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a0c2565a4b1840b0cc6172413f74b3e29">invocation_</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a172161f321cbeb3d7824ddd9ca36e5b2"></a><!-- doxytag: member="GHNSInvocationProxy::target_" ref="a172161f321cbeb3d7824ddd9ca36e5b2" args="" -->
+id&nbsp;</td><td class="memItemRight" valign="bottom"><b>target_</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae09499c1076a0df39417f96703a87609"></a><!-- doxytag: member="GHNSInvocationProxy::selector_" ref="ae09499c1076a0df39417f96703a87609" args="" -->
+SEL&nbsp;</td><td class="memItemRight" valign="bottom"><b>selector_</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b96baa304d4f28301c5220b0a659511"></a><!-- doxytag: member="GHNSInvocationProxy::thread_" ref="a1b96baa304d4f28301c5220b0a659511" args="" -->
+NSThread *&nbsp;</td><td class="memItemRight" valign="bottom"><b>thread_</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad6652c4ec8dd78d1c64d8c1518c6376e"></a><!-- doxytag: member="GHNSInvocationProxy::waitUntilDone_" ref="ad6652c4ec8dd78d1c64d8c1518c6376e" args="" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>waitUntilDone_</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69d146805ec7a0bce0d0af7dd321b636"></a><!-- doxytag: member="GHNSInvocationProxy::delay_" ref="a69d146805ec7a0bce0d0af7dd321b636" args="" -->
+NSTimeInterval&nbsp;</td><td class="memItemRight" valign="bottom"><b>delay_</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19a5e08b15829a78da211e939f066313"></a><!-- doxytag: member="GHNSInvocationProxy::delegate_" ref="a19a5e08b15829a78da211e939f066313" args="" -->
+id&lt; <a class="el" href="protocol_g_h_n_s_invocation_proxy_delegate-p.html">GHNSInvocationProxyDelegate</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>delegate_</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab4c1e371752cf44350a49918490725b0"></a><!-- doxytag: member="GHNSInvocationProxy::detachCallback_" ref="ab4c1e371752cf44350a49918490725b0" args="" -->
+<a class="el" href="interface_g_h_n_s_invocation_proxy_callback.html">GHNSInvocationProxyCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#ab4c1e371752cf44350a49918490725b0">detachCallback_</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delegate for invocation proxy. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0c2565a4b1840b0cc6172413f74b3e29"></a><!-- doxytag: member="GHNSInvocationProxy::invocation_" ref="a0c2565a4b1840b0cc6172413f74b3e29" args="" -->
+NSInvocation *&nbsp;</td><td class="memItemRight" valign="bottom"><b>invocation_</b></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">id&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a010e439a502e2d3495a83031b1df484e">target</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">SEL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a91a30653de1185ca2f483c83118ebb58">selector</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Target for invocation.  <a href="#a91a30653de1185ca2f483c83118ebb58"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSInvocation *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a05ee0a403b4283edefb59dc4f55ff262">invocation</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Action for invocation.  <a href="#a05ee0a403b4283edefb59dc4f55ff262"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSThread *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a77bbe2d7fbddf5a85c481e60796d5f8c">thread</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2">waitUntilDone</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Thread to invoke on.  <a href="#a4f23b105e54f3c3bbe6721d7a09b95c2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSTimeInterval&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a98caac92f9f31eaa88dab43a24e3a80a">delay</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Whether to wait until invocation is done.  <a href="#a98caac92f9f31eaa88dab43a24e3a80a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="protocol_g_h_n_s_invocation_proxy_delegate-p.html">GHNSInvocationProxyDelegate</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a9140d8a915fa596382f44fc3678fd4d5">delegate</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delay for invocation.  <a href="#a9140d8a915fa596382f44fc3678fd4d5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_g_h_n_s_invocation_proxy_callback.html">GHNSInvocationProxyCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a0f3cbe45c51f1fffb45be4f2bae535ac">detachCallback</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delegate.  <a href="#a0f3cbe45c51f1fffb45be4f2bae535ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a010e439a502e2d3495a83031b1df484e"></a><!-- doxytag: member="GHNSInvocationProxy::target" ref="a010e439a502e2d3495a83031b1df484e" args="" -->
+id&nbsp;</td><td class="memItemRight" valign="bottom"><b>target</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a91a30653de1185ca2f483c83118ebb58"></a><!-- doxytag: member="GHNSInvocationProxy::selector" ref="a91a30653de1185ca2f483c83118ebb58" args="" -->
+SEL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a91a30653de1185ca2f483c83118ebb58">selector</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Target for invocation. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05ee0a403b4283edefb59dc4f55ff262"></a><!-- doxytag: member="GHNSInvocationProxy::invocation" ref="a05ee0a403b4283edefb59dc4f55ff262" args="" -->
+NSInvocation *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a05ee0a403b4283edefb59dc4f55ff262">invocation</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Action for invocation. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77bbe2d7fbddf5a85c481e60796d5f8c"></a><!-- doxytag: member="GHNSInvocationProxy::thread" ref="a77bbe2d7fbddf5a85c481e60796d5f8c" args="" -->
+NSThread *&nbsp;</td><td class="memItemRight" valign="bottom"><b>thread</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f23b105e54f3c3bbe6721d7a09b95c2"></a><!-- doxytag: member="GHNSInvocationProxy::waitUntilDone" ref="a4f23b105e54f3c3bbe6721d7a09b95c2" args="" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2">waitUntilDone</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Thread to invoke on. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98caac92f9f31eaa88dab43a24e3a80a"></a><!-- doxytag: member="GHNSInvocationProxy::delay" ref="a98caac92f9f31eaa88dab43a24e3a80a" args="" -->
+NSTimeInterval&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a98caac92f9f31eaa88dab43a24e3a80a">delay</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Whether to wait until invocation is done. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9140d8a915fa596382f44fc3678fd4d5"></a><!-- doxytag: member="GHNSInvocationProxy::delegate" ref="a9140d8a915fa596382f44fc3678fd4d5" args="" -->
+id&lt; <a class="el" href="protocol_g_h_n_s_invocation_proxy_delegate-p.html">GHNSInvocationProxyDelegate</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a9140d8a915fa596382f44fc3678fd4d5">delegate</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delay for invocation. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f3cbe45c51f1fffb45be4f2bae535ac"></a><!-- doxytag: member="GHNSInvocationProxy::detachCallback" ref="a0f3cbe45c51f1fffb45be4f2bae535ac" args="" -->
+<a class="el" href="interface_g_h_n_s_invocation_proxy_callback.html">GHNSInvocationProxyCallback</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_invocation_proxy.html#a0f3cbe45c51f1fffb45be4f2bae535ac">detachCallback</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Delegate. <br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including primitives. </p>
+<p>Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including primitives.</p>
 <p>Use with the GHNSObject+Invocation category:</p>
 <div class="fragment"><pre class="fragment"> NSMutableArray *array = ...; 
  <span class="comment">// Adds object to array after 5 seconds</span>
- [[array gh_proxyAfterDelay:5.0] addObject:<span class="stringliteral">@&quot;test&quot;</span>];
+ [[array gh_proxyAfterDelay:5.0] addObject:@&quot;test&quot;];
  
  
- NSThread *<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a77bbe2d7fbddf5a85c481e60796d5f8c">thread</a> = ...
+ NSThread *thread = ...
  <span class="comment">// Remove all objects from another thread</span>
- [[array gh_proxyOnThread:<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a77bbe2d7fbddf5a85c481e60796d5f8c">thread</a> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2" title="Thread to invoke on.">waitUntilDone</a>:NO] removeAllObjects];
+ [[array gh_proxyOnThread:thread waitUntilDone:NO] removeAllObjects];
 </pre></div><p>Create invocation proxy for a NSMutableArray.</p>
 <div class="fragment"><pre class="fragment"> NSMutableArray *array = ...;
- NSThread *<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a77bbe2d7fbddf5a85c481e60796d5f8c">thread</a> = ...
+ NSThread *thread = ...
  
- <a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> *arrayProxy = [<a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> invocation];
- arrayProxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a010e439a502e2d3495a83031b1df484e">target</a> = array;
- arrayProxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a77bbe2d7fbddf5a85c481e60796d5f8c">thread</a> = thread;
+ <a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> *arrayProxy = [<a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a05ee0a403b4283edefb59dc4f55ff262" title="Action for invocation.">invocation</a>];
+ arrayProxy.target = array;
+ arrayProxy.thread = thread;
  arrayProxy.<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a4f23b105e54f3c3bbe6721d7a09b95c2" title="Thread to invoke on.">waitUntilDone</a> = NO;
 
  <span class="comment">// Performs method on thread and doesn&#39;t wait for return</span>
- [arrayProxy addObject:<span class="stringliteral">@&quot;test&quot;</span>];
+ [arrayProxy addObject:@&quot;test&quot;];
 </pre></div> 
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00138">138</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00142">142</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aee06a5dfabaa24c88ccba249bd91c647"></a><!-- doxytag: member="GHNSInvocationProxy::invocation" ref="aee06a5dfabaa24c88ccba249bd91c647" args="()" -->
 <div class="memitem">
@@ -202,11 +218,11 @@ Properties</h2></td></tr>
 
 <p>Create invocation proxy with target and overriding selector. </p>
 <p>Overriding the selector only make sense when using the "argument proxy". For example,</p>
-<div class="fragment"><pre class="fragment"> <span class="keywordtype">id</span> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a010e439a502e2d3495a83031b1df484e">target</a> = ...;
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">id</span> target = ...;
  <span class="keywordtype">SEL</span> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a91a30653de1185ca2f483c83118ebb58" title="Target for invocation.">selector</a> = <span class="keyword">@selector</span>(bar:baz:);
- [[[<a class="code" href="interface_g_h_n_s_invocation_proxy.html" title="Proxy that allows invocation on a separate thread, with a delay and or multiple arguments including p...">GHNSInvocationProxy</a> invocation] prepareWithInvocationTarget:<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a010e439a502e2d3495a83031b1df484e">target</a> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a91a30653de1185ca2f483c83118ebb58" title="Target for invocation.">selector</a>:selector] arg:10 arg:20];
+ [[[<a class="code" href="interface_g_h_n_s_invocation_proxy.html">GHNSInvocationProxy</a> <a class="code" href="interface_g_h_n_s_invocation_proxy.html#a05ee0a403b4283edefb59dc4f55ff262" title="Action for invocation.">invocation</a>] prepareWithInvocationTarget:target selector:selector] arg:10 arg:20];
 </pre></div><p>Will call </p>
-<div class="fragment"><pre class="fragment"> [<a class="code" href="interface_g_h_n_s_invocation_proxy.html#a010e439a502e2d3495a83031b1df484e">target</a> bar:10 baz:20];
+<div class="fragment"><pre class="fragment"> [target bar:10 baz:20];
 </pre></div><p> (and not arg:arg: selector which doesn't exist).</p>
 <p>This allows you to call a selector variable with primitive and multi arguments, whereas before you would have to use a manually constructed NSInvocation.</p>
 <p>See GHNSObject+Invocationgh_argumentProxy for the shorthand.</p>
@@ -223,262 +239,6 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a69d146805ec7a0bce0d0af7dd321b636"></a><!-- doxytag: member="GHNSInvocationProxy::delay_" ref="a69d146805ec7a0bce0d0af7dd321b636" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSTimeInterval) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#a69d146805ec7a0bce0d0af7dd321b636">delay_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00148">148</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a19a5e08b15829a78da211e939f066313"></a><!-- doxytag: member="GHNSInvocationProxy::delegate_" ref="a19a5e08b15829a78da211e939f066313" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt;<a class="el" href="protocol_g_h_n_s_invocation_proxy_delegate-p.html">GHNSInvocationProxyDelegate</a>&gt;) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#a19a5e08b15829a78da211e939f066313">delegate_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00150">150</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab4c1e371752cf44350a49918490725b0"></a><!-- doxytag: member="GHNSInvocationProxy::detachCallback_" ref="ab4c1e371752cf44350a49918490725b0" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (<a class="el" href="interface_g_h_n_s_invocation_proxy_callback.html">GHNSInvocationProxyCallback</a>*) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#ab4c1e371752cf44350a49918490725b0">detachCallback_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Delegate for invocation proxy. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00153">153</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0c2565a4b1840b0cc6172413f74b3e29"></a><!-- doxytag: member="GHNSInvocationProxy::invocation_" ref="a0c2565a4b1840b0cc6172413f74b3e29" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSInvocation*) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#a0c2565a4b1840b0cc6172413f74b3e29">invocation_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00155">155</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae09499c1076a0df39417f96703a87609"></a><!-- doxytag: member="GHNSInvocationProxy::selector_" ref="ae09499c1076a0df39417f96703a87609" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (SEL) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#ae09499c1076a0df39417f96703a87609">selector_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00144">144</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a172161f321cbeb3d7824ddd9ca36e5b2"></a><!-- doxytag: member="GHNSInvocationProxy::target_" ref="a172161f321cbeb3d7824ddd9ca36e5b2" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#a172161f321cbeb3d7824ddd9ca36e5b2">target_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00140">140</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1b96baa304d4f28301c5220b0a659511"></a><!-- doxytag: member="GHNSInvocationProxy::thread_" ref="a1b96baa304d4f28301c5220b0a659511" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSThread*) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#a1b96baa304d4f28301c5220b0a659511">thread_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00146">146</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad6652c4ec8dd78d1c64d8c1518c6376e"></a><!-- doxytag: member="GHNSInvocationProxy::waitUntilDone_" ref="ad6652c4ec8dd78d1c64d8c1518c6376e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) <a class="el" href="interface_g_h_n_s_invocation_proxy.html#ad6652c4ec8dd78d1c64d8c1518c6376e">waitUntilDone_</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00147">147</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="a98caac92f9f31eaa88dab43a24e3a80a"></a><!-- doxytag: member="GHNSInvocationProxy::delay" ref="a98caac92f9f31eaa88dab43a24e3a80a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSTimeInterval) delay<code> [read, write, assign]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Whether to wait until invocation is done. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00163">163</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9140d8a915fa596382f44fc3678fd4d5"></a><!-- doxytag: member="GHNSInvocationProxy::delegate" ref="a9140d8a915fa596382f44fc3678fd4d5" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt;<a class="el" href="protocol_g_h_n_s_invocation_proxy_delegate-p.html">GHNSInvocationProxyDelegate</a>&gt;) delegate<code> [read, write, assign]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Delay for invocation. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00164">164</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a0f3cbe45c51f1fffb45be4f2bae535ac"></a><!-- doxytag: member="GHNSInvocationProxy::detachCallback" ref="a0f3cbe45c51f1fffb45be4f2bae535ac" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (<a class="el" href="interface_g_h_n_s_invocation_proxy_callback.html">GHNSInvocationProxyCallback</a>*) detachCallback<code> [read, write, retain]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Delegate. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00165">165</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a05ee0a403b4283edefb59dc4f55ff262"></a><!-- doxytag: member="GHNSInvocationProxy::invocation" ref="a05ee0a403b4283edefb59dc4f55ff262" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id) invocation<code> [read, retain]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Action for invocation. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00160">160</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a91a30653de1185ca2f483c83118ebb58"></a><!-- doxytag: member="GHNSInvocationProxy::selector" ref="a91a30653de1185ca2f483c83118ebb58" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (SEL) selector<code> [read, write, assign]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Target for invocation. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00159">159</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a010e439a502e2d3495a83031b1df484e"></a><!-- doxytag: member="GHNSInvocationProxy::target" ref="a010e439a502e2d3495a83031b1df484e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id) target<code> [read, write, retain]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00158">158</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a77bbe2d7fbddf5a85c481e60796d5f8c"></a><!-- doxytag: member="GHNSInvocationProxy::thread" ref="a77bbe2d7fbddf5a85c481e60796d5f8c" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSThread*) thread<code> [read, write, retain]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00161">161</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4f23b105e54f3c3bbe6721d7a09b95c2"></a><!-- doxytag: member="GHNSInvocationProxy::waitUntilDone" ref="a4f23b105e54f3c3bbe6721d7a09b95c2" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) waitUntilDone<code> [read, write, assign]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Thread to invoke on. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html#l00162">162</a> of file <a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/gabe/Projects/gh-kit/Classes/<a class="el" href="_g_h_n_s_invocation_proxy_8h_source.html">GHNSInvocationProxy.h</a></li>
 <li>/Users/gabe/Projects/gh-kit/Classes/<a class="el" href="_g_h_n_s_invocation_proxy_8m_source.html">GHNSInvocationProxy.m</a></li>
@@ -489,7 +249,7 @@ Properties</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -498,7 +258,7 @@ Properties</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

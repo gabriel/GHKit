@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/GHViewAnimation.m</h1>  </div>
 </div>
 <div class="contents">
-<a href="_g_h_view_animation_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  GHViewAnimation.m</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">//  From ViewAnimationTest project. (TODO: Find source)</span>
@@ -56,27 +55,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00006"></a>00006 <span class="comment">//  If anyone recognizes this code, let me know.</span>
 <a name="l00007"></a>00007 <span class="comment">//</span>
 <a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;<a class="code" href="_g_h_view_animation_8h.html">GHViewAnimation.h</a>&quot;</span>
+<a name="l00009"></a>00009 <span class="preprocessor">#import &quot;GHViewAnimation.h&quot;</span>
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 
 <a name="l00012"></a>00012 <span class="keyword">@implementation </span><a class="code" href="interface_g_h_view_animation.html" title="Helper for NSView animating.">GHViewAnimation</a>
 <a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="interface_g_h_view_animation.html#aaeefa7d9e7bfa3527c2603b6a89b9e26">00014</a> - (id)initWithContainer:(NSView *)container view:(NSView *)view1 view:(NSView *)view2 {
+<a name="l00014"></a>00014 - (id)initWithContainer:(NSView *)container view:(NSView *)view1 view:(NSView *)view2 {
 <a name="l00015"></a>00015   <span class="keyword">self</span> = [<span class="keyword">super</span> init];
 <a name="l00016"></a>00016   <span class="keywordflow">if</span> (<span class="keyword">self</span>) {
-<a name="l00017"></a>00017     <a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> = container;
+<a name="l00017"></a>00017     container_ = container;
 <a name="l00018"></a>00018     
-<a name="l00019"></a>00019     <a class="code" href="interface_g_h_view_animation.html#a6fde862fd3e4e124dcaa74988c83f3ac">view1_</a> = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">wrapView</a>:view1 <a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">container</a>:container_ <a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">hide</a>:NO];    
-<a name="l00020"></a>00020     <a class="code" href="interface_g_h_view_animation.html#a50a84c77b1c35665d1ac1dd9c7769640">view2_</a> = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">wrapView</a>:view2 <a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">container</a>:container_ <a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">hide</a>:YES];
+<a name="l00019"></a>00019     view1_ = [<span class="keyword">self</span> wrapView:view1 container:container_ hide:NO];    
+<a name="l00020"></a>00020     view2_ = [<span class="keyword">self</span> wrapView:view2 container:container_ hide:YES];
 <a name="l00021"></a>00021     
-<a name="l00022"></a>00022     <a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> = <a class="code" href="interface_g_h_view_animation.html#a50a84c77b1c35665d1ac1dd9c7769640">view2_</a>;
-<a name="l00023"></a>00023         <a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> = <a class="code" href="interface_g_h_view_animation.html#a6fde862fd3e4e124dcaa74988c83f3ac">view1_</a>;
+<a name="l00022"></a>00022     toView_ = view2_;
+<a name="l00023"></a>00023         fromView_ = view1_;
 <a name="l00024"></a>00024 
 <a name="l00025"></a>00025   }
 <a name="l00026"></a>00026   <span class="keywordflow">return</span> <span class="keyword">self</span>;
 <a name="l00027"></a>00027 }
 <a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="interface_g_h_view_animation.html#a57bfb064a52610000d5e288f721bab37">00029</a> - (NSView *)wrapView:(NSView *)view container:(NSView *)container hide:(BOOL)hide {
+<a name="l00029"></a>00029 - (NSView *)wrapView:(NSView *)view container:(NSView *)container hide:(BOOL)hide {
 <a name="l00030"></a>00030   NSRect rect = [container bounds];
 <a name="l00031"></a>00031   NSView *tempView = [[NSView alloc] initWithFrame:rect];
 <a name="l00032"></a>00032   [tempView addSubview:view];
@@ -88,22 +87,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00038"></a>00038   <span class="keywordflow">return</span> [tempView autorelease];
 <a name="l00039"></a>00039 }
 <a name="l00040"></a>00040 
-<a name="l00041"></a><a class="code" href="interface_g_h_view_animation.html#a18b1a5eab1105b562d9c1c7c0b9ac2e0">00041</a> - (void)prepareSubviewOfView:(NSView *)view {
+<a name="l00041"></a>00041 - (void)prepareSubviewOfView:(NSView *)view {
 <a name="l00042"></a>00042     NSView *subview = [[view subviews] objectAtIndex:0];
 <a name="l00043"></a>00043     [subview setFrameOrigin:NSZeroPoint];
 <a name="l00044"></a>00044     <span class="comment">// Reset the mask and let each animation turn on whatever resizing options it needs</span>
 <a name="l00045"></a>00045     [subview setAutoresizingMask:NSViewNotSizable];
 <a name="l00046"></a>00046 }
 <a name="l00047"></a>00047 
-<a name="l00048"></a><a class="code" href="interface_g_h_view_animation.html#a99b76e5a92d2310a779434a03666e789">00048</a> - (void)resetSubviewOfView:(NSView *)view {
+<a name="l00048"></a>00048 - (void)resetSubviewOfView:(NSView *)view {
 <a name="l00049"></a>00049     NSView *subview = [[view subviews] objectAtIndex:0];
 <a name="l00050"></a>00050     [subview setFrameOrigin:NSZeroPoint];
 <a name="l00051"></a>00051     <span class="comment">// Allow the views to resize properly now that the animation is done.</span>
-<a name="l00052"></a>00052     [subview setAutoresizingMask:[<a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> autoresizingMask]];
+<a name="l00052"></a>00052     [subview setAutoresizingMask:[container_ autoresizingMask]];
 <a name="l00053"></a>00053 }
 <a name="l00054"></a>00054 
-<a name="l00055"></a><a class="code" href="interface_g_h_view_animation.html#afff0228270d4fae940f52f726ec571da">00055</a> - (NSViewAnimation *)<a class="code" href="interface_g_h_view_animation.html#afff0228270d4fae940f52f726ec571da">dissolve</a> {
-<a name="l00056"></a>00056   [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setFrame:[<a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> bounds]];
+<a name="l00055"></a>00055 - (NSViewAnimation *)dissolve {
+<a name="l00056"></a>00056   [toView_ setFrame:[container_ bounds]];
 <a name="l00057"></a>00057   <span class="comment">// Note: view does not need to be unhidden manually as in the other cases. This is because the fade in</span>
 <a name="l00058"></a>00058     <span class="comment">// effect will do it for you.</span>
 <a name="l00059"></a>00059 
@@ -118,15 +117,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00068"></a>00068   <span class="keywordflow">return</span> animation;
 <a name="l00069"></a>00069 }
 <a name="l00070"></a>00070 
-<a name="l00071"></a><a class="code" href="interface_g_h_view_animation.html#a7a33efe78b0506fa2f73336cdd35d387">00071</a> - (NSViewAnimation *)<a class="code" href="interface_g_h_view_animation.html#a7a33efe78b0506fa2f73336cdd35d387">moveIn</a> {
-<a name="l00072"></a>00072   NSRect rect = [<a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> bounds];
+<a name="l00071"></a>00071 - (NSViewAnimation *)moveIn {
+<a name="l00072"></a>00072   NSRect rect = [container_ bounds];
 <a name="l00073"></a>00073   <span class="comment">// Set the old view to be resizable on the right side. It will appear as if it&#39;s sitting still</span>
-<a name="l00074"></a>00074   [[[<a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
+<a name="l00074"></a>00074   [[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
 <a name="l00075"></a>00075             
 <a name="l00076"></a>00076     <span class="comment">// Set the new view to be out of bounds on the right side, ready to be animated in</span>
-<a name="l00077"></a>00077     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
+<a name="l00077"></a>00077     [toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
 <a name="l00078"></a>00078     <span class="comment">// If a previous animation resulted in a zero frame, it set it to hidden. We have to unhide it manually.</span>
-<a name="l00079"></a>00079     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setHidden:NO];
+<a name="l00079"></a>00079     [toView_ setHidden:NO];
 <a name="l00080"></a>00080             
 <a name="l00081"></a>00081     NSViewAnimation *animation = <span class="comment">// The left &quot;viewport&quot; shrinks to zero-width on the left side</span><span class="comment">// New view frame is just the viewable area. Since it is currently out of bounds, it will appear to slide</span><span class="comment">// in bounds.</span>[[[NSViewAnimation alloc] initWithViewAnimations:
 <a name="l00082"></a>00082     [NSArray arrayWithObjects:
@@ -140,16 +139,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00090"></a>00090   <span class="keywordflow">return</span> animation;
 <a name="l00091"></a>00091 }
 <a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="interface_g_h_view_animation.html#a4586f831706ae71eb3d769d8ee8cfacd">00093</a> - (NSViewAnimation *)<a class="code" href="interface_g_h_view_animation.html#a4586f831706ae71eb3d769d8ee8cfacd">push</a> {
-<a name="l00094"></a>00094   NSRect rect = [<a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> bounds];
+<a name="l00093"></a>00093 - (NSViewAnimation *)push {
+<a name="l00094"></a>00094   NSRect rect = [container_ bounds];
 <a name="l00095"></a>00095   <span class="comment">// Set old view to be resizable on the left side. It will appear to move to the left since the right margin is</span>
 <a name="l00096"></a>00096     <span class="comment">// fixed.</span>
-<a name="l00097"></a>00097     [[[<a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];          
+<a name="l00097"></a>00097     [[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];          
 <a name="l00098"></a>00098             
 <a name="l00099"></a>00099     <span class="comment">// Set the new view to be out of bounds on the right side, ready to be animated in          </span>
-<a name="l00100"></a>00100     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
+<a name="l00100"></a>00100     [toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
 <a name="l00101"></a>00101     <span class="comment">// If a previous animation resulted in a zero frame, it set it to hidden. We have to unhide it manually.</span>
-<a name="l00102"></a>00102     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setHidden:NO];
+<a name="l00102"></a>00102     [toView_ setHidden:NO];
 <a name="l00103"></a>00103             
 <a name="l00104"></a>00104     NSViewAnimation *animation = <span class="comment">// Old view frame gets moved to the left, out of bounds.</span><span class="comment">// New view frame is just the viewable area. Since it is currently out of bounds, it will appear to slide</span><span class="comment">// in bounds. Note, this is the same as in the &quot;Move In&quot; case.</span>[[[NSViewAnimation alloc] initWithViewAnimations:
 <a name="l00105"></a>00105     [NSArray arrayWithObjects:
@@ -163,21 +162,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00113"></a>00113   <span class="keywordflow">return</span> animation;
 <a name="l00114"></a>00114 }
 <a name="l00115"></a>00115  
-<a name="l00116"></a><a class="code" href="interface_g_h_view_animation.html#a2883e78ee2596053ee6d72ebf19dceb6">00116</a> - (NSViewAnimation *)<a class="code" href="interface_g_h_view_animation.html#a2883e78ee2596053ee6d72ebf19dceb6">reveal</a> {
-<a name="l00117"></a>00117   NSRect rect = [<a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> bounds];
+<a name="l00116"></a>00116 - (NSViewAnimation *)reveal {
+<a name="l00117"></a>00117   NSRect rect = [container_ bounds];
 <a name="l00118"></a>00118   <span class="comment">// Set old view to be resizable on the left side. It will appear to move to the left since the right margin is</span>
 <a name="l00119"></a>00119     <span class="comment">// fixed.</span>
-<a name="l00120"></a>00120     [[[<a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
+<a name="l00120"></a>00120     [[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
 <a name="l00121"></a>00121             
 <a name="l00122"></a>00122     <span class="comment">// Set new view to be resizable on the right side. It will appear to sit still.</span>
-<a name="l00123"></a>00123     [[[<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
+<a name="l00123"></a>00123     [[[toView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
 <a name="l00124"></a>00124             
 <a name="l00125"></a>00125     <span class="comment">// Make the right viewport zero-width view on the right side. It will reveal the view as it expands to the left.</span>
-<a name="l00126"></a>00126     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), 0.0, NSHeight(rect))];
-<a name="l00127"></a>00127     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setHidden:NO];
+<a name="l00126"></a>00126     [toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), 0.0, NSHeight(rect))];
+<a name="l00127"></a>00127     [toView_ setHidden:NO];
 <a name="l00128"></a>00128             
 <a name="l00129"></a>00129     <span class="comment">// Make the subview such that it&#39;s right edge is flush with its superview/viewport.</span>
-<a name="l00130"></a>00130     [[[<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> subviews] objectAtIndex:0] setFrame:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
+<a name="l00130"></a>00130     [[[toView_ subviews] objectAtIndex:0] setFrame:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
 <a name="l00131"></a>00131             
 <a name="l00132"></a>00132   NSViewAnimation *animation = <span class="comment">// The left &quot;viewport&quot; shrinks to zero-width</span><span class="comment">// The right view port expands to encompass the full bounds.</span>[[[NSViewAnimation alloc] initWithViewAnimations:
 <a name="l00133"></a>00133     [NSArray arrayWithObjects:
@@ -190,20 +189,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00140"></a>00140   <span class="keywordflow">return</span> animation;
 <a name="l00141"></a>00141 }
 <a name="l00142"></a>00142 
-<a name="l00143"></a><a class="code" href="interface_g_h_view_animation.html#a813f15db035fdc1402f2aabb856ba99f">00143</a> - (NSViewAnimation *)<a class="code" href="interface_g_h_view_animation.html#a813f15db035fdc1402f2aabb856ba99f">wipe</a> {
-<a name="l00144"></a>00144   NSRect rect = [<a class="code" href="interface_g_h_view_animation.html#ad2a712b1241e320c44be8f18b9f68dc9">container_</a> bounds];
+<a name="l00143"></a>00143 - (NSViewAnimation *)wipe {
+<a name="l00144"></a>00144   NSRect rect = [container_ bounds];
 <a name="l00145"></a>00145   <span class="comment">// Set the old view to be resizable on the right side. It will appear as if it&#39;s sitting still</span>
-<a name="l00146"></a>00146     [[[<a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
+<a name="l00146"></a>00146     [[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
 <a name="l00147"></a>00147             
 <a name="l00148"></a>00148     <span class="comment">// Set new view to be resizable on the right side. It will appear to sit still.</span>
-<a name="l00149"></a>00149     [[[<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
+<a name="l00149"></a>00149     [[[toView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
 <a name="l00150"></a>00150             
 <a name="l00151"></a>00151     <span class="comment">// Make the right viewport zero-wdith</span>
-<a name="l00152"></a>00152     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), 0.0, NSHeight(rect))];
-<a name="l00153"></a>00153     [<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> setHidden:NO];
+<a name="l00152"></a>00152     [toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), 0.0, NSHeight(rect))];
+<a name="l00153"></a>00153     [toView_ setHidden:NO];
 <a name="l00154"></a>00154             
 <a name="l00155"></a>00155     <span class="comment">// Make the subview such that it&#39;s right edge is flush with its superview/viewport.</span>
-<a name="l00156"></a>00156     [[[<a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> subviews] objectAtIndex:0] setFrame:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
+<a name="l00156"></a>00156     [[[toView_ subviews] objectAtIndex:0] setFrame:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
 <a name="l00157"></a>00157 
 <a name="l00158"></a>00158     NSViewAnimation *animation = <span class="comment">// The left &quot;viewport&quot; shrinks to zero-width</span><span class="comment">// The right view port expands to encompass the full bounds.</span>[[[NSViewAnimation alloc] initWithViewAnimations:
 <a name="l00159"></a>00159     [NSArray arrayWithObjects:
@@ -217,30 +216,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00167"></a>00167 }
 <a name="l00168"></a>00168 
 <a name="l00169"></a>00169 
-<a name="l00170"></a><a class="code" href="interface_g_h_view_animation.html#a92697ca2646e69fb34ce84055312a8c9">00170</a> - (void)animate:(<a class="code" href="_g_h_view_animation_8h.html#ad6e0af3e33f5c674f60a4d7fb12f1c90">GHViewAnimationType</a>)animationType {
+<a name="l00170"></a>00170 - (void)animate:(GHViewAnimationType)animationType {
 <a name="l00171"></a>00171 
-<a name="l00172"></a>00172   <span class="keywordflow">if</span> ([<a class="code" href="interface_g_h_view_animation.html#a6fde862fd3e4e124dcaa74988c83f3ac">view1_</a> isHidden]) {
-<a name="l00173"></a>00173         <a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> = <a class="code" href="interface_g_h_view_animation.html#a6fde862fd3e4e124dcaa74988c83f3ac">view1_</a>;
-<a name="l00174"></a>00174         <a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> = <a class="code" href="interface_g_h_view_animation.html#a50a84c77b1c35665d1ac1dd9c7769640">view2_</a>;
+<a name="l00172"></a>00172   <span class="keywordflow">if</span> ([view1_ isHidden]) {
+<a name="l00173"></a>00173         toView_ = view1_;
+<a name="l00174"></a>00174         fromView_ = view2_;
 <a name="l00175"></a>00175     } <span class="keywordflow">else</span> {
-<a name="l00176"></a>00176         <a class="code" href="interface_g_h_view_animation.html#a28ab5b8f16ccc56a86acd6494281bd91">toView_</a> = <a class="code" href="interface_g_h_view_animation.html#a50a84c77b1c35665d1ac1dd9c7769640">view2_</a>;
-<a name="l00177"></a>00177         <a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> = <a class="code" href="interface_g_h_view_animation.html#a6fde862fd3e4e124dcaa74988c83f3ac">view1_</a>;
+<a name="l00176"></a>00176         toView_ = view2_;
+<a name="l00177"></a>00177         fromView_ = view1_;
 <a name="l00178"></a>00178     }
 <a name="l00179"></a>00179 
 <a name="l00180"></a>00180   <span class="comment">// Unset the first responder. Can cause drawing artifacts since the blue glow extends beyond the view&#39;s bounds.</span>
 <a name="l00181"></a>00181     <span class="comment">//[[container_ window] makeFirstResponder:nil];</span>
 <a name="l00182"></a>00182     
 <a name="l00183"></a>00183     <span class="comment">// Turn off all autoresizing for now. Will be twiddling these for different effects.</span>
-<a name="l00184"></a>00184     [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a18b1a5eab1105b562d9c1c7c0b9ac2e0">prepareSubviewOfView</a>:toView_];
-<a name="l00185"></a>00185     [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a18b1a5eab1105b562d9c1c7c0b9ac2e0">prepareSubviewOfView</a>:fromView_];
+<a name="l00184"></a>00184     [<span class="keyword">self</span> prepareSubviewOfView:toView_];
+<a name="l00185"></a>00185     [<span class="keyword">self</span> prepareSubviewOfView:fromView_];
 <a name="l00186"></a>00186   
 <a name="l00187"></a>00187   NSViewAnimation *animation = nil;
 <a name="l00188"></a>00188   <span class="keywordflow">switch</span> (animationType) {
-<a name="l00189"></a>00189         <span class="keywordflow">case</span> <a class="code" href="_g_h_view_animation_8h.html#ad6e0af3e33f5c674f60a4d7fb12f1c90acaef84b46abe7cb5b47102a7d60d04e9">GHViewAnimationDissolve</a>: animation = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#afff0228270d4fae940f52f726ec571da">dissolve</a>]; <span class="keywordflow">break</span>;
-<a name="l00190"></a>00190         <span class="keywordflow">case</span> <a class="code" href="_g_h_view_animation_8h.html#ad6e0af3e33f5c674f60a4d7fb12f1c90af6cfba271a2f854e2256bdda0ee26648">GHViewAnimationMoveIn</a>: animation = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a7a33efe78b0506fa2f73336cdd35d387">moveIn</a>]; <span class="keywordflow">break</span>;
-<a name="l00191"></a>00191     <span class="keywordflow">case</span> <a class="code" href="_g_h_view_animation_8h.html#ad6e0af3e33f5c674f60a4d7fb12f1c90af6905066ea6e6817d33a9d2eca0cb947">GHViewAnimationPush</a>: animation = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a4586f831706ae71eb3d769d8ee8cfacd">push</a>]; <span class="keywordflow">break</span>;
-<a name="l00192"></a>00192         <span class="keywordflow">case</span> <a class="code" href="_g_h_view_animation_8h.html#ad6e0af3e33f5c674f60a4d7fb12f1c90a1a30eb4edc2d2d543f7bdc39dbb48053">GHViewAnimationReveal</a>: animation = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a2883e78ee2596053ee6d72ebf19dceb6">reveal</a>]; <span class="keywordflow">break</span>;
-<a name="l00193"></a>00193         <span class="keywordflow">case</span> <a class="code" href="_g_h_view_animation_8h.html#ad6e0af3e33f5c674f60a4d7fb12f1c90a66f137f1980a1e485ba0929f9815d543">GHViewAnimationWipe</a>: animation = [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a813f15db035fdc1402f2aabb856ba99f">wipe</a>]; <span class="keywordflow">break</span>;
+<a name="l00189"></a>00189         <span class="keywordflow">case</span> GHViewAnimationDissolve: animation = [<span class="keyword">self</span> dissolve]; <span class="keywordflow">break</span>;
+<a name="l00190"></a>00190         <span class="keywordflow">case</span> GHViewAnimationMoveIn: animation = [<span class="keyword">self</span> moveIn]; <span class="keywordflow">break</span>;
+<a name="l00191"></a>00191     <span class="keywordflow">case</span> GHViewAnimationPush: animation = [<span class="keyword">self</span> push]; <span class="keywordflow">break</span>;
+<a name="l00192"></a>00192         <span class="keywordflow">case</span> GHViewAnimationReveal: animation = [<span class="keyword">self</span> reveal]; <span class="keywordflow">break</span>;
+<a name="l00193"></a>00193         <span class="keywordflow">case</span> GHViewAnimationWipe: animation = [<span class="keyword">self</span> wipe]; <span class="keywordflow">break</span>;
 <a name="l00194"></a>00194     <span class="keywordflow">default</span>:
 <a name="l00195"></a>00195       NSAssert(<span class="keyword">false</span>, <span class="stringliteral">@&quot;Invalid animation type&quot;</span>);
 <a name="l00196"></a>00196     }
@@ -250,10 +249,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00200"></a>00200     [animation startAnimation];
 <a name="l00201"></a>00201     
 <a name="l00202"></a>00202     <span class="comment">// Not all the animations above result in the old view being hidden so do it here</span>
-<a name="l00203"></a>00203     [<a class="code" href="interface_g_h_view_animation.html#a2411ba48254059cdb3076161fc23726b">fromView_</a> setHidden:YES];
+<a name="l00203"></a>00203     [fromView_ setHidden:YES];
 <a name="l00204"></a>00204     
-<a name="l00205"></a>00205     [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a99b76e5a92d2310a779434a03666e789">resetSubviewOfView</a>:fromView_];
-<a name="l00206"></a>00206     [<span class="keyword">self</span> <a class="code" href="interface_g_h_view_animation.html#a99b76e5a92d2310a779434a03666e789">resetSubviewOfView</a>:toView_];
+<a name="l00205"></a>00205     [<span class="keyword">self</span> resetSubviewOfView:fromView_];
+<a name="l00206"></a>00206     [<span class="keyword">self</span> resetSubviewOfView:toView_];
 <a name="l00207"></a>00207 }
 <a name="l00208"></a>00208 
 <a name="l00209"></a>00209 <span class="keyword">@end</span>
@@ -264,7 +263,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -273,7 +272,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

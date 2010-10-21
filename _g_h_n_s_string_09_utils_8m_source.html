@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/GHNSString+Utils.m</h1>  </div>
 </div>
 <div class="contents">
-<a href="_g_h_n_s_string_09_utils_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  GHNSString+Utils.m</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">//  Created by Gabe on 3/30/08.</span>
@@ -76,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="comment">//  OTHER DEALINGS IN THE SOFTWARE.</span>
 <a name="l00027"></a>00027 <span class="comment">//</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#import &quot;<a class="code" href="_g_h_n_s_string_09_utils_8h.html">GHNSString+Utils.h</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#import &quot;GHNSString+Utils.h&quot;</span>
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 <span class="preprocessor">#import &lt;CommonCrypto/CommonDigest.h&gt;</span>
 <a name="l00032"></a>00032 
@@ -287,7 +286,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00255"></a>00255     
 <a name="l00256"></a>00256     <span class="keywordflow">while</span>([scanner scanUpToString:(within ? end : start) intoString:&amp;scanned]) {
 <a name="l00257"></a>00257         <span class="keywordflow">if</span> (scanned &amp;&amp; [scanned length] &gt; 0)
-<a name="l00258"></a>00258             [segments addObject:[<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> <a class="code" href="interface_g_h_n_s_string_segment.html#ae2b555d22423202b9b15fc78672f30ab">string</a>:scanned <a class="code" href="interface_g_h_n_s_string_segment.html#ae2b555d22423202b9b15fc78672f30ab">isMatch</a>:within]];
+<a name="l00258"></a>00258             [segments addObject:[<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> string:scanned isMatch:within]];
 <a name="l00259"></a>00259         
 <a name="l00260"></a>00260         [scanner scanString:(within ? end : start) intoString:&amp;scanned]; <span class="comment">// Eat start or end token</span>
 <a name="l00261"></a>00261         scanned = nil;
@@ -295,7 +294,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00263"></a>00263     }
 <a name="l00264"></a>00264     NSUInteger length = [<span class="keyword">self</span> length] - [scanner scanLocation];
 <a name="l00265"></a>00265     <span class="keywordflow">if</span> (length &gt; 0)
-<a name="l00266"></a>00266         [segments addObject:[<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> <a class="code" href="interface_g_h_n_s_string_segment.html#ae2b555d22423202b9b15fc78672f30ab">string</a>:[<span class="keyword">self</span> substringWithRange:NSMakeRange([scanner scanLocation], length)] <a class="code" href="interface_g_h_n_s_string_segment.html#ae2b555d22423202b9b15fc78672f30ab">isMatch</a>:NO]];
+<a name="l00266"></a>00266         [segments addObject:[<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> string:[<span class="keyword">self</span> substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
 <a name="l00267"></a>00267     <span class="keywordflow">return</span> segments;
 <a name="l00268"></a>00268 }
 <a name="l00269"></a>00269 
@@ -338,22 +337,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00306"></a>00306 
 <a name="l00307"></a>00307 <span class="keyword">@implementation </span><a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a>
 <a name="l00308"></a>00308 
-<a name="l00309"></a>00309 <span class="keyword">@synthesize</span> <span class="keywordtype">string</span>=<a class="code" href="interface_g_h_n_s_string_segment.html#ae5d963ca4a8a3c33fd57fc1f34a83447">string_</a>, <a class="code" href="interface_g_h_n_s_string_segment.html#a29eccbeb551bce435780640df44e0434">match</a>=<a class="code" href="interface_g_h_n_s_string_segment.html#ab650e570b61a51aa0a9b08041a1ebdcc">isMatch_</a>;
+<a name="l00309"></a>00309 <span class="keyword">@synthesize</span> <span class="keywordtype">string</span>=string_, match=isMatch_;
 <a name="l00310"></a>00310 
-<a name="l00311"></a><a class="code" href="interface_g_h_n_s_string_segment.html#a12c3239a2e3ea32c076b12c1afcb4d90">00311</a> - (id)initWithString:(NSString *)string isMatch:(BOOL)isMatch {
+<a name="l00311"></a>00311 - (id)initWithString:(NSString *)string isMatch:(BOOL)isMatch {
 <a name="l00312"></a>00312     <span class="keywordflow">if</span> ((<span class="keyword">self</span> = [super init])) {
-<a name="l00313"></a>00313         <a class="code" href="interface_g_h_n_s_string_segment.html#ae5d963ca4a8a3c33fd57fc1f34a83447">string_</a> = [<a class="code" href="interface_g_h_n_s_string_segment.html#aa7dc71ff786cbdbde71e50367b924a6e">string</a> retain];
-<a name="l00314"></a>00314         <a class="code" href="interface_g_h_n_s_string_segment.html#ab650e570b61a51aa0a9b08041a1ebdcc">isMatch_</a> = isMatch;
+<a name="l00313"></a>00313         string_ = [string retain];
+<a name="l00314"></a>00314         isMatch_ = isMatch;
 <a name="l00315"></a>00315     }
 <a name="l00316"></a>00316     <span class="keywordflow">return</span> <span class="keyword">self</span>;    
 <a name="l00317"></a>00317 }
 <a name="l00318"></a>00318 
-<a name="l00319"></a><a class="code" href="interface_g_h_n_s_string_segment.html#ae2b555d22423202b9b15fc78672f30ab">00319</a> + (<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> *)<a class="code" href="interface_g_h_n_s_string_segment.html#aa7dc71ff786cbdbde71e50367b924a6e">string</a>:(NSString *)string isMatch:(BOOL)isMatch {
+<a name="l00319"></a>00319 + (<a class="code" href="interface_g_h_n_s_string_segment.html" title="Class used by gh_substringSegmentsWithinStart:end:">GHNSStringSegment</a> *)string:(NSString *)string isMatch:(BOOL)isMatch {
 <a name="l00320"></a>00320     <span class="keywordflow">return</span> [[[<span class="keyword">self</span> alloc] initWithString:string isMatch:isMatch] autorelease];
 <a name="l00321"></a>00321 }
 <a name="l00322"></a>00322 
 <a name="l00323"></a>00323 - (BOOL)isEqual:(<span class="keywordtype">id</span>)obj {
-<a name="l00324"></a>00324     <span class="keywordflow">return</span> ([[obj <span class="keywordtype">string</span>] isEqual:<a class="code" href="interface_g_h_n_s_string_segment.html#ae5d963ca4a8a3c33fd57fc1f34a83447">string_</a>] &amp;&amp; [obj isMatch] == <a class="code" href="interface_g_h_n_s_string_segment.html#ab650e570b61a51aa0a9b08041a1ebdcc">isMatch_</a>);
+<a name="l00324"></a>00324     <span class="keywordflow">return</span> ([[obj <span class="keywordtype">string</span>] isEqual:string_] &amp;&amp; [obj isMatch] == isMatch_);
 <a name="l00325"></a>00325 }
 <a name="l00326"></a>00326 
 <a name="l00327"></a>00327 - (NSString *)description {
@@ -373,7 +372,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -382,7 +381,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/Swizzle/GHNSObject+Swizzle.m</h1>  </div>
 </div>
 <div class="contents">
-<a href="_g_h_n_s_object_09_swizzle_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  GHUNSObject+Swizzle.m</span>
 <a name="l00003"></a>00003 <span class="comment">//  GHUnit</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
@@ -77,26 +76,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 <span class="comment">//  OTHER DEALINGS IN THE SOFTWARE.</span>
 <a name="l00028"></a>00028 <span class="comment">//</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="preprocessor">#import &quot;<a class="code" href="_g_h_n_s_object_09_swizzle_8h.html">GHNSObject+Swizzle.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#import &quot;GHNSObject+Swizzle.h&quot;</span>
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 <span class="preprocessor">#import &lt;objc/runtime.h&gt;</span>
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034 BOOL <a class="code" href="_g_h_n_s_object_09_swizzle_8m.html#aa2dfe2e75115a1b283b3bdad4f379699">GH_PerformSwizzle</a>(Class klass, <span class="keywordtype">SEL</span> origSel, <span class="keywordtype">SEL</span> altSel, BOOL forInstance);
+<a name="l00034"></a>00034 BOOL GH_PerformSwizzle(Class klass, <span class="keywordtype">SEL</span> origSel, <span class="keywordtype">SEL</span> altSel, BOOL forInstance);
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keyword">@implementation </span>NSObject(GHSwizzle)
 <a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="interface_n_s_object_07_g_h_swizzle_08.html#a4c461ee1039c4204b295c33ea9d56d2e">00038</a> + (void)gh_swizzleMethod:(<span class="keywordtype">SEL</span>)original withMethod:(<span class="keywordtype">SEL</span>)alternate {
-<a name="l00039"></a>00039     <a class="code" href="_g_h_n_s_object_09_swizzle_8m.html#aa2dfe2e75115a1b283b3bdad4f379699">GH_PerformSwizzle</a>([<span class="keyword">self</span> <span class="keyword">class</span>], original, alternate, YES);
+<a name="l00038"></a>00038 + (void)gh_swizzleMethod:(<span class="keywordtype">SEL</span>)original withMethod:(<span class="keywordtype">SEL</span>)alternate {
+<a name="l00039"></a>00039     GH_PerformSwizzle([<span class="keyword">self</span> <span class="keyword">class</span>], original, alternate, YES);
 <a name="l00040"></a>00040 }
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="interface_n_s_object_07_g_h_swizzle_08.html#a428c320fe208ad02a13abbb9445d6f64">00042</a> + (void)gh_swizzleClassMethod:(<span class="keywordtype">SEL</span>)original withClassMethod:(<span class="keywordtype">SEL</span>)alternate {
-<a name="l00043"></a>00043     <a class="code" href="_g_h_n_s_object_09_swizzle_8m.html#aa2dfe2e75115a1b283b3bdad4f379699">GH_PerformSwizzle</a>([<span class="keyword">self</span> <span class="keyword">class</span>], original, alternate, NO);
+<a name="l00042"></a>00042 + (void)gh_swizzleClassMethod:(<span class="keywordtype">SEL</span>)original withClassMethod:(<span class="keywordtype">SEL</span>)alternate {
+<a name="l00043"></a>00043     GH_PerformSwizzle([<span class="keyword">self</span> <span class="keyword">class</span>], original, alternate, NO);
 <a name="l00044"></a>00044 }
 <a name="l00045"></a>00045 
 <a name="l00046"></a>00046 <span class="keyword">@end</span>
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 <span class="comment">// @see http://www.cocoadev.com/index.pl?MethodSwizzling</span>
-<a name="l00049"></a><a class="code" href="_g_h_n_s_object_09_swizzle_8m.html#aa2dfe2e75115a1b283b3bdad4f379699">00049</a> BOOL <a class="code" href="_g_h_n_s_object_09_swizzle_8m.html#aa2dfe2e75115a1b283b3bdad4f379699">GH_PerformSwizzle</a>(Class klass, <span class="keywordtype">SEL</span> origSel, <span class="keywordtype">SEL</span> altSel, BOOL forInstance) {
+<a name="l00049"></a>00049 BOOL GH_PerformSwizzle(Class klass, <span class="keywordtype">SEL</span> origSel, <span class="keywordtype">SEL</span> altSel, BOOL forInstance) {
 <a name="l00050"></a>00050     
 <a name="l00051"></a>00051     <span class="comment">// Make sure the class isn&#39;t nil</span>
 <a name="l00052"></a>00052     <span class="keywordflow">if</span> (klass == nil)
@@ -182,7 +181,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -191,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

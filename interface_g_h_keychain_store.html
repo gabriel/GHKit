@@ -71,33 +71,28 @@ Inheritance diagram for GHKeychainStore:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">id&lt; <a class="el" href="interface_g_h_keychain_store.html">GHKeychainStore</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_keychain_store.html#ac8c4a6f63da820c08d1e871bf0a206e0">_keychainStore</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac8c4a6f63da820c08d1e871bf0a206e0"></a><!-- doxytag: member="GHKeychainStore::_keychainStore" ref="ac8c4a6f63da820c08d1e871bf0a206e0" args="" -->
+id&lt; <a class="el" href="interface_g_h_keychain_store.html">GHKeychainStore</a> &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><b>_keychainStore</b></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Keychain store adapter which works on both iOS and Mac OS X. </p>
 <p>Forwards to:</p>
 <ul>
 <li>GHEMKeychainStore for Mac OS X.</li>
-<li>GHSFHFKeychainStore for iPhone. </li>
+<li>GHSFHFKeychainStore for iPhone.</li>
 </ul>
-
-<p>Definition at line <a class="el" href="_g_h_keychain_store_8h_source.html#l00070">70</a> of file <a class="el" href="_g_h_keychain_store_8h_source.html">GHKeychainStore.h</a>.</p>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ac8c4a6f63da820c08d1e871bf0a206e0"></a><!-- doxytag: member="GHKeychainStore::_keychainStore" ref="ac8c4a6f63da820c08d1e871bf0a206e0" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt;<a class="el" href="interface_g_h_keychain_store.html">GHKeychainStore</a>&gt;) <a class="el" href="interface_g_h_keychain_store.html#ac8c4a6f63da820c08d1e871bf0a206e0">_keychainStore</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_keychain_store_8h_source.html#l00071">71</a> of file <a class="el" href="_g_h_keychain_store_8h_source.html">GHKeychainStore.h</a>.</p>
-
-</div>
-</div>
+<p>Secret from keychain:</p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="interface_g_h_keychain_store.html" title="Keychain store adapter which works on both iOS and Mac OS X.">GHKeychainStore</a> *keyChainStore = [[<a class="code" href="interface_g_h_keychain_store.html" title="Keychain store adapter which works on both iOS and Mac OS X.">GHKeychainStore</a> alloc] init];
+ NSError *error = nil;
+ NSString *secret = [keyChainStore <a class="code" href="protocol_g_h_keychain_store-p.html#a5afca71916fdf2115a56a9c22c142c41" title="Get secret from keychain.">secretFromKeychainForServiceName</a>:@&quot;MyApp&quot; <a class="code" href="protocol_g_h_keychain_store-p.html#a5afca71916fdf2115a56a9c22c142c41" title="Get secret from keychain.">key</a>:&quot;password&quot; <a class="code" href="protocol_g_h_keychain_store-p.html#a5afca71916fdf2115a56a9c22c142c41" title="Get secret from keychain.">error</a>:&amp;error];
+ <span class="keywordflow">if</span> (!secret) NSLog(<span class="stringliteral">@&quot;Error: %@&quot;</span>, [error localizedDescription];
+</pre></div><p>Save to keychain:</p>
+<div class="fragment"><pre class="fragment"> <a class="code" href="interface_g_h_keychain_store.html" title="Keychain store adapter which works on both iOS and Mac OS X.">GHKeychainStore</a> *keyChainStore = [[<a class="code" href="interface_g_h_keychain_store.html" title="Keychain store adapter which works on both iOS and Mac OS X.">GHKeychainStore</a> alloc] init];
+ NSError *error = nil;
+ BOOL saved = [keyChainStore <a class="code" href="protocol_g_h_keychain_store-p.html#a44edc0bf72ebfb46520feef74c6af0d8" title="Save secret to keychain.">saveToKeychainWithServiceName</a>:@&quot;MyApp&quot; <a class="code" href="protocol_g_h_keychain_store-p.html#a44edc0bf72ebfb46520feef74c6af0d8" title="Save secret to keychain.">key</a>:&quot;password&quot; <a class="code" href="protocol_g_h_keychain_store-p.html#a44edc0bf72ebfb46520feef74c6af0d8" title="Save secret to keychain.">secret</a>:&quot;12345&quot; <a class="code" href="protocol_g_h_keychain_store-p.html#a44edc0bf72ebfb46520feef74c6af0d8" title="Save secret to keychain.">error</a>:&amp;error];
+ <span class="keywordflow">if</span> (!saved) NSLog(<span class="stringliteral">@&quot;Error: %@&quot;</span>, [error localizedDescription];
+</pre></div> 
+<p>Definition at line <a class="el" href="_g_h_keychain_store_8h_source.html#l00090">90</a> of file <a class="el" href="_g_h_keychain_store_8h_source.html">GHKeychainStore.h</a>.</p>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/Users/gabe/Projects/gh-kit/Classes/<a class="el" href="_g_h_keychain_store_8h_source.html">GHKeychainStore.h</a></li>
 </ul>
@@ -107,7 +102,7 @@ Protected Attributes</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,7 +111,7 @@ Protected Attributes</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

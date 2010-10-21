@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/GHNSMutableDictionary+Utils.m</h1>  </div>
 </div>
 <div class="contents">
-<a href="_g_h_n_s_mutable_dictionary_09_utils_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  GHNSMutableDictionary+Utils.m</span>
 <a name="l00003"></a>00003 <span class="comment">//  GHKit</span>
 <a name="l00004"></a>00004 <span class="comment">//</span>
@@ -77,23 +76,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 <span class="comment">//  OTHER DEALINGS IN THE SOFTWARE.</span>
 <a name="l00028"></a>00028 <span class="comment">//</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="preprocessor">#import &quot;<a class="code" href="_g_h_n_s_mutable_dictionary_09_utils_8h.html">GHNSMutableDictionary+Utils.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#import &quot;GHNSMutableDictionary+Utils.h&quot;</span>
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 <span class="keyword">@implementation </span>NSMutableDictionary(GHUtils)
 <a name="l00033"></a>00033 
-<a name="l00034"></a><a class="code" href="interface_n_s_mutable_dictionary_07_g_h_utils_08.html#ab93b88de169091e08f7496a52b04493d">00034</a> - (void)gh_setDouble:(<span class="keywordtype">double</span>)d forKey:(<span class="keywordtype">id</span>)key {
+<a name="l00034"></a>00034 - (void)gh_setDouble:(<span class="keywordtype">double</span>)d forKey:(<span class="keywordtype">id</span>)key {
 <a name="l00035"></a>00035     [<span class="keyword">self</span> setObject:[NSNumber numberWithDouble:d] forKey:key];
 <a name="l00036"></a>00036 }
 <a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="interface_n_s_mutable_dictionary_07_g_h_utils_08.html#ae59fb3f5d98b8f421beedc9449dea99b">00038</a> - (void)gh_setInteger:(NSInteger)n forKey:(<span class="keywordtype">id</span>)key {
+<a name="l00038"></a>00038 - (void)gh_setInteger:(NSInteger)n forKey:(<span class="keywordtype">id</span>)key {
 <a name="l00039"></a>00039     [<span class="keyword">self</span> setObject:[NSNumber numberWithInteger:n] forKey:key];
 <a name="l00040"></a>00040 }    
 <a name="l00041"></a>00041 
-<a name="l00042"></a><a class="code" href="interface_n_s_mutable_dictionary_07_g_h_utils_08.html#a29f95ff75a6cd98977387c8ac579ae1b">00042</a> - (void)gh_setBool:(BOOL)b forKey:(<span class="keywordtype">id</span>)key {
+<a name="l00042"></a>00042 - (void)gh_setBool:(BOOL)b forKey:(<span class="keywordtype">id</span>)key {
 <a name="l00043"></a>00043     [<span class="keyword">self</span> setObject:[NSNumber numberWithBool:b] forKey:key];
 <a name="l00044"></a>00044 }
 <a name="l00045"></a>00045 
-<a name="l00046"></a><a class="code" href="interface_n_s_mutable_dictionary_07_g_h_utils_08.html#ad5e119ade39524d17320b6b52f1775ee">00046</a> - (void)gh_setObjectMaybeNil:(<span class="keywordtype">id</span>)object forKey:(<span class="keywordtype">id</span>)key {
+<a name="l00046"></a>00046 - (void)gh_setObjectMaybeNil:(<span class="keywordtype">id</span>)object forKey:(<span class="keywordtype">id</span>)key {
 <a name="l00047"></a>00047     <span class="keywordflow">if</span> (!<span class="keywordtype">object</span>) <span class="keywordtype">object</span> = [NSNull null];
 <a name="l00048"></a>00048     [<span class="keyword">self</span> setObject:object forKey:key];
 <a name="l00049"></a>00049 }
@@ -116,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -125,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

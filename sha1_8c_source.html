@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/sha1.c</h1>  </div>
 </div>
 <div class="contents">
-<a href="sha1_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
 <a name="l00002"></a>00002 <span class="comment"> SHA-1 in C</span>
 <a name="l00003"></a>00003 <span class="comment"> By Steve Reid &lt;steve@edmweb.com&gt;</span>
 <a name="l00004"></a>00004 <span class="comment"> 100% Public Domain</span>
@@ -72,9 +71,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="preprocessor">#include &lt;string.h&gt;</span>
 <a name="l00024"></a>00024 
-<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="sha1_8h.html">sha1.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;sha1.h&quot;</span>
 <a name="l00026"></a>00026 
-<a name="l00027"></a><a class="code" href="sha1_8c.html#af1373930110e4f86cb1f4bc6d44a66ee">00027</a> <span class="preprocessor">#define rol(value, bits) (((value) &lt;&lt; (bits)) | ((value) &gt;&gt; (32 - (bits))))</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#define rol(value, bits) (((value) &lt;&lt; (bits)) | ((value) &gt;&gt; (32 - (bits))))</span>
 <a name="l00028"></a>00028 <span class="preprocessor"></span>
 <a name="l00029"></a>00029 <span class="comment">/* blk0() and blk() perform the initial expand. */</span>
 <a name="l00030"></a>00030 <span class="comment">/* I got the idea of expanding during the round function from SSLeay */</span>
@@ -82,22 +81,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00032"></a>00032 <span class="preprocessor"></span><span class="preprocessor">#define blk0(i) (block-&gt;l[i] = (rol(block-&gt;l[i],24)&amp;0xFF00FF00) \</span>
 <a name="l00033"></a>00033 <span class="preprocessor">|(rol(block-&gt;l[i],8)&amp;0x00FF00FF))</span>
 <a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#else</span>
-<a name="l00035"></a><a class="code" href="sha1_8c.html#a1a75de24d0277c5319098c218efaef2d">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define blk0(i) block-&gt;l[i]</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#define blk0(i) block-&gt;l[i]</span>
 <a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
-<a name="l00037"></a><a class="code" href="sha1_8c.html#abd06ff24e9f6f5f0a9c32a1cba4b0f9c">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define blk(i) (block-&gt;l[i&amp;15] = rol(block-&gt;l[(i+13)&amp;15]^block-&gt;l[(i+8)&amp;15] \</span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#define blk(i) (block-&gt;l[i&amp;15] = rol(block-&gt;l[(i+13)&amp;15]^block-&gt;l[(i+8)&amp;15] \</span>
 <a name="l00038"></a>00038 <span class="preprocessor">^block-&gt;l[(i+2)&amp;15]^block-&gt;l[i&amp;15],1))</span>
 <a name="l00039"></a>00039 <span class="preprocessor"></span>
 <a name="l00040"></a>00040 <span class="comment">/* (R0+R1), R2, R3, R4 are the different operations used in SHA1 */</span>
-<a name="l00041"></a><a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">00041</a> <span class="preprocessor">#define R0(v,w,x,y,z,i) z+=((w&amp;(x^y))^y)+blk0(i)+0x5A827999+rol(v,5);w=rol(w,30);</span>
-<a name="l00042"></a><a class="code" href="sha1_8c.html#a2628f8af7bf67ca052200537279f855a">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define R1(v,w,x,y,z,i) z+=((w&amp;(x^y))^y)+blk(i)+0x5A827999+rol(v,5);w=rol(w,30);</span>
-<a name="l00043"></a><a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define R2(v,w,x,y,z,i) z+=(w^x^y)+blk(i)+0x6ED9EBA1+rol(v,5);w=rol(w,30);</span>
-<a name="l00044"></a><a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define R3(v,w,x,y,z,i) z+=(((w|x)&amp;y)|(w&amp;x))+blk(i)+0x8F1BBCDC+rol(v,5);w=rol(w,30);</span>
-<a name="l00045"></a><a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define R4(v,w,x,y,z,i) z+=(w^x^y)+blk(i)+0xCA62C1D6+rol(v,5);w=rol(w,30);</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#define R0(v,w,x,y,z,i) z+=((w&amp;(x^y))^y)+blk0(i)+0x5A827999+rol(v,5);w=rol(w,30);</span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="preprocessor">#define R1(v,w,x,y,z,i) z+=((w&amp;(x^y))^y)+blk(i)+0x5A827999+rol(v,5);w=rol(w,30);</span>
+<a name="l00043"></a>00043 <span class="preprocessor"></span><span class="preprocessor">#define R2(v,w,x,y,z,i) z+=(w^x^y)+blk(i)+0x6ED9EBA1+rol(v,5);w=rol(w,30);</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span><span class="preprocessor">#define R3(v,w,x,y,z,i) z+=(((w|x)&amp;y)|(w&amp;x))+blk(i)+0x8F1BBCDC+rol(v,5);w=rol(w,30);</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#define R4(v,w,x,y,z,i) z+=(w^x^y)+blk(i)+0xCA62C1D6+rol(v,5);w=rol(w,30);</span>
 <a name="l00046"></a>00046 <span class="preprocessor"></span>
 <a name="l00047"></a>00047 
 <a name="l00048"></a>00048 <span class="comment">/* Hash a single 512-bit block. This is the core of the algorithm. */</span>
 <a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="sha1_8c.html#adb21fade3cf06e6a21f6b86bfa6d5117">00050</a> <span class="keywordtype">void</span> <a class="code" href="sha1_8c.html#adb21fade3cf06e6a21f6b86bfa6d5117">SHA1Transform</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> state[5], <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> buffer[64])
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> SHA1Transform(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> state[5], <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> buffer[64])
 <a name="l00051"></a>00051 {
 <a name="l00052"></a>00052   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> a, b, c, d, e;
 <a name="l00053"></a>00053   <span class="keyword">typedef</span> <span class="keyword">union </span>{
@@ -119,26 +118,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00069"></a>00069   d = state[3];
 <a name="l00070"></a>00070   e = state[4];
 <a name="l00071"></a>00071   <span class="comment">/* 4 rounds of 20 operations each. Loop unrolled. */</span>
-<a name="l00072"></a>00072   <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(a,b,c,d,e, 0); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(e,a,b,c,d, 1); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(d,e,a,b,c, 2); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(c,d,e,a,b, 3);
-<a name="l00073"></a>00073   <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(b,c,d,e,a, 4); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(a,b,c,d,e, 5); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(e,a,b,c,d, 6); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(d,e,a,b,c, 7);
-<a name="l00074"></a>00074   <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(c,d,e,a,b, 8); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(b,c,d,e,a, 9); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(a,b,c,d,e,10); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(e,a,b,c,d,11);
-<a name="l00075"></a>00075   <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(d,e,a,b,c,12); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(c,d,e,a,b,13); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(b,c,d,e,a,14); <a class="code" href="sha1_8c.html#a8ac24a09e1273548828d3cc9436f9bc7">R0</a>(a,b,c,d,e,15);
-<a name="l00076"></a>00076   <a class="code" href="sha1_8c.html#a2628f8af7bf67ca052200537279f855a">R1</a>(e,a,b,c,d,16); <a class="code" href="sha1_8c.html#a2628f8af7bf67ca052200537279f855a">R1</a>(d,e,a,b,c,17); <a class="code" href="sha1_8c.html#a2628f8af7bf67ca052200537279f855a">R1</a>(c,d,e,a,b,18); <a class="code" href="sha1_8c.html#a2628f8af7bf67ca052200537279f855a">R1</a>(b,c,d,e,a,19);
-<a name="l00077"></a>00077   <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(a,b,c,d,e,20); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(e,a,b,c,d,21); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(d,e,a,b,c,22); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(c,d,e,a,b,23);
-<a name="l00078"></a>00078   <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(b,c,d,e,a,24); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(a,b,c,d,e,25); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(e,a,b,c,d,26); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(d,e,a,b,c,27);
-<a name="l00079"></a>00079   <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(c,d,e,a,b,28); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(b,c,d,e,a,29); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(a,b,c,d,e,30); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(e,a,b,c,d,31);
-<a name="l00080"></a>00080   <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(d,e,a,b,c,32); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(c,d,e,a,b,33); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(b,c,d,e,a,34); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(a,b,c,d,e,35);
-<a name="l00081"></a>00081   <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(e,a,b,c,d,36); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(d,e,a,b,c,37); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(c,d,e,a,b,38); <a class="code" href="sha1_8c.html#a774229b80509be0e9e0a1d9819580224">R2</a>(b,c,d,e,a,39);
-<a name="l00082"></a>00082   <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(a,b,c,d,e,40); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(e,a,b,c,d,41); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(d,e,a,b,c,42); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(c,d,e,a,b,43);
-<a name="l00083"></a>00083   <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(b,c,d,e,a,44); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(a,b,c,d,e,45); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(e,a,b,c,d,46); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(d,e,a,b,c,47);
-<a name="l00084"></a>00084   <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(c,d,e,a,b,48); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(b,c,d,e,a,49); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(a,b,c,d,e,50); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(e,a,b,c,d,51);
-<a name="l00085"></a>00085   <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(d,e,a,b,c,52); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(c,d,e,a,b,53); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(b,c,d,e,a,54); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(a,b,c,d,e,55);
-<a name="l00086"></a>00086   <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(e,a,b,c,d,56); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(d,e,a,b,c,57); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(c,d,e,a,b,58); <a class="code" href="sha1_8c.html#ac0b8b342432d17717ff1020d10cf0eea">R3</a>(b,c,d,e,a,59);
-<a name="l00087"></a>00087   <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(a,b,c,d,e,60); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(e,a,b,c,d,61); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(d,e,a,b,c,62); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(c,d,e,a,b,63);
-<a name="l00088"></a>00088   <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(b,c,d,e,a,64); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(a,b,c,d,e,65); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(e,a,b,c,d,66); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(d,e,a,b,c,67);
-<a name="l00089"></a>00089   <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(c,d,e,a,b,68); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(b,c,d,e,a,69); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(a,b,c,d,e,70); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(e,a,b,c,d,71);
-<a name="l00090"></a>00090   <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(d,e,a,b,c,72); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(c,d,e,a,b,73); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(b,c,d,e,a,74); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(a,b,c,d,e,75);
-<a name="l00091"></a>00091   <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(e,a,b,c,d,76); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(d,e,a,b,c,77); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(c,d,e,a,b,78); <a class="code" href="sha1_8c.html#af77ddc8894422d2af2adbd4e71e55d1f">R4</a>(b,c,d,e,a,79);
+<a name="l00072"></a>00072   R0(a,b,c,d,e, 0); R0(e,a,b,c,d, 1); R0(d,e,a,b,c, 2); R0(c,d,e,a,b, 3);
+<a name="l00073"></a>00073   R0(b,c,d,e,a, 4); R0(a,b,c,d,e, 5); R0(e,a,b,c,d, 6); R0(d,e,a,b,c, 7);
+<a name="l00074"></a>00074   R0(c,d,e,a,b, 8); R0(b,c,d,e,a, 9); R0(a,b,c,d,e,10); R0(e,a,b,c,d,11);
+<a name="l00075"></a>00075   R0(d,e,a,b,c,12); R0(c,d,e,a,b,13); R0(b,c,d,e,a,14); R0(a,b,c,d,e,15);
+<a name="l00076"></a>00076   R1(e,a,b,c,d,16); R1(d,e,a,b,c,17); R1(c,d,e,a,b,18); R1(b,c,d,e,a,19);
+<a name="l00077"></a>00077   R2(a,b,c,d,e,20); R2(e,a,b,c,d,21); R2(d,e,a,b,c,22); R2(c,d,e,a,b,23);
+<a name="l00078"></a>00078   R2(b,c,d,e,a,24); R2(a,b,c,d,e,25); R2(e,a,b,c,d,26); R2(d,e,a,b,c,27);
+<a name="l00079"></a>00079   R2(c,d,e,a,b,28); R2(b,c,d,e,a,29); R2(a,b,c,d,e,30); R2(e,a,b,c,d,31);
+<a name="l00080"></a>00080   R2(d,e,a,b,c,32); R2(c,d,e,a,b,33); R2(b,c,d,e,a,34); R2(a,b,c,d,e,35);
+<a name="l00081"></a>00081   R2(e,a,b,c,d,36); R2(d,e,a,b,c,37); R2(c,d,e,a,b,38); R2(b,c,d,e,a,39);
+<a name="l00082"></a>00082   R3(a,b,c,d,e,40); R3(e,a,b,c,d,41); R3(d,e,a,b,c,42); R3(c,d,e,a,b,43);
+<a name="l00083"></a>00083   R3(b,c,d,e,a,44); R3(a,b,c,d,e,45); R3(e,a,b,c,d,46); R3(d,e,a,b,c,47);
+<a name="l00084"></a>00084   R3(c,d,e,a,b,48); R3(b,c,d,e,a,49); R3(a,b,c,d,e,50); R3(e,a,b,c,d,51);
+<a name="l00085"></a>00085   R3(d,e,a,b,c,52); R3(c,d,e,a,b,53); R3(b,c,d,e,a,54); R3(a,b,c,d,e,55);
+<a name="l00086"></a>00086   R3(e,a,b,c,d,56); R3(d,e,a,b,c,57); R3(c,d,e,a,b,58); R3(b,c,d,e,a,59);
+<a name="l00087"></a>00087   R4(a,b,c,d,e,60); R4(e,a,b,c,d,61); R4(d,e,a,b,c,62); R4(c,d,e,a,b,63);
+<a name="l00088"></a>00088   R4(b,c,d,e,a,64); R4(a,b,c,d,e,65); R4(e,a,b,c,d,66); R4(d,e,a,b,c,67);
+<a name="l00089"></a>00089   R4(c,d,e,a,b,68); R4(b,c,d,e,a,69); R4(a,b,c,d,e,70); R4(e,a,b,c,d,71);
+<a name="l00090"></a>00090   R4(d,e,a,b,c,72); R4(c,d,e,a,b,73); R4(b,c,d,e,a,74); R4(a,b,c,d,e,75);
+<a name="l00091"></a>00091   R4(e,a,b,c,d,76); R4(d,e,a,b,c,77); R4(c,d,e,a,b,78); R4(b,c,d,e,a,79);
 <a name="l00092"></a>00092   <span class="comment">/* Add the working vars back into context.state[] */</span>
 <a name="l00093"></a>00093   state[0] += a;
 <a name="l00094"></a>00094   state[1] += b;
@@ -153,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00103"></a>00103 
 <a name="l00104"></a>00104 <span class="comment">/* SHA1Init - Initialize new context */</span>
 <a name="l00105"></a>00105 
-<a name="l00106"></a><a class="code" href="sha1_8c.html#a159a97b3039391403b8d9b0d240a9640">00106</a> <span class="keywordtype">void</span> <a class="code" href="sha1_8c.html#a159a97b3039391403b8d9b0d240a9640">SHA1Init</a>(SHA1_CTX* context)
+<a name="l00106"></a>00106 <span class="keywordtype">void</span> SHA1Init(SHA1_CTX* context)
 <a name="l00107"></a>00107 {
 <a name="l00108"></a>00108   <span class="comment">/* SHA1 initialization constants */</span>
 <a name="l00109"></a>00109   context-&gt;state[0] = 0x67452301;
@@ -167,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00117"></a>00117 
 <a name="l00118"></a>00118 <span class="comment">/* Run your data through this. */</span>
 <a name="l00119"></a>00119 
-<a name="l00120"></a><a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">00120</a> <span class="keywordtype">void</span> <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(SHA1_CTX* context, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len)
+<a name="l00120"></a>00120 <span class="keywordtype">void</span> SHA1Update(SHA1_CTX* context, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* data, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> len)
 <a name="l00121"></a>00121 {
 <a name="l00122"></a>00122   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i, j;
 <a name="l00123"></a>00123   
@@ -176,9 +175,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00126"></a>00126   context-&gt;count[1] += (len &gt;&gt; 29);
 <a name="l00127"></a>00127   <span class="keywordflow">if</span> ((j + len) &gt; 63) {
 <a name="l00128"></a>00128     memcpy(&amp;context-&gt;buffer[j], data, (i = 64-j));
-<a name="l00129"></a>00129     <a class="code" href="sha1_8c.html#adb21fade3cf06e6a21f6b86bfa6d5117">SHA1Transform</a>(context-&gt;state, context-&gt;buffer);
+<a name="l00129"></a>00129     SHA1Transform(context-&gt;state, context-&gt;buffer);
 <a name="l00130"></a>00130     <span class="keywordflow">for</span> ( ; i + 63 &lt; len; i += 64) {
-<a name="l00131"></a>00131       <a class="code" href="sha1_8c.html#adb21fade3cf06e6a21f6b86bfa6d5117">SHA1Transform</a>(context-&gt;state, &amp;data[i]);
+<a name="l00131"></a>00131       SHA1Transform(context-&gt;state, &amp;data[i]);
 <a name="l00132"></a>00132     }
 <a name="l00133"></a>00133     j = 0;
 <a name="l00134"></a>00134   }
@@ -189,7 +188,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140 <span class="comment">/* Add padding and return the message digest. */</span>
 <a name="l00141"></a>00141 
-<a name="l00142"></a><a class="code" href="sha1_8c.html#aa58f279c51d82e868c9b0f7b1b7d08f4">00142</a> <span class="keywordtype">void</span> <a class="code" href="sha1_8c.html#aa58f279c51d82e868c9b0f7b1b7d08f4">SHA1Final</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> digest[20], SHA1_CTX* context)
+<a name="l00142"></a>00142 <span class="keywordtype">void</span> SHA1Final(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> digest[20], SHA1_CTX* context)
 <a name="l00143"></a>00143 {
 <a name="l00144"></a>00144   <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i;
 <a name="l00145"></a>00145   <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> finalcount[8];
@@ -198,11 +197,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00148"></a>00148     finalcount[i] = (<span class="keywordtype">unsigned</span> char)((context-&gt;count[(i &gt;= 4 ? 0 : 1)]
 <a name="l00149"></a>00149                                      &gt;&gt; ((3-(i &amp; 3)) * 8) ) &amp; 255);  <span class="comment">/* Endian independent */</span>
 <a name="l00150"></a>00150   }
-<a name="l00151"></a>00151   <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(context, (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)<span class="stringliteral">&quot;\200&quot;</span>, 1);
+<a name="l00151"></a>00151   SHA1Update(context, (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)<span class="stringliteral">&quot;\200&quot;</span>, 1);
 <a name="l00152"></a>00152   <span class="keywordflow">while</span> ((context-&gt;count[0] &amp; 504) != 448) {
-<a name="l00153"></a>00153     <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(context, (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)<span class="stringliteral">&quot;\0&quot;</span>, 1);
+<a name="l00153"></a>00153     SHA1Update(context, (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)<span class="stringliteral">&quot;\0&quot;</span>, 1);
 <a name="l00154"></a>00154   }
-<a name="l00155"></a>00155   <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(context, finalcount, 8);  <span class="comment">/* Should cause a SHA1Transform() */</span>
+<a name="l00155"></a>00155   SHA1Update(context, finalcount, 8);  <span class="comment">/* Should cause a SHA1Transform() */</span>
 <a name="l00156"></a>00156   <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++) {
 <a name="l00157"></a>00157     digest[i] = (<span class="keywordtype">unsigned</span> char)
 <a name="l00158"></a>00158     ((context-&gt;state[i&gt;&gt;2] &gt;&gt; ((3-(i &amp; 3)) * 8) ) &amp; 255);
@@ -215,7 +214,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00165"></a>00165   memset(context-&gt;count, 0, 8);
 <a name="l00166"></a>00166   memset(&amp;finalcount, 0, 8);
 <a name="l00167"></a>00167 <span class="preprocessor">#ifdef SHA1HANDSOFF  </span><span class="comment">/* make SHA1Transform overwrite it&#39;s own static vars */</span>
-<a name="l00168"></a>00168   <a class="code" href="sha1_8c.html#adb21fade3cf06e6a21f6b86bfa6d5117">SHA1Transform</a>(context-&gt;state, context-&gt;buffer);
+<a name="l00168"></a>00168   SHA1Transform(context-&gt;state, context-&gt;buffer);
 <a name="l00169"></a>00169 <span class="preprocessor">#endif</span>
 <a name="l00170"></a>00170 <span class="preprocessor"></span>}
 </pre></div></div>
@@ -225,7 +224,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -234,7 +233,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

@@ -65,22 +65,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_g_h_n_s_string_enumerator.html#aebf81bebe5d435c261ace9b844fd004f">initWithString:separatorCharacterSet:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create string enumerator with string and separator character set.  <a href="#aebf81bebe5d435c261ace9b844fd004f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_g_h_n_s_string_enumerator.html#a6cd46f69d05d8020f8036c7061aa720d">initWithString:separatorString:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create string enumerator with string and separator character set.  <a href="#a6cd46f69d05d8020f8036c7061aa720d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_g_h_n_s_string_enumerator.html#a37cb97c1adb0ab86a57f0d6f099c78cf">nextString</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Next string.  <a href="#a37cb97c1adb0ab86a57f0d6f099c78cf"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSScanner *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_string_enumerator.html#a6c76da8c87bf1371e75f0d30c4b2c2c7">_scanner</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSCharacterSet *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_string_enumerator.html#a2eed6da6a8e4f43bcc0aba0dd4dc89e6">_separatorCharacterSet</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">NSString *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_string_enumerator.html#ae36bdf0c722e0a5ab556f9f291a17f0f">_separatorString</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_string_enumerator.html#ace73fb3354ad40504f6e2ff076630764">_inSeparator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c76da8c87bf1371e75f0d30c4b2c2c7"></a><!-- doxytag: member="GHNSStringEnumerator::_scanner" ref="a6c76da8c87bf1371e75f0d30c4b2c2c7" args="" -->
+NSScanner *&nbsp;</td><td class="memItemRight" valign="bottom"><b>_scanner</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2eed6da6a8e4f43bcc0aba0dd4dc89e6"></a><!-- doxytag: member="GHNSStringEnumerator::_separatorCharacterSet" ref="a2eed6da6a8e4f43bcc0aba0dd4dc89e6" args="" -->
+NSCharacterSet *&nbsp;</td><td class="memItemRight" valign="bottom"><b>_separatorCharacterSet</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae36bdf0c722e0a5ab556f9f291a17f0f"></a><!-- doxytag: member="GHNSStringEnumerator::_separatorString" ref="ae36bdf0c722e0a5ab556f9f291a17f0f" args="" -->
+NSString *&nbsp;</td><td class="memItemRight" valign="bottom"><b>_separatorString</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace73fb3354ad40504f6e2ff076630764"></a><!-- doxytag: member="GHNSStringEnumerator::_inSeparator" ref="ace73fb3354ad40504f6e2ff076630764" args="" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>_inSeparator</b></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_g_h_n_s_string_enumerator.html#ac054303bdc8ea511a127d0497c53ecae">inSeparator</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac054303bdc8ea511a127d0497c53ecae"></a><!-- doxytag: member="GHNSStringEnumerator::inSeparator" ref="ac054303bdc8ea511a127d0497c53ecae" args="" -->
+BOOL&nbsp;</td><td class="memItemRight" valign="bottom"><b>inSeparator</b></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>For scanning, and enumerating strings. </p>
-
-<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00035">35</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
+<div class="fragment"><pre class="fragment"> NSString *<span class="keywordtype">string</span> = <span class="stringliteral">@&quot;matz can&#39;t\n patch blues&quot;</span>;
+ <a class="code" href="interface_g_h_n_s_string_enumerator.html" title="For scanning, and enumerating strings.">GHNSStringEnumerator</a> *enumerator = [[<a class="code" href="interface_g_h_n_s_string_enumerator.html" title="For scanning, and enumerating strings.">GHNSStringEnumerator</a> alloc] initWithString:string
+ separatorCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+ 
+ NSArray *results = [enumerator allObjects];
+ NSArray *expected = [NSArray arrayWithObjects:@&quot;matz&quot;, @&quot; &quot;, @&quot;can&#39;t&quot;, @&quot;\n &quot;, @&quot;patch&quot;, @&quot; &quot;, @&quot;blues&quot;, nil];
+ GHAssertEqualObjects(results, expected, nil);
+</pre></div> 
+<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00045">45</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aebf81bebe5d435c261ace9b844fd004f"></a><!-- doxytag: member="GHNSStringEnumerator::initWithString:separatorCharacterSet:" ref="aebf81bebe5d435c261ace9b844fd004f" args="(NSString *string,[separatorCharacterSet] NSCharacterSet *separatorCharacterSet)" -->
 <div class="memitem">
@@ -106,6 +121,15 @@ Properties</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Create string enumerator with string and separator character set. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>separatorCharacterSet</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8m_source.html#l00051">51</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8m_source.html">GHNSStringEnumerator.m</a>.</p>
 
@@ -136,6 +160,15 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Create string enumerator with string and separator character set. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>string</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>separatorCharacterSet</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8m_source.html#l00055">55</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8m_source.html">GHNSStringEnumerator.m</a>.</p>
 
 </div>
@@ -155,84 +188,10 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Next string. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Next string </dd></dl>
+
 <p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8m_source.html#l00066">66</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8m_source.html">GHNSStringEnumerator.m</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ace73fb3354ad40504f6e2ff076630764"></a><!-- doxytag: member="GHNSStringEnumerator::_inSeparator" ref="ace73fb3354ad40504f6e2ff076630764" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) <a class="el" href="interface_g_h_n_s_string_enumerator.html#ace73fb3354ad40504f6e2ff076630764">_inSeparator</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00041">41</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6c76da8c87bf1371e75f0d30c4b2c2c7"></a><!-- doxytag: member="GHNSStringEnumerator::_scanner" ref="a6c76da8c87bf1371e75f0d30c4b2c2c7" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSScanner*) <a class="el" href="interface_g_h_n_s_string_enumerator.html#a6c76da8c87bf1371e75f0d30c4b2c2c7">_scanner</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00036">36</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2eed6da6a8e4f43bcc0aba0dd4dc89e6"></a><!-- doxytag: member="GHNSStringEnumerator::_separatorCharacterSet" ref="a2eed6da6a8e4f43bcc0aba0dd4dc89e6" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSCharacterSet*) <a class="el" href="interface_g_h_n_s_string_enumerator.html#a2eed6da6a8e4f43bcc0aba0dd4dc89e6">_separatorCharacterSet</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00038">38</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae36bdf0c722e0a5ab556f9f291a17f0f"></a><!-- doxytag: member="GHNSStringEnumerator::_separatorString" ref="ae36bdf0c722e0a5ab556f9f291a17f0f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (NSString*) <a class="el" href="interface_g_h_n_s_string_enumerator.html#ae36bdf0c722e0a5ab556f9f291a17f0f">_separatorString</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00039">39</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
-
-</div>
-</div>
-<hr/><h2>Property Documentation</h2>
-<a class="anchor" id="ac054303bdc8ea511a127d0497c53ecae"></a><!-- doxytag: member="GHNSStringEnumerator::inSeparator" ref="ac054303bdc8ea511a127d0497c53ecae" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) inSeparator<code> [read, assign]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html#l00044">44</a> of file <a class="el" href="_g_h_n_s_string_enumerator_8h_source.html">GHNSStringEnumerator.h</a>.</p>
 
 </div>
 </div>
@@ -246,7 +205,7 @@ Properties</h2></td></tr>
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -255,7 +214,7 @@ Properties</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

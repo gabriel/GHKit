@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/GHNSString+TimeInterval.m</h1>  </div>
 </div>
 <div class="contents">
-<a href="_g_h_n_s_string_09_time_interval_8m.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">//  GHNSString+TimeInterval.m</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">//  Created by Gabe on 6/6/08.</span>
@@ -76,13 +75,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00026"></a>00026 <span class="comment">//  OTHER DEALINGS IN THE SOFTWARE.</span>
 <a name="l00027"></a>00027 <span class="comment">//</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="preprocessor">#import &quot;<a class="code" href="_g_h_n_s_string_09_time_interval_8h.html">GHNSString+TimeInterval.h</a>&quot;</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#import &quot;GHNSString+TimeInterval.h&quot;</span>
 <a name="l00030"></a>00030 
 <a name="l00031"></a>00031 <span class="preprocessor">#import &lt;math.h&gt;</span>
 <a name="l00032"></a>00032 
 <a name="l00033"></a>00033 <span class="keyword">@implementation </span>NSString(GHTimeInterval)
 <a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">00035</a> <span class="preprocessor">#define GHIntervalLocalize(key, defaultValue) NSLocalizedStringWithDefaultValue(key, tableName, bundle, defaultValue, nil)</span>
+<a name="l00035"></a>00035 <span class="preprocessor">#define GHIntervalLocalize(key, defaultValue) NSLocalizedStringWithDefaultValue(key, tableName, bundle, defaultValue, nil)</span>
 <a name="l00036"></a>00036 <span class="preprocessor"></span>
 <a name="l00037"></a><a class="code" href="interface_n_s_string_07_g_h_time_interval_08.html#ae01d651cb91e0925ed75f7d9a64715d5">00037</a> + (NSString *)gh_stringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds {
 <a name="l00038"></a>00038     <span class="keywordflow">return</span> [<span class="keyword">self</span> <a class="code" href="interface_n_s_string_07_g_h_time_interval_08.html#af3d9934e13a9c2ae87284237cadffd37" title="Time ago in words (localized).">gh_localizedStringForTimeInterval</a>:interval <a class="code" href="interface_n_s_string_07_g_h_time_interval_08.html#af3d9934e13a9c2ae87284237cadffd37" title="Time ago in words (localized).">includeSeconds</a>:includeSeconds <a class="code" href="interface_n_s_string_07_g_h_time_interval_08.html#af3d9934e13a9c2ae87284237cadffd37" title="Time ago in words (localized).">tableName</a>:nil <a class="code" href="interface_n_s_string_07_g_h_time_interval_08.html#af3d9934e13a9c2ae87284237cadffd37" title="Time ago in words (localized).">bundle</a>:[NSBundle mainBundle]];
@@ -93,22 +92,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00043"></a>00043   <span class="keywordtype">double</span> intervalInMinutes = round(intervalInSeconds/60.0);
 <a name="l00044"></a>00044   
 <a name="l00045"></a>00045   <span class="keywordflow">if</span> (intervalInMinutes &gt;= 0 &amp;&amp; intervalInMinutes &lt;= 1) {
-<a name="l00046"></a>00046     <span class="keywordflow">if</span> (!includeSeconds) <span class="keywordflow">return</span> intervalInMinutes &lt;= 0 ? <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;LessThanAMinute&quot;</span>, <span class="stringliteral">@&quot;less than a minute&quot;</span>) : <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;1Minute&quot;</span>, <span class="stringliteral">@&quot;1 minute&quot;</span>);
+<a name="l00046"></a>00046     <span class="keywordflow">if</span> (!includeSeconds) <span class="keywordflow">return</span> intervalInMinutes &lt;= 0 ? GHIntervalLocalize(<span class="stringliteral">@&quot;LessThanAMinute&quot;</span>, <span class="stringliteral">@&quot;less than a minute&quot;</span>) : GHIntervalLocalize(<span class="stringliteral">@&quot;1Minute&quot;</span>, <span class="stringliteral">@&quot;1 minute&quot;</span>);
 <a name="l00047"></a>00047     <span class="keywordflow">if</span> (intervalInSeconds &gt;= 0 &amp;&amp; intervalInSeconds &lt; 5) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;LessThanXSeconds&quot;, @&quot;less than %d seconds&quot;), 5];
 <a name="l00048"></a>00048     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInSeconds &gt;= 5 &amp;&amp; intervalInSeconds &lt; 10) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;LessThanXSeconds&quot;, @&quot;less than %d seconds&quot;), 10];
 <a name="l00049"></a>00049     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInSeconds &gt;= 10 &amp;&amp; intervalInSeconds &lt; 20) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;LessThanXSeconds&quot;, @&quot;less than %d seconds&quot;), 20];
-<a name="l00050"></a>00050     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInSeconds &gt;= 20 &amp;&amp; intervalInSeconds &lt; 40) <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;HalfMinute&quot;</span>, <span class="stringliteral">@&quot;half a minute&quot;</span>);
-<a name="l00051"></a>00051     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInSeconds &gt;= 40 &amp;&amp; intervalInSeconds &lt; 60) <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;LessThanAMinute&quot;</span>, <span class="stringliteral">@&quot;less than a minute&quot;</span>);
-<a name="l00052"></a>00052     <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;1Minute&quot;</span>, <span class="stringliteral">@&quot;1 minute&quot;</span>);
+<a name="l00050"></a>00050     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInSeconds &gt;= 20 &amp;&amp; intervalInSeconds &lt; 40) <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;HalfMinute&quot;</span>, <span class="stringliteral">@&quot;half a minute&quot;</span>);
+<a name="l00051"></a>00051     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInSeconds &gt;= 40 &amp;&amp; intervalInSeconds &lt; 60) <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;LessThanAMinute&quot;</span>, <span class="stringliteral">@&quot;less than a minute&quot;</span>);
+<a name="l00052"></a>00052     <span class="keywordflow">else</span> <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;1Minute&quot;</span>, <span class="stringliteral">@&quot;1 minute&quot;</span>);
 <a name="l00053"></a>00053   }
 <a name="l00054"></a>00054   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 2 &amp;&amp; intervalInMinutes &lt;= 44) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;XMinutes&quot;, @&quot;%.0f minutes&quot;), intervalInMinutes];
-<a name="l00055"></a>00055   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 45 &amp;&amp; intervalInMinutes &lt;= 89) <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;About1Hour&quot;</span>, <span class="stringliteral">@&quot;about 1 hour&quot;</span>);
+<a name="l00055"></a>00055   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 45 &amp;&amp; intervalInMinutes &lt;= 89) <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;About1Hour&quot;</span>, <span class="stringliteral">@&quot;about 1 hour&quot;</span>);
 <a name="l00056"></a>00056   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 90 &amp;&amp; intervalInMinutes &lt;= 1439) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;AboutXHours&quot;, @&quot;about %.0f hours&quot;), round(intervalInMinutes/60.0)];
-<a name="l00057"></a>00057   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 1440 &amp;&amp; intervalInMinutes &lt;= 2879) <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;1Day&quot;</span>, <span class="stringliteral">@&quot;1 day&quot;</span>);
+<a name="l00057"></a>00057   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 1440 &amp;&amp; intervalInMinutes &lt;= 2879) <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;1Day&quot;</span>, <span class="stringliteral">@&quot;1 day&quot;</span>);
 <a name="l00058"></a>00058   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 2880 &amp;&amp; intervalInMinutes &lt;= 43199) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;XDays&quot;, @&quot;%.0f days&quot;), round(intervalInMinutes/1440.0)];
-<a name="l00059"></a>00059   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 43200 &amp;&amp; intervalInMinutes &lt;= 86399) <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;About1Month&quot;</span>, <span class="stringliteral">@&quot;about 1 month&quot;</span>);
+<a name="l00059"></a>00059   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 43200 &amp;&amp; intervalInMinutes &lt;= 86399) <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;About1Month&quot;</span>, <span class="stringliteral">@&quot;about 1 month&quot;</span>);
 <a name="l00060"></a>00060   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 86400 &amp;&amp; intervalInMinutes &lt;= 525599) <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;XMonths&quot;, @&quot;%.0f months&quot;), round(intervalInMinutes/43200.0)];
-<a name="l00061"></a>00061   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 525600 &amp;&amp; intervalInMinutes &lt;= 1051199) <span class="keywordflow">return</span> <a class="code" href="_g_h_n_s_string_09_time_interval_8m.html#ab02fec5696fe2ca16495dd0679fbd407">GHIntervalLocalize</a>(<span class="stringliteral">@&quot;About1Year&quot;</span>, <span class="stringliteral">@&quot;about 1 year&quot;</span>);
+<a name="l00061"></a>00061   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (intervalInMinutes &gt;= 525600 &amp;&amp; intervalInMinutes &lt;= 1051199) <span class="keywordflow">return</span> GHIntervalLocalize(<span class="stringliteral">@&quot;About1Year&quot;</span>, <span class="stringliteral">@&quot;about 1 year&quot;</span>);
 <a name="l00062"></a>00062   <span class="keywordflow">else</span>
 <a name="l00063"></a>00063     <span class="keywordflow">return</span> [NSString stringWithFormat:GHIntervalLocalize(@&quot;OverXYears&quot;, @&quot;over %.0f years&quot;), round(intervalInMinutes/525600.0)];    
 <a name="l00064"></a>00064 }
@@ -121,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -130,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

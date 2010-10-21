@@ -40,7 +40,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&nbsp;List</span></a></li>
-      <li><a href="globals.html"><span>File&nbsp;Members</span></a></li>
     </ul>
   </div>
 <div class="header">
@@ -48,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>/Users/gabe/Projects/gh-kit/Classes/hmac.c</h1>  </div>
 </div>
 <div class="contents">
-<a href="hmac_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">//</span>
 <a name="l00002"></a>00002 <span class="comment">// hmac.c</span>
 <a name="l00003"></a>00003 <span class="comment">//</span>
 <a name="l00004"></a>00004 <span class="comment">//  Copyright 2008 Gabriel Handford</span>
@@ -77,22 +76,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00027"></a>00027 
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;string.h&gt;</span>
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;<a class="code" href="hmac_8h.html">hmac.h</a>&quot;</span>
-<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;<a class="code" href="sha1_8h.html">sha1.h</a>&quot;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include &quot;hmac.h&quot;</span>
+<a name="l00031"></a>00031 <span class="preprocessor">#include &quot;sha1.h&quot;</span>
 <a name="l00032"></a>00032 
-<a name="l00033"></a><a class="code" href="hmac_8c.html#aed2dd27691e7d6f3ea4973ce7444ac09">00033</a> <span class="preprocessor">#define HMAC_IPAD   0x36</span>
-<a name="l00034"></a><a class="code" href="hmac_8c.html#a24c8fbb6a428a1982f1f1169ce6337a4">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define HMAC_OPAD   0x5c</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#define HMAC_IPAD   0x36</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span><span class="preprocessor">#define HMAC_OPAD   0x5c</span>
 <a name="l00035"></a>00035 <span class="preprocessor"></span>
-<a name="l00036"></a><a class="code" href="hmac_8h.html#a5cff0d6b5d784967869c0136cea767ad">00036</a> <span class="keywordtype">int</span> <a class="code" href="hmac_8c.html#a5cff0d6b5d784967869c0136cea767ad">HMAC_SHA1</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* digest, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* text, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> textlen, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> keylen) {  
+<a name="l00036"></a>00036 <span class="keywordtype">int</span> HMAC_SHA1(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* digest, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* text, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> textlen, <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* key, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> keylen) {  
 <a name="l00037"></a>00037   
 <a name="l00038"></a>00038   <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> k_ipad[64], k_opad[64];
 <a name="l00039"></a>00039   
 <a name="l00040"></a>00040   <span class="comment">// This is untested</span>
 <a name="l00041"></a>00041   <span class="keywordflow">if</span> (keylen &gt; 64) {
 <a name="l00042"></a>00042     SHA1_CTX context;
-<a name="l00043"></a>00043     <a class="code" href="sha1_8c.html#a159a97b3039391403b8d9b0d240a9640">SHA1Init</a>(&amp;context);  
-<a name="l00044"></a>00044     <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(&amp;context, key, keylen);
-<a name="l00045"></a>00045     <a class="code" href="sha1_8c.html#aa58f279c51d82e868c9b0f7b1b7d08f4">SHA1Final</a>(key, &amp;context);
+<a name="l00043"></a>00043     SHA1Init(&amp;context);  
+<a name="l00044"></a>00044     SHA1Update(&amp;context, key, keylen);
+<a name="l00045"></a>00045     SHA1Final(key, &amp;context);
 <a name="l00046"></a>00046     keylen = 20;
 <a name="l00047"></a>00047   }
 <a name="l00048"></a>00048   
@@ -108,15 +107,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00058"></a>00058     }  
 <a name="l00059"></a>00059   
 <a name="l00060"></a>00060   SHA1_CTX context;
-<a name="l00061"></a>00061   <a class="code" href="sha1_8c.html#a159a97b3039391403b8d9b0d240a9640">SHA1Init</a>(&amp;context);  
-<a name="l00062"></a>00062   <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(&amp;context, k_ipad, 64);
-<a name="l00063"></a>00063   <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(&amp;context, text, textlen);  
-<a name="l00064"></a>00064   <a class="code" href="sha1_8c.html#aa58f279c51d82e868c9b0f7b1b7d08f4">SHA1Final</a>(digest, &amp;context);
+<a name="l00061"></a>00061   SHA1Init(&amp;context);  
+<a name="l00062"></a>00062   SHA1Update(&amp;context, k_ipad, 64);
+<a name="l00063"></a>00063   SHA1Update(&amp;context, text, textlen);  
+<a name="l00064"></a>00064   SHA1Final(digest, &amp;context);
 <a name="l00065"></a>00065   
-<a name="l00066"></a>00066   <a class="code" href="sha1_8c.html#a159a97b3039391403b8d9b0d240a9640">SHA1Init</a>(&amp;context);
-<a name="l00067"></a>00067   <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(&amp;context, k_opad, 64);
-<a name="l00068"></a>00068   <a class="code" href="sha1_8c.html#aa451d2f4b177312d16a61a2fa9b2eefb">SHA1Update</a>(&amp;context, digest, 20);
-<a name="l00069"></a>00069   <a class="code" href="sha1_8c.html#aa58f279c51d82e868c9b0f7b1b7d08f4">SHA1Final</a>(digest, &amp;context);
+<a name="l00066"></a>00066   SHA1Init(&amp;context);
+<a name="l00067"></a>00067   SHA1Update(&amp;context, k_opad, 64);
+<a name="l00068"></a>00068   SHA1Update(&amp;context, digest, 20);
+<a name="l00069"></a>00069   SHA1Final(digest, &amp;context);
 <a name="l00070"></a>00070   
 <a name="l00071"></a>00071   <span class="keywordflow">return</span> 20;
 <a name="l00072"></a>00072 }
@@ -127,7 +126,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&nbsp;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&nbsp;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&nbsp;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&nbsp;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&nbsp;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&nbsp;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&nbsp;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&nbsp;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&nbsp;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&nbsp;</span>Properties</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -136,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:12:45 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:38:57 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
