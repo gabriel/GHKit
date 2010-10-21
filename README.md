@@ -2,13 +2,15 @@
 
 The GHKit framework is a set of extensions and utilities for Mac OS X and iOS.
 
-## Download
+## Documentation
 
-See Downloads.
+For documentation see [http://gabriel.github.com/gh-kit/](http://gabriel.github.com/gh-kit/)
 
 ## Docset
 
-Download and install to docset to `~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset`
+Download and copy to docset to `~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset`
+
+(You may need to restart XCode after copying the file.)
 
 The documentation will appear within XCode:
 
@@ -34,9 +36,6 @@ There are a few options. You can install it globally in `/Library/Frameworks` or
 	- Drag `GHKit.framework` into the the build phase
 	- Make sure the copy phase appears before any `Run Script` phases 
 
-To use the framework:
-
-	#import <GHKit/GHKit.h>
 
 ## Install (iOS)
 
@@ -49,9 +48,6 @@ To use the framework:
 - Under 'Framework Search Paths' make sure the (parent) directory to GHKitIOS.framework is listed.
 - Under 'Other Linker Flags' in the `Test` target, add `-ObjC` and `-all_load`
 
-To use the framework:
-
-	#import <GHKitIOS/GHKitIOS.h>
 
 ## Building (iOS)
 

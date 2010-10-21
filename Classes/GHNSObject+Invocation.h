@@ -76,11 +76,32 @@
  */
 - (void)gh_performSelectorOnMainThread:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
-
+/*!
+ Invoke selector with arguments.
+ @param selector
+ @param onMainThread Whether to perform on main thread or current thread
+ @param waitUntilDone Whether to join on selector and wait for it to finish.
+ @param withObjects nil terminated variable argument list 
+ */
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
+/*!
+ Invoke selector with arguments;
+ @param selector
+ @param onMainThread Whether to perform on main thread or current thread
+ @param waitUntilDone Whether to join on selector and wait for it to finish.
+ @param arguments List of arguments
+ */
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone arguments:(NSArray *)arguments;
 
+/*!
+ Invoke selector with arguments after delay.
+ @param selector
+ @param onMainThread Whether to perform on main thread or current thread
+ @param waitUntilDone Whether to join on selector and wait for it to finish.
+ @param afterDelay Delay in seconds
+ @param arguments List of arguments
+ */
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone 
 								afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
 

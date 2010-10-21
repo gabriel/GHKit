@@ -25,14 +25,6 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-/*! 
- @mainpage GHKit
- 
- GHKit defines various categories and general purpose utilities
- for example, parsing date strings, generating time ago in words,
- generating SHA1-HMAC, MD5, or special invocation proxies.
- */
-
 #import "GHKitDefines.h"
 
 #import "GHNSDate+Parsing.h"
@@ -82,3 +74,99 @@
 #endif
 
 #import "GHNSObject+Utils.h"
+
+
+/*! 
+ @mainpage GHKit
+ 
+ GHKit defines various categories and general purpose utilities.
+ For example, parsing date strings, generating time ago in words,
+ generating SHA1-HMAC, MD5, or special invocation proxies.
+ 
+ To use the framework (for iOS):
+ 
+ @code
+ #import <GHKitIOS/GHKitIOS.h>
+ @endcode
+ 
+ To use the framework (for Mac OS X):
+ 
+ @code
+ #import <GHKit/GHKit.h>
+ @endcode
+ 
+ @section NSDate Dates
+ 
+ <tt>GHNSDate+Parsing.h</tt>: Date parsers, formatting and formatters for ISO8601, RFC822, HTTP (RFC1123, RFC850, asctime) and since epoch.
+ 
+ @code
+ NSDate *date = [NSDate gh_parseISO8601:@"2010-10-07T04:25Z"]
+ 
+ NSString *dateString = [date gh_formatHTTP]; // Formatted like: Sun, 06 Nov 1994 08:49:37 GMT"
+ @endcode
+ 
+ <tt>GHNSDate+Utils.h</tt>: For time ago in words and date component arithmentic (adding days), tomorrow, yesterday, and more.
+ 
+ @code
+ NSDate *date = [NSDate date];
+ [date gh_isToday]; // YES
+ [[date gh_yesterday] gh_isToday]; // NO
+ 
+ date = [date gh_addDays:-1];
+ [date gh_wasYesterday]; // YES
+
+ [date gh_timeAgo:NO]; // @"1 day"
+ @endcode
+ 
+ @section Strings
+ 
+ <tt>GHNSString+Utils.h</tt>: Stripping, reversing, counting, UUID, MD5 and more.
+ 
+ @code
+ [NSString gh_isBlank:@"  "]; // YES
+ [NSString gh_isBlank:nil]; // YES
+ 
+ [@"abc" gh_reverse]; // @"cba"
+ 
+ [@"  some text " gh_strip]; // @"some text"
+
+ @section URLs
+ 
+ <tt>GHNSURL+Utils.h</tt>: Encoding, escaping, parsing, splitting out or sorting query params, and more.
+ 
+ @code
+ NSDictionary *dict = [@"c=d&a=b" gh_queryStringToDictionary]; // Dictionary with a => b, c => d
+ [NSDictionary gh_dictionaryToQueryString:dict sort:YES]; // @"a=b&c=d"
+ @endcode
+
+ @section Invocation
+ 
+ <tt>GHNSObject+Invocation.h</tt>: 
+ 
+ @code
+ [[obj gh_proxyOnMainThread] myMethodWithInteger:4 string:@"string"]; // Call myMethod on main method
+ 
+ [[array gh_proxyAfterDelay:2.0] insertObject:@"foo" atIndex:0]; // Inserts object after 2 second delay
+ 
+ SEL selector = @selector(bar:baz:);
+ [foo gh_argumentProxy:selector] arg:10 arg:YES];
+ 
+ Will call <tt>[foo bar:10 baz:YES];</tt>  (and not <tt>arg:arg:</tt> selector which doesn't exist).
+ @endcode
+ 
+ @section File 
+ 
+ <tt>GHNSFileManager+Utils.h</tt>: File size, exists, generating temporary or unique file paths.
+ 
+ @section HMAC
+ 
+ <tt>GHNSString+HMAC.h</tt>: SHA-1 HMAC
+ 
+ @code
+ #import "GTMBase64.h"
+ ["stringtosign" gh_HMACSHA1:@"secret" base64Encoder:[GTMBase64 class]];
+ @endcode
+ 
+ @section More And more...
+ */
+

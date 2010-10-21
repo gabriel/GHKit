@@ -27,7 +27,7 @@
 //
 
 /*!
- Utilities for URLs, for example, encoding, escaping, parsing or sorting query params, and more.
+ Utilities for URLs, for example, encoding, escaping, parsing, splitting out or sorting query params, and more.
  */
 @interface NSURL(GHUtils)
 
