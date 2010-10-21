@@ -244,6 +244,8 @@
 
 @end
 
+//! @internal
+
 /*!
  Class used by gh_substringSegmentsWithinStart:end:
  */
@@ -261,3 +263,5 @@
 + (GHNSStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch;
 
 @end
+
+//! @endinternal

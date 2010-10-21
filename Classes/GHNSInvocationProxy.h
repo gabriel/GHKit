@@ -65,6 +65,8 @@
  *
  */
 
+//! @internal
+
 @class GHNSInvocationProxy;
 @class GHNSInvocationProxyCallback;
 
@@ -102,6 +104,8 @@
 + (GHNSInvocationProxyLogger *)shared;
 
 @end
+
+//! @endinternal
 
 /*!
  Proxy that allows invocation on a separate thread, with a delay and or multiple 
@@ -204,6 +208,8 @@
 
 @end
 
+//! @internal
+
 /*!
  Invocation proxy callback represents a target, selector, context (selector arg) and thread,
  which if set on invocation proxy will call back on this thread after invoking on the proxy.
@@ -218,4 +224,5 @@
 - (id)initWithTarget:(id)target action:(SEL)action context:(id)context;
 
 @end
-	
+
+//! @endinternal

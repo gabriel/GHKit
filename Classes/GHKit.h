@@ -99,7 +99,7 @@
  #import <GHKit/GHKit.h>
  @endcode
  
- @section NSDate Dates
+ @section Dates Dates
  
  <tt>GHNSDate+Parsing.h</tt>: Date parsers, formatting and formatters for ISO8601, RFC822, HTTP (RFC1123, RFC850, asctime) and since epoch.
  
@@ -122,7 +122,7 @@
  [date gh_timeAgo:NO]; // @"1 day"
  @endcode
  
- @section Strings
+ @section Strings Strings
  
  <tt>GHNSString+Utils.h</tt>: Stripping, reversing, counting, UUID, MD5 and more.
  
@@ -135,7 +135,7 @@
  [@"  some text " gh_strip]; // @"some text"
  @endcode
 
- @section URLs
+ @section URLs URLs
  
  <tt>GHNSURL+Utils.h</tt>: Encoding, escaping, parsing, splitting out or sorting query params, and more.
  
@@ -144,7 +144,7 @@
  [NSDictionary gh_dictionaryToQueryString:dict sort:YES]; // @"a=b&c=d"
  @endcode
 
- @section Invocation
+ @section Invocation Invocation
  
  <tt>GHNSObject+Invocation.h</tt>: 
  
@@ -159,17 +159,37 @@
  Will call <tt>[foo bar:10 baz:YES];</tt>  (and not <tt>arg:arg:</tt> selector which doesn't exist).
  @endcode
  
- @section File 
+ @section File File
  
  <tt>GHNSFileManager+Utils.h</tt>: File size, exists, generating temporary or unique file paths.
  
- @section HMAC
+ @section HMAC HMAC
  
  <tt>GHNSString+HMAC.h</tt>: SHA-1 HMAC
  
  @code
  #import "GTMBase64.h"
  ["stringtosign" gh_HMACSHA1:@"secret" base64Encoder:[GTMBase64 class]];
+ @endcode
+ 
+ @section Keychain Keychain
+ 
+ Secret from keychain:
+ 
+ @code
+ GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
+ NSError *error = nil;
+ NSString *secret = [keyChainStore secretFromKeychainForServiceName:@"MyApp" key:"password" error:&error];
+ if (!secret) NSLog(@"Error: %@", [error localizedDescription];
+ @endcode
+ 
+ Save to keychain:
+ 
+ @code
+ GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
+ NSError *error = nil;
+ BOOL saved = [keyChainStore saveToKeychainWithServiceName:@"MyApp" key:"password" secret:"12345" error:&error];
+ if (!saved) NSLog(@"Error: %@", [error localizedDescription];
  @endcode
  
  @section More And more...
