@@ -5,8 +5,8 @@ macosx:
 	$(COMMAND) -target GHKit -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
 
 ios:
-	xcodebuild -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator4.1 -project GHKitIPhone.xcodeproj build
-	xcodebuild -target "GHKitIPhone (Device)" -configuration Release -sdk iphoneos4.1 -project GHKitIPhone.xcodeproj build
+	$(COMMAND) -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator4.1 -project GHKitIPhone.xcodeproj build
+	$(COMMAND) -target "GHKitIPhone (Device)" -configuration Release -sdk iphoneos4.1 -project GHKitIPhone.xcodeproj build
 	BUILD_DIR="build" BUILD_STYLE="Release" sh Scripts/CombineLibs.sh
 	sh Scripts/iPhoneFramework.sh
 

@@ -93,8 +93,14 @@
   return [NSString stringWithFormat:@"%d", value];
 }
 
-+ (NSString *)gh_ordinalizeDe:(NSInteger)value {
-  return [NSString stringWithFormat:@"%d.", value];
++ (NSString *)gh_ordinalizeDe:(NSInteger)value masculine:(BOOL)masculine {
+  NSString *suffix = nil;
+  switch (value) {
+    case 0: break;
+    default: suffix = masculine ? @"ter" : @"te"; break;
+  }
+  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
+  return [NSString stringWithFormat:@"%d", value];
 }
 
 // NOTE(johnb): Ignoring plural forms or ordinals (os / as)
@@ -117,7 +123,7 @@
   } else if ([languageCode isEqual:@"fr"]) {
     return [NSNumber gh_ordinalizeFr:value masculine:masculine];
   } else if ([languageCode isEqual:@"de"]) {
-    return [NSNumber gh_ordinalizeDe:value];
+    return [NSNumber gh_ordinalizeDe:value masculine:masculine];
   } else if ([languageCode isEqual:@"es"]) {
     return [NSNumber gh_ordinalizeEs:value masculine:masculine];
   }
