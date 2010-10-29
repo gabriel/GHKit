@@ -30,7 +30,7 @@
 extern NSString *const kDateFormatShortMonthFullYearTime;
 
 /*!
- Utilities for dates, for date component arithmentic (adding days), tomorrow, yesterday, and more.
+ Utilities for dates, for time ago in words and date component arithmentic (adding days), tomorrow, yesterday, and more.
  */
 @interface NSDate(GHUtils)
 
@@ -94,6 +94,24 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
 /*!
  Time ago in words.
  For more info, especially on localization, see GHNSString+TimeInterval.h.
+ 
+ These are the localized defaults, that you can override:
+ 
+ @verbatim
+ LessThanAMinute = "less than a minute";
+ LessThanXSeconds = "less than %d seconds";
+ HalfMinute = "half a minute";
+ 1Minute = "1 minute";
+ XMinutes = "%.0f minutes";
+ About1Hour = "about 1 hour";
+ AboutXHours = "about %.0f hours";
+ 1Day = "1 day";
+ XDays = "%.0f days";
+ About1Month = "about 1 month";
+ XMonths = "%.0f months";
+ About1Year = "about 1 year";
+ OverXYears = "over %.0f years";
+ @endverbatim
  
  @param includeSeconds If YES, will include seconds (30 seconds ago), otherwise will say something like 'Less than a minute'
  @result Time ago in words

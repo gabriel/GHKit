@@ -154,6 +154,8 @@ delay=delay_, selector=selector_, delegate=delegate_, detachCallback=detachCallb
 
 @end
 
+//! @cond DEV
+
 
 @implementation GHNSInvocationProxyCallback 
 
@@ -213,5 +215,7 @@ static GHNSInvocationProxyLogger *gInvocationProxyLogger = NULL;
 		NSLog(@"[TRACE] %@ (%0.4fs)", returnTypeString, interval_);
 	}	
 }
+
+//! @endcond
 
 @end

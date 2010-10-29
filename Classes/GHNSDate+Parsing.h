@@ -27,7 +27,7 @@
 //
 
 /*! 
- Date parsers, formatting and formatters for ISO8601, RFC822, HTTP, epoch, asctime.
+ Date parsers, formatting and formatters for ISO8601, RFC822, HTTP (RFC1123, RFC850, asctime) and since epoch.
  */
 @interface NSDate(GHParsing)
 
@@ -61,14 +61,14 @@
 
 /*!
  Parse time since epoch.
- @param timeSinceEpoch An NSNumber or NSString (responds to doubleValue)
+ @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)
  @result NSDate or nil if timeSinceEpoch was nil
  */
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch;
 
 /*!
  Parse time since epoch, with default.
- @param timeSinceEpoch An NSNumber or NSString (responds to doubleValue)
+ @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)
  @param withDefault Default if timeSinceEpoch is nil
  @result NSDate or default
  */
@@ -76,7 +76,7 @@
 
 /*!
  Parse time since epoch.
- @param timeSinceEpoch An NSNumber or NSString (responds to doubleValue)
+ @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)
  @param withDefault If timeSinceEpoch is nil, returns this value
  @param timeZone If set, the returned Date will be offset from the supplied timestamp by the difference between timeZone and the system time zone
  @result NSDate or nil if timeSinceEpoch was nil

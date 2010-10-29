@@ -66,6 +66,26 @@ typedef enum {
  Forwards to:
 	- GHEMKeychainStore for Mac OS X.
 	- GHSFHFKeychainStore for iPhone.
+
+ 
+ Secret from keychain:
+ 
+ @code
+ GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
+ NSError *error = nil;
+ NSString *secret = [keyChainStore secretFromKeychainForServiceName:@"MyApp" key:"password" error:&error];
+ if (!secret) NSLog(@"Error: %@", [error localizedDescription];
+ @endcode
+ 
+ Save to keychain:
+ 
+ @code
+ GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
+ NSError *error = nil;
+ BOOL saved = [keyChainStore saveToKeychainWithServiceName:@"MyApp" key:"password" secret:"12345" error:&error];
+ if (!saved) NSLog(@"Error: %@", [error localizedDescription];
+ @endcode
+ 
  */
 @interface GHKeychainStore : NSObject <GHKeychainStore> {
 	id<GHKeychainStore> _keychainStore;
