@@ -47,7 +47,7 @@ To use the framework:
   - `Foundation.framework`
   - `UIKit.framework`
 - Under 'Framework Search Paths' make sure the (parent) directory to GHKitIOS.framework is listed.
-- Under 'Other Linker Flags' in the `Test` target, add `-ObjC` and `-all_load`
+- Under 'Other Linker Flags' in your target, add `-ObjC` and `-all_load`
 
 To use the framework:
 
