@@ -105,6 +105,7 @@
   "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C
  
  Doesn't encode: ~!@#$&*()=:/,;?+'
+ 
  Does encode: %^{}[]"\
  
  Should be the same as javascript's encodeURI().
@@ -122,6 +123,7 @@
  "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C
  
  Doesn't encode: ~!*()'
+ 
  Does encode: @#$%^&{}[]=:/,;?+"\
  
  Should be the same as javascript's encodeURIComponent().

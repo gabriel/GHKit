@@ -5,8 +5,8 @@ macosx:
 	$(COMMAND) -target GHKit -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
 
 ios:
-	$(COMMAND) -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator4.1 -project GHKitIPhone.xcodeproj build
-	$(COMMAND) -target "GHKitIPhone (Device)" -configuration Release -sdk iphoneos4.1 -project GHKitIPhone.xcodeproj build
+	$(COMMAND) -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator -project GHKitIPhone.xcodeproj build
+	$(COMMAND) -target "GHKitIPhone (Device)" -configuration Release -sdk iphoneos -project GHKitIPhone.xcodeproj build
 	BUILD_DIR="build" BUILD_STYLE="Release" sh Scripts/CombineLibs.sh
 	sh Scripts/iPhoneFramework.sh
 
@@ -34,4 +34,4 @@ test:
 	GHUNIT_AUTORUN=1 GHUNIT_AUTOEXIT=1 $(COMMAND) -target GHKitTests -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
 	
 test-ios:
-	GHUNIT_CLI=1 $(COMMAND) -target Tests -configuration Debug -sdk iphonesimulator4.1 -project GHKitIPhone.xcodeproj
+	GHUNIT_CLI=1 $(COMMAND) -target Tests -configuration Debug -sdk iphonesimulator -project GHKitIPhone.xcodeproj

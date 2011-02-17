@@ -41,18 +41,41 @@
 
 /*!
  Encode URL string.
+ 
+ "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C
+ 
+ Doesn't encode: ~!@#$&*()=:/,;?+'
+ 
+ Does encode: %^{}[]"\
+ 
+ Should be the same as javascript's encodeURI().
+ See http://xkr.us/articles/javascript/encode-compare/
+ 
  @see NSURL#gh_encode:
  */
 - (NSString *)gh_URLEncode;
 
 /*!
- Encode URL string component.
+ Encode URL string (for escaping URL key/value params).
+ 
+ "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C
+ 
+ Doesn't encode: ~!*()'
+ 
+ Does encode: @#$%^&{}[]=:/,;?+"\
+ 
+ Should be the same as javascript's encodeURIComponent().
+ See http://xkr.us/articles/javascript/encode-compare/
+  
  @see NSURL#gh_encodeComponent
  */
 - (NSString *)gh_URLEncodeComponent;
 
 /*!
  Encode URL string (all characters).
+ 
+ Encodes: @#$%^&{}[]=:/,;?+"\~!*()' 
+ 
  @see NSURL#gh_escapeAll
  */
 - (NSString *)gh_URLEscapeAll;

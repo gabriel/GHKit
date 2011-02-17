@@ -102,7 +102,7 @@
 /*!
  Get BOOL value for key.
  @param key
- @result BOOL value
+ @result YES if boolValue; If key not found or is NSNull, returns NO.
  */
 - (BOOL)gh_boolForKey:(id)key;
 

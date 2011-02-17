@@ -60,14 +60,14 @@
 + (NSDate *)gh_parseHTTP:(NSString *)dateString;
 
 /*!
- Parse time since epoch.
- @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)
+ Parse time since epoch (1970) in seconds.
+ @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue).
  @result NSDate or nil if timeSinceEpoch was nil
  */
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch;
 
 /*!
- Parse time since epoch, with default.
+ Parse time since epoch (1970) in seconds, with default.
  @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)
  @param withDefault Default if timeSinceEpoch is nil
  @result NSDate or default
@@ -75,7 +75,7 @@
 + (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value;
 
 /*!
- Parse time since epoch.
+ Parse time since epoch (1970) in seconds.
  @param timeSinceEpoch Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)
  @param withDefault If timeSinceEpoch is nil, returns this value
  @param timeZone If set, the returned Date will be offset from the supplied timestamp by the difference between timeZone and the system time zone
@@ -105,30 +105,36 @@
  For example, '2007-10-18T16:05:10.000Z'. Returns a new autoreleased formatter since NSDateFormatter is not thread-safe.
  @result Date formatter for ISO8601
 */
-+ (NSDateFormatter *)gh_iso8601DateFormatter;
++ (NSDateFormatter *)gh_ISO8601DateFormatter;
 
 /*! 
  For example, 'Wed, 01 Mar 2006 12:00:00 -0400'. Returns a new autoreleased formatter since NSDateFormatter is not thread-safe.
  @result Date formatter for RFC822
 */
-+ (NSDateFormatter *)gh_rfc822DateFormatter;
++ (NSDateFormatter *)gh_RFC822DateFormatter;
 
 /*!
  For example, 'Wed, 01 Mar 2006 12:00:00 GMT'. Returns a new autoreleased formatter since NSDateFormatter is not thread-safe.
  @result Date formatter for RFC1123
  */
-+ (NSDateFormatter *)gh_rfc1123DateFormatter;
++ (NSDateFormatter *)gh_RFC1123DateFormatter;
 
 /*!
  For example, 'Sunday, 06-Nov-94 08:49:37 GMT'. Returns a new autoreleased formatter since NSDateFormatter is not thread-safe.
  @result Date formatter for RFC850
  */
-+ (NSDateFormatter *)gh_rfc850DateFormatter;
++ (NSDateFormatter *)gh_RFC850DateFormatter;
 
 /*!
  For example, 'Sun Nov  6 08:49:37 1994'. Returns a new autoreleased formatter since NSDateFormatter is not thread-safe.
+ If this is called from the main thread, a cached date formatter is returned.
  @result Date formatter for asctime
  */
 + (NSDateFormatter *)gh_ascTimeDateFormatter;
+
+/*!
+ Clear any cached date formatters.
+ */
++ (void)gh_clearDateFormatterCaches;
 
 @end
