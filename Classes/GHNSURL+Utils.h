@@ -100,6 +100,14 @@
 - (NSURL *)gh_canonicalWithIgnore:(NSArray *)ignore;
 
 /*!
+ Remove query params.
+ @param filterQueryParams List of keys to filter 
+ @param sort Whether to sort query params
+ @result URL without query params.
+ */
+- (NSURL *)gh_filterQueryParams:(NSArray *)filterQueryParams sort:(BOOL)sort;
+
+/*!
  Encode URL string.
  
   "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C

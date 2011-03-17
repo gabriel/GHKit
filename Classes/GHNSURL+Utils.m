@@ -96,11 +96,21 @@
 - (NSURL *)gh_deriveWithQuery:(NSString *)query {
 	NSMutableString *URLString = [NSMutableString stringWithFormat:@"%@://", [self scheme]];
 	if ([self user] && [self password]) [URLString appendFormat:@"%@:%@@", [self user], [self password]];
-	[URLString appendString:[self host]];
-	if ([self port]) [URLString appendFormat:@":%d", [[self port] integerValue]];
-	[URLString appendString:[self path]];
-	if (query) [URLString appendFormat:@"?%@", query];
-	if ([self fragment]) [URLString appendFormat:@"#%@", [self fragment]];	
+  if ([self host]) {
+    [URLString appendString:[self host]];
+  }
+	if ([self port]) {
+    [URLString appendFormat:@":%d", [[self port] integerValue]];
+  }
+  if ([self path]) {
+    [URLString appendString:[self path]];
+  }
+	if (query) {
+    [URLString appendFormat:@"?%@", query];
+  }
+	if ([self fragment]) {
+    [URLString appendFormat:@"#%@", [self fragment]];
+  }
 	return [NSURL URLWithString:URLString];
 }
 
@@ -109,13 +119,16 @@
 }
 
 - (NSURL *)gh_canonicalWithIgnore:(NSArray *)ignore {
-	NSString *query = nil;
+	return [self gh_filterQueryParams:ignore sort:YES];
+}
+
+- (NSURL *)gh_filterQueryParams:(NSArray *)filterQueryParams sort:(BOOL)sort {
+  NSString *query = nil;
 	if ([self query]) {
 		NSMutableDictionary *queryParams = [self gh_queryDictionary];
-		for(NSString *key in ignore) [queryParams removeObjectForKey:key];
-		query = [NSURL gh_dictionaryToQueryString:queryParams sort:YES];
+		for(NSString *key in filterQueryParams) [queryParams removeObjectForKey:key];
+		query = [NSURL gh_dictionaryToQueryString:queryParams sort:sort];
 	}
-	
 	return [self gh_deriveWithQuery:query];
 }
 

@@ -89,6 +89,12 @@
 	GHAssertEqualObjects(canonical2, [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?a=d&b=c#myfrag"], nil);
 }
 
+- (void)testFilter {
+  NSURL *URL = [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?b=c&a=d&ignore=ignored#myfrag"];
+	NSURL *filtered = [URL gh_filterQueryParams:[NSArray arrayWithObjects:@"ignore", @"ignore2", nil] sort:YES];
+	GHAssertEqualObjects(filtered, [NSURL URLWithString:@"https://user:pass@api.yelp.com:400/path?a=d&b=c#myfrag"], nil);
+}
+
 - (void)testQueryDictionaryWithArray {
 	NSArray *array1 = [NSArray arrayWithObjects:@"va", @"vb", @"vc", nil];
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:array1, @"key1", @"value2", @"key2", nil];
