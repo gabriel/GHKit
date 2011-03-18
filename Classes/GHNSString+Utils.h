@@ -154,6 +154,12 @@
  */
 - (BOOL)gh_endsWith:(NSString *)endsWith options:(NSStringCompareOptions)options;
 
+/*!
+ Check if self contains the specified string with options
+ @param contains String to look for
+ @param options Options
+ @result YES if string has the substring
+ */
 - (BOOL)gh_contains:(NSString *)contains options:(NSStringCompareOptions)options;
 
 /*!
@@ -190,8 +196,9 @@
  
  @code
  [@"foo:bar" gh_lastSplitWithString:@":" options:0] => bar
+ [@"foo:bar:bar" gh_lastSplitWithString:@":" options:0] => bar:bar
  @endcode
-  
+
  @param s String to split on
  @param options Options
  @result Last part of string split by string. If no string is found, returns self.

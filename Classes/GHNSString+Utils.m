@@ -81,10 +81,6 @@
 #ifndef TARGET_OS_IPHONE
 static NSDictionary *gh_gTruncateMiddle = nil;
 
-/*!
- @method gh_truncateMiddle
- @result Attributed string to ellipsis in the middle
-*/
 - (NSAttributedString *)gh_truncateMiddle {
   if (!gh_gTruncateMiddle) {
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -96,11 +92,6 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return [[[NSAttributedString alloc] initWithString:self attributes:gh_gTruncateMiddle] autorelease];
 }
 
-/*!
- @method gh_mimeTypeForExtension
- @abstract Mime type for extension (e.g. pdf, png, txt)
- @result Mime type
-*/
 - (NSString *)gh_mimeTypeForExtension {
 	// TODO(gabe): Doesn't look like css extension gets the mime type?
   CFStringRef uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)self, NULL);    
@@ -110,13 +101,6 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 }
 #endif
 
-/*!
- @method gh_contains
- @abstract Check if self contains the specified string with options
- @param contains String to look for
- @param options Options
- @result YES if string has the substring
-*/
 - (BOOL)gh_contains:(NSString *)contains options:(NSStringCompareOptions)options {
   NSRange range = [self rangeOfString:contains options:options];
   return (range.location != NSNotFound);
