@@ -37,6 +37,15 @@
 	GHAssertEqualObjects(weekday, [date gh_weekday:dateFormatter], nil);
 }
 
+- (void)testDate {
+  NSDate *date = [NSDate gh_dateWithDay:1 month:1 year:0 addDay:0 addMonth:0 addYear:-30 timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+  [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+  NSString *dateString = [dateFormatter stringFromDate:date];
+  GHAssertEqualStrings(dateString, @"1/1/81", nil);
+}
+
 - (void)testMillisSince1970 {
 	NSDateComponents *comps = [[[NSDateComponents alloc] init] autorelease];
 	[comps setDay:13];

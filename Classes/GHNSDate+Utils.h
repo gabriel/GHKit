@@ -92,6 +92,39 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
 - (NSString *)gh_format:(NSString *)format useWeekday:(BOOL)useWeekday;
 
 /*!
+ Create date from date and add days and/or normalize.
+ @param date The date to start at
+ @param addDay If not 0, will add these number of days to the date.
+ @param normalize If YES will set hours, minutes, seconds to 0
+ */
++ (NSDate *)gh_dateFromDate:(NSDate *)date addDay:(NSInteger)addDay normalize:(BOOL)normalize;
+
+/*!
+ Create date with day, month, year, and add days, months or years.
+ 
+ To use the current day, month or year, specify 0 for that value.
+ 
+ For example, the use Jan, 1 30 years ago:
+ 
+ @code
+ [NSDate gh_dateWithDay:1 month:1 year:0 addDay:0 addMonth:0 addYear:-30 
+  timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+ @endcode
+ 
+ @param day Day to set
+ @param month Month to set
+ @param year Year to set
+ @param addDay Days to add
+ @param addMonth Month to add
+ @param addYear Year to add
+ @param timeZone Time zone to use
+ @result Date
+ */
++ (NSDate *)gh_dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year 
+                    addDay:(NSInteger)addDay addMonth:(NSInteger)addMonth addYear:(NSInteger)addYear 
+                  timeZone:(NSTimeZone *)timeZone;
+
+/*!
  Time ago in words.
  For more info, especially on localization, see GHNSString+TimeInterval.h.
  

@@ -36,14 +36,41 @@ NSString *const kDateFormatShortMonthFullYearTime = @"LLL d, yyyy hh:mm a";
 
 NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSWeekdayCalendarUnit;
 
-+ (NSDate *)_gh_normalizedDate:(NSDate *)date adjustDay:(NSInteger)adjustDay {
++ (NSDate *)_gh_dateFromDate:(NSDate *)date day:(NSInteger)day month:(NSInteger)month year:(NSInteger)year 
+                     addDay:(NSInteger)addDay addMonth:(NSInteger)addMonth addYear:(NSInteger)addYear 
+                  normalize:(BOOL)normalize timeZone:(NSTimeZone *)timeZone {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSDateComponents *comps = [calendar components:kUnitFlags fromDate:date];
-	[comps setHour:0];
-	[comps setMinute:0];
-	[comps setSecond:0];
-	if (adjustDay != 0) [comps setDay:[comps day] + adjustDay];
+  if (timeZone) {
+    [calendar setTimeZone:timeZone];
+  }
+  NSDateComponents *comps = [calendar components:kUnitFlags fromDate:date];
+  if (normalize) {
+    [comps setHour:0];
+    [comps setMinute:0];
+    [comps setSecond:0];
+  }
+	if (day != 0) [comps setDay:day];
+  if (month != 0) [comps setMonth:month];
+  if (year != 0) [comps setYear:year];
+  
+  if (addDay != 0) [comps setDay:([comps day] + addDay)];
+  if (addMonth != 0) [comps setMonth:([comps month] + addMonth)];
+  if (addYear != 0) [comps setYear:([comps year] + addYear)];  
+  
 	return [calendar dateFromComponents:comps];	
+}
+
++ (NSDate *)gh_dateFromDate:(NSDate *)date addDay:(NSInteger)addDay normalize:(BOOL)normalize {
+  return [self _gh_dateFromDate:date day:0 month:0 year:0 addDay:addDay addMonth:0 addYear:0 
+                     normalize:normalize timeZone:nil];
+}
+
++ (NSDate *)gh_dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year 
+                    addDay:(NSInteger)addDay addMonth:(NSInteger)addMonth addYear:(NSInteger)addYear 
+                  timeZone:(NSTimeZone *)timeZone {
+  return [self _gh_dateFromDate:[NSDate date] day:day month:month year:year addDay:addDay addMonth:addMonth addYear:addYear 
+                      normalize:YES timeZone:timeZone];
+
 }
 
 - (NSDate *)gh_addDays:(NSInteger)days {
@@ -54,15 +81,15 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 }
 
 - (NSDate *)gh_beginningOfDay {
-	return [NSDate _gh_normalizedDate:self adjustDay:0];
+	return [NSDate gh_dateFromDate:self addDay:0 normalize:YES];
 }
 
 + (NSDate *)gh_yesterday {	
-	return [NSDate _gh_normalizedDate:[NSDate date] adjustDay:-1];
+	return [NSDate gh_dateFromDate:[NSDate date] addDay:-1 normalize:YES];
 }
 
 + (NSDate *)gh_tomorrow {	
-	return [NSDate _gh_normalizedDate:[NSDate date] adjustDay:1];
+	return [NSDate gh_dateFromDate:[NSDate date] addDay:1 normalize:YES];
 }
 
 - (BOOL)gh_isTomorrow {
