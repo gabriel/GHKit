@@ -33,31 +33,28 @@
 @interface NSFileManager(GHUtils)
 
 /*!
- @method gh_fileSize
- @abstract Get size of file
+ Get size of file.
  @param filePath Path
  @result File size
  */
 + (NSNumber *)gh_fileSize:(NSString *)filePath error:(NSError **)error;
 
 /*!
- @method gh_isDirectory
+ Check if path is a directory.
  @param filePath Path
- @abstract Check if is directory
  @result YES if directory, NO otherwise
  */
 + (BOOL)gh_isDirectory:(NSString *)filePath;
 
 /*!
- @method gh_exist 
+ Check if path exists.
  @param filePath Path
  @result YES if exists, NO otherwise
  */
 + (BOOL)gh_exist:(NSString *)filePath;
 
 /*!
- @method gh_temporaryFile
- @abstract Get path to temporary file
+ Get path to temporary file.
  @param appendPath Path to append to temporary directory name, if not nil
  @param deleteIfExists Will delete existing file if it is in the way
  @param error If not nil, will be set if an error occurs
@@ -66,9 +63,11 @@
 + (NSString *)gh_temporaryFile:(NSString *)appendPath deleteIfExists:(BOOL)deleteIfExists error:(NSError **)error;
 
 /*!
- @method gh_uniquePathWithNumber
- @abstract Get unique filename based on the specified path. If file does not already exist, the same object is returned. 
- Example: foo.txt and that path already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on...  
+ Get unique filename based on the specified path. 
+ If file does not exist, the same object is returned.
+ If file does exist a unique variation is returned.
+ @param path Path
+ @result If, for example, foo.txt already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on.
  */
 + (NSString *)gh_uniquePathWithNumber:(NSString *)path;
 
@@ -81,7 +80,9 @@
 + (BOOL)gh_ensureDirectoryExists:(NSString *)directory created:(BOOL *)created error:(NSError **)error;
 
 /*!
- Path to resource in bundle.
+ Path to resource in main bundle.
+ @param path Path
+ @result Full path in resource in main bundle.
  */
 + (NSString *)gh_pathToResource:(NSString *)path;
 

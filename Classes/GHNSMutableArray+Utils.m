@@ -49,7 +49,7 @@
   [self removeObjectIdenticalTo:[NSNull null]];
 }
 
-- (void)gh_addObjectIfNotNil:(id)obj {
+- (void)gh_addObject:(id)obj {
   if (obj) [self addObject:obj];
 }
 

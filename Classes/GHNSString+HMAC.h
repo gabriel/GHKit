@@ -41,6 +41,7 @@
  @endcode
  
  @code
+ // #import <GHKit/GTMBase64.h>
  ["stringtosign" gh_HMACSHA1:@"mysecret" base64Encoder:[GTMBase64 class]];
  @endcode
  

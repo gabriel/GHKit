@@ -31,6 +31,11 @@
  */
 @interface NSMutableArray(GHUtils)
 
+/*!
+ Insert objects at index.
+ @param objects Objects to insert
+ @param index Index to insert at
+ */
 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index;
 
 /*!
@@ -48,10 +53,10 @@
 - (void)gh_mutableCompact;
 
 /*!
- Add object if not nil. Safe add object.
+ Add object. If object is nil, this is a no op.
  @param obj
  */
-- (void)gh_addObjectIfNotNil:(id)obj;
+- (void)gh_addObject:(id)obj;
 
 /*!
  Remove last object.

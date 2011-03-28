@@ -2,7 +2,7 @@
 COMMAND=xcodebuild
 
 macosx:
-	$(COMMAND) -target GHKit -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
+	$(COMMAND) -target GHKit -configuration Release -sdk macosx10.6 -project GHKit.xcodeproj
 
 ios:
 	$(COMMAND) -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator -project GHKitIPhone.xcodeproj build
@@ -17,7 +17,7 @@ docs:
 	cd ~/Library/Developer/Shared/Documentation/DocSets/ && tar zcvpf GHKit.docset.tgz GHKit.docset
 	mv ~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset.tgz Documentation
 
-docs-gh: docs
+gh-pages: docs
 	rm -rf build
 	git checkout gh-pages
 	cp -R Documentation/html/* .

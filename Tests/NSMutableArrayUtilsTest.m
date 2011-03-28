@@ -57,8 +57,8 @@
 
 - (void)testAddObjectIfNotNil {
   NSMutableArray *array = [NSMutableArray array];
-  [array gh_addObjectIfNotNil:nil];
-  [array gh_addObjectIfNotNil:@"1"];
+  [array gh_addObject:nil];
+  [array gh_addObject:@"1"];
   GHAssertTrue([array count] == 1, nil);
 }
 
