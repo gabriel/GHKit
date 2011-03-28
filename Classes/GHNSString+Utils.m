@@ -78,7 +78,7 @@
 	return [self compare:s options:NSCaseInsensitiveSearch] == NSOrderedSame;
 }
 
-#ifndef TARGET_OS_IPHONE
+#if !TARGET_OS_IPHONE
 static NSDictionary *gh_gTruncateMiddle = nil;
 
 - (NSAttributedString *)gh_truncateMiddle {

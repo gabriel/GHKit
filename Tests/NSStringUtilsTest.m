@@ -116,7 +116,6 @@
 	NSArray *segments7 = [test7 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected7 = [NSArray arrayWithObjects:nil];
 	GHAssertEqualObjects(segments7, expected7, @"Segments is invalid");	
-	
 }
 
 - (void)testRightStrip {
@@ -129,11 +128,15 @@
 	NSString *text = @"   this is a string to left strip";
 	NSString *expected = @"this is a string to left strip";
 	GHAssertEqualStrings([text gh_leftStrip], expected, nil);
-	
 }
 
 - (void)testIsEqualIgnoreCase {
 	GHAssertTrue([@"FOoO" gh_isEqualIgnoreCase:@"fooO"], nil);
+}
+
+- (void)testTruncateMiddle {
+  NSAttributedString *attributedString = [@"This is a test" gh_truncateMiddle];
+  GHTestLog(@"attributedString=%@", attributedString);
 }
 	
 @end

@@ -90,7 +90,7 @@
  */
 + (BOOL)gh_isBlank:(NSString *)s;
 
-#ifndef TARGET_OS_IPHONE
+#if !TARGET_OS_IPHONE
 /*!
  Create attributed string that truncates in the middle.
  @result Attributed string that truncates in the middle.
