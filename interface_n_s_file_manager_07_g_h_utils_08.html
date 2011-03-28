@@ -63,20 +63,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSNumber *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#abcf8a886058d10c23de0fb8a192117e1">gh_fileSize:error:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gh_fileSize  Get size of file  <a href="#abcf8a886058d10c23de0fb8a192117e1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get size of file.  <a href="#abcf8a886058d10c23de0fb8a192117e1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#a58c01e8dff72aabce8b3e34455cc1e4c">gh_isDirectory:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gh_isDirectory  <a href="#a58c01e8dff72aabce8b3e34455cc1e4c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if path is a directory.  <a href="#a58c01e8dff72aabce8b3e34455cc1e4c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#a3c0f3139121efb70ff0563bf1e31c4e8">gh_exist:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gh_exist  <a href="#a3c0f3139121efb70ff0563bf1e31c4e8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Check if path exists.  <a href="#a3c0f3139121efb70ff0563bf1e31c4e8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#a72487781226a21ce572cad29b52fddff">gh_temporaryFile:deleteIfExists:error:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gh_temporaryFile  Get path to temporary file  <a href="#a72487781226a21ce572cad29b52fddff"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get path to temporary file.  <a href="#a72487781226a21ce572cad29b52fddff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#ae66336a5d10a5cc0f816467933d886bd">gh_uniquePathWithNumber:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gh_uniquePathWithNumber  Get unique filename based on the specified path.  <a href="#ae66336a5d10a5cc0f816467933d886bd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Get unique filename based on the specified path.  <a href="#ae66336a5d10a5cc0f816467933d886bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(BOOL)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#ad3e5730db622ea189827887145c0bff7">gh_ensureDirectoryExists:created:error:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Ensure directory exists.  <a href="#ad3e5730db622ea189827887145c0bff7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf08c5fcd95abe8c0ed54c86ebd4a100"></a><!-- doxytag: member="NSFileManager(GHUtils)::gh_pathToResource:" ref="abf08c5fcd95abe8c0ed54c86ebd4a100" args="(NSString *path)" -->
-(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#abf08c5fcd95abe8c0ed54c86ebd4a100">gh_pathToResource:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Path to resource in bundle. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_file_manager_07_g_h_utils_08.html#abf08c5fcd95abe8c0ed54c86ebd4a100">gh_pathToResource:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Path to resource in main bundle.  <a href="#abf08c5fcd95abe8c0ed54c86ebd4a100"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Utilities for NSFileManager, for example, file size, exists, generating temporary or unique file paths. </p>
@@ -144,7 +143,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>gh_exist </p>
+<p>Check if path exists. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>filePath</em>&nbsp;</td><td>Path </td></tr>
@@ -182,7 +181,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>gh_fileSize  Get size of file </p>
+<p>Get size of file. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>filePath</em>&nbsp;</td><td>Path </td></tr>
@@ -211,16 +210,45 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>gh_isDirectory </p>
+<p>Check if path is a directory. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>filePath</em>&nbsp;</td><td>Path  Check if is directory </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>filePath</em>&nbsp;</td><td>Path </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>YES if directory, NO otherwise </dd></dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_file_manager_09_utils_8m_source.html#l00046">46</a> of file <a class="el" href="_g_h_n_s_file_manager_09_utils_8m_source.html">GHNSFileManager+Utils.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf08c5fcd95abe8c0ed54c86ebd4a100"></a><!-- doxytag: member="NSFileManager(GHUtils)::gh_pathToResource:" ref="abf08c5fcd95abe8c0ed54c86ebd4a100" args="(NSString *path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSString *) gh_pathToResource: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&nbsp;</td>
+          <td class="paramname"> <em>path</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Path to resource in main bundle. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>path</em>&nbsp;</td><td>Path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Full path in resource in main bundle. </dd></dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_file_manager_09_utils_8m_source.html#l00092">92</a> of file <a class="el" href="_g_h_n_s_file_manager_09_utils_8m_source.html">GHNSFileManager+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -255,7 +283,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>gh_temporaryFile  Get path to temporary file </p>
+<p>Get path to temporary file. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>appendPath</em>&nbsp;</td><td>Path to append to temporary directory name, if not nil </td></tr>
@@ -286,8 +314,15 @@ Static Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>gh_uniquePathWithNumber  Get unique filename based on the specified path. </p>
-<p>If file does not already exist, the same object is returned. Example: foo.txt and that path already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on... </p>
+<p>Get unique filename based on the specified path. </p>
+<p>If file does not exist, the same object is returned. If file does exist a unique variation is returned. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>path</em>&nbsp;</td><td>Path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If, for example, foo.txt already exists, will return foo-1.txt, and if that exists foo-2.txt, and so on. </dd></dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_file_manager_09_utils_8m_source.html#l00078">78</a> of file <a class="el" href="_g_h_n_s_file_manager_09_utils_8m_source.html">GHNSFileManager+Utils.m</a>.</p>
 
@@ -312,7 +347,7 @@ Static Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

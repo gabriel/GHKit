@@ -80,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00031"></a>00031 
 <a name="l00032"></a>00032 <span class="keyword">@implementation </span>NSMutableArray(GHUtils)
 <a name="l00033"></a>00033 
-<a name="l00034"></a>00034 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index {
+<a name="l00034"></a><a class="code" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a7e85ec8a5c4e6913ae04dc44baf46f2e">00034</a> - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index {
 <a name="l00035"></a>00035     NSIndexSet *indexes = [[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(index, [objects count])];
 <a name="l00036"></a>00036     [<span class="keyword">self</span> insertObjects:objects atIndexes:indexes];
 <a name="l00037"></a>00037     [indexes release];
@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00049"></a>00049   [<span class="keyword">self</span> removeObjectIdenticalTo:[NSNull null]];
 <a name="l00050"></a>00050 }
 <a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a074fe3819b82e4fc70acf680032aade6">00052</a> - (void)gh_addObjectIfNotNil:(<span class="keywordtype">id</span>)obj {
+<a name="l00052"></a><a class="code" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a22b4c84114d3ec4fe447a3a867e4b8b6">00052</a> - (void)gh_addObject:(<span class="keywordtype">id</span>)obj {
 <a name="l00053"></a>00053   <span class="keywordflow">if</span> (obj) [<span class="keyword">self</span> addObject:obj];
 <a name="l00054"></a>00054 }
 <a name="l00055"></a>00055 
@@ -125,7 +125,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

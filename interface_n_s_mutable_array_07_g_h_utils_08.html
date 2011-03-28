@@ -62,14 +62,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e85ec8a5c4e6913ae04dc44baf46f2e"></a><!-- doxytag: member="NSMutableArray(GHUtils)::gh_insertObjects:atIndex:" ref="a7e85ec8a5c4e6913ae04dc44baf46f2e" args="(NSArray *objects,[atIndex] NSInteger index)" -->
-(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <b>gh_insertObjects:atIndex:</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a7e85ec8a5c4e6913ae04dc44baf46f2e">gh_insertObjects:atIndex:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Insert objects at index.  <a href="#a7e85ec8a5c4e6913ae04dc44baf46f2e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSUInteger)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a4ddadf72aca150b98e6abb59f0d8e956">gh_replaceObject:withObject:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Replace object with another object.  <a href="#a4ddadf72aca150b98e6abb59f0d8e956"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a2d969ca3c4add1504762acd2570ba0c9">gh_mutableCompact</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Compact.  <a href="#a2d969ca3c4add1504762acd2570ba0c9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a074fe3819b82e4fc70acf680032aade6">gh_addObjectIfNotNil:</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add object if not nil.  <a href="#a074fe3819b82e4fc70acf680032aade6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_mutable_array_07_g_h_utils_08.html#a22b4c84114d3ec4fe447a3a867e4b8b6">gh_addObject:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Add object.  <a href="#a22b4c84114d3ec4fe447a3a867e4b8b6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_mutable_array_07_g_h_utils_08.html#ad1d3a7127b686ed24f47aa13e3a50c56">gh_removeLastObject</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Remove last object.  <a href="#ad1d3a7127b686ed24f47aa13e3a50c56"></a><br/></td></tr>
 </table>
@@ -78,12 +78,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_mutable_array_09_utils_8h_source.html#l00032">32</a> of file <a class="el" href="_g_h_n_s_mutable_array_09_utils_8h_source.html">GHNSMutableArray+Utils.h</a>.</p>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a074fe3819b82e4fc70acf680032aade6"></a><!-- doxytag: member="NSMutableArray(GHUtils)::gh_addObjectIfNotNil:" ref="a074fe3819b82e4fc70acf680032aade6" args="(id obj)" -->
+<a class="anchor" id="a22b4c84114d3ec4fe447a3a867e4b8b6"></a><!-- doxytag: member="NSMutableArray(GHUtils)::gh_addObject:" ref="a22b4c84114d3ec4fe447a3a867e4b8b6" args="(id obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void) gh_addObjectIfNotNil: </td>
+          <td class="memname">- (void) gh_addObject: </td>
           <td></td>
           <td class="paramtype">(id)&nbsp;</td>
           <td class="paramname"> <em>obj</em></td>
@@ -94,8 +94,8 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Add object if not nil. </p>
-<p>Safe add object. </p>
+<p>Add object. </p>
+<p>If object is nil, this is a no op. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>obj</em>&nbsp;</td><td></td></tr>
@@ -104,6 +104,44 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_mutable_array_09_utils_8m_source.html#l00052">52</a> of file <a class="el" href="_g_h_n_s_mutable_array_09_utils_8m_source.html">GHNSMutableArray+Utils.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7e85ec8a5c4e6913ae04dc44baf46f2e"></a><!-- doxytag: member="NSMutableArray(GHUtils)::gh_insertObjects:atIndex:" ref="a7e85ec8a5c4e6913ae04dc44baf46f2e" args="(NSArray *objects,[atIndex] NSInteger index)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) gh_insertObjects: </td>
+          <td></td>
+          <td class="paramtype">(NSArray *)&nbsp;</td>
+          <td class="paramname"> <em>objects</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">atIndex:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>index</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert objects at index. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>objects</em>&nbsp;</td><td>Objects to insert </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>index</em>&nbsp;</td><td>Index to insert at </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_mutable_array_09_utils_8m_source.html#l00034">34</a> of file <a class="el" href="_g_h_n_s_mutable_array_09_utils_8m_source.html">GHNSMutableArray+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -209,7 +247,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

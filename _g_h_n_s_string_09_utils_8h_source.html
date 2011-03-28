@@ -115,44 +115,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00148"></a>00148 
 <a name="l00155"></a>00155 - (BOOL)gh_endsWith:(NSString *)endsWith options:(NSStringCompareOptions)options;
 <a name="l00156"></a>00156 
-<a name="l00157"></a>00157 - (BOOL)gh_contains:(NSString *)contains options:(NSStringCompareOptions)options;
-<a name="l00158"></a>00158 
-<a name="l00163"></a>00163 - (NSString *)gh_attributize;
+<a name="l00163"></a>00163 - (BOOL)gh_contains:(NSString *)contains options:(NSStringCompareOptions)options;
 <a name="l00164"></a>00164 
-<a name="l00174"></a>00174 - (NSString *)gh_fullPathExtension;
-<a name="l00175"></a>00175 
-<a name="l00180"></a>00180 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
+<a name="l00169"></a>00169 - (NSString *)gh_attributize;
+<a name="l00170"></a>00170 
+<a name="l00180"></a>00180 - (NSString *)gh_fullPathExtension;
 <a name="l00181"></a>00181 
-<a name="l00186"></a>00186 + (NSString *)gh_uuid;
+<a name="l00186"></a>00186 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 <a name="l00187"></a>00187 
-<a name="l00199"></a>00199 - (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options;
-<a name="l00200"></a>00200 
-<a name="l00212"></a>00212 - (NSArray *)gh_componentsSeparatedByString:(NSString *)s include:(BOOL)include;
-<a name="l00213"></a>00213 
-<a name="l00230"></a>00230 - (NSArray *)gh_substringSegmentsWithinStart:(NSString *)start end:(NSString *)end;
-<a name="l00231"></a>00231 
-<a name="l00238"></a>00238 - (NSString *)gh_rot13;
-<a name="l00239"></a>00239 
-<a name="l00243"></a>00243 - (NSString *)gh_MD5;
-<a name="l00244"></a>00244 
-<a name="l00245"></a>00245 <span class="keyword">@end</span>
+<a name="l00192"></a>00192 + (NSString *)gh_uuid;
+<a name="l00193"></a>00193 
+<a name="l00206"></a>00206 - (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options;
+<a name="l00207"></a>00207 
+<a name="l00219"></a>00219 - (NSArray *)gh_componentsSeparatedByString:(NSString *)s include:(BOOL)include;
+<a name="l00220"></a>00220 
+<a name="l00237"></a>00237 - (NSArray *)gh_substringSegmentsWithinStart:(NSString *)start end:(NSString *)end;
+<a name="l00238"></a>00238 
+<a name="l00245"></a>00245 - (NSString *)gh_rot13;
 <a name="l00246"></a>00246 
-<a name="l00248"></a>00248 
-<a name="l00252"></a>00252 <span class="keyword">@interface </span>GHNSStringSegment : NSObject {
-<a name="l00253"></a>00253     NSString *string_;
-<a name="l00254"></a>00254     BOOL isMatch_;
-<a name="l00255"></a>00255 }
-<a name="l00256"></a>00256 
-<a name="l00257"></a>00257 
-<a name="l00258"></a>00258 @property (readonly) NSString *<span class="keywordtype">string</span>;
-<a name="l00259"></a>00259 @property (readonly, getter=isMatch) BOOL match;
-<a name="l00260"></a>00260 
-<a name="l00261"></a>00261 - (<span class="keywordtype">id</span>)initWithString:(NSString *)<span class="keywordtype">string</span> isMatch:(BOOL)isMatch;
-<a name="l00262"></a>00262 
-<a name="l00263"></a>00263 + (GHNSStringSegment *)<span class="keywordtype">string</span>:(NSString *)<span class="keywordtype">string</span> isMatch:(BOOL)isMatch;
+<a name="l00250"></a>00250 - (NSString *)gh_MD5;
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252 <span class="keyword">@end</span>
+<a name="l00253"></a>00253 
+<a name="l00255"></a>00255 
+<a name="l00259"></a>00259 <span class="keyword">@interface </span>GHNSStringSegment : NSObject {
+<a name="l00260"></a>00260     NSString *string_;
+<a name="l00261"></a>00261     BOOL isMatch_;
+<a name="l00262"></a>00262 }
+<a name="l00263"></a>00263 
 <a name="l00264"></a>00264 
-<a name="l00265"></a>00265 @end
-<a name="l00266"></a>00266 
+<a name="l00265"></a>00265 @property (readonly) NSString *<span class="keywordtype">string</span>;
+<a name="l00266"></a>00266 @property (readonly, getter=isMatch) BOOL match;
+<a name="l00267"></a>00267 
+<a name="l00268"></a>00268 - (<span class="keywordtype">id</span>)initWithString:(NSString *)<span class="keywordtype">string</span> isMatch:(BOOL)isMatch;
+<a name="l00269"></a>00269 
+<a name="l00270"></a>00270 + (GHNSStringSegment *)<span class="keywordtype">string</span>:(NSString *)<span class="keywordtype">string</span> isMatch:(BOOL)isMatch;
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272 @end
+<a name="l00273"></a>00273 
 </pre></div></div>
 </div>
 <!--- window showing the filter options -->
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

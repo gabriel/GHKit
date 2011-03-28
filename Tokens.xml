@@ -348,7 +348,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
     <Anchor>a96636916e0b7998e270cc353252e8a22</Anchor>
-    <Abstract>Parse time since epoch.</Abstract>
+    <Abstract>Parse time since epoch (1970) in seconds.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -358,7 +358,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
     <Anchor>a5fe20cbb7034309b15d61ff2b263f9ae</Anchor>
-    <Abstract>Parse time since epoch, with default.</Abstract>
+    <Abstract>Parse time since epoch (1970) in seconds, with default.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -368,46 +368,46 @@
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
     <Anchor>ac95877dea7ebcfcac7952f25a56cc56a</Anchor>
-    <Abstract>Parse time since epoch.</Abstract>
+    <Abstract>Parse time since epoch (1970) in seconds.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>gh_iso8601DateFormatter</Name>
+      <Name>gh_ISO8601DateFormatter</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
-    <Anchor>afadce4d639e9c82c7f3955db948af2e7</Anchor>
+    <Anchor>a93680a6c5127adee0b0bd7109b784256</Anchor>
     <Abstract>For example, &amp;#39;2007-10-18T16:05:10.000Z&amp;#39;.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>gh_rfc822DateFormatter</Name>
+      <Name>gh_RFC822DateFormatter</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
-    <Anchor>a08c54e54b6594686a029ca688875e0ab</Anchor>
+    <Anchor>a43d20d299d90e467738140793f70ff62</Anchor>
     <Abstract>For example, &amp;#39;Wed, 01 Mar 2006 12:00:00 -0400&amp;#39;.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>gh_rfc1123DateFormatter</Name>
+      <Name>gh_RFC1123DateFormatter</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
-    <Anchor>a9b2e1c325d0d511c04823724b7bbd30c</Anchor>
+    <Anchor>a874c50f05734ac66483856a9f2b4f668</Anchor>
     <Abstract>For example, &amp;#39;Wed, 01 Mar 2006 12:00:00 GMT&amp;#39;.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>gh_rfc850DateFormatter</Name>
+      <Name>gh_RFC850DateFormatter</Name>
       <APILanguage>occ</APILanguage>
       <Type>clm</Type>
     </TokenIdentifier>
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
-    <Anchor>a779e4323b20b30946b60117e0b9566c6</Anchor>
+    <Anchor>a90b016174b5577932e413bf0564d1f69</Anchor>
     <Abstract>For example, &amp;#39;Sunday, 06-Nov-94 08:49:37 GMT&amp;#39;.</Abstract>
   </Token>
   <Token>
@@ -419,6 +419,16 @@
     <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
     <Anchor>a60cf49de2f0ee194f7c39eb4807e8c09</Anchor>
     <Abstract>For example, &amp;#39;Sun Nov 6 08:49:37 1994&amp;#39;.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_clearDateFormatterCaches</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_date_07_g_h_parsing_08.html</Path>
+    <Anchor>a59494bb8c5d98ff36bad69fae55a3c41</Anchor>
+    <Abstract>Clear any cached date formatters.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -559,6 +569,26 @@
     <Path>interface_n_s_date_07_g_h_utils_08.html</Path>
     <Anchor>a1a2bfac99479e0f13890c54ffb86cc85</Anchor>
     <Abstract>Tomorrow (beginning of day).</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_dateFromDate:addDay:normalize:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_date_07_g_h_utils_08.html</Path>
+    <Anchor>af03eb227b080d185886d45249480a4fa</Anchor>
+    <Abstract>Create date from date and add days and/or normalize.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_dateWithDay:month:year:addDay:addMonth:addYear:timeZone:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_date_07_g_h_utils_08.html</Path>
+    <Anchor>ab056daf7fbf755d5ea727ca2e54a6221</Anchor>
+    <Abstract>Create date with day, month, year, and add days, months or years.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -777,7 +807,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_file_manager_07_g_h_utils_08.html</Path>
     <Anchor>abcf8a886058d10c23de0fb8a192117e1</Anchor>
-    <Abstract>gh_fileSize  Get size of file</Abstract>
+    <Abstract>Get size of file.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -787,7 +817,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_file_manager_07_g_h_utils_08.html</Path>
     <Anchor>a58c01e8dff72aabce8b3e34455cc1e4c</Anchor>
-    <Abstract>gh_isDirectory</Abstract>
+    <Abstract>Check if path is a directory.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -797,7 +827,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_file_manager_07_g_h_utils_08.html</Path>
     <Anchor>a3c0f3139121efb70ff0563bf1e31c4e8</Anchor>
-    <Abstract>gh_exist</Abstract>
+    <Abstract>Check if path exists.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -807,7 +837,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_file_manager_07_g_h_utils_08.html</Path>
     <Anchor>a72487781226a21ce572cad29b52fddff</Anchor>
-    <Abstract>gh_temporaryFile  Get path to temporary file</Abstract>
+    <Abstract>Get path to temporary file.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -817,7 +847,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_file_manager_07_g_h_utils_08.html</Path>
     <Anchor>ae66336a5d10a5cc0f816467933d886bd</Anchor>
-    <Abstract>gh_uniquePathWithNumber  Get unique filename based on the specified path.</Abstract>
+    <Abstract>Get unique filename based on the specified path.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -837,7 +867,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_file_manager_07_g_h_utils_08.html</Path>
     <Anchor>abf08c5fcd95abe8c0ed54c86ebd4a100</Anchor>
-    <Abstract>Path to resource in bundle.</Abstract>
+    <Abstract>Path to resource in main bundle.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -931,6 +961,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>gh_insertObjects:atIndex:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_mutable_array_07_g_h_utils_08.html</Path>
+    <Anchor>a7e85ec8a5c4e6913ae04dc44baf46f2e</Anchor>
+    <Abstract>Insert objects at index.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>gh_replaceObject:withObject:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -951,13 +991,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>gh_addObjectIfNotNil:</Name>
+      <Name>gh_addObject:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
     </TokenIdentifier>
     <Path>interface_n_s_mutable_array_07_g_h_utils_08.html</Path>
-    <Anchor>a074fe3819b82e4fc70acf680032aade6</Anchor>
-    <Abstract>Add object if not nil.</Abstract>
+    <Anchor>a22b4c84114d3ec4fe447a3a867e4b8b6</Anchor>
+    <Abstract>Add object.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1337,7 +1377,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_string_07_g_h_u_r_l_08.html</Path>
     <Anchor>a576d5c716836feb5f453eac87e24b0bc</Anchor>
-    <Abstract>Encode URL string component.</Abstract>
+    <Abstract>Encode URL string (for escaping URL key/value params).</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1517,7 +1557,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_string_07_g_h_utils_08.html</Path>
     <Anchor>a72bbb5cb7c4f3166e561316df4b36e5f</Anchor>
-    <Abstract>gh_contains  Check if self contains the specified string with options</Abstract>
+    <Abstract>Check if self contains the specified string with options.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1688,6 +1728,16 @@
     <Path>interface_n_s_u_r_l_07_g_h_utils_08.html</Path>
     <Anchor>a5c68ed58634341ac4bd216d6104b3a48</Anchor>
     <Abstract>Canonical form of URL.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_filterQueryParams:sort:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_u_r_l_07_g_h_utils_08.html</Path>
+    <Anchor>a75d03d6d5f428a22ee47c4c754309623</Anchor>
+    <Abstract>Remove query params.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

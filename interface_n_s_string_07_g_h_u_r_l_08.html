@@ -67,7 +67,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_string_07_g_h_u_r_l_08.html#ae2373d14d6ea1ece698ff9f5c59031d2">gh_URLEncode</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Encode URL string.  <a href="#ae2373d14d6ea1ece698ff9f5c59031d2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_string_07_g_h_u_r_l_08.html#a576d5c716836feb5f453eac87e24b0bc">gh_URLEncodeComponent</a></td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Encode URL string component.  <a href="#a576d5c716836feb5f453eac87e24b0bc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Encode URL string (for escaping URL key/value params).  <a href="#a576d5c716836feb5f453eac87e24b0bc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_string_07_g_h_u_r_l_08.html#ab1a3a22a1c5190c4a557891e76429ffc">gh_URLEscapeAll</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Encode URL string (all characters).  <a href="#ab1a3a22a1c5190c4a557891e76429ffc"></a><br/></td></tr>
 </table>
@@ -114,6 +114,10 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Encode URL string. </p>
+<p>"~!@#$%^&amp;*(){}[]=:/,;?+'\"\" =&gt; ~!#$255E&amp;*()7B7D5B5D=:/,;?+'225C</p>
+<p>Doesn't encode: ~!#$&amp;*()=:/,;?+'</p>
+<p>Does encode: ^{}[]"\</p>
+<p>Should be the same as javascript's encodeURI(). See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/articles/javascript/encode-compare/</a></p>
 <dl class="see"><dt><b>See also:</b></dt><dd>NSURL::gh_encode: </dd></dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_string_09_u_r_l_8m_source.html#l00038">38</a> of file <a class="el" href="_g_h_n_s_string_09_u_r_l_8m_source.html">GHNSString+URL.m</a>.</p>
@@ -135,7 +139,11 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Encode URL string component. </p>
+<p>Encode URL string (for escaping URL key/value params). </p>
+<p>"~!@#$%^&amp;*(){}[]=:/,;?+'\"\" =&gt; ~!402324255E26*()7B7D5B5D3D3A2F2C3B3F2B'225C</p>
+<p>Doesn't encode: ~!*()'</p>
+<p>Does encode: #$^&amp;{}[]=:/,;?+"\</p>
+<p>Should be the same as javascript's encodeURIComponent(). See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/articles/javascript/encode-compare/</a></p>
 <dl class="see"><dt><b>See also:</b></dt><dd>NSURL::gh_encodeComponent </dd></dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_string_09_u_r_l_8m_source.html#l00042">42</a> of file <a class="el" href="_g_h_n_s_string_09_u_r_l_8m_source.html">GHNSString+URL.m</a>.</p>
@@ -158,6 +166,7 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Encode URL string (all characters). </p>
+<p>Encodes: #$^&amp;{}[]=:/,;?+"!*()'</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>NSURL::gh_escapeAll </dd></dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_string_09_u_r_l_8m_source.html#l00046">46</a> of file <a class="el" href="_g_h_n_s_string_09_u_r_l_8m_source.html">GHNSString+URL.m</a>.</p>
@@ -183,7 +192,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

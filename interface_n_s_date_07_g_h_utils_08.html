@@ -93,6 +93,10 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Yesterday (beginning of day).  <a href="#a30ea36064f05813916c9d81afcf78a8c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(NSDate *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_date_07_g_h_utils_08.html#a1a2bfac99479e0f13890c54ffb86cc85">gh_tomorrow</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Tomorrow (beginning of day).  <a href="#a1a2bfac99479e0f13890c54ffb86cc85"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSDate *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_date_07_g_h_utils_08.html#af03eb227b080d185886d45249480a4fa">gh_dateFromDate:addDay:normalize:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create date from date and add days and/or normalize.  <a href="#af03eb227b080d185886d45249480a4fa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSDate *)&nbsp;</td><td class="memItemRight" valign="bottom">+ <a class="el" href="interface_n_s_date_07_g_h_utils_08.html#ab056daf7fbf755d5ea727ca2e54a6221">gh_dateWithDay:month:year:addDay:addMonth:addYear:timeZone:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Create date with day, month, year, and add days, months or years.  <a href="#ab056daf7fbf755d5ea727ca2e54a6221"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Utilities for dates, for time ago in words and date component arithmentic (adding days), tomorrow, yesterday, and more. </p>
@@ -124,7 +128,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Date with days added or subtracted </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00049">49</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00076">76</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -146,7 +150,130 @@ Static Public Member Functions</h2></td></tr>
 <p>Get normalized date (hours/minutes/seconds) set to 0; Begining of day. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Beginning day of current date </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00056">56</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00083">83</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af03eb227b080d185886d45249480a4fa"></a><!-- doxytag: member="NSDate(GHUtils)::gh_dateFromDate:addDay:normalize:" ref="af03eb227b080d185886d45249480a4fa" args="(NSDate *date,[addDay] NSInteger addDay,[normalize] BOOL normalize)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSDate *) gh_dateFromDate: </td>
+          <td></td>
+          <td class="paramtype">(NSDate *)&nbsp;</td>
+          <td class="paramname"> <em>date</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">addDay:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>addDay</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">normalize:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&nbsp;</td>
+          <td class="paramname"> <em>normalize</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create date from date and add days and/or normalize. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>date</em>&nbsp;</td><td>The date to start at </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>addDay</em>&nbsp;</td><td>If not 0, will add these number of days to the date. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>normalize</em>&nbsp;</td><td>If YES will set hours, minutes, seconds to 0 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00063">63</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab056daf7fbf755d5ea727ca2e54a6221"></a><!-- doxytag: member="NSDate(GHUtils)::gh_dateWithDay:month:year:addDay:addMonth:addYear:timeZone:" ref="ab056daf7fbf755d5ea727ca2e54a6221" args="(NSInteger day,[month] NSInteger month,[year] NSInteger year,[addDay] NSInteger addDay,[addMonth] NSInteger addMonth,[addYear] NSInteger addYear,[timeZone] NSTimeZone *timeZone)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">+ (NSDate *) gh_dateWithDay: </td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>day</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">month:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>month</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">year:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>year</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">addDay:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>addDay</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">addMonth:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>addMonth</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">addYear:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&nbsp;</td>
+          <td class="paramname"> <em>addYear</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">timeZone:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeZone *)&nbsp;</td>
+          <td class="paramname"> <em>timeZone</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create date with day, month, year, and add days, months or years. </p>
+<p>To use the current day, month or year, specify 0 for that value.</p>
+<p>For example, the use Jan, 1 30 years ago:</p>
+<div class="fragment"><pre class="fragment"> [NSDate gh_dateWithDay:1 month:1 year:0 addDay:0 addMonth:0 addYear:-30 
+  timeZone:[NSTimeZone timeZoneWithAbbreviation:@&quot;GMT&quot;]];
+</pre></div><dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>day</em>&nbsp;</td><td>Day to set </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>month</em>&nbsp;</td><td>Month to set </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>year</em>&nbsp;</td><td>Year to set </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>addDay</em>&nbsp;</td><td>Days to add </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>addMonth</em>&nbsp;</td><td>Month to add </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>addYear</em>&nbsp;</td><td>Year to add </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>timeZone</em>&nbsp;</td><td>Time zone to use </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Date </dd></dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00068">68</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -184,7 +311,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00091">91</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00118">118</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -206,7 +333,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Check if date was or is today. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>YES if today </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00072">72</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00099">99</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -228,7 +355,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Check if date is tomorrow. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>YES if tomorrow </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00068">68</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00095">95</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -250,7 +377,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Milliseconds since 1970 (NSNumber). </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Milliseconds since 1970 GMT </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00112">112</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00139">139</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -272,7 +399,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Milliseconds since 1970. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Milliseconds since 1970 GMT. </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00107">107</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00134">134</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -294,7 +421,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Seconds since 1970 (NSNumber). </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Seconds since 1970 GMT (rounded) </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00122">122</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00149">149</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -316,7 +443,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Seconds since 1970. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Seconds since 1970 GMT (rounded) </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00117">117</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00144">144</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -361,7 +488,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Time ago in words </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00103">103</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00130">130</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -383,7 +510,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Tomorrow (beginning of day). </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Next day (beginning) </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00064">64</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00091">91</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -405,7 +532,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Check if date was yesterday. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>YES if yesterday </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00076">76</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00103">103</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -434,7 +561,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>'Yesterday', 'Today' and 'Tomorrow' or weekday symbol for specified formatter </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00080">80</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00107">107</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -456,7 +583,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Yesterday (beginning of day). </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Previous day (beginning) </dd></dl>
 
-<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00060">60</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
+<p>Definition at line <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html#l00087">87</a> of file <a class="el" href="_g_h_n_s_date_09_utils_8m_source.html">GHNSDate+Utils.m</a>.</p>
 
 </div>
 </div>
@@ -479,7 +606,7 @@ Static Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Wed Oct 20 2010 23:43:40 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>
