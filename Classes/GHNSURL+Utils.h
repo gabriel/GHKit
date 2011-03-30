@@ -161,7 +161,7 @@
  */
 + (NSString *)gh_decode:(NSString *)s;
 
-#ifndef TARGET_OS_IPHONE
+#if !TARGET_OS_IPHONE
 
 /*!
  @method copyLinkToPasteboard

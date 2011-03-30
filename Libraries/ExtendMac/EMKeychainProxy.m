@@ -70,7 +70,7 @@ static EMKeychainProxy* sharedProxy;
 	{
 		if (_logErrors)
 		{
-#ifndef TARGET_OS_IPHONE
+#if !TARGET_OS_IPHONE
 			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
 #endif
 		}

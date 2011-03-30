@@ -152,7 +152,7 @@
 	return [NSMakeCollectable(CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR(""))) autorelease];
 }
 
-#ifndef TARGET_OS_IPHONE
+#if !TARGET_OS_IPHONE
 
 - (void)gh_copyLinkToPasteboard {  
   NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
