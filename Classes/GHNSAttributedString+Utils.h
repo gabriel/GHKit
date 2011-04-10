@@ -1,8 +1,8 @@
 //
-//  GHNSXMLNode+Utils.h
+//  GHNSAttributedString+Utils.h
+//  GHKit
 //
-//  Created by Gabe on 3/18/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 4/9/11.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,12 +26,18 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+/*!
+ Utilities for NSAttributedString.
+ */
+@interface NSAttributedString(GHUtils)
 
 /*!
- Utilities for NSXMLNode.
+ Create link.
+ @param string String
+ @param URL URL
+ @param color String color
+ @param isUnderlined YES if should underline
  */
-@interface NSXMLNode(GHUtils)
-
-- (NSString *)gh_stringAtXQuery:(NSString *)xQuery error:(NSError **)error;
++ (id)gh_linkFromString:(NSString *)string URL:(NSURL *)URL color:(NSColor *)color isUnderlined:(BOOL)isUnderlined;
 
 @end

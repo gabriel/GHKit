@@ -1,8 +1,8 @@
 //
-//  GHNSXMLNode+Utils.h
+//  GHNSAttributedString+Utils.m
+//  GHKit
 //
-//  Created by Gabe on 3/18/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 4/9/11.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,12 +26,30 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import "GHNSAttributedString+Utils.h"
 
-/*!
- Utilities for NSXMLNode.
- */
-@interface NSXMLNode(GHUtils)
 
-- (NSString *)gh_stringAtXQuery:(NSString *)xQuery error:(NSError **)error;
+@implementation NSAttributedString(GHUtils)
+
++ (id)gh_linkFromString:(NSString *)string URL:(NSURL *)URL color:(NSColor *)color isUnderlined:(BOOL)isUnderlined {
+  NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+  NSRange range = NSMakeRange(0, [attributedString length]);
+ 	
+  [attributedString beginEditing];
+  [attributedString addAttribute:NSLinkAttributeName value:[URL absoluteString] range:range];
+ 	
+  if (color) {
+    [attributedString addAttribute:NSForegroundColorAttributeName value:color range:range];
+  }
+ 	
+  if (isUnderlined) {
+    [attributedString addAttribute:
+     NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:range];
+  }
+ 	
+  [attributedString endEditing];
+ 	
+  return [attributedString autorelease];
+}
 
 @end

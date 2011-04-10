@@ -71,6 +71,7 @@
 #import "GHViewAnimation.h"
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"
+#import "GHNSAttributedString+Utils.h"
 #endif
 
 #import "GHNSObject+Utils.h"

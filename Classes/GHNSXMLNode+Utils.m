@@ -36,7 +36,7 @@
  @param error
  @result String at xquery
 */
-- (NSString *)stringAtXQuery:(NSString *)xQuery error:(NSError **)error {
+- (NSString *)gh_stringAtXQuery:(NSString *)xQuery error:(NSError **)error {
   NSArray *objects = [self objectsForXQuery:xQuery constants:nil error:error];
   
   if (error && *error) return nil;
