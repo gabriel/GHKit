@@ -32,7 +32,7 @@
 
 @implementation NSXMLElement(GHUtils)
 
-- (NSString *)stringAt:(NSString *)name {
+- (NSString *)gh_stringAt:(NSString *)name {
   NSArray *objects = [self elementsForName:name];
   if (objects && [objects count] > 0)
     return [[objects objectAtIndex:0] stringValue];
@@ -40,13 +40,13 @@
   return nil;
 }
 
-- (NSNumber *)longLongAt:(NSString *)name {
-  NSString *s = [self stringAt:name];
+- (NSNumber *)gh_longLongAt:(NSString *)name {
+  NSString *s = [self gh_stringAt:name];
   if (s) return [NSNumber numberWithLongLong:[s longLongValue]];
   return nil;
 }
 
-- (NSXMLElement *)elementAt:(NSString *)name {
+- (NSXMLElement *)gh_elementAt:(NSString *)name {
   NSArray *objects = [self elementsForName:name];
   if (objects && [objects count] > 0)
     return [objects objectAtIndex:0];

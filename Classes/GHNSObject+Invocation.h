@@ -58,6 +58,12 @@
  */
 - (id)gh_performSelector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
+/*!
+ Invoke selector after delay with arguments.
+ @param selector
+ @param delay
+ @param withObjects nil terminated variable argument list 
+ */
 - (id)gh_performSelector:(SEL)selector afterDelay:(NSTimeInterval)delay withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
@@ -157,8 +163,10 @@
  Overriding the selector only make sense when using the "argument proxy".
  For example, 
  
+ @code
  SEL selector = @selector(bar:baz:);
  [foo gh_argumentProxy:selector] arg:10 arg:YES];
+ @endcode
  
  Will call [foo bar:10 baz:YES];  (and not arg:arg: selector which doesn't exist).
  
