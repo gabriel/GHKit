@@ -99,6 +99,8 @@
 		00D17047116AA84800D025EF /* GHNSStringXMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D17046116AA84800D025EF /* GHNSStringXMLTest.m */; };
 		00D313940FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D313920FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D313950FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D313930FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m */; };
+		00D343331366AC1900F77B75 /* GHNSString+SymlinksAndAliases.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D343311366AC1900F77B75 /* GHNSString+SymlinksAndAliases.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00D343341366AC1900F77B75 /* GHNSString+SymlinksAndAliases.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D343321366AC1900F77B75 /* GHNSString+SymlinksAndAliases.m */; };
 		00DBCC8D0FA6670A00893D19 /* NSInvocationUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0AAC0F22C09F0004F351 /* NSInvocationUtilsTest.m */; };
 		00DBCD3B0FA674BD00893D19 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00DBCD390FA674BD00893D19 /* GHNSBundle+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00DBCD3C0FA674BD00893D19 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DBCD3A0FA674BD00893D19 /* GHNSBundle+Utils.m */; };
@@ -253,6 +255,8 @@
 		00D17046116AA84800D025EF /* GHNSStringXMLTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringXMLTest.m; sourceTree = "<group>"; };
 		00D313920FFBE1E900CA97E9 /* GHNSMutableArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSMutableArray+Utils.h"; sourceTree = "<group>"; };
 		00D313930FFBE1E900CA97E9 /* GHNSMutableArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSMutableArray+Utils.m"; sourceTree = "<group>"; };
+		00D343311366AC1900F77B75 /* GHNSString+SymlinksAndAliases.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSString+SymlinksAndAliases.h"; sourceTree = "<group>"; };
+		00D343321366AC1900F77B75 /* GHNSString+SymlinksAndAliases.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+SymlinksAndAliases.m"; sourceTree = "<group>"; };
 		00DBCD390FA674BD00893D19 /* GHNSBundle+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSBundle+Utils.h"; sourceTree = "<group>"; };
 		00DBCD3A0FA674BD00893D19 /* GHNSBundle+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSBundle+Utils.m"; sourceTree = "<group>"; };
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -511,6 +515,8 @@
 				00D17003116A988C00D025EF /* GHNSString+XML.m */,
 				002D082F135149400002DFFA /* GHNSAttributedString+Utils.h */,
 				002D0830135149400002DFFA /* GHNSAttributedString+Utils.m */,
+				00D343311366AC1900F77B75 /* GHNSString+SymlinksAndAliases.h */,
+				00D343321366AC1900F77B75 /* GHNSString+SymlinksAndAliases.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -597,6 +603,7 @@
 				007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */,
 				007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */,
 				007F59920EF2438900B3005D /* GHViewAnimation.h in Headers */,
+				00D343331366AC1900F77B75 /* GHNSString+SymlinksAndAliases.h in Headers */,
 				0058AAEE0EF8C4D900C44386 /* GHKeychainStore.h in Headers */,
 				00A97A660F0C464700B083F6 /* GHCGUtils.h in Headers */,
 				005B0A9F0F22B7A80004F351 /* GHNSInvocation+Utils.h in Headers */,
@@ -732,7 +739,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "make docs";
+			shellScript = "#make docs";
 			showEnvVarsInLog = 0;
 		};
 		00915AEF0F774740008B854A /* ShellScript */ = {
@@ -830,6 +837,7 @@
 				00D17030116AA6C200D025EF /* GTMNSString+XML.m in Sources */,
 				002D0839135152950002DFFA /* GHNSAttributedString+Utils.m in Sources */,
 				00AA4071125C5A2700CB3F6B /* GHValidators.m in Sources */,
+				00D343341366AC1900F77B75 /* GHNSString+SymlinksAndAliases.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,7 +930,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00AA4069125C59F600CB3F6B /* Debug-MacOSX.xcconfig */;
 			buildSettings = {
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 			};
 			name = Debug;
 		};

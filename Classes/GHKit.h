@@ -36,6 +36,7 @@
 #import "GHNSString+TimeInterval.h"
 #import "GHNSString+Utils.h"
 #import "GHNSString+URL.h"
+#import "GHNSString+SymlinksAndAliases.h"
 
 #import "GHNSNumber+Utils.h"
 
