@@ -84,11 +84,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00035"></a>00035 
 <a name="l00036"></a>00036 <span class="keyword">@implementation </span>NSObject(GHSwizzle)
 <a name="l00037"></a>00037 
-<a name="l00038"></a>00038 + (void)gh_swizzleMethod:(<span class="keywordtype">SEL</span>)original withMethod:(<span class="keywordtype">SEL</span>)alternate {
+<a name="l00038"></a><a class="code" href="interface_n_s_object_07_g_h_swizzle_08.html#a4c461ee1039c4204b295c33ea9d56d2e">00038</a> + (void)gh_swizzleMethod:(<span class="keywordtype">SEL</span>)original withMethod:(<span class="keywordtype">SEL</span>)alternate {
 <a name="l00039"></a>00039     GH_PerformSwizzle([<span class="keyword">self</span> <span class="keyword">class</span>], original, alternate, YES);
 <a name="l00040"></a>00040 }
 <a name="l00041"></a>00041 
-<a name="l00042"></a>00042 + (void)gh_swizzleClassMethod:(<span class="keywordtype">SEL</span>)original withClassMethod:(<span class="keywordtype">SEL</span>)alternate {
+<a name="l00042"></a><a class="code" href="interface_n_s_object_07_g_h_swizzle_08.html#a428c320fe208ad02a13abbb9445d6f64">00042</a> + (void)gh_swizzleClassMethod:(<span class="keywordtype">SEL</span>)original withClassMethod:(<span class="keywordtype">SEL</span>)alternate {
 <a name="l00043"></a>00043     GH_PerformSwizzle([<span class="keyword">self</span> <span class="keyword">class</span>], original, alternate, NO);
 <a name="l00044"></a>00044 }
 <a name="l00045"></a>00045 
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Apr 26 2011 02:14:36 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

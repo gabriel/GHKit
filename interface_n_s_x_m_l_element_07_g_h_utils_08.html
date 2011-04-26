@@ -62,17 +62,105 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e65c741ec128fb8a925ffc5f641421c"></a><!-- doxytag: member="NSXMLElement(GHUtils)::stringAt:" ref="a6e65c741ec128fb8a925ffc5f641421c" args="(NSString *name)" -->
-(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <b>stringAt:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1181288567cdaf6801e6a821b7a3db4f"></a><!-- doxytag: member="NSXMLElement(GHUtils)::longLongAt:" ref="a1181288567cdaf6801e6a821b7a3db4f" args="(NSString *name)" -->
-(NSNumber *)&nbsp;</td><td class="memItemRight" valign="bottom">- <b>longLongAt:</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7c05e2d53b73bbc42897daf933b67ac"></a><!-- doxytag: member="NSXMLElement(GHUtils)::elementAt:" ref="ad7c05e2d53b73bbc42897daf933b67ac" args="(NSString *name)" -->
-(NSXMLElement *)&nbsp;</td><td class="memItemRight" valign="bottom">- <b>elementAt:</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSString *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_x_m_l_element_07_g_h_utils_08.html#abd227a0c7e5e9e610eabafd785a4d75f">gh_stringAt:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">String value at name.  <a href="#abd227a0c7e5e9e610eabafd785a4d75f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSNumber *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_x_m_l_element_07_g_h_utils_08.html#a99568b62161a60b43d5bb98c0bd53eee">gh_longLongAt:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Long long number at name.  <a href="#a99568b62161a60b43d5bb98c0bd53eee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(NSXMLElement *)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_x_m_l_element_07_g_h_utils_08.html#a466ffef7b48541260ef1c81b28d068d0">gh_elementAt:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">XML element at name.  <a href="#a466ffef7b48541260ef1c81b28d068d0"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
 <p>Utilities for NSXMLElement. </p>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8h_source.html#l00032">32</a> of file <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8h_source.html">GHNSXMLElement+Utils.h</a>.</p>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a466ffef7b48541260ef1c81b28d068d0"></a><!-- doxytag: member="NSXMLElement(GHUtils)::gh_elementAt:" ref="a466ffef7b48541260ef1c81b28d068d0" args="(NSString *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSXMLElement *) gh_elementAt: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>XML element at name. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>XML element </dd></dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html#l00049">49</a> of file <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html">GHNSXMLElement+Utils.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a99568b62161a60b43d5bb98c0bd53eee"></a><!-- doxytag: member="NSXMLElement(GHUtils)::gh_longLongAt:" ref="a99568b62161a60b43d5bb98c0bd53eee" args="(NSString *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSNumber *) gh_longLongAt: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Long long number at name. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number </dd></dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html#l00043">43</a> of file <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html">GHNSXMLElement+Utils.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd227a0c7e5e9e610eabafd785a4d75f"></a><!-- doxytag: member="NSXMLElement(GHUtils)::gh_stringAt:" ref="abd227a0c7e5e9e610eabafd785a4d75f" args="(NSString *name)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) gh_stringAt: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&nbsp;</td>
+          <td class="paramname"> <em>name</em></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>String value at name. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>name</em>&nbsp;</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>String </dd></dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html#l00035">35</a> of file <a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html">GHNSXMLElement+Utils.m</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/gabe/Projects/gh-kit/Classes/<a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8h_source.html">GHNSXMLElement+Utils.h</a></li>
 <li>/Users/gabe/Projects/gh-kit/Classes/<a class="el" href="_g_h_n_s_x_m_l_element_09_utils_8m_source.html">GHNSXMLElement+Utils.m</a></li>
@@ -92,7 +180,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Apr 26 2011 02:14:36 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

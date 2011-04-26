@@ -252,6 +252,16 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>gh_linkFromString:URL:color:isUnderlined:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_attributed_string_07_g_h_utils_08.html</Path>
+    <Anchor>a2e012097371a6ff74ddc24aea9a4b5f4</Anchor>
+    <Abstract>Create link.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>gh_loadDataFromResource:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -1011,6 +1021,46 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>gh_setDouble:forKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_mutable_dictionary_07_g_h_utils_08.html</Path>
+    <Anchor>ab93b88de169091e08f7496a52b04493d</Anchor>
+    <Abstract>Set double value.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_setInteger:forKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_mutable_dictionary_07_g_h_utils_08.html</Path>
+    <Anchor>ae59fb3f5d98b8f421beedc9449dea99b</Anchor>
+    <Abstract>Set integer value.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_setBool:forKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_mutable_dictionary_07_g_h_utils_08.html</Path>
+    <Anchor>a29f95ff75a6cd98977387c8ac579ae1b</Anchor>
+    <Abstract>Set bool.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_setObjectMaybeNil:forKey:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_mutable_dictionary_07_g_h_utils_08.html</Path>
+    <Anchor>ad5e119ade39524d17320b6b52f1775ee</Anchor>
+    <Abstract>Set object or [NSNull null] if nil.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>gh_mutableCompact</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -1018,6 +1068,16 @@
     <Path>interface_n_s_mutable_dictionary_07_g_h_utils_08.html</Path>
     <Anchor>a2d969ca3c4add1504762acd2570ba0c9</Anchor>
     <Abstract>Compact.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_replaceObserver:selector:name:object:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_notification_center_07_g_h_utils_08.html</Path>
+    <Anchor>a495dc84336686020ceca43911bc9f20f</Anchor>
+    <Abstract>Replace observer.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1148,6 +1208,16 @@
     <Path>interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html</Path>
     <Anchor>a7f3e0f70a8743f94ad4436ce4d8d5372</Anchor>
     <Abstract>Invoke selector with arguments.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_performSelector:afterDelay:withObjects:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html</Path>
+    <Anchor>a088a65f7dfb1cd8835a4864fcd198930</Anchor>
+    <Abstract>Invoke selector after delay with arguments.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1291,6 +1361,26 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>gh_swizzleMethod:withMethod:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_g_h_swizzle_08.html</Path>
+    <Anchor>a4c461ee1039c4204b295c33ea9d56d2e</Anchor>
+    <Abstract>Swizzle method.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_swizzleClassMethod:withClassMethod:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_object_07_g_h_swizzle_08.html</Path>
+    <Anchor>a428c320fe208ad02a13abbb9445d6f64</Anchor>
+    <Abstract>Swizzle class method.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>gh_isNotNSNull</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -1308,6 +1398,66 @@
     <Path>interface_n_s_string_07_g_h_h_m_a_c_08.html</Path>
     <Anchor>a08acc524e07f675fcb6a80a3a7c8b7ea</Anchor>
     <Abstract>HMAC SHA1 digest.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringByResolvingSymlinksAndAliases</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
+    <Anchor>a63610b34da21203d82f8564c056a171b</Anchor>
+    <Abstract>Tries to make a standardized, absolute path from the current string, resolving any aliases or symlink...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringByIterativelyResolvingSymlinkOrAlias</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
+    <Anchor>a3a4174f8dbeef4352415735daf2719aa</Anchor>
+    <Abstract>Resolves the path where the final component could be a symlink and any component could be an alias...</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringByResolvingAlias</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
+    <Anchor>ac354208e4a44ea16de3ddaa2c109da92</Anchor>
+    <Abstract>Attempts to resolve the single alias at the end of the path.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringByResolvingSymlink</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
+    <Anchor>abc23bd5c7a18ba75596a25dfe65f79a5</Anchor>
+    <Abstract>Attempts to resolve the single symlink at the end of the path.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringByConditionallyResolvingSymlink</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
+    <Anchor>aa69dc2934801953eba1d4204376f9b3f</Anchor>
+    <Abstract>Attempt to resolve the symlink pointed to by the path.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringByConditionallyResolvingAlias</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
+    <Anchor>ac3d4523803aff48a88bd7346950f544d</Anchor>
+    <Abstract>Attempt to resolve the alias pointed to by the path.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1747,7 +1897,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_u_r_l_07_g_h_utils_08.html</Path>
     <Anchor>ab7838ad3d2e1a8c0fcbece4e8e6566b5</Anchor>
-    <Abstract>copyLinkToPasteboard  Copy URL to pasteboard</Abstract>
+    <Abstract>Copy URL to pasteboard.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1757,7 +1907,7 @@
     </TokenIdentifier>
     <Path>interface_n_s_u_r_l_07_g_h_utils_08.html</Path>
     <Anchor>a5736449be1cdef5457db88e03a2c5577</Anchor>
-    <Abstract>gh_dictionaryToQueryString  Dictionary to query string.</Abstract>
+    <Abstract>Dictionary to query string.</Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1851,12 +2001,42 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>stringAtXQuery:error:</Name>
+      <Name>gh_stringAt:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_x_m_l_element_07_g_h_utils_08.html</Path>
+    <Anchor>abd227a0c7e5e9e610eabafd785a4d75f</Anchor>
+    <Abstract>String value at name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_longLongAt:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_x_m_l_element_07_g_h_utils_08.html</Path>
+    <Anchor>a99568b62161a60b43d5bb98c0bd53eee</Anchor>
+    <Abstract>Long long number at name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_elementAt:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+    </TokenIdentifier>
+    <Path>interface_n_s_x_m_l_element_07_g_h_utils_08.html</Path>
+    <Anchor>a466ffef7b48541260ef1c81b28d068d0</Anchor>
+    <Abstract>XML element at name.</Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>gh_stringAtXQuery:error:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
     </TokenIdentifier>
     <Path>interface_n_s_x_m_l_node_07_g_h_utils_08.html</Path>
-    <Anchor>addc5d80b25023a3410b34dd403345455</Anchor>
+    <Anchor>a0126d4a002e9b2df0dfec80182ea64fc</Anchor>
     <Abstract>Get string value at XQuery.</Abstract>
   </Token>
   <Token>

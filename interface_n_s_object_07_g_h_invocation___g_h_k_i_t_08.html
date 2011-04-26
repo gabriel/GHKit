@@ -68,8 +68,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Perform selector if responds with multiple arguments.  <a href="#a07ae7f784717188cc2ea5de8e22c6cc8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a7f3e0f70a8743f94ad4436ce4d8d5372">gh_performSelector:withObjects:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Invoke selector with arguments.  <a href="#a7f3e0f70a8743f94ad4436ce4d8d5372"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a088a65f7dfb1cd8835a4864fcd198930"></a><!-- doxytag: member="NSObject(GHInvocation_GHKIT)::gh_performSelector:afterDelay:withObjects:" ref="a088a65f7dfb1cd8835a4864fcd198930" args="(SEL selector,[afterDelay] NSTimeInterval delay,[withObjects]object,[,]...NS_REQUIRES_NIL_TERMINATION)" -->
-(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <b>gh_performSelector:afterDelay:withObjects:</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">(id)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a088a65f7dfb1cd8835a4864fcd198930">gh_performSelector:afterDelay:withObjects:</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Invoke selector after delay with arguments.  <a href="#a088a65f7dfb1cd8835a4864fcd198930"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a2b728a6e48848a057246ecd6427a7da9">gh_performSelectorOnMainThread:withObjects:</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Invoke selector with arguments on main thread.  <a href="#a2b728a6e48848a057246ecd6427a7da9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">(void)&nbsp;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_s_object_07_g_h_invocation___g_h_k_i_t_08.html#a3f573d736bf7b23cc2b4eb4b39fba0c4">gh_performSelectorOnMainThread:waitUntilDone:withObjects:</a></td></tr>
@@ -125,8 +125,9 @@ Public Member Functions</h2></td></tr>
 <p>Proxy for selector. </p>
 <p>For calling a selector with any type and number of arguments.</p>
 <p>Overriding the selector only make sense when using the "argument proxy". For example,</p>
-<p>SEL selector = (bar:baz:); [foo gh_argumentProxy:selector] arg:10 arg:YES];</p>
-<p>Will call [foo bar:10 baz:YES]; (and not arg:arg: selector which doesn't exist).</p>
+<div class="fragment"><pre class="fragment"> <span class="keywordtype">SEL</span> selector = <span class="keyword">@selector</span>(bar:baz:);
+ [foo gh_argumentProxy:selector] arg:10 arg:YES];
+</pre></div><p>Will call [foo bar:10 baz:YES]; (and not arg:arg: selector which doesn't exist).</p>
 <p>This allows you to call a selector variable with primitive and multi arguments, whereas before you would have to use a manually constructed NSInvocation (or performSelector if you had only object arguments).</p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -211,6 +212,57 @@ Public Member Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>nil if we don't respond to the selector, otherwise the selector result </dd></dl>
 
 <p>Definition at line <a class="el" href="_g_h_n_s_object_09_invocation_8m_source.html#l00040">40</a> of file <a class="el" href="_g_h_n_s_object_09_invocation_8m_source.html">GHNSObject+Invocation.m</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a088a65f7dfb1cd8835a4864fcd198930"></a><!-- doxytag: member="NSObject(GHInvocation_GHKIT)::gh_performSelector:afterDelay:withObjects:" ref="a088a65f7dfb1cd8835a4864fcd198930" args="(SEL selector,[afterDelay] NSTimeInterval delay,[withObjects]object,[,]...NS_REQUIRES_NIL_TERMINATION)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (id) gh_performSelector: </td>
+          <td></td>
+          <td class="paramtype">(SEL)&nbsp;</td>
+          <td class="paramname"> <em>selector</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">afterDelay:</td>
+          <td></td>
+          <td class="paramtype">(NSTimeInterval)&nbsp;</td>
+          <td class="paramname"> <em>delay</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withObjects:</td>
+          <td></td>
+          <td class="paramtype">()&nbsp;</td>
+          <td class="paramname"> <em>object</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">,</td>
+          <td></td>
+          <td class="paramtype">&nbsp;</td>
+          <td class="paramname"> <em>NS_REQUIRES_NIL_TERMINATION</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Invoke selector after delay with arguments. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>selector</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>delay</em>&nbsp;</td><td></td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>withObjects</em>&nbsp;</td><td>nil terminated variable argument list </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_g_h_n_s_object_09_invocation_8m_source.html#l00053">53</a> of file <a class="el" href="_g_h_n_s_object_09_invocation_8m_source.html">GHNSObject+Invocation.m</a>.</p>
 
 </div>
 </div>
@@ -740,7 +792,7 @@ Public Member Functions</h2></td></tr>
 </iframe>
 </div>
 
-<hr class="footer"/><address class="footer"><small>Generated on Sun Mar 27 2011 20:30:19 for GHKit by&nbsp;
+<hr class="footer"/><address class="footer"><small>Generated on Tue Apr 26 2011 02:14:36 for GHKit by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.1 </small></address>
 </body>

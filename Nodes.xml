@@ -58,6 +58,10 @@
           <Path>interface_n_s_array_07_g_h_utils_08.html</Path>
          </Node>
          <Node>
+          <Name>NSAttributedString(GHUtils)</Name>
+          <Path>interface_n_s_attributed_string_07_g_h_utils_08.html</Path>
+         </Node>
+         <Node>
           <Name>NSBundle(GHUtils)</Name>
           <Path>interface_n_s_bundle_07_g_h_utils_08.html</Path>
          </Node>
@@ -120,6 +124,10 @@
          <Node>
           <Name>NSString(GHHMAC)</Name>
           <Path>interface_n_s_string_07_g_h_h_m_a_c_08.html</Path>
+         </Node>
+         <Node>
+          <Name>NSString(GHSymlinksAndAliases)</Name>
+          <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
          </Node>
          <Node>
           <Name>NSString(GHTimeInterval)</Name>
@@ -210,6 +218,10 @@
           <Path>interface_n_s_array_07_g_h_utils_08.html</Path>
          </Node>
          <Node>
+          <Name>NSAttributedString(GHUtils)</Name>
+          <Path>interface_n_s_attributed_string_07_g_h_utils_08.html</Path>
+         </Node>
+         <Node>
           <Name>NSBundle(GHUtils)</Name>
           <Path>interface_n_s_bundle_07_g_h_utils_08.html</Path>
          </Node>
@@ -272,6 +284,10 @@
          <Node>
           <Name>NSString(GHHMAC)</Name>
           <Path>interface_n_s_string_07_g_h_h_m_a_c_08.html</Path>
+         </Node>
+         <Node>
+          <Name>NSString(GHSymlinksAndAliases)</Name>
+          <Path>interface_n_s_string_07_g_h_symlinks_and_aliases_08.html</Path>
          </Node>
          <Node>
           <Name>NSString(GHTimeInterval)</Name>
