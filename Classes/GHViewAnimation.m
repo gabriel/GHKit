@@ -71,7 +71,7 @@
 - (NSViewAnimation *)moveIn {
   NSRect rect = [container_ bounds];
   // Set the old view to be resizable on the right side. It will appear as if it's sitting still
-  [[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
+  [(NSView *)[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
 			
 	// Set the new view to be out of bounds on the right side, ready to be animated in
 	[toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
@@ -94,7 +94,7 @@
   NSRect rect = [container_ bounds];
   // Set old view to be resizable on the left side. It will appear to move to the left since the right margin is
 	// fixed.
-	[[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];			
+	[(NSView *)[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];			
 			
 	// Set the new view to be out of bounds on the right side, ready to be animated in			
 	[toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
@@ -117,10 +117,10 @@
   NSRect rect = [container_ bounds];
   // Set old view to be resizable on the left side. It will appear to move to the left since the right margin is
 	// fixed.
-	[[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
+	[(NSView *)[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
 			
 	// Set new view to be resizable on the right side. It will appear to sit still.
-	[[[toView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
+	[(NSView *)[[toView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
 			
 	// Make the right viewport zero-width view on the right side. It will reveal the view as it expands to the left.
 	[toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), 0.0, NSHeight(rect))];
@@ -143,10 +143,10 @@
 - (NSViewAnimation *)wipe {
   NSRect rect = [container_ bounds];
   // Set the old view to be resizable on the right side. It will appear as if it's sitting still
-	[[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
+	[(NSView *)[[fromView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMaxXMargin];
 			
 	// Set new view to be resizable on the right side. It will appear to sit still.
-	[[[toView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
+	[(NSView *)[[toView_ subviews] objectAtIndex:0] setAutoresizingMask:NSViewMinXMargin];
 			
 	// Make the right viewport zero-wdith
 	[toView_ setFrame:NSMakeRect(NSMaxX(rect), NSMinY(rect), 0.0, NSHeight(rect))];

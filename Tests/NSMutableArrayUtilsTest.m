@@ -71,7 +71,7 @@
   
   NSMutableArray *array = [NSMutableArray arrayWithObject:@"1"];
   index = [array gh_replaceObject:@"1" withObject:@"2"];
-  GHAssertEquals(index, 0U, nil);
+  GHAssertEquals(index, (NSUInteger)0, nil);
   NSMutableArray *expected1 = [NSMutableArray arrayWithObject:@"2"];
 	GHAssertEqualObjects(array, expected1, nil);
   

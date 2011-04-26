@@ -15,15 +15,12 @@
 @implementation NSStringHMACTest
 
 - (void)testHmacSha1 {  
-  // Using S3 example from,
-  // http://docs.amazonwebservices.com/AmazonS3/2006-03-01/RESTAuthentication.html
-  
-  NSString *stringToSign = @"GET\n\n\nTue, 27 Mar 2007 19:36:42 +0000\n/johnsmith/photos/puppy.jpg";  
+  NSString *stringToSign = @"This is a test";  
   GHTestLog(@"String to sign: %@", stringToSign);
-  NSString *secretKey = @"uV3F3YluFJax1cknvbcGwgjvx4QpvB+leU8dUj2o";
+  NSString *secretKey = @"SECRETKEY";
   
   NSString *signature = [stringToSign gh_HMACSHA1:secretKey base64Encoder:[GTMBase64 class]];
-  GHAssertEqualObjects(@"xXjDGYUmKxnwqr5KXNPGldn5LbA=", signature, @"HMAC SHA1 signature is not correct");
+  GHAssertEqualObjects(@"JHKEja4ahrNkMVyypQy/TLLkd48=", signature, @"HMAC SHA1 signature is not correct");
 }
 
 @end
