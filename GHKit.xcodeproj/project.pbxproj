@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000A90D113723B58007B9A51 /* GHValidatorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 000A90D013723B58007B9A51 /* GHValidatorsTest.m */; };
 		000ACD3C0F69B2770086708A /* GHNSDictionary+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 000ACD3A0F69B2770086708A /* GHNSDictionary+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		000ACD3D0F69B2770086708A /* GHNSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 000ACD3B0F69B2770086708A /* GHNSDictionary+Utils.m */; };
 		000ACD460F69B34D0086708A /* GHNSMutableDictionary+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 000ACD440F69B34D0086708A /* GHNSMutableDictionary+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -156,6 +157,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		000A90D013723B58007B9A51 /* GHValidatorsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHValidatorsTest.m; sourceTree = "<group>"; };
 		000ACD3A0F69B2770086708A /* GHNSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+Utils.h"; sourceTree = "<group>"; };
 		000ACD3B0F69B2770086708A /* GHNSDictionary+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+Utils.m"; sourceTree = "<group>"; };
 		000ACD440F69B34D0086708A /* GHNSMutableDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSMutableDictionary+Utils.h"; sourceTree = "<group>"; };
@@ -577,6 +579,7 @@
 				003ED04C110E656100D57720 /* GHReversableDictionaryTest.m */,
 				00D17046116AA84800D025EF /* GHNSStringXMLTest.m */,
 				002D0837135150F00002DFFA /* GHNSAttributedStringTest.m */,
+				000A90D013723B58007B9A51 /* GHValidatorsTest.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -787,6 +790,7 @@
 				00D17047116AA84800D025EF /* GHNSStringXMLTest.m in Sources */,
 				002D0831135149400002DFFA /* GHNSAttributedString+Utils.m in Sources */,
 				002D0838135150F00002DFFA /* GHNSAttributedStringTest.m in Sources */,
+				000A90D113723B58007B9A51 /* GHValidatorsTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

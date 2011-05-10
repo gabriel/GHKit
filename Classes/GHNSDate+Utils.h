@@ -111,9 +111,9 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
   timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
  @endcode
  
- @param day Day to set
- @param month Month to set
- @param year Year to set
+ @param day Day to set (if 0, uses current day)
+ @param month Month to set (if 0, uses current month)
+ @param year Year to set (if 0, uses current year)
  @param addDay Days to add
  @param addMonth Month to add
  @param addYear Year to add
@@ -123,6 +123,79 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
 + (NSDate *)gh_dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year 
                     addDay:(NSInteger)addDay addMonth:(NSInteger)addMonth addYear:(NSInteger)addYear 
                   timeZone:(NSTimeZone *)timeZone;
+
+/*!
+ Create date with day, month, year.
+ 
+ To use the current day, month or year, specify 0 for that value.
+ 
+ For example, the use Jan, 1 (current year):
+ 
+ @code
+ [NSDate gh_dateWithDay:1 month:1 year:0 timeZone:nil];
+ @endcode
+ 
+ @param day Day to set (if 0, uses current day)
+ @param month Month to set (if 0, uses current month)
+ @param year Year to set (if 0, uses current year)
+ @result Date
+ */
++ (NSDate *)gh_dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year
+                  timeZone:(NSTimeZone *)timeZone;
+
+/*!
+ Date components for date.
+ @param flags Flags, e.g. NSMonthCalendarUnit, or NSMonthCalendarUnit | NSYearCalendarUnit
+ @param timeZone
+ @result Date components
+ */
+- (NSDateComponents *)gh_dateComponentsFromFlags:(NSUInteger)flags timeZone:(NSTimeZone *)timeZone;
+
+/*!
+ Month symbols.
+ @param format MM for numeric, or MMMM for full string.
+ */
++ (NSArray *)gh_monthSymbolsForFormat:(NSString *)format;
+
+/*!
+ Day of date.
+ @result Day
+ */
+- (NSInteger)gh_day;
+
+/*!
+ Day of date.
+ @param timeZone
+ @result Day
+ */
+- (NSInteger)gh_dayForTimeZone:(NSTimeZone *)timeZone;
+
+/*!
+ Month of date.
+ @result Year
+ */
+- (NSInteger)gh_month;
+
+/*!
+ Month of date.
+ @param timeZone
+ @result Month
+ */
+- (NSInteger)gh_monthForTimeZone:(NSTimeZone *)timeZone;
+
+/*!
+ Year of date.
+ @result Year
+ */
+- (NSInteger)gh_year;
+
+/*!
+ Year of date.
+ @param timeZone
+ @result Year
+ */
+- (NSInteger)gh_yearForTimeZone:(NSTimeZone *)timeZone;
+
 
 /*!
  Time ago in words.

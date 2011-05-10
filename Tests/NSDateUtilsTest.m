@@ -46,6 +46,18 @@
   GHAssertEqualStrings(dateString, @"1/1/81", nil);
 }
 
+- (void)testComponents {
+  NSDate *date = [NSDate gh_dateWithDay:1 month:2 year:2012 timeZone:nil];
+  GHAssertTrue([date gh_day] == 1, nil);
+  GHAssertTrue([date gh_month] == 2, nil);
+  GHAssertTrue([date gh_year] == 2012, nil);
+}
+
+- (void)testMonthSymbolsForFormat {
+  NSArray *monthSymbols = [NSDate gh_monthSymbolsForFormat:@"MMMM"];
+  GHTestLog([monthSymbols description]);
+}
+
 - (void)testMillisSince1970 {
 	NSDateComponents *comps = [[[NSDateComponents alloc] init] autorelease];
 	[comps setDay:13];

@@ -65,12 +65,57 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
                      normalize:normalize timeZone:nil];
 }
 
++ (NSDate *)gh_dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year
+                  timeZone:(NSTimeZone *)timeZone {
+  return [self gh_dateWithDay:day month:month year:year addDay:0 addMonth:0 addYear:0 timeZone:timeZone];
+}
+
 + (NSDate *)gh_dateWithDay:(NSInteger)day month:(NSInteger)month year:(NSInteger)year 
                     addDay:(NSInteger)addDay addMonth:(NSInteger)addMonth addYear:(NSInteger)addYear 
                   timeZone:(NSTimeZone *)timeZone {
   return [self _gh_dateFromDate:[NSDate date] day:day month:month year:year addDay:addDay addMonth:addMonth addYear:addYear 
                       normalize:YES timeZone:timeZone];
 
+}
+
+- (NSDateComponents *)gh_dateComponentsFromFlags:(NSUInteger)flags timeZone:(NSTimeZone *)timeZone {
+  NSCalendar *calendar = [NSCalendar currentCalendar];
+  if (timeZone) {
+    [calendar setTimeZone:timeZone];
+  }
+  return [calendar components:flags fromDate:self];  
+}
+
+- (NSInteger)gh_day {
+  return [self gh_dayForTimeZone:nil];
+}
+
+- (NSInteger)gh_dayForTimeZone:(NSTimeZone *)timeZone {
+  return [[self gh_dateComponentsFromFlags:NSDayCalendarUnit timeZone:timeZone] day];
+}
+
+- (NSInteger)gh_month {
+  return [self gh_monthForTimeZone:nil];
+}
+
+- (NSInteger)gh_monthForTimeZone:(NSTimeZone *)timeZone {
+  return [[self gh_dateComponentsFromFlags:NSMonthCalendarUnit timeZone:timeZone] month];
+}
+
+- (NSInteger)gh_year {
+  return [self gh_yearForTimeZone:nil];
+}
+
+- (NSInteger)gh_yearForTimeZone:(NSTimeZone *)timeZone {
+  return [[self gh_dateComponentsFromFlags:NSYearCalendarUnit timeZone:timeZone] year];
+}
+
++ (NSArray *)gh_monthSymbolsForFormat:(NSString *)format {
+  NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+  [dateFormatter setDateFormat:format];
+  NSArray *monthSymbols = [dateFormatter standaloneMonthSymbols];
+  [dateFormatter release];
+  return monthSymbols;
 }
 
 - (NSDate *)gh_addDays:(NSInteger)days {
