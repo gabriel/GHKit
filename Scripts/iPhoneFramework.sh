@@ -70,3 +70,5 @@ cp Classes/*.h $FRAMEWORK_DIR/Headers/
 cp Classes/Swizzle/*.h $FRAMEWORK_DIR/Headers/
 cp Classes/iPhone/*.h $FRAMEWORK_DIR/Headers/
 cp FrameworkIOS.plist $FRAMEWORK_DIR/Resources/Info.plist
+
+echo "Framework: $FRAMEWORK_DIR"

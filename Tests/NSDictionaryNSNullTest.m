@@ -37,18 +37,23 @@
 	GHAssertEqualObjects(dict, expected, nil);	
 }
 
-- (NSDictionary *)_testVAList:(id)obj keysAndObjects:(id)firstKey, ... {
+- (NSDictionary *)_testVAList:(id)obj ignoreNil:(BOOL)ignoreNil keysAndObjects:(id)firstKey, ... {
 	va_list args;
   va_start(args, firstKey);
-	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:firstKey args:args];
+	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:firstKey args:args ignoreNil:ignoreNil];
 	va_end(args);
 	return dict;
 }
 
 - (void)testVAList {
-	NSDictionary *dict = [self _testVAList:nil keysAndObjects:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
+	NSDictionary *dict = [self _testVAList:nil ignoreNil:NO keysAndObjects:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
 	NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:[NSNull null], @"key1", @"value2",  @"key2", [NSNull null], @"key3", nil];	
 	GHAssertEqualObjects(dict, expected, nil);
+  
+  NSDictionary *dict2 = [self _testVAList:nil ignoreNil:YES keysAndObjects:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
+	NSDictionary *expected2 = [NSDictionary dictionaryWithObjectsAndKeys:@"value2",  @"key2", nil];	
+	GHAssertEqualObjects(dict2, expected2, nil);
+
 }
 
 @end

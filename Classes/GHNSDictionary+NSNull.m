@@ -28,7 +28,7 @@
 
 @implementation NSDictionary(GHNSNull)
 
-+ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args {
++ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args ignoreNil:(BOOL)ignoreNil {
 	if (!firstKey) return [self dictionary];
 	
 	NSMutableArray *keys = [[NSMutableArray alloc] init];
@@ -36,10 +36,14 @@
 	id key = firstKey;	
 	do {
 		id value = va_arg(args, id);
+    if (!value && ignoreNil) {
+      key = va_arg(args, id);
+      continue;
+    }
 		if (!value) value = [NSNull null];
 		[keys addObject:key];
 		[values addObject:value];
-		key = va_arg(args,id);
+		key = va_arg(args, id);
 	} while(key);
 	NSDictionary *dict = [self dictionaryWithObjects:values forKeys:keys];
 	[keys release];
@@ -50,7 +54,7 @@
 + (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstKey, ... {	
 	va_list args;
   va_start(args, firstKey);
-	NSDictionary *dict = [self gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:firstKey args:args];
+	NSDictionary *dict = [self gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:firstKey args:args ignoreNil:NO];
 	va_end(args);
 	return dict;
 }

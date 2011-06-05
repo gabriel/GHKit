@@ -134,9 +134,11 @@
 	GHAssertTrue([@"FOoO" gh_isEqualIgnoreCase:@"fooO"], nil);
 }
 
+#if !TARGET_OS_IPHONE
 - (void)testTruncateMiddle {
   NSAttributedString *attributedString = [@"This is a test" gh_truncateMiddle];
   GHTestLog(@"attributedString=%@", attributedString);
 }
+#endif
 	
 @end
