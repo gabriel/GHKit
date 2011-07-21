@@ -1,8 +1,9 @@
 //
-//  GHCGUtils.h
+//  GHTestOperation.h
+//  GHUnit
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 6/4/10.
+//  Copyright 2010. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,9 +27,20 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+//! @cond DEV
 
-extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
+#import "GHTest.h"
 
-extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+/*!
+ Test for running in the context of an NSOperationQueue.
+ */
+@interface GHTestOperation : NSOperation { 
+  id<GHTest> test_;
+  GHTestOptions options_;
+}
+
+- (id)initWithTest:(id<GHTest>)test options:(GHTestOptions)options;
+
+@end
+
+//! @endcond

@@ -1,8 +1,9 @@
 //
-//  GHCGUtils.h
+//  GHUnitIOSView.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 4/12/10.
+//  Copyright 2010. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,8 +28,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import <UIKit/UIKit.h>
 
-extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
 
-extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+@interface GHUnitIOSView : UIView {
+  UISearchBar *searchBar_;
+  
+  UITableView *tableView_;
+  
+  //! Status label at bottom of the view
+  UILabel *statusLabel_;
+ 
+  UISegmentedControl *filterControl_;
+    
+  UIToolbar *runToolbar_;  
+  
+  UIView *footerView_;
+}
+
+@property (readonly, nonatomic) UILabel *statusLabel;
+@property (readonly, nonatomic) UISegmentedControl *filterControl;
+@property (readonly, nonatomic) UISearchBar *searchBar;
+@property (readonly, nonatomic) UITableView *tableView;
+
+
+@end

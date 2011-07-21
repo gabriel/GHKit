@@ -1,8 +1,9 @@
 //
-//  GHCGUtils.h
+//  GHUnitIOSViewController.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 1/25/09.
+//  Copyright 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,9 +27,45 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import "GHUnitIOSView.h"
 
-extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
+#import "GHUnitIOSTableViewDataSource.h"
+#import "GHUnitIOSTestViewController.h"
 
-extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+@interface GHUnitIOSViewController : UIViewController <UITableViewDelegate, GHTestRunnerDelegate, UISearchBarDelegate> {
+    
+  GHUnitIOSView *view_;
+  
+  //! Data source for table view
+  GHUnitIOSTableViewDataSource *dataSource_;
+  GHTestSuite *suite_;
+  
+  UIBarButtonItem *runButton_;
+  
+  //! If set then we will no longer auto scroll as tests are run
+  BOOL userDidDrag_;
+  
+}
+
+@property (retain, nonatomic) GHTestSuite *suite;
+
+- (void)reloadTest:(id<GHTest>)test;
+
+- (void)scrollToTest:(id<GHTest>)test;
+- (void)scrollToBottom;
+
+- (void)setStatusText:(NSString *)message;
+
+- (void)runTests;
+
+- (void)cancel;
+
+- (void)reload;
+
+- (void)loadDefaults;
+- (void)saveDefaults;
+
+- (GHUnitIOSTableViewDataSource *)dataSource;
+
+@end
+

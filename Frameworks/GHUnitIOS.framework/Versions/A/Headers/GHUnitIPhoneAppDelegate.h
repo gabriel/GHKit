@@ -1,8 +1,8 @@
 //
-//  GHCGUtils.h
+//  GHUnitIPhoneAppDelegate.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 6/28/11.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,9 +26,11 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
+#import "GHUnitIOSAppDelegate.h"
 
-extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
+// For backwards compatibility (see GHUnitIOSAppDelegate)
+@interface GHUnitIPhoneAppDelegate : GHUnitIOSAppDelegate {
+    
+}
 
-extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+@end

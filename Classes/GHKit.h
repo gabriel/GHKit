@@ -36,7 +36,6 @@
 #import "GHNSString+TimeInterval.h"
 #import "GHNSString+Utils.h"
 #import "GHNSString+URL.h"
-#import "GHNSString+SymlinksAndAliases.h"
 
 #import "GHNSNumber+Utils.h"
 
@@ -63,6 +62,7 @@
 #import "GHCGUtils.h"
 
 #import "GHValidators.h"
+#import "GHNSUserDefaults+Utils.h"
 
 // iPhone
 #if TARGET_OS_IPHONE
@@ -73,6 +73,7 @@
 #import "GHNSXMLNode+Utils.h"
 #import "GHNSXMLElement+Utils.h"
 #import "GHNSAttributedString+Utils.h"
+#import "GHNSString+SymlinksAndAliases.h"
 #endif
 
 #import "GHNSObject+Utils.h"

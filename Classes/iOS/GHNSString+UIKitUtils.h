@@ -1,8 +1,9 @@
 //
-//  GHCGUtils.h
+//  GHNSString+UIKitUtils.h
+//  GHKitIPhone
 //
-//  Created by Gabriel Handford on 12/30/08.
-//  Copyright 2008 Gabriel Handford
+//  Created by Gabriel Handford on 1/8/09.
+//  Copyright 2009 Gabriel Handford
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -26,9 +27,33 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
+enum {
+  GHNSStringAlignmentHorizontalCenter = 1 << 0,
+  GHNSStringAlignmentVerticalCenter = 1 << 1,
+};
+typedef NSUInteger GHNSStringAlignment;
 
-extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);
+/*!
+ Utilities for drawing strings in UIKit.
+ @ingroup iPhone
+ */
+@interface NSString(GHUIKitUtils)
+
+/*!
+ Draw string in rect.
+ Use alignment to specify to center horizontally, vertically, or both.
+ */
+- (void)gh_drawInRect:(CGRect)rect font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode 
+            alignment:(GHNSStringAlignment)alignment;
+
+/*!
+ Draw string in rect, adjusting with minimum font size.
+ Use alignment to specify to center horizontally, vertically, or both.
+ */
+- (void)gh_drawInRect:(CGRect)rect font:(UIFont *)font minFontSize:(CGFloat)minFontSize actualFontSize:(CGFloat *)actualFontSize 
+        lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(GHNSStringAlignment)alignment;
+
+@end

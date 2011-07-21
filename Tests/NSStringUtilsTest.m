@@ -134,6 +134,10 @@
 	GHAssertTrue([@"FOoO" gh_isEqualIgnoreCase:@"fooO"], nil);
 }
 
+- (void)testFloatValue {
+  GHAssertEquals(5.0f, [@"5.0.1" floatValue], nil);
+}
+
 #if !TARGET_OS_IPHONE
 - (void)testTruncateMiddle {
   NSAttributedString *attributedString = [@"This is a test" gh_truncateMiddle];

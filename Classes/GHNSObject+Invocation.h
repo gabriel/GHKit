@@ -165,7 +165,7 @@
  
  @code
  SEL selector = @selector(bar:baz:);
- [foo gh_argumentProxy:selector] arg:10 arg:YES];
+ [[foo gh_argumentProxy:selector] arg:10 arg:YES];
  @endcode
  
  Will call [foo bar:10 baz:YES];  (and not arg:arg: selector which doesn't exist).

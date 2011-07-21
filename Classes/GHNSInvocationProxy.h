@@ -145,8 +145,8 @@
 	
 	// If not forwarding to target selector, we can use this to override the
 	// selector called
-	SEL selector_; 
-
+	SEL selector_;
+  
 	NSThread *thread_;
 	BOOL waitUntilDone_;
 	NSTimeInterval delay_; // Defaults to -1 (no delay)

@@ -107,9 +107,9 @@ delay=delay_, selector=selector_, delegate=delegate_, detachCallback=detachCallb
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
-	// For argument proxy, if we are overriding the invoking selector
+	// For argument proxy, if we are overriding the invoking selector (globally)
 	if (selector_ != NULL) selector = selector_;
-	
+
 	return [[self target] methodSignatureForSelector:selector];
 }
 
@@ -216,6 +216,6 @@ static GHNSInvocationProxyLogger *gInvocationProxyLogger = NULL;
 	}	
 }
 
-//! @endcond
-
 @end
+
+//! @endcond
