@@ -27,7 +27,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#if TARGET_OS_IPHONE
 #import <CoreGraphics/CoreGraphics.h>
+#endif
 
 extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
 
