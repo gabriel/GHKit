@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleIdentifier</key>
+	<string>me.rel.GHKit</string>
+	<key>CFBundleName</key>
+	<string>GHKit Documentation</string>
+	<key>CFBundleShortVersionString</key>
+	<string>ERSION</string>
+	<key>CFBundleVersion</key>
+	<string>ERSION</string>
+	
+	
+	
+	
+	<key>DocSetFeedName</key>
+	<string>GHKit Documentation</string>
+	
+	<key>DocSetMinimumXcodeVersion</key>
+	<string>3.0</string>
+	
+	<key>DocSetPublisherIdentifier</key>
+	<string>me.rel.documentation</string>
+	<key>DocSetPublisherName</key>
+	<string>GHKit</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2011 GHKit. All rights reserved.</string>
+</dict>
+</plist>

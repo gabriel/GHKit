@@ -1,0 +1,909 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>YKLayout Protocol Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">YelpKit </a></h1>
+				<a id="developerHome" href="../index.html">YelpKit</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">YKLayout Protocol Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/isSizing">&nbsp;&nbsp;&nbsp;&nbsp;- isSizing</option>
+	
+	<option value="//api/name/layoutSubviews:">&nbsp;&nbsp;&nbsp;&nbsp;- layoutSubviews:</option>
+	
+	<option value="//api/name/setFrame:view:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrame:view:</option>
+	
+	<option value="//api/name/setFrame:view:options:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrame:view:options:</option>
+	
+	<option value="//api/name/setFrame:view:sizeToFit:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrame:view:sizeToFit:</option>
+	
+	<option value="//api/name/setNeedsLayout">&nbsp;&nbsp;&nbsp;&nbsp;- setNeedsLayout</option>
+	
+	<option value="//api/name/setOrigin:view:">&nbsp;&nbsp;&nbsp;&nbsp;- setOrigin:view:</option>
+	
+	<option value="//api/name/setX:view:">&nbsp;&nbsp;&nbsp;&nbsp;- setX:view:</option>
+	
+	<option value="//api/name/setY:view:">&nbsp;&nbsp;&nbsp;&nbsp;- setY:view:</option>
+	
+	<option value="//api/name/sizeThatFits:">&nbsp;&nbsp;&nbsp;&nbsp;- sizeThatFits:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isSizing">isSizing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/layoutSubviews:">layoutSubviews:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrame:view:">setFrame:view:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrame:view:options:">setFrame:view:options:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrame:view:sizeToFit:">setFrame:view:sizeToFit:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setNeedsLayout">setNeedsLayout</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setOrigin:view:">setOrigin:view:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setX:view:">setX:view:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setY:view:">setY:view:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sizeThatFits:">sizeThatFits:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="YKLayout Protocol Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">YKLayout Protocol Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Conforms to</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">YKLayout.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><a href="../Classes/YKLayout.html">YKLayout</a> is a way to size and layout dynamic (sub)views.</p>
+
+<p><a href="../Classes/YKLayout.html">YKLayout</a> is designed to calculate and return a size that best fits the receiver’s subviews,
+without altering the subviews frames, or affecting layoutSubviews call hierarchy.</p>
+
+<p>Instead of defining both (CGSize)<a href="#//api/name/sizeThatFits:">sizeThatFits:</a>(CGSize)size; and (void)layoutSubviews;, you define a single method called:</p>
+
+<ul>
+<li>(CGSize)layout:(id<a href="../Classes/YKLayout.html">YKLayout</a>)layout size:(CGSize)size;</li>
+</ul>
+
+
+<p>Then in this method you use the layout instance to set the subview frames (if sizing).</p>
+
+<p>This prevents your code from altering subviews when you are sizing (for <a href="#//api/name/sizeThatFits:">sizeThatFits:</a>).</p>
+
+<p>For example,</p>
+
+<p>CGRect titleLabelFrame = [layout setFrame:CGRectMake(x, y, 400, 0) view:_titleLabel options:YKLayoutOptionsSizeToFit];
+// titleLabelFrame may have a different width and will have a valid height</p>
+
+<p>You can combine YKLayoutOptionsSizeToFit and YKLayoutOptionsCenter to have it be centered with a variable height.
+For example,</p>
+
+<p>CGRect titleLabelFrame = [layout setFrame:CGRectMake(x, y, 400, 0) view:_titleLabel options:YKLayoutOptionsSizeToFit|YKLayoutOptionsCenter];
+// titleLabelFrame may have a different width and will have a valid height and will have an x position so it is centered</p>
+
+<p>You can also combine YKLayoutOptionsSizeToFit with YKLayoutOptionsConstraintWidth
+to make sure the width isn&rsquo;t set larger than expected. For example,</p>
+
+<p>CGRect titleLabelFrame = [layout setFrame:CGRectMake(x, y, 400, 0) view:_titleLabel options:YKLayoutOptionsSizeToFit|YKLayoutOptionsConstraintWidth];
+// titleLabelFrame may have a different width but it won&rsquo;t be larger than 400</p>
+
+<p>You can combine YKLayoutOptionsSizeToFit, YKLayoutOptionsConstraintWidth, and YKLayoutOptionsDefaultWidth to make sure
+a view sizes to fit with max and default width (when 0).</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/layoutSubviews:">&ndash;&nbsp;layoutSubviews:</a></code>
+		<span class="tooltip"><p>Layout the subviews.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sizeThatFits:">&ndash;&nbsp;sizeThatFits:</a></code>
+		<span class="tooltip"><p>Size that fits.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFrame:view:">&ndash;&nbsp;setFrame:view:</a></code>
+		<span class="tooltip"><p>Set frame for the (sub)view.
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFrame:view:sizeToFit:">&ndash;&nbsp;setFrame:view:sizeToFit:</a></code>
+		<span class="tooltip"><p>Set the (sub)view frame, then size to fit the view.
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.
+Use this value instead of view.frame since the views frame might not have been set.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFrame:view:options:">&ndash;&nbsp;setFrame:view:options:</a></code>
+		<span class="tooltip"><p>Set the (sub)view frame.
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.
+Use this value instead of view.frame since the views frame might not have been set.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setOrigin:view:">&ndash;&nbsp;setOrigin:view:</a></code>
+		<span class="tooltip"><p>Set origin for the (sub)view (for views with fixed sizes).
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.
+Use this value instead of view.frame since the views frame might not have been set.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setX:view:">&ndash;&nbsp;setX:view:</a></code>
+		<span class="tooltip"><p>Set origin, x position.
+Use this value instead of view.frame since the views frame might not have been set.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setY:view:">&ndash;&nbsp;setY:view:</a></code>
+		<span class="tooltip"><p>Set origin, y position.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setNeedsLayout">&ndash;&nbsp;setNeedsLayout</a></code>
+		<span class="tooltip"><p>If layout is required. Otherwise cached value may be returned.
+This should be called when a views data changes.</p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isSizing">&ndash;&nbsp;isSizing</a></code>
+		<span class="tooltip"><p>For subclasses, in rare cases, if they need to know whether the layout will
+be applied or not via <a href="../Protocols/YKLayout.html#//api/name/setFrame:view:">setFrame:view:</a></p></span>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/isSizing" title="isSizing"></a>
+	<h3 class="subsubtitle method-title">isSizing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>For subclasses, in rare cases, if they need to know whether the layout will
+be applied or not via <a href="../Protocols/YKLayout.html#//api/name/setFrame:view:">setFrame:view:</a></p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)isSizing</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if we are only sizing, NO if we are setting frames</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/layoutSubviews:" title="layoutSubviews:"></a>
+	<h3 class="subsubtitle method-title">layoutSubviews:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Layout the subviews.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGSize)layoutSubviews:(CGSize)<em>size</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>Size to layout in</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFrame:view:" title="setFrame:view:"></a>
+	<h3 class="subsubtitle method-title">setFrame:view:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set frame for the (sub)view.
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)setFrame:(CGRect)<em>frame</em> view:(UIView *)<em>view</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>Frame</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>View</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFrame:view:options:" title="setFrame:view:options:"></a>
+	<h3 class="subsubtitle method-title">setFrame:view:options:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the (sub)view frame.
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.
+Use this value instead of view.frame since the views frame might not have been set.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)setFrame:(CGRect)<em>frame</em> view:(UIView *)<em>view</em> options:(YKLayoutOptions)<em>options</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>View</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>options</em></dt>
+			<dd><p>Options for setFrame; See YKLayoutOptions for more info</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The view frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFrame:view:sizeToFit:" title="setFrame:view:sizeToFit:"></a>
+	<h3 class="subsubtitle method-title">setFrame:view:sizeToFit:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the (sub)view frame, then size to fit the view.
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.
+Use this value instead of view.frame since the views frame might not have been set.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)setFrame:(CGRect)<em>frame</em> view:(UIView *)<em>view</em> sizeToFit:(BOOL)<em>sizeToFit</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>Frame</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>View</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>sizeToFit</em></dt>
+			<dd><p>Size to fit</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The view frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setNeedsLayout" title="setNeedsLayout"></a>
+	<h3 class="subsubtitle method-title">setNeedsLayout</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>If layout is required. Otherwise cached value may be returned.
+This should be called when a views data changes.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setNeedsLayout</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setOrigin:view:" title="setOrigin:view:"></a>
+	<h3 class="subsubtitle method-title">setOrigin:view:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set origin for the (sub)view (for views with fixed sizes).
+If we are calculating sizeThatFits, this doesn&rsquo;t actually set the views frame.
+Use this value instead of view.frame since the views frame might not have been set.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)setOrigin:(CGPoint)<em>origin</em> view:(UIView *)<em>view</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>origin</em></dt>
+			<dd><p>Origin</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>View</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The view frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setX:view:" title="setX:view:"></a>
+	<h3 class="subsubtitle method-title">setX:view:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set origin, x position.
+Use this value instead of view.frame since the views frame might not have been set.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)setX:(CGFloat)<em>x</em> view:(UIView *)<em>view</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>x</em></dt>
+			<dd><p>X position</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>View</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The view frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setY:view:" title="setY:view:"></a>
+	<h3 class="subsubtitle method-title">setY:view:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set origin, y position.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGRect)setY:(CGFloat)<em>y</em> view:(UIView *)<em>view</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>y</em></dt>
+			<dd><p>Y position</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>view</em></dt>
+			<dd><p>View</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The view frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Use this value instead of view.frame since the views frame might not have been set.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sizeThatFits:" title="sizeThatFits:"></a>
+	<h3 class="subsubtitle method-title">sizeThatFits:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Size that fits.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (CGSize)sizeThatFits:(CGSize)<em>size</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>size</em></dt>
+			<dd><p>Size to layout in; Should have a width specified.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The size needed to display the view</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKLayout.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2011 YelpKit. All rights reserved. (Last updated: 2011-08-28)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

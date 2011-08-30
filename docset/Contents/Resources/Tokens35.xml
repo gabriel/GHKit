@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSString(GHXML).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString</TokenIdentifier>
+			<Abstract>Utilities for XML string formatting.</Abstract>
+			<DeclaredIn>GHNSString+XML.h</DeclaredIn>
+			
+			<NodeRef refid="35"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSString/gh_stringWithFormatForXML:</TokenIdentifier>
+			<Abstract>String format, and escape strings for use in XML.
+Arguments MUST BE objective-C objects!</Abstract>
+			<DeclaredIn>GHNSString+XML.h</DeclaredIn>			
+			
+			<Declaration>+ (id)gh_stringWithFormatForXML:(NSString *)format, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>format</Name>
+					<Abstract>Format</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_stringWithFormatForXML:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSAttributedString(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSAttributedString</TokenIdentifier>
+			<Abstract>Utilities for NSAttributedString.</Abstract>
+			<DeclaredIn>GHNSAttributedString+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSAttributedString/gh_linkFromString:URL:color:isUnderlined:</TokenIdentifier>
+			<Abstract>Create link.</Abstract>
+			<DeclaredIn>GHNSAttributedString+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (id)gh_linkFromString:(NSString *)string URL:(NSURL *)URL color:(NSColor *)color isUnderlined:(BOOL)isUnderlined</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract>String</Abstract>
+				</Parameter><Parameter>
+					<Name>URL</Name>
+					<Abstract>URL</Abstract>
+				</Parameter><Parameter>
+					<Name>color</Name>
+					<Abstract>String color</Abstract>
+				</Parameter><Parameter>
+					<Name>isUnderlined</Name>
+					<Abstract>YES if should underline</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_linkFromString:URL:color:isUnderlined:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSMutableDictionary(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSMutableDictionary</TokenIdentifier>
+			<Abstract>Utilities for NSMutableDictionary.</Abstract>
+			<DeclaredIn>GHNSMutableDictionary+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="23"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSMutableDictionary/gh_setDouble:forKey:</TokenIdentifier>
+			<Abstract>Set double value.</Abstract>
+			<DeclaredIn>GHNSMutableDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_setDouble:(double)d forKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>d</Name>
+					<Abstract>Double</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_setDouble:forKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSMutableDictionary/gh_setInteger:forKey:</TokenIdentifier>
+			<Abstract>Set integer value.</Abstract>
+			<DeclaredIn>GHNSMutableDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_setInteger:(NSInteger)n forKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>n</Name>
+					<Abstract>Integer</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_setInteger:forKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSMutableDictionary/gh_setBool:forKey:</TokenIdentifier>
+			<Abstract>Set bool.</Abstract>
+			<DeclaredIn>GHNSMutableDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_setBool:(BOOL)b forKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b</Name>
+					<Abstract>Bool</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_setBool:forKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSMutableDictionary/gh_setObjectMaybeNil:forKey:</TokenIdentifier>
+			<Abstract>Set object or [NSNull null] if nil.</Abstract>
+			<DeclaredIn>GHNSMutableDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract>Object</Abstract>
+				</Parameter><Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_setObjectMaybeNil:forKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSMutableDictionary/gh_mutableCompact</TokenIdentifier>
+			<Abstract>Compact.
+Remove all value with instances NSNull.</Abstract>
+			<DeclaredIn>GHNSMutableDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_mutableCompact</Declaration>
+			
+			
+			<Anchor>//api/name/gh_mutableCompact</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

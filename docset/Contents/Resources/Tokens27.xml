@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSObject(GHSwizzle).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSObject</TokenIdentifier>
+			<Abstract>Method swizzling.</Abstract>
+			<DeclaredIn>GHNSObject+Swizzle.h</DeclaredIn>
+			
+			<NodeRef refid="27"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSObject/gh_swizzleMethod:withMethod:</TokenIdentifier>
+			<Abstract>Swizzle method.</Abstract>
+			<DeclaredIn>GHNSObject+Swizzle.h</DeclaredIn>			
+			
+			<Declaration>+ (void)gh_swizzleMethod:(SEL)original withMethod:(SEL)alternate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>original</Name>
+					<Abstract>Original selector</Abstract>
+				</Parameter><Parameter>
+					<Name>alternate</Name>
+					<Abstract>Selector</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_swizzleMethod:withMethod:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSObject/gh_swizzleClassMethod:withClassMethod:</TokenIdentifier>
+			<Abstract>Swizzle class method.</Abstract>
+			<DeclaredIn>GHNSObject+Swizzle.h</DeclaredIn>			
+			
+			<Declaration>+ (void)gh_swizzleClassMethod:(SEL)original withClassMethod:(SEL)alternate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>original</Name>
+					<Abstract>Original selector</Abstract>
+				</Parameter><Parameter>
+					<Name>alternate</Name>
+					<Abstract>Selector</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_swizzleClassMethod:withClassMethod:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

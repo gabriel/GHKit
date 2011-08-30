@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSString(GHHMAC).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSString</TokenIdentifier>
+			<Abstract>Utilities for generating a SHA-1 HMAC on a string based on a
+secret and Base64 encoder.</Abstract>
+			<DeclaredIn>GHNSString+HMAC.h</DeclaredIn>
+			
+			<NodeRef refid="29"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSString/gh_HMACSHA1:base64Encoder:</TokenIdentifier>
+			<Abstract>HMAC SHA1 digest.</Abstract>
+			<DeclaredIn>GHNSString+HMAC.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_HMACSHA1:(NSString *)secret base64Encoder:(id)base64Encoder</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>secret</Name>
+					<Abstract>Secret key to sign with</Abstract>
+				</Parameter><Parameter>
+					<Name>base64Encoder</Name>
+					<Abstract>Base64 encoder, that implements: (NSData )encodeBytes:(const void )bytes length:(NSUInteger)length;</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Base64 encoded HMAC SHA1 digest</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_HMACSHA1:base64Encoder:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

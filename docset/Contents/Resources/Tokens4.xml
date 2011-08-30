@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GHNSInvocationProxyCallback.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GHNSInvocationProxyCallback</TokenIdentifier>
+			<Abstract>Invocation proxy callback represents a target, selector, context (selector arg) and thread,
+which if set on invocation proxy will call back on this thread after invoking on the proxy.</Abstract>
+			<DeclaredIn>GHNSInvocationProxy.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

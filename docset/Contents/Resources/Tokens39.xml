@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSXMLNode(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSXMLNode</TokenIdentifier>
+			<Abstract>Utilities for NSXMLNode.</Abstract>
+			<DeclaredIn>GHNSXMLNode+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="39"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSXMLNode/gh_stringAtXQuery:error:</TokenIdentifier>
+			<Abstract>Get string value at XQuery.</Abstract>
+			<DeclaredIn>GHNSXMLNode+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_stringAtXQuery:(NSString *)xQuery error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>xQuery</Name>
+					<Abstract>xQeury</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract>Out error</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>String at xquery</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_stringAtXQuery:error:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSNotificationCenter(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSNotificationCenter</TokenIdentifier>
+			<Abstract>Utilities for NSNotificationCenter.</Abstract>
+			<DeclaredIn>GHNSNotificationCenter+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="24"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNotificationCenter/gh_replaceObserver:selector:name:object:</TokenIdentifier>
+			<Abstract>Replace observer. If present, it removes and re-adds the observer.</Abstract>
+			<DeclaredIn>GHNSNotificationCenter+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_replaceObserver:(id)observer selector:(SEL)selector name:(NSString *)name object:(id)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>observer</Name>
+					<Abstract>Observer</Abstract>
+				</Parameter><Parameter>
+					<Name>selector</Name>
+					<Abstract>Selector</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract>Name</Abstract>
+				</Parameter><Parameter>
+					<Name>object</Name>
+					<Abstract>Object</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_replaceObserver:selector:name:object:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

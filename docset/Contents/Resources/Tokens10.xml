@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GHValidators.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GHValidators</TokenIdentifier>
+			<Abstract>Validators for input, such as email addresses.</Abstract>
+			<DeclaredIn>GHValidators.h</DeclaredIn>
+			
+			<NodeRef refid="10"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GHValidators/isEmailAddress:</TokenIdentifier>
+			<Abstract>Check if string is a valid email address.</Abstract>
+			<DeclaredIn>GHValidators.h</DeclaredIn>			
+			
+			<Declaration>+ (BOOL)isEmailAddress:(NSString *)str</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>str</Name>
+					<Abstract>String to validate</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>YES if string is a valid email address</Abstract></ReturnValue>
+			<Anchor>//api/name/isEmailAddress:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GHValidators/isCreditCardNumber:</TokenIdentifier>
+			<Abstract>Check if credit card number passes Luhn validation.</Abstract>
+			<DeclaredIn>GHValidators.h</DeclaredIn>			
+			
+			<Declaration>+ (BOOL)isCreditCardNumber:(NSString *)numberString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>numberString</Name>
+					<Abstract>Credit card number as string</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>YES if passes luhn validation</Abstract></ReturnValue>
+			<Anchor>//api/name/isCreditCardNumber:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GHValidators/isCreditCardExpiration:date:</TokenIdentifier>
+			<Abstract>Check if string is a valid credit card expiration.
+Accept 1/12, 01/12, or 01/2012, or 01/10/2012.</Abstract>
+			<DeclaredIn>GHValidators.h</DeclaredIn>			
+			
+			<Declaration>+ (BOOL)isCreditCardExpiration:(NSString *)expiration date:(NSDate *)date</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>expiration</Name>
+					<Abstract>Expiration string.</Abstract>
+				</Parameter><Parameter>
+					<Name>date</Name>
+					<Abstract>Current date, fails if expiration  this date</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>YES if passes validation</Abstract></ReturnValue>
+			<Anchor>//api/name/isCreditCardExpiration:date:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

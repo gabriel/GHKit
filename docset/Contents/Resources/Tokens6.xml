@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GHNSStringEnumerator.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GHNSStringEnumerator</TokenIdentifier>
+			<Abstract>For scanning, and enumerating strings.</Abstract>
+			<DeclaredIn>GHNSStringEnumerator.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GHNSStringEnumerator/initWithString:separatorCharacterSet:</TokenIdentifier>
+			<Abstract>Create string enumerator with string and separator character set.</Abstract>
+			<DeclaredIn>GHNSStringEnumerator.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithString:(NSString *)string separatorCharacterSet:(NSCharacterSet *)separatorCharacterSet</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract>String</Abstract>
+				</Parameter><Parameter>
+					<Name>separatorCharacterSet</Name>
+					<Abstract>Separator characters</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithString:separatorCharacterSet:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GHNSStringEnumerator/initWithString:separatorString:</TokenIdentifier>
+			<Abstract>Create string enumerator with string and separator character set.</Abstract>
+			<DeclaredIn>GHNSStringEnumerator.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithString:(NSString *)string separatorString:(NSString *)separatorString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract>String</Abstract>
+				</Parameter><Parameter>
+					<Name>separatorCharacterSet</Name>
+					<Abstract>Separator characters</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithString:separatorString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GHNSStringEnumerator/nextString</TokenIdentifier>
+			<Abstract>Next string.</Abstract>
+			<DeclaredIn>GHNSStringEnumerator.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)nextString</Declaration>
+			
+			<ReturnValue><Abstract>Next string</Abstract></ReturnValue>
+			<Anchor>//api/name/nextString</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

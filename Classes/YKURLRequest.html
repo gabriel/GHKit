@@ -1,0 +1,1181 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>YKURLRequest Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">YelpKit </a></h1>
+				<a id="developerHome" href="../index.html">YelpKit</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">YKURLRequest Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/compressor">&nbsp;&nbsp;&nbsp;&nbsp;+ compressor</option>
+	
+	<option value="//api/name/connectionClass">&nbsp;&nbsp;&nbsp;&nbsp;+ connectionClass</option>
+	
+	<option value="//api/name/setCacheEnabled:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCacheEnabled:</option>
+	
+	<option value="//api/name/setCompressor:">&nbsp;&nbsp;&nbsp;&nbsp;+ setCompressor:</option>
+	
+	<option value="//api/name/setConnectionClass:">&nbsp;&nbsp;&nbsp;&nbsp;+ setConnectionClass:</option>
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/cache">&nbsp;&nbsp;&nbsp;&nbsp;- cache</option>
+	
+	<option value="//api/name/cancel">&nbsp;&nbsp;&nbsp;&nbsp;- cancel</option>
+	
+	<option value="//api/name/close">&nbsp;&nbsp;&nbsp;&nbsp;- close</option>
+	
+	<option value="//api/name/metricsDescription">&nbsp;&nbsp;&nbsp;&nbsp;- metricsDescription</option>
+	
+	<option value="//api/name/requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:">&nbsp;&nbsp;&nbsp;&nbsp;- requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:</option>
+	
+	<option value="//api/name/responseDate">&nbsp;&nbsp;&nbsp;&nbsp;- responseDate</option>
+	
+	<option value="//api/name/responseHeaderFields">&nbsp;&nbsp;&nbsp;&nbsp;- responseHeaderFields</option>
+	
+	<option value="//api/name/responseStatusCode">&nbsp;&nbsp;&nbsp;&nbsp;- responseStatusCode</option>
+	
+	<option value="//api/name/setHTTPBody:compress:">&nbsp;&nbsp;&nbsp;&nbsp;- setHTTPBody:compress:</option>
+	
+	<option value="//api/name/setHTTPBodyMultipart:keyEnumerator:compress:">&nbsp;&nbsp;&nbsp;&nbsp;- setHTTPBodyMultipart:keyEnumerator:compress:</option>
+	
+	<option value="//api/name/shouldAttemptLoadFromCache">&nbsp;&nbsp;&nbsp;&nbsp;- shouldAttemptLoadFromCache</option>
+	
+	<option value="//api/name/shouldStoreInCache">&nbsp;&nbsp;&nbsp;&nbsp;- shouldStoreInCache</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/compressor">compressor</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/connectionClass">connectionClass</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCacheEnabled:">setCacheEnabled:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCompressor:">setCompressor:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setConnectionClass:">setConnectionClass:</a></span></li>
+	
+</ul></li>
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cache">cache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancel">cancel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/close">close</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/metricsDescription">metricsDescription</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:">requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/responseDate">responseDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/responseHeaderFields">responseHeaderFields</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/responseStatusCode">responseStatusCode</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHTTPBody:compress:">setHTTPBody:compress:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setHTTPBodyMultipart:keyEnumerator:compress:">setHTTPBodyMultipart:keyEnumerator:compress:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldAttemptLoadFromCache">shouldAttemptLoadFromCache</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldStoreInCache">shouldStoreInCache</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="YKURLRequest Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">YKURLRequest Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">NSObject</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">YKURLRequest.h<br />YKURLRequest.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>URL request.</p>
+
+<p>To disable <a href="#//api/name/cache">cache</a> through user defaults, set NSUserDefaults#boolForKey:@&ldquo;YKURLRequestCacheDisabled&rdquo;.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:">&ndash;&nbsp;requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:</a></code>
+		<span class="tooltip"><p>Request the URL.
+The delegate is retained for the duration of the connection.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cancel">&ndash;&nbsp;cancel</a></code>
+		<span class="tooltip"><p>Cancel request. Will issued a cancelled notification to the delegate</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/close">&ndash;&nbsp;close</a></code>
+		<span class="tooltip"><p>Close request. Releases connection and delegate.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHTTPBodyMultipart:keyEnumerator:compress:">&ndash;&nbsp;setHTTPBodyMultipart:keyEnumerator:compress:</a></code>
+		<span class="tooltip"><p>Set the HTTP multipart data.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setHTTPBody:compress:">&ndash;&nbsp;setHTTPBody:compress:</a></code>
+		<span class="tooltip"><p>Set the HTTP body data.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/compressor">+&nbsp;compressor</a></code>
+		<span class="tooltip"><p>the <a href="#//api/name/compressor">compressor</a> used for request compression.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCompressor:">+&nbsp;setCompressor:</a></code>
+		<span class="tooltip"><p>Set the <a href="#//api/name/compressor">compressor</a> used for request compression.
+A <a href="#//api/name/compressor">compressor</a> for gzip with GTM would look like:</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/connectionClass">+&nbsp;connectionClass</a></code>
+		<span class="tooltip"><p>Connection class (for mocking).</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setConnectionClass:">+&nbsp;setConnectionClass:</a></code>
+		<span class="tooltip"><p>Override connection class.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCacheEnabled:">+&nbsp;setCacheEnabled:</a></code>
+		<span class="tooltip"><p>To disable the <a href="#//api/name/cache">cache</a> globally. (For testing.)</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/responseStatusCode">&ndash;&nbsp;responseStatusCode</a></code>
+		<span class="tooltip"><p>Response status code (If HTTP response, the HTTP response code.)</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/responseHeaderFields">&ndash;&nbsp;responseHeaderFields</a></code>
+		<span class="tooltip"><p>Response headers.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/responseDate">&ndash;&nbsp;responseDate</a></code>
+		<span class="tooltip"><p>Date from response header, if any.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldAttemptLoadFromCache">&ndash;&nbsp;shouldAttemptLoadFromCache</a></code>
+		<span class="tooltip"><p>Should load from <a href="#//api/name/cache">cache</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldStoreInCache">&ndash;&nbsp;shouldStoreInCache</a></code>
+		<span class="tooltip"><p>Should store in <a href="#//api/name/cache">cache</a>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cache">&ndash;&nbsp;cache</a></code>
+		<span class="tooltip"><p>The shared <a href="#//api/name/cache">cache</a> used by this request.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/metricsDescription">&ndash;&nbsp;metricsDescription</a></code>
+		<span class="tooltip"><p>Description of request metrics.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/compressor" title="compressor"></a>
+	<h3 class="subsubtitle method-title">compressor</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>the <a href="#//api/name/compressor">compressor</a> used for request compression.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (id&lt;YKCompressor&gt;)compressor</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>the <a href="#//api/name/compressor">compressor</a> used for request compression.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/connectionClass" title="connectionClass"></a>
+	<h3 class="subsubtitle method-title">connectionClass</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Connection class (for mocking).</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (Class)connectionClass</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Connection class</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCacheEnabled:" title="setCacheEnabled:"></a>
+	<h3 class="subsubtitle method-title">setCacheEnabled:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>To disable the <a href="#//api/name/cache">cache</a> globally. (For testing.)</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setCacheEnabled:(BOOL)<em>cacheEnabled</em></code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCompressor:" title="setCompressor:"></a>
+	<h3 class="subsubtitle method-title">setCompressor:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the <a href="#//api/name/compressor">compressor</a> used for request compression.
+A <a href="#//api/name/compressor">compressor</a> for gzip with GTM would look like:</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setCompressor:(id&lt;YKCompressor&gt;)<em>compressor</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>compressor</em></dt>
+			<dd><p>Compressor to use</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<pre><code> #import "GTMNSData+zlib.h"
+
+ @implementation YPGZipCompressor
+
+ + (YPGZipCompressor *)compressor {
+  return [[[YPGZipCompressor alloc] init] autorelease];
+ }
+
+ - (NSData *)compressData:(NSData *)data {
+  return [NSData gtm_dataByGzippingData:data];
+ }
+
+ - (NSString *)contentEncoding {
+  return @"gzip";
+ } 
+ @end
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setConnectionClass:" title="setConnectionClass:"></a>
+	<h3 class="subsubtitle method-title">setConnectionClass:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Override connection class.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>+ (void)setConnectionClass:(Class)<em>theClass</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>theClass</em></dt>
+			<dd><p>Class to use for connection</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/cache" title="cache"></a>
+	<h3 class="subsubtitle method-title">cache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The shared <a href="#//api/name/cache">cache</a> used by this request.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (YKURLCache *)cache</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cancel" title="cancel"></a>
+	<h3 class="subsubtitle method-title">cancel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Cancel request. Will issued a cancelled notification to the delegate</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)cancel</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/close" title="close"></a>
+	<h3 class="subsubtitle method-title">close</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Close request. Releases connection and delegate.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)close</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/metricsDescription" title="metricsDescription"></a>
+	<h3 class="subsubtitle method-title">metricsDescription</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Description of request metrics.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)metricsDescription</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:" title="requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:"></a>
+	<h3 class="subsubtitle method-title">requestWithURL:headers:delegate:finishSelector:failSelector:cancelSelector:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Request the URL.
+The delegate is retained for the duration of the connection.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)requestWithURL:(YKURL *)<em>URL</em> headers:(NSDictionary *)<em>headers</em> delegate:(id)<em>delegate</em> finishSelector:(SEL)<em>finishSelector</em> failSelector:(SEL)<em>failSelector</em> cancelSelector:(SEL)<em>cancelSelector</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>URL</em></dt>
+			<dd><p>URL</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>headers</em></dt>
+			<dd><p>Headers to include in request</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>delegate</em></dt>
+			<dd><p>Delegate</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>finishSelector</em></dt>
+			<dd><p>Finished selector, with a signature like:
+  @code
+  &ndash; (void)requestDidFinish:(<a href="YKURLRequest.html">YKURLRequest</a> *)request;
+  @endcode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>failSelector</em></dt>
+			<dd><p>Failure selector, with a signature like:
+  @code
+  &ndash; (void)request:(<a href="YKURLRequest.html">YKURLRequest</a> <strong>)request failedWithError:(<a href="../Classes/YKError.html">YKError</a> </strong>)error;
+  @endcode</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>cancelSelector</em></dt>
+			<dd><p>Cancel selector, with a signature like:
+  @code
+  &ndash; (void)requestDidCancel:(<a href="YKURLRequest.html">YKURLRequest</a> *)request;
+  @endcode</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NO if we were unable to make the request with the parameters</p>
+
+<p>Server errors (status >= 300) are reported as the code of the error object.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The delegate must provide and implement the finished and failed selectors.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/responseDate" title="responseDate"></a>
+	<h3 class="subsubtitle method-title">responseDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Date from response header, if any.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSDate *)responseDate</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/responseHeaderFields" title="responseHeaderFields"></a>
+	<h3 class="subsubtitle method-title">responseHeaderFields</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Response headers.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)responseHeaderFields</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/responseStatusCode" title="responseStatusCode"></a>
+	<h3 class="subsubtitle method-title">responseStatusCode</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Response status code (If HTTP response, the HTTP response code.)</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)responseStatusCode</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHTTPBody:compress:" title="setHTTPBody:compress:"></a>
+	<h3 class="subsubtitle method-title">setHTTPBody:compress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the HTTP body data.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setHTTPBody:(NSData *)<em>data</em> compress:(BOOL)<em>compress</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>data</em></dt>
+			<dd><p>Data</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>compress</em></dt>
+			<dd><p>If specified, will apply the <a href="#//api/name/compressor">compressor</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setHTTPBodyMultipart:keyEnumerator:compress:" title="setHTTPBodyMultipart:keyEnumerator:compress:"></a>
+	<h3 class="subsubtitle method-title">setHTTPBodyMultipart:keyEnumerator:compress:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the HTTP multipart data.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (void)setHTTPBodyMultipart:(NSDictionary *)<em>multipart</em> keyEnumerator:(NSEnumerator *)<em>keyEnumerator</em> compress:(BOOL)<em>compress</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>multipart</em></dt>
+			<dd><p>Dictionary where key is name and value can be NSNumber, NSString, NSData or YKURLRequestDataPart</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>keyEnumerator</em></dt>
+			<dd><p>The ordering of the multipart data</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>compress</em></dt>
+			<dd><p>If YES, will apply the <a href="#//api/name/compressor">compressor</a></p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldAttemptLoadFromCache" title="shouldAttemptLoadFromCache"></a>
+	<h3 class="subsubtitle method-title">shouldAttemptLoadFromCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should load from <a href="#//api/name/cache">cache</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)shouldAttemptLoadFromCache</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldStoreInCache" title="shouldStoreInCache"></a>
+	<h3 class="subsubtitle method-title">shouldStoreInCache</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Should store in <a href="#//api/name/cache">cache</a>.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (BOOL)shouldStoreInCache</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES if <a href="#//api/name/cache">cache</a> policy enabled</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">YKURLRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2011 YelpKit. All rights reserved. (Last updated: 2011-08-28)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>

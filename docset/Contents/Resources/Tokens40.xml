@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIColor(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIColor</TokenIdentifier>
+			<Abstract>Utilities for UIColor.</Abstract>
+			<DeclaredIn>GHUIColor+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="40"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIColor/gh_rgba</TokenIdentifier>
+			<Abstract>RGBA value.</Abstract>
+			<DeclaredIn>GHUIColor+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (GH_RGBA)gh_rgba</Declaration>
+			
+			<ReturnValue><Abstract>RGBA</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_rgba</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIColor/gh_hsv</TokenIdentifier>
+			<Abstract>HSV value.</Abstract>
+			<DeclaredIn>GHUIColor+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (GH_HSV)gh_hsv</Declaration>
+			
+			<ReturnValue><Abstract>HSV</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_hsv</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIColor/gh_hsvFromRed:green:blue:</TokenIdentifier>
+			<Abstract>HSV value from RGB.</Abstract>
+			<DeclaredIn>GHUIColor+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>red</Name>
+					<Abstract>Red</Abstract>
+				</Parameter><Parameter>
+					<Name>green</Name>
+					<Abstract>Green</Abstract>
+				</Parameter><Parameter>
+					<Name>blue</Name>
+					<Abstract>Blue</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>HSV</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_hsvFromRed:green:blue:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

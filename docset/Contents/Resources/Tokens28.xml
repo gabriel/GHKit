@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSObject(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSObject</TokenIdentifier>
+			<Abstract>Utilities for NSObject.</Abstract>
+			<DeclaredIn>GHNSObject+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="28"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSObject/gh_isNotNSNull</TokenIdentifier>
+			<Abstract>Check if not equal to NSNull.
+Useful for checking nil and NSNull in a single expression:</Abstract>
+			<DeclaredIn>GHNSObject+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)gh_isNotNSNull</Declaration>
+			
+			
+			<Anchor>//api/name/gh_isNotNSNull</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

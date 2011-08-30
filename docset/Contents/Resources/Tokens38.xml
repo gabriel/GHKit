@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSXMLElement(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSXMLElement</TokenIdentifier>
+			<Abstract>Utilities for NSXMLElement.</Abstract>
+			<DeclaredIn>GHNSXMLElement+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="38"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSXMLElement/gh_stringAt:</TokenIdentifier>
+			<Abstract>String value at name.</Abstract>
+			<DeclaredIn>GHNSXMLElement+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_stringAt:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract>Name</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>String</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_stringAt:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSXMLElement/gh_longLongAt:</TokenIdentifier>
+			<Abstract>Long long number at name.</Abstract>
+			<DeclaredIn>GHNSXMLElement+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSNumber *)gh_longLongAt:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract>Name</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Number</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_longLongAt:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSXMLElement/gh_elementAt:</TokenIdentifier>
+			<Abstract>XML element at name.</Abstract>
+			<DeclaredIn>GHNSXMLElement+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSXMLElement *)gh_elementAt:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract>Name</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>XML element</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_elementAt:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

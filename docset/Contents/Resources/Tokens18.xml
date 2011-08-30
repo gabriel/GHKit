@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSDictionary(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSDictionary</TokenIdentifier>
+			<Abstract>Utilities for dictionaries.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="18"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_doubleForKey:withDefault:</TokenIdentifier>
+			<Abstract>Get double value for key.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Double value</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_doubleForKey:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_doubleForKey:</TokenIdentifier>
+			<Abstract>Get double value for key.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (double)gh_doubleForKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Double value</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_doubleForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_integerForKey:withDefault:</TokenIdentifier>
+			<Abstract>Integer for key.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Integer value</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_integerForKey:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_integerForKey:</TokenIdentifier>
+			<Abstract>Integer for key.
+If value for key is nil or [NSNull null], 0 is returned.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSInteger)gh_integerForKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Integer value</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_integerForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_unsignedIntegerForKey:withDefault:</TokenIdentifier>
+			<Abstract>Unsigned integer for key.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)gh_unsignedIntegerForKey:(id)key withDefault:(NSUInteger)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Unsigned integer</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_unsignedIntegerForKey:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_unsignedIntegerForKey:</TokenIdentifier>
+			<Abstract>Unsigned integer for key.
+If value for key is nil or [NSNull null], 0 is returned.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSUInteger)gh_unsignedIntegerForKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Unsigned integer</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_unsignedIntegerForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_numberForKey:withDefaultInteger:</TokenIdentifier>
+			<Abstract>Number for key with default double value.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSNumber *)gh_numberForKey:(id)key withDefaultInteger:(NSInteger)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultValue</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Number</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_numberForKey:withDefaultInteger:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_numberForKey:withDefaultDouble:</TokenIdentifier>
+			<Abstract>Number for key with default double value.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSNumber *)gh_numberForKey:(id)key withDefaultDouble:(double)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultValue</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Number</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_numberForKey:withDefaultDouble:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_boolForKey:withDefault:</TokenIdentifier>
+			<Abstract>Get BOOL value for key.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>BOOL value</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_boolForKey:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_boolForKey:</TokenIdentifier>
+			<Abstract>Get BOOL value for key.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)gh_boolForKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>YES if boolValue; If key not found or is NSNull, returns NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_boolForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_objectForKey:withDefault:</TokenIdentifier>
+			<Abstract>Object for key with default value, if entry is NSNull or entry does not exist.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_objectForKey:(id)key withDefault:(id)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultValue</Name>
+					<Abstract>If value for key is nil or [NSNull null] this default is returned.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Value for key with default value, if entry is NSNull or entry does not exist</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_objectForKey:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_objectForKeyOrNSNull:</TokenIdentifier>
+			<Abstract>Object for key or NSNull.
+Helpful when used with key/value coding.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_objectForKeyOrNSNull:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Value or NSNull#null if not set</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_objectForKeyOrNSNull:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_boolValueForKey:withDefault:</TokenIdentifier>
+			<Abstract>Get boolean value (represented by NSNumber).
+Usefuly for coercing any object that responds to boolValue into an object for use with Key Value coding.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)defaultValue</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter><Parameter>
+					<Name>defaultValue</Name>
+					<Abstract>Default if value is missing or [NSNull null]</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Number</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_boolValueForKey:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_boolValueForKey:</TokenIdentifier>
+			<Abstract>Get boolean value (represented by NSNumber).
+Usefuly for coercing any object that responds to boolValue into an object for use with Key Value coding.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSNumber *)gh_boolValueForKey:(id)key</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>key</Name>
+					<Abstract>Key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Number</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_boolValueForKey:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_hasAllKeys:</TokenIdentifier>
+			<Abstract>Check if dictionary has all keys.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)gh_hasAllKeys:(NSString *)firstKey, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>firstKey</Name>
+					<Abstract>First key</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>YES if dictionary has all the keys</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_hasAllKeys:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_dictionarySubsetWithKeys:</TokenIdentifier>
+			<Abstract>Return dictionary with subset of keys.</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)gh_dictionarySubsetWithKeys:(NSArray *)keys</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>keys</Name>
+					<Abstract>Keys</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_dictionarySubsetWithKeys:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_compactDictionary</TokenIdentifier>
+			<Abstract>Dictionary without entries for keys with NSNull values</Abstract>
+			<DeclaredIn>GHNSDictionary+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)gh_compactDictionary</Declaration>
+			
+			<ReturnValue><Abstract>Dictionary without entries for keys with NSNull values</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_compactDictionary</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

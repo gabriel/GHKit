@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSURL(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSURL</TokenIdentifier>
+			<Abstract>Utilities for URLs, for example, encoding, escaping, parsing, splitting out or sorting query params, and more.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="36"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_queryDictionary</TokenIdentifier>
+			<Abstract>Get dictionary from NSURL query parameter.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSMutableDictionary *)gh_queryDictionary</Declaration>
+			
+			<ReturnValue><Abstract>Dictionary of key, value pairs from parsing query parameter</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_queryDictionary</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_dictionaryToQueryString:</TokenIdentifier>
+			<Abstract>Dictionary to query string. Escapes any encoded characters.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>queryDictionary</Name>
+					<Abstract>Dictionary of key value params</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Query string, key1=value1&amp;key2=value2</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_dictionaryToQueryString:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_dictionaryToQueryString:sort:</TokenIdentifier>
+			<Abstract>Convert dictionary to URL query string.
+Escapes any encoded characters.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>queryDictionary</Name>
+					<Abstract>Dictionary</Abstract>
+				</Parameter><Parameter>
+					<Name>sort</Name>
+					<Abstract>If YES, will sort items</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Query string, key1=value1&amp;key2=value2</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_dictionaryToQueryString:sort:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_dictionaryToQueryArray:sort:encoded:</TokenIdentifier>
+			<Abstract>Convert dictionary to array of query strings.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSArray *)gh_dictionaryToQueryArray:(NSDictionary *)queryDictionary sort:(BOOL)sort encoded:(BOOL)encoded</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>queryDictionary</Name>
+					<Abstract>Dictionary</Abstract>
+				</Parameter><Parameter>
+					<Name>sort</Name>
+					<Abstract>If YES, will sort items</Abstract>
+				</Parameter><Parameter>
+					<Name>encoded</Name>
+					<Abstract>If YES, will be URL component encoded</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Query strings, ['key1=value1', 'key2=value2']</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_dictionaryToQueryArray:sort:encoded:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_queryStringToDictionary:</TokenIdentifier>
+			<Abstract>Convert URL query string to dictionary.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSMutableDictionary *)gh_queryStringToDictionary:(NSString *)string</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>string</Name>
+					<Abstract>URL params string, key1=value1&amp;key2=value2</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_queryStringToDictionary:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_sortedQuery</TokenIdentifier>
+			<Abstract>Get query string, sorted by key.
+For example, "b=c&amp;a=d" is returned as "a=d&amp;b=c".</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_sortedQuery</Declaration>
+			
+			<ReturnValue><Abstract>Sorted query string</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_sortedQuery</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_deriveWithQuery:</TokenIdentifier>
+			<Abstract>Derive new URL with a new query. All other fields should be the same.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSURL *)gh_deriveWithQuery:(NSString *)query</Declaration>
+			
+			<ReturnValue><Abstract>URL with new query</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_deriveWithQuery:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_canonical</TokenIdentifier>
+			<Abstract>Canonical form of URL.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSURL *)gh_canonical</Declaration>
+			
+			<ReturnValue><Abstract>Canonical URL</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_canonical</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_canonicalWithIgnore:</TokenIdentifier>
+			<Abstract>Canonical form of URL.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSURL *)gh_canonicalWithIgnore:(NSArray *)ignore</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>ignore</Name>
+					<Abstract>Do not include the set of query params</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Canonical URL</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_canonicalWithIgnore:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_filterQueryParams:sort:</TokenIdentifier>
+			<Abstract>Remove query params.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSURL *)gh_filterQueryParams:(NSArray *)filterQueryParams sort:(BOOL)sort</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>filterQueryParams</Name>
+					<Abstract>List of keys to filter</Abstract>
+				</Parameter><Parameter>
+					<Name>sort</Name>
+					<Abstract>Whether to sort query params</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>URL without query params.</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_filterQueryParams:sort:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_encode:</TokenIdentifier>
+			<Abstract>Encode URL string.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_encode:(NSString *)s</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>s</Name>
+					<Abstract>String to escape</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Encode string</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_encode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_encodeComponent:</TokenIdentifier>
+			<Abstract>Encode URL string (for escaping URL key/value params).</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_encodeComponent:(NSString *)s</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>s</Name>
+					<Abstract>String to encode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Encoded string</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_encodeComponent:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_escapeAll:</TokenIdentifier>
+			<Abstract>Encode URL string.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_escapeAll:(NSString *)s</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>s</Name>
+					<Abstract>String to encode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Encoded string</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_escapeAll:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_decode:</TokenIdentifier>
+			<Abstract>Decode URL string.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_decode:(NSString *)s</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>s</Name>
+					<Abstract>String to decode</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Decoded URL string</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_decode:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_copyLinkToPasteboard</TokenIdentifier>
+			<Abstract>Copy URL to pasteboard.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (void)gh_copyLinkToPasteboard</Declaration>
+			
+			
+			<Anchor>//api/name/gh_copyLinkToPasteboard</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_openFile:</TokenIdentifier>
+			<Abstract>Open file URL.
+Opens path in Finder or whatever is registered for the file:// scheme.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (BOOL)gh_openFile:(NSString *)path</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract>Path to open</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>YES if opened</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_openFile:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSURL/gh_openContainingFolder:</TokenIdentifier>
+			<Abstract>Opens directory of file at path (or the path itself if it is a directory),
+in the Finder or whatever is registered for the file:// scheme.</Abstract>
+			<DeclaredIn>GHNSURL+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (void)gh_openContainingFolder:(NSString *)path</Declaration>
+			
+			
+			<Anchor>//api/name/gh_openContainingFolder:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

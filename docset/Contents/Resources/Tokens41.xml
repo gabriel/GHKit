@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/GHBase64Encoder.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/GHBase64Encoder</TokenIdentifier>
+			<Abstract>Protocol for a Base64 encoder required by GHKit.</Abstract>
+			<DeclaredIn>GHNSString+HMAC.m</DeclaredIn>
+			
+			<NodeRef refid="41"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

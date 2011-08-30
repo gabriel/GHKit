@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GHNSInvocationProxy.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GHNSInvocationProxy</TokenIdentifier>
+			<Abstract>Proxy that allows invocation on a separate thread, with a delay and or multiple
+arguments including primitives.</Abstract>
+			<DeclaredIn>GHNSInvocationProxy.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/GHNSInvocationProxy/invocation</TokenIdentifier>
+			<Abstract>Create autoreleased empty invocation proxy.</Abstract>
+			<DeclaredIn>GHNSInvocationProxy.h</DeclaredIn>			
+			
+			<Declaration>+ (id)invocation</Declaration>
+			
+			<ReturnValue><Abstract>Invocation proxy</Abstract></ReturnValue>
+			<Anchor>//api/name/invocation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GHNSInvocationProxy/prepareWithInvocationTarget:</TokenIdentifier>
+			<Abstract>Create invocation proxy with target.</Abstract>
+			<DeclaredIn>GHNSInvocationProxy.h</DeclaredIn>			
+			
+			<Declaration>- (id)prepareWithInvocationTarget:(id)target</Declaration>
+			
+			<ReturnValue><Abstract>Invocation proxy</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareWithInvocationTarget:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/GHNSInvocationProxy/prepareWithInvocationTarget:selector:</TokenIdentifier>
+			<Abstract>Create invocation proxy with target and overriding selector.</Abstract>
+			<DeclaredIn>GHNSInvocationProxy.h</DeclaredIn>			
+			
+			<Declaration>- (id)prepareWithInvocationTarget:(id)target selector:(SEL)selector</Declaration>
+			
+			<ReturnValue><Abstract>Invocation proxy</Abstract></ReturnValue>
+			<Anchor>//api/name/prepareWithInvocationTarget:selector:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

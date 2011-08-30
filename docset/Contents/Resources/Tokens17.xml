@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSDictionary(GHNSNull).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSDictionary</TokenIdentifier>
+			<Abstract>For supporting dictionaries with nil values.</Abstract>
+			<DeclaredIn>GHNSDictionary+NSNull.h</DeclaredIn>
+			
+			<NodeRef refid="17"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_dictionaryWithKeysAndObjectsMaybeNil:</TokenIdentifier>
+			<Abstract>Create dictionary which supports nil values.
+Key is first (instead of value then key). If the value is nil it is stored internally as NSNull,
+and when calling objectMaybeNilForKey will return nil.</Abstract>
+			<DeclaredIn>GHNSDictionary+NSNull.h</DeclaredIn>			
+			
+			<Declaration>+ (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ...</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>firstObject...</Name>
+					<Abstract>Alternating key, value pairs. Terminated when key is nil.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_dictionaryWithKeysAndObjectsMaybeNil:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:args:ignoreNil:</TokenIdentifier>
+			<Abstract>Create dictionary which supports nil values.
+Key is first (instead of value then key). If the value is nil it is stored internally as NSNull,
+and when calling objectMaybeNilForKey will return nil.</Abstract>
+			<DeclaredIn>GHNSDictionary+NSNull.h</DeclaredIn>			
+			
+			<Declaration>+ (id)gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:(id)firstKey args:(va_list)args ignoreNil:(BOOL)ignoreNil</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>firstKey</Name>
+					<Abstract>First key</Abstract>
+				</Parameter><Parameter>
+					<Name>args</Name>
+					<Abstract>Args valist via vastart</Abstract>
+				</Parameter><Parameter>
+					<Name>ignoreNil</Name>
+					<Abstract>If YES, will not store key, value paries where the value is nil</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Dictionary</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:args:ignoreNil:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDictionary/gh_objectMaybeNilForKey:</TokenIdentifier>
+			<Abstract>objectForKey if you want nil instead of NSNull objects.</Abstract>
+			<DeclaredIn>GHNSDictionary+NSNull.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_objectMaybeNilForKey:(id)key</Declaration>
+			
+			
+			<Anchor>//api/name/gh_objectMaybeNilForKey:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

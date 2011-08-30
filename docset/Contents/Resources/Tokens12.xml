@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSArray(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSArray</TokenIdentifier>
+			<Abstract>Utilities for arrays, for example, first object, reversed, subarray, compact
+and safe \c objectAtIndex:.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="12"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_firstObject</TokenIdentifier>
+			<Abstract>First object.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_firstObject</Declaration>
+			
+			<ReturnValue><Abstract>Object at index 0</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_firstObject</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_randomObject:</TokenIdentifier>
+			<Abstract>Random object in the array.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_randomObject:(unsigned int)seed</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>seed</Name>
+					<Abstract>Seed, if 0, will use the current time to seed</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Random object</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_randomObject:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_arrayByReversingArray</TokenIdentifier>
+			<Abstract>Return new reversed array.
+Use reverseObjectEnumerator if you want to enumerate values in reverse.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)gh_arrayByReversingArray</Declaration>
+			
+			<ReturnValue><Abstract>Reversed array</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_arrayByReversingArray</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_subarrayWithRange:</TokenIdentifier>
+			<Abstract>Safe subarrayWithRange that checks range.
+If the length is out of bounds will return all elements from location to the end.
+If the location is out of bounds will return nil.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)gh_subarrayWithRange:(NSRange)range</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>range</Name>
+					<Abstract>Range</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Sub-array</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_subarrayWithRange:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_subarrayFromLocation:</TokenIdentifier>
+			<Abstract>Get sub-array from location to end.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)gh_subarrayFromLocation:(NSInteger)location</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>location</Name>
+					<Abstract>Index</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Sub-array</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_subarrayFromLocation:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_compact</TokenIdentifier>
+			<Abstract>Remove all instances of NSNull.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)gh_compact</Declaration>
+			
+			<ReturnValue><Abstract>New array with instances removed; Or self if no NSNull's were found</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_compact</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_arrayWithObject:</TokenIdentifier>
+			<Abstract>Safe array with object.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSArray *)gh_arrayWithObject:(id)obj</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>obj</Name>
+					<Abstract>Object</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Array with object. Returns empty if obj is null.</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_arrayWithObject:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_objectAtIndex:</TokenIdentifier>
+			<Abstract>Safe object at index.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_objectAtIndex:(NSInteger)index</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract>Index</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Object at index, or nil if index  0 or = count</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_objectAtIndex:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSArray/gh_objectAtIndex:withDefault:</TokenIdentifier>
+			<Abstract>Safe object at index with default.</Abstract>
+			<DeclaredIn>GHNSArray+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (id)gh_objectAtIndex:(NSInteger)index withDefault:(id)withDefault</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>index</Name>
+					<Abstract>Index</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>Default if not found</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Object at index, or default value if index  0 or = count</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_objectAtIndex:withDefault:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

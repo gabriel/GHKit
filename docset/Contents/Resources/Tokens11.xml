@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/GHViewAnimation.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/GHViewAnimation</TokenIdentifier>
+			<Abstract>Helper for NSView animating.</Abstract>
+			<DeclaredIn>GHViewAnimation.h</DeclaredIn>
+			
+			<NodeRef refid="11"/>
+		</Token>
+		
+		
+	</File>
+</Tokens>

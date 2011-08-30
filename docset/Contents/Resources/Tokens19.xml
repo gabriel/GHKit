@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSError(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSError</TokenIdentifier>
+			<Abstract>Utilities for generating errors.</Abstract>
+			<DeclaredIn>GHNSError+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="19"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSError/gh_errorWithDomain:code:localizedDescription:</TokenIdentifier>
+			<Abstract>Create error with localized description. (userInfo includes NSLocalizedDescriptionKey=localizedDescription)</Abstract>
+			<DeclaredIn>GHNSError+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSError *)gh_errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>domain</Name>
+					<Abstract>Domain</Abstract>
+				</Parameter><Parameter>
+					<Name>code</Name>
+					<Abstract>Code</Abstract>
+				</Parameter><Parameter>
+					<Name>localizedDescription</Name>
+					<Abstract>Localized description</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>NSError</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_errorWithDomain:code:localizedDescription:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSError/gh_errorFromException:</TokenIdentifier>
+			<Abstract>Create error from exception.</Abstract>
+			<DeclaredIn>GHNSError+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSError *)gh_errorFromException:(NSException *)exception</Declaration>
+			
+			
+			<Anchor>//api/name/gh_errorFromException:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSError/gh_fullDescription</TokenIdentifier>
+			<Abstract>Get full error description, recusively for any errors within the userInfo.
+Useful for getting at CoreData validation errors, for example.</Abstract>
+			<DeclaredIn>GHNSError+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_fullDescription</Declaration>
+			
+			<ReturnValue><Abstract>Full error description</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_fullDescription</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

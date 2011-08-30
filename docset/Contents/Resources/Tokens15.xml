@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSDate(GHParsing).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSDate</TokenIdentifier>
+			<Abstract>Date parsers, formatting and formatters for ISO8601, RFC822, HTTP (RFC1123, RFC850, asctime) and since epoch.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>
+			
+			<NodeRef refid="15"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_parseISO8601:</TokenIdentifier>
+			<Abstract>Parse ISO8601 date. For example, "2010-10-07T04:25Z".</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDate *)gh_parseISO8601:(NSString *)dateString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dateString</Name>
+					<Abstract>Date string to parse, eg. "2010-10-07T04:25Z"</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Date</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_parseISO8601:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_parseRFC822:</TokenIdentifier>
+			<Abstract>Parse RFC822 encoded date. For example, 'Wed, 01 Mar 2006 12:00:00 -0400'.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDate *)gh_parseRFC822:(NSString *)dateString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dateString</Name>
+					<Abstract>Date string to parse, eg. 'Wed, 01 Mar 2006 12:00:00 -0400'</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Date</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_parseRFC822:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_parseHTTP:</TokenIdentifier>
+			<Abstract>Parse http date, currently only handles RFC1123 date.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDate *)gh_parseHTTP:(NSString *)dateString</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>dateString</Name>
+					<Abstract>Date string to parse</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Date</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_parseHTTP:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_parseTimeSinceEpoch:</TokenIdentifier>
+			<Abstract>Parse time since epoch (1970) in seconds.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>timeSinceEpoch</Name>
+					<Abstract>Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue).</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>NSDate or nil if timeSinceEpoch was nil</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_parseTimeSinceEpoch:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_parseTimeSinceEpoch:withDefault:</TokenIdentifier>
+			<Abstract>Parse time since epoch (1970) in seconds, with default.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>timeSinceEpoch</Name>
+					<Abstract>Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>Default if timeSinceEpoch is nil</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>NSDate or default</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_parseTimeSinceEpoch:withDefault:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_parseTimeSinceEpoch:withDefault:offsetForTimeZone:</TokenIdentifier>
+			<Abstract>Parse time since epoch (1970) in seconds.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value offsetForTimeZone:(NSTimeZone *)timeZone</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>timeSinceEpoch</Name>
+					<Abstract>Seconds since Jan 1970 (epoch); An NSNumber or NSString (responds to doubleValue)</Abstract>
+				</Parameter><Parameter>
+					<Name>timeZone</Name>
+					<Abstract>If set, the returned Date will be offset from the supplied timestamp by the difference between timeZone and the system time zone</Abstract>
+				</Parameter><Parameter>
+					<Name>withDefault</Name>
+					<Abstract>If timeSinceEpoch is nil, returns this value</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>NSDate or nil if timeSinceEpoch was nil</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_parseTimeSinceEpoch:withDefault:offsetForTimeZone:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_formatRFC822</TokenIdentifier>
+			<Abstract>Get date formatted for RFC822.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_formatRFC822</Declaration>
+			
+			<ReturnValue><Abstract>The date string, like "Wed, 01 Mar 2006 12:00:00 -0400"</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_formatRFC822</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_formatHTTP</TokenIdentifier>
+			<Abstract>Get date formatted for RFC1123 (HTTP date).</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_formatHTTP</Declaration>
+			
+			<ReturnValue><Abstract>The date string, like "Sun, 06 Nov 1994 08:49:37 GMT"</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_formatHTTP</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_formatISO8601</TokenIdentifier>
+			<Abstract>Get date formatted for ISO8601 (XML date).</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_formatISO8601</Declaration>
+			
+			<ReturnValue><Abstract>The date string, like "2010-10-07T04:25Z"</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_formatISO8601</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_ISO8601DateFormatter</TokenIdentifier>
+			<Abstract>Date formatter for ISO8601. For example, '2007-10-18T16:05:10.000Z'.
+If this is called from the main thread, a cached date formatter is returned.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDateFormatter *)gh_ISO8601DateFormatter</Declaration>
+			
+			<ReturnValue><Abstract>Date formatter for ISO8601</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_ISO8601DateFormatter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_RFC822DateFormatter</TokenIdentifier>
+			<Abstract>Date formatter for RFC822. For example, 'Wed, 01 Mar 2006 12:00:00 -0400'.
+If this is called from the main thread, a cached date formatter is returned.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDateFormatter *)gh_RFC822DateFormatter</Declaration>
+			
+			<ReturnValue><Abstract>Date formatter for RFC822</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_RFC822DateFormatter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_RFC1123DateFormatter</TokenIdentifier>
+			<Abstract>Date formatter for RFC1123. For example, 'Wed, 01 Mar 2006 12:00:00 GMT'.
+If this is called from the main thread, a cached date formatter is returned.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDateFormatter *)gh_RFC1123DateFormatter</Declaration>
+			
+			<ReturnValue><Abstract>Date formatter for RFC1123</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_RFC1123DateFormatter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_RFC850DateFormatter</TokenIdentifier>
+			<Abstract>Date formatter for RFC850. For example, 'Sunday, 06-Nov-94 08:49:37 GMT'.
+If this is called from the main thread, a cached date formatter is returned.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDateFormatter *)gh_RFC850DateFormatter</Declaration>
+			
+			<ReturnValue><Abstract>Date formatter for RFC850</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_RFC850DateFormatter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_ascTimeDateFormatter</TokenIdentifier>
+			<Abstract>Date formatter for asctime. For example, 'Sun Nov  6 08:49:37 1994'.
+If this is called from the main thread, a cached date formatter is returned.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (NSDateFormatter *)gh_ascTimeDateFormatter</Declaration>
+			
+			<ReturnValue><Abstract>Date formatter for asctime</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_ascTimeDateFormatter</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSDate/gh_clearDateFormatterCaches</TokenIdentifier>
+			<Abstract>Clear any cached date formatters.</Abstract>
+			<DeclaredIn>GHNSDate+Parsing.h</DeclaredIn>			
+			
+			<Declaration>+ (void)gh_clearDateFormatterCaches</Declaration>
+			
+			
+			<Anchor>//api/name/gh_clearDateFormatterCaches</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

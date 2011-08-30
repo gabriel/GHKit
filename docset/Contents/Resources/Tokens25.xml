@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSNumber(GHUtils).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSNumber</TokenIdentifier>
+			<Abstract>Utilites for dealing with numbers, for example, human readable file size, ordinals, random numbers.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>
+			
+			<NodeRef refid="25"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_humanSize</TokenIdentifier>
+			<Abstract>File size label.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_humanSize</Declaration>
+			
+			<ReturnValue><Abstract>'904 b', '32 KB', '1.1 MB',</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_humanSize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_humanSizeWithDelimiter:</TokenIdentifier>
+			<Abstract>File size label.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_humanSizeWithDelimiter:(NSString *)delimiter</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>delimiter</Name>
+					<Abstract>In between numeric and unit</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>'904 b', '32 KB', '1.1 MB',</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_humanSizeWithDelimiter:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_ordinalize</TokenIdentifier>
+			<Abstract>Ordinalize.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_ordinalize</Declaration>
+			
+			<ReturnValue><Abstract>Ordinal string for integer.</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_ordinalize</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_ordinalizeMasculine:</TokenIdentifier>
+			<Abstract>Ordinalize (masculine).</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)gh_ordinalizeMasculine:(BOOL)masculine</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>masculine</Name>
+					<Abstract>If YES will format for masculine</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Ordinal string for integer</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_ordinalizeMasculine:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_ordinalize:</TokenIdentifier>
+			<Abstract>Ordinalize. See gh_ordinalize.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_ordinalize:(NSInteger)value</Declaration>
+			
+			<ReturnValue><Abstract>Ordinal string for integer.</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_ordinalize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_ordinalize:masculine:</TokenIdentifier>
+			<Abstract>Ordinalize. See gh_ordinalizeMasculine:.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine</Declaration>
+			
+			<ReturnValue><Abstract>Ordinal string for integer.</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_ordinalize:masculine:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_bool:</TokenIdentifier>
+			<Abstract>Shared bool number instance.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSNumber *)gh_bool:(BOOL)b</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>b</Name>
+					<Abstract>Bool</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/gh_bool:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_no</TokenIdentifier>
+			<Abstract>Shared bool number instance representing NO.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSNumber *)gh_no</Declaration>
+			
+			
+			<Anchor>//api/name/gh_no</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_yes</TokenIdentifier>
+			<Abstract>Shared bool number instance representing NO.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSNumber *)gh_yes</Declaration>
+			
+			
+			<Anchor>//api/name/gh_yes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSNumber/gh_randomInteger</TokenIdentifier>
+			<Abstract>Random number.</Abstract>
+			<DeclaredIn>GHNSNumber+Utils.h</DeclaredIn>			
+			
+			<Declaration>+ (NSInteger)gh_randomInteger</Declaration>
+			
+			<ReturnValue><Abstract>Random integer</Abstract></ReturnValue>
+			<Anchor>//api/name/gh_randomInteger</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
