@@ -34,8 +34,9 @@
  Create string with format from array of arguments.
  Arguments must be objective-c objects.
  WARNING: This assumption seems totally dangerous.
- @param format
- @param arguments
+ 
+ @param format Format
+ @param arguments Arguments
  */
 + (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments;
 
@@ -43,19 +44,22 @@
  Check if string is blank.
  If instance is nil the would NOOP and evaluate to falsy, so
  you should use [NSString gh_isBlank:str] instead.
+ 
  @result YES if string is empty (after stripping)
  */
 - (BOOL)gh_isBlank;
 
 /*!
  Check if equals ignoring case.
- @param s
+ 
+ @param s String
  @result True if equal regardless of case
  */
 - (BOOL)gh_isEqualIgnoreCase:(NSString *)s;
 
 /*!
  Strip whitespace from left and right side of string.
+ 
  @result String with characters trimmed
  */
 - (NSString *)gh_strip;
@@ -72,20 +76,23 @@
 
 /*!
  Reverse the string.
+ 
  @result Reversed
  */
 - (NSString *)gh_reverse;
 
 /*!
  Count the number of times a string appears.
- @param s
+ 
+ @param s String
  @result Number of times it appears
  */
 - (NSInteger)gh_count:(NSString *)s;
 
 /*!
  Check if string is blank.
- @param s
+ 
+ @param s String
  @result YES if string is nil, empty or whitespace characters
  */
 + (BOOL)gh_isBlank:(NSString *)s;
@@ -93,12 +100,14 @@
 #if !TARGET_OS_IPHONE
 /*!
  Create attributed string that truncates in the middle.
+ 
  @result Attributed string that truncates in the middle.
  */
 - (NSAttributedString *)gh_truncateMiddle;
 
 /*!
  Get mime type for extension.
+ 
  @result Mime type for extension
  */
 - (NSString *)gh_mimeTypeForExtension;
@@ -106,6 +115,7 @@
 
 /*!
  Check if string contains ANY characters from a string.
+ 
  @param characters String representing characters to check for
  @result YES If string contains characters
  */
@@ -113,6 +123,7 @@
 
 /*!
  Check if string contains ANY characters from a set.
+ 
  @param charSet Char set
  @result YES If string contains any characters
  */
@@ -120,6 +131,7 @@
 
 /*!
  Check if string contains only characters from a set.
+ 
  @param charSet Character set
  @result YES If string contains only these characters
  */
@@ -127,12 +139,14 @@
 
 /*!
  Check if string starts with any of the character set.
+ 
  @param charSet Character set.
  */
 - (BOOL)gh_startsWithAny:(NSCharacterSet *)charSet;
 
 /*!
  Check if string starts with a string.
+ 
  @param startsWith String to check
  @result YES if string starts with string
  */
@@ -140,6 +154,7 @@
 
 /*!
  Check if string starts with a string.
+ 
  @param startsWith String to check
  @param options Compare options
  @result YES if string starts with string
@@ -148,6 +163,7 @@
 
 /*!
  Check if string ends with a string.
+ 
  @param endsWith String to check
  @param options Compare options
  @result YES if string ends with string
@@ -156,6 +172,7 @@
 
 /*!
  Check if self contains the specified string with options
+ 
  @param contains String to look for
  @param options Options
  @result YES if string has the substring
@@ -164,29 +181,31 @@
 
 /*!
  Turn string into attribute.
+ 
  @result With first letter lower-cased
  */
 - (NSString *)gh_attributize;
 
 /*!
  Path extension with . or "" as before.
- @result Full path extension with .
  
- @verbatim
- "spliff.tiff" => ".tiff"
- "spliff" => ""
- @endverbatim
+     "spliff.tiff" => ".tiff"
+     "spliff" => ""
+ 
+ @result Full path extension with . 
  */
 - (NSString *)gh_fullPathExtension;
 
 /*!
  Combine character sets.
+ 
  @result Combined character sets
  */
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 
 /*!
  Create UUID.
+ 
  @result UUID
  */
 + (NSString *)gh_uuid;
@@ -194,10 +213,8 @@
 /*!
  Get last part of string separated by the specified string. 
  
- @code
- [@"foo:bar" gh_lastSplitWithString:@":" options:0] => bar
- [@"foo:bar:bar" gh_lastSplitWithString:@":" options:0] => bar:bar
- @endcode
+     [@"foo:bar" gh_lastSplitWithString:@":" options:0] => bar
+     [@"foo:bar:bar" gh_lastSplitWithString:@":" options:0] => bar:bar
 
  @param s String to split on
  @param options Options
@@ -208,9 +225,7 @@
 /*!
  Components separated by string with option to include separator.
  
- @code
- [@"foo::bar" gh_componentsSeparatedByString:@":" include:YES] => [@"foo", @":", @":", @"bar"];
- @endcode
+     [@"foo::bar" gh_componentsSeparatedByString:@":" include:YES] => [@"foo", @":", @":", @"bar"];
  
  @param s String to separate
  @param include Whether to include separator
@@ -220,9 +235,6 @@
 
 /*!
  Break string into segments based on start and end token.
- @param start Start token
- @param end End token
- @result Array of GHNSStringSegment's
  
  Use a regex engine if you can. 
  Note: This exists because regex.h is posix only and does not support non-greedy expressions.
@@ -230,9 +242,13 @@
  
  Get string segments, within start and end tokens.
  For example,
- @code
-	[@"This is <START>a test<END> string" subStringSegmentsWithinStart:@"<START>" end:@"<END>"] => [@"This is ", @"a test", @" string"]
- @endcode
+
+     [@"This is <START>a test<END> string" subStringSegmentsWithinStart:@"<START>" end:@"<END>"] => [@"This is ", @"a test", @" string"]
+
+ 
+ @param start Start token
+ @param end End token
+ @result Array of GHNSStringSegment's 
  */
 - (NSArray *)gh_substringSegmentsWithinStart:(NSString *)start end:(NSString *)end;
 
@@ -253,7 +269,7 @@
 
 //! @cond DEV
 
-/*!
+/*
  Class used by gh_substringSegmentsWithinStart:end:
  */
 @interface GHNSStringSegment : NSObject {

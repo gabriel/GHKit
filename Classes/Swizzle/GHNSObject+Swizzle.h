@@ -34,15 +34,17 @@
 
 /*!
  Swizzle method.
- @param original
- @param alternate
+ 
+ @param original Original selector
+ @param alternate Selector
  */
 + (void)gh_swizzleMethod:(SEL)original withMethod:(SEL)alternate;
 
 /*!
  Swizzle class method.
- @param original
- @param alternate
+ 
+ @param original Original selector
+ @param alternate Selector
  */
 + (void)gh_swizzleClassMethod:(SEL)original withClassMethod:(SEL)alternate;
 

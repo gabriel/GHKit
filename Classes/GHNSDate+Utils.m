@@ -110,9 +110,8 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
   return [[self gh_dateComponentsFromFlags:NSYearCalendarUnit timeZone:timeZone] year];
 }
 
-+ (NSArray *)gh_monthSymbolsForFormat:(NSString *)format {
++ (NSArray *)gh_monthSymbols {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-  [dateFormatter setDateFormat:format];
   NSArray *monthSymbols = [dateFormatter standaloneMonthSymbols];
   [dateFormatter release];
   return monthSymbols;

@@ -32,12 +32,14 @@
 
 /*!
  First object.
+
  @result Object at index 0
  */
 - (id)gh_firstObject;
 
 /*!
  Random object in the array.
+
  @param seed Seed, if 0, will use the current time to seed
  @result Random object
  */
@@ -46,6 +48,7 @@
 /*!
  Return new reversed array.
  Use reverseObjectEnumerator if you want to enumerate values in reverse.
+
  @result Reversed array
  */
 - (NSArray *)gh_arrayByReversingArray;
@@ -54,43 +57,50 @@
  Safe subarrayWithRange that checks range.
  If the length is out of bounds will return all elements from location to the end.
  If the location is out of bounds will return nil.
- @param range
+
+ @param range Range
  @result Sub-array
  */
 - (NSArray *)gh_subarrayWithRange:(NSRange)range;
 
 /*!
  Get sub-array from location to end.
- @param location
+
+ @param location Index
  @result Sub-array
  */
 - (NSArray *)gh_subarrayFromLocation:(NSInteger)location;
 
 /*!
  Remove all instances of NSNull.
+
  @result New array with instances removed; Or self if no NSNull's were found
  */
 - (NSArray *)gh_compact;
 
 /*!
  Safe array with object.
- Returns empty if obj is null.
+
+ @param obj Object
+ @result Array with object. Returns empty if obj is null.
  */
 + (NSArray *)gh_arrayWithObject:(id)obj;
 
 /*!
  Safe object at index.
- @param index
+
+ @param index Index
  @result Object at index, or nil if index < 0 or >= count
  */
 - (id)gh_objectAtIndex:(NSInteger)index;
 
 /*!
  Safe object at index with default.
- @param index
- @param withDefault
+ 
+ @param index Index
+ @param withDefault Default if not found
  @result Object at index, or default value if index < 0 or >= count
  */
-- (id)gh_objectAtIndex:(NSInteger)index withDefault:(id)defaultValue;
+- (id)gh_objectAtIndex:(NSInteger)index withDefault:(id)withDefault;
 
 @end

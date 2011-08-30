@@ -31,6 +31,26 @@
 #import <CoreGraphics/CoreGraphics.h>
 #endif
 
+/*!
+ Add rounded rect.
+ 
+ @param context Context
+ @param rect Rect
+ @param cornerWidth Corner width
+ @param cornerHeight Corner height
+ @param strokeWidth Stroke width
+ */
 extern void GHContextAddRoundedRect(CGContextRef context, CGRect rect, CGFloat cornerWidth, CGFloat cornerHeight, CGFloat strokeWidth);
 
+/*!
+ Draw rounded rect.
+ 
+ @param context Context
+ @param rect Rect
+ @param fillColor Fill color
+ @param strokeColor Stroke color
+ @param strokeWidth Stroke width
+ @param cornerWidth Corner width
+ @param cornerHeight Corner height
+ */
 extern void GHContextDrawRoundedRect(CGContextRef context, CGRect rect, CGColorRef fillColor, CGColorRef strokeColor, CGFloat strokeWidth, CGFloat cornerWidth, CGFloat cornerHeight);

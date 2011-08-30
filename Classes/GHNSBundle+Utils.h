@@ -34,6 +34,7 @@
 
 /*!
  Load data from resource.
+
  @param resource Name of resource
  @result NSData
  */
@@ -41,6 +42,7 @@
 
 /*!
  Load string data from resource.
+
  @param resource Name of resource
  @result NSString
  */
@@ -48,6 +50,7 @@
 
 /*!
  Get URL for resource.
+
  @param resource Name of resource
  @result URL to resource
  */

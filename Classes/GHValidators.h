@@ -45,6 +45,7 @@
 
 /*!
  Check if credit card number passes Luhn validation.
+ 
  @param numberString Credit card number as string
  @result YES if passes luhn validation
  */
@@ -53,7 +54,8 @@
 /*!
  Check if string is a valid credit card expiration.
  Accept 1/12, 01/12, or 01/2012, or 01/10/2012.
- @param expiration
+ 
+ @param expiration Expiration string.
  @param date Current date, fails if expiration < this date
  @result YES if passes validation
  */

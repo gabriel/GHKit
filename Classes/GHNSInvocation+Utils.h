@@ -34,12 +34,14 @@
 
 /*!
  Invoke on main thread.
+
  @param waitUntilDone Whether to join on the call
  */
 - (void)gh_invokeOnMainThread:(BOOL)waitUntilDone;
 
 /*!
  Invoke target selector with multiple arguments.
+
  @param target Invocation target
  @param selector Method
  @param withObjects (Variable) Arguments list
@@ -48,6 +50,7 @@
 
 /*!
  Invoke target selector with multiple arguments.
+
  @param target Invocation target
  @param selector Method
  @param arguments Arguments list
@@ -56,16 +59,18 @@
 
 /*!
  Invoke target selector with multiple arguments.
+ 
  @param target Invocation target
  @param selector Method
  @param afterDelay Time interval for delay (in seconds)
  @param arguments Arguments list
  */
-+ (id)gh_invokeWithTarget:(id)target selector:(SEL)selector afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
++ (id)gh_invokeWithTarget:(id)target selector:(SEL)selector afterDelay:(NSTimeInterval)afterDelay arguments:(NSArray *)arguments;
 
 /*!
  Invoke target selector on main thread with multiple arguments.
  Use [NSNull null] for nil arguments.
+ 
  @param target Target
  @param selector Action
  @param waitUntilDone Whether to wait for call to finish
@@ -75,6 +80,7 @@
 
 /*!
  Invoke target selector on main thread with multiple arguments.
+ 
  @param target Target
  @param selector Action
  @param waitUntilDone Whether to wait for call to finish
@@ -84,6 +90,7 @@
 
 /*!
 Invoke target selector on main thread with multiple arguments.
+ 
  @param target Target
  @param selector Action
  @param waitUntilDone Whether to wait for call to finish
@@ -95,6 +102,7 @@ Invoke target selector on main thread with multiple arguments.
 /*!
  Create invocation with variable arguments.
  Use [NSNull null] for nil arguments.
+ 
  @param target Invocation target
  @param selector Method
  @param hasReturnValue Will be set to YES, if there is a return value
@@ -105,6 +113,7 @@ Invoke target selector on main thread with multiple arguments.
 /*!
  Create invocation with variable arguments.
  Use [NSNull null] for nil arguments.
+ 
  @param target Invocation target
  @param selector Method
  @param hasReturnValue Will be set to YES, if there is a return value

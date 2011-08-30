@@ -34,40 +34,40 @@
 
 /*!
  Time ago in words.
- @param interval
- @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
- @result Time ago in words
- 
+
  For localized values see the localization keys below. 
  This method calls gh_localizedStringForTimeInterval with nil tableName and [NSBundle mainBundle] bundle.
+ 
+ @param interval
+ @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
+ @result Time ago in words 
  */
 + (NSString *)gh_stringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds;
 
 /*! 
  Time ago in words (localized).
+ 
+ These are the localized defaults, that you can override:
+ 
+     LessThanAMinute = "less than a minute";
+     LessThanXSeconds = "less than %d seconds";
+     HalfMinute = "half a minute";
+     1Minute = "1 minute";
+     XMinutes = "%.0f minutes";
+     About1Hour = "about 1 hour";
+     AboutXHours = "about %.0f hours";
+     1Day = "1 day";
+     XDays = "%.0f days";
+     About1Month = "about 1 month";
+     XMonths = "%.0f months";
+     About1Year = "about 1 year";
+     OverXYears = "over %.0f years";
+ 
  @param interval
  @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
  @param tableName Table name for localized string
  @param bundle Bundle for localized string
  @result Time ago in words
- 
- These are the localized defaults, that you can override:
- 
- @verbatim
- LessThanAMinute = "less than a minute";
- LessThanXSeconds = "less than %d seconds";
- HalfMinute = "half a minute";
- 1Minute = "1 minute";
- XMinutes = "%.0f minutes";
- About1Hour = "about 1 hour";
- AboutXHours = "about %.0f hours";
- 1Day = "1 day";
- XDays = "%.0f days";
- About1Month = "about 1 month";
- XMonths = "%.0f months";
- About1Year = "about 1 year";
- OverXYears = "over %.0f years";
- @endverbatim
  */
 + (NSString *)gh_localizedStringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds tableName:(NSString *)tableName bundle:(NSBundle *)bundle;
 

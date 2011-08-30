@@ -34,18 +34,25 @@
 
 /*!
  Create error with localized description. (userInfo includes NSLocalizedDescriptionKey=localizedDescription)
- @param domain
- @param code
- @param localizedDescription
+
+ @param domain Domain
+ @param code Code
+ @param localizedDescription Localized description
  @result NSError
  */
 + (NSError *)gh_errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription;
 
+/*!
+ Create error from exception.
+ 
+ @param exception
+ */
 + (NSError *)gh_errorFromException:(NSException *)exception;
 
 /*!
  Get full error description, recusively for any errors within the userInfo.
  Useful for getting at CoreData validation errors, for example.
+
  @result Full error description
  */
 - (NSString *)gh_fullDescription;

@@ -38,6 +38,7 @@ typedef NSUInteger GHNSStringAlignment;
 
 /*!
  Utilities for drawing strings in UIKit.
+ 
  @ingroup iPhone
  */
 @interface NSString(GHUIKitUtils)
@@ -45,6 +46,11 @@ typedef NSUInteger GHNSStringAlignment;
 /*!
  Draw string in rect.
  Use alignment to specify to center horizontally, vertically, or both.
+ 
+ @param rect Rect
+ @param font Font
+ @param lineBreakMode Line break mode
+ @param alignment Alignment
  */
 - (void)gh_drawInRect:(CGRect)rect font:(UIFont *)font lineBreakMode:(UILineBreakMode)lineBreakMode 
             alignment:(GHNSStringAlignment)alignment;
@@ -52,6 +58,13 @@ typedef NSUInteger GHNSStringAlignment;
 /*!
  Draw string in rect, adjusting with minimum font size.
  Use alignment to specify to center horizontally, vertically, or both.
+ 
+ @param rect Rect
+ @param font Font
+ @param minFontSize Min font size
+ @param actualFont Size for font used
+ @param lineBreakMode Line break mode
+ @param alignment Alignment
  */
 - (void)gh_drawInRect:(CGRect)rect font:(UIFont *)font minFontSize:(CGFloat)minFontSize actualFontSize:(CGFloat *)actualFontSize 
         lineBreakMode:(UILineBreakMode)lineBreakMode alignment:(GHNSStringAlignment)alignment;

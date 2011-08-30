@@ -32,8 +32,8 @@
 
 /*!
  Get string value at XQuery.
- @param xQuery
- @param error
+ @param xQuery xQeury
+ @param error Out error
  @result String at xquery
 */
 - (NSString *)gh_stringAtXQuery:(NSString *)xQuery error:(NSError **)error {

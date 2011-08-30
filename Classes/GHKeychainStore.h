@@ -41,19 +41,21 @@ typedef enum {
 
 /*!
  Get secret from keychain.
- @param key
- @param serviceName
- @param error
+
+ @param serviceName Service name
+ @param key Key
+ @param error Out error
  @result Secret
  */
 - (NSString *)secretFromKeychainForServiceName:(NSString *)serviceName key:(NSString *)key error:(NSError **)error;
 
 /*!
  Save secret to keychain.
- @param serviceName
- @param key
- @param secret
- @param error
+
+ @param serviceName Service name
+ @param key Key
+ @param secret Secret
+ @param error Out error
  @result NO if there was an error, YES otherwise
  */
 - (BOOL)saveToKeychainWithServiceName:(NSString *)serviceName key:(NSString *)key secret:(NSString *)secret error:(NSError **)error;
@@ -70,22 +72,18 @@ typedef enum {
  
  Secret from keychain:
  
- @code
- GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
- NSError *error = nil;
- NSString *secret = [keyChainStore secretFromKeychainForServiceName:@"MyApp" key:"password" error:&error];
- if (!secret) NSLog(@"Error: %@", [error localizedDescription];
- @endcode
+     GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
+     NSError *error = nil;
+     NSString *secret = [keyChainStore secretFromKeychainForServiceName:@"MyApp" key:"password" error:&error];
+     if (!secret) NSLog(@"Error: %@", [error localizedDescription];
  
  Save to keychain:
  
- @code
- GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
- NSError *error = nil;
- BOOL saved = [keyChainStore saveToKeychainWithServiceName:@"MyApp" key:"password" secret:"12345" error:&error];
- if (!saved) NSLog(@"Error: %@", [error localizedDescription];
- @endcode
- 
+     GHKeychainStore *keyChainStore = [[GHKeychainStore alloc] init];
+     NSError *error = nil;
+     BOOL saved = [keyChainStore saveToKeychainWithServiceName:@"MyApp" key:"password" secret:"12345" error:&error];
+     if (!saved) NSLog(@"Error: %@", [error localizedDescription];
+
  */
 @interface GHKeychainStore : NSObject <GHKeychainStore> {
 	id<GHKeychainStore> _keychainStore;

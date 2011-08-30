@@ -33,28 +33,32 @@
 
 /*!
  Get dictionary from NSURL query parameter.
+ 
  @result Dictionary of key, value pairs from parsing query parameter
  */
 - (NSMutableDictionary *)gh_queryDictionary;
 
 /*!
  Dictionary to query string. Escapes any encoded characters.
+ 
  @param queryDictionary Dictionary of key value params
- @result Query string, key1=value1&key2=value2
+ @result Query string, key1=value1&amp;key2=value2
  */
 + (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary;
 
 /*!
  Convert dictionary to URL query string.
  Escapes any encoded characters.
+ 
  @param queryDictionary Dictionary
  @param sort If YES, will sort items
- @result Query string, key1=value1&key2=value2
+ @result Query string, key1=value1&amp;key2=value2
  */
 + (NSString *)gh_dictionaryToQueryString:(NSDictionary *)queryDictionary sort:(BOOL)sort;
 
 /*!
  Convert dictionary to array of query strings.
+ 
  @param queryDictionary Dictionary
  @param sort If YES, will sort items
  @param encoded If YES, will be URL component encoded
@@ -64,20 +68,23 @@
 
 /*!
  Convert URL query string to dictionary.
- @param string URL params string, key1=value1&key2=value2
+ 
+ @param string URL params string, key1=value1&amp;key2=value2
  @result Dictionary
  */
 + (NSMutableDictionary *)gh_queryStringToDictionary:(NSString *)string;
 
 /*!
  Get query string, sorted by key. 
- For example, "b=c&a=d" is returned as "a=d&b=c". 
+ For example, "b=c&amp;a=d" is returned as "a=d&amp;b=c". 
+ 
  @result Sorted query string
  */
 - (NSString *)gh_sortedQuery;
 
 /*!
  Derive new URL with a new query. All other fields should be the same.
+ 
  @param query
  @result URL with new query
  */
@@ -85,12 +92,14 @@
 
 /*!
  Canonical form of URL.
+ 
  @result Canonical URL
  */
 - (NSURL *)gh_canonical;
 
 /*!
  Canonical form of URL.
+ 
  @param ignore Do not include the set of query params
  @result Canonical URL
  */
@@ -98,6 +107,7 @@
 
 /*!
  Remove query params.
+ 
  @param filterQueryParams List of keys to filter 
  @param sort Whether to sort query params
  @result URL without query params.
@@ -107,7 +117,7 @@
 /*!
  Encode URL string.
  
-  "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C
+    "~!@#$%^&*(){}[]=:/,;?+'\"\\" => ~!@#$%25%5E&*()%7B%7D%5B%5D=:/,;?+'%22%5C
  
  Doesn't encode: ~!@#$&*()=:/,;?+'
  
@@ -150,6 +160,7 @@
 
 /*!
  Decode URL string.
+ 
  @param s String to decode
  @result Decoded URL string
  */
@@ -165,6 +176,7 @@
 /*!
  Open file URL. 
  Opens path in Finder or whatever is registered for the file:// scheme.
+ 
  @param path Path to open
  @result YES if opened
  */
@@ -173,6 +185,7 @@
 /*!
  Opens directory of file at path (or the path itself if it is a directory),
  in the Finder or whatever is registered for the file:// scheme.
+ 
  @param path
  */
 + (void)gh_openContainingFolder:(NSString *)path;

@@ -1,37 +1,22 @@
 
-COMMAND=xcodebuild
-
-macosx:
-	$(COMMAND) -target GHKit -configuration Release -sdk macosx10.6 -project GHKit.xcodeproj
-
-ios:
-	$(COMMAND) -target "GHKitIPhone (Simulator)" -configuration Release -sdk iphonesimulator -project GHKitIPhone.xcodeproj build
-	$(COMMAND) -target "GHKitIPhone (Device)" -configuration Release -sdk iphoneos -project GHKitIPhone.xcodeproj build
-	BUILD_DIR="build" BUILD_STYLE="Release" sh Scripts/CombineLibs.sh
-	sh Scripts/iPhoneFramework.sh
-
 docs:
-	/Applications/Doxygen.app/Contents/Resources/doxygen
-	# TODO(gabe): Get doxyclean working
-	cd Documentation/html && make install
-	cd ~/Library/Developer/Shared/Documentation/DocSets/ && tar zcvpf GHKit.docset.tgz GHKit.docset
-	mv ~/Library/Developer/Shared/Documentation/DocSets/GHKit.docset.tgz Documentation
+	VERSION=`cat XCConfig/Shared.xcconfig | grep "GHKIT_VERSION =" | cut -d '=' -f 2 | tr -d " "`
+	rm -rf Documentation/html
+	Documentation/appledoc/appledoc -t Documentation/appledoc/Templates -o Documentation/html -p GHKit -v $VERSION -c "GHKit" --company-id "me.rel" --warn-undocumented-object --warn-undocumented-member --warn-empty-description --warn-unknown-directive --warn-invalid-crossref --warn-missing-arg --no-repeat-first-par --keep-intermediate-files --create-html Classes/
 
-gh-pages: docs
-	rm -rf build
+gh-pages-deploy:
+	rm -rf ../doctmp
+	mkdir -p ../doctmp
+	cp -R Documentation/html/html/* ../doctmp
+	rm -rf Documentation/html/*
 	git checkout gh-pages
-	cp -R Documentation/html/* .
-	rm -rf Documentation
+	git symbolic-ref HEAD refs/heads/gh-pages
+	rm .git/index
+	git clean -fdx
+	cp -R ../doctmp/* .
 	git add .
 	git commit -a -m 'Updating docs' && git push origin gh-pages
 	git checkout master
 
-# If you need to clean a specific target/configuration: $(COMMAND) -target $(TARGET) -configuration DebugOrRelease -sdk $(SDK) clean
-clean:
-	-rm -rf build/*
+gh-pages: docs gh-pages-deploy
 
-test:
-	GHUNIT_AUTORUN=1 GHUNIT_AUTOEXIT=1 $(COMMAND) -target GHKitTests -configuration Debug -sdk macosx10.5 -project GHKit.xcodeproj
-	
-test-ios:
-	GHUNIT_CLI=1 $(COMMAND) -target Tests -configuration Debug -sdk iphonesimulator -project GHKitIPhone.xcodeproj

@@ -38,14 +38,16 @@
 
 /*!
  Perform selector if responds.
- @param selector
+ 
+ @param selector Selector
  @result nil if we don't respond to the selector, otherwise the selector result
  */
 - (id)gh_performIfRespondsToSelector:(SEL)selector;
 
 /*!
  Perform selector if responds with multiple arguments.
- @param selector
+ 
+ @param selector Selector
  @param withObjects nil terminated variable argument list 
  @result nil if we don't respond to the selector, otherwise the selector result
  */
@@ -53,15 +55,17 @@
 
 /*!
  Invoke selector with arguments.
- @param selector
+ 
+ @param selector Selector
  @param withObjects nil terminated variable argument list 
  */
 - (id)gh_performSelector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector after delay with arguments.
- @param selector
- @param delay
+ 
+ @param selector Selector
+ @param delay Delay in seconds
  @param withObjects nil terminated variable argument list 
  */
 - (id)gh_performSelector:(SEL)selector afterDelay:(NSTimeInterval)delay withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
@@ -69,14 +73,16 @@
 /*!
  Invoke selector with arguments on main thread.
  Does not wait until selector is finished.
- @param selector
+ 
+ @param selector Selector
  @param withObjects nil terminated variable argument list 
  */
 - (void)gh_performSelectorOnMainThread:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments on main thread.
- @param selector
+ 
+ @param selector Selector
  @param waitUntilDone Whether to join on selector and wait for it to finish.
  @param withObjects nil terminated variable argument list 
  */
@@ -84,7 +90,8 @@
 
 /*!
  Invoke selector with arguments.
- @param selector
+ 
+ @param selector Selector
  @param onMainThread Whether to perform on main thread or current thread
  @param waitUntilDone Whether to join on selector and wait for it to finish.
  @param withObjects nil terminated variable argument list 
@@ -92,8 +99,9 @@
 - (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
- Invoke selector with arguments;
- @param selector
+ Invoke selector with arguments.
+ 
+ @param selector Selector
  @param onMainThread Whether to perform on main thread or current thread
  @param waitUntilDone Whether to join on selector and wait for it to finish.
  @param arguments List of arguments
@@ -102,7 +110,8 @@
 
 /*!
  Invoke selector with arguments after delay.
- @param selector
+ 
+ @param selector Selector
  @param onMainThread Whether to perform on main thread or current thread
  @param waitUntilDone Whether to join on selector and wait for it to finish.
  @param afterDelay Delay in seconds
@@ -116,12 +125,14 @@
 
 /*!
  Proxy for invoking on main thread (without waiting until done).
+ 
  @result Proxy
  */
 - (id)gh_proxyOnMainThread;
 
 /*!
  Proxy for invoking on main thread.
+ 
  @param waitUntilDone Whether to block until call is finished
  @result Proxy
  */
@@ -129,6 +140,7 @@
 
 /*!
  Proxy on thread (without blocking until done).
+ 
  @param thread Thread to invoke on
  @result Proxy
  */
@@ -136,6 +148,7 @@
 
 /*!
  Proxy for invoking on thread.
+ 
  @param thread Thread to invoke on
  @param waitUntilDone Whether to block until call is finished
  @result Proxy
@@ -145,11 +158,9 @@
 /*!
  Proxy for invoking after delay.
  
- @code 
- NSMutableArray array = [NSMutableArray array];
- // Inserts object after 2 second delay
- [[array gh_proxyAfterDelay:2.0] insertObject:@"foo" atIndex:0];
- @endcode
+     NSMutableArray array = [NSMutableArray array];
+     // Inserts object after 2 second delay
+     [[array gh_proxyAfterDelay:2.0] insertObject:@"foo" atIndex:0];
  
  @param delay Time (in seconds) to wait before calling.
  @result proxy
@@ -163,10 +174,8 @@
  Overriding the selector only make sense when using the "argument proxy".
  For example, 
  
- @code
- SEL selector = @selector(bar:baz:);
- [[foo gh_argumentProxy:selector] arg:10 arg:YES];
- @endcode
+     SEL selector = @selector(bar:baz:);
+     [[foo gh_argumentProxy:selector] arg:10 arg:YES];
  
  Will call [foo bar:10 baz:YES];  (and not arg:arg: selector which doesn't exist).
  
@@ -174,7 +183,7 @@
  whereas before you would have to use a manually constructed NSInvocation (or 
  performSelector if you had only object arguments).
  
- @param selector
+ @param selector Selector
  @result proxy
  */
 - (id)gh_argumentProxy:(SEL)selector;
@@ -192,6 +201,7 @@
 /*!
  Proxy call on new thread.
  Calls are responsible for setting up their own NSAutoreleasePool's.
+
  @param target Callback target
  @param action Callback action
  @param context Callback argument

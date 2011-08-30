@@ -36,9 +36,9 @@
 /*!
  Check if not equal to NSNull.
  Useful for checking nil and NSNull in a single expression:
- @code
- if ([foo gh_isNotNSNull]) { } // Will not evaluate if foo == nil or foo is equal to [NSNull null]
- @endcode
+
+     if ([foo gh_isNotNSNull]) { } // Will not evaluate if foo == nil or foo is equal to [NSNull null]
+
  */
 - (BOOL)gh_isNotNSNull;
 

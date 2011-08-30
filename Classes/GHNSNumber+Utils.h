@@ -33,12 +33,14 @@
 
 /*!
  File size label.
+
  @result '904 b', '32 KB', '1.1 MB', 
  */
 - (NSString *)gh_humanSize;
 
 /*!
  File size label.
+ 
  @param delimiter In between numeric and unit
  @result '904 b', '32 KB', '1.1 MB', 
  */
@@ -46,45 +48,47 @@
 
 /*!
  Ordinalize.
- @result Ordinal string for integer.
  
- @verbatim
- 0 => nil
- 1 => "1st"
- 2 => "2nd"
- 3 => "3rd"
- 4-9 -> "4th", "5th", ...
- Ending in 11, 12 or 13 => "111th", "212th", ...
- @endverbatim
+     0 => nil
+     1 => "1st"
+     2 => "2nd"
+     3 => "3rd"
+     4-9 -> "4th", "5th", ...
+     Ending in 11, 12 or 13 => "111th", "212th", ...
+ 
+ @result Ordinal string for integer.
  */
 - (NSString *)gh_ordinalize;
 
 /*!
  Ordinalize (masculine).
+ 
  @param masculine If YES will format for masculine
  @result Ordinal string for integer
  */
 - (NSString *)gh_ordinalizeMasculine:(BOOL)masculine;
 
 /*!
- Ordinalize.
+ Ordinalize. See gh_ordinalize.
+ 
  @param value
  @result Ordinal string for integer.
- @see gh_ordinalize
  */
 + (NSString *)gh_ordinalize:(NSInteger)value;
 
 /*!
- Ordinalize.
+ Ordinalize. See gh_ordinalizeMasculine:.
+ 
  @param value
  @param masculine
  @result Ordinal string for integer.
- @see gh_ordinalizeMasculine:
  */
 + (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine;
 
 /*!
  Shared bool number instance.
+ 
+ @param b Bool
  */
 + (NSNumber *)gh_bool:(BOOL)b;
 
@@ -100,6 +104,7 @@
 
 /*!
  Random number.
+ 
  @result Random integer
  */
 + (NSInteger)gh_randomInteger;

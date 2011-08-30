@@ -855,6 +855,9 @@
 /* Begin PBXProject section */
 		009243D413D8BEB000C66896 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 009243D713D8BEB000C66896 /* Build configuration list for PBXProject "GHKitIOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

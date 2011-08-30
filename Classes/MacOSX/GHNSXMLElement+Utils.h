@@ -33,21 +33,21 @@
 
 /*!
  String value at name.
- @param name
+ @param name Name
  @result String
  */
 - (NSString *)gh_stringAt:(NSString *)name;
 
 /*!
  Long long number at name.
- @param name
+ @param name Name
  @result Number
  */
 - (NSNumber *)gh_longLongAt:(NSString *)name;
 
 /*!
  XML element at name.
- @param name
+ @param name Name
  @result XML element
  */
 - (NSXMLElement *)gh_elementAt:(NSString *)name;

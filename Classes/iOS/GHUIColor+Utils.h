@@ -54,27 +54,31 @@ typedef struct {
 
 /*!
  Utilities for UIColor.
+ 
  @ingroup iPhone
  */
 @interface UIColor(GHUtils)
 
 /*!
  RGBA value.
+ 
  @result RGBA
  */
 - (GH_RGBA)gh_rgba;
 
 /*!
  HSV value.
+ 
  @result HSV
  */
 - (GH_HSV)gh_hsv;
 
 /*!
  HSV value from RGB.
- @param red
- @param green
- @param blue
+ 
+ @param red Red
+ @param green Green
+ @param blue Blue
  @result HSV
  */
 + (GH_HSV)gh_hsvFromRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue;

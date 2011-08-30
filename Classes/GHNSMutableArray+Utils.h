@@ -33,6 +33,7 @@
 
 /*!
  Insert objects at index.
+ 
  @param objects Objects to insert
  @param index Index to insert at
  */
@@ -40,6 +41,7 @@
 
 /*!
  Replace object with another object.
+ 
  @param objectToReplace Object to replace
  @param object Object that will replace
  @result Index object was set; NSNotFound if objectToReplace was not found
@@ -54,12 +56,14 @@
 
 /*!
  Add object. If object is nil, this is a no op.
+ 
  @param obj
  */
 - (void)gh_addObject:(id)obj;
 
 /*!
  Remove last object.
+ 
  @result Last object removed
  */
 - (id)gh_removeLastObject;

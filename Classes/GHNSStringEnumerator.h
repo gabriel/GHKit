@@ -32,15 +32,13 @@
 /*!
  For scanning, and enumerating strings.
  
- @code
- NSString *string = @"matz can't\n patch blues";
- GHNSStringEnumerator *enumerator = [[GHNSStringEnumerator alloc] initWithString:string
- separatorCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
- 
- NSArray *results = [enumerator allObjects];
- NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
- GHAssertEqualObjects(results, expected, nil);
- @endcode
+     NSString *string = @"matz can't\n patch blues";
+     GHNSStringEnumerator *enumerator = [[GHNSStringEnumerator alloc] initWithString:string separatorCharacterSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+     
+     NSArray *results = [enumerator allObjects];
+     NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
+     GHAssertEqualObjects(results, expected, nil);
+
  */
 @interface GHNSStringEnumerator : NSEnumerator {
 	NSScanner *_scanner;
@@ -55,20 +53,23 @@
 
 /*!
  Create string enumerator with string and separator character set.
- @param string
- @param separatorCharacterSet
+
+ @param string String
+ @param separatorCharacterSet Separator characters
  */
 - (id)initWithString:(NSString *)string separatorCharacterSet:(NSCharacterSet *)separatorCharacterSet;
 
 /*!
  Create string enumerator with string and separator character set.
- @param string
- @param separatorCharacterSet
+
+ @param string String
+ @param separatorCharacterSet Separator characters
  */
 - (id)initWithString:(NSString *)string separatorString:(NSString *)separatorString;
 
 /*!
  Next string.
+
  @result Next string
  */
 - (NSString *)nextString;

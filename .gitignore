@@ -3,7 +3,8 @@ build
 *.pbxuser
 *.mode1v3
 xcuserdata
-Documentation/*
+Documentation/html
+Documentation/html/*
 GHKit.docset
 GHKitIPhone.xcodeproj/project.xcworkspace/xcuserdata
 Project-iOS/build

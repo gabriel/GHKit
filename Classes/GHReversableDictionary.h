@@ -35,14 +35,42 @@
   NSMutableDictionary *_reversedDict;
 }
 
+/*!
+ Create with capacity.
+ 
+ @param capacity
+ */
 - (id)initWithCapacity:(NSInteger)capacity;
 
+/*!
+ Create with objects and keys.
+ 
+ @param firstObject Objects
+ */
 - (id)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 
+/*!
+ Key for object.
+ 
+ @param obj Object
+ @result Key
+ */
 - (id)keyForObject:(id)obj;
 
+/*!
+ Set object for key.
+ 
+ @param obj Object
+ @param key Key
+ */
 - (void)setObject:(id)obj forKey:(id)key;
 
+/*!
+ Get object for key.
+ 
+ @param key Key
+ @result Object for key
+ */
 - (id)objectForKey:(id)key;
 
 @end

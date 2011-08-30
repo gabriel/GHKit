@@ -35,7 +35,8 @@
  and when calling objectMaybeNilForKey will return nil.
  
  For example,
-	[NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
+
+    [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
  
  @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
  @result Dictionary
@@ -48,14 +49,13 @@
  and when calling objectMaybeNilForKey will return nil.
  
  For example,
- @code
- - (void)setDictionary:(id)key, ... {
-   va_list args;
-   va_start(args, key);
-   [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:key args:args ignoreNilValues:NO];
-   va_end(args);
- }
- @endcode
+
+     - (void)setDictionary:(id)key, ... {
+       va_list args;
+       va_start(args, key);
+       [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNilWithKey:key args:args ignoreNilValues:NO];
+       va_end(args);
+     }
  
  @param firstKey First key
  @param args Args va_list via va_start
@@ -70,13 +70,14 @@
  and when calling objectMaybeNilForKey will return nil.
  
  For example,
- [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
+
+    [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
  
  @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
  */
 
 /*!
- Use this method instead of objectForKey if you want nil (and not the internal NSNull).
+ objectForKey if you want nil instead of NSNull objects.
  */
 - (id)gh_objectMaybeNilForKey:(id)key;
 

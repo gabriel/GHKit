@@ -33,6 +33,7 @@
 
 /*!
  Check if user defaults contains key.
+
  @param key Key
  @result YES if defaults contains key
  */
@@ -40,6 +41,7 @@
 
 /*!
  BOOL for key.
+
  @param key Key
  @result BOOL for key
  */
@@ -47,13 +49,15 @@
 
 /*!
  Set BOOL for key.
+
  @param b Bool
  @param key Key
  */
 - (void)gh_setBool:(BOOL)b forKey:(NSString *)key;
 
 /*!
- double for key.
+ Double for key.
+
  @param key Key
  @param defaultValue Value if not in defaults
  @result double for key
@@ -62,6 +66,7 @@
 
 /*!
  Set double for key.
+
  @param d Double
  @param key Key
  */
@@ -69,6 +74,7 @@
 
 /*!
  Integer for key.
+
  @param key Key
  @param defaultValue Value if not in defaults
  @result Integer for key
@@ -77,6 +83,7 @@
 
 /*!
  Set integer for key.
+
  @param integer Integer
  @param key Key
  */
@@ -84,6 +91,7 @@
 
 /*!
  Object for key.
+
  @param key Key
  @param defaultValue Value if not in defaults
  */
@@ -91,6 +99,7 @@
 
 /*!
  Set object (stored as NSData) for key.
+
  @param obj Object (should be NSCoding)
  @param key Key
  @result Object from data for key
@@ -99,6 +108,7 @@
 
 /*!
  Object from data for key.
+
  @param key Key
  @result Object from data for key
  */

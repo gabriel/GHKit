@@ -77,6 +77,7 @@
 
 /*!
  Called when proxy is about to invoke.
+ 
  @param proxy Sender
  @param invocation Invocation
  */
@@ -84,6 +85,7 @@
 
 /*!
  Called after proxy invoked.
+ 
  @param proxy Sender
  @param invocation Invocation
  */
@@ -91,7 +93,7 @@
 
 @end
 
-/*!
+/*
  An example invocation proxy delegate that logs timing information.
  */
 @interface GHNSInvocationProxyLogger : NSObject <GHNSInvocationProxyDelegate> {
@@ -113,31 +115,28 @@
  
  Use with the GHNSObject+Invocation category:
  
- @code
- NSMutableArray *array = ...; 
- // Adds object to array after 5 seconds
- [[array gh_proxyAfterDelay:5.0] addObject:@"test"];
- 
- 
- NSThread *thread = ...
- // Remove all objects from another thread
- [[array gh_proxyOnThread:thread waitUntilDone:NO] removeAllObjects];
- @endcode
+     NSMutableArray *array = ...; 
+     // Adds object to array after 5 seconds
+     [[array gh_proxyAfterDelay:5.0] addObject:@"test"];
+     
+     
+     NSThread *thread = ...
+     // Remove all objects from another thread
+     [[array gh_proxyOnThread:thread waitUntilDone:NO] removeAllObjects];
  
  Create invocation proxy for a NSMutableArray.
  
- @code 
- NSMutableArray *array = ...;
- NSThread *thread = ...
- 
- GHNSInvocationProxy *arrayProxy = [GHNSInvocationProxy invocation];
- arrayProxy.target = array;
- arrayProxy.thread = thread;
- arrayProxy.waitUntilDone = NO;
+     NSMutableArray *array = ...;
+     NSThread *thread = ...
+     
+     GHNSInvocationProxy *arrayProxy = [GHNSInvocationProxy invocation];
+     arrayProxy.target = array;
+     arrayProxy.thread = thread;
+     arrayProxy.waitUntilDone = NO;
 
- // Performs method on thread and doesn't wait for return
- [arrayProxy addObject:@"test"];
- @endcode
+     // Performs method on thread and doesn't wait for return
+     [arrayProxy addObject:@"test"];
+
  */
 @interface GHNSInvocationProxy : NSProxy {
 	
@@ -170,12 +169,14 @@
 
 /*!
  Create autoreleased empty invocation proxy.
+ 
  @result Invocation proxy
  */
 + (id)invocation;
 
 /*!
  Create invocation proxy with target.
+ 
  @param target
  @result Invocation proxy
  */
@@ -187,13 +188,15 @@
  Overriding the selector only make sense when using the "argument proxy".
  For example, 
 
- @code
- id target = ...;
- SEL selector = @selector(bar:baz:);
- [[[GHNSInvocationProxy invocation] prepareWithInvocationTarget:target selector:selector] arg:10 arg:20];
- @endcode
+     id target = ...;
+     SEL selector = @selector(bar:baz:);
+     [[[GHNSInvocationProxy invocation] prepareWithInvocationTarget:target selector:selector] arg:10 arg:20];
  
- Will call @code[target bar:10 baz:20];@endcode  (and not arg:arg: selector which doesn't exist).
+ Will call:
+ 
+     [target bar:10 baz:20];
+ 
+ (and not arg:arg: selector which doesn't exist).
  
  This allows you to call a selector variable with primitive and multi arguments, 
  whereas before you would have to use a manually constructed NSInvocation.
@@ -210,7 +213,7 @@
 
 //! @cond DEV
 
-/*!
+/*
  Invocation proxy callback represents a target, selector, context (selector arg) and thread,
  which if set on invocation proxy will call back on this thread after invoking on the proxy.
  */
