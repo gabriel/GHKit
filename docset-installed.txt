@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/gabe/Library/Developer/Shared/Documentation/DocSets/me.rel.GHKit.docset
-Time: 2011-08-30 16:19:48 -0700

@@ -1,0 +1,559 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSString(GHSymlinksAndAliases) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">GHKit </a></h1>
+				<a id="developerHome" href="../index.html">GHKit</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSString(GHSymlinksAndAliases) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/gh_stringByConditionallyResolvingAlias">&nbsp;&nbsp;&nbsp;&nbsp;- gh_stringByConditionallyResolvingAlias</option>
+	
+	<option value="//api/name/gh_stringByConditionallyResolvingSymlink">&nbsp;&nbsp;&nbsp;&nbsp;- gh_stringByConditionallyResolvingSymlink</option>
+	
+	<option value="//api/name/gh_stringByIterativelyResolvingSymlinkOrAlias">&nbsp;&nbsp;&nbsp;&nbsp;- gh_stringByIterativelyResolvingSymlinkOrAlias</option>
+	
+	<option value="//api/name/gh_stringByResolvingAlias">&nbsp;&nbsp;&nbsp;&nbsp;- gh_stringByResolvingAlias</option>
+	
+	<option value="//api/name/gh_stringByResolvingSymlink">&nbsp;&nbsp;&nbsp;&nbsp;- gh_stringByResolvingSymlink</option>
+	
+	<option value="//api/name/gh_stringByResolvingSymlinksAndAliases">&nbsp;&nbsp;&nbsp;&nbsp;- gh_stringByResolvingSymlinksAndAliases</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringByConditionallyResolvingAlias">gh_stringByConditionallyResolvingAlias</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringByConditionallyResolvingSymlink">gh_stringByConditionallyResolvingSymlink</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringByIterativelyResolvingSymlinkOrAlias">gh_stringByIterativelyResolvingSymlinkOrAlias</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringByResolvingAlias">gh_stringByResolvingAlias</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringByResolvingSymlink">gh_stringByResolvingSymlink</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringByResolvingSymlinksAndAliases">gh_stringByResolvingSymlinksAndAliases</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSString(GHSymlinksAndAliases) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSString(GHSymlinksAndAliases) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">GHNSString+SymlinksAndAliases.h<br />GHNSString+SymlinksAndAliases.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>For resolving symlinks and aliases.</p>
+
+<p>@code
+NSString *fullyResolvedPath = [somePath gh_stringByResolvingSymlinksAndAliases];
+@endcode</p>
+
+<p>From <a href="http://cocoawithlove.com/2010/02/resolving-path-containing-mixture-of.html">http://cocoawithlove.com/2010/02/resolving-path-containing-mixture-of.html</a></p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_stringByResolvingSymlinksAndAliases">&ndash;&nbsp;gh_stringByResolvingSymlinksAndAliases</a></code>
+		<span class="tooltip"><p>Tries to make a standardized, absolute path from the current string,
+resolving any aliases or symlinks in the path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_stringByIterativelyResolvingSymlinkOrAlias">&ndash;&nbsp;gh_stringByIterativelyResolvingSymlinkOrAlias</a></code>
+		<span class="tooltip"><p>Resolves the path where the final component could be a symlink and any
+component could be an alias.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_stringByResolvingAlias">&ndash;&nbsp;gh_stringByResolvingAlias</a></code>
+		<span class="tooltip"><p>Attempts to resolve the single alias at the end of the path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_stringByResolvingSymlink">&ndash;&nbsp;gh_stringByResolvingSymlink</a></code>
+		<span class="tooltip"><p>Attempts to resolve the single symlink at the end of the path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_stringByConditionallyResolvingSymlink">&ndash;&nbsp;gh_stringByConditionallyResolvingSymlink</a></code>
+		<span class="tooltip"><p>Attempt to resolve the symlink pointed to by the path.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_stringByConditionallyResolvingAlias">&ndash;&nbsp;gh_stringByConditionallyResolvingAlias</a></code>
+		<span class="tooltip"><p>Attempt to resolve the alias pointed to by the path.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringByConditionallyResolvingAlias" title="gh_stringByConditionallyResolvingAlias"></a>
+	<h3 class="subsubtitle method-title">gh_stringByConditionallyResolvingAlias</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempt to resolve the alias pointed to by the path.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_stringByConditionallyResolvingAlias</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the resolved path (if it was an alias and resolution is possible) otherwise nil</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+SymlinksAndAliases.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringByConditionallyResolvingSymlink" title="gh_stringByConditionallyResolvingSymlink"></a>
+	<h3 class="subsubtitle method-title">gh_stringByConditionallyResolvingSymlink</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempt to resolve the symlink pointed to by the path.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_stringByConditionallyResolvingSymlink</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the resolved path (if it was a symlink and resolution is possible) otherwise nil</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+SymlinksAndAliases.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringByIterativelyResolvingSymlinkOrAlias" title="gh_stringByIterativelyResolvingSymlinkOrAlias"></a>
+	<h3 class="subsubtitle method-title">gh_stringByIterativelyResolvingSymlinkOrAlias</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Resolves the path where the final component could be a symlink and any
+component could be an alias.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_stringByIterativelyResolvingSymlinkOrAlias</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the resolved path</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+SymlinksAndAliases.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringByResolvingAlias" title="gh_stringByResolvingAlias"></a>
+	<h3 class="subsubtitle method-title">gh_stringByResolvingAlias</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to resolve the single alias at the end of the path.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_stringByResolvingAlias</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the resolved alias or self if path wasn&rsquo;t an alias or couldn&rsquo;t
+resolved.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+SymlinksAndAliases.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringByResolvingSymlink" title="gh_stringByResolvingSymlink"></a>
+	<h3 class="subsubtitle method-title">gh_stringByResolvingSymlink</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Attempts to resolve the single symlink at the end of the path.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_stringByResolvingSymlink</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the resolved path or self if path wasn&rsquo;t a symlink or couldn&rsquo;t be
+resolved.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+SymlinksAndAliases.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringByResolvingSymlinksAndAliases" title="gh_stringByResolvingSymlinksAndAliases"></a>
+	<h3 class="subsubtitle method-title">gh_stringByResolvingSymlinksAndAliases</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tries to make a standardized, absolute path from the current string,
+resolving any aliases or symlinks in the path.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_stringByResolvingSymlinksAndAliases</code></div>
+	
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns the fully resolved path (if possible) or nil (if resolution fails)</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+SymlinksAndAliases.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-08-30)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
