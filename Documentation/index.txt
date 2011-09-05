@@ -7,11 +7,19 @@ Source: http://github.com/gabriel/gh-kit
 
 View docs online: http://gabriel.github.com/gh-kit/
 
-To use the framework (for iOS):
+***Install the docset:***
+
+- Open Xcode, Preferences and select the Documentation tab.
+- Select the plus icon (bottom left) and specify: http://gabriel.github.com/gh-kit/publish/me.rel.GHKit.atom
+
+
+***Use the framework:***
+
+For iOS:
 
     #import <GHKitIOS/GHKitIOS.h>
 
-To use the framework (for Mac OS X):
+For Mac OS X:
 
     #import <GHKit/GHKit.h>
 
