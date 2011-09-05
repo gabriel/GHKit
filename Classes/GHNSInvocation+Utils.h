@@ -44,9 +44,10 @@
 
  @param target Invocation target
  @param selector Method
- @param withObjects (Variable) Arguments list
+ @param withObjects Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments
+ @param ... Argument list
  */
-+ (id)gh_invokeWithTarget:(id)target selector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
++ (id)gh_invokeWithTarget:(id)target selector:(SEL)selector withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke target selector with multiple arguments.
@@ -75,8 +76,9 @@
  @param selector Action
  @param waitUntilDone Whether to wait for call to finish
  @param withObjects Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments
+ @param ... Argument list
  */
-+ (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
++ (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke target selector on main thread with multiple arguments.
@@ -97,7 +99,7 @@ Invoke target selector on main thread with multiple arguments.
  @param afterDelay Time interval for delay (in seconds)
  @param arguments Arguments list
  */
-+ (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
++ (void)gh_invokeTargetOnMainThread:(id)target selector:(SEL)selector waitUntilDone:(BOOL)waitUntilDone afterDelay:(NSTimeInterval)afterDelay arguments:(NSArray *)arguments;
 
 /*!
  Create invocation with variable arguments.
@@ -106,9 +108,10 @@ Invoke target selector on main thread with multiple arguments.
  @param target Invocation target
  @param selector Method
  @param hasReturnValue Will be set to YES, if there is a return value
- @param withObjects (Variable) Arguments list
+ @param withObjects Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments
+ @param ... Argument list
  */
-+ (NSInvocation *)gh_invocationWithTarget:(id)target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
++ (NSInvocation *)gh_invocationWithTarget:(id)target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Create invocation with variable arguments.
@@ -119,6 +122,6 @@ Invoke target selector on main thread with multiple arguments.
  @param hasReturnValue Will be set to YES, if there is a return value
  @param arguments Arguments array
  */
-+ (NSInvocation *)gh_invocationWithTarget:target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue arguments:(NSArray *)arguments;
++ (NSInvocation *)gh_invocationWithTarget:(id)target selector:(SEL)selector hasReturnValue:(BOOL *)hasReturnValue arguments:(NSArray *)arguments;
 
 @end

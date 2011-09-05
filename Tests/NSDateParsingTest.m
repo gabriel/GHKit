@@ -6,7 +6,7 @@
 //  Copyright 2008 rel.me. All rights reserved.
 //
 
-#import "GHNSDate+Parsing.h"
+#import "GHNSDate+Formatters.h"
 
 @interface NSDateParsingTest : GHTestCase { }
 @end

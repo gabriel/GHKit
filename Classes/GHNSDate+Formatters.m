@@ -26,12 +26,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "GHNSDate+Parsing.h"
+#import "GHNSDate+Formatters.h"
 
-// Date formatters are not cached since they are not thread-safe. (Thanks Jae!)
-// TODO: Investigate synchronized access to cached formatters.
 
-@implementation NSDate(GHParsing)
+@implementation NSDate(GHFormatters)
 
 static NSDateFormatter *gRFC822DateFormatter = NULL;
 static NSDateFormatter *gISO8601DateFormatter = NULL;

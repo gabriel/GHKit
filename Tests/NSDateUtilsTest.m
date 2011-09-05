@@ -54,7 +54,7 @@
 }
 
 - (void)testMonthSymbolsForFormat {
-  NSArray *monthSymbols = [NSDate gh_monthSymbolsForFormat:@"MMMM"];
+  NSArray *monthSymbols = [NSDate gh_monthSymbols];
   GHTestLog([monthSymbols description]);
 }
 

@@ -38,7 +38,8 @@
 
     [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
  
- @param firstObject... Alternating key, value pairs. Terminated when _key_ is nil. 
+ @param firstObject Alternating key, value pairs. Terminated when _key_ is nil. 
+ @param ... Keys and objects
  @result Dictionary
  */
 + (id)gh_dictionaryWithKeysAndObjectsMaybeNil:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
@@ -77,7 +78,10 @@
  */
 
 /*!
- objectForKey if you want nil instead of NSNull objects.
+ Returns objectForKey if you want nil instead of NSNull objects.
+
+ @param key Key
+ @result Object for key. If object is NSNull, then nil is returned.
  */
 - (id)gh_objectMaybeNilForKey:(id)key;
 

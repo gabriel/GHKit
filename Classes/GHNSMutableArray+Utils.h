@@ -57,7 +57,7 @@
 /*!
  Add object. If object is nil, this is a no op.
  
- @param obj
+ @param obj Object to add
  */
 - (void)gh_addObject:(id)obj;
 

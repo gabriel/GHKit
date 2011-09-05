@@ -85,7 +85,7 @@
 /*!
  Derive new URL with a new query. All other fields should be the same.
  
- @param query
+ @param query Query string
  @result URL with new query
  */
 - (NSURL *)gh_deriveWithQuery:(NSString *)query;
@@ -169,13 +169,14 @@
 #if !TARGET_OS_IPHONE
 
 /*!
- Copy URL to pasteboard.
+ Copy URL to pasteboard. For Mac OS X only.
  */
 - (void)gh_copyLinkToPasteboard;
 
 /*!
  Open file URL. 
  Opens path in Finder or whatever is registered for the file:// scheme.
+ For Mac OS X only.
  
  @param path Path to open
  @result YES if opened
@@ -185,8 +186,9 @@
 /*!
  Opens directory of file at path (or the path itself if it is a directory),
  in the Finder or whatever is registered for the file:// scheme.
+ For Mac OS X only.
  
- @param path
+ @param path Path
  */
 + (void)gh_openContainingFolder:(NSString *)path;
 

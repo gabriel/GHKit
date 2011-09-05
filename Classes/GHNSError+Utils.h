@@ -45,7 +45,7 @@
 /*!
  Create error from exception.
  
- @param exception
+ @param exception Exception
  */
 + (NSError *)gh_errorFromException:(NSException *)exception;
 

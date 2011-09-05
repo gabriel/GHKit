@@ -21,8 +21,8 @@
 		00B034C913D8BF0100D4C6A0 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */; };
 		00B034CC13D8BF0100D4C6A0 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */; };
 		00B034CD13D8BF0100D4C6A0 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347C13D8BF0100D4C6A0 /* GHNSBundle+Utils.m */; };
-		00B034CE13D8BF0100D4C6A0 /* GHNSDate+Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347D13D8BF0100D4C6A0 /* GHNSDate+Parsing.h */; };
-		00B034CF13D8BF0100D4C6A0 /* GHNSDate+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Parsing.m */; };
+		00B034CE13D8BF0100D4C6A0 /* GHNSDate+Formatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347D13D8BF0100D4C6A0 /* GHNSDate+Formatters.h */; };
+		00B034CF13D8BF0100D4C6A0 /* GHNSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Formatters.m */; };
 		00B034D013D8BF0100D4C6A0 /* GHNSDate+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347F13D8BF0100D4C6A0 /* GHNSDate+Utils.h */; };
 		00B034D113D8BF0100D4C6A0 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348013D8BF0100D4C6A0 /* GHNSDate+Utils.m */; };
 		00B034D213D8BF0100D4C6A0 /* GHNSDictionary+NSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0348113D8BF0100D4C6A0 /* GHNSDictionary+NSNull.h */; };
@@ -154,7 +154,7 @@
 		00B0363113D8C32100D4C6A0 /* GHNSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348413D8BF0100D4C6A0 /* GHNSDictionary+Utils.m */; };
 		00B0363213D8C32600D4C6A0 /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348213D8BF0100D4C6A0 /* GHNSDictionary+NSNull.m */; };
 		00B0363313D8C32800D4C6A0 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348013D8BF0100D4C6A0 /* GHNSDate+Utils.m */; };
-		00B0363413D8C32B00D4C6A0 /* GHNSDate+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Parsing.m */; };
+		00B0363413D8C32B00D4C6A0 /* GHNSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Formatters.m */; };
 		00B0363513D8C32D00D4C6A0 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347C13D8BF0100D4C6A0 /* GHNSBundle+Utils.m */; };
 		00B0363613D8C34800D4C6A0 /* GHNSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B034BE13D8BF0100D4C6A0 /* GHNSObject+Swizzle.m */; };
 		00B0363713D8C37B00D4C6A0 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035F813D8C18600D4C6A0 /* SFHFKeychainUtils.m */; };
@@ -164,7 +164,7 @@
 		00B0364313D8C7B100D4C6A0 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347613D8BF0100D4C6A0 /* GHLogger.m */; };
 		00B0364413D8C7B100D4C6A0 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */; };
 		00B0364513D8C7B100D4C6A0 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347C13D8BF0100D4C6A0 /* GHNSBundle+Utils.m */; };
-		00B0364613D8C7B100D4C6A0 /* GHNSDate+Parsing.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Parsing.m */; };
+		00B0364613D8C7B100D4C6A0 /* GHNSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Formatters.m */; };
 		00B0364713D8C7B100D4C6A0 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348013D8BF0100D4C6A0 /* GHNSDate+Utils.m */; };
 		00B0364813D8C7B100D4C6A0 /* GHNSDictionary+NSNull.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348213D8BF0100D4C6A0 /* GHNSDictionary+NSNull.m */; };
 		00B0364913D8C7B100D4C6A0 /* GHNSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0348413D8BF0100D4C6A0 /* GHNSDictionary+Utils.m */; };
@@ -202,7 +202,7 @@
 		00B0367113D8C7B100D4C6A0 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347513D8BF0100D4C6A0 /* GHLogger.h */; };
 		00B0367213D8C7B100D4C6A0 /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347713D8BF0100D4C6A0 /* GHNSArray+Utils.h */; };
 		00B0367313D8C7B100D4C6A0 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */; };
-		00B0367413D8C7B100D4C6A0 /* GHNSDate+Parsing.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347D13D8BF0100D4C6A0 /* GHNSDate+Parsing.h */; };
+		00B0367413D8C7B100D4C6A0 /* GHNSDate+Formatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347D13D8BF0100D4C6A0 /* GHNSDate+Formatters.h */; };
 		00B0367513D8C7B100D4C6A0 /* GHNSDate+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347F13D8BF0100D4C6A0 /* GHNSDate+Utils.h */; };
 		00B0367613D8C7B100D4C6A0 /* GHNSDictionary+NSNull.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0348113D8BF0100D4C6A0 /* GHNSDictionary+NSNull.h */; };
 		00B0367713D8C7B100D4C6A0 /* GHNSDictionary+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0348313D8BF0100D4C6A0 /* GHNSDictionary+Utils.h */; };
@@ -266,8 +266,8 @@
 		00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
 		00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSBundle+Utils.h"; sourceTree = "<group>"; };
 		00B0347C13D8BF0100D4C6A0 /* GHNSBundle+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSBundle+Utils.m"; sourceTree = "<group>"; };
-		00B0347D13D8BF0100D4C6A0 /* GHNSDate+Parsing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Parsing.h"; sourceTree = "<group>"; };
-		00B0347E13D8BF0100D4C6A0 /* GHNSDate+Parsing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Parsing.m"; sourceTree = "<group>"; };
+		00B0347D13D8BF0100D4C6A0 /* GHNSDate+Formatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Formatters.h"; sourceTree = "<group>"; };
+		00B0347E13D8BF0100D4C6A0 /* GHNSDate+Formatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Formatters.m"; sourceTree = "<group>"; };
 		00B0347F13D8BF0100D4C6A0 /* GHNSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Utils.h"; sourceTree = "<group>"; };
 		00B0348013D8BF0100D4C6A0 /* GHNSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Utils.m"; sourceTree = "<group>"; };
 		00B0348113D8BF0100D4C6A0 /* GHNSDictionary+NSNull.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+NSNull.h"; sourceTree = "<group>"; };
@@ -470,8 +470,8 @@
 				00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */,
 				00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */,
 				00B0347C13D8BF0100D4C6A0 /* GHNSBundle+Utils.m */,
-				00B0347D13D8BF0100D4C6A0 /* GHNSDate+Parsing.h */,
-				00B0347E13D8BF0100D4C6A0 /* GHNSDate+Parsing.m */,
+				00B0347D13D8BF0100D4C6A0 /* GHNSDate+Formatters.h */,
+				00B0347E13D8BF0100D4C6A0 /* GHNSDate+Formatters.m */,
 				00B0347F13D8BF0100D4C6A0 /* GHNSDate+Utils.h */,
 				00B0348013D8BF0100D4C6A0 /* GHNSDate+Utils.m */,
 				00B0348113D8BF0100D4C6A0 /* GHNSDictionary+NSNull.h */,
@@ -702,7 +702,7 @@
 				00B034C613D8BF0100D4C6A0 /* GHLogger.h in Headers */,
 				00B034C813D8BF0100D4C6A0 /* GHNSArray+Utils.h in Headers */,
 				00B034CC13D8BF0100D4C6A0 /* GHNSBundle+Utils.h in Headers */,
-				00B034CE13D8BF0100D4C6A0 /* GHNSDate+Parsing.h in Headers */,
+				00B034CE13D8BF0100D4C6A0 /* GHNSDate+Formatters.h in Headers */,
 				00B034D013D8BF0100D4C6A0 /* GHNSDate+Utils.h in Headers */,
 				00B034D213D8BF0100D4C6A0 /* GHNSDictionary+NSNull.h in Headers */,
 				00B034D413D8BF0100D4C6A0 /* GHNSDictionary+Utils.h in Headers */,
@@ -755,7 +755,7 @@
 				00B0367113D8C7B100D4C6A0 /* GHLogger.h in Headers */,
 				00B0367213D8C7B100D4C6A0 /* GHNSArray+Utils.h in Headers */,
 				00B0367313D8C7B100D4C6A0 /* GHNSBundle+Utils.h in Headers */,
-				00B0367413D8C7B100D4C6A0 /* GHNSDate+Parsing.h in Headers */,
+				00B0367413D8C7B100D4C6A0 /* GHNSDate+Formatters.h in Headers */,
 				00B0367513D8C7B100D4C6A0 /* GHNSDate+Utils.h in Headers */,
 				00B0367613D8C7B100D4C6A0 /* GHNSDictionary+NSNull.h in Headers */,
 				00B0367713D8C7B100D4C6A0 /* GHNSDictionary+Utils.h in Headers */,
@@ -899,7 +899,7 @@
 				00B034C713D8BF0100D4C6A0 /* GHLogger.m in Sources */,
 				00B034C913D8BF0100D4C6A0 /* GHNSArray+Utils.m in Sources */,
 				00B034CD13D8BF0100D4C6A0 /* GHNSBundle+Utils.m in Sources */,
-				00B034CF13D8BF0100D4C6A0 /* GHNSDate+Parsing.m in Sources */,
+				00B034CF13D8BF0100D4C6A0 /* GHNSDate+Formatters.m in Sources */,
 				00B034D113D8BF0100D4C6A0 /* GHNSDate+Utils.m in Sources */,
 				00B034D313D8BF0100D4C6A0 /* GHNSDictionary+NSNull.m in Sources */,
 				00B034D513D8BF0100D4C6A0 /* GHNSDictionary+Utils.m in Sources */,
@@ -997,7 +997,7 @@
 				00B0363113D8C32100D4C6A0 /* GHNSDictionary+Utils.m in Sources */,
 				00B0363213D8C32600D4C6A0 /* GHNSDictionary+NSNull.m in Sources */,
 				00B0363313D8C32800D4C6A0 /* GHNSDate+Utils.m in Sources */,
-				00B0363413D8C32B00D4C6A0 /* GHNSDate+Parsing.m in Sources */,
+				00B0363413D8C32B00D4C6A0 /* GHNSDate+Formatters.m in Sources */,
 				00B0363513D8C32D00D4C6A0 /* GHNSBundle+Utils.m in Sources */,
 				00B0363613D8C34800D4C6A0 /* GHNSObject+Swizzle.m in Sources */,
 				00B0363713D8C37B00D4C6A0 /* SFHFKeychainUtils.m in Sources */,
@@ -1014,7 +1014,7 @@
 				00B0364313D8C7B100D4C6A0 /* GHLogger.m in Sources */,
 				00B0364413D8C7B100D4C6A0 /* GHNSArray+Utils.m in Sources */,
 				00B0364513D8C7B100D4C6A0 /* GHNSBundle+Utils.m in Sources */,
-				00B0364613D8C7B100D4C6A0 /* GHNSDate+Parsing.m in Sources */,
+				00B0364613D8C7B100D4C6A0 /* GHNSDate+Formatters.m in Sources */,
 				00B0364713D8C7B100D4C6A0 /* GHNSDate+Utils.m in Sources */,
 				00B0364813D8C7B100D4C6A0 /* GHNSDictionary+NSNull.m in Sources */,
 				00B0364913D8C7B100D4C6A0 /* GHNSDictionary+Utils.m in Sources */,

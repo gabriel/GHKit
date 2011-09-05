@@ -35,7 +35,7 @@
 /*!
  Load data from resource.
 
- @param resource Name of resource
+ @param resource Name of resource, such as "file.txt"
  @result NSData
  */
 - (NSData *)gh_loadDataFromResource:(NSString *)resource;

@@ -39,7 +39,7 @@
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
  @result Double value
  */
-- (double)gh_doubleForKey:(id)key withDefault:(double)defaultValue;
+- (double)gh_doubleForKey:(id)key withDefault:(double)withDefault;
 
 /*! 
  Get double value for key.
@@ -56,7 +56,7 @@
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
  @result Integer value
  */
-- (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)defaultValue;
+- (NSInteger)gh_integerForKey:(id)key withDefault:(NSInteger)withDefault;
 
 /*! 
  Integer for key.
@@ -74,7 +74,7 @@
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
  @result Unsigned integer
  */
-- (NSUInteger)gh_unsignedIntegerForKey:(id)key withDefault:(NSUInteger)defaultValue;
+- (NSUInteger)gh_unsignedIntegerForKey:(id)key withDefault:(NSUInteger)withDefault;
 
 /*! 
  Unsigned integer for key.
@@ -89,19 +89,19 @@
  Number for key with default double value.
  
  @param key Key
- @param defaultValue If value for key is nil or [NSNull null] this default is returned.
+ @param withDefaultInteger If value for key is nil or [NSNull null] this default is returned.
  @result Number
  */
-- (NSNumber *)gh_numberForKey:(id)key withDefaultInteger:(NSInteger)defaultValue;
+- (NSNumber *)gh_numberForKey:(id)key withDefaultInteger:(NSInteger)withDefaultInteger;
 
 /*!
  Number for key with default double value.
 
  @param key Key
- @param defaultValue If value for key is nil or [NSNull null] this default is returned.
+ @param withDefaultDouble If value for key is nil or [NSNull null] this default is returned.
  @result Number
  */
-- (NSNumber *)gh_numberForKey:(id)key withDefaultDouble:(double)defaultValue;
+- (NSNumber *)gh_numberForKey:(id)key withDefaultDouble:(double)withDefaultDouble;
 
 /*!
  Get BOOL value for key.
@@ -110,7 +110,7 @@
  @param withDefault If value for key is nil or [NSNull null] this default is returned.
  @result BOOL value
  */
-- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
+- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)withDefault;
 
 /*!
  Get BOOL value for key.
@@ -124,10 +124,10 @@
  Object for key with default value, if entry is NSNull or entry does not exist.
 
  @param key Key
- @param defaultValue If value for key is nil or [NSNull null] this default is returned.
+ @param withDefault If value for key is nil or [NSNull null] this default is returned.
  @result Value for key with default value, if entry is NSNull or entry does not exist
  */
-- (id)gh_objectForKey:(id)key withDefault:(id)defaultValue;
+- (id)gh_objectForKey:(id)key withDefault:(id)withDefault;
 
 /*!
  Object for key or NSNull.
@@ -143,10 +143,10 @@
  Usefuly for coercing any object that responds to boolValue into an object for use with Key Value coding.
 
  @param key Key
- @param defaultValue Default if value is missing or [NSNull null]
+ @param withDefault Default if value is missing or [NSNull null]
  @result Number
  */ 
-- (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)defaultValue;
+- (NSNumber *)gh_boolValueForKey:(id)key withDefault:(BOOL)withDefault;
 
 /*!
  Get boolean value (represented by NSNumber).
@@ -161,6 +161,7 @@
  Check if dictionary has all keys.
  
  @param firstKey First key
+ @param ... Argument list
  @result YES if dictionary has all the keys
  */
 - (BOOL)gh_hasAllKeys:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;

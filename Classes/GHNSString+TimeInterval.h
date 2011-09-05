@@ -38,7 +38,7 @@
  For localized values see the localization keys below. 
  This method calls gh_localizedStringForTimeInterval with nil tableName and [NSBundle mainBundle] bundle.
  
- @param interval
+ @param interval Interval in seconds
  @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
  @result Time ago in words 
  */
@@ -63,7 +63,7 @@
      About1Year = "about 1 year";
      OverXYears = "over %.0f years";
  
- @param interval
+ @param interval Interval in seconds
  @param includeSeconds If YES, will say 'less than N seconds', otherwise will show 'less than a minute'
  @param tableName Table name for localized string
  @param bundle Bundle for localized string

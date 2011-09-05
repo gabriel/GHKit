@@ -177,7 +177,7 @@
 /*!
  Create invocation proxy with target.
  
- @param target
+ @param target Target
  @result Invocation proxy
  */
 - (id)prepareWithInvocationTarget:(id)target;
@@ -203,8 +203,8 @@
  
  See GHNSObject+Invocation#gh_argumentProxy for the shorthand.
  
- @param target
- @param selector
+ @param target Target
+ @param selector Selector
  @result Invocation proxy
  */
 - (id)prepareWithInvocationTarget:(id)target selector:(SEL)selector;

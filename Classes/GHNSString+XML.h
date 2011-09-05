@@ -37,6 +37,7 @@
  Arguments MUST BE objective-C objects!
  
  @param format Format
+ @param ... Argument list
  */
 + (id)gh_stringWithFormatForXML:(NSString *)format, ... NS_REQUIRES_NIL_TERMINATION;
 

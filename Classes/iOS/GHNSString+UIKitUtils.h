@@ -62,7 +62,7 @@ typedef NSUInteger GHNSStringAlignment;
  @param rect Rect
  @param font Font
  @param minFontSize Min font size
- @param actualFont Size for font used
+ @param actualFontSize Size for font used
  @param lineBreakMode Line break mode
  @param alignment Alignment
  */

@@ -66,8 +66,9 @@ typedef enum {
  Keychain store adapter which works on both iOS and Mac OS X.
  
  Forwards to:
-	- GHEMKeychainStore for Mac OS X.
-	- GHSFHFKeychainStore for iPhone.
+ 
+ - GHEMKeychainStore for Mac OS X.
+ - GHSFHFKeychainStore for iPhone.
 
  
  Secret from keychain:

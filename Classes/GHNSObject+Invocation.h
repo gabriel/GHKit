@@ -48,45 +48,50 @@
  Perform selector if responds with multiple arguments.
  
  @param selector Selector
- @param withObjects nil terminated variable argument list 
+ @param withObjects Nil terminated variable argument list 
+ @param ... Argument list
  @result nil if we don't respond to the selector, otherwise the selector result
  */
-- (id)gh_performIfRespondsToSelector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)gh_performIfRespondsToSelector:(SEL)selector withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments.
  
  @param selector Selector
- @param withObjects nil terminated variable argument list 
+ @param withObjects Nil terminated variable argument list 
+ @param ... Argument list
  */
-- (id)gh_performSelector:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)gh_performSelector:(SEL)selector withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector after delay with arguments.
  
  @param selector Selector
- @param delay Delay in seconds
- @param withObjects nil terminated variable argument list 
+ @param afterDelay Delay in seconds
+ @param withObjects Nil terminated variable argument list 
+ @param ... Argument list
  */
-- (id)gh_performSelector:(SEL)selector afterDelay:(NSTimeInterval)delay withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
+- (id)gh_performSelector:(SEL)selector afterDelay:(NSTimeInterval)afterDelay withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments on main thread.
  Does not wait until selector is finished.
  
  @param selector Selector
- @param withObjects nil terminated variable argument list 
+ @param withObjects Nil terminated variable argument list 
+ @param ... Argument list
  */
-- (void)gh_performSelectorOnMainThread:(SEL)selector withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)gh_performSelectorOnMainThread:(SEL)selector withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments on main thread.
  
  @param selector Selector
  @param waitUntilDone Whether to join on selector and wait for it to finish.
- @param withObjects nil terminated variable argument list 
+ @param withObjects Nil terminated variable argument list 
+ @param ... Argument list
  */
-- (void)gh_performSelectorOnMainThread:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)gh_performSelectorOnMainThread:(SEL)selector waitUntilDone:(BOOL)waitUntilDone withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments.
@@ -94,9 +99,10 @@
  @param selector Selector
  @param onMainThread Whether to perform on main thread or current thread
  @param waitUntilDone Whether to join on selector and wait for it to finish.
- @param withObjects nil terminated variable argument list 
+ @param withObjects Nil terminated variable argument list 
+ @param ... Argument list
  */
-- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:object, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone withObjects:(id)withObjects, ... NS_REQUIRES_NIL_TERMINATION;
 
 /*!
  Invoke selector with arguments.
@@ -117,8 +123,7 @@
  @param afterDelay Delay in seconds
  @param arguments List of arguments
  */
-- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone 
-								afterDelay:(NSTimeInterval)delay arguments:(NSArray *)arguments;
+- (void)gh_performSelector:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone afterDelay:(NSTimeInterval)afterDelay arguments:(NSArray *)arguments;
 
 
 #pragma mark Invocation proxies
@@ -190,6 +195,10 @@
 
 /*!
  Proxy for selector on main thread.
+
+ @param selector Selector
+ @param onMainThread If on main thread
+ @param waitUntilDone Wait until done
  */
 - (id)gh_argumentProxy:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone;
 

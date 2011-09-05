@@ -199,6 +199,7 @@
 /*!
  Combine character sets.
  
+ @param characterSets Character sets to union
  @result Combined character sets
  */
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;

@@ -1,5 +1,5 @@
 //
-//  GHNSDate+Parsing.h
+//  GHNSDate+Formatters.h
 //
 //  Created by Gabe on 3/18/08.
 //  Copyright 2008 Gabriel Handford
@@ -29,7 +29,7 @@
 /*! 
  Date parsers, formatting and formatters for ISO8601, RFC822, HTTP (RFC1123, RFC850, asctime) and since epoch.
  */
-@interface NSDate(GHParsing)
+@interface NSDate(GHFormatters)
 
 /*!
  Parse ISO8601 date. For example, "2010-10-07T04:25Z".
@@ -76,7 +76,7 @@
  @param withDefault Default if timeSinceEpoch is nil
  @result NSDate or default
  */
-+ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value;
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)withDefault;
 
 /*!
  Parse time since epoch (1970) in seconds.
@@ -86,7 +86,7 @@
  @param timeZone If set, the returned Date will be offset from the supplied timestamp by the difference between timeZone and the system time zone
  @result NSDate or nil if timeSinceEpoch was nil
  */
-+ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)value offsetForTimeZone:(NSTimeZone *)timeZone;
++ (NSDate *)gh_parseTimeSinceEpoch:(id)timeSinceEpoch withDefault:(id)withDefault offsetForTimeZone:(NSTimeZone *)timeZone;
 
 /*!
  Get date formatted for RFC822.

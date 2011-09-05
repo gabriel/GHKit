@@ -43,68 +43,69 @@
  BOOL for key.
 
  @param key Key
+ @param withDefault Default value
  @result BOOL for key
  */
-- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue;
+- (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)withDefault;
 
 /*!
  Set BOOL for key.
 
  @param b Bool
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setBool:(BOOL)b forKey:(NSString *)key;
+- (void)gh_setBool:(BOOL)b forKey:(NSString *)forKey;
 
 /*!
  Double for key.
 
  @param key Key
- @param defaultValue Value if not in defaults
+ @param withDefault Value if not in defaults
  @result double for key
  */
-- (double)gh_doubleForKey:(NSString *)key withDefault:(double)defaultValue;
+- (double)gh_doubleForKey:(NSString *)key withDefault:(double)withDefault;
 
 /*!
  Set double for key.
 
  @param d Double
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setDouble:(double)d forKey:(NSString *)key;
+- (void)gh_setDouble:(double)d forKey:(NSString *)forKey;
 
 /*!
  Integer for key.
 
  @param key Key
- @param defaultValue Value if not in defaults
+ @param withDefault Value if not in defaults
  @result Integer for key
  */
-- (NSInteger)gh_integerForKey:(NSString *)key withDefault:(NSInteger)defaultValue;
+- (NSInteger)gh_integerForKey:(NSString *)key withDefault:(NSInteger)withDefault;
 
 /*!
  Set integer for key.
 
  @param integer Integer
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setInteger:(NSInteger)integer forKey:(NSString *)key;
+- (void)gh_setInteger:(NSInteger)integer forKey:(NSString *)forKey;
 
 /*!
  Object for key.
 
  @param key Key
- @param defaultValue Value if not in defaults
+ @param withDefault Value if not in defaults
  */
-- (id)gh_objectForKey:(NSString *)key withDefault:(id)defaultValue;
+- (id)gh_objectForKey:(NSString *)key withDefault:(id)withDefault;
 
 /*!
  Set object (stored as NSData) for key.
 
  @param obj Object (should be NSCoding)
- @param key Key
+ @param forKey Key
  @result Object from data for key
  */
-- (void)gh_setObjectAsData:(id)obj forKey:(NSString *)key;
+- (void)gh_setObjectAsData:(id)obj forKey:(NSString *)forKey;
 
 /*!
  Object from data for key.

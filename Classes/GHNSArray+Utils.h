@@ -25,13 +25,12 @@
 //
 
 /*!
- Utilities for arrays, for example, first object, reversed, subarray, compact
- and safe \c objectAtIndex:.
+ Utilities for arrays.
  */
 @interface NSArray(GHUtils)
 
 /*!
- First object.
+ First object or nil if array is empty.
 
  @result Object at index 0
  */
@@ -74,7 +73,7 @@
 /*!
  Remove all instances of NSNull.
 
- @result New array with instances removed; Or self if no NSNull's were found
+ @result New array with NSNull instances removed. Returns self if no NSNull's were found.
  */
 - (NSArray *)gh_compact;
 
@@ -82,7 +81,7 @@
  Safe array with object.
 
  @param obj Object
- @result Array with object. Returns empty if obj is null.
+ @result Array with object. Returns empty if obj is nil.
  */
 + (NSArray *)gh_arrayWithObject:(id)obj;
 

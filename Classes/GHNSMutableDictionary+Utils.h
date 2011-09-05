@@ -36,33 +36,33 @@
  Set double value.
  
  @param d Double
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setDouble:(double)d forKey:(id)key;
+- (void)gh_setDouble:(double)d forKey:(id)forKey;
 
 /*!
  Set integer value.
  
  @param n Integer
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setInteger:(NSInteger)n forKey:(id)key;
+- (void)gh_setInteger:(NSInteger)n forKey:(id)forKey;
 
 /*!
  Set bool.
  
  @param b Bool
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setBool:(BOOL)b forKey:(id)key;
+- (void)gh_setBool:(BOOL)b forKey:(id)forKey;
 
 /*!
  Set object or [NSNull null] if nil.
  
  @param object Object
- @param key Key
+ @param forKey Key
  */
-- (void)gh_setObjectMaybeNil:(id)object forKey:(id)key;
+- (void)gh_setObjectMaybeNil:(id)object forKey:(id)forKey;
 
 /*!
  Compact.

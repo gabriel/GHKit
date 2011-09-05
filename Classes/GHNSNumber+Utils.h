@@ -71,7 +71,7 @@
 /*!
  Ordinalize. See gh_ordinalize.
  
- @param value
+ @param value Value
  @result Ordinal string for integer.
  */
 + (NSString *)gh_ordinalize:(NSInteger)value;
@@ -79,8 +79,8 @@
 /*!
  Ordinalize. See gh_ordinalizeMasculine:.
  
- @param value
- @param masculine
+ @param value Value
+ @param masculine If masculine
  @result Ordinal string for integer.
  */
 + (NSString *)gh_ordinalize:(NSInteger)value masculine:(BOOL)masculine;

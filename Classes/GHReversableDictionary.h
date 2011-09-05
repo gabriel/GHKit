@@ -38,7 +38,7 @@
 /*!
  Create with capacity.
  
- @param capacity
+ @param capacity Capacity
  */
 - (id)initWithCapacity:(NSInteger)capacity;
 
@@ -46,6 +46,7 @@
  Create with objects and keys.
  
  @param firstObject Objects
+ @param ... Objects and keys
  */
 - (id)initWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 

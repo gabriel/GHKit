@@ -63,7 +63,7 @@
  Create string enumerator with string and separator character set.
 
  @param string String
- @param separatorCharacterSet Separator characters
+ @param separatorString Separator characters
  */
 - (id)initWithString:(NSString *)string separatorString:(NSString *)separatorString;
 

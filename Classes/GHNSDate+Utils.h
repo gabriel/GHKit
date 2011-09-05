@@ -114,10 +114,9 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
  
  To use the current day, month or year, specify 0 for that value.
  
- For example, the use Jan, 1 30 years ago:
+ For example, the use Jan 1, 30 years ago:
  
-     [NSDate gh_dateWithDay:1 month:1 year:0 addDay:0 addMonth:0 addYear:-30 
-      timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+     [NSDate gh_dateWithDay:1 month:1 year:0 addDay:0 addMonth:0 addYear:-30 timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
  
  @param day Day to set (if 0, uses current day)
  @param month Month to set (if 0, uses current month)
