@@ -34,5 +34,5 @@ For documentation see [http://gabriel.github.com/gh-kit/](http://gabriel.github.
 
 ## Building (iOS)
 
-To build, run `make ios`. The framework will be in `build/Framework/`.
+To build, go to Project-iOS and run `make`. The framework will be in `build/Framework/`.
 

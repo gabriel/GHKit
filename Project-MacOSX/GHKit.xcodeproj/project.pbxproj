@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,7 +28,6 @@
 		000E760A0FA61B630085BC13 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 000E75E80FA61B630085BC13 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		000E76100FA61B830085BC13 /* GHNSObject+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 000E760E0FA61B830085BC13 /* GHNSObject+Swizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		000E76110FA61B830085BC13 /* GHNSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 000E760F0FA61B830085BC13 /* GHNSObject+Swizzle.m */; };
-		000E79120FA65E160085BC13 /* GHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00970A140F2836A100189A9D /* GHKit.framework */; };
 		00150F2F0FAD1281009A8633 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00150F2D0FAD1281009A8633 /* GHLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00150F300FAD1281009A8633 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00150F2E0FAD1281009A8633 /* GHLogger.m */; };
 		00150F330FAD128D009A8633 /* GTMLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00150F310FAD128D009A8633 /* GTMLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,7 +67,6 @@
 		005B0AA00F22B7A80004F351 /* GHNSInvocation+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 005B0A9E0F22B7A80004F351 /* GHNSInvocation+Utils.m */; };
 		00640FC3100717F60052BB61 /* NSNumberUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00640FC2100717F60052BB61 /* NSNumberUtilsTest.m */; };
 		0071E6140FB361A1001D2CF3 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
-		0071E6190FB361A7001D2CF3 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0071E6130FB361A1001D2CF3 /* GHUnit.framework */; };
 		0071EE370FB63AE7001D2CF3 /* GHNSInvocationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0071EE350FB63AE7001D2CF3 /* GHNSInvocationProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0071EE380FB63AE7001D2CF3 /* GHNSInvocationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0071EE360FB63AE7001D2CF3 /* GHNSInvocationProxy.m */; };
 		0075FB4210066DEE00F6ED5A /* NSArrayUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0075FB4110066DEE00F6ED5A /* NSArrayUtilsTest.m */; };
@@ -79,6 +77,9 @@
 		00939A7C0F4CA05D00E41365 /* GHNSDate+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00939A7D0F4CA05D00E41365 /* GHNSDate+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */; };
 		00939AA30F4CC09600E41365 /* NSDateUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00939AA20F4CC09600E41365 /* NSDateUtilsTest.m */; };
+		0093E44014145B8100F27DAE /* GHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00970A140F2836A100189A9D /* GHKit.framework */; };
+		0093E44114145C9900F27DAE /* GHKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00970A140F2836A100189A9D /* GHKit.framework */; };
+		0093E44314145E1100F27DAE /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0093E44214145E1100F27DAE /* GHUnit.framework */; };
 		00A97A650F0C464700B083F6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A97A630F0C464700B083F6 /* GHCGUtils.m */; };
 		00A97A660F0C464700B083F6 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00A97A640F0C464700B083F6 /* GHCGUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00AA126F1005578600667B93 /* GHNSObject+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00AA126D1005578600667B93 /* GHNSObject+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -135,7 +136,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0024E7DC0F659654007E5C51 /* PBXContainerItemProxy */ = {
+		0093E44414145E5300F27DAE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
@@ -151,7 +152,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0071E6190FB361A7001D2CF3 /* GHUnit.framework in CopyFiles */,
+				0093E44314145E1100F27DAE /* GHUnit.framework in CopyFiles */,
+				0093E44114145C9900F27DAE /* GHKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +233,7 @@
 		00939A7A0F4CA05D00E41365 /* GHNSDate+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDate+Utils.h"; sourceTree = "<group>"; };
 		00939A7B0F4CA05D00E41365 /* GHNSDate+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDate+Utils.m"; sourceTree = "<group>"; };
 		00939AA20F4CC09600E41365 /* NSDateUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilsTest.m; sourceTree = "<group>"; };
+		0093E44214145E1100F27DAE /* GHUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnit.framework; path = ../Frameworks/GHUnit.framework; sourceTree = "<group>"; };
 		00970A140F2836A100189A9D /* GHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A97A630F0C464700B083F6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
 		00A97A640F0C464700B083F6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
@@ -303,7 +306,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				000E79120FA65E160085BC13 /* GHKit.framework in Frameworks */,
+				0093E44014145B8100F27DAE /* GHKit.framework in Frameworks */,
 				0071E6140FB361A1001D2CF3 /* GHUnit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +442,7 @@
 		0867D691FE84028FC02AAC07 /* GHKit */ = {
 			isa = PBXGroup;
 			children = (
+				0093E44214145E1100F27DAE /* GHUnit.framework */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				000E75C60FA61B630085BC13 /* Libraries */,
 				000E78E60FA65D370085BC13 /* Frameworks */,
@@ -681,7 +685,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				0024E7DD0F659654007E5C51 /* PBXTargetDependency */,
+				0093E44514145E5300F27DAE /* PBXTargetDependency */,
 			);
 			name = GHKitTests;
 			productName = GHKitTests;
@@ -713,8 +717,11 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "GHKit" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -779,7 +786,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = Tests/RunTests.sh;
+			shellScript = "sh ../Tests/RunTests.sh";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -871,10 +878,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0024E7DD0F659654007E5C51 /* PBXTargetDependency */ = {
+		0093E44514145E5300F27DAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* GHKit */;
-			targetProxy = 0024E7DC0F659654007E5C51 /* PBXContainerItemProxy */;
+			targetProxy = 0093E44414145E5300F27DAE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -894,15 +901,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/../Frameworks\"",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -916,8 +921,9 @@
 					Foundation,
 					"-framework",
 					AppKit,
+					"-ObjC",
+					"-all_load",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = GHKitTests;
 			};
 			name = Debug;
@@ -926,15 +932,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Frameworks\"",
+					"\"$(SRCROOT)/../Frameworks\"",
 					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
 				);
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = GHKitTests_Prefix.pch;
@@ -946,8 +950,9 @@
 					Foundation,
 					"-framework",
 					AppKit,
+					"-ObjC",
+					"-all_load",
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = GHKitTests;
 				ZERO_LINK = NO;
 			};
@@ -979,7 +984,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-lcrypto";
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -994,7 +998,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				OTHER_LDFLAGS = "-lcrypto";
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
