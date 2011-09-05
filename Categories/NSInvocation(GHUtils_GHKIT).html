@@ -258,11 +258,16 @@ Use [NSNull null] for nil arguments.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>+ (NSInvocation *)gh_invocationWithTarget selector:(SEL)<em>selector</em> hasReturnValue:(BOOL *)<em>hasReturnValue</em> arguments:(NSArray *)<em>arguments</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSInvocation *)gh_invocationWithTarget:(id)<em>target</em> selector:(SEL)<em>selector</em> hasReturnValue:(BOOL *)<em>hasReturnValue</em> arguments:(NSArray *)<em>arguments</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>target</em></dt>
+			<dd><p>Invocation target</p></dd>
+		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>selector</em></dt>
@@ -277,11 +282,6 @@ Use [NSNull null] for nil arguments.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>arguments</em></dt>
 			<dd><p>Arguments array</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>target</em></dt>
-			<dd><p>Invocation target</p></dd>
 		</dl>
 		
 	</div>
@@ -318,7 +318,7 @@ Use [NSNull null] for nil arguments.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>+ (NSInvocation *)gh_invocationWithTarget:(id)<em>target</em> selector:(SEL)<em>selector</em> hasReturnValue:(BOOL *)<em>hasReturnValue</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSInvocation *)gh_invocationWithTarget:(id)<em>target</em> selector:(SEL)<em>selector</em> hasReturnValue:(BOOL *)<em>hasReturnValue</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -341,7 +341,12 @@ Use [NSNull null] for nil arguments.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>(Variable) Arguments list</p></dd>
+			<dd><p>Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -377,7 +382,7 @@ Use [NSNull null] for nil arguments.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>+ (void)gh_invokeTargetOnMainThread:(id)<em>target</em> selector:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> afterDelay:(NSTimeInterval)<em>delay</em> arguments:(NSArray *)<em>arguments</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)gh_invokeTargetOnMainThread:(id)<em>target</em> selector:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> afterDelay:(NSTimeInterval)<em>afterDelay</em> arguments:(NSArray *)<em>arguments</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -399,13 +404,13 @@ Use [NSNull null] for nil arguments.</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>arguments</em></dt>
-			<dd><p>Arguments list</p></dd>
+			<dt><em>afterDelay</em></dt>
+			<dd><p>Time interval for delay (in seconds)</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>afterDelay</em></dt>
-			<dd><p>Time interval for delay (in seconds)</p></dd>
+			<dt><em>arguments</em></dt>
+			<dd><p>Arguments list</p></dd>
 		</dl>
 		
 	</div>
@@ -501,7 +506,7 @@ Use [NSNull null] for nil arguments.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>+ (void)gh_invokeTargetOnMainThread:(id)<em>target</em> selector:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>+ (void)gh_invokeTargetOnMainThread:(id)<em>target</em> selector:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -525,6 +530,11 @@ Use [NSNull null] for nil arguments.</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
 			<dd><p>Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -673,7 +683,7 @@ Use [NSNull null] for nil arguments.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>+ (id)gh_invokeWithTarget:(id)<em>target</em> selector:(SEL)<em>selector</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>+ (id)gh_invokeWithTarget:(id)<em>target</em> selector:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -691,7 +701,12 @@ Use [NSNull null] for nil arguments.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>(Variable) Arguments list</p></dd>
+			<dd><p>Nil terminated list of (object) arguments; Use [NSNull null] for nil arguments</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -781,7 +796,7 @@ Use [NSNull null] for nil arguments.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-08-30)</span><br />
+						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

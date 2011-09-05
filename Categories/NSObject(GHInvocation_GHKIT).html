@@ -474,6 +474,26 @@ performSelector if you had only object arguments).</p>
 	<div class="method-subsection method-declaration"><code>- (id)gh_argumentProxy:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em></code></div>
 	
 	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>selector</em></dt>
+			<dd><p>Selector</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>onMainThread</em></dt>
+			<dd><p>If on main thread</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>waitUntilDone</em></dt>
+			<dd><p>Wait until done</p></dd>
+		</dl>
+		
+	</div>
+	
 	
 	
 	
@@ -588,7 +608,7 @@ performSelector if you had only object arguments).</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (id)gh_performIfRespondsToSelector:(SEL)<em>selector</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (id)gh_performIfRespondsToSelector:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -601,7 +621,12 @@ performSelector if you had only object arguments).</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>nil terminated variable argument list</p></dd>
+			<dd><p>Nil terminated variable argument list</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -642,7 +667,7 @@ performSelector if you had only object arguments).</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (id)gh_performSelector:(SEL)<em>selector</em> afterDelay:(NSTimeInterval)<em>delay</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (id)gh_performSelector:(SEL)<em>selector</em> afterDelay:(NSTimeInterval)<em>afterDelay</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -654,13 +679,18 @@ performSelector if you had only object arguments).</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>delay</em></dt>
+			<dt><em>afterDelay</em></dt>
 			<dd><p>Delay in seconds</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>nil terminated variable argument list</p></dd>
+			<dd><p>Nil terminated variable argument list</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -696,7 +726,7 @@ performSelector if you had only object arguments).</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> afterDelay:(NSTimeInterval)<em>delay</em> arguments:(NSArray *)<em>arguments</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> afterDelay:(NSTimeInterval)<em>afterDelay</em> arguments:(NSArray *)<em>arguments</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -718,13 +748,13 @@ performSelector if you had only object arguments).</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>arguments</em></dt>
-			<dd><p>List of arguments</p></dd>
+			<dt><em>afterDelay</em></dt>
+			<dd><p>Delay in seconds</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>afterDelay</em></dt>
-			<dd><p>Delay in seconds</p></dd>
+			<dt><em>arguments</em></dt>
+			<dd><p>List of arguments</p></dd>
 		</dl>
 		
 	</div>
@@ -819,7 +849,7 @@ performSelector if you had only object arguments).</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -842,7 +872,12 @@ performSelector if you had only object arguments).</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>nil terminated variable argument list</p></dd>
+			<dd><p>Nil terminated variable argument list</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -878,7 +913,7 @@ performSelector if you had only object arguments).</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (id)gh_performSelector:(SEL)<em>selector</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (id)gh_performSelector:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -891,7 +926,12 @@ performSelector if you had only object arguments).</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>nil terminated variable argument list</p></dd>
+			<dd><p>Nil terminated variable argument list</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -927,7 +967,7 @@ performSelector if you had only object arguments).</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_performSelectorOnMainThread:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_performSelectorOnMainThread:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -945,7 +985,12 @@ performSelector if you had only object arguments).</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>nil terminated variable argument list</p></dd>
+			<dd><p>Nil terminated variable argument list</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -982,7 +1027,7 @@ Does not wait until selector is finished.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_performSelectorOnMainThread:(SEL)<em>selector</em> withObjects</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_performSelectorOnMainThread:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -995,7 +1040,12 @@ Does not wait until selector is finished.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>withObjects</em></dt>
-			<dd><p>nil terminated variable argument list</p></dd>
+			<dd><p>Nil terminated variable argument list</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -1341,7 +1391,7 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-08-30)</span><br />
+						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

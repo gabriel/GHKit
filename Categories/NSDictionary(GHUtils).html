@@ -391,7 +391,7 @@ Usefuly for coercing any object that responds to boolValue into an object for us
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (BOOL)gh_boolForKey:(id)<em>key</em> withDefault:(BOOL)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)gh_boolForKey:(id)<em>key</em> withDefault:(BOOL)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -496,7 +496,7 @@ Usefuly for coercing any object that responds to boolValue into an object for us
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_boolValueForKey:(id)<em>key</em> withDefault:(BOOL)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_boolValueForKey:(id)<em>key</em> withDefault:(BOOL)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -508,7 +508,7 @@ Usefuly for coercing any object that responds to boolValue into an object for us
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefault</em></dt>
 			<dd><p>Default if value is missing or [NSNull null]</p></dd>
 		</dl>
 		
@@ -682,7 +682,7 @@ Usefuly for coercing any object that responds to boolValue into an object for us
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (double)gh_doubleForKey:(id)<em>key</em> withDefault:(double)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (double)gh_doubleForKey:(id)<em>key</em> withDefault:(double)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -745,6 +745,11 @@ Usefuly for coercing any object that responds to boolValue into an object for us
 		<dl class="argument-def parameter-def">
 			<dt><em>firstKey</em></dt>
 			<dd><p>First key</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>...</em></dt>
+			<dd><p>Argument list</p></dd>
 		</dl>
 		
 	</div>
@@ -835,7 +840,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSInteger)gh_integerForKey:(id)<em>key</em> withDefault:(NSInteger)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSInteger)gh_integerForKey:(id)<em>key</em> withDefault:(NSInteger)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -889,7 +894,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_numberForKey:(id)<em>key</em> withDefaultDouble:(double)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_numberForKey:(id)<em>key</em> withDefaultDouble:(double)<em>withDefaultDouble</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -901,7 +906,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefaultDouble</em></dt>
 			<dd><p>If value for key is nil or [NSNull null] this default is returned.</p></dd>
 		</dl>
 		
@@ -943,7 +948,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_numberForKey:(id)<em>key</em> withDefaultInteger:(NSInteger)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_numberForKey:(id)<em>key</em> withDefaultInteger:(NSInteger)<em>withDefaultInteger</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -955,7 +960,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefaultInteger</em></dt>
 			<dd><p>If value for key is nil or [NSNull null] this default is returned.</p></dd>
 		</dl>
 		
@@ -997,7 +1002,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (id)gh_objectForKey:(id)<em>key</em> withDefault:(id)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)gh_objectForKey:(id)<em>key</em> withDefault:(id)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -1009,7 +1014,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefault</em></dt>
 			<dd><p>If value for key is nil or [NSNull null] this default is returned.</p></dd>
 		</dl>
 		
@@ -1151,7 +1156,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSUInteger)gh_unsignedIntegerForKey:(id)<em>key</em> withDefault:(NSUInteger)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSUInteger)gh_unsignedIntegerForKey:(id)<em>key</em> withDefault:(NSUInteger)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -1207,7 +1212,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-08-30)</span><br />
+						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						

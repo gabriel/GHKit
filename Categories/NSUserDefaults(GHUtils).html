@@ -260,7 +260,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (BOOL)gh_boolForKey:(id)<em>key</em> withDefault:(BOOL)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)gh_boolForKey:(id)<em>key</em> withDefault:(BOOL)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -269,6 +269,11 @@
 		<dl class="argument-def parameter-def">
 			<dt><em>key</em></dt>
 			<dd><p>Key</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>withDefault</em></dt>
+			<dd><p>Default value</p></dd>
 		</dl>
 		
 	</div>
@@ -358,7 +363,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (double)gh_doubleForKey:(NSString *)<em>key</em> withDefault:(double)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (double)gh_doubleForKey:(NSString *)<em>key</em> withDefault:(double)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -370,7 +375,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefault</em></dt>
 			<dd><p>Value if not in defaults</p></dd>
 		</dl>
 		
@@ -412,7 +417,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (NSInteger)gh_integerForKey:(NSString *)<em>key</em> withDefault:(NSInteger)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSInteger)gh_integerForKey:(NSString *)<em>key</em> withDefault:(NSInteger)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -424,7 +429,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefault</em></dt>
 			<dd><p>Value if not in defaults</p></dd>
 		</dl>
 		
@@ -466,7 +471,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (id)gh_objectForKey:(NSString *)<em>key</em> withDefault:(id)<em>defaultValue</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)gh_objectForKey:(NSString *)<em>key</em> withDefault:(id)<em>withDefault</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -478,7 +483,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>defaultValue</em></dt>
+			<dt><em>withDefault</em></dt>
 			<dd><p>Value if not in defaults</p></dd>
 		</dl>
 		
@@ -564,7 +569,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_setBool:(BOOL)<em>b</em> forKey:(NSString *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_setBool:(BOOL)<em>b</em> forKey:(NSString *)<em>forKey</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -576,7 +581,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
+			<dt><em>forKey</em></dt>
 			<dd><p>Key</p></dd>
 		</dl>
 		
@@ -613,7 +618,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_setDouble:(double)<em>d</em> forKey:(NSString *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_setDouble:(double)<em>d</em> forKey:(NSString *)<em>forKey</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -625,7 +630,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
+			<dt><em>forKey</em></dt>
 			<dd><p>Key</p></dd>
 		</dl>
 		
@@ -662,7 +667,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_setInteger:(NSInteger)<em>integer</em> forKey:(NSString *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_setInteger:(NSInteger)<em>integer</em> forKey:(NSString *)<em>forKey</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -674,7 +679,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
+			<dt><em>forKey</em></dt>
 			<dd><p>Key</p></dd>
 		</dl>
 		
@@ -711,7 +716,7 @@
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)gh_setObjectAsData:(id)<em>obj</em> forKey:(NSString *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)gh_setObjectAsData:(id)<em>obj</em> forKey:(NSString *)<em>forKey</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -723,7 +728,7 @@
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
+			<dt><em>forKey</em></dt>
 			<dd><p>Key</p></dd>
 		</dl>
 		
@@ -767,7 +772,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-08-30)</span><br />
+						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
 						
