@@ -3,7 +3,7 @@ VERSION=$(shell cat XCConfig/Shared.xcconfig | grep "GHKIT_VERSION =" | cut -d '
 
 docs:
 	rm -rf Documentation/output
-	Documentation/appledoc/appledoc -t Documentation/appledoc/Templates -o Documentation/output -p GHKit -v $(VERSION) -c "GHKit" --company-id "me.rel" --warn-undocumented-object --warn-undocumented-member --warn-empty-description --warn-unknown-directive --warn-invalid-crossref --warn-missing-arg --no-repeat-first-par --keep-intermediate-files --docset-feed-url http://gabriel.github.com/gh-kit/publish/%DOCSETATOMFILENAME --docset-package-url http://gabriel.github.com/gh-kit/publish/%DOCSETPACKAGEFILENAME --publish-docset --index-desc Documentation/index.txt --create-html --create-docset Classes/ || echo ''
+	Documentation/appledoc/appledoc -t Documentation/appledoc/Templates -o Documentation/output -p GHKit -v $(VERSION) -c "GHKit" --company-id "me.rel" --warn-undocumented-object --warn-undocumented-member --warn-empty-description --warn-unknown-directive --warn-invalid-crossref --warn-missing-arg --no-repeat-first-par --keep-intermediate-files --docset-feed-url http://gabriel.github.com/gh-kit/publish/%DOCSETATOMFILENAME --docset-package-url http://gabriel.github.com/gh-kit/publish/%DOCSETPACKAGEFILENAME --publish-docset --index-desc Documentation/index.txt --verbose=3 --create-html --create-docset --install-docset=0 --publish-docset --exit-threshold 2 Classes/
 
 gh-pages: docs
 	rm -rf ../doctmp
