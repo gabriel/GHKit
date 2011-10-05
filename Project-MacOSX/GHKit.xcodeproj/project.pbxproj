@@ -127,10 +127,6 @@
 		52857CB60E1997B50011DA5C /* GHNSURL+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 52857C9D0E1997B50011DA5C /* GHNSURL+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52857CB70E1997B50011DA5C /* GHNSURL+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 52857C9E0E1997B50011DA5C /* GHNSURL+Utils.m */; };
 		52857CC00E1998480011DA5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52857CBF0E1998480011DA5C /* Security.framework */; };
-		52A425210E1C2F170092797C /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 52A4251E0E1C2F170092797C /* sha1.c */; };
-		52A425220E1C2F170092797C /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 52A4251F0E1C2F170092797C /* sha1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		52A425260E1C2F1F0092797C /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 52A425230E1C2F1F0092797C /* hmac.c */; };
-		52A425270E1C2F1F0092797C /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 52A425240E1C2F1F0092797C /* hmac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
@@ -292,10 +288,6 @@
 		52857CBF0E1998480011DA5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		52857D5A0E199B530011DA5C /* NSStringTimeIntervalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringTimeIntervalTest.m; sourceTree = "<group>"; };
 		52857D5C0E199B530011DA5C /* NSStringUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringUtilsTest.m; sourceTree = "<group>"; };
-		52A4251E0E1C2F170092797C /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
-		52A4251F0E1C2F170092797C /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
-		52A425230E1C2F1F0092797C /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
-		52A425240E1C2F1F0092797C /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
 		52D57E550E1C0E8200709FB4 /* NSStringHMACTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringHMACTest.m; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -494,10 +486,6 @@
 				52857C920E1997B50011DA5C /* GHNSFileManager+Utils.m */,
 				52857C950E1997B50011DA5C /* GHNSString+HMAC.h */,
 				52857C960E1997B50011DA5C /* GHNSString+HMAC.m */,
-				52A425240E1C2F1F0092797C /* hmac.h */,
-				52A425230E1C2F1F0092797C /* hmac.c */,
-				52A4251F0E1C2F170092797C /* sha1.h */,
-				52A4251E0E1C2F170092797C /* sha1.c */,
 				52857C990E1997B50011DA5C /* GHNSString+TimeInterval.h */,
 				52857C9A0E1997B50011DA5C /* GHNSString+TimeInterval.m */,
 				52857C9B0E1997B50011DA5C /* GHNSString+Utils.h */,
@@ -623,8 +611,6 @@
 				52857CB20E1997B50011DA5C /* GHNSString+TimeInterval.h in Headers */,
 				52857CB40E1997B50011DA5C /* GHNSString+Utils.h in Headers */,
 				52857CB60E1997B50011DA5C /* GHNSURL+Utils.h in Headers */,
-				52A425220E1C2F170092797C /* sha1.h in Headers */,
-				52A425270E1C2F1F0092797C /* hmac.h in Headers */,
 				527531C90E33869100AF8EDC /* GHNSNumber+Utils.h in Headers */,
 				007F598E0EF2438900B3005D /* GHNSArray+Utils.h in Headers */,
 				007F59900EF2438900B3005D /* GHNSDictionary+NSNull.h in Headers */,
@@ -718,7 +704,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "GHKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -832,8 +818,6 @@
 				52857CB30E1997B50011DA5C /* GHNSString+TimeInterval.m in Sources */,
 				52857CB50E1997B50011DA5C /* GHNSString+Utils.m in Sources */,
 				52857CB70E1997B50011DA5C /* GHNSURL+Utils.m in Sources */,
-				52A425210E1C2F170092797C /* sha1.c in Sources */,
-				52A425260E1C2F1F0092797C /* hmac.c in Sources */,
 				527531CA0E33869100AF8EDC /* GHNSNumber+Utils.m in Sources */,
 				007F598F0EF2438900B3005D /* GHNSArray+Utils.m in Sources */,
 				007F59910EF2438900B3005D /* GHNSDictionary+NSNull.m in Sources */,
@@ -901,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -932,6 +917,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (

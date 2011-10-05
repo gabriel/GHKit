@@ -11,6 +11,10 @@
 @interface NSDateParsingTest : GHTestCase { }
 @end
 
+@interface NSDate (Private)
+- (id)initWithString:(NSString *)s;
+@end
+
 @implementation NSDateParsingTest
 
 - (void)testFormatRFC822 {  
