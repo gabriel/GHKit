@@ -60,7 +60,7 @@
   else if (intervalInMinutes >= 86400 && intervalInMinutes <= 525599) return [NSString stringWithFormat:GHIntervalLocalize(@"XMonths", @"%.0f months"), round(intervalInMinutes/43200.0)];
   else if (intervalInMinutes >= 525600 && intervalInMinutes <= 1051199) return GHIntervalLocalize(@"About1Year", @"about 1 year");
   else
-    return [NSString stringWithFormat:GHIntervalLocalize(@"OverXYears", @"over %.0f years"), round(intervalInMinutes/525600.0)];    
+    return [NSString stringWithFormat:GHIntervalLocalize(@"OverXYears", @"over %.0f years"), floor(intervalInMinutes/525600.0)];    
 }
 
 @end
