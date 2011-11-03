@@ -34,12 +34,12 @@
 
 + (NSError *)gh_errorWithDomain:(NSString *)domain code:(NSInteger)code localizedDescription:(NSString *)localizedDescription {
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:localizedDescription forKey:NSLocalizedDescriptionKey];
-	return [NSError errorWithDomain:domain code:code userInfo:userInfo];
+	return [self errorWithDomain:domain code:code userInfo:userInfo];
 }
 
 + (NSError *)gh_errorFromException:(NSException *)exception {
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:exception.reason forKey:NSLocalizedDescriptionKey];
-	return [NSError errorWithDomain:exception.name code:-1 userInfo:userInfo];
+	return [self errorWithDomain:exception.name code:-1 userInfo:userInfo];
 }
 
 - (void)gh_fullDescription:(NSMutableString *)errorDescription level:(NSInteger)level {
