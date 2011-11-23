@@ -149,9 +149,9 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 }
 
 - (NSString *)gh_weekday:(NSDateFormatter *)formatter {
-	if ([self gh_isTomorrow]) return @"Tomorrow";
-	else if ([self gh_isToday]) return @"Today";
-	else if ([self gh_wasYesterday]) return @"Yesterday";
+	if ([self gh_isTomorrow]) return NSLocalizedString(@"Tomorrow", nil);
+	else if ([self gh_isToday]) return NSLocalizedString(@"Today", nil);
+	else if ([self gh_wasYesterday]) return NSLocalizedString(@"Yesterday", nil);
 	
 	if (!formatter) return nil;
 	
