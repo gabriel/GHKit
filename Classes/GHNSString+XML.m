@@ -61,4 +61,13 @@
   return s;
 }
 
+- (NSString *)gh_stringForXML {
+  if ([self respondsToSelector:@selector(gtm_stringBySanitizingAndEscapingForXML)]) {
+    return [(id)self gtm_stringBySanitizingAndEscapingForXML];
+  }
+  
+  [NSException raise:NSDestinationInvalidException format:@"No XML sanitizer available. You need to #import \"GTMNSString+XML.h\""];
+  return nil;
+}
+
 @end

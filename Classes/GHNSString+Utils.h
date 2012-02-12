@@ -266,6 +266,23 @@
  */
 - (NSString *)gh_MD5;
 
+/*!
+ MD5 encoded with Base64.
+ 
+ For the Base64 encoder you can user GTMBase64, or that implements:
+ 
+ - (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
+ 
+ For example,
+ 
+ #import <GHKit/GTMBase64.h>
+ ["stringtosign" gh_MD5WithEncoder:[GTMBase64 class]];
+ 
+ @param encoder Base64 encoder, that implements: (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
+ @result Base64 encoded MD5
+ */
+- (NSString *)gh_MD5WithEncoder:(id)encoder;
+
 @end
 
 //! @cond DEV

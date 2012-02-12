@@ -77,4 +77,6 @@
 #endif
 
 #import "GHNSObject+Utils.h"
+#import "GHNSString+XML.h"
+#import "GHNSString+Base64.h"
 

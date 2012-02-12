@@ -41,4 +41,10 @@
  */
 + (id)gh_stringWithFormatForXML:(NSString *)format, ... NS_REQUIRES_NIL_TERMINATION;
 
+/*!
+ Sanitize and escape string for XML.
+ @result String escaped and sanitized for XML
+ */
+- (NSString *)gh_stringForXML;
+
 @end
