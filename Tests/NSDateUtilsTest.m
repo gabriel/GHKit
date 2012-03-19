@@ -43,7 +43,7 @@
   [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
   [dateFormatter setDateStyle:NSDateFormatterShortStyle];
   NSString *dateString = [dateFormatter stringFromDate:date];
-  GHAssertEqualStrings(dateString, @"1/1/81", nil);
+  GHAssertEqualStrings(dateString, @"1/1/82", nil);
 }
 
 - (void)testComponents {

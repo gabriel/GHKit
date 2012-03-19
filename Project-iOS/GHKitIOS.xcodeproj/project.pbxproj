@@ -15,8 +15,6 @@
 		00B034C313D8BF0100D4C6A0 /* GHKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347213D8BF0100D4C6A0 /* GHKit.h */; };
 		00B034C413D8BF0100D4C6A0 /* GHKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347313D8BF0100D4C6A0 /* GHKitDefines.h */; };
 		00B034C513D8BF0100D4C6A0 /* GHKitIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347413D8BF0100D4C6A0 /* GHKitIOS.h */; };
-		00B034C613D8BF0100D4C6A0 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347513D8BF0100D4C6A0 /* GHLogger.h */; };
-		00B034C713D8BF0100D4C6A0 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347613D8BF0100D4C6A0 /* GHLogger.m */; };
 		00B034C813D8BF0100D4C6A0 /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347713D8BF0100D4C6A0 /* GHNSArray+Utils.h */; };
 		00B034C913D8BF0100D4C6A0 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */; };
 		00B034CC13D8BF0100D4C6A0 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */; };
@@ -84,7 +82,6 @@
 		00B0352B13D8BF9A00D4C6A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0352A13D8BF9A00D4C6A0 /* main.m */; };
 		00B0354113D8BFDC00D4C6A0 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B0354013D8BFDC00D4C6A0 /* GHUnitIOS.framework */; };
 		00B0358913D8C06C00D4C6A0 /* GHEMKeychainStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0354313D8C06C00D4C6A0 /* GHEMKeychainStoreTest.m */; };
-		00B0358A13D8C06C00D4C6A0 /* GHLoggerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0354413D8C06C00D4C6A0 /* GHLoggerTest.m */; };
 		00B0358C13D8C06C00D4C6A0 /* GHNSStringEnumeratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0354613D8C06C00D4C6A0 /* GHNSStringEnumeratorTest.m */; };
 		00B0358D13D8C06C00D4C6A0 /* GHNSStringXMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0354713D8C06C00D4C6A0 /* GHNSStringXMLTest.m */; };
 		00B0358E13D8C06C00D4C6A0 /* GHReversableDictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0354813D8C06C00D4C6A0 /* GHReversableDictionaryTest.m */; };
@@ -110,7 +107,6 @@
 		00B035B613D8C06C00D4C6A0 /* test.file in Resources */ = {isa = PBXBuildFile; fileRef = 00B0358813D8C06C00D4C6A0 /* test.file */; };
 		00B035B713D8C0C600D4C6A0 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0346F13D8BF0100D4C6A0 /* GHCGUtils.m */; };
 		00B035B813D8C0C900D4C6A0 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347113D8BF0100D4C6A0 /* GHKeychainStore.m */; };
-		00B035B913D8C0CF00D4C6A0 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347613D8BF0100D4C6A0 /* GHLogger.m */; };
 		00B035BA13D8C0D200D4C6A0 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */; };
 		00B035BC13D8C10D00D4C6A0 /* GHNSString+HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0349A13D8BF0100D4C6A0 /* GHNSString+HMAC.m */; };
 		00B035BE13D8C11200D4C6A0 /* GHNSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0349E13D8BF0100D4C6A0 /* GHNSString+TimeInterval.m */; };
@@ -125,7 +121,6 @@
 		00B035CA13D8C14400D4C6A0 /* GHUIColor+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B034B913D8BF0100D4C6A0 /* GHUIColor+Utils.m */; };
 		00B035FD13D8C18600D4C6A0 /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D313D8C18600D4C6A0 /* GTMBase64.h */; };
 		00B035FF13D8C18600D4C6A0 /* GTMGarbageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D513D8C18600D4C6A0 /* GTMGarbageCollection.h */; };
-		00B0360013D8C18600D4C6A0 /* GTMLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D613D8C18600D4C6A0 /* GTMLogger.h */; };
 		00B0360213D8C18600D4C6A0 /* GTMNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D813D8C18600D4C6A0 /* GTMNSString+XML.h */; };
 		00B0360413D8C18600D4C6A0 /* GTMObjC2Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035DA13D8C18600D4C6A0 /* GTMObjC2Runtime.h */; };
 		00B0360613D8C18600D4C6A0 /* GTMRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035DC13D8C18600D4C6A0 /* GTMRegex.h */; };
@@ -134,7 +129,6 @@
 		00B0361D13D8C18600D4C6A0 /* SFHFKeychainUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035F713D8C18600D4C6A0 /* SFHFKeychainUtils.h */; };
 		00B0361E13D8C18600D4C6A0 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035F813D8C18600D4C6A0 /* SFHFKeychainUtils.m */; };
 		00B0361F13D8C2A900D4C6A0 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035D413D8C18600D4C6A0 /* GTMBase64.m */; };
-		00B0362013D8C2AC00D4C6A0 /* GTMLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035D713D8C18600D4C6A0 /* GTMLogger.m */; };
 		00B0362113D8C2AF00D4C6A0 /* GTMNSString+XML.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035D913D8C18600D4C6A0 /* GTMNSString+XML.m */; };
 		00B0362213D8C2B100D4C6A0 /* GTMObjC2Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035DB13D8C18600D4C6A0 /* GTMObjC2Runtime.m */; };
 		00B0362313D8C2B400D4C6A0 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B035DD13D8C18600D4C6A0 /* GTMRegex.m */; };
@@ -161,7 +155,6 @@
 		00B0363E13D8C70000D4C6A0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B0363C13D8C3E700D4C6A0 /* Security.framework */; };
 		00B0364113D8C7B100D4C6A0 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0346F13D8BF0100D4C6A0 /* GHCGUtils.m */; };
 		00B0364213D8C7B100D4C6A0 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347113D8BF0100D4C6A0 /* GHKeychainStore.m */; };
-		00B0364313D8C7B100D4C6A0 /* GHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347613D8BF0100D4C6A0 /* GHLogger.m */; };
 		00B0364413D8C7B100D4C6A0 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */; };
 		00B0364513D8C7B100D4C6A0 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347C13D8BF0100D4C6A0 /* GHNSBundle+Utils.m */; };
 		00B0364613D8C7B100D4C6A0 /* GHNSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B0347E13D8BF0100D4C6A0 /* GHNSDate+Formatters.m */; };
@@ -199,7 +192,6 @@
 		00B0366E13D8C7B100D4C6A0 /* GHKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347213D8BF0100D4C6A0 /* GHKit.h */; };
 		00B0366F13D8C7B100D4C6A0 /* GHKitDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347313D8BF0100D4C6A0 /* GHKitDefines.h */; };
 		00B0367013D8C7B100D4C6A0 /* GHKitIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347413D8BF0100D4C6A0 /* GHKitIOS.h */; };
-		00B0367113D8C7B100D4C6A0 /* GHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347513D8BF0100D4C6A0 /* GHLogger.h */; };
 		00B0367213D8C7B100D4C6A0 /* GHNSArray+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347713D8BF0100D4C6A0 /* GHNSArray+Utils.h */; };
 		00B0367313D8C7B100D4C6A0 /* GHNSBundle+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */; };
 		00B0367413D8C7B100D4C6A0 /* GHNSDate+Formatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B0347D13D8BF0100D4C6A0 /* GHNSDate+Formatters.h */; };
@@ -232,7 +224,6 @@
 		00B0368F13D8C7B100D4C6A0 /* GHNSObject+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B034BD13D8BF0100D4C6A0 /* GHNSObject+Swizzle.h */; };
 		00B0369013D8C7B100D4C6A0 /* GTMBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D313D8C18600D4C6A0 /* GTMBase64.h */; };
 		00B0369113D8C7B100D4C6A0 /* GTMGarbageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D513D8C18600D4C6A0 /* GTMGarbageCollection.h */; };
-		00B0369213D8C7B100D4C6A0 /* GTMLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D613D8C18600D4C6A0 /* GTMLogger.h */; };
 		00B0369313D8C7B100D4C6A0 /* GTMNSString+XML.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035D813D8C18600D4C6A0 /* GTMNSString+XML.h */; };
 		00B0369413D8C7B100D4C6A0 /* GTMObjC2Runtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035DA13D8C18600D4C6A0 /* GTMObjC2Runtime.h */; };
 		00B0369513D8C7B100D4C6A0 /* GTMRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = 00B035DC13D8C18600D4C6A0 /* GTMRegex.h */; };
@@ -260,8 +251,6 @@
 		00B0347213D8BF0100D4C6A0 /* GHKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKit.h; sourceTree = "<group>"; };
 		00B0347313D8BF0100D4C6A0 /* GHKitDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitDefines.h; sourceTree = "<group>"; };
 		00B0347413D8BF0100D4C6A0 /* GHKitIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHKitIOS.h; sourceTree = "<group>"; };
-		00B0347513D8BF0100D4C6A0 /* GHLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHLogger.h; sourceTree = "<group>"; };
-		00B0347613D8BF0100D4C6A0 /* GHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLogger.m; sourceTree = "<group>"; };
 		00B0347713D8BF0100D4C6A0 /* GHNSArray+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSArray+Utils.h"; sourceTree = "<group>"; };
 		00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSArray+Utils.m"; sourceTree = "<group>"; };
 		00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSBundle+Utils.h"; sourceTree = "<group>"; };
@@ -331,7 +320,6 @@
 		00B0352A13D8BF9A00D4C6A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00B0354013D8BFDC00D4C6A0 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		00B0354313D8C06C00D4C6A0 /* GHEMKeychainStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHEMKeychainStoreTest.m; sourceTree = "<group>"; };
-		00B0354413D8C06C00D4C6A0 /* GHLoggerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHLoggerTest.m; sourceTree = "<group>"; };
 		00B0354613D8C06C00D4C6A0 /* GHNSStringEnumeratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringEnumeratorTest.m; sourceTree = "<group>"; };
 		00B0354713D8C06C00D4C6A0 /* GHNSStringXMLTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringXMLTest.m; sourceTree = "<group>"; };
 		00B0354813D8C06C00D4C6A0 /* GHReversableDictionaryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHReversableDictionaryTest.m; sourceTree = "<group>"; };
@@ -359,8 +347,6 @@
 		00B035D313D8C18600D4C6A0 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		00B035D413D8C18600D4C6A0 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		00B035D513D8C18600D4C6A0 /* GTMGarbageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMGarbageCollection.h; sourceTree = "<group>"; };
-		00B035D613D8C18600D4C6A0 /* GTMLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMLogger.h; sourceTree = "<group>"; };
-		00B035D713D8C18600D4C6A0 /* GTMLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMLogger.m; sourceTree = "<group>"; };
 		00B035D813D8C18600D4C6A0 /* GTMNSString+XML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+XML.h"; sourceTree = "<group>"; };
 		00B035D913D8C18600D4C6A0 /* GTMNSString+XML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+XML.m"; sourceTree = "<group>"; };
 		00B035DA13D8C18600D4C6A0 /* GTMObjC2Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMObjC2Runtime.h; sourceTree = "<group>"; };
@@ -464,8 +450,6 @@
 				00B0347213D8BF0100D4C6A0 /* GHKit.h */,
 				00B0347313D8BF0100D4C6A0 /* GHKitDefines.h */,
 				00B0347413D8BF0100D4C6A0 /* GHKitIOS.h */,
-				00B0347513D8BF0100D4C6A0 /* GHLogger.h */,
-				00B0347613D8BF0100D4C6A0 /* GHLogger.m */,
 				00B0347713D8BF0100D4C6A0 /* GHNSArray+Utils.h */,
 				00B0347813D8BF0100D4C6A0 /* GHNSArray+Utils.m */,
 				00B0347B13D8BF0100D4C6A0 /* GHNSBundle+Utils.h */,
@@ -574,7 +558,6 @@
 			children = (
 				00B0354B13D8C06C00D4C6A0 /* iOS */,
 				00B0354313D8C06C00D4C6A0 /* GHEMKeychainStoreTest.m */,
-				00B0354413D8C06C00D4C6A0 /* GHLoggerTest.m */,
 				00B0354613D8C06C00D4C6A0 /* GHNSStringEnumeratorTest.m */,
 				00B0354713D8C06C00D4C6A0 /* GHNSStringXMLTest.m */,
 				00B0354813D8C06C00D4C6A0 /* GHReversableDictionaryTest.m */,
@@ -637,8 +620,6 @@
 				00B035D313D8C18600D4C6A0 /* GTMBase64.h */,
 				00B035D413D8C18600D4C6A0 /* GTMBase64.m */,
 				00B035D513D8C18600D4C6A0 /* GTMGarbageCollection.h */,
-				00B035D613D8C18600D4C6A0 /* GTMLogger.h */,
-				00B035D713D8C18600D4C6A0 /* GTMLogger.m */,
 				00B035D813D8C18600D4C6A0 /* GTMNSString+XML.h */,
 				00B035D913D8C18600D4C6A0 /* GTMNSString+XML.m */,
 				00B035DA13D8C18600D4C6A0 /* GTMObjC2Runtime.h */,
@@ -699,7 +680,6 @@
 				00B034C313D8BF0100D4C6A0 /* GHKit.h in Headers */,
 				00B034C413D8BF0100D4C6A0 /* GHKitDefines.h in Headers */,
 				00B034C513D8BF0100D4C6A0 /* GHKitIOS.h in Headers */,
-				00B034C613D8BF0100D4C6A0 /* GHLogger.h in Headers */,
 				00B034C813D8BF0100D4C6A0 /* GHNSArray+Utils.h in Headers */,
 				00B034CC13D8BF0100D4C6A0 /* GHNSBundle+Utils.h in Headers */,
 				00B034CE13D8BF0100D4C6A0 /* GHNSDate+Formatters.h in Headers */,
@@ -732,7 +712,6 @@
 				00B0350C13D8BF0100D4C6A0 /* GHNSObject+Swizzle.h in Headers */,
 				00B035FD13D8C18600D4C6A0 /* GTMBase64.h in Headers */,
 				00B035FF13D8C18600D4C6A0 /* GTMGarbageCollection.h in Headers */,
-				00B0360013D8C18600D4C6A0 /* GTMLogger.h in Headers */,
 				00B0360213D8C18600D4C6A0 /* GTMNSString+XML.h in Headers */,
 				00B0360413D8C18600D4C6A0 /* GTMObjC2Runtime.h in Headers */,
 				00B0360613D8C18600D4C6A0 /* GTMRegex.h in Headers */,
@@ -752,7 +731,6 @@
 				00B0366E13D8C7B100D4C6A0 /* GHKit.h in Headers */,
 				00B0366F13D8C7B100D4C6A0 /* GHKitDefines.h in Headers */,
 				00B0367013D8C7B100D4C6A0 /* GHKitIOS.h in Headers */,
-				00B0367113D8C7B100D4C6A0 /* GHLogger.h in Headers */,
 				00B0367213D8C7B100D4C6A0 /* GHNSArray+Utils.h in Headers */,
 				00B0367313D8C7B100D4C6A0 /* GHNSBundle+Utils.h in Headers */,
 				00B0367413D8C7B100D4C6A0 /* GHNSDate+Formatters.h in Headers */,
@@ -785,7 +763,6 @@
 				00B0368F13D8C7B100D4C6A0 /* GHNSObject+Swizzle.h in Headers */,
 				00B0369013D8C7B100D4C6A0 /* GTMBase64.h in Headers */,
 				00B0369113D8C7B100D4C6A0 /* GTMGarbageCollection.h in Headers */,
-				00B0369213D8C7B100D4C6A0 /* GTMLogger.h in Headers */,
 				00B0369313D8C7B100D4C6A0 /* GTMNSString+XML.h in Headers */,
 				00B0369413D8C7B100D4C6A0 /* GTMObjC2Runtime.h in Headers */,
 				00B0369513D8C7B100D4C6A0 /* GTMRegex.h in Headers */,
@@ -857,7 +834,7 @@
 		009243D413D8BEB000C66896 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 009243D713D8BEB000C66896 /* Build configuration list for PBXProject "GHKitIOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -914,7 +891,6 @@
 			files = (
 				00B034C013D8BF0100D4C6A0 /* GHCGUtils.m in Sources */,
 				00B034C213D8BF0100D4C6A0 /* GHKeychainStore.m in Sources */,
-				00B034C713D8BF0100D4C6A0 /* GHLogger.m in Sources */,
 				00B034C913D8BF0100D4C6A0 /* GHNSArray+Utils.m in Sources */,
 				00B034CD13D8BF0100D4C6A0 /* GHNSBundle+Utils.m in Sources */,
 				00B034CF13D8BF0100D4C6A0 /* GHNSDate+Formatters.m in Sources */,
@@ -956,7 +932,6 @@
 			files = (
 				00B0352B13D8BF9A00D4C6A0 /* main.m in Sources */,
 				00B0358913D8C06C00D4C6A0 /* GHEMKeychainStoreTest.m in Sources */,
-				00B0358A13D8C06C00D4C6A0 /* GHLoggerTest.m in Sources */,
 				00B0358C13D8C06C00D4C6A0 /* GHNSStringEnumeratorTest.m in Sources */,
 				00B0358D13D8C06C00D4C6A0 /* GHNSStringXMLTest.m in Sources */,
 				00B0358E13D8C06C00D4C6A0 /* GHReversableDictionaryTest.m in Sources */,
@@ -981,7 +956,6 @@
 				00B035B413D8C06C00D4C6A0 /* ReadonlyCopyTest.m in Sources */,
 				00B035B713D8C0C600D4C6A0 /* GHCGUtils.m in Sources */,
 				00B035B813D8C0C900D4C6A0 /* GHKeychainStore.m in Sources */,
-				00B035B913D8C0CF00D4C6A0 /* GHLogger.m in Sources */,
 				00B035BA13D8C0D200D4C6A0 /* GHNSArray+Utils.m in Sources */,
 				00B035BC13D8C10D00D4C6A0 /* GHNSString+HMAC.m in Sources */,
 				00B035BE13D8C11200D4C6A0 /* GHNSString+TimeInterval.m in Sources */,
@@ -995,7 +969,6 @@
 				00B035C913D8C14100D4C6A0 /* GHNSString+UIKitUtils.m in Sources */,
 				00B035CA13D8C14400D4C6A0 /* GHUIColor+Utils.m in Sources */,
 				00B0361F13D8C2A900D4C6A0 /* GTMBase64.m in Sources */,
-				00B0362013D8C2AC00D4C6A0 /* GTMLogger.m in Sources */,
 				00B0362113D8C2AF00D4C6A0 /* GTMNSString+XML.m in Sources */,
 				00B0362213D8C2B100D4C6A0 /* GTMObjC2Runtime.m in Sources */,
 				00B0362313D8C2B400D4C6A0 /* GTMRegex.m in Sources */,
@@ -1029,7 +1002,6 @@
 			files = (
 				00B0364113D8C7B100D4C6A0 /* GHCGUtils.m in Sources */,
 				00B0364213D8C7B100D4C6A0 /* GHKeychainStore.m in Sources */,
-				00B0364313D8C7B100D4C6A0 /* GHLogger.m in Sources */,
 				00B0364413D8C7B100D4C6A0 /* GHNSArray+Utils.m in Sources */,
 				00B0364513D8C7B100D4C6A0 /* GHNSBundle+Utils.m in Sources */,
 				00B0364613D8C7B100D4C6A0 /* GHNSDate+Formatters.m in Sources */,
@@ -1112,6 +1084,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00B036C113D8CCAB00D4C6A0 /* Debug-iOS.xcconfig */;
 			buildSettings = {
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = GHKitIOSSimulator;
 			};
 			name = Debug;
@@ -1120,6 +1094,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 00B036C313D8CCAB00D4C6A0 /* Shared-iOS.xcconfig */;
 			buildSettings = {
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = GHKitIOSSimulator;
 			};
 			name = Release;
@@ -1180,6 +1156,8 @@
 			baseConfigurationReference = 00B036C113D8CCAB00D4C6A0 /* Debug-iOS.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/GHKitIOS.dst;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = GHKitIOSDevice;
 			};
 			name = Debug;
@@ -1189,6 +1167,8 @@
 			baseConfigurationReference = 00B036C313D8CCAB00D4C6A0 /* Shared-iOS.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/GHKitIOS.dst;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				PRODUCT_NAME = GHKitIOSDevice;
 			};
 			name = Release;
