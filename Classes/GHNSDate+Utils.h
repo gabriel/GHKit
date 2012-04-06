@@ -30,10 +30,10 @@
 extern NSString *const kDateFormatShortMonthFullYearTime;
 
 #define GHTimeIntervalMinute (60)
-#define GHTimeIntervalHour (YKTimeIntervalMinute * 60)
-#define GHTimeIntervalDay (YKTimeIntervalHour * 24)
-#define GHTimeIntervalWeek (YKTimeIntervalDay * 7)
-#define GHTimeIntervalYear (YKTimeIntervalDay * 365.242199)
+#define GHTimeIntervalHour (GHTimeIntervalMinute * 60)
+#define GHTimeIntervalDay (GHTimeIntervalHour * 24)
+#define GHTimeIntervalWeek (GHTimeIntervalDay * 7)
+#define GHTimeIntervalYear (GHTimeIntervalDay * 365.242199)
 #define GHTimeIntervalMax (DBL_MAX)
 
 /*!
