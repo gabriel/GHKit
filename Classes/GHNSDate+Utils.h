@@ -29,6 +29,13 @@
 // Common date format constant: 'Dec 12, 2008 4:34 PM'
 extern NSString *const kDateFormatShortMonthFullYearTime;
 
+#define GHTimeIntervalMinute (60)
+#define GHTimeIntervalHour (YKTimeIntervalMinute * 60)
+#define GHTimeIntervalDay (YKTimeIntervalHour * 24)
+#define GHTimeIntervalWeek (YKTimeIntervalDay * 7)
+#define GHTimeIntervalYear (YKTimeIntervalDay * 365.242199)
+#define GHTimeIntervalMax (DBL_MAX)
+
 /*!
  Utilities for dates, for time ago in words and date component arithmentic (adding days), tomorrow, yesterday, and more.
  */
