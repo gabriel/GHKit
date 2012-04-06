@@ -71,4 +71,20 @@
  */
 + (NSString *)gh_localizedStringForTimeInterval:(NSTimeInterval)interval includeSeconds:(BOOL)includeSeconds tableName:(NSString *)tableName bundle:(NSBundle *)bundle;
 
+
+
+
+/*!
+ Time ago in abbreviated format.
+ 
+ For localized values see the localization keys below. 
+ This method calls gh_localizedStringForTimeInterval with nil tableName and [NSBundle mainBundle] bundle.
+ 
+ @param interval Interval in seconds
+ @result Time ago in abbreviated format
+ */
++ (NSString *)gh_abbreviatedStringForTimeInterval:(NSTimeInterval)interval;
+
++ (NSString *)gh_localizedAbbreviatedStringForTimeInterval:(NSTimeInterval)interval tableName:(NSString *)tableName bundle:(NSBundle *)bundle;
+
 @end

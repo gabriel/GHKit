@@ -175,6 +175,10 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 	return [NSString gh_stringForTimeInterval:[self timeIntervalSinceNow] includeSeconds:includeSeconds];
 }
 
+- (NSString *)gh_abbreviatedTimeAgo {
+  return [NSString gh_abbreviatedStringForTimeInterval:[self timeIntervalSinceNow]];
+}
+
 - (long long)gh_millisSince1970 {
 	NSTimeInterval secondsSince1970 = [self timeIntervalSince1970];
 	return (long long)round(secondsSince1970 * 1000);

@@ -242,6 +242,23 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
 - (NSString *)gh_timeAgo:(BOOL)includeSeconds;
 
 /*!
+ Time ago in abbreviated format.
+ For more info, especially on localization, see GHNSString+TimeInterval.h.
+ 
+ These are the localized defaults, that you can override:
+
+ XSecondsAbbreviated = "%.0fs";
+ XMinutesAbbreviated = "%.0fm";
+ XHoursAbbreviated = "%.0fh";
+ XDaysAbbreviated = "%.0fd";
+ XMonthsAbbreviated = "%.0fmo";
+ XYearsAbbreviated = "%.0fy";
+
+ @result Time ago in abbreviated format
+ */
+- (NSString *)gh_abbreviatedTimeAgo;
+
+/*!
  Milliseconds since 1970.
  
  @result Milliseconds since 1970 GMT.

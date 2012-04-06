@@ -63,4 +63,21 @@
     return [NSString stringWithFormat:GHIntervalLocalize(@"OverXYears", @"over %.0f years"), floor(intervalInMinutes/525600.0)];    
 }
 
++ (NSString *)gh_abbreviatedStringForTimeInterval:(NSTimeInterval)interval {
+  return [self gh_localizedAbbreviatedStringForTimeInterval:interval tableName:nil bundle:[NSBundle mainBundle]];
+}
+
++ (NSString *)gh_localizedAbbreviatedStringForTimeInterval:(NSTimeInterval)interval tableName:(NSString *)tableName bundle:(NSBundle *)bundle {
+  NSTimeInterval intervalInSeconds = fabs(interval);
+  double intervalInMinutes = round(intervalInSeconds/60.0);
+  
+  if (intervalInSeconds < 60) return [NSString stringWithFormat:GHIntervalLocalize(@"XSecondsAbbreviated", @"%.0fs"), intervalInSeconds];
+  else if (intervalInMinutes >= 1 && intervalInMinutes < 60) return [NSString stringWithFormat:GHIntervalLocalize(@"XMinutesAbbreviated", @"%.0fm"), intervalInMinutes];
+  else if (intervalInMinutes >= 60 && intervalInMinutes < 1440) return [NSString stringWithFormat:GHIntervalLocalize(@"XHoursAbbreviated", @"%.0fh"), round(intervalInMinutes/60.0)];
+  else if (intervalInMinutes >= 1440 && intervalInMinutes < 43200) return [NSString stringWithFormat:GHIntervalLocalize(@"XDaysAbbreviated", @"%.0fd"), round(intervalInMinutes/1440.0)];
+  else if (intervalInMinutes >= 43200 && intervalInMinutes < 525600) return [NSString stringWithFormat:GHIntervalLocalize(@"XMonthsAbbreviated", @"%.0fmo"), round(intervalInMinutes/43200.0)];
+  else
+    return [NSString stringWithFormat:GHIntervalLocalize(@"XYearsAbbreviated", @"%.0fy"), floor(intervalInMinutes/525600.0)];   
+}
+
 @end
