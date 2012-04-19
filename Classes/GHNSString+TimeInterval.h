@@ -85,6 +85,23 @@
  */
 + (NSString *)gh_abbreviatedStringForTimeInterval:(NSTimeInterval)interval;
 
+/*! 
+ Time ago in words (abbreviated and localized).
+ 
+ These are the localized defaults, that you can override:
+ 
+ XSecondsAbbreviated = "%.0fs";
+ XMinutesAbbreviated = "%.0fm";
+ XHoursAbbreviated = "%.0fh";
+ XDaysAbbreviated = "%.0fd";
+ XMonthsAbbreviated = "%.0fmo";
+ XYearsAbbreviated = "%.0fy";
+ 
+ @param interval Interval in seconds
+ @param tableName Table name for localized string
+ @param bundle Bundle for localized string
+ @result Time ago in abbreviated words
+ */
 + (NSString *)gh_localizedAbbreviatedStringForTimeInterval:(NSTimeInterval)interval tableName:(NSString *)tableName bundle:(NSBundle *)bundle;
 
 @end

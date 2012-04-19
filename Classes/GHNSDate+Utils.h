@@ -256,7 +256,7 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
 
  @result Time ago in abbreviated format
  */
-- (NSString *)gh_abbreviatedTimeAgo;
+- (NSString *)gh_timeAgoAbbreviated;
 
 /*!
  Milliseconds since 1970.
