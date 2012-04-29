@@ -30,3 +30,8 @@ Install (Docset)
 
 - Open Xcode, Preferences and select the Downloads / Documentation tab.
 - Select the plus icon (bottom left) and specify: `http://gabriel.github.com/gh-kit/publish/me.rel.GHKit.atom`
+
+API Docs
+--------
+
+[API Docs](http://gabriel.github.com/gh-kit/)
