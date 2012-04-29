@@ -28,5 +28,5 @@ button and confirm that your "Build Location" is the "Derived Data Location".
 Install (Docset)
 ----------------
 
-- Open Xcode, Preferences and select the Documentation tab.
+- Open Xcode, Preferences and select the Downloads / Documentation tab.
 - Select the plus icon (bottom left) and specify: `http://gabriel.github.com/gh-kit/publish/me.rel.GHKit.atom`
