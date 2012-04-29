@@ -89,6 +89,8 @@
 	
 	<option value="//api/name/gh_timeAgo:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_timeAgo:</option>
 	
+	<option value="//api/name/gh_timeAgoAbbreviated">&nbsp;&nbsp;&nbsp;&nbsp;- gh_timeAgoAbbreviated</option>
+	
 	<option value="//api/name/gh_wasYesterday">&nbsp;&nbsp;&nbsp;&nbsp;- gh_wasYesterday</option>
 	
 	<option value="//api/name/gh_weekday:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_weekday:</option>
@@ -170,6 +172,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_secondsSince1970">gh_secondsSince1970</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_timeAgo:">gh_timeAgo:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_timeAgoAbbreviated">gh_timeAgoAbbreviated</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_wasYesterday">gh_wasYesterday</a></span></li>
 	
@@ -373,6 +377,14 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/gh_timeAgo:">&ndash;&nbsp;gh_timeAgo:</a></code>
 		<span class="tooltip"><p>Time ago in words.
+For more info, especially on localization, see GHNSString+TimeInterval.h.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_timeAgoAbbreviated">&ndash;&nbsp;gh_timeAgoAbbreviated</a></code>
+		<span class="tooltip"><p>Time ago in abbreviated format.
 For more info, especially on localization, see GHNSString+TimeInterval.h.</p></span>
 	</span>
 	
@@ -1454,6 +1466,60 @@ For more info, especially on localization, see GHNSString+TimeInterval.h.</p>
  About1Year = "about 1 year";
  OverXYears = "over %.0f years";
 </code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSDate+Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_timeAgoAbbreviated" title="gh_timeAgoAbbreviated"></a>
+	<h3 class="subsubtitle method-title">gh_timeAgoAbbreviated</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Time ago in abbreviated format.
+For more info, especially on localization, see GHNSString+TimeInterval.h.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_timeAgoAbbreviated</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Time ago in abbreviated format</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>These are the localized defaults, that you can override:</p>
+
+<p>XSecondsAbbreviated = &ldquo;%.0fs&rdquo;;
+XMinutesAbbreviated = &ldquo;%.0fm&rdquo;;
+XHoursAbbreviated = &ldquo;%.0fh&rdquo;;
+XDaysAbbreviated = &ldquo;%.0fd&rdquo;;
+XMonthsAbbreviated = &ldquo;%.0fmo&rdquo;;
+XYearsAbbreviated = &ldquo;%.0fy&rdquo;;</p>
 	</div>
 	
 	

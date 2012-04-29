@@ -42,6 +42,10 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
+	<option value="//api/name/gh_abbreviatedStringForTimeInterval:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_abbreviatedStringForTimeInterval:</option>
+	
+	<option value="//api/name/gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:</option>
+	
 	<option value="//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:</option>
 	
 	<option value="//api/name/gh_stringForTimeInterval:includeSeconds:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_stringForTimeInterval:includeSeconds:</option>
@@ -73,6 +77,10 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_abbreviatedStringForTimeInterval:">gh_abbreviatedStringForTimeInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:">gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:">gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:</a></span></li>
 	
@@ -144,6 +152,20 @@
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_abbreviatedStringForTimeInterval:">+&nbsp;gh_abbreviatedStringForTimeInterval:</a></code>
+		<span class="tooltip"><p>Time ago in abbreviated format.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:">+&nbsp;gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:</a></code>
+		<span class="tooltip"><p>Time ago in words (abbreviated and localized).</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -158,6 +180,136 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_abbreviatedStringForTimeInterval:" title="gh_abbreviatedStringForTimeInterval:"></a>
+	<h3 class="subsubtitle method-title">gh_abbreviatedStringForTimeInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Time ago in abbreviated format.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)gh_abbreviatedStringForTimeInterval:(NSTimeInterval)<em>interval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interval</em></dt>
+			<dd><p>Interval in seconds</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Time ago in abbreviated format</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>For localized values see the localization keys below.
+This method calls gh_localizedStringForTimeInterval with nil tableName and [NSBundle mainBundle] bundle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+TimeInterval.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:" title="gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:"></a>
+	<h3 class="subsubtitle method-title">gh_localizedAbbreviatedStringForTimeInterval:tableName:bundle:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Time ago in words (abbreviated and localized).</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)gh_localizedAbbreviatedStringForTimeInterval:(NSTimeInterval)<em>interval</em> tableName:(NSString *)<em>tableName</em> bundle:(NSBundle *)<em>bundle</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interval</em></dt>
+			<dd><p>Interval in seconds</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tableName</em></dt>
+			<dd><p>Table name for localized string</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bundle</em></dt>
+			<dd><p>Bundle for localized string</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Time ago in abbreviated words</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>These are the localized defaults, that you can override:</p>
+
+<p>XSecondsAbbreviated = &ldquo;%.0fs&rdquo;;
+XMinutesAbbreviated = &ldquo;%.0fm&rdquo;;
+XHoursAbbreviated = &ldquo;%.0fh&rdquo;;
+XDaysAbbreviated = &ldquo;%.0fd&rdquo;;
+XMonthsAbbreviated = &ldquo;%.0fmo&rdquo;;
+XYearsAbbreviated = &ldquo;%.0fy&rdquo;;</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+TimeInterval.h</code><br />
+	</div>				
+	
+	
+</div>
 						
 						<div class="section-method">
 	<a name="//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:" title="gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:"></a>
