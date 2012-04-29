@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>NSString(GHXML) Category Reference</title>
+		<title>NSString(GHTimeInterval) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">NSString(GHXML) Category Reference</h1>
+				<h1 class="hideInXcode">NSString(GHTimeInterval) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -42,7 +42,9 @@
 	
 	<option value="class_methods">Class Methods</option>
 	
-	<option value="//api/name/gh_stringWithFormatForXML:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_stringWithFormatForXML:</option>
+	<option value="//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:</option>
+	
+	<option value="//api/name/gh_stringForTimeInterval:includeSeconds:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_stringForTimeInterval:includeSeconds:</option>
 	
 	
 	
@@ -72,7 +74,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringWithFormatForXML:">gh_stringWithFormatForXML:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:">gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_stringForTimeInterval:includeSeconds:">gh_stringForTimeInterval:includeSeconds:</a></span></li>
 	
 </ul></li>
 
@@ -83,7 +87,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="NSString(GHXML) Category Reference" name="top"></a>
+				<a title="NSString(GHTimeInterval) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,7 +96,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">NSString(GHXML) Category Reference</h1>
+						<h1 class="title title-header">NSString(GHTimeInterval) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -100,7 +104,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">GHNSString+XML.h<br />GHNSString+XML.m</td>
+	<td class="specification-value">GHNSString+TimeInterval.h<br />GHNSString+TimeInterval.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,7 +114,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Utilities for XML string formatting.</p>
+						<p>Utilities for generating time ago in words.</p>
 					</div>
 					
 					
@@ -128,9 +132,15 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/gh_stringWithFormatForXML:">+&nbsp;gh_stringWithFormatForXML:</a></code>
-		<span class="tooltip"><p>String format, and escape strings for use in XML.
-Arguments MUST BE objective-C objects!</p></span>
+		<code><a href="#//api/name/gh_stringForTimeInterval:includeSeconds:">+&nbsp;gh_stringForTimeInterval:includeSeconds:</a></code>
+		<span class="tooltip"><p>Time ago in words.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:">+&nbsp;gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:</a></code>
+		<span class="tooltip"><p>Time ago in words (localized).</p></span>
 	</span>
 	
 	
@@ -150,40 +160,76 @@ Arguments MUST BE objective-C objects!</p></span>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/gh_stringWithFormatForXML:" title="gh_stringWithFormatForXML:"></a>
-	<h3 class="subsubtitle method-title">gh_stringWithFormatForXML:</h3>
+	<a name="//api/name/gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:" title="gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:"></a>
+	<h3 class="subsubtitle method-title">gh_localizedStringForTimeInterval:includeSeconds:tableName:bundle:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>String format, and escape strings for use in XML.
-Arguments MUST BE objective-C objects!</p>
+		<p>Time ago in words (localized).</p>
 	</div>		
 	
-	
-	<div class="method-subsection method-declaration"><code>+ (id)gh_stringWithFormatForXML:(NSString *)<em>format</em>, <em>...</em></code></div>
-	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)gh_localizedStringForTimeInterval:(NSTimeInterval)<em>interval</em> includeSeconds:(BOOL)<em>includeSeconds</em> tableName:(NSString *)<em>tableName</em> bundle:(NSBundle *)<em>bundle</em></code></div>
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>format</em></dt>
-			<dd><p>Format</p></dd>
+			<dt><em>interval</em></dt>
+			<dd><p>Interval in seconds</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>...</em></dt>
-			<dd><p>Argument list</p></dd>
+			<dt><em>includeSeconds</em></dt>
+			<dd><p>If YES, will say &lsquo;less than N seconds&rsquo;, otherwise will show &lsquo;less than a minute&rsquo;</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tableName</em></dt>
+			<dd><p>Table name for localized string</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>bundle</em></dt>
+			<dd><p>Bundle for localized string</p></dd>
 		</dl>
 		
 	</div>
 	
 	
 	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Time ago in words</p>
+	</div>
 	
 	
 	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>These are the localized defaults, that you can override:</p>
+
+<pre><code> LessThanAMinute = "less than a minute";
+ LessThanXSeconds = "less than %d seconds";
+ HalfMinute = "half a minute";
+ 1Minute = "1 minute";
+ XMinutes = "%.0f minutes";
+ About1Hour = "about 1 hour";
+ AboutXHours = "about %.0f hours";
+ 1Day = "1 day";
+ XDays = "%.0f days";
+ About1Month = "about 1 month";
+ XMonths = "%.0f months";
+ About1Year = "about 1 year";
+ OverXYears = "over %.0f years";
+</code></pre>
+	</div>
 	
 	
 	
@@ -193,7 +239,69 @@ Arguments MUST BE objective-C objects!</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSString+XML.h</code><br />
+		<code class="declared-in-ref">GHNSString+TimeInterval.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_stringForTimeInterval:includeSeconds:" title="gh_stringForTimeInterval:includeSeconds:"></a>
+	<h3 class="subsubtitle method-title">gh_stringForTimeInterval:includeSeconds:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Time ago in words.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)gh_stringForTimeInterval:(NSTimeInterval)<em>interval</em> includeSeconds:(BOOL)<em>includeSeconds</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>interval</em></dt>
+			<dd><p>Interval in seconds</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>includeSeconds</em></dt>
+			<dd><p>If YES, will say &lsquo;less than N seconds&rsquo;, otherwise will show &lsquo;less than a minute&rsquo;</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Time ago in words</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>For localized values see the localization keys below.
+This method calls gh_localizedStringForTimeInterval with nil tableName and [NSBundle mainBundle] bundle.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+TimeInterval.h</code><br />
 	</div>				
 	
 	
@@ -214,9 +322,9 @@ Arguments MUST BE objective-C objects!</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-04-29)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>
@@ -304,6 +412,14 @@ Arguments MUST BE objective-C objects!</p>
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

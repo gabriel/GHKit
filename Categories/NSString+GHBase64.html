@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>NSString(GHURL) Category Reference</title>
+		<title>NSString(GHBase64) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">NSString(GHURL) Category Reference</h1>
+				<h1 class="hideInXcode">NSString(GHBase64) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -44,13 +44,7 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/gh_URLDecode">&nbsp;&nbsp;&nbsp;&nbsp;- gh_URLDecode</option>
-	
-	<option value="//api/name/gh_URLEncode">&nbsp;&nbsp;&nbsp;&nbsp;- gh_URLEncode</option>
-	
-	<option value="//api/name/gh_URLEncodeComponent">&nbsp;&nbsp;&nbsp;&nbsp;- gh_URLEncodeComponent</option>
-	
-	<option value="//api/name/gh_URLEscapeAll">&nbsp;&nbsp;&nbsp;&nbsp;- gh_URLEscapeAll</option>
+	<option value="//api/name/base64WithEncoder:">&nbsp;&nbsp;&nbsp;&nbsp;- base64WithEncoder:</option>
 	
 	
 	
@@ -80,13 +74,7 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_URLDecode">gh_URLDecode</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_URLEncode">gh_URLEncode</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_URLEncodeComponent">gh_URLEncodeComponent</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_URLEscapeAll">gh_URLEscapeAll</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/base64WithEncoder:">base64WithEncoder:</a></span></li>
 	
 </ul></li>
 
@@ -95,7 +83,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="NSString(GHURL) Category Reference" name="top"></a>
+				<a title="NSString(GHBase64) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -104,7 +92,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">NSString(GHURL) Category Reference</h1>
+						<h1 class="title title-header">NSString(GHBase64) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -112,7 +100,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">GHNSString+URL.h<br />GHNSString+URL.m</td>
+	<td class="specification-value">GHNSString+Base64.h<br />GHNSString+Base64.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -122,7 +110,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Utilities for URL encoding/decoding.</p>
+						<p>Utilities for generating a Base64 encoded string.</p>
 					</div>
 					
 					
@@ -140,29 +128,8 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/gh_URLDecode">&ndash;&nbsp;gh_URLDecode</a></code>
-		<span class="tooltip"><p>Decode URL encoded string.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/gh_URLEncode">&ndash;&nbsp;gh_URLEncode</a></code>
-		<span class="tooltip"><p>Encode URL string.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/gh_URLEncodeComponent">&ndash;&nbsp;gh_URLEncodeComponent</a></code>
-		<span class="tooltip"><p>Encode URL string (for escaping URL key/value params).</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/gh_URLEscapeAll">&ndash;&nbsp;gh_URLEscapeAll</a></code>
-		<span class="tooltip"><p>Encode URL string (all characters).</p></span>
+		<code><a href="#//api/name/base64WithEncoder:">&ndash;&nbsp;base64WithEncoder:</a></code>
+		<span class="tooltip"><p>Base64.</p></span>
 	</span>
 	
 	
@@ -184,54 +151,37 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/gh_URLDecode" title="gh_URLDecode"></a>
-	<h3 class="subsubtitle method-title">gh_URLDecode</h3>
+	<a name="//api/name/base64WithEncoder:" title="base64WithEncoder:"></a>
+	<h3 class="subsubtitle method-title">base64WithEncoder:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Decode URL encoded string.</p>
+		<p>Base64.</p>
 	</div>		
 	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)base64WithEncoder:(id)<em>encoder</em></code></div>
+
+    
 	
-	<div class="method-subsection method-declaration"><code>- (NSString *)gh_URLDecode</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSString+URL.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/gh_URLEncode" title="gh_URLEncode"></a>
-	<h3 class="subsubtitle method-title">gh_URLEncode</h3>
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>encoder</em></dt>
+			<dd><p>Base64 encoder, that implements: (NSData <em>)encodeBytes:(const void </em>)bytes length:(NSUInteger)length;</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
-	<div class="method-subsection brief-description">
-		<p>Encode URL string.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (NSString *)gh_URLEncode</code></div>
-	
-	
-	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Base64 encoded</p>
+	</div>
 	
 	
 	
@@ -239,62 +189,16 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code>"~!@#$%^&amp;*(){}[]=:/,;?+'\"\\" =&gt; ~!@#$%25%5E&amp;*()%7B%7D%5B%5D=:/,;?+'%22%5C
+		<p>For the Base64 encoder you can user GTMBase64, or that implements:</p>
+
+<pre><code>  - (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
 </code></pre>
 
-<p>Doesn&rsquo;t encode: ~!@#$&amp;*()=:/,;?+'</p>
+<p>For example,</p>
 
-<p>Does encode: %^{}[]&ldquo;\</p>
-
-<p>Should be the same as javascript&rsquo;s encodeURI().
-See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/articles/javascript/encode-compare/</a></p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSString+URL.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/gh_URLEncodeComponent" title="gh_URLEncodeComponent"></a>
-	<h3 class="subsubtitle method-title">gh_URLEncodeComponent</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Encode URL string (for escaping URL key/value params).</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (NSString *)gh_URLEncodeComponent</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<pre><code>"~!@#$%^&amp;*(){}[]=:/,;?+'\"\\" =&gt; ~!%40%23%24%25%5E%26*()%7B%7D%5B%5D%3D%3A%2F%2C%3B%3F%2B'%22%5C
+<pre><code>  #import &lt;GHKit/GTMBase64.h&gt;
+  ["stringtosign" base64WithEncoder:[GTMBase64 class]];
 </code></pre>
-
-<p>Doesn&rsquo;t encode: ~!*()'</p>
-
-<p>Does encode: @#$%^&amp;{}[]=:/,;?+&ldquo;\</p>
-
-<p>Should be the same as javascript&rsquo;s encodeURIComponent().
-See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/articles/javascript/encode-compare/</a></p>
 	</div>
 	
 	
@@ -305,46 +209,7 @@ See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/ar
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSString+URL.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/gh_URLEscapeAll" title="gh_URLEscapeAll"></a>
-	<h3 class="subsubtitle method-title">gh_URLEscapeAll</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Encode URL string (all characters).</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (NSString *)gh_URLEscapeAll</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Encodes: @#$%^&amp;{}[]=:/,;?+&ldquo;\~!*()'</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSString+URL.h</code><br />
+		<code class="declared-in-ref">GHNSString+Base64.h</code><br />
 	</div>				
 	
 	
@@ -363,9 +228,9 @@ See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/ar
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-04-29)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>
@@ -453,6 +318,14 @@ See <a href="http://xkr.us/articles/javascript/encode-compare/">http://xkr.us/ar
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

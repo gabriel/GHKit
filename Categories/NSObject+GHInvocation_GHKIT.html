@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -370,9 +370,11 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p></s
 		<p>TODO(gabe): Possible to detect if we are nesting proxy calls?</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (GHNSInvocationProxy *)_initProxy</code></div>
-	
+
+    
 	
 	
 	
@@ -405,9 +407,11 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p></s
 For calling a selector with any type and number of arguments.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_argumentProxy:(SEL)<em>selector</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -470,9 +474,11 @@ performSelector if you had only object arguments).</p>
 		<p>Proxy for selector on main thread.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_argumentProxy:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -524,9 +530,11 @@ performSelector if you had only object arguments).</p>
 		<p>Special logging proxy; In progress.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_logProxy</code></div>
-	
+
+    
 	
 	
 	
@@ -558,9 +566,11 @@ performSelector if you had only object arguments).</p>
 		<p>Perform selector if responds.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_performIfRespondsToSelector:(SEL)<em>selector</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -607,9 +617,11 @@ performSelector if you had only object arguments).</p>
 		<p>Perform selector if responds with multiple arguments.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_performIfRespondsToSelector:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -666,9 +678,11 @@ performSelector if you had only object arguments).</p>
 		<p>Invoke selector after delay with arguments.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_performSelector:(SEL)<em>selector</em> afterDelay:(NSTimeInterval)<em>afterDelay</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -725,9 +739,11 @@ performSelector if you had only object arguments).</p>
 		<p>Invoke selector with arguments after delay.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> afterDelay:(NSTimeInterval)<em>afterDelay</em> arguments:(NSArray *)<em>arguments</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -789,9 +805,11 @@ performSelector if you had only object arguments).</p>
 		<p>Invoke selector with arguments.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> arguments:(NSArray *)<em>arguments</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -848,9 +866,11 @@ performSelector if you had only object arguments).</p>
 		<p>Invoke selector with arguments.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)gh_performSelector:(SEL)<em>selector</em> onMainThread:(BOOL)<em>onMainThread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -912,9 +932,11 @@ performSelector if you had only object arguments).</p>
 		<p>Invoke selector with arguments.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_performSelector:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -966,9 +988,11 @@ performSelector if you had only object arguments).</p>
 		<p>Invoke selector with arguments on main thread.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)gh_performSelectorOnMainThread:(SEL)<em>selector</em> waitUntilDone:(BOOL)<em>waitUntilDone</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1026,9 +1050,11 @@ performSelector if you had only object arguments).</p>
 Does not wait until selector is finished.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (void)gh_performSelectorOnMainThread:(SEL)<em>selector</em> withObjects:(id)<em>withObjects</em>, <em>...</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1080,9 +1106,11 @@ Does not wait until selector is finished.</p>
 		<p>Proxy for invoking after delay.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_proxyAfterDelay:(NSTimeInterval)<em>delay</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1138,9 +1166,11 @@ Does not wait until selector is finished.</p>
 Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_proxyDetachThreadWithCallback:(id)<em>target</em> action:(SEL)<em>action</em> context:(id)<em>context</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1197,9 +1227,11 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 		<p>Proxy for invoking on main thread (without waiting until done).</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_proxyOnMainThread</code></div>
-	
+
+    
 	
 	
 	
@@ -1236,9 +1268,11 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 		<p>Proxy for invoking on main thread.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_proxyOnMainThread:(BOOL)<em>waitUntilDone</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1285,9 +1319,11 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 		<p>Proxy on thread (without blocking until done).</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_proxyOnThread:(NSThread *)<em>thread</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1334,9 +1370,11 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 		<p>Proxy for invoking on thread.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (id)gh_proxyOnThread:(NSThread *)<em>thread</em> waitUntilDone:(BOOL)<em>waitUntilDone</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1391,9 +1429,9 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-04-29)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>
@@ -1481,6 +1519,14 @@ Calls are responsible for setting up their own NSAutoreleasePool&rsquo;s.</p>
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

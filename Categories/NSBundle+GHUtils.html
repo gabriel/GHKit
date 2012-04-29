@@ -2,12 +2,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>NSError(GHUtils) Category Reference</title>
+		<title>NSBundle(GHUtils) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">NSError(GHUtils) Category Reference</h1>
+				<h1 class="hideInXcode">NSBundle(GHUtils) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -40,18 +40,15 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/gh_errorFromException:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_errorFromException:</option>
-	
-	<option value="//api/name/gh_errorWithDomain:code:localizedDescription:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_errorWithDomain:code:localizedDescription:</option>
-	
-	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/gh_fullDescription">&nbsp;&nbsp;&nbsp;&nbsp;- gh_fullDescription</option>
+	<option value="//api/name/gh_URLForResource:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_URLForResource:</option>
+	
+	<option value="//api/name/gh_loadDataFromResource:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_loadDataFromResource:</option>
+	
+	<option value="//api/name/gh_loadStringDataFromResource:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_loadStringDataFromResource:</option>
 	
 	
 	
@@ -77,19 +74,15 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_errorFromException:">gh_errorFromException:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_errorWithDomain:code:localizedDescription:">gh_errorWithDomain:code:localizedDescription:</a></span></li>
-	
-</ul></li>
-
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_fullDescription">gh_fullDescription</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_URLForResource:">gh_URLForResource:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_loadDataFromResource:">gh_loadDataFromResource:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_loadStringDataFromResource:">gh_loadStringDataFromResource:</a></span></li>
 	
 </ul></li>
 
@@ -98,7 +91,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="NSError(GHUtils) Category Reference" name="top"></a>
+				<a title="NSBundle(GHUtils) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -107,7 +100,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">NSError(GHUtils) Category Reference</h1>
+						<h1 class="title title-header">NSBundle(GHUtils) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -115,7 +108,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">GHNSError+Utils.h<br />GHNSError+Utils.m</td>
+	<td class="specification-value">GHNSBundle+Utils.h<br />GHNSBundle+Utils.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -125,7 +118,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Utilities for generating errors.</p>
+						<p>Utilities for accessing bundles.</p>
 					</div>
 					
 					
@@ -143,23 +136,22 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/gh_errorWithDomain:code:localizedDescription:">+&nbsp;gh_errorWithDomain:code:localizedDescription:</a></code>
-		<span class="tooltip"><p>Create error with localized description. (userInfo includes NSLocalizedDescriptionKey=localizedDescription)</p></span>
+		<code><a href="#//api/name/gh_loadDataFromResource:">&ndash;&nbsp;gh_loadDataFromResource:</a></code>
+		<span class="tooltip"><p>Load data from resource.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/gh_errorFromException:">+&nbsp;gh_errorFromException:</a></code>
-		<span class="tooltip"><p>Create error from exception.</p></span>
+		<code><a href="#//api/name/gh_loadStringDataFromResource:">&ndash;&nbsp;gh_loadStringDataFromResource:</a></code>
+		<span class="tooltip"><p>Load string data from resource.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/gh_fullDescription">&ndash;&nbsp;gh_fullDescription</a></code>
-		<span class="tooltip"><p>Get full error description, recusively for any errors within the userInfo.
-Useful for getting at CoreData validation errors, for example.</p></span>
+		<code><a href="#//api/name/gh_URLForResource:">&ndash;&nbsp;gh_URLForResource:</a></code>
+		<span class="tooltip"><p>Get URL for resource.</p></span>
 	</span>
 	
 	
@@ -174,115 +166,6 @@ Useful for getting at CoreData validation errors, for example.</p></span>
 					
 					
 					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/gh_errorFromException:" title="gh_errorFromException:"></a>
-	<h3 class="subsubtitle method-title">gh_errorFromException:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Create error from exception.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>+ (NSError *)gh_errorFromException:(NSException *)<em>exception</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>exception</em></dt>
-			<dd><p>Exception</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSError+Utils.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/gh_errorWithDomain:code:localizedDescription:" title="gh_errorWithDomain:code:localizedDescription:"></a>
-	<h3 class="subsubtitle method-title">gh_errorWithDomain:code:localizedDescription:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Create error with localized description. (userInfo includes NSLocalizedDescriptionKey=localizedDescription)</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>+ (NSError *)gh_errorWithDomain:(NSString *)<em>domain</em> code:(NSInteger)<em>code</em> localizedDescription:(NSString *)<em>localizedDescription</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>domain</em></dt>
-			<dd><p>Domain</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>code</em></dt>
-			<dd><p>Code</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>localizedDescription</em></dt>
-			<dd><p>Localized description</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>NSError</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSError+Utils.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
-					
 					
 					
 					<div class="section section-methods">
@@ -290,25 +173,36 @@ Useful for getting at CoreData validation errors, for example.</p></span>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/gh_fullDescription" title="gh_fullDescription"></a>
-	<h3 class="subsubtitle method-title">gh_fullDescription</h3>
+	<a name="//api/name/gh_URLForResource:" title="gh_URLForResource:"></a>
+	<h3 class="subsubtitle method-title">gh_URLForResource:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Get full error description, recusively for any errors within the userInfo.
-Useful for getting at CoreData validation errors, for example.</p>
+		<p>Get URL for resource.</p>
 	</div>		
 	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSURL *)gh_URLForResource:(NSString *)<em>resource</em></code></div>
+
+    
 	
-	<div class="method-subsection method-declaration"><code>- (NSString *)gh_fullDescription</code></div>
-	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resource</em></dt>
+			<dd><p>Name of resource</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Full error description</p>
+		<p>URL to resource</p>
 	</div>
 	
 	
@@ -323,7 +217,109 @@ Useful for getting at CoreData validation errors, for example.</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHNSError+Utils.h</code><br />
+		<code class="declared-in-ref">GHNSBundle+Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_loadDataFromResource:" title="gh_loadDataFromResource:"></a>
+	<h3 class="subsubtitle method-title">gh_loadDataFromResource:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Load data from resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSData *)gh_loadDataFromResource:(NSString *)<em>resource</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resource</em></dt>
+			<dd><p>Name of resource, such as &ldquo;file.txt&rdquo;</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSData</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSBundle+Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_loadStringDataFromResource:" title="gh_loadStringDataFromResource:"></a>
+	<h3 class="subsubtitle method-title">gh_loadStringDataFromResource:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Load string data from resource.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_loadStringDataFromResource:(NSString *)<em>resource</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>resource</em></dt>
+			<dd><p>Name of resource</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>NSString</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSBundle+Utils.h</code><br />
 	</div>				
 	
 	
@@ -342,9 +338,9 @@ Useful for getting at CoreData validation errors, for example.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-04-29)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>
@@ -432,6 +428,14 @@ Useful for getting at CoreData validation errors, for example.</p>
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>

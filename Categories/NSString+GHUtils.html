@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.4 (build 703)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -56,6 +56,8 @@
 	<option value="instance_methods">Instance Methods</option>
 	
 	<option value="//api/name/gh_MD5">&nbsp;&nbsp;&nbsp;&nbsp;- gh_MD5</option>
+	
+	<option value="//api/name/gh_MD5WithEncoder:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_MD5WithEncoder:</option>
 	
 	<option value="//api/name/gh_attributize">&nbsp;&nbsp;&nbsp;&nbsp;- gh_attributize</option>
 	
@@ -144,6 +146,8 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_MD5">gh_MD5</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_MD5WithEncoder:">gh_MD5WithEncoder:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_attributize">gh_attributize</a></span></li>
 	
@@ -441,6 +445,13 @@ you should use [NSString gh_isBlank:str] instead.</p></span>
 	</span>
 	
 	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_MD5WithEncoder:">&ndash;&nbsp;gh_MD5WithEncoder:</a></code>
+		<span class="tooltip"><p>MD5 encoded with Base64.</p></span>
+	</span>
+	
+	
 </li>
 						</ul>
 						
@@ -466,9 +477,11 @@ you should use [NSString gh_isBlank:str] instead.</p></span>
 		<p>Combine character sets.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)<em>characterSets</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -515,9 +528,11 @@ you should use [NSString gh_isBlank:str] instead.</p></span>
 		<p>Check if string is blank.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (BOOL)gh_isBlank:(NSString *)<em>s</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -566,9 +581,11 @@ Arguments must be objective-c objects.
 WARNING: This assumption seems totally dangerous.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (id)gh_stringWithFormat:(NSString *)<em>format</em> arguments:(NSArray *)<em>arguments</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -615,9 +632,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Create UUID.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>+ (NSString *)gh_uuid</code></div>
-	
+
+    
 	
 	
 	
@@ -662,8 +681,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>MD5.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_MD5</code></div>
+
+    
 	
 	
 	
@@ -671,6 +693,72 @@ WARNING: This assumption seems totally dangerous.</p>
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSString+Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_MD5WithEncoder:" title="gh_MD5WithEncoder:"></a>
+	<h3 class="subsubtitle method-title">gh_MD5WithEncoder:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>MD5 encoded with Base64.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_MD5WithEncoder:(id)<em>encoder</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>encoder</em></dt>
+			<dd><p>Base64 encoder, that implements: (NSData <em>)encodeBytes:(const void </em>)bytes length:(NSUInteger)length;</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Base64 encoded MD5</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>For the Base64 encoder you can user GTMBase64, or that implements:</p>
+
+<ul>
+<li>(NSData <em>)encodeBytes:(const void </em>)bytes length:(NSUInteger)length;</li>
+</ul>
+
+
+<p>For example,</p>
+
+<h1>import &lt;GHKit/GTMBase64.h></h1>
+
+<p>[&ldquo;stringtosign&rdquo; gh_MD5WithEncoder:[GTMBase64 class]];</p>
+	</div>
 	
 	
 	
@@ -696,9 +784,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Turn string into attribute.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_attributize</code></div>
-	
+
+    
 	
 	
 	
@@ -735,9 +825,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Components separated by string with option to include separator.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSArray *)gh_componentsSeparatedByString:(NSString *)<em>s</em> include:(BOOL)<em>include</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -795,9 +887,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Check if self contains the specified string with options</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_contains:(NSString *)<em>contains</em> options:(NSStringCompareOptions)<em>options</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -849,9 +943,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Check if string contains ANY characters from a set.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_containsAny:(NSCharacterSet *)<em>charSet</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -898,9 +994,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Check if string contains ANY characters from a string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_containsCharacters:(NSString *)<em>characters</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -947,9 +1045,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Count the number of times a string appears.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSInteger)gh_count:(NSString *)<em>s</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -996,9 +1096,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Check if string ends with a string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_endsWith:(NSString *)<em>endsWith</em> options:(NSStringCompareOptions)<em>options</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1050,9 +1152,11 @@ WARNING: This assumption seems totally dangerous.</p>
 		<p>Path extension with . or &ldquo;&rdquo; as before.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_fullPathExtension</code></div>
-	
+
+    
 	
 	
 	
@@ -1098,9 +1202,11 @@ If instance is nil the would NOOP and evaluate to falsy, so
 you should use [NSString gh_isBlank:str] instead.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_isBlank</code></div>
-	
+
+    
 	
 	
 	
@@ -1137,9 +1243,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Check if equals ignoring case.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_isEqualIgnoreCase:(NSString *)<em>s</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1186,9 +1294,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Get last part of string separated by the specified string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_lastSplitWithString:(NSString *)<em>s</em> options:(NSStringCompareOptions)<em>options</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1247,9 +1357,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Trim white space from left side only.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_leftStrip</code></div>
-	
+
+    
 	
 	
 	
@@ -1281,9 +1393,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Get mime type for extension.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_mimeTypeForExtension</code></div>
-	
+
+    
 	
 	
 	
@@ -1320,9 +1434,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Check if string contains only characters from a set.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_only:(NSCharacterSet *)<em>charSet</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1369,9 +1485,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Reverse the string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_reverse</code></div>
-	
+
+    
 	
 	
 	
@@ -1408,9 +1526,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Trim whitespace from right side only.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_rightStrip</code></div>
-	
+
+    
 	
 	
 	
@@ -1442,9 +1562,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Rot13.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_rot13</code></div>
-	
+
+    
 	
 	
 	
@@ -1482,9 +1604,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Check if string starts with a string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_startsWith:(NSString *)<em>startsWith</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1531,9 +1655,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Check if string starts with a string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_startsWith:(NSString *)<em>startsWith</em> options:(NSStringCompareOptions)<em>options</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1585,9 +1711,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Check if string starts with any of the character set.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (BOOL)gh_startsWithAny:(NSCharacterSet *)<em>charSet</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1629,9 +1757,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Strip whitespace from left and right side of string.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSString *)gh_strip</code></div>
-	
+
+    
 	
 	
 	
@@ -1668,9 +1798,11 @@ you should use [NSString gh_isBlank:str] instead.</p>
 		<p>Break string into segments based on start and end token.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSArray *)gh_substringSegmentsWithinStart:(NSString *)<em>start</em> end:(NSString *)<em>end</em></code></div>
-	
+
+    
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
@@ -1735,9 +1867,11 @@ For example,</p>
 		<p>Create attributed string that truncates in the middle.</p>
 	</div>		
 	
-	
+    
+
 	<div class="method-subsection method-declaration"><code>- (NSAttributedString *)gh_truncateMiddle</code></div>
-	
+
+    
 	
 	
 	
@@ -1777,9 +1911,9 @@ For example,</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2011 GHKit. All rights reserved. (Last updated: 2011-09-04)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-04-29)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.4 (build 703)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
 					</div>
 				</div>
@@ -1867,6 +2001,14 @@ For example,</p>
 			}
 			
 			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
 		</script>
 	</body>
 </html>
