@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 007DA669154E055C008574F9 /* GHKit-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D022D8154DF1EB003BAAC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022D7154DF1EB003BAAC3 /* Foundation.framework */; };
 		00D022EA154DF226003BAAC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022E9154DF226003BAAC3 /* Cocoa.framework */; };
 		00D022FC154DF30E003BAAC3 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -310,6 +311,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		007DA669154E055C008574F9 /* GHKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHKit-Prefix.pch"; sourceTree = "<group>"; };
 		00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
 		00D0227D154DF1C5003BAAC3 /* GHKeychainStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKeychainStore.h; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				00D022CA154DF1C5003BAAC3 /* sha1.c */,
 				00D022CB154DF1C5003BAAC3 /* sha1.h */,
 				00D022CC154DF1C5003BAAC3 /* Swizzle */,
+				007DA669154E055C008574F9 /* GHKit-Prefix.pch */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				00D0237E154DF43B003BAAC3 /* GHNSObject+Swizzle.h in Headers */,
 				00D02382154DF44D003BAAC3 /* GHNSString+UIKitUtils.h in Headers */,
 				00D02384154DF456003BAAC3 /* GHUIColor+Utils.h in Headers */,
+				007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1233,7 +1237,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "Classes/GHKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1264,7 +1268,7 @@
 				DSTROOT = /tmp/GHKit.dst;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "Classes/GHKit-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1297,6 +1301,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/GHKit-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1331,6 +1336,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Classes/GHKit-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1502,6 +1508,7 @@
 				00D022E1154DF1EB003BAAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00D022F9154DF226003BAAC3 /* Build configuration list for PBXNativeTarget "GHKitFramework" */ = {
 			isa = XCConfigurationList;
@@ -1510,6 +1517,7 @@
 				00D022FB154DF226003BAAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00D023A7154DF67E003BAAC3 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
@@ -1518,6 +1526,7 @@
 				00D023A9154DF67E003BAAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00D0242A154DFB0D003BAAC3 /* Build configuration list for PBXNativeTarget "TestsFramework" */ = {
 			isa = XCConfigurationList;
@@ -1526,6 +1535,7 @@
 				00D0242C154DFB0D003BAAC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
