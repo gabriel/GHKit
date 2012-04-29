@@ -1,7 +1,0 @@
-//
-// Prefix header for all source files of the 'GHKitIOS' target in the 'GHKitIOS' project
-//
-
-#ifdef __OBJC__
-  #import <Foundation/Foundation.h>
-#endif

@@ -1,8 +1,0 @@
-GHKIT_VERSION = 0.3.22
-
-FRAMEWORK_VERSION = A
-INFOPLIST_FILE = Info.plist
-PRODUCT_NAME = GHKit
-GCC_PRECOMPILE_PREFIX_HEADER = YES
-
-GTM_GENERAL_OTHER_CFLAGS = -Wdiv-by-zero -Wbad-function-cast  -Wnested-externs -Wold-style-definition

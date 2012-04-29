@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
+
 //
 // Portions of this file fall under the following license, marked with:
 // GTM_BEGIN : GTM_END
@@ -45,6 +47,9 @@
 //  License for the specific language governing permissions and limitations under
 //  the License.
 //
+
+#import <Foundation/Foundation.h>
+#import "GHUnit.h"
 
 #ifdef __cplusplus
 extern "C" NSString *GHUStackTraceFromException(NSException *e);
@@ -142,3 +147,5 @@ BOOL isTestFixtureOfClass(Class aClass, Class testCaseClass);
 @protocol GHSenTestCase 
 - (void)raiseAfterFailure;
 @end
+
+//! @endcond

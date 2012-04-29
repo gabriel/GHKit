@@ -1,9 +1,9 @@
 //
-//  GHTest+JUnitXML.h
-//  GHUnit
+//  GHUnitIOSTestView.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/4/10.
-//  Copyright 2010. All rights reserved.
+//  Created by John Boiles on 8/8/11.
+//  Copyright 2011. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,18 +27,33 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-//! @cond DEV
+#import <UIKit/UIKit.h>
+#import "YKUIImageViewControl.h"
 
-#import "GHTest.h"
+@class GHUnitIOSTestView;
 
-@interface GHTest(JUnitXML)
-
-/*!
- Return test results in JUnit XML format for external parsing use
- (such as a Continuous Integration system like Jenkins).
- */
-- (NSString *)JUnitXML;
-
+@protocol GHUnitIOSTestViewDelegate <NSObject>
+- (void)testViewDidSelectOriginalImage:(GHUnitIOSTestView *)testView;
+- (void)testViewDidSelectNewImage:(GHUnitIOSTestView *)testView;
+- (void)testViewDidApproveChange:(GHUnitIOSTestView *)testView;
 @end
 
-//! @endcond
+@interface GHUnitIOSTestView : UIScrollView {
+  id<GHUnitIOSTestViewDelegate> controlDelegate_;
+
+  // TODO(johnb): Perhaps hold a scrollview here as subclassing UIViews can be weird.
+
+  YKUIImageViewControl *originalImageView_;
+  YKUIImageViewControl *newImageView_;
+
+  UIButton *approveButton_;
+
+  UILabel *textLabel_;
+}
+@property(assign, nonatomic) id<GHUnitIOSTestViewDelegate> controlDelegate;
+
+- (void)setOriginalImage:(UIImage *)originalImage newImage:(UIImage *)newImage text:(NSString *)text;
+
+- (void)setText:(NSString *)text;
+
+@end

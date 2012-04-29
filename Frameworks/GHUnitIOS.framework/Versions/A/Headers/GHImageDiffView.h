@@ -1,9 +1,9 @@
 //
-//  GHTest+JUnitXML.h
-//  GHUnit
+//  GHImageDiffView.h
+//  GHUnitIOS
 //
-//  Created by Gabriel Handford on 6/4/10.
-//  Copyright 2010. All rights reserved.
+//  Created by John Boiles on 10/27/11.
+//  Copyright (c) 2011. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,18 +27,23 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-//! @cond DEV
+#import <UIKit/UIKit.h>
 
-#import "GHTest.h"
+@interface GHImageDiffView : UIView {
+  UIScrollView *scrollView_;
+  UISegmentedControl *segmentedControl_;
 
-@interface GHTest(JUnitXML)
+  UIImageView *originalImageView_;
+  UIImageView *newImageView_;
+  UIImageView *diffImageView_;
+}
 
-/*!
- Return test results in JUnit XML format for external parsing use
- (such as a Continuous Integration system like Jenkins).
- */
-- (NSString *)JUnitXML;
+- (void)setOriginalImage:(UIImage *)originalImage newImage:(UIImage *)newImage diffImage:(UIImage *)diffImage;
+
+- (void)showOriginalImage;
+
+- (void)showNewImage;
+
+- (void)showDiffImage;
 
 @end
-
-//! @endcond

@@ -27,6 +27,10 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+//! @cond DEV
+
+#import <Foundation/Foundation.h>
+
 /*!
  Category for overriding the current locale at runtime.
 
@@ -38,7 +42,7 @@
  [[NSLocale currentLocale] localeIdentifier] == "en_GB"
  @endcode
  */
-@interface NSLocale (GHMock)
+@interface NSLocale(GHMock)
 
 + (void)gh_setLocaleIdentifier:(NSString *)localeIdentifier;
 
@@ -57,3 +61,5 @@
 + (NSArray *)gh_preferredLanguages;
 
 @end
+
+//! @endcond
