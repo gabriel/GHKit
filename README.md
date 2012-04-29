@@ -17,7 +17,7 @@ button and confirm that your "Build Location" is the "Derived Data Location".
 1. Add the following **Header Search Paths** (including the quotes): `"$(BUILT_PRODUCTS_DIR)/../../Headers"`
 1. Add **Other Linker Flags** for `-ObjC -all_load`
 1. Open target settings editor for the target you want to link RestKit into
-1. Add direct dependency on the **RestKit** aggregate target
+1. Add direct dependency on the **GHKit** aggregate target
 1. Link against GHKit:
     1. **libGHKit.a** on iOS
     1. **GHKit.framework** on OS X
