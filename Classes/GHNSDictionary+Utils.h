@@ -121,6 +121,19 @@
 - (BOOL)gh_boolForKey:(id)key;
 
 /*!
+ Get date for key. Value should respond to doubleValue, which should be seconds since epoch GMT.
+ @param key
+ */
+- (NSDate *)gh_dateForKey:(id)key;
+
+/*!
+ Get date for key. Value should respond to doubleValue, which should be seconds since epoch GMT.
+ @param key
+ @param withDefaultDate
+ */
+- (NSDate *)gh_dateForKey:(id)key withDefaultDate:(NSDate *)withDefaultDate;
+
+/*!
  Object for key with default value, if entry is NSNull or entry does not exist.
 
  @param key Key

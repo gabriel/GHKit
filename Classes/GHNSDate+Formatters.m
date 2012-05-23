@@ -1,5 +1,5 @@
 //
-//  GHNSDate+Parsing.m
+//  GHNSDate+Formatters.m
 //
 //  Created by Gabe on 3/18/08.
 //  Copyright 2008 Gabriel Handford

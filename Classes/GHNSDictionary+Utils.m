@@ -28,6 +28,7 @@
 //
 
 #import "GHNSDictionary+Utils.h"
+#import "GHNSDate+Formatters.h"
 
 @implementation NSDictionary(GHUtils)
 
@@ -73,6 +74,16 @@
 	if (!value || [value isEqual:[NSNull null]]) return [NSNumber numberWithDouble:defaultValue];
 	NSAssert([value isKindOfClass:[NSNumber class]], @"Value must be a NSNumber");
 	return value;
+}
+
+- (NSDate *)gh_dateForKey:(id)key {
+  return [self gh_dateForKey:key withDefaultDate:nil];
+}
+
+- (NSDate *)gh_dateForKey:(id)key withDefaultDate:(NSDate *)defaultValue {
+  id value = [self objectForKey:key];
+  if (!value || [value isEqual:[NSNull null]]) return defaultValue;
+  return [NSDate gh_parseTimeSinceEpoch:value];
 }
 
 - (BOOL)gh_boolForKey:(id)key withDefault:(BOOL)defaultValue {
