@@ -102,4 +102,10 @@
  */
 - (id)gh_objectAtIndex:(NSInteger)index withDefault:(id)withDefault;
 
+/*!
+ Filter array.
+ @param filterBlock Filter block
+ */
+- (NSArray *)gh_filter:(BOOL(^)(id obj, NSInteger index))filterBlock;
+
 @end

@@ -94,4 +94,16 @@
   }  
 }
 
+- (NSArray *)gh_filter:(BOOL(^)(id obj, NSInteger index))filterBlock { 
+  id filteredArray = [NSMutableArray arrayWithCapacity:[self count]];
+  NSInteger i = 0;
+  for (id obj in self) {
+    if (filterBlock(obj, i))	{
+      [filteredArray addObject:obj];
+    }
+    i++;
+  }
+  return filteredArray; 
+}
+
 @end
