@@ -21,7 +21,7 @@ button and confirm that your "Build Location" is the "Derived Data Location".
 1. Link against GHKit:
     1. **libGHKit.a** on iOS
     1. **GHKit.framework** on OS X
-1. Import the RestKit headers via `#import <GHKit/GHKit.h>`
+1. Import the GHKit headers via `#import <GHKit/GHKit.h>`
 1. Build the project to verify installation is successful.
 
 
