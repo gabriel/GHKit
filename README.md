@@ -11,7 +11,7 @@ GHKit assumes that you are using a modern Xcode project building to the DerivedD
 via the "File" menu > "Project Settings...". On the "Build" tab within the sheet that opens, click the "Advanced..."
 button and confirm that your "Build Location" is the "Derived Data Location".
 
-1. Add Git submodule to your project: `git submodule add git://github.com/gabriel/GHKit.git GHKit`
+1. Add Git submodule to your project: `git submodule add git://github.com/gabriel/gh-kit.git GHKit`
 1. Add cross-project reference by dragging **GHKit.xcodeproj** to your project
 1. Open build settings editor for your project
 1. Add the following **Header Search Paths** (including the quotes): `"$(BUILT_PRODUCTS_DIR)/../../Headers"`
