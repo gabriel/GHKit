@@ -29,6 +29,7 @@
 
 #import "GHNSDictionary+Utils.h"
 #import "GHNSDate+Formatters.h"
+#import "GHNSURL+Utils.h"
 
 @implementation NSDictionary(GHUtils)
 
@@ -146,6 +147,10 @@
       [dict setObject:obj forKey:key];
   }
   return [dict autorelease];
+}
+
+- (NSString *)gh_queryString {
+  return [NSURL gh_dictionaryToQueryString:self];
 }
 
 @end

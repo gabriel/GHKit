@@ -191,4 +191,11 @@
  */
 - (NSDictionary *)gh_compactDictionary;
 
+/*!
+ Query string from dictionary.
+ 
+ Calls [NSURL gh_dictionaryToQueryString:self];
+ */
+- (NSString *)gh_queryString;
+
 @end
