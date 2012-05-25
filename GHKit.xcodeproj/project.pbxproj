@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 007DA669154E055C008574F9 /* GHKit-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
-		0085C4EA15510217002C6ABD /* GHNSDictionary+URL.h in Headers */ = {isa = PBXBuildFile; fileRef = 0085C4E815510217002C6ABD /* GHNSDictionary+URL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0085C4EB15510217002C6ABD /* GHNSDictionary+URL.h in Headers */ = {isa = PBXBuildFile; fileRef = 0085C4E815510217002C6ABD /* GHNSDictionary+URL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0085C4EC15510217002C6ABD /* GHNSDictionary+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085C4E915510217002C6ABD /* GHNSDictionary+URL.m */; };
-		0085C4ED15510217002C6ABD /* GHNSDictionary+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085C4E915510217002C6ABD /* GHNSDictionary+URL.m */; };
-		0085C4EE15510217002C6ABD /* GHNSDictionary+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085C4E915510217002C6ABD /* GHNSDictionary+URL.m */; };
-		0085C4EF15510217002C6ABD /* GHNSDictionary+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 0085C4E915510217002C6ABD /* GHNSDictionary+URL.m */; };
 		00D022D8154DF1EB003BAAC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022D7154DF1EB003BAAC3 /* Foundation.framework */; };
 		00D022EA154DF226003BAAC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022E9154DF226003BAAC3 /* Cocoa.framework */; };
 		00D022FC154DF30E003BAAC3 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -318,8 +312,6 @@
 
 /* Begin PBXFileReference section */
 		007DA669154E055C008574F9 /* GHKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHKit-Prefix.pch"; sourceTree = "<group>"; };
-		0085C4E815510217002C6ABD /* GHNSDictionary+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSDictionary+URL.h"; sourceTree = "<group>"; };
-		0085C4E915510217002C6ABD /* GHNSDictionary+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSDictionary+URL.m"; sourceTree = "<group>"; };
 		00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
 		00D0227D154DF1C5003BAAC3 /* GHKeychainStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKeychainStore.h; sourceTree = "<group>"; };
@@ -537,8 +529,6 @@
 				00D0228B154DF1C5003BAAC3 /* GHNSDictionary+NSNull.m */,
 				00D0228C154DF1C5003BAAC3 /* GHNSDictionary+Utils.h */,
 				00D0228D154DF1C5003BAAC3 /* GHNSDictionary+Utils.m */,
-				0085C4E815510217002C6ABD /* GHNSDictionary+URL.h */,
-				0085C4E915510217002C6ABD /* GHNSDictionary+URL.m */,
 				00D0228E154DF1C5003BAAC3 /* GHNSError+Utils.h */,
 				00D0228F154DF1C5003BAAC3 /* GHNSError+Utils.m */,
 				00D02290154DF1C5003BAAC3 /* GHNSFileManager+Utils.h */,
@@ -816,7 +806,6 @@
 				00D02382154DF44D003BAAC3 /* GHNSString+UIKitUtils.h in Headers */,
 				00D02384154DF456003BAAC3 /* GHUIColor+Utils.h in Headers */,
 				007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */,
-				0085C4EA15510217002C6ABD /* GHNSDictionary+URL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,7 +853,6 @@
 				00D0238A154DF46A003BAAC3 /* GHNSXMLElement+Utils.h in Headers */,
 				00D0238C154DF46F003BAAC3 /* GHNSXMLNode+Utils.h in Headers */,
 				00D0238E154DF475003BAAC3 /* GHViewAnimation.h in Headers */,
-				0085C4EB15510217002C6ABD /* GHNSDictionary+URL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1036,7 +1024,6 @@
 				00D02380154DF440003BAAC3 /* GHNSObject+Swizzle.m in Sources */,
 				00D02383154DF44F003BAAC3 /* GHNSString+UIKitUtils.m in Sources */,
 				00D02385154DF45A003BAAC3 /* GHUIColor+Utils.m in Sources */,
-				0085C4EC15510217002C6ABD /* GHNSDictionary+URL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1081,7 +1068,6 @@
 				00D0238B154DF46D003BAAC3 /* GHNSXMLElement+Utils.m in Sources */,
 				00D0238D154DF473003BAAC3 /* GHNSXMLNode+Utils.m in Sources */,
 				00D0238F154DF479003BAAC3 /* GHViewAnimation.m in Sources */,
-				0085C4ED15510217002C6ABD /* GHNSDictionary+URL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1150,7 +1136,6 @@
 				00D02405154DFA2B003BAAC3 /* GTMBase64.m in Sources */,
 				00D02409154DFA55003BAAC3 /* SFHFKeychainUtils.m in Sources */,
 				00D0240E154DFA87003BAAC3 /* GTMRegex.m in Sources */,
-				0085C4EE15510217002C6ABD /* GHNSDictionary+URL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1223,7 +1208,6 @@
 				00D02476154DFDD0003BAAC3 /* GHValidatorsTest.m in Sources */,
 				00D02477154DFDF1003BAAC3 /* GTMRegex.m in Sources */,
 				00D02478154DFDF3003BAAC3 /* GTMBase64.m in Sources */,
-				0085C4EF15510217002C6ABD /* GHNSDictionary+URL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
