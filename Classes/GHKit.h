@@ -59,7 +59,6 @@
 #import "GHNSNotificationCenter+Utils.h"
 #import "GHNSObject+Swizzle.h"
 
-#import "GHKeychainStore.h"
 #import "GHCGUtils.h"
 
 #import "GHValidators.h"
@@ -79,5 +78,5 @@
 
 #import "GHNSObject+Utils.h"
 #import "GHNSString+XML.h"
-#import "GHNSString+Base64.h"
+#import "GHNSData+Base64.h"
 
