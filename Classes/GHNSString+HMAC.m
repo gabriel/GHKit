@@ -24,21 +24,19 @@
 //
 
 #import "GHNSString+HMAC.h"
-#import "GHNSString+Base64.h"
-
+#import "GHNSData+Base64.h"
 #include <CommonCrypto/CommonHMAC.h>
 
 @implementation NSString(GHHMAC)
 
-- (NSString *)gh_HMACSHA1:(NSString *)secret base64Encoder:(id)base64Encoder {  
+- (NSString *)gh_HMACSHA1:(NSString *)secret {  
   NSData *secretData = [secret dataUsingEncoding:NSUTF8StringEncoding];
   NSData *clearTextData = [self dataUsingEncoding:NSUTF8StringEncoding];
   
   unsigned char cHMAC[CC_SHA1_DIGEST_LENGTH];
   CCHmac(kCCHmacAlgSHA1, [secretData bytes], [secretData length], [clearTextData bytes], [clearTextData length], cHMAC);
-  
-  NSData *data = [(id<GHEncoder>)base64Encoder encodeBytes:cHMAC length:sizeof(cHMAC)]; 
-  return [[[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding] autorelease];
+
+  return [NSData gh_base64EncodeWithBytes:cHMAC length:sizeof(cHMAC)];
 
   // From old hmac.h and sha1.h implementation
   /*

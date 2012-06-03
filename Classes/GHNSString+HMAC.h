@@ -34,20 +34,10 @@
 
 /*!
  HMAC SHA1 digest.
- 
- For the Base64 encoder you can user GTMBase64, or that implements:
 
-      - (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
- 
- For example,
-
-      // #import <GHKit/GTMBase64.h>
-      ["stringtosign" gh_HMACSHA1:@"mysecret" base64Encoder:[GTMBase64 class]];
- 
  @param secret Secret key to sign with
- @param base64Encoder Base64 encoder, that implements: (NSData *)encodeBytes:(const void *)bytes length:(NSUInteger)length;
  @result Base64 encoded HMAC SHA1 digest
  */
-- (NSString *)gh_HMACSHA1:(NSString *)secret base64Encoder:(id)base64Encoder;
+- (NSString *)gh_HMACSHA1:(NSString *)secret;
 
 @end
