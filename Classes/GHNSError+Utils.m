@@ -45,7 +45,7 @@
 - (void)gh_fullDescription:(NSMutableString *)errorDescription level:(NSInteger)level {
 	[errorDescription appendFormat:@"%@\n", [self localizedDescription]];
 	
-	if (level > 0) [errorDescription appendFormat:@"--\n", level];
+	if (level > 0) [errorDescription appendString:@"--\n"];
 	level++;
 	for(id userInfoKey in [self userInfo]) {	
 		id userInfoEntry = [[self userInfo] objectForKey:userInfoKey];
