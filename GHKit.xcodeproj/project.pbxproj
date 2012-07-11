@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		006BD87B15AE2FC900D493AE /* GHNSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD87915AE2FC900D493AE /* GHNSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		006BD87C15AE2FC900D493AE /* GHNSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD87915AE2FC900D493AE /* GHNSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		006BD87D15AE2FC900D493AE /* GHNSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */; };
+		006BD87E15AE2FC900D493AE /* GHNSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */; };
+		006BD87F15AE2FD700D493AE /* GHNSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */; };
+		006BD88015AE2FD800D493AE /* GHNSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */; };
+		006BD88415AE2FF500D493AE /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 006BD88115AE2FF400D493AE /* ybase64.c */; };
+		006BD88515AE2FF500D493AE /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 006BD88115AE2FF400D493AE /* ybase64.c */; };
+		006BD88615AE2FF500D493AE /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 006BD88115AE2FF400D493AE /* ybase64.c */; };
+		006BD88715AE2FF500D493AE /* ybase64.c in Sources */ = {isa = PBXBuildFile; fileRef = 006BD88115AE2FF400D493AE /* ybase64.c */; };
+		006BD88815AE2FF500D493AE /* ybase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD88215AE2FF400D493AE /* ybase64.h */; };
+		006BD88915AE2FF500D493AE /* ybase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD88215AE2FF400D493AE /* ybase64.h */; };
+		006BD88A15AE2FF500D493AE /* ydefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD88315AE2FF500D493AE /* ydefines.h */; };
+		006BD88B15AE2FF500D493AE /* ydefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD88315AE2FF500D493AE /* ydefines.h */; };
 		007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 007DA669154E055C008574F9 /* GHKit-Prefix.pch */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D022D8154DF1EB003BAAC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022D7154DF1EB003BAAC3 /* Foundation.framework */; };
 		00D022EA154DF226003BAAC3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022E9154DF226003BAAC3 /* Cocoa.framework */; };
 		00D022FC154DF30E003BAAC3 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D022FD154DF30F003BAAC3 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00D022FE154DF316003BAAC3 /* GHKeychainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227D154DF1C5003BAAC3 /* GHKeychainStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00D022FF154DF316003BAAC3 /* GHKeychainStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227D154DF1C5003BAAC3 /* GHKeychainStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00D02300154DF324003BAAC3 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227E154DF1C5003BAAC3 /* GHKeychainStore.m */; };
-		00D02301154DF324003BAAC3 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227E154DF1C5003BAAC3 /* GHKeychainStore.m */; };
 		00D02302154DF328003BAAC3 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */; };
 		00D02303154DF328003BAAC3 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */; };
 		00D02304154DF32C003BAAC3 /* GHKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D0227F154DF1C5003BAAC3 /* GHKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,10 +98,6 @@
 		00D02347154DF3C3003BAAC3 /* GHNSObject+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022A0154DF1C5003BAAC3 /* GHNSObject+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D02348154DF3C6003BAAC3 /* GHNSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A1154DF1C5003BAAC3 /* GHNSObject+Utils.m */; };
 		00D02349154DF3C7003BAAC3 /* GHNSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A1154DF1C5003BAAC3 /* GHNSObject+Utils.m */; };
-		00D0234A154DF3C9003BAAC3 /* GHNSString+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022A2154DF1C5003BAAC3 /* GHNSString+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00D0234B154DF3C9003BAAC3 /* GHNSString+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022A2154DF1C5003BAAC3 /* GHNSString+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		00D0234C154DF3CE003BAAC3 /* GHNSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A3154DF1C5003BAAC3 /* GHNSString+Base64.m */; };
-		00D0234D154DF3CE003BAAC3 /* GHNSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A3154DF1C5003BAAC3 /* GHNSString+Base64.m */; };
 		00D0234E154DF3D2003BAAC3 /* GHNSString+HMAC.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022A4154DF1C5003BAAC3 /* GHNSString+HMAC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D0234F154DF3D2003BAAC3 /* GHNSString+HMAC.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022A4154DF1C5003BAAC3 /* GHNSString+HMAC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00D02350154DF3D7003BAAC3 /* GHNSString+HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A5154DF1C5003BAAC3 /* GHNSString+HMAC.m */; };
@@ -162,7 +168,6 @@
 		00D02398154DF67D003BAAC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D022D7154DF1EB003BAAC3 /* Foundation.framework */; };
 		00D0239A154DF67D003BAAC3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D02399154DF67D003BAAC3 /* CoreGraphics.framework */; };
 		00D023A2154DF67E003BAAC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023A1154DF67E003BAAC3 /* main.m */; };
-		00D023B3154DF89A003BAAC3 /* GHEMKeychainStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AC154DF89A003BAAC3 /* GHEMKeychainStoreTest.m */; };
 		00D023B4154DF89A003BAAC3 /* GHNSStringEnumeratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AD154DF89A003BAAC3 /* GHNSStringEnumeratorTest.m */; };
 		00D023B5154DF89A003BAAC3 /* GHNSStringXMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AE154DF89A003BAAC3 /* GHNSStringXMLTest.m */; };
 		00D023B6154DF89A003BAAC3 /* GHReversableDictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AF154DF89A003BAAC3 /* GHReversableDictionaryTest.m */; };
@@ -186,7 +191,6 @@
 		00D023DB154DF8A5003BAAC3 /* NSURLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023C9154DF8A5003BAAC3 /* NSURLUtilsTest.m */; };
 		00D023DC154DF8A5003BAAC3 /* ReadonlyCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023CA154DF8A5003BAAC3 /* ReadonlyCopyTest.m */; };
 		00D023DD154DF8BC003BAAC3 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */; };
-		00D023DE154DF8BD003BAAC3 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227E154DF1C5003BAAC3 /* GHKeychainStore.m */; };
 		00D023DF154DF8C0003BAAC3 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02283154DF1C5003BAAC3 /* GHNSArray+Utils.m */; };
 		00D023E0154DF8C2003BAAC3 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02285154DF1C5003BAAC3 /* GHNSBundle+Utils.m */; };
 		00D023E1154DF8C4003BAAC3 /* GHNSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02287154DF1C5003BAAC3 /* GHNSDate+Formatters.m */; };
@@ -203,7 +207,6 @@
 		00D023EC154DF8D9003BAAC3 /* GHNSNumber+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0229D154DF1C5003BAAC3 /* GHNSNumber+Utils.m */; };
 		00D023ED154DF8DA003BAAC3 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0229F154DF1C5003BAAC3 /* GHNSObject+Invocation.m */; };
 		00D023EE154DF8DC003BAAC3 /* GHNSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A1154DF1C5003BAAC3 /* GHNSObject+Utils.m */; };
-		00D023EF154DF8DE003BAAC3 /* GHNSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A3154DF1C5003BAAC3 /* GHNSString+Base64.m */; };
 		00D023F0154DF8E1003BAAC3 /* GHNSString+HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A5154DF1C5003BAAC3 /* GHNSString+HMAC.m */; };
 		00D023F1154DF8E3003BAAC3 /* GHNSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A7154DF1C5003BAAC3 /* GHNSString+TimeInterval.m */; };
 		00D023F2154DF8E5003BAAC3 /* GHNSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A9154DF1C5003BAAC3 /* GHNSString+URL.m */; };
@@ -220,8 +223,6 @@
 		00D023FD154DF902003BAAC3 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 00D022CA154DF1C5003BAAC3 /* sha1.c */; };
 		00D023FE154DF905003BAAC3 /* GHNSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022CE154DF1C5003BAAC3 /* GHNSObject+Swizzle.m */; };
 		00D02400154DF93F003BAAC3 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D023FF154DF93F003BAAC3 /* GHUnitIOS.framework */; };
-		00D02405154DFA2B003BAAC3 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02403154DFA2B003BAAC3 /* GTMBase64.m */; };
-		00D02409154DFA55003BAAC3 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02408154DFA55003BAAC3 /* SFHFKeychainUtils.m */; };
 		00D0240B154DFA69003BAAC3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D0240A154DFA67003BAAC3 /* Security.framework */; };
 		00D0240E154DFA87003BAAC3 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0240D154DFA87003BAAC3 /* GTMRegex.m */; };
 		00D02410154DFAC0003BAAC3 /* test.file in Resources */ = {isa = PBXBuildFile; fileRef = 00D0240F154DFABF003BAAC3 /* test.file */; };
@@ -230,7 +231,6 @@
 		00D0242E154DFB82003BAAC3 /* GHUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D0242D154DFB82003BAAC3 /* GHUnit.framework */; };
 		00D02430154DFBD6003BAAC3 /* GHUnit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 00D0242D154DFB82003BAAC3 /* GHUnit.framework */; };
 		00D02431154DFC82003BAAC3 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */; };
-		00D02432154DFC84003BAAC3 /* GHKeychainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0227E154DF1C5003BAAC3 /* GHKeychainStore.m */; };
 		00D02433154DFC87003BAAC3 /* GHNSArray+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02283154DF1C5003BAAC3 /* GHNSArray+Utils.m */; };
 		00D02434154DFC89003BAAC3 /* GHNSBundle+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02285154DF1C5003BAAC3 /* GHNSBundle+Utils.m */; };
 		00D02435154DFC8B003BAAC3 /* GHNSDate+Formatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02287154DF1C5003BAAC3 /* GHNSDate+Formatters.m */; };
@@ -247,7 +247,6 @@
 		00D02440154DFCA3003BAAC3 /* GHNSNumber+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0229D154DF1C5003BAAC3 /* GHNSNumber+Utils.m */; };
 		00D02441154DFCA5003BAAC3 /* GHNSObject+Invocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0229F154DF1C5003BAAC3 /* GHNSObject+Invocation.m */; };
 		00D02442154DFCA7003BAAC3 /* GHNSObject+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A1154DF1C5003BAAC3 /* GHNSObject+Utils.m */; };
-		00D02443154DFCA9003BAAC3 /* GHNSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A3154DF1C5003BAAC3 /* GHNSString+Base64.m */; };
 		00D02444154DFCAC003BAAC3 /* GHNSString+HMAC.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A5154DF1C5003BAAC3 /* GHNSString+HMAC.m */; };
 		00D02445154DFCAE003BAAC3 /* GHNSString+TimeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A7154DF1C5003BAAC3 /* GHNSString+TimeInterval.m */; };
 		00D02446154DFCB0003BAAC3 /* GHNSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D022A9154DF1C5003BAAC3 /* GHNSString+URL.m */; };
@@ -287,13 +286,11 @@
 		00D0246F154DFDC1003BAAC3 /* NSStringUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023C8154DF8A5003BAAC3 /* NSStringUtilsTest.m */; };
 		00D02470154DFDC3003BAAC3 /* NSURLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023C9154DF8A5003BAAC3 /* NSURLUtilsTest.m */; };
 		00D02471154DFDC5003BAAC3 /* ReadonlyCopyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023CA154DF8A5003BAAC3 /* ReadonlyCopyTest.m */; };
-		00D02472154DFDC7003BAAC3 /* GHEMKeychainStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AC154DF89A003BAAC3 /* GHEMKeychainStoreTest.m */; };
 		00D02473154DFDC9003BAAC3 /* GHNSStringEnumeratorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AD154DF89A003BAAC3 /* GHNSStringEnumeratorTest.m */; };
 		00D02474154DFDCB003BAAC3 /* GHNSStringXMLTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AE154DF89A003BAAC3 /* GHNSStringXMLTest.m */; };
 		00D02475154DFDCD003BAAC3 /* GHReversableDictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023AF154DF89A003BAAC3 /* GHReversableDictionaryTest.m */; };
 		00D02476154DFDD0003BAAC3 /* GHValidatorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023B0154DF89A003BAAC3 /* GHValidatorsTest.m */; };
 		00D02477154DFDF1003BAAC3 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0240D154DFA87003BAAC3 /* GTMRegex.m */; };
-		00D02478154DFDF3003BAAC3 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D02403154DFA2B003BAAC3 /* GTMBase64.m */; };
 		00D02479154DFE14003BAAC3 /* test.file in Resources */ = {isa = PBXBuildFile; fileRef = 00D0240F154DFABF003BAAC3 /* test.file */; };
 /* End PBXBuildFile section */
 
@@ -311,11 +308,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		006BD87915AE2FC900D493AE /* GHNSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSData+Base64.h"; sourceTree = "<group>"; };
+		006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSData+Base64.m"; sourceTree = "<group>"; };
+		006BD88115AE2FF400D493AE /* ybase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ybase64.c; sourceTree = "<group>"; };
+		006BD88215AE2FF400D493AE /* ybase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ybase64.h; sourceTree = "<group>"; };
+		006BD88315AE2FF500D493AE /* ydefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ydefines.h; sourceTree = "<group>"; };
 		007DA669154E055C008574F9 /* GHKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHKit-Prefix.pch"; sourceTree = "<group>"; };
 		00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
-		00D0227D154DF1C5003BAAC3 /* GHKeychainStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKeychainStore.h; sourceTree = "<group>"; };
-		00D0227E154DF1C5003BAAC3 /* GHKeychainStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GHKeychainStore.m; sourceTree = "<group>"; };
 		00D0227F154DF1C5003BAAC3 /* GHKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKit.h; sourceTree = "<group>"; };
 		00D02280154DF1C5003BAAC3 /* GHKitDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKitDefines.h; sourceTree = "<group>"; };
 		00D02281154DF1C5003BAAC3 /* GHKitIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKitIOS.h; sourceTree = "<group>"; };
@@ -351,8 +351,6 @@
 		00D0229F154DF1C5003BAAC3 /* GHNSObject+Invocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Invocation.m"; sourceTree = "<group>"; };
 		00D022A0154DF1C5003BAAC3 /* GHNSObject+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GHNSObject+Utils.h"; sourceTree = "<group>"; };
 		00D022A1154DF1C5003BAAC3 /* GHNSObject+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GHNSObject+Utils.m"; sourceTree = "<group>"; };
-		00D022A2154DF1C5003BAAC3 /* GHNSString+Base64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GHNSString+Base64.h"; sourceTree = "<group>"; };
-		00D022A3154DF1C5003BAAC3 /* GHNSString+Base64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+Base64.m"; sourceTree = "<group>"; };
 		00D022A4154DF1C5003BAAC3 /* GHNSString+HMAC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GHNSString+HMAC.h"; sourceTree = "<group>"; };
 		00D022A5154DF1C5003BAAC3 /* GHNSString+HMAC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "GHNSString+HMAC.m"; sourceTree = "<group>"; };
 		00D022A6154DF1C5003BAAC3 /* GHNSString+TimeInterval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GHNSString+TimeInterval.h"; sourceTree = "<group>"; };
@@ -400,13 +398,12 @@
 		00D022EC154DF226003BAAC3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		00D022ED154DF226003BAAC3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00D022EE154DF226003BAAC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		00D02394154DF67D003BAAC3 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D02394154DF67D003BAAC3 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Tests.app; path = GHKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D02396154DF67D003BAAC3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		00D02399154DF67D003BAAC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		00D0239D154DF67E003BAAC3 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		00D023A1154DF67E003BAAC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00D023A3154DF67E003BAAC3 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		00D023AC154DF89A003BAAC3 /* GHEMKeychainStoreTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHEMKeychainStoreTest.m; sourceTree = "<group>"; };
 		00D023AD154DF89A003BAAC3 /* GHNSStringEnumeratorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringEnumeratorTest.m; sourceTree = "<group>"; };
 		00D023AE154DF89A003BAAC3 /* GHNSStringXMLTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHNSStringXMLTest.m; sourceTree = "<group>"; };
 		00D023AF154DF89A003BAAC3 /* GHReversableDictionaryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHReversableDictionaryTest.m; sourceTree = "<group>"; };
@@ -430,16 +427,12 @@
 		00D023C9154DF8A5003BAAC3 /* NSURLUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLUtilsTest.m; sourceTree = "<group>"; };
 		00D023CA154DF8A5003BAAC3 /* ReadonlyCopyTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadonlyCopyTest.m; sourceTree = "<group>"; };
 		00D023FF154DF93F003BAAC3 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = Frameworks/GHUnitIOS.framework; sourceTree = "<group>"; };
-		00D02402154DFA2B003BAAC3 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		00D02403154DFA2B003BAAC3 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
 		00D02404154DFA2B003BAAC3 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		00D02407154DFA55003BAAC3 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		00D02408154DFA55003BAAC3 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		00D0240A154DFA67003BAAC3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		00D0240C154DFA87003BAAC3 /* GTMRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMRegex.h; sourceTree = "<group>"; };
 		00D0240D154DFA87003BAAC3 /* GTMRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMRegex.m; sourceTree = "<group>"; };
 		00D0240F154DFABF003BAAC3 /* test.file */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.file; sourceTree = "<group>"; };
-		00D02415154DFB0C003BAAC3 /* TestsFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestsFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D02415154DFB0C003BAAC3 /* TestsFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TestsFramework.app; path = GHKitTestsFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D0241A154DFB0D003BAAC3 /* TestsFramework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestsFramework-Info.plist"; sourceTree = "<group>"; };
 		00D0241E154DFB0D003BAAC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00D02420154DFB0D003BAAC3 /* TestsFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestsFramework-Prefix.pch"; sourceTree = "<group>"; };
@@ -512,8 +505,6 @@
 			children = (
 				00D0227B154DF1C5003BAAC3 /* GHCGUtils.h */,
 				00D0227C154DF1C5003BAAC3 /* GHCGUtils.m */,
-				00D0227D154DF1C5003BAAC3 /* GHKeychainStore.h */,
-				00D0227E154DF1C5003BAAC3 /* GHKeychainStore.m */,
 				00D0227F154DF1C5003BAAC3 /* GHKit.h */,
 				00D02280154DF1C5003BAAC3 /* GHKitDefines.h */,
 				00D02281154DF1C5003BAAC3 /* GHKitIOS.h */,
@@ -549,8 +540,6 @@
 				00D0229F154DF1C5003BAAC3 /* GHNSObject+Invocation.m */,
 				00D022A0154DF1C5003BAAC3 /* GHNSObject+Utils.h */,
 				00D022A1154DF1C5003BAAC3 /* GHNSObject+Utils.m */,
-				00D022A2154DF1C5003BAAC3 /* GHNSString+Base64.h */,
-				00D022A3154DF1C5003BAAC3 /* GHNSString+Base64.m */,
 				00D022A4154DF1C5003BAAC3 /* GHNSString+HMAC.h */,
 				00D022A5154DF1C5003BAAC3 /* GHNSString+HMAC.m */,
 				00D022A6154DF1C5003BAAC3 /* GHNSString+TimeInterval.h */,
@@ -571,6 +560,11 @@
 				00D022B5154DF1C5003BAAC3 /* GHReversableDictionary.m */,
 				00D022B6154DF1C5003BAAC3 /* GHValidators.h */,
 				00D022B7154DF1C5003BAAC3 /* GHValidators.m */,
+				006BD87915AE2FC900D493AE /* GHNSData+Base64.h */,
+				006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */,
+				006BD88115AE2FF400D493AE /* ybase64.c */,
+				006BD88215AE2FF400D493AE /* ybase64.h */,
+				006BD88315AE2FF500D493AE /* ydefines.h */,
 				00D022B8154DF1C5003BAAC3 /* hmac.c */,
 				00D022B9154DF1C5003BAAC3 /* hmac.h */,
 				00D022BA154DF1C5003BAAC3 /* iOS */,
@@ -660,7 +654,6 @@
 		00D0239B154DF67D003BAAC3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				00D02406154DFA55003BAAC3 /* SFHF */,
 				00D02401154DFA2B003BAAC3 /* GTM */,
 				00D023B9154DF8A4003BAAC3 /* NSArrayUtilsTest.m */,
 				00D023BA154DF8A4003BAAC3 /* NSDateParsingTest.m */,
@@ -679,7 +672,6 @@
 				00D023C8154DF8A5003BAAC3 /* NSStringUtilsTest.m */,
 				00D023C9154DF8A5003BAAC3 /* NSURLUtilsTest.m */,
 				00D023CA154DF8A5003BAAC3 /* ReadonlyCopyTest.m */,
-				00D023AC154DF89A003BAAC3 /* GHEMKeychainStoreTest.m */,
 				00D023AD154DF89A003BAAC3 /* GHNSStringEnumeratorTest.m */,
 				00D023AE154DF89A003BAAC3 /* GHNSStringXMLTest.m */,
 				00D023AF154DF89A003BAAC3 /* GHReversableDictionaryTest.m */,
@@ -714,20 +706,9 @@
 			children = (
 				00D0240C154DFA87003BAAC3 /* GTMRegex.h */,
 				00D0240D154DFA87003BAAC3 /* GTMRegex.m */,
-				00D02402154DFA2B003BAAC3 /* GTMBase64.h */,
-				00D02403154DFA2B003BAAC3 /* GTMBase64.m */,
 				00D02404154DFA2B003BAAC3 /* GTMDefines.h */,
 			);
 			path = GTM;
-			sourceTree = "<group>";
-		};
-		00D02406154DFA55003BAAC3 /* SFHF */ = {
-			isa = PBXGroup;
-			children = (
-				00D02407154DFA55003BAAC3 /* SFHFKeychainUtils.h */,
-				00D02408154DFA55003BAAC3 /* SFHFKeychainUtils.m */,
-			);
-			path = SFHF;
 			sourceTree = "<group>";
 		};
 		00D02418154DFB0C003BAAC3 /* TestsFramework */ = {
@@ -769,7 +750,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D022FC154DF30E003BAAC3 /* GHCGUtils.h in Headers */,
-				00D022FE154DF316003BAAC3 /* GHKeychainStore.h in Headers */,
 				00D02304154DF32C003BAAC3 /* GHKit.h in Headers */,
 				00D02306154DF333003BAAC3 /* GHKitDefines.h in Headers */,
 				00D02308154DF339003BAAC3 /* GHKitIOS.h in Headers */,
@@ -789,7 +769,6 @@
 				00D0233E154DF3B4003BAAC3 /* GHNSNumber+Utils.h in Headers */,
 				00D02343154DF3BC003BAAC3 /* GHNSObject+Invocation.h in Headers */,
 				00D02346154DF3C2003BAAC3 /* GHNSObject+Utils.h in Headers */,
-				00D0234A154DF3C9003BAAC3 /* GHNSString+Base64.h in Headers */,
 				00D0234E154DF3D2003BAAC3 /* GHNSString+HMAC.h in Headers */,
 				00D02352154DF3D9003BAAC3 /* GHNSString+TimeInterval.h in Headers */,
 				00D02356154DF3E0003BAAC3 /* GHNSString+URL.h in Headers */,
@@ -806,6 +785,9 @@
 				00D02382154DF44D003BAAC3 /* GHNSString+UIKitUtils.h in Headers */,
 				00D02384154DF456003BAAC3 /* GHUIColor+Utils.h in Headers */,
 				007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */,
+				006BD87B15AE2FC900D493AE /* GHNSData+Base64.h in Headers */,
+				006BD88815AE2FF500D493AE /* ybase64.h in Headers */,
+				006BD88A15AE2FF500D493AE /* ydefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,7 +796,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D022FD154DF30F003BAAC3 /* GHCGUtils.h in Headers */,
-				00D022FF154DF316003BAAC3 /* GHKeychainStore.h in Headers */,
 				00D02305154DF32C003BAAC3 /* GHKit.h in Headers */,
 				00D02307154DF334003BAAC3 /* GHKitDefines.h in Headers */,
 				00D02309154DF339003BAAC3 /* GHKitIOS.h in Headers */,
@@ -834,7 +815,6 @@
 				00D0233F154DF3B4003BAAC3 /* GHNSNumber+Utils.h in Headers */,
 				00D02342154DF3BB003BAAC3 /* GHNSObject+Invocation.h in Headers */,
 				00D02347154DF3C3003BAAC3 /* GHNSObject+Utils.h in Headers */,
-				00D0234B154DF3C9003BAAC3 /* GHNSString+Base64.h in Headers */,
 				00D0234F154DF3D2003BAAC3 /* GHNSString+HMAC.h in Headers */,
 				00D02353154DF3DA003BAAC3 /* GHNSString+TimeInterval.h in Headers */,
 				00D02357154DF3E0003BAAC3 /* GHNSString+URL.h in Headers */,
@@ -853,6 +833,9 @@
 				00D0238A154DF46A003BAAC3 /* GHNSXMLElement+Utils.h in Headers */,
 				00D0238C154DF46F003BAAC3 /* GHNSXMLNode+Utils.h in Headers */,
 				00D0238E154DF475003BAAC3 /* GHViewAnimation.h in Headers */,
+				006BD87C15AE2FC900D493AE /* GHNSData+Base64.h in Headers */,
+				006BD88915AE2FF500D493AE /* ybase64.h in Headers */,
+				006BD88B15AE2FF500D493AE /* ydefines.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,7 +973,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D02300154DF324003BAAC3 /* GHKeychainStore.m in Sources */,
 				00D02302154DF328003BAAC3 /* GHCGUtils.m in Sources */,
 				00D0230C154DF356003BAAC3 /* GHNSArray+Utils.m in Sources */,
 				00D02310154DF35D003BAAC3 /* GHNSBundle+Utils.m in Sources */,
@@ -1008,7 +990,6 @@
 				00D02340154DF3B8003BAAC3 /* GHNSNumber+Utils.m in Sources */,
 				00D02344154DF3C0003BAAC3 /* GHNSObject+Invocation.m in Sources */,
 				00D02348154DF3C6003BAAC3 /* GHNSObject+Utils.m in Sources */,
-				00D0234C154DF3CE003BAAC3 /* GHNSString+Base64.m in Sources */,
 				00D02350154DF3D7003BAAC3 /* GHNSString+HMAC.m in Sources */,
 				00D02354154DF3DE003BAAC3 /* GHNSString+TimeInterval.m in Sources */,
 				00D02358154DF3E4003BAAC3 /* GHNSString+URL.m in Sources */,
@@ -1024,6 +1005,8 @@
 				00D02380154DF440003BAAC3 /* GHNSObject+Swizzle.m in Sources */,
 				00D02383154DF44F003BAAC3 /* GHNSString+UIKitUtils.m in Sources */,
 				00D02385154DF45A003BAAC3 /* GHUIColor+Utils.m in Sources */,
+				006BD87D15AE2FC900D493AE /* GHNSData+Base64.m in Sources */,
+				006BD88415AE2FF500D493AE /* ybase64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1031,7 +1014,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D02301154DF324003BAAC3 /* GHKeychainStore.m in Sources */,
 				00D02303154DF328003BAAC3 /* GHCGUtils.m in Sources */,
 				00D0230D154DF356003BAAC3 /* GHNSArray+Utils.m in Sources */,
 				00D02311154DF35D003BAAC3 /* GHNSBundle+Utils.m in Sources */,
@@ -1049,7 +1031,6 @@
 				00D02341154DF3B9003BAAC3 /* GHNSNumber+Utils.m in Sources */,
 				00D02345154DF3C0003BAAC3 /* GHNSObject+Invocation.m in Sources */,
 				00D02349154DF3C7003BAAC3 /* GHNSObject+Utils.m in Sources */,
-				00D0234D154DF3CE003BAAC3 /* GHNSString+Base64.m in Sources */,
 				00D02351154DF3D7003BAAC3 /* GHNSString+HMAC.m in Sources */,
 				00D02355154DF3DE003BAAC3 /* GHNSString+TimeInterval.m in Sources */,
 				00D02359154DF3E4003BAAC3 /* GHNSString+URL.m in Sources */,
@@ -1068,6 +1049,8 @@
 				00D0238B154DF46D003BAAC3 /* GHNSXMLElement+Utils.m in Sources */,
 				00D0238D154DF473003BAAC3 /* GHNSXMLNode+Utils.m in Sources */,
 				00D0238F154DF479003BAAC3 /* GHViewAnimation.m in Sources */,
+				006BD87E15AE2FC900D493AE /* GHNSData+Base64.m in Sources */,
+				006BD88515AE2FF500D493AE /* ybase64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,7 +1059,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D023A2154DF67E003BAAC3 /* main.m in Sources */,
-				00D023B3154DF89A003BAAC3 /* GHEMKeychainStoreTest.m in Sources */,
 				00D023B4154DF89A003BAAC3 /* GHNSStringEnumeratorTest.m in Sources */,
 				00D023B5154DF89A003BAAC3 /* GHNSStringXMLTest.m in Sources */,
 				00D023B6154DF89A003BAAC3 /* GHReversableDictionaryTest.m in Sources */,
@@ -1100,7 +1082,6 @@
 				00D023DB154DF8A5003BAAC3 /* NSURLUtilsTest.m in Sources */,
 				00D023DC154DF8A5003BAAC3 /* ReadonlyCopyTest.m in Sources */,
 				00D023DD154DF8BC003BAAC3 /* GHCGUtils.m in Sources */,
-				00D023DE154DF8BD003BAAC3 /* GHKeychainStore.m in Sources */,
 				00D023DF154DF8C0003BAAC3 /* GHNSArray+Utils.m in Sources */,
 				00D023E0154DF8C2003BAAC3 /* GHNSBundle+Utils.m in Sources */,
 				00D023E1154DF8C4003BAAC3 /* GHNSDate+Formatters.m in Sources */,
@@ -1117,7 +1098,6 @@
 				00D023EC154DF8D9003BAAC3 /* GHNSNumber+Utils.m in Sources */,
 				00D023ED154DF8DA003BAAC3 /* GHNSObject+Invocation.m in Sources */,
 				00D023EE154DF8DC003BAAC3 /* GHNSObject+Utils.m in Sources */,
-				00D023EF154DF8DE003BAAC3 /* GHNSString+Base64.m in Sources */,
 				00D023F0154DF8E1003BAAC3 /* GHNSString+HMAC.m in Sources */,
 				00D023F1154DF8E3003BAAC3 /* GHNSString+TimeInterval.m in Sources */,
 				00D023F2154DF8E5003BAAC3 /* GHNSString+URL.m in Sources */,
@@ -1133,9 +1113,9 @@
 				00D023FC154DF8FE003BAAC3 /* GHUIColor+Utils.m in Sources */,
 				00D023FD154DF902003BAAC3 /* sha1.c in Sources */,
 				00D023FE154DF905003BAAC3 /* GHNSObject+Swizzle.m in Sources */,
-				00D02405154DFA2B003BAAC3 /* GTMBase64.m in Sources */,
-				00D02409154DFA55003BAAC3 /* SFHFKeychainUtils.m in Sources */,
 				00D0240E154DFA87003BAAC3 /* GTMRegex.m in Sources */,
+				006BD87F15AE2FD700D493AE /* GHNSData+Base64.m in Sources */,
+				006BD88615AE2FF500D493AE /* ybase64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1145,7 +1125,6 @@
 			files = (
 				00D0241F154DFB0D003BAAC3 /* main.m in Sources */,
 				00D02431154DFC82003BAAC3 /* GHCGUtils.m in Sources */,
-				00D02432154DFC84003BAAC3 /* GHKeychainStore.m in Sources */,
 				00D02433154DFC87003BAAC3 /* GHNSArray+Utils.m in Sources */,
 				00D02434154DFC89003BAAC3 /* GHNSBundle+Utils.m in Sources */,
 				00D02435154DFC8B003BAAC3 /* GHNSDate+Formatters.m in Sources */,
@@ -1162,7 +1141,6 @@
 				00D02440154DFCA3003BAAC3 /* GHNSNumber+Utils.m in Sources */,
 				00D02441154DFCA5003BAAC3 /* GHNSObject+Invocation.m in Sources */,
 				00D02442154DFCA7003BAAC3 /* GHNSObject+Utils.m in Sources */,
-				00D02443154DFCA9003BAAC3 /* GHNSString+Base64.m in Sources */,
 				00D02444154DFCAC003BAAC3 /* GHNSString+HMAC.m in Sources */,
 				00D02445154DFCAE003BAAC3 /* GHNSString+TimeInterval.m in Sources */,
 				00D02446154DFCB0003BAAC3 /* GHNSString+URL.m in Sources */,
@@ -1201,13 +1179,13 @@
 				00D0246F154DFDC1003BAAC3 /* NSStringUtilsTest.m in Sources */,
 				00D02470154DFDC3003BAAC3 /* NSURLUtilsTest.m in Sources */,
 				00D02471154DFDC5003BAAC3 /* ReadonlyCopyTest.m in Sources */,
-				00D02472154DFDC7003BAAC3 /* GHEMKeychainStoreTest.m in Sources */,
 				00D02473154DFDC9003BAAC3 /* GHNSStringEnumeratorTest.m in Sources */,
 				00D02474154DFDCB003BAAC3 /* GHNSStringXMLTest.m in Sources */,
 				00D02475154DFDCD003BAAC3 /* GHReversableDictionaryTest.m in Sources */,
 				00D02476154DFDD0003BAAC3 /* GHValidatorsTest.m in Sources */,
 				00D02477154DFDF1003BAAC3 /* GTMRegex.m in Sources */,
-				00D02478154DFDF3003BAAC3 /* GTMBase64.m in Sources */,
+				006BD88015AE2FD800D493AE /* GHNSData+Base64.m in Sources */,
+				006BD88715AE2FF500D493AE /* ybase64.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

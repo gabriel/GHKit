@@ -86,7 +86,14 @@
 - (NSUInteger)gh_unsignedIntegerForKey:(id)key;
 
 /*!
- Number for key with default double value.
+ Number for key.
+ @param key
+ @result Number
+ */
+- (NSNumber *)gh_numberForKey:(id)key;
+
+/*!
+ Number for key with default integer value.
  
  @param key Key
  @param withDefaultInteger If value for key is nil or [NSNull null] this default is returned.
@@ -190,5 +197,12 @@
  @result Dictionary without entries for keys with NSNull values
  */
 - (NSDictionary *)gh_compactDictionary;
+
+/*!
+ Query string from dictionary.
+ 
+ Calls [NSURL gh_dictionaryToQueryString:self];
+ */
+- (NSString *)gh_queryString;
 
 @end

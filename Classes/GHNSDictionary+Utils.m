@@ -29,6 +29,7 @@
 
 #import "GHNSDictionary+Utils.h"
 #import "GHNSDate+Formatters.h"
+#import "GHNSURL+Utils.h"
 
 @implementation NSDictionary(GHUtils)
 
@@ -60,6 +61,13 @@
 
 - (NSUInteger)gh_unsignedIntegerForKey:(id)key {
 	return [self gh_unsignedIntegerForKey:key withDefault:0];
+}
+
+- (NSNumber *)gh_numberForKey:(id)key {
+  id value = [self objectForKey:key];
+	if (!value || [value isEqual:[NSNull null]]) return nil;
+  NSAssert([value isKindOfClass:[NSNumber class]], @"Value must be a NSNumber");
+	return value;
 }
 
 - (NSNumber *)gh_numberForKey:(id)key withDefaultInteger:(NSInteger)defaultValue {
@@ -146,6 +154,10 @@
       [dict setObject:obj forKey:key];
   }
   return [dict autorelease];
+}
+
+- (NSString *)gh_queryString {
+  return [NSURL gh_dictionaryToQueryString:self];
 }
 
 @end

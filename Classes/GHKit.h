@@ -44,7 +44,6 @@
 #import "GHNSArray+Utils.h"
 
 #import "GHNSDictionary+Utils.h"
-#import "GHNSDictionary+URL.h"
 #import "GHNSDictionary+NSNull.h"
 #import "GHNSMutableArray+Utils.h"
 #import "GHNSMutableDictionary+Utils.h"
@@ -60,7 +59,6 @@
 #import "GHNSNotificationCenter+Utils.h"
 #import "GHNSObject+Swizzle.h"
 
-#import "GHKeychainStore.h"
 #import "GHCGUtils.h"
 
 #import "GHValidators.h"
@@ -80,5 +78,5 @@
 
 #import "GHNSObject+Utils.h"
 #import "GHNSString+XML.h"
-#import "GHNSString+Base64.h"
+#import "GHNSData+Base64.h"
 
