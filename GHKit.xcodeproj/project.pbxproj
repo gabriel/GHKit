@@ -398,7 +398,7 @@
 		00D022EC154DF226003BAAC3 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		00D022ED154DF226003BAAC3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		00D022EE154DF226003BAAC3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		00D02394154DF67D003BAAC3 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Tests.app; path = GHKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D02394154DF67D003BAAC3 /* GHKitTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHKitTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D02396154DF67D003BAAC3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		00D02399154DF67D003BAAC3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		00D0239D154DF67E003BAAC3 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -619,7 +619,7 @@
 			children = (
 				00D022D4154DF1EB003BAAC3 /* libGHKit.a */,
 				00D022E8154DF226003BAAC3 /* GHKit.framework */,
-				00D02394154DF67D003BAAC3 /* Tests.app */,
+				00D02394154DF67D003BAAC3 /* GHKitTests.app */,
 				00D02415154DFB0C003BAAC3 /* TestsFramework.app */,
 			);
 			name = Products;
@@ -891,7 +891,7 @@
 			);
 			name = GHKitTests;
 			productName = Tests;
-			productReference = 00D02394154DF67D003BAAC3 /* Tests.app */;
+			productReference = 00D02394154DF67D003BAAC3 /* GHKitTests.app */;
 			productType = "com.apple.product-type.application";
 		};
 		00D02414154DFB0C003BAAC3 /* GHKitTestsFramework */ = {
