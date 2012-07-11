@@ -894,9 +894,9 @@
 			productReference = 00D022E8154DF226003BAAC3 /* GHKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		00D02393154DF67D003BAAC3 /* Tests */ = {
+		00D02393154DF67D003BAAC3 /* GHKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00D023A7154DF67E003BAAC3 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = 00D023A7154DF67E003BAAC3 /* Build configuration list for PBXNativeTarget "GHKitTests" */;
 			buildPhases = (
 				00D02390154DF67D003BAAC3 /* Sources */,
 				00D02391154DF67D003BAAC3 /* Frameworks */,
@@ -906,14 +906,14 @@
 			);
 			dependencies = (
 			);
-			name = Tests;
+			name = GHKitTests;
 			productName = Tests;
 			productReference = 00D02394154DF67D003BAAC3 /* Tests.app */;
 			productType = "com.apple.product-type.application";
 		};
-		00D02414154DFB0C003BAAC3 /* TestsFramework */ = {
+		00D02414154DFB0C003BAAC3 /* GHKitTestsFramework */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00D0242A154DFB0D003BAAC3 /* Build configuration list for PBXNativeTarget "TestsFramework" */;
+			buildConfigurationList = 00D0242A154DFB0D003BAAC3 /* Build configuration list for PBXNativeTarget "GHKitTestsFramework" */;
 			buildPhases = (
 				00D02411154DFB0C003BAAC3 /* Sources */,
 				00D02412154DFB0C003BAAC3 /* Frameworks */,
@@ -924,7 +924,7 @@
 			);
 			dependencies = (
 			);
-			name = TestsFramework;
+			name = GHKitTestsFramework;
 			productName = TestsFramework;
 			productReference = 00D02415154DFB0C003BAAC3 /* TestsFramework.app */;
 			productType = "com.apple.product-type.application";
@@ -953,8 +953,8 @@
 			targets = (
 				00D022D3154DF1EB003BAAC3 /* GHKit */,
 				00D022E7154DF226003BAAC3 /* GHKitFramework */,
-				00D02393154DF67D003BAAC3 /* Tests */,
-				00D02414154DFB0C003BAAC3 /* TestsFramework */,
+				00D02393154DF67D003BAAC3 /* GHKitTests */,
+				00D02414154DFB0C003BAAC3 /* GHKitTestsFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -1519,7 +1519,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00D023A7154DF67E003BAAC3 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		00D023A7154DF67E003BAAC3 /* Build configuration list for PBXNativeTarget "GHKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00D023A8154DF67E003BAAC3 /* Debug */,
@@ -1528,7 +1528,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		00D0242A154DFB0D003BAAC3 /* Build configuration list for PBXNativeTarget "TestsFramework" */ = {
+		00D0242A154DFB0D003BAAC3 /* Build configuration list for PBXNativeTarget "GHKitTestsFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00D0242B154DFB0D003BAAC3 /* Debug */,
