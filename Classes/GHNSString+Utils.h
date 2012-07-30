@@ -147,6 +147,8 @@
 /*!
  Check if string starts with a string.
  
+ Returns NO if startsWith is empty.
+ 
  @param startsWith String to check
  @result YES if string starts with string
  */
@@ -154,7 +156,9 @@
 
 /*!
  Check if string starts with a string.
- 
+
+ Returns NO if startsWith is empty.
+
  @param startsWith String to check
  @param options Compare options
  @result YES if string starts with string
@@ -163,6 +167,8 @@
 
 /*!
  Check if string ends with a string.
+ 
+ Returns NO if endsWith is empty.
  
  @param endsWith String to check
  @param options Compare options

@@ -151,14 +151,16 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 }
 
 - (BOOL)gh_startsWith:(NSString *)startsWith options:(NSStringCompareOptions)options {
+  if (!startsWith || [startsWith isEqual:@""]) return NO;
   if ([self length] < [startsWith length]) return NO;
   NSString *beginning = [self substringToIndex:[startsWith length]];
   return ([beginning compare:startsWith options:options] == NSOrderedSame);  
 }
 
 - (BOOL)gh_endsWith:(NSString *)endsWith options:(NSStringCompareOptions)options {
+  if (!endsWith || [endsWith isEqual:@""]) return NO;
   if ([self length] < [endsWith length]) return NO;
-  NSString *lastString = [self substringFromIndex:[self length] - 1];
+  NSString *lastString = [self substringFromIndex:[self length] - [endsWith length]];
   return ([lastString compare:endsWith options:options] == NSOrderedSame);
 }
 

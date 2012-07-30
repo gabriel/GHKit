@@ -1,6 +1,6 @@
 //
 //  NSStringUtilsTest.m
-//  S3Share
+//  GHKit
 //
 //  Created by Gabe on 3/30/08.
 //  Copyright 2008 rel.me. All rights reserved.
@@ -61,6 +61,30 @@
 - (void)testReverse {
 	GHAssertEqualStrings([@"reversetest" gh_reverse], @"tsetesrever", nil); // odd # of letters
 	GHAssertEqualStrings([@"reverseit!" gh_reverse], @"!tiesrever", nil); // even # of letters
+}
+
+- (void)testStartsWith {
+  GHAssertTrue([@"www.test.com" gh_startsWith:@"www." options:0], nil);
+  GHAssertTrue([@"www.test.com" gh_startsWith:@"www.test.com" options:0], nil);
+  GHAssertFalse([@"www.test.com" gh_startsWith:@"" options:0], nil);
+  
+  GHAssertTrue([@"www.test.com" gh_startsWith:@"WWW." options:NSCaseInsensitiveSearch], nil);
+  GHAssertTrue([@"www.test.com" gh_startsWith:@"WWW.test.com" options:NSCaseInsensitiveSearch], nil);
+  GHAssertFalse([@"www.test.com" gh_startsWith:@"" options:NSCaseInsensitiveSearch], nil);
+}
+
+- (void)testEndsWith {
+  GHAssertTrue([@"path/" gh_endsWith:@"/" options:0], nil);
+  GHAssertFalse([@"path" gh_endsWith:@"/" options:0], nil);  
+  GHAssertTrue([@"path-" gh_endsWith:@"-" options:NSLiteralSearch], nil);
+
+  GHAssertTrue([@"www.test.com" gh_endsWith:@".com" options:0], nil);
+  GHAssertTrue([@"www.test.com" gh_endsWith:@"www.test.com" options:0], nil);
+  GHAssertFalse([@"www.test.com" gh_endsWith:@"" options:0], nil);
+  
+  GHAssertTrue([@"www.test.com" gh_endsWith:@".COM" options:NSCaseInsensitiveSearch], nil);
+  GHAssertTrue([@"www.test.com" gh_endsWith:@"www.test.COM" options:NSCaseInsensitiveSearch], nil);
+  GHAssertFalse([@"www.test.com" gh_endsWith:@"" options:NSCaseInsensitiveSearch], nil);
 }
 
 - (void)testCount {
