@@ -90,7 +90,7 @@
 /*!
  TODO(gabe): Possible to detect if we are nesting proxy calls?
  */
-- (GHNSInvocationProxy *)_initProxy {	
+- (GHNSInvocationProxy *)_buildProxy {
 	GHNSInvocationProxy *proxy = [GHNSInvocationProxy invocation];
 	proxy.target = self;
 	return proxy;
@@ -101,7 +101,7 @@
 }
 
 - (id)gh_proxyOnMainThread:(BOOL)waitUntilDone {
-	GHNSInvocationProxy *proxy = [self _initProxy];
+	GHNSInvocationProxy *proxy = [self _buildProxy];
 	proxy.thread = [NSThread mainThread];
 	proxy.waitUntilDone = waitUntilDone;
 	return proxy;
@@ -112,7 +112,7 @@
 }
 
 - (id)gh_proxyDetachThreadWithCallback:(id)target action:(SEL)action context:(id)context {
-	GHNSInvocationProxy *proxy = [self _initProxy];
+	GHNSInvocationProxy *proxy = [self _buildProxy];
 	GHNSInvocationProxyCallback *callback = [[GHNSInvocationProxyCallback alloc] initWithTarget:target action:action context:context];
 	proxy.detachCallback = callback;
 	[callback release];
@@ -120,26 +120,26 @@
 }
 
 - (id)gh_proxyOnThread:(NSThread *)thread waitUntilDone:(BOOL)waitUntilDone {
-	GHNSInvocationProxy *proxy = [self _initProxy];
+	GHNSInvocationProxy *proxy = [self _buildProxy];
 	proxy.thread = thread;
 	proxy.waitUntilDone = waitUntilDone;
 	return proxy;
 }
 
 - (id)gh_proxyAfterDelay:(NSTimeInterval)delay {
-	GHNSInvocationProxy *proxy = [self _initProxy];			
+	GHNSInvocationProxy *proxy = [self _buildProxy];			
 	proxy.delay = delay;
 	return proxy;
 }
 
 - (id)gh_argumentProxy:(SEL)selector {
-	GHNSInvocationProxy *proxy = [self _initProxy];
+	GHNSInvocationProxy *proxy = [self _buildProxy];
 	proxy.selector = selector;
 	return proxy;
 }
 
 - (id)gh_argumentProxy:(SEL)selector onMainThread:(BOOL)onMainThread waitUntilDone:(BOOL)waitUntilDone {
-	GHNSInvocationProxy *proxy = [self _initProxy];
+	GHNSInvocationProxy *proxy = [self _buildProxy];
 	proxy.selector = selector;
 	proxy.thread = [NSThread mainThread];
 	proxy.waitUntilDone = waitUntilDone;
@@ -148,7 +148,7 @@
 
 - (id)gh_logProxy {
 	NSLog(@"Tracing: %@", self);
-	GHNSInvocationProxy *proxy = [self _initProxy];
+	GHNSInvocationProxy *proxy = [self _buildProxy];
 	proxy.delegate = [GHNSInvocationProxyLogger shared];
 	return [proxy prepareWithInvocationTarget:self];
 }
