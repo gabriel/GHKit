@@ -1,18 +1,18 @@
 <?xml version="1.0" standalone="no"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xmlns:docset="http://developer.apple.com/rss/docset_extensions" xml:lang="en">
-    <id>http://gabriel.github.com/gh-kit/publish/me.rel.GHKit.atom/20120523163121</id>
+    <id>http://gabriel.github.com/gh-kit/publish/me.rel.GHKit.atom/20120828165544</id>
     <title type="text">GHKit Documentation</title>
     <rights>Copyright © 2012 GHKit. All rights reserved.</rights>
     <link rel="self" href="http://gabriel.github.com/gh-kit/publish/me.rel.GHKit.atom"></link>
     <docset:publisherName>GHKit</docset:publisherName>
     <docset:publisherID>me.rel.documentation</docset:publisherID>
-    <updated>2012-05-23T16:31:21-07:00</updated>
+    <updated>2012-08-28T16:55:44-07:00</updated>
     <entry>
-        <id>tag:gabriel.github.com,2012-05-23:me.rel.GHKit/0.5.0</id>
+        <id>tag:gabriel.github.com,2012-08-28:me.rel.GHKit/0.5.0</id>
         <title type="text">GHKit Documentation</title>
-        <updated>2012-05-23T16:31:21-07:00</updated>
+        <updated>2012-08-28T16:55:44-07:00</updated>
         <content type="text">GHKit Documentation (v0.5.0)</content>
-        <link rel="enclosure" type="application/octet-stream" href="http://gabriel.github.com/gh-kit/publish/me.rel.GHKit-0.5.0.xar" length="289144"></link>
+        <link rel="enclosure" type="application/octet-stream" href="http://gabriel.github.com/gh-kit/publish/me.rel.GHKit-0.5.0.xar" length="266286"></link>
         <docset:identifier>me.rel.GHKit</docset:identifier>
         <docset:version>0.5.0</docset:version>
         <docset:minimumXcodeVersion>3.0.0</docset:minimumXcodeVersion>

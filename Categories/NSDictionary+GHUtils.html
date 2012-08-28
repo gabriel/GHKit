@@ -70,6 +70,8 @@
 	
 	<option value="//api/name/gh_integerForKey:withDefault:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_integerForKey:withDefault:</option>
 	
+	<option value="//api/name/gh_numberForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_numberForKey:</option>
+	
 	<option value="//api/name/gh_numberForKey:withDefaultDouble:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_numberForKey:withDefaultDouble:</option>
 	
 	<option value="//api/name/gh_numberForKey:withDefaultInteger:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_numberForKey:withDefaultInteger:</option>
@@ -77,6 +79,8 @@
 	<option value="//api/name/gh_objectForKey:withDefault:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_objectForKey:withDefault:</option>
 	
 	<option value="//api/name/gh_objectForKeyOrNSNull:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_objectForKeyOrNSNull:</option>
+	
+	<option value="//api/name/gh_queryString">&nbsp;&nbsp;&nbsp;&nbsp;- gh_queryString</option>
 	
 	<option value="//api/name/gh_unsignedIntegerForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- gh_unsignedIntegerForKey:</option>
 	
@@ -136,6 +140,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_integerForKey:withDefault:">gh_integerForKey:withDefault:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_numberForKey:">gh_numberForKey:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_numberForKey:withDefaultDouble:">gh_numberForKey:withDefaultDouble:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_numberForKey:withDefaultInteger:">gh_numberForKey:withDefaultInteger:</a></span></li>
@@ -143,6 +149,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_objectForKey:withDefault:">gh_objectForKey:withDefault:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_objectForKeyOrNSNull:">gh_objectForKeyOrNSNull:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_queryString">gh_queryString</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_unsignedIntegerForKey:">gh_unsignedIntegerForKey:</a></span></li>
 	
@@ -244,8 +252,16 @@ If value for key is nil or [NSNull null], 0 is returned.</p></span>
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/gh_numberForKey:">&ndash;&nbsp;gh_numberForKey:</a></code>
+		<span class="tooltip"><p>Number for key.
+@param key</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/gh_numberForKey:withDefaultInteger:">&ndash;&nbsp;gh_numberForKey:withDefaultInteger:</a></code>
-		<span class="tooltip"><p>Number for key with default double value.</p></span>
+		<span class="tooltip"><p>Number for key with default integer value.</p></span>
 	</span>
 	
 	
@@ -336,6 +352,13 @@ Usefuly for coercing any object that responds to boolValue into an object for us
 	<span class="tooltip">
 		<code><a href="#//api/name/gh_compactDictionary">&ndash;&nbsp;gh_compactDictionary</a></code>
 		<span class="tooltip"><p>Dictionary without entries for keys with NSNull values</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gh_queryString">&ndash;&nbsp;gh_queryString</a></code>
+		<span class="tooltip"><p>Query string from dictionary.</p></span>
 	</span>
 	
 	
@@ -1006,6 +1029,48 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/gh_numberForKey:" title="gh_numberForKey:"></a>
+	<h3 class="subsubtitle method-title">gh_numberForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Number for key.
+@param key</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSNumber *)gh_numberForKey:(id)<em>key</em></code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Number</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSDictionary+Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/gh_numberForKey:withDefaultDouble:" title="gh_numberForKey:withDefaultDouble:"></a>
 	<h3 class="subsubtitle method-title">gh_numberForKey:withDefaultDouble:</h3>
 	
@@ -1068,7 +1133,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Number for key with default double value.</p>
+		<p>Number for key with default integer value.</p>
 	</div>		
 	
     
@@ -1226,6 +1291,47 @@ Helpful when used with key/value coding.</p>
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/gh_queryString" title="gh_queryString"></a>
+	<h3 class="subsubtitle method-title">gh_queryString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Query string from dictionary.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_queryString</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Calls [NSURL gh_dictionaryToQueryString:self];</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSDictionary+Utils.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/gh_unsignedIntegerForKey:" title="gh_unsignedIntegerForKey:"></a>
 	<h3 class="subsubtitle method-title">gh_unsignedIntegerForKey:</h3>
 	
@@ -1346,7 +1452,7 @@ If value for key is nil or [NSNull null], 0 is returned.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-05-23)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-08-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

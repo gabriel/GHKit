@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>GHSFHFKeychainStore Class Reference</title>
+		<title>NSData(GHBase64) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">GHSFHFKeychainStore Class Reference</h1>
+				<h1 class="hideInXcode">NSData(GHBase64) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -26,6 +26,8 @@
 				<li id="jumpto_button" role="navigation">
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
 	
 	
 	
@@ -38,13 +40,16 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/gh_base64EncodeWithBytes:length:">&nbsp;&nbsp;&nbsp;&nbsp;+ gh_base64EncodeWithBytes:length:</option>
+	
+	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/saveToKeychainWithServiceName:key:secret:error:">&nbsp;&nbsp;&nbsp;&nbsp;- saveToKeychainWithServiceName:key:secret:error:</option>
-	
-	<option value="//api/name/secretFromKeychainForServiceName:key:error:">&nbsp;&nbsp;&nbsp;&nbsp;- secretFromKeychainForServiceName:key:error:</option>
+	<option value="//api/name/gh_base64">&nbsp;&nbsp;&nbsp;&nbsp;- gh_base64</option>
 	
 	
 	
@@ -55,6 +60,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -68,13 +75,17 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_base64EncodeWithBytes:length:">gh_base64EncodeWithBytes:length:</a></span></li>
+	
+</ul></li>
+
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/saveToKeychainWithServiceName:key:secret:error:">saveToKeychainWithServiceName:key:secret:error:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/secretFromKeychainForServiceName:key:error:">secretFromKeychainForServiceName:key:error:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gh_base64">gh_base64</a></span></li>
 	
 </ul></li>
 
@@ -83,7 +94,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="GHSFHFKeychainStore Class Reference" name="top"></a>
+				<a title="NSData(GHBase64) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,24 +103,26 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">GHSFHFKeychainStore Class Reference</h1>
+						<h1 class="title title-header">NSData(GHBase64) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
-</tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/GHKeychainStore.html">GHKeychainStore</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">GHKeychainStore.m</td>
+	<td class="specification-value">GHNSData+Base64.h<br />GHNSData+Base64.m</td>
 </tr>
 						</tbody></table></div>
 					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Utilities for generating a Base64 encoded string.</p>
+					</div>
 					
 					
 					
@@ -126,15 +139,15 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/secretFromKeychainForServiceName:key:error:">&ndash;&nbsp;secretFromKeychainForServiceName:key:error:</a></code>
-		<span class="tooltip"><p>Get secret from keychain.</p></span>
+		<code><a href="#//api/name/gh_base64">&ndash;&nbsp;gh_base64</a></code>
+		<span class="tooltip"><p>Base64 string.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/saveToKeychainWithServiceName:key:secret:error:">&ndash;&nbsp;saveToKeychainWithServiceName:key:secret:error:</a></code>
-		<span class="tooltip"><p>Save secret to keychain.</p></span>
+		<code><a href="#//api/name/gh_base64EncodeWithBytes:length:">+&nbsp;gh_base64EncodeWithBytes:length:</a></code>
+		<span class="tooltip"><p>Base64 string from bytes.</p></span>
 	</span>
 	
 	
@@ -149,6 +162,48 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/gh_base64EncodeWithBytes:length:" title="gh_base64EncodeWithBytes:length:"></a>
+	<h3 class="subsubtitle method-title">gh_base64EncodeWithBytes:length:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Base64 string from bytes.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)gh_base64EncodeWithBytes:(const void *)<em>bytes</em> length:(NSUInteger)<em>length</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">GHNSData+Base64.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 					
 					<div class="section section-methods">
@@ -156,52 +211,22 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/saveToKeychainWithServiceName:key:secret:error:" title="saveToKeychainWithServiceName:key:secret:error:"></a>
-	<h3 class="subsubtitle method-title">saveToKeychainWithServiceName:key:secret:error:</h3>
+	<a name="//api/name/gh_base64" title="gh_base64"></a>
+	<h3 class="subsubtitle method-title">gh_base64</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Save secret to keychain.</p>
+		<p>Base64 string.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (BOOL)saveToKeychainWithServiceName:(NSString *)<em>serviceName</em> key:(NSString *)<em>key</em> secret:(NSString *)<em>secret</em> error:(NSError **)<em>error</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)gh_base64</code></div>
 
     
 	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>serviceName</em></dt>
-			<dd><p>Service name</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>Key</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>secret</em></dt>
-			<dd><p>Secret</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>Out error</p></dd>
-		</dl>
-		
-	</div>
 	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>NO if there was an error, YES otherwise</p>
-	</div>
 	
 	
 	
@@ -215,68 +240,7 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHKeychainStore.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/secretFromKeychainForServiceName:key:error:" title="secretFromKeychainForServiceName:key:error:"></a>
-	<h3 class="subsubtitle method-title">secretFromKeychainForServiceName:key:error:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get secret from keychain.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (NSString *)secretFromKeychainForServiceName:(NSString *)<em>serviceName</em> key:(NSString *)<em>key</em> error:(NSError **)<em>error</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>serviceName</em></dt>
-			<dd><p>Service name</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>Key</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>Out error</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Secret</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">GHKeychainStore.h</code><br />
+		<code class="declared-in-ref">GHNSData+Base64.h</code><br />
 	</div>				
 	
 	
@@ -295,7 +259,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-05-23)</span><br />
+						<p><span class="copyright">&copy; 2012 GHKit. All rights reserved. (Last updated: 2012-08-28)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
