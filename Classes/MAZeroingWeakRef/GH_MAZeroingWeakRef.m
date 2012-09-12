@@ -665,7 +665,7 @@ static void PatchKVOSubclass(Class class)
 
 static void RegisterCustomSubclass(Class subclass, Class superclass)
 {
-    [gCustomSubclassMap setObject: subclass forKey: superclass];
+    [gCustomSubclassMap setObject: subclass forKey:NSStringFromClass(superclass)];
     [gCustomSubclasses addObject: subclass];
 }
 
@@ -707,7 +707,7 @@ static void EnsureCustomSubclass(id obj)
     if(!GetCustomSubclass(obj) && !IsConstantObject(obj))
     {
         Class class = object_getClass(obj);
-        Class subclass = [gCustomSubclassMap objectForKey: class];
+        Class subclass = [gCustomSubclassMap objectForKey:NSStringFromClass(class)];
         if(!subclass)
         {
             subclass = CreateCustomSubclass(class, obj);
