@@ -1268,6 +1268,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/GHKit;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "$(SRCROOT)/Build/Products";
 			};
 			name = Debug;
@@ -1293,6 +1294,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = ../../Headers/GHKit;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SYMROOT = "$(SRCROOT)/Build/Products";
 				VALIDATE_PRODUCT = YES;
 			};
