@@ -189,7 +189,7 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
 /*!
  Month of date.
 
- @result Year
+ @result Month
  */
 - (NSInteger)gh_month;
 

@@ -38,12 +38,15 @@
 }
 
 - (void)testDate {
+  NSInteger year = [[NSDate date] gh_year] - 1930;
+  
   NSDate *date = [NSDate gh_dateWithDay:1 month:1 year:0 addDay:0 addMonth:0 addYear:-30 timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
   [dateFormatter setDateStyle:NSDateFormatterShortStyle];
   NSString *dateString = [dateFormatter stringFromDate:date];
-  GHAssertEqualStrings(dateString, @"1/1/82", nil);
+  NSString *expected = [NSString stringWithFormat:@"1/1/%ld", (long)year];
+  GHAssertEqualStrings(dateString, expected, nil);
 }
 
 - (void)testComponents {
