@@ -3,8 +3,16 @@ GHKit
 
 The GHKit framework is a set of extensions and utilities for Mac OS X and iOS.
 
+Install (CocoaPods)
+-------
 
-Install
+1. Add `pod 'GHKit'` to your Podfile
+1. Run `pod install`
+
+See [CocoaPods](http://cocoapods.org/) for more details.
+
+
+Install (Manual)
 -------
 
 GHKit assumes that you are using a modern Xcode project building to the DerivedData directory. Confirm your settings
