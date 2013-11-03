@@ -72,4 +72,32 @@ while ((arg = va_arg(args, id))) \
 [arguments addObject:arg]; \
 va_end(args); \
 } \
-} while(0); 
+} while(0);
+
+/*!
+ Macro defaults.
+ */
+#undef GHDebug
+#define GHDebug(fmt, ...) do {} while(0)
+#undef GHErr
+#define GHErr(fmt, ...) do {} while(0)
+
+/*!
+ Logging macros.
+ */
+#if DEBUG
+#undef GHDebug
+#define GHDebug(fmt, ...) NSLog((@"%s:%d: " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#undef GHErr
+#define GHErr(fmt, ...) NSLog((@"%s:%d: " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#endif
+
+/*!
+ Time.
+ */
+#define GHTimeIntervalMinute (60)
+#define GHTimeIntervalHour (GHTimeIntervalMinute * 60)
+#define GHTimeIntervalDay (GHTimeIntervalHour * 24)
+#define GHTimeIntervalWeek (GHTimeIntervalDay * 7)
+#define GHTimeIntervalYear (GHTimeIntervalDay * 365.242199)
+#define GHTimeIntervalMax (DBL_MAX)
