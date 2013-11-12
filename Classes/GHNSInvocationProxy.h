@@ -226,6 +226,8 @@
 
 - (id)initWithTarget:(id)target action:(SEL)action context:(id)context;
 
+- (void)invoke:(NSInvocation *)invocation;
+
 @end
 
 //! @endcond
