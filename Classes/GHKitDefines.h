@@ -101,3 +101,13 @@ va_end(args); \
 #define GHTimeIntervalWeek (GHTimeIntervalDay * 7)
 #define GHTimeIntervalYear (GHTimeIntervalDay * 365.242199)
 #define GHTimeIntervalMax (DBL_MAX)
+
+/*!
+ For when you need a weak reference of an object, example: `GHWeakObject(obj) wobj = obj;`
+ */
+#define GHWeakObject(o) __typeof__(o) __weak
+
+/*!
+ For when you need a weak reference to self, example: `GHWeakSelf wself = self;`
+ */
+#define GHWeakSelf GHWeakObject(self)
