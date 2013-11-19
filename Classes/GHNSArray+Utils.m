@@ -48,10 +48,9 @@
   return defaultValue;
 }
 
-- (id)gh_randomObject:(unsigned int)seed {
+- (id)gh_randomObject {
 	if ([self count] == 0) return nil;
-	srand(seed == 0 ? time(0) : seed);
-	int index = arc4random() % [self count];
+	int index = arc4random_uniform([self count]);
 	return [self objectAtIndex:index];
 }
 

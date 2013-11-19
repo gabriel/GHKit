@@ -38,11 +38,11 @@
 
 /*!
  Random object in the array.
+ Uses arc4random_uniform.
 
- @param seed Seed, if 0, will use the current time to seed
  @result Random object
  */
-- (id)gh_randomObject:(unsigned int)seed;
+- (id)gh_randomObject;
 
 /*!
  Return new reversed array.
