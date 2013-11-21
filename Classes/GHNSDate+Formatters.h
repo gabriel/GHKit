@@ -115,7 +115,7 @@
 
  @result Date formatter for ISO8601
 */
-+ (NSDateFormatter *)gh_ISO8601DateFormatter;
++ (NSArray *)gh_ISO8601DateFormatters;
 
 /*! 
  Date formatter for RFC822. For example, 'Wed, 01 Mar 2006 12:00:00 -0400'.
@@ -148,10 +148,5 @@
  @result Date formatter for asctime
  */
 + (NSDateFormatter *)gh_ascTimeDateFormatter;
-
-/*!
- Clear any cached date formatters.
- */
-+ (void)gh_clearDateFormatterCaches;
 
 @end

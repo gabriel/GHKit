@@ -31,16 +31,13 @@
 
 @implementation NSDate(GHFormatters)
 
-static NSDateFormatter *gRFC822DateFormatter = NULL;
-static NSDateFormatter *gISO8601DateFormatter = NULL;
-static NSDateFormatter *gRFC1123DateFormatter = NULL;
-static NSDateFormatter *gRFC850DateFormatter = NULL;
-static NSDateFormatter *gAscTimeDateFormatter = NULL;
-
-
 + (NSDate *)gh_parseISO8601:(NSString *)dateString { 
 	if (!dateString) return nil;
-  return [[self gh_ISO8601DateFormatter] dateFromString:dateString];
+  for (NSDateFormatter *dateFormatter in [self _gh_ISO8601DateFormatters]) {
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    if (date) return date;
+  }
+  return nil;
 }
 
 + (NSDate *)gh_parseRFC822:(NSString *)dateString {
@@ -91,7 +88,7 @@ static NSDateFormatter *gAscTimeDateFormatter = NULL;
 }
 
 - (NSString *)gh_formatISO8601 {
-	return [[[self class] gh_ISO8601DateFormatter] stringFromDate:self];
+	return [[[[self class] gh_ISO8601DateFormatters] firstObject] stringFromDate:self];
 }
 
 + (NSDateFormatter *)_gh_RFC822DateFormatter {
@@ -105,30 +102,41 @@ static NSDateFormatter *gAscTimeDateFormatter = NULL;
 }
 
 + (NSDateFormatter *)gh_RFC822DateFormatter {
-  if ([NSThread isMainThread]) {    
-    if (gRFC822DateFormatter == NULL) gRFC822DateFormatter = [[self _gh_RFC822DateFormatter] retain];
-    return gRFC822DateFormatter;
-  }
-  return [self _gh_RFC822DateFormatter];
+  static dispatch_once_t once;
+  static NSDateFormatter *gRFC822DateFormatter;
+  dispatch_once(&once, ^{
+    gRFC822DateFormatter = [[self _gh_RFC822DateFormatter] retain];
+  });
+  return gRFC822DateFormatter;
 }
 
-+ (NSDateFormatter *)_gh_ISO8601DateFormatter {
++ (NSArray *)_gh_ISO8601DateFormatters {
   // Example: 2007-10-18T16:05:10.000Z  
-  NSDateFormatter *ISO8601DateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-  [ISO8601DateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+  NSDateFormatter *ISO8601DateFormatter1 = [[[NSDateFormatter alloc] init] autorelease];
+  [ISO8601DateFormatter1 setFormatterBehavior:NSDateFormatterBehavior10_4];
   // Need to force US locale when generating otherwise it might not be 8601 compatible
-  [ISO8601DateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];    
-  [ISO8601DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-  [ISO8601DateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
-  return ISO8601DateFormatter;
+  [ISO8601DateFormatter1 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
+  [ISO8601DateFormatter1 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+  [ISO8601DateFormatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+  
+  // Example: 2007-10-18T16:05:10Z
+  NSDateFormatter *ISO8601DateFormatter2 = [[[NSDateFormatter alloc] init] autorelease];
+  [ISO8601DateFormatter2 setFormatterBehavior:NSDateFormatterBehavior10_4];
+  // Need to force US locale when generating otherwise it might not be 8601 compatible
+  [ISO8601DateFormatter2 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
+  [ISO8601DateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+  [ISO8601DateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+  
+  return @[ISO8601DateFormatter1, ISO8601DateFormatter2];
 }
 
-+ (NSDateFormatter *)gh_ISO8601DateFormatter {
-  if ([NSThread isMainThread]) {
-    if (gISO8601DateFormatter == NULL) gISO8601DateFormatter = [[self _gh_ISO8601DateFormatter] retain];
-    return gISO8601DateFormatter;
-  }
-  return [self _gh_ISO8601DateFormatter];
++ (NSArray *)gh_ISO8601DateFormatters {
+  static dispatch_once_t once;
+  static NSArray *gISO8601DateFormatters;
+  dispatch_once(&once, ^{
+    gISO8601DateFormatters = [[self _gh_ISO8601DateFormatters] retain];
+  });
+  return gISO8601DateFormatters;
 }
 
 + (NSDateFormatter *)_gh_RFC1123DateFormatter {
@@ -143,11 +151,12 @@ static NSDateFormatter *gAscTimeDateFormatter = NULL;
 }
 
 + (NSDateFormatter *)gh_RFC1123DateFormatter {
-  if ([NSThread isMainThread]) {
-    if (gRFC1123DateFormatter == NULL) gRFC1123DateFormatter = [[self _gh_RFC1123DateFormatter] retain];
-    return gRFC1123DateFormatter;
-  }
-  return [self _gh_RFC1123DateFormatter];
+  static dispatch_once_t once;
+  static NSDateFormatter *gRFC1123DateFormatter;
+  dispatch_once(&once, ^{
+    gRFC1123DateFormatter = [[self _gh_RFC1123DateFormatter] retain];
+  });
+  return gRFC1123DateFormatter;
 }
 
 + (NSDateFormatter *)_gh_RFC850DateFormatter {
@@ -161,11 +170,12 @@ static NSDateFormatter *gAscTimeDateFormatter = NULL;
 }
 
 + (NSDateFormatter *)gh_RFC850DateFormatter {
-  if ([NSThread isMainThread]) {
-    if (gRFC850DateFormatter == NULL) gRFC850DateFormatter = [[self _gh_RFC850DateFormatter] retain];
-    return gRFC850DateFormatter;
-  }
-  return [self _gh_RFC850DateFormatter];
+  static dispatch_once_t once;
+  static NSDateFormatter *gRFC850DateFormatter;
+  dispatch_once(&once, ^{
+    gRFC850DateFormatter = [[self _gh_RFC850DateFormatter] retain];
+  });
+  return gRFC850DateFormatter;
 }
 
 + (NSDateFormatter *)_gh_ascTimeDateFormatter {
@@ -179,19 +189,12 @@ static NSDateFormatter *gAscTimeDateFormatter = NULL;
 }
 
 + (NSDateFormatter *)gh_ascTimeDateFormatter {
-  if ([NSThread isMainThread]) {    
-    if (gAscTimeDateFormatter == NULL) gAscTimeDateFormatter = [[self _gh_ascTimeDateFormatter] retain];
-    return gAscTimeDateFormatter;
-  }
-  return [self _gh_ascTimeDateFormatter];
-}
-
-+ (void)gh_clearDateFormatterCaches {
-  gRFC822DateFormatter = NULL;
-  gISO8601DateFormatter = NULL;
-  gRFC1123DateFormatter = NULL;
-  gRFC850DateFormatter = NULL;
-  gAscTimeDateFormatter = NULL;
+  static dispatch_once_t once;
+  static NSDateFormatter *gAscTimeDateFormatter;
+  dispatch_once(&once, ^{
+    gAscTimeDateFormatter = [[self _gh_ascTimeDateFormatter] retain];
+  });
+  return gAscTimeDateFormatter;
 }
 
 @end
