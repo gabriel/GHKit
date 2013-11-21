@@ -41,15 +41,6 @@
 + (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments;
 
 /*!
- Check if string is blank.
- If instance is nil the would NOOP and evaluate to falsy, so
- you should use [NSString gh_isBlank:str] instead.
- 
- @result YES if string is empty (after stripping)
- */
-- (BOOL)gh_isBlank;
-
-/*!
  Check if equals ignoring case.
  
  @param s String
@@ -96,6 +87,11 @@
  @result YES if string is nil, empty or whitespace characters
  */
 + (BOOL)gh_isBlank:(NSString *)s;
+
+/*!
+ Check if string is not blank. Not blank means not nil and not just whitespace.
+ */
+- (BOOL)gh_isPresent;
 
 #if !TARGET_OS_IPHONE
 /*!

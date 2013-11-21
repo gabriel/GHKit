@@ -65,13 +65,14 @@
 	return [(id)self gtm_stringByReplacingMatchesOfPattern:@"^[ \t]+" withReplacement:@""];
 }
 
-- (BOOL)gh_isBlank {
-  return ([@"" isEqualToString:[self gh_strip]]);
-}
 
 + (BOOL)gh_isBlank:(NSString *)s {
   if (!s) return YES;
-  return [s gh_isBlank];
+  return ([@"" isEqualToString:[s gh_strip]]);
+}
+
+- (BOOL)gh_isPresent {
+  return ![NSString gh_isBlank:self];
 }
 
 - (BOOL)gh_isEqualIgnoreCase:(NSString *)s {
