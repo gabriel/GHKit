@@ -111,3 +111,5 @@ va_end(args); \
  For when you need a weak reference to self, example: `GHWeakSelf wself = self;`
  */
 #define GHWeakSelf GHWeakObject(self)
+
+typedef void (^GHTargetBlock)(id sender);
