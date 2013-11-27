@@ -293,6 +293,9 @@
 		00D02476154DFDD0003BAAC3 /* GHValidatorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023B0154DF89A003BAAC3 /* GHValidatorsTest.m */; };
 		00D02477154DFDF1003BAAC3 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0240D154DFA87003BAAC3 /* GTMRegex.m */; };
 		00D02479154DFE14003BAAC3 /* test.file in Resources */ = {isa = PBXBuildFile; fileRef = 00D0240F154DFABF003BAAC3 /* test.file */; };
+		00E2484A1845578E008C720D /* GHUIImage+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E248481845578E008C720D /* GHUIImage+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00E2484B1845578E008C720D /* GHUIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248491845578E008C720D /* GHUIImage+Utils.m */; };
+		00E2484C184557A4008C720D /* GHUIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248491845578E008C720D /* GHUIImage+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -446,6 +449,8 @@
 		00D0245F154DFD92003BAAC3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		00D0247A154DFE94003BAAC3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		00E1A6C0182311F400BBDFBD /* GHKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GHKit.podspec; sourceTree = "<group>"; };
+		00E248481845578E008C720D /* GHUIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIImage+Utils.h"; sourceTree = "<group>"; };
+		00E248491845578E008C720D /* GHUIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIImage+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,6 +597,8 @@
 		00D022BA154DF1C5003BAAC3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				00E248481845578E008C720D /* GHUIImage+Utils.h */,
+				00E248491845578E008C720D /* GHUIImage+Utils.m */,
 				00D022BD154DF1C5003BAAC3 /* GHUIColor+Utils.h */,
 				00D022BE154DF1C5003BAAC3 /* GHUIColor+Utils.m */,
 			);
@@ -787,6 +794,7 @@
 				00D02362154DF3F6003BAAC3 /* GHNSStringEnumerator.h in Headers */,
 				00D02366154DF400003BAAC3 /* GHNSURL+Utils.h in Headers */,
 				00D0236A154DF407003BAAC3 /* GHNSUserDefaults+Utils.h in Headers */,
+				00E2484A1845578E008C720D /* GHUIImage+Utils.h in Headers */,
 				00D0236E154DF40F003BAAC3 /* GHReversableDictionary.h in Headers */,
 				00D02372154DF416003BAAC3 /* GHValidators.h in Headers */,
 				00D02378154DF426003BAAC3 /* hmac.h in Headers */,
@@ -993,6 +1001,7 @@
 				00D02320154DF37B003BAAC3 /* GHNSDictionary+Utils.m in Sources */,
 				00D02324154DF382003BAAC3 /* GHNSError+Utils.m in Sources */,
 				00D02328154DF38A003BAAC3 /* GHNSFileManager+Utils.m in Sources */,
+				00E2484B1845578E008C720D /* GHUIImage+Utils.m in Sources */,
 				00D0232C154DF394003BAAC3 /* GHNSInvocation+Utils.m in Sources */,
 				00D02330154DF39B003BAAC3 /* GHNSInvocationProxy.m in Sources */,
 				00D02334154DF3A2003BAAC3 /* GHNSMutableArray+Utils.m in Sources */,
@@ -1093,6 +1102,7 @@
 				00D023DB154DF8A5003BAAC3 /* NSURLUtilsTest.m in Sources */,
 				00D023DC154DF8A5003BAAC3 /* ReadonlyCopyTest.m in Sources */,
 				00D023DF154DF8C0003BAAC3 /* GHNSArray+Utils.m in Sources */,
+				00E2484C184557A4008C720D /* GHUIImage+Utils.m in Sources */,
 				00D023E0154DF8C2003BAAC3 /* GHNSBundle+Utils.m in Sources */,
 				00D023E1154DF8C4003BAAC3 /* GHNSDate+Formatters.m in Sources */,
 				00D023E2154DF8C6003BAAC3 /* GHNSDate+Utils.m in Sources */,
