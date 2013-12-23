@@ -15,4 +15,16 @@
 
 - (UIImage *)gh_imageMaskWithColor:(UIColor *)maskColor;
 
+- (NSData *)gh_data;
+
+- (UIImage *)gh_imageByRotatingImageUpright;
+
+- (UIImage *)gh_resizedImageInSize:(CGSize)size contentMode:(UIViewContentMode)contentMode opaque:(BOOL)opaque;
+
+- (UIImage *)gh_croppedImageFromFrame:(CGRect)frame;
+
++ (UIImage *)gh_imageFromView:(UIView *)view;
+
++ (UIImage *)gh_imageFromDrawOperations:(void(^)(CGContextRef context))drawOperations size:(CGSize)size opaque:(BOOL)opaque;
+
 @end
