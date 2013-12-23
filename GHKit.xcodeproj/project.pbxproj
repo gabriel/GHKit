@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002E8600185A8D360019B5E6 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E85FE185A8D360019B5E6 /* GHCGUtils.h */; };
+		002E8601185A8D360019B5E6 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E85FE185A8D360019B5E6 /* GHCGUtils.h */; };
+		002E8602185A8D360019B5E6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E85FF185A8D360019B5E6 /* GHCGUtils.m */; };
+		002E8603185A8D360019B5E6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E85FF185A8D360019B5E6 /* GHCGUtils.m */; };
 		006BD87B15AE2FC900D493AE /* GHNSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD87915AE2FC900D493AE /* GHNSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		006BD87C15AE2FC900D493AE /* GHNSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD87915AE2FC900D493AE /* GHNSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		006BD87D15AE2FC900D493AE /* GHNSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */; };
@@ -312,6 +316,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		002E85FE185A8D360019B5E6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
+		002E85FF185A8D360019B5E6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
 		006BD87915AE2FC900D493AE /* GHNSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHNSData+Base64.h"; sourceTree = "<group>"; };
 		006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHNSData+Base64.m"; sourceTree = "<group>"; };
 		006BD88115AE2FF400D493AE /* ybase64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ybase64.c; sourceTree = "<group>"; };
@@ -601,6 +607,8 @@
 				00E248491845578E008C720D /* GHUIImage+Utils.m */,
 				00D022BD154DF1C5003BAAC3 /* GHUIColor+Utils.h */,
 				00D022BE154DF1C5003BAAC3 /* GHUIColor+Utils.m */,
+				002E85FE185A8D360019B5E6 /* GHCGUtils.h */,
+				002E85FF185A8D360019B5E6 /* GHCGUtils.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -800,6 +808,7 @@
 				00D02378154DF426003BAAC3 /* hmac.h in Headers */,
 				00D0237C154DF434003BAAC3 /* sha1.h in Headers */,
 				00D0237E154DF43B003BAAC3 /* GHNSObject+Swizzle.h in Headers */,
+				002E8600185A8D360019B5E6 /* GHCGUtils.h in Headers */,
 				00D02384154DF456003BAAC3 /* GHUIColor+Utils.h in Headers */,
 				007DA66A154E055C008574F9 /* GHKit-Prefix.pch in Headers */,
 				006BD87B15AE2FC900D493AE /* GHNSData+Base64.h in Headers */,
@@ -851,6 +860,7 @@
 				00D0238A154DF46A003BAAC3 /* GHNSXMLElement+Utils.h in Headers */,
 				00D0238C154DF46F003BAAC3 /* GHNSXMLNode+Utils.h in Headers */,
 				00D0238E154DF475003BAAC3 /* GHViewAnimation.h in Headers */,
+				002E8601185A8D360019B5E6 /* GHCGUtils.h in Headers */,
 				006BD87C15AE2FC900D493AE /* GHNSData+Base64.h in Headers */,
 				006BD88915AE2FF500D493AE /* ybase64.h in Headers */,
 				006BD88B15AE2FF500D493AE /* ydefines.h in Headers */,
@@ -939,7 +949,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = GH;
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = rel.me;
 			};
 			buildConfigurationList = 00D02270154DF111003BAAC3 /* Build configuration list for PBXProject "GHKit" */;
@@ -1022,6 +1032,7 @@
 				00D02374154DF41B003BAAC3 /* GHValidators.m in Sources */,
 				00D02376154DF423003BAAC3 /* hmac.c in Sources */,
 				00D0237A154DF431003BAAC3 /* sha1.c in Sources */,
+				002E8602185A8D360019B5E6 /* GHCGUtils.m in Sources */,
 				00D02380154DF440003BAAC3 /* GHNSObject+Swizzle.m in Sources */,
 				00D02385154DF45A003BAAC3 /* GHUIColor+Utils.m in Sources */,
 				006BD87D15AE2FC900D493AE /* GHNSData+Base64.m in Sources */,
@@ -1044,6 +1055,7 @@
 				00D02329154DF38B003BAAC3 /* GHNSFileManager+Utils.m in Sources */,
 				00D0232D154DF394003BAAC3 /* GHNSInvocation+Utils.m in Sources */,
 				00D02331154DF39B003BAAC3 /* GHNSInvocationProxy.m in Sources */,
+				002E8603185A8D360019B5E6 /* GHCGUtils.m in Sources */,
 				00D02335154DF3A2003BAAC3 /* GHNSMutableArray+Utils.m in Sources */,
 				00D02339154DF3AB003BAAC3 /* GHNSMutableDictionary+Utils.m in Sources */,
 				00D0233D154DF3B2003BAAC3 /* GHNSNotificationCenter+Utils.m in Sources */,
@@ -1217,6 +1229,7 @@
 		00D02272154DF111003BAAC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
@@ -1290,7 +1303,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1327,7 +1339,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1357,7 +1368,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1396,7 +1406,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1430,7 +1439,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1467,7 +1475,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
