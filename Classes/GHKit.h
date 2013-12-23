@@ -66,6 +66,7 @@
 
 // iPhone
 #if TARGET_OS_IPHONE
+#import "GHCGUtils.h"
 #import "GHUIColor+Utils.h"
 #import "GHUIImage+Utils.h"
 #else
