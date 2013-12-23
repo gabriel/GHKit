@@ -100,7 +100,7 @@
     [URLString appendString:[self host]];
   }
 	if ([self port]) {
-    [URLString appendFormat:@":%d", [[self port] integerValue]];
+    [URLString appendFormat:@":%ld", [[self port] longValue]];
   }
   if ([self path]) {
     [URLString appendString:[self path]];

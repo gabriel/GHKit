@@ -83,7 +83,7 @@
   while([self gh_exist:uniquePath]) {
     if (!prefixPath) prefixPath = [path stringByDeletingPathExtension];
     if (!pathExtension) pathExtension = [path gh_fullPathExtension];
-    uniquePath = [NSString stringWithFormat:@"%@-%d%@", prefixPath, index, pathExtension];
+    uniquePath = [NSString stringWithFormat:@"%@-%ld%@", prefixPath, (long)index, pathExtension];
     index++;
   }
   return uniquePath;

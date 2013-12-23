@@ -282,7 +282,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 - (NSString *)gh_MD5 {
   const char *str = [self UTF8String];
   unsigned char result[CC_MD5_DIGEST_LENGTH];
-  CC_MD5(str, strlen(str), result);  
+  CC_MD5(str, (CC_LONG)strlen(str), result);
   return [NSString stringWithFormat:
           @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
           result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7],
@@ -292,7 +292,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 - (NSString *)gh_MD5WithEncoder:(id)encoder {
   const char *str = [self UTF8String];
   unsigned char result[CC_MD5_DIGEST_LENGTH];
-  CC_MD5(str, strlen(str), result);  
+  CC_MD5(str, (CC_LONG)strlen(str), result);  
   return [NSData gh_base64EncodeWithBytes:result length:16];
 }
 

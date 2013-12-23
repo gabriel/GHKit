@@ -76,9 +76,9 @@
       default: suffix = @"th"; break;
     }
     if (value % 100 >= 11 && value % 100 <= 13) suffix = @"th"; // Handle 11-13
-    if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
+    if (suffix) return [NSString stringWithFormat:@"%ld%@", (long)value, suffix];
   }
-  return [NSString stringWithFormat:@"%d", value];
+  return [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 // NOTE(johnb): Ignoring plural forms of ordinals (ers / res / es)
@@ -89,8 +89,8 @@
     case 1: suffix = masculine ? @"er" : @"re"; break;
     default: suffix = @"e"; break;
   }
-  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
-  return [NSString stringWithFormat:@"%d", value];
+  if (suffix) return [NSString stringWithFormat:@"%ld%@", (long)value, suffix];
+  return [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 + (NSString *)gh_ordinalizeDe:(NSInteger)value masculine:(BOOL)masculine {
@@ -99,8 +99,8 @@
     case 0: break;
     default: suffix = masculine ? @"ter" : @"te"; break;
   }
-  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
-  return [NSString stringWithFormat:@"%d", value];
+  if (suffix) return [NSString stringWithFormat:@"%ld%@", (long)value, suffix];
+  return [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 // NOTE(johnb): Ignoring plural forms or ordinals (os / as)
@@ -110,8 +110,8 @@
     case 0: break;
     default: suffix = masculine ? @"º" : @"ª"; break;
   }
-  if (suffix) return [NSString stringWithFormat:@"%d%@", value, suffix];
-  return [NSString stringWithFormat:@"%d", value];
+  if (suffix) return [NSString stringWithFormat:@"%ld%@", (long)value, suffix];
+  return [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 // The following OpenOffice wiki page is helpful for information about ordinals
@@ -127,7 +127,7 @@
   } else if ([languageCode isEqual:@"es"]) {
     return [NSNumber gh_ordinalizeEs:value masculine:masculine];
   }
-  return [NSString stringWithFormat:@"%d", value];
+  return [NSString stringWithFormat:@"%ld", (long)value];
 }
 
 + (NSString *)gh_ordinalize:(NSInteger)value {
