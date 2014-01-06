@@ -14,12 +14,12 @@
 @implementation NSDateUtilsTest
 
 - (void)testYesterday {
-	NSDate *date = [[NSDate date] addTimeInterval:-(60 * 60 * 24)]; // This could fail daylight savings
+	NSDate *date = [[NSDate date] dateByAddingTimeInterval:-(60 * 60 * 24)]; // This could fail daylight savings
 	GHAssertTrue([date gh_wasYesterday], nil);
 }
 
 - (void)testTomorrow {
-	NSDate *date = [[NSDate date] addTimeInterval:(60 * 60 * 24)]; // This could fail daylight savings
+	NSDate *date = [[NSDate date] dateByAddingTimeInterval:(60 * 60 * 24)]; // This could fail daylight savings
 	GHAssertTrue([date gh_isTomorrow], nil);
 }
 

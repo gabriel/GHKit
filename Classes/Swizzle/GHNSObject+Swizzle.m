@@ -53,7 +53,7 @@ BOOL GH_PerformSwizzle(Class klass, SEL origSel, SEL altSel, BOOL forInstance) {
 		return NO;
 	
 	// Look for the methods in the implementation of the immediate class
-	Class iterKlass = (forInstance ? klass : klass->isa);
+	Class iterKlass = (forInstance ? klass : object_getClass(klass));
 	Method origMethod = NULL, altMethod = NULL;
 	unsigned int methodCount = 0;
 	Method *mlist = class_copyMethodList(iterKlass, &methodCount);

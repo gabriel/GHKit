@@ -68,14 +68,9 @@
 }
 
 - (void)testCompact {
-	NSMutableDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                               @"1", @"key1",
-                               [NSNull null], @"key2", 
-                               nil];
+	NSMutableDictionary *dict = [@{@"key1": @"1", @"key2": [NSNull null]} mutableCopy];
   
-  NSMutableDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:
-                                   @"1", @"key1",
-                                   nil];
+  NSMutableDictionary *expected = [@{@"key1": @"1"} mutableCopy];
 
 	NSDictionary *after = [dict gh_compactDictionary];
   GHAssertEqualObjects(after, expected, nil);

@@ -17,7 +17,7 @@
 - (void)testRandom {
 	NSSet *set = [NSSet setWithObjects:@"1", @"2", @"3", nil];
 	
-	NSString *obj = [[set allObjects] gh_randomObject:0];
+	NSString *obj = [[set allObjects] gh_randomObject];
 	GHAssertTrue([set containsObject:obj], nil);
 }
 

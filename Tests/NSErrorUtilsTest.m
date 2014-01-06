@@ -13,14 +13,14 @@
 
 @implementation NSErrorUtilsTest
 
-- (void)testErrorFromException {
-	@try {
-		[NSException raise:NSGenericException format:@"my reason"];
-	} @catch(NSException *e) {
-		NSError *error = [NSError gh_errorFromException:e];
-		GHTestLog(@"Error: %@", error);
-	}
-}
+//- (void)testErrorFromException {
+//	@try {
+//		[NSException raise:NSGenericException format:@"my reason"];
+//	} @catch(NSException *e) {
+//		NSError *error = [NSError gh_errorFromException:e];
+//		GHTestLog(@"Error: %@", error);
+//	}
+//}
 
 - (void)testFullDescription {
 	NSError *detailedError = [NSError errorWithDomain:@"Detail" code:-2 userInfo:nil];

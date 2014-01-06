@@ -10,7 +10,6 @@
 		002E8600185A8D360019B5E6 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E85FE185A8D360019B5E6 /* GHCGUtils.h */; };
 		002E8601185A8D360019B5E6 /* GHCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 002E85FE185A8D360019B5E6 /* GHCGUtils.h */; };
 		002E8602185A8D360019B5E6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E85FF185A8D360019B5E6 /* GHCGUtils.m */; };
-		002E8603185A8D360019B5E6 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E85FF185A8D360019B5E6 /* GHCGUtils.m */; };
 		006BD87B15AE2FC900D493AE /* GHNSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD87915AE2FC900D493AE /* GHNSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		006BD87C15AE2FC900D493AE /* GHNSData+Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 006BD87915AE2FC900D493AE /* GHNSData+Base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		006BD87D15AE2FC900D493AE /* GHNSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 006BD87A15AE2FC900D493AE /* GHNSData+Base64.m */; };
@@ -297,6 +296,7 @@
 		00D02476154DFDD0003BAAC3 /* GHValidatorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023B0154DF89A003BAAC3 /* GHValidatorsTest.m */; };
 		00D02477154DFDF1003BAAC3 /* GTMRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D0240D154DFA87003BAAC3 /* GTMRegex.m */; };
 		00D02479154DFE14003BAAC3 /* test.file in Resources */ = {isa = PBXBuildFile; fileRef = 00D0240F154DFABF003BAAC3 /* test.file */; };
+		00D6ED06187B595C00426AF7 /* GHCGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 002E85FF185A8D360019B5E6 /* GHCGUtils.m */; };
 		00E2484A1845578E008C720D /* GHUIImage+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E248481845578E008C720D /* GHUIImage+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00E2484B1845578E008C720D /* GHUIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248491845578E008C720D /* GHUIImage+Utils.m */; };
 		00E2484C184557A4008C720D /* GHUIImage+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E248491845578E008C720D /* GHUIImage+Utils.m */; };
@@ -1055,7 +1055,6 @@
 				00D02329154DF38B003BAAC3 /* GHNSFileManager+Utils.m in Sources */,
 				00D0232D154DF394003BAAC3 /* GHNSInvocation+Utils.m in Sources */,
 				00D02331154DF39B003BAAC3 /* GHNSInvocationProxy.m in Sources */,
-				002E8603185A8D360019B5E6 /* GHCGUtils.m in Sources */,
 				00D02335154DF3A2003BAAC3 /* GHNSMutableArray+Utils.m in Sources */,
 				00D02339154DF3AB003BAAC3 /* GHNSMutableDictionary+Utils.m in Sources */,
 				00D0233D154DF3B2003BAAC3 /* GHNSNotificationCenter+Utils.m in Sources */,
@@ -1114,6 +1113,7 @@
 				00D023DB154DF8A5003BAAC3 /* NSURLUtilsTest.m in Sources */,
 				00D023DC154DF8A5003BAAC3 /* ReadonlyCopyTest.m in Sources */,
 				00D023DF154DF8C0003BAAC3 /* GHNSArray+Utils.m in Sources */,
+				00D6ED06187B595C00426AF7 /* GHCGUtils.m in Sources */,
 				00E2484C184557A4008C720D /* GHUIImage+Utils.m in Sources */,
 				00D023E0154DF8C2003BAAC3 /* GHNSBundle+Utils.m in Sources */,
 				00D023E1154DF8C4003BAAC3 /* GHNSDate+Formatters.m in Sources */,
