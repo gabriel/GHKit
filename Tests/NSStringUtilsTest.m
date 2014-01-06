@@ -99,40 +99,40 @@
 	NSString *test1 = @"This <START>is a<END> test.";
 	NSArray *segments1 = [test1 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected1 = [NSArray arrayWithObjects:
-												[GHNSStringSegment string:@"This " isMatch:NO], 
-												[GHNSStringSegment string:@"is a" isMatch:YES], 
-												[GHNSStringSegment string:@" test." isMatch:NO], nil];
+												[GHNSStringSegment string:@"This " match:NO],
+												[GHNSStringSegment string:@"is a" match:YES],
+                         [GHNSStringSegment string:@" test." match:NO], nil];
 	GHAssertEqualObjects(segments1, expected1, @"Segments is invalid");		
 	
 	NSString *test2 = @"This is a test.";
 	NSArray *segments2 = [test2 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
-	NSArray *expected2 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." isMatch:NO], nil];
+	NSArray *expected2 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." match:NO], nil];
 	GHAssertEqualObjects(segments2, expected2, @"Segments is invalid");	
 	
 	NSString *test3 = @"<START>This is a test.<END>";
 	NSArray *segments3 = [test3 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
-	NSArray *expected3 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." isMatch:YES], nil];
+	NSArray *expected3 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." match:YES], nil];
 	GHAssertEqualObjects(segments3, expected3, @"Segments is invalid");	
 
 	NSString *test4 = @"<START>This is a test.<END> ";
 	NSArray *segments4 = [test4 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected4 = [NSArray arrayWithObjects:
-												[GHNSStringSegment string:@"This is a test." isMatch:YES], 
-												[GHNSStringSegment string:@" " isMatch:NO], nil];
+												[GHNSStringSegment string:@"This is a test." match:YES],
+												[GHNSStringSegment string:@" " match:NO], nil];
 	GHAssertEqualObjects(segments4, expected4, @"Segments is invalid");	
 	
 	NSString *test5 = @" <START>This is a test.<END> <END>";
 	NSArray *segments5 = [test5 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected5 = [NSArray arrayWithObjects:
-												[GHNSStringSegment string:@" " isMatch:NO], 
-												[GHNSStringSegment string:@"This is a test." isMatch:YES], 
-												[GHNSStringSegment string:@" <END>" isMatch:NO], nil];
+												[GHNSStringSegment string:@" " match:NO],
+												[GHNSStringSegment string:@"This is a test." match:YES],
+												[GHNSStringSegment string:@" <END>" match:NO], nil];
 	GHAssertEqualObjects(segments5, expected5, @"Segments is invalid");	
 	
 	// TODO: Ok to kill the start token?
 	NSString *test6 = @"<START>This is a test.";
 	NSArray *segments6 = [test6 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
-	NSArray *expected6 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." isMatch:YES], nil];
+	NSArray *expected6 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." match:YES], nil];
 	GHAssertEqualObjects(segments6, expected6, @"Segments is invalid");	
 	
 	// TODO: Return nil on empty string input?

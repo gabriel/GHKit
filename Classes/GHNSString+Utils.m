@@ -27,8 +27,6 @@
 //
 
 #import "GHNSString+Utils.h"
-#import "GHNSData+Base64.h"
-#import <CommonCrypto/CommonDigest.h>
 
 //! @cond DEV
 
@@ -242,7 +240,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	
 	while([scanner scanUpToString:(within ? end : start) intoString:&scanned]) {
 		if (scanned && [scanned length] > 0)
-			[segments addObject:[GHNSStringSegment string:scanned isMatch:within]];
+			[segments addObject:[GHNSStringSegment string:scanned match:within]];
 		
 		[scanner scanString:(within ? end : start) intoString:&scanned]; // Eat start or end token
 		scanned = nil;
@@ -250,7 +248,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 	}
 	NSUInteger length = [self length] - [scanner scanLocation];
 	if (length > 0)
-		[segments addObject:[GHNSStringSegment string:[self substringWithRange:NSMakeRange([scanner scanLocation], length)] isMatch:NO]];
+		[segments addObject:[GHNSStringSegment string:[self substringWithRange:NSMakeRange([scanner scanLocation], length)] match:NO]];
 	return segments;
 }
 
@@ -279,52 +277,33 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return [NSString stringWithCString:newString encoding:NSASCIIStringEncoding];
 }
 
-- (NSString *)gh_MD5 {
-  const char *str = [self UTF8String];
-  unsigned char result[CC_MD5_DIGEST_LENGTH];
-  CC_MD5(str, (CC_LONG)strlen(str), result);
-  return [NSString stringWithFormat:
-          @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-          result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7],
-          result[8], result[9], result[10], result[11], result[12], result[13], result[14], result[15]];
-}
-
-- (NSString *)gh_MD5WithEncoder:(id)encoder {
-  const char *str = [self UTF8String];
-  unsigned char result[CC_MD5_DIGEST_LENGTH];
-  CC_MD5(str, (CC_LONG)strlen(str), result);  
-  return [NSData gh_base64EncodeWithBytes:result length:16];
-}
-
 @end
 
 @implementation GHNSStringSegment
 
-@synthesize string=string_, match=isMatch_;
-
-- (id)initWithString:(NSString *)string isMatch:(BOOL)isMatch {
+- (id)initWithString:(NSString *)string match:(BOOL)match {
 	if ((self = [super init])) {
-		string_ = [string retain];
-		isMatch_ = isMatch;
+		_string = [string retain];
+		_match = match;
 	}
 	return self;	
 }
 
-+ (GHNSStringSegment *)string:(NSString *)string isMatch:(BOOL)isMatch {
-	return [[[self alloc] initWithString:string isMatch:isMatch] autorelease];
+- (void)dealloc {
+	[_string release];
+	[super dealloc];
+}
+
++ (GHNSStringSegment *)string:(NSString *)string match:(BOOL)match {
+	return [[[self alloc] initWithString:string match:match] autorelease];
 }
 
 - (BOOL)isEqual:(id)obj {
-	return ([[obj string] isEqual:string_] && [obj isMatch] == isMatch_);
+	return ([[obj string] isEqual:_string] && [obj isMatch] == _match);
 }
 
 - (NSString *)description {
-	return [NSString stringWithFormat:@"string=%@, isMatch=%d", string_, isMatch_];
-}
-
-- (void)dealloc {
-	[string_ release];
-	[super dealloc];
+	return [NSString stringWithFormat:@"string=%@, isMatch=%d", _string, _match];
 }
 
 @end
