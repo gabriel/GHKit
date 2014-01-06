@@ -12,4 +12,5 @@
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
   #import <GHUnitIOS/GHUnit.h>
+  #import "GHKit.h"
 #endif
