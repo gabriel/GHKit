@@ -403,6 +403,10 @@ CGPathRef GHCGPathCreateStyledRect(CGRect rect, GHUIBorderStyle style, CGFloat s
   CGFloat fw, fh;
   CGFloat cornerWidth = cornerRadius, cornerHeight = cornerRadius;
   
+  if (style == GHUIBorderStyleNone && cornerRadius > 0) {
+    style = GHUIBorderStyleRounded;
+  }
+  
   if (style == GHUIBorderStyleNone) return NULL;
   
   // Handle case where we have 0 corner radius
@@ -882,6 +886,18 @@ CGRect GHCGRectConvert(CGRect rect, CGSize size, UIViewContentMode contentMode) 
   return rect;
 }
 
+BOOL GHIsBorderStyleClippable(GHUIBorderStyle borderStyle, CGFloat cornerRadius) {
+  if (cornerRadius > 0) return YES;
+  switch (borderStyle) {
+    case GHUIBorderStyleTopOnly:
+    case GHUIBorderStyleBottomOnly:
+    case GHUIBorderStyleTopBottom:
+    case GHUIBorderStyleNone:
+      return NO;
+    default:
+      return YES;
+  }
+}
 
 NSString *GHNSStringFromUIViewContentMode(UIViewContentMode contentMode) {
   switch (contentMode) {

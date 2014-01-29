@@ -395,6 +395,12 @@ typedef enum {
 CGPathRef GHCGPathCreateStyledRect(CGRect rect, GHUIBorderStyle style, CGFloat strokeWidth, CGFloat cornerRadius);
 
 /*!
+ Check if border style is clippable.
+ @return YES if border forms a connected path or we have a corner radius > 0
+ */
+BOOL GHIsBorderStyleClippable(GHUIBorderStyle borderStyle, CGFloat cornerRadius);
+
+/*!
  Create path for line.
  @param x1
  @param y1
