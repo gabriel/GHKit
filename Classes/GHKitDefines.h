@@ -27,13 +27,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#define GHInteger(n) [NSNumber numberWithInteger:n]
-
-#define GHStr(fmt, ...) \
-[NSString stringWithFormat:(fmt), ## __VA_ARGS__]
-
-#define GHDict(key, ...) \
-[NSDictionary dictionaryWithKeysAndObjectsMaybeNil: key, ## __VA_ARGS__, nil]
+#define GHDict(...) [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:__VA_ARGS__, nil]
 
 #define GHCGRectToString(rect) NSStringFromRect(NSRectFromCGRect(rect))
 #define GHCGSizeToString(size) NSStringFromSize(NSSizeFromCGSize(size))
@@ -113,3 +107,7 @@ va_end(args); \
 #define GHWeakSelf GHWeakObject(self)
 
 typedef void (^GHTargetBlock)(id sender);
+
+//
+//
+#define GHNSError(CODE, MESSAGE) [NSError errorWithDomain:NSStringFromClass([self class]) code:CODE userInfo:@{NSLocalizedDescriptionKey:MESSAGE}]
