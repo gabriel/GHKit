@@ -52,6 +52,21 @@
   GHAssertEqualsWithAccuracy(([newDate timeIntervalSince1970] - [date timeIntervalSince1970]), (3.0 * 60.0 * 60.0), 0.01, nil);
 }
 
-
+- (void)testISO8601 {
+  NSDate *date = [NSDate gh_parseISO8601:@"1997-07-16T19:20:30.045Z"];
+  GHAssertEquals(869080830.045, [date timeIntervalSince1970], nil);
+  
+  NSDate *date2 = [NSDate gh_parseISO8601:@"1997-07-16T19:20:30Z"];
+  GHAssertEquals((NSTimeInterval)869080830, [date2 timeIntervalSince1970], nil);
+  
+  NSDate *date3 = [NSDate gh_parseISO8601:@"2014-01-28T16:44:58-08:00"];
+  GHAssertEquals((NSTimeInterval)1390956298, [date3 timeIntervalSince1970], nil);
+  
+  NSDate *date4 = [NSDate gh_parseISO8601:@"2014-01-28T16:44:58+01:00"];
+  GHAssertEquals((NSTimeInterval)1390923898, [date4 timeIntervalSince1970], nil);
+  
+  NSDate *date5 = [NSDate gh_parseISO8601:@"2014-01-28T16:44:58.045+01:00"];
+  GHAssertEquals((NSTimeInterval)1390923898.045, [date5 timeIntervalSince1970], nil);
+}
 
 @end

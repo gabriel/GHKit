@@ -111,21 +111,19 @@
 }
 
 + (NSArray *)_gh_ISO8601DateFormatters {
+  // The ZZZZZ format for the +00:00 timezone format was added to iOS 6 and is not supported under iOS 5 or earlier.
+  
   // Example: 2007-10-18T16:05:10.000Z  
   NSDateFormatter *ISO8601DateFormatter1 = [[[NSDateFormatter alloc] init] autorelease];
-  [ISO8601DateFormatter1 setFormatterBehavior:NSDateFormatterBehavior10_4];
   // Need to force US locale when generating otherwise it might not be 8601 compatible
-  [ISO8601DateFormatter1 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
-  [ISO8601DateFormatter1 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-  [ISO8601DateFormatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+  [ISO8601DateFormatter1 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+  [ISO8601DateFormatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"];
   
   // Example: 2007-10-18T16:05:10Z
   NSDateFormatter *ISO8601DateFormatter2 = [[[NSDateFormatter alloc] init] autorelease];
-  [ISO8601DateFormatter2 setFormatterBehavior:NSDateFormatterBehavior10_4];
   // Need to force US locale when generating otherwise it might not be 8601 compatible
-  [ISO8601DateFormatter2 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
-  [ISO8601DateFormatter2 setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-  [ISO8601DateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+  [ISO8601DateFormatter2 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+  [ISO8601DateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
   
   return @[ISO8601DateFormatter1, ISO8601DateFormatter2];
 }
