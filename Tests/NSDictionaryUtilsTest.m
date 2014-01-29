@@ -76,4 +76,9 @@
   GHAssertEqualObjects(after, expected, nil);
 }
 
+- (void)testJSON {
+  NSString *JSONString = [@{@"key1": @(2), @"key2": @(3.1), @"key3": @YES} gh_toJSONString:nil];
+  GHAssertEqualStrings(@"{\"key2\":3.1,\"key1\":2,\"key3\":true}", JSONString, nil);
+}
+
 @end

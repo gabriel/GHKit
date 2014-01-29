@@ -129,4 +129,9 @@
   GHAssertEqualStrings(value8, @"1", nil);
 }
 
+- (void)testJSON {
+  NSString *JSONString = [@[@"string", @(2), @(3.1), @YES] gh_toJSONString:nil];
+  GHAssertEqualStrings(@"[\"string\",2,3.1,true]", JSONString, nil);
+}
+
 @end

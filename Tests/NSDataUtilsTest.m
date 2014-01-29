@@ -6,8 +6,17 @@
 //  Copyright (c) 2014 rel.me. All rights reserved.
 //
 
-#import "NSDataUtilsTest.h"
+#import "GHNSData+Utils.h"
+
+@interface NSDataUtilsTest : GHTestCase { }
+@end
 
 @implementation NSDataUtilsTest
+
+- (void)testHexString {
+  NSString *testString = @"test string";
+  NSData *data = [testString dataUsingEncoding:NSUTF8StringEncoding];
+  GHAssertEqualStrings(@"7465737420737472696E67", [data gh_hexString], nil);
+}
 
 @end

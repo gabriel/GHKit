@@ -61,24 +61,4 @@
   GHTestLog([monthSymbols description]);
 }
 
-- (void)testMillisSince1970 {
-	NSDateComponents *comps = [[[NSDateComponents alloc] init] autorelease];
-	[comps setDay:13];
-	[comps setMonth:2];
-	[comps setYear:2009];
-	[comps setHour:23];
-	[comps setMinute:31];
-	[comps setSecond:30];
-	NSCalendar *calendar = [NSCalendar currentCalendar];
-	[calendar setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-	NSDate *date = [calendar dateFromComponents:comps];	
-		
-	long long millis = [date gh_millisSince1970];
-	GHTestLog(@"millis=%lld", millis);
-	GHAssertTrue(millis == 1234567890000, nil);
-	
-	NSNumber *millisNumber = [date gh_millisNumberSince1970];
-	GHAssertEqualObjects(millisNumber, [NSNumber numberWithLongLong:1234567890000], nil);
-}
-
 @end
