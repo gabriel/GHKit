@@ -67,4 +67,10 @@
 	return object;
 }
 
+- (id)gh_objectMaybeNilForKey:(id)key ofClass:(Class)aClass {
+  id obj = [self gh_objectMaybeNilForKey:key];
+  if (![obj isKindOfClass:aClass]) return nil;
+  return obj;
+}
+
 @end

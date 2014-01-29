@@ -85,4 +85,9 @@
  */
 - (id)gh_objectMaybeNilForKey:(id)key;
 
+/*!
+ Same as gh_objectMaybeNilForKey, but checks the class type and if a mismatch returns nil.
+ */
+- (id)gh_objectMaybeNilForKey:(id)key ofClass:(Class)aClass;
+
 @end
