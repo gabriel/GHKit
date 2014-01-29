@@ -160,4 +160,10 @@
   return [NSURL gh_dictionaryToQueryString:self];
 }
 
+- (NSString *)gh_toJSONString:(NSError **)error {
+  NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:error];
+  if (data) return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  return nil;
+}
+
 @end

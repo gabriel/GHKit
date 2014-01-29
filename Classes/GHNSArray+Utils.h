@@ -108,4 +108,9 @@
  */
 - (NSArray *)gh_filter:(BOOL(^)(id obj, NSInteger index))filterBlock;
 
+/*!
+ Convert array to JSON string.
+ */
+- (NSString *)gh_toJSONString:(NSError **)error;
+
 @end

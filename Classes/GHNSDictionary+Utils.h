@@ -205,4 +205,9 @@
  */
 - (NSString *)gh_queryString;
 
+/*!
+ Create JSON string for dictionary.
+ */
+- (NSString *)gh_toJSONString:(NSError **)error;
+
 @end
