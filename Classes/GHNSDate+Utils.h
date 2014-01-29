@@ -258,32 +258,4 @@ extern NSString *const kDateFormatShortMonthFullYearTime;
  */
 - (NSString *)gh_timeAgoAbbreviated;
 
-/*!
- Milliseconds since 1970.
- 
- @result Milliseconds since 1970 GMT.
- */
-- (long long)gh_millisSince1970;
-
-/*!
- Milliseconds since 1970 (NSNumber).
- 
- @result Milliseconds since 1970 GMT
- */
-- (NSNumber *)gh_millisNumberSince1970;
-
-/*!
- Seconds since 1970.
- 
- @result Seconds since 1970 GMT (rounded)
- */
-- (long long)gh_secondsSince1970;
-
-/*!
- Seconds since 1970 (NSNumber).
-
- @result Seconds since 1970 GMT (rounded)
- */
-- (NSNumber *)gh_secondsNumberSince1970;
-
 @end
