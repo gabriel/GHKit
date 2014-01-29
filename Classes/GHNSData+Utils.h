@@ -6,8 +6,11 @@
 //  Copyright (c) 2014 rel.me. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@interface NSData (GHUtils)
 
-@interface GHNSData_Utils : NSObject
+/*!
+ Return hex string for this data.
+ */
+- (NSString *)gh_hexString;
 
 @end

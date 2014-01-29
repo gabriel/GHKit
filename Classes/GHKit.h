@@ -59,6 +59,8 @@
 #import "GHValidators.h"
 #import "GHNSUserDefaults+Utils.h"
 
+#import "GHNSData+Utils.h"
+
 // iPhone
 #if TARGET_OS_IPHONE
 #import "GHCGUtils.h"

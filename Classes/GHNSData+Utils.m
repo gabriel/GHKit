@@ -8,6 +8,15 @@
 
 #import "GHNSData+Utils.h"
 
-@implementation GHNSData_Utils
+@implementation NSData (GHUtils)
+
+- (NSString *)gh_hexString {
+  if ([self length] == 0) return nil;
+  NSMutableString *hex = [NSMutableString stringWithCapacity:[self length] * 2];
+  for (NSUInteger i = 0; i < [self length]; ++i) {
+    [hex appendFormat:@"%02X", *((uint8_t *)[self bytes] + i)];
+  }
+  return hex;
+}
 
 @end
