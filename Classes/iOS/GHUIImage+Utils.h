@@ -15,6 +15,7 @@
 
 - (UIImage *)gh_imageMaskWithColor:(UIColor *)maskColor;
 
+// This might be tiff data?
 - (NSData *)gh_data;
 
 - (UIImage *)gh_imageByRotatingImageUpright;
@@ -26,5 +27,9 @@
 + (UIImage *)gh_imageFromView:(UIView *)view;
 
 + (UIImage *)gh_imageFromDrawOperations:(void(^)(CGContextRef context))drawOperations size:(CGSize)size opaque:(BOOL)opaque;
+
+- (UIImage *)gh_imageScaledToMaxWidth:(CGFloat)scaledToMaxWidth;
+
+- (UIImage *)gh_imageScaledToWidth:(CGFloat)scaledToWidth;
 
 @end

@@ -104,5 +104,30 @@
   return image;
 }
 
+- (UIImage *)gh_imageScaledToMaxWidth:(CGFloat)scaledToMaxWidth {
+  CGFloat sourceWidth = self.size.width * self.scale;
+  if (scaledToMaxWidth > sourceWidth) scaledToMaxWidth = sourceWidth;
+  return [self gh_imageScaledToWidth:scaledToMaxWidth];
+}
+
+- (UIImage *)gh_imageScaledToWidth:(CGFloat)scaledToWidth {
+  CGFloat sourceWidth = self.size.width * self.scale;
+  CGFloat sourceHeight = self.size.height * self.scale;
+  CGRect sourceRect = CGRectMake(0, 0, sourceWidth, sourceHeight);
+  CGFloat sourceRatio = sourceWidth / sourceHeight;
+  
+  CGFloat targetWidth = scaledToWidth;
+  CGFloat targetHeight = roundf(targetWidth * (1.0/sourceRatio));
+  CGRect targetRect = CGRectMake(0, 0, targetWidth, targetHeight);
+  
+  UIGraphicsBeginImageContextWithOptions(targetRect.size, NO, 1.0); // 0.f for scale means "scale for device's main screen".
+  CGImageRef sourceImg = CGImageCreateWithImageInRect([self CGImage], sourceRect); // cropping happens here.
+  UIImage *image = [UIImage imageWithCGImage:sourceImg scale:0.0 orientation:self.imageOrientation]; // create cropped UIImage.
+  CGImageRelease(sourceImg);
+  [image drawInRect:targetRect]; // the actual scaling happens here, and orientation is taken care of automatically.
+  image = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  return image;
+}
 
 @end
