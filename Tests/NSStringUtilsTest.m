@@ -54,8 +54,7 @@
 }
 
 - (void)testUUID {
-	GHTestLog([NSString gh_uuid]);
-	// TODO(gabe): Test
+	GHTestLog([NSString gh_UUID]);
 }
 
 - (void)testReverse {
@@ -88,10 +87,11 @@
 }
 
 - (void)testCount {
-	GHAssertTrue([@"\n \n\n   \n" gh_count:@"\n"] == 4, @"1");
-	GHAssertTrue([@"\n" gh_count:@"\n"] == 1, @"2");
-	GHAssertTrue([@"" gh_count:@"\n"] == 0, @"3");
-	GHAssertTrue([@" " gh_count:@"\n"] == 0, @"4");
+	GHAssertTrue([@"\n \n\n   \n" gh_count:@"\n"] == 4, nil);
+  GHAssertTrue([@"ababababcde" gh_count:@"ab"] == 4, nil);
+	GHAssertTrue([@"\n" gh_count:@"\n"] == 1, nil);
+	GHAssertTrue([@"" gh_count:@"\n"] == 0, nil);
+	GHAssertTrue([@" " gh_count:@"\n"] == 0, nil);
 }
 
 - (void)testSubStringSegmentsWithin {
@@ -143,13 +143,13 @@
 }
 
 - (void)testRightStrip {
-	NSString *text = @"this is a string to right strip   ";
+	NSString *text = @"this is a string to right strip   \t";
 	NSString *expected = @"this is a string to right strip";
 	GHAssertEqualStrings([text gh_rightStrip], expected, nil);
 }
 
 - (void)testLeftStrip {
-	NSString *text = @"   this is a string to left strip";
+	NSString *text = @"\t   this is a string to left strip";
 	NSString *expected = @"this is a string to left strip";
 	GHAssertEqualStrings([text gh_leftStrip], expected, nil);
 }
