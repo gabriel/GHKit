@@ -31,16 +31,6 @@
 @interface NSString(GHUtils)
 
 /*!
- Create string with format from array of arguments.
- Arguments must be objective-c objects.
- WARNING: This assumption seems totally dangerous.
- 
- @param format Format
- @param arguments Arguments
- */
-+ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments;
-
-/*!
  Check if equals ignoring case.
  
  @param s String
@@ -93,7 +83,6 @@
  */
 - (BOOL)gh_isPresent;
 
-#if !TARGET_OS_IPHONE
 /*!
  Create attributed string that truncates in the middle.
  
@@ -101,6 +90,7 @@
  */
 - (NSAttributedString *)gh_truncateMiddle;
 
+#if !TARGET_OS_IPHONE
 /*!
  Get mime type for extension.
  
@@ -211,6 +201,9 @@
  
  @result UUID
  */
++ (NSString *)gh_UUID;
+
+// @deprecated Use gh_UUID
 + (NSString *)gh_uuid;
 
 /*!
@@ -262,6 +255,16 @@
  http://www.codecollector.net/view/4900E3BB-032E-4E89-81C7-34097E98C286
  */
 - (NSString *)gh_rot13;
+
+/*!
+  Create string with format from array of arguments.
+  Arguments must be objective-c objects.
+  WARNING: This assumption seems totally dangerous.
+ 
+  @param format Format
+  @param arguments Arguments
+  */
++ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments;
 
 @end
 

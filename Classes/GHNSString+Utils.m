@@ -26,43 +26,29 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#endif
+
 #import "GHNSString+Utils.h"
 
-//! @cond DEV
-
-@protocol GHKit_NSString_GTMRegex
-- (NSString *)gtm_stringByReplacingMatchesOfPattern:(NSString *)pattern withReplacement:(NSString *)replacementPattern;
-@end
-
-//! @endcond
-
 @implementation NSString(GHUtils)
-
-+ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments {
-  char *argList = (char *)malloc(sizeof(NSString *) * [arguments count]);
-  [arguments getObjects:(id *)argList];
-  NSString *result = [[[NSString alloc] initWithFormat:format arguments:(void *)argList] autorelease];
-  free(argList);
-  return result;
-}
 
 - (NSString *)gh_strip {
   return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 - (NSString *)gh_rightStrip {
-  if (![self respondsToSelector:@selector(gtm_stringByReplacingMatchesOfPattern:withReplacement:)])
-    [NSException raise:NSDestinationInvalidException format:@"This method required GTMRegexAdditions from GTMRegex."];
-  return [(id)self gtm_stringByReplacingMatchesOfPattern:@"[ \t]+$" withReplacement:@""];
+  static NSRegularExpression *gRegexRightStrip = nil;
+  if (!gRegexRightStrip) gRegexRightStrip = [NSRegularExpression regularExpressionWithPattern:@"[ \t]+$" options:0 error:nil];
+  return [gRegexRightStrip stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, self.length) withTemplate:@""];
 }
 
 - (NSString *)gh_leftStrip {
-  if (![self respondsToSelector:@selector(gtm_stringByReplacingMatchesOfPattern:withReplacement:)])
-    [NSException raise:NSDestinationInvalidException format:@"This method required GTMRegexAdditions from GTMRegex."];
-
-	return [(id)self gtm_stringByReplacingMatchesOfPattern:@"^[ \t]+" withReplacement:@""];
+  static NSRegularExpression *gRegexLeftStrip = nil;
+  if (!gRegexLeftStrip) gRegexLeftStrip = [NSRegularExpression regularExpressionWithPattern:@"^[ \t]+" options:0 error:nil];
+  return [gRegexLeftStrip stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, self.length) withTemplate:@""];
 }
-
 
 + (BOOL)gh_isBlank:(NSString *)s {
   if (!s) return YES;
@@ -77,10 +63,8 @@
 	return [self compare:s options:NSCaseInsensitiveSearch] == NSOrderedSame;
 }
 
-#if !TARGET_OS_IPHONE
-static NSDictionary *gh_gTruncateMiddle = nil;
-
 - (NSAttributedString *)gh_truncateMiddle {
+  static NSDictionary *gh_gTruncateMiddle = nil;
   if (!gh_gTruncateMiddle) {
     NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     [style setLineBreakMode:NSLineBreakByTruncatingMiddle];
@@ -91,6 +75,7 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   return [[[NSAttributedString alloc] initWithString:self attributes:gh_gTruncateMiddle] autorelease];
 }
 
+#if !TARGET_OS_IPHONE
 - (NSString *)gh_mimeTypeForExtension {
 	// TODO(gabe): Doesn't look like css extension gets the mime type?
   CFStringRef uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)self, NULL);    
@@ -176,6 +161,10 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 }
 
 + (NSString *)gh_uuid {
+  return [self gh_UUID];
+}
+
++ (NSString *)gh_UUID {
   CFUUIDRef	uuidRef = CFUUIDCreate(nil);
   
   NSString *uuid = (NSString *)CFUUIDCreateString(nil, uuidRef);
@@ -205,11 +194,11 @@ static NSDictionary *gh_gTruncateMiddle = nil;
 - (NSInteger)gh_count:(NSString *)s {
 	NSRange inRange = NSMakeRange(0, [self length]);
 	NSInteger count = 0;
-	while(YES) {
+	while (YES) {
 		NSRange range = [self rangeOfString:s options:0 range:inRange];
 		if (range.location == NSNotFound) break;
 		inRange.location = range.location + range.length;
-		inRange.length = [self length] - range.location - 1;
+		inRange.length = [self length] - range.location - range.length;
 		count++;
 	}
 	return count;
@@ -276,6 +265,15 @@ static NSDictionary *gh_gTruncateMiddle = nil;
   
   return [NSString stringWithCString:newString encoding:NSASCIIStringEncoding];
 }
+
++ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments {
+  char *argList = (char *)malloc(sizeof(NSString *) * [arguments count]);
+  [arguments getObjects:(id *)argList];
+  NSString *result = [[[NSString alloc] initWithFormat:format arguments:(void *)argList] autorelease];
+  free(argList);
+  return result;
+}
+
 
 @end
 
