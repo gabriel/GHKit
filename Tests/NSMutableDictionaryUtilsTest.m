@@ -25,6 +25,14 @@
   
 	[dict gh_mutableCompact];
   GHAssertEqualObjects(dict, expected, nil);
+  
+  NSMutableDictionary *dict2 = [GHDict(@"key2", nil, @"key1", @"1") mutableCopy];
+  
+  NSMutableDictionary *expected2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"1", @"key1",
+                                   nil];
+  [dict2 gh_mutableCompact];
+  GHAssertEqualObjects(dict2, expected2, nil);
 }
 
 @end

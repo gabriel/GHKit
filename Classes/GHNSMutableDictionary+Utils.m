@@ -49,9 +49,9 @@
 }
 
 - (void)gh_mutableCompact {
-  NSMutableArray *keysToRemove = [[NSMutableArray alloc] initWithCapacity:[self count]];
+  NSMutableArray *keysToRemove = [[NSMutableArray alloc] init];
   for (id key in self) {
-    if ([self objectForKey:key] == [NSNull null])
+    if ([[self objectForKey:key] isEqual:[NSNull null]])
       [keysToRemove addObject:key];
   }
   [self removeObjectsForKeys:keysToRemove];
