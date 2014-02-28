@@ -29,30 +29,20 @@
 #import "GHValidators.h"
 #import "GHNSDate+Utils.h"
 
-//! @cond DEV
-
-@protocol GHValidators_GTMRegex
-+ (id)regexWithPattern:(NSString *)pattern options:(NSUInteger)options;
-- (BOOL)matchesString:(NSString *)str;
-@end  
-
-//! @endcond
-
 @implementation GHValidators
 
-+ (id)regexWithPattern:(NSString *)pattern options:(NSUInteger)options {
-  Class regexClass = NSClassFromString(@"GTMRegex");
-  if (regexClass == NULL) 
-    [NSException raise:NSDestinationInvalidException format:@"Must include GTMRegex in order to use this validator."];
-  return [regexClass regexWithPattern:pattern options:options];  
-}  
-
 + (BOOL)isEmailAddress:(NSString *)str {
-  // Simple regex from http://www.regular-expressions.info/email.html
-  NSString *emailRegexPattern = @"^[A-Z0-9._%+-\\'\"]+@[A-Z0-9.-]+\\.[A-Z]+$";  
-  NSUInteger options = 0x01; // kGTMRegexOptionIgnoreCase
-  id regex = [self regexWithPattern:emailRegexPattern options:options];
-  return [regex matchesString:str];
+  if (!str) return NO;
+  
+  NSString *emailRegexPattern = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]+$";
+
+  NSError *error = nil;
+  NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:emailRegexPattern options:NSRegularExpressionCaseInsensitive error:&error];
+  
+  NSAssert(!error, @"Error in regex: %@", error);
+  
+  NSUInteger matchCount = [regex numberOfMatchesInString:str options:0 range:NSMakeRange(0, [str length])];
+  return (matchCount == 1);
 }
 
 + (BOOL)isCreditCardNumber:(NSString *)numberString {

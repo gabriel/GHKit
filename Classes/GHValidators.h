@@ -34,10 +34,6 @@
 /*!
  Check if string is a valid email address.
 
- Requires GTMRegex.
-
- If GTMRegex library isn't available will raise a NSDestinationInvalidException.
-
  @param str String to validate
  @result YES if string is a valid email address
  */
