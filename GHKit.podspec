@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GHKit"
-  s.version      = "1.0.5"
+  s.version      = "1.0.6"
   s.summary      = "Objective-C categories and utilities"
   s.homepage     = "https://github.com/gabriel/gh-kit"
   s.license      = 'MIT'

@@ -23,8 +23,9 @@ Usage
 
 GHKit defines various categories and general purpose utilities.
 
-For example, parsing date strings, generating time ago in words,
-generating SHA1-HMAC, MD5, or special invocation proxies.
+For example, parsing date strings, date math, string manipulations, URL dictionary formatting, etc. Some examples are below.
+
+All categories are namespaced with gh_ to avoid conflicts.
 
 ***Import:***
 
@@ -53,12 +54,16 @@ generating SHA1-HMAC, MD5, or special invocation proxies.
 
 ***Strings:***
 
-`GHNSString+Utils.h`: Stripping, reversing, counting, UUID, MD5 and more.
+`GHNSString+Utils.h`: Stripping, reversing, counting, UUID and more.
 
      [NSString gh_isBlank:@"  "]; // YES
      [NSString gh_isBlank:nil]; // YES
      [@"abc" gh_reverse]; // @"cba" 
      [@"  some text " gh_strip]; // @"some text"
+     [@" " gh_isPresent]; // NO
+     [@"abc" gh_isPresent]; // YES
+     [NSString gh_UUID]; // @"5A59DFDF-46BD-40D0-B065-%7D57A8407C4"
+     [@"ababababcde" gh_count:@"ab"]; // 4 (@"ab" appears 4 times)
 
 ***URLs:***
 
@@ -68,9 +73,12 @@ generating SHA1-HMAC, MD5, or special invocation proxies.
     [NSDictionary gh_dictionaryToQueryString:dict sort:YES]; // @"a=b&c=d"
 
 
-***Files:***
+***Colors:***
 
-`GHNSFileManager+Utils.h`: File size, exists, generating temporary or unique file paths.
+`GHUIColor+Utils.h`: Colors from hex, color space changes, darken.
 
+    UIColor *color = GHUIColorFromRGB(0xBC1128);
+    GH_HSV hsvColor = [color gh_hsv];
+    UIColor *darkenedColor = [color gh_darkenColorWithValue];
 
 And more...
