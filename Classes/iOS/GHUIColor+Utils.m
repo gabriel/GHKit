@@ -121,7 +121,7 @@
 	}	
 }
 
-- (UIColor *)gh_darkenColorWithValue:(CGFloat)value {
+- (UIColor *)gh_darkenColor:(CGFloat)value {
   NSUInteger totalComponents = CGColorGetNumberOfComponents(self.CGColor);
   BOOL isGreyscale = (totalComponents == 2) ? YES : NO;
   

@@ -98,6 +98,6 @@ typedef struct {
 // See NSColor#getRed:green:blue:alpha
 - (void)gh_getRed:(CGFloat *)red green:(CGFloat *)green blue:(CGFloat *)blue alpha:(CGFloat *)alpha;
 
-- (UIColor *)gh_darkenColorWithValue:(CGFloat)value;
+- (UIColor *)gh_darkenColor:(CGFloat)value;
 
 @end

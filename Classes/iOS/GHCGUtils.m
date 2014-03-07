@@ -946,7 +946,7 @@ void GHCGContextDrawLinearGradientWithColors(CGContextRef context, CGRect rect, 
   CGGradientRelease(gradient);
 }
 
-void GHCGContextDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef  endColor) {
+void GHCGContextDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor) {
   NSArray *colors = [NSArray arrayWithObjects:(__bridge id)startColor, (__bridge id)endColor, nil];
   CGFloat locations[] = { 0.0, 1.0 };
   GHCGContextDrawLinearGradientWithColors(context, rect, colors, locations);
