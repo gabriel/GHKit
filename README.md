@@ -57,12 +57,18 @@ date = [date gh_addDays:-1];
 ```objc
 [NSString gh_isBlank:@"  "]; // YES
 [NSString gh_isBlank:nil]; // YES
-[@"abc" gh_reverse]; // @"cba" 
 [@"  some text " gh_strip]; // @"some text"
 [@" " gh_isPresent]; // NO
 [@"abc" gh_isPresent]; // YES
+
+[@"abc" gh_reverse]; // @"cba"
+
 [NSString gh_UUID]; // @"5A59DFDF-46BD-40D0-B065-%7D57A8407C4"
+
 [@"ababababcde" gh_count:@"ab"]; // 4 (@"ab" appears 4 times)
+
+[NSString gh_localizedStringForTimeInterval:30]; // "half a minute"
+[NSString gh_abbreviatedStringForTimeInterval:30]; // @"30s"
 ```
 
 ***URLs:***
