@@ -34,6 +34,7 @@ All categories are namespaced with gh_ to avoid conflicts.
 ```objc
 NSDate *date = [NSDate gh_parseISO8601:@"2010-10-07T04:25Z"];
 NSString *dateString = [date gh_formatHTTP]; // Formatted like: Sun, 06 Nov 1994 08:49:37 GMT"
+NSDate *date = [NSDate gh_parseTimeSinceEpoch:@(1234567890)];
 ```
 
 `GHNSDate+Utils.h`: For time ago in words and date component arithmentic (adding days), tomorrow, yesterday, and more.
@@ -62,8 +63,6 @@ date = [date gh_addDays:-1];
 [@"abc" gh_isPresent]; // YES
 
 [@"abc" gh_reverse]; // @"cba"
-
-[NSString gh_UUID]; // @"5A59DFDF-46BD-40D0-B065-%7D57A8407C4"
 
 [@"ababababcde" gh_count:@"ab"]; // 4 (@"ab" appears 4 times)
 

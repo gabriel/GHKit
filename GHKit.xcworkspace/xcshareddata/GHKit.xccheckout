@@ -10,29 +10,29 @@
 	<string>GHKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>DD26BC1D-84D9-4292-B2F3-23D5A0DCE44D</key>
+		<key>FCF1318D7FA6CAB10513AC324A1290B93E7E7F64</key>
 		<string>ssh://github.com/gabriel/gh-kit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GHKit.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>DD26BC1D-84D9-4292-B2F3-23D5A0DCE44D</key>
+		<key>FCF1318D7FA6CAB10513AC324A1290B93E7E7F64</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/gabriel/gh-kit.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>DD26BC1D-84D9-4292-B2F3-23D5A0DCE44D</string>
+	<string>FCF1318D7FA6CAB10513AC324A1290B93E7E7F64</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>DD26BC1D-84D9-4292-B2F3-23D5A0DCE44D</string>
+			<string>FCF1318D7FA6CAB10513AC324A1290B93E7E7F64</string>
 			<key>IDESourceControlWCCName</key>
 			<string>gh-kit</string>
 		</dict>
