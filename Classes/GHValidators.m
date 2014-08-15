@@ -42,6 +42,8 @@
   NSAssert(!error, @"Error in regex: %@", error);
   
   NSUInteger matchCount = [regex numberOfMatchesInString:str options:0 range:NSMakeRange(0, [str length])];
+  
+  [regex release];
   return (matchCount == 1);
 }
 
