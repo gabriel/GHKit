@@ -48,7 +48,7 @@
 + (NSDate *)gh_parseRFC822:(NSString *)dateString;
 
 /*!
- Parse http date, currently only handles RFC1123 date.
+ Parse http date. Tries RFC1123, then RFC850, and then ASCTIME.
 
      HTTP-date    = rfc1123-date | rfc850-date | asctime-date
      
