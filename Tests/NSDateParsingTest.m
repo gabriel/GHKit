@@ -52,6 +52,11 @@
   GHAssertEqualsWithAccuracy(([newDate timeIntervalSince1970] - [date timeIntervalSince1970]), (3.0 * 60.0 * 60.0), 0.01, nil);
 }
 
+- (void)testTimestamp {
+  NSDate *date = [NSDate gh_parseTimeSinceEpoch:@(1234567890)];
+  GHAssertEqualObjects(@(1234567890), [NSNumber numberWithUnsignedLongLong:[date timeIntervalSince1970]], nil);
+}
+
 - (void)testISO8601 {
   NSDate *date = [NSDate gh_parseISO8601:@"1997-07-16T19:20:30.045Z"];
   GHAssertEquals(869080830.045, [date timeIntervalSince1970], nil);
