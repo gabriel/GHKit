@@ -108,6 +108,8 @@ va_end(args); \
 
 typedef void (^GHTargetBlock)(id sender);
 
-//
-//
 #define GHNSError(CODE, MESSAGE) [NSError errorWithDomain:NSStringFromClass([self class]) code:CODE userInfo:@{NSLocalizedDescriptionKey:MESSAGE}]
+
+#define GHOrNull(obj) (obj ? obj : NSNull.null)
+
+#define GHIfNull(obj, val) ([obj isEqual:NSNull.null] ? val : obj)
