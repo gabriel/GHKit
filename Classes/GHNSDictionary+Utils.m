@@ -114,6 +114,13 @@
 	return [self gh_boolValueForKey:key withDefault:NO];
 }
 
+- (NSData *)gh_dataAsBase64ForKey:(NSString *)key options:(NSDataBase64DecodingOptions)options {
+  id value = [self objectForKey:key];
+	if (!value || [value isEqual:[NSNull null]]) return nil;
+  NSAssert([value isKindOfClass:[NSString class]], @"Value must be a Base64 string");
+  return [[[NSData alloc] initWithBase64EncodedString:value options:0] autorelease];
+}
+
 - (id)gh_objectForKey:(id)key withDefault:(id)defaultValue {
 	id value = [self objectForKey:key];
 	if (!value || [value isEqual:[NSNull null]]) return defaultValue;
@@ -162,7 +169,7 @@
 
 - (NSString *)gh_toJSONString:(NSError **)error {
   NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:error];
-  if (data) return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+  if (data) return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
   return nil;
 }
 

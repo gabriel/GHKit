@@ -178,6 +178,12 @@
 - (NSNumber *)gh_boolValueForKey:(id)key;
 
 /*!
+ Get data from base64 string.
+ @result NSData
+ */
+- (NSData *)gh_dataAsBase64ForKey:(NSString *)key options:(NSDataBase64DecodingOptions)options;
+
+/*!
  Check if dictionary has all keys.
  
  @param firstKey First key

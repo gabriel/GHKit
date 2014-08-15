@@ -28,6 +28,15 @@
 	GHAssertFalse([[dict gh_boolValueForKey:@"key4"] boolValue], nil);
 }
 
+- (void)testDataValue {
+  NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
+												@"hwLWnp0tXoCzs+W0UdVPUaBSfiW1Q5B9m6xzDPFXvJqpqXvk1nnmMBNziXJWE4M823j8oSRl0uLhCAhxJW6ah7/a25DjGzwa", @"key1",
+                        nil];
+  NSData *data = [dict gh_dataAsBase64ForKey:@"key1" options:0];
+  NSData *expected = [[NSData alloc] initWithBase64EncodedString:@"hwLWnp0tXoCzs+W0UdVPUaBSfiW1Q5B9m6xzDPFXvJqpqXvk1nnmMBNziXJWE4M823j8oSRl0uLhCAhxJW6ah7/a25DjGzwa" options:0];
+  GHAssertEqualObjects(data, expected, nil);
+}
+
 - (void)testHasAllKeys {
 	NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:
 												@"1", @"key1", 
