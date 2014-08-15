@@ -450,6 +450,14 @@ CGPathRef GHCGPathCreateStyledRect(CGRect rect, GHUIBorderStyle style, CGFloat s
     case GHUIBorderStyleBottomOnly:
       insetBounds = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height - strokeInset);
       break;
+    
+    case GHUIBorderStyleRightOnly:
+      insetBounds = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width - strokeInset, rect.size.height);
+      break;
+      
+    case GHUIBorderStyleLeftOnly:
+      insetBounds = CGRectMake(rect.origin.x + strokeInset, rect.origin.y, rect.size.width - strokeInset, rect.size.height);
+      break;
       
       // Borders with all 4 sides
     case GHUIBorderStyleNormal:
@@ -525,6 +533,16 @@ CGPathRef GHCGPathCreateStyledRect(CGRect rect, GHUIBorderStyle style, CGFloat s
     case GHUIBorderStyleBottomOnly:
       CGPathMoveToPoint(path, &transform, fw, fh);
       CGPathAddLineToPoint(path, &transform, 0, fh);
+      break;
+    
+    case GHUIBorderStyleLeftOnly:
+      CGPathMoveToPoint(path, &transform, 0, 0);
+      CGPathAddLineToPoint(path, &transform, 0, fh);
+      break;
+      
+    case GHUIBorderStyleRightOnly:
+      CGPathMoveToPoint(path, &transform, fw, 0);
+      CGPathAddLineToPoint(path, &transform, fw, fh);
       break;
       
     case GHUIBorderStyleTopBottom:
@@ -896,6 +914,25 @@ BOOL GHIsBorderStyleClippable(GHUIBorderStyle borderStyle, CGFloat cornerRadius)
       return NO;
     default:
       return YES;
+  }
+}
+
+UIEdgeInsets GHBorderInsets(GHUIBorderStyle borderStyle, CGFloat borderWidth) {
+  if (borderWidth == 0) return UIEdgeInsetsZero;
+  switch (borderStyle) {
+    case GHUIBorderStyleTopOnly:
+      return UIEdgeInsetsMake(borderWidth, 0, 0, 0);
+    case GHUIBorderStyleBottomOnly:
+      return UIEdgeInsetsMake(0, 0, borderWidth, 0);
+    case GHUIBorderStyleTopBottom:
+      return UIEdgeInsetsMake(borderWidth, 0, borderWidth * 2, 0);
+    case GHUIBorderStyleNone:
+      return UIEdgeInsetsZero;
+    case GHUIBorderStyleNormal:
+      return UIEdgeInsetsMake(borderWidth, borderWidth, borderWidth * 2, borderWidth * 2);
+    default:
+      assert(false); // Not implemented yet
+      return UIEdgeInsetsZero;
   }
 }
 

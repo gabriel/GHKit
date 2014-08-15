@@ -373,23 +373,25 @@ CGRect GHCGRectWithInsets(CGSize size, UIEdgeInsets insets);
 //
 typedef enum {
   GHUIBorderStyleNone = 0,
-  GHUIBorderStyleNormal, // Straight top, right, botton, left
-  GHUIBorderStyleRounded, // Rounded top, right, bottom, left
-  GHUIBorderStyleTopOnly, // Top (straight) only
-  GHUIBorderStyleBottomOnly, // Bottom (straight) only
+  GHUIBorderStyleNormal, // Top, right, botton, left
+  GHUIBorderStyleTopOnly, // Top only
+  GHUIBorderStyleBottomOnly, // Bottom only
+  GHUIBorderStyleLeftOnly, // Left
+  GHUIBorderStyleRightOnly, // Right only
   GHUIBorderStyleTopBottom, // Top and bottom only
-  GHUIBorderStyleRoundedTop, // Rounded top with left and right sides (no bottom)
   GHUIBorderStyleTopLeftRight, // Top, left and right sides (no bottom)
   GHUIBorderStyleBottomLeftRight, // Bottom, left and right sides (no top)
+
+  GHUIBorderStyleRounded, // Rounded top, right, bottom, left
+  GHUIBorderStyleRoundedTop, // Rounded top with left and right sides (no bottom)
   GHUIBorderStyleRoundedBottom, // Rounded bottom
-  
   GHUIBorderStyleRoundedTopOnly, // Rounded top with no sides
   GHUIBorderStyleRoundedLeftCap, // Rounded left segment
   GHUIBorderStyleRoundedRightCap, // Rounded right segment
   GHUIBorderStyleRoundedBack, // Rounded back button
-  
   GHUIBorderStyleRoundedTopWithBotton, // Rounded top with left and right sides (with bottom)
   GHUIBorderStyleRoundedBottomLeftRight, // Rounded bottom (no top)
+  
 } GHUIBorderStyle;
 
 CGPathRef GHCGPathCreateStyledRect(CGRect rect, GHUIBorderStyle style, CGFloat strokeWidth, CGFloat cornerRadius);
@@ -399,6 +401,11 @@ CGPathRef GHCGPathCreateStyledRect(CGRect rect, GHUIBorderStyle style, CGFloat s
  @return YES if border forms a connected path or we have a corner radius > 0
  */
 BOOL GHIsBorderStyleClippable(GHUIBorderStyle borderStyle, CGFloat cornerRadius);
+
+/*!
+ Insets for border style and width.
+ */
+UIEdgeInsets GHBorderInsets(GHUIBorderStyle borderStyle, CGFloat borderWidth);
 
 /*!
  Create path for line.
