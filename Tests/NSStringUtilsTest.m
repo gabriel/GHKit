@@ -53,10 +53,6 @@
 	GHAssertEqualObjects(separated, expected, nil);
 }
 
-- (void)testUUID {
-	GHTestLog([NSString gh_UUID]);
-}
-
 - (void)testReverse {
 	GHAssertEqualStrings([@"reversetest" gh_reverse], @"tsetesrever", nil); // odd # of letters
 	GHAssertEqualStrings([@"reverseit!" gh_reverse], @"!tiesrever", nil); // even # of letters

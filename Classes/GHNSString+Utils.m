@@ -160,19 +160,6 @@
   return extension;
 }
 
-+ (NSString *)gh_uuid {
-  return [self gh_UUID];
-}
-
-+ (NSString *)gh_UUID {
-  CFUUIDRef	uuidRef = CFUUIDCreate(nil);
-  
-  NSString *uuid = (NSString *)CFUUIDCreateString(nil, uuidRef);
-  CFRelease(uuidRef);
-  
-  return [NSMakeCollectable(uuid) autorelease];
-}
-
 - (NSString *)gh_reverse {
 	NSInteger length = [self length];
 	unichar *buffer = calloc(length, sizeof(unichar));

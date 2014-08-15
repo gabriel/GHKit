@@ -197,16 +197,6 @@
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 
 /*!
- Create UUID.
- 
- @result UUID
- */
-+ (NSString *)gh_UUID;
-
-// @deprecated Use gh_UUID
-+ (NSString *)gh_uuid;
-
-/*!
  Get last part of string separated by the specified string. 
  
      [@"foo:bar" gh_lastSplitWithString:@":" options:0] => bar
