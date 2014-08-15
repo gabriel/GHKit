@@ -126,6 +126,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0007D3E1199EB28E008EF782 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		001CF5E618AEB0C900D830A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		002E85FE185A8D360019B5E6 /* GHCGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCGUtils.h; sourceTree = "<group>"; };
 		002E85FF185A8D360019B5E6 /* GHCGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCGUtils.m; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 		00D0226B154DF111003BAAC3 = {
 			isa = PBXGroup;
 			children = (
+				0007D3E1199EB28E008EF782 /* Podfile */,
 				00E1A6C0182311F400BBDFBD /* GHKit.podspec */,
 				00D0247A154DFE94003BAAC3 /* README.md */,
 				00D0227A154DF1C5003BAAC3 /* Classes */,
