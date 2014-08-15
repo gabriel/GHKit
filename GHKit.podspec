@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/gabriel/gh-kit.git", :tag => s.version.to_s }
   s.platform     = :ios, '7.0'
   s.source_files = 'Classes', 'Classes/iOS'
+  s.requires_arc = false
 
 end
