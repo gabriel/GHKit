@@ -59,8 +59,8 @@
   return ![NSString gh_isBlank:self];
 }
 
-+ (NSString *)gh_present:(NSString *)s {
-  if ([s gh_isPresent]) return s;
+- (NSString *)gh_present {
+  if ([self gh_isPresent]) return self;
   return nil;
 }
 

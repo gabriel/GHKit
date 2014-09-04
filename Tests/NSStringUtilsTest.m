@@ -92,8 +92,8 @@
 }
 
 - (void)testPresent {
-  GHAssertNil([NSString gh_present:@" "], nil);
-  GHAssertEqualStrings([NSString gh_present:@"s"], @"s", nil);
+  GHAssertNil([@" " gh_present], nil);
+  GHAssertEqualStrings([@"s" gh_present], @"s", nil);
   
   GHAssertTrue([@"s" gh_isPresent], nil);
   GHAssertFalse([@" " gh_isPresent], nil);
