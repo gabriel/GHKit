@@ -64,6 +64,7 @@
   GHAssertFalse([@"www.test.com" gh_startsWith:@"" options:0], nil);
   
   GHAssertTrue([@"www.test.com" gh_startsWith:@"WWW." options:NSCaseInsensitiveSearch], nil);
+  GHAssertTrue([@"WWW.test.com" gh_startsWith:@"www." options:NSCaseInsensitiveSearch], nil);
   GHAssertTrue([@"www.test.com" gh_startsWith:@"WWW.test.com" options:NSCaseInsensitiveSearch], nil);
   GHAssertFalse([@"www.test.com" gh_startsWith:@"" options:NSCaseInsensitiveSearch], nil);
 }
@@ -88,6 +89,15 @@
 	GHAssertTrue([@"\n" gh_count:@"\n"] == 1, nil);
 	GHAssertTrue([@"" gh_count:@"\n"] == 0, nil);
 	GHAssertTrue([@" " gh_count:@"\n"] == 0, nil);
+}
+
+- (void)testPresent {
+  GHAssertNil([NSString gh_present:@" "], nil);
+  GHAssertEqualStrings([NSString gh_present:@"s"], @"s", nil);
+  
+  GHAssertTrue([@"s" gh_isPresent], nil);
+  GHAssertFalse([@" " gh_isPresent], nil);
+  GHAssertFalse([@"" gh_isPresent], nil);
 }
 
 - (void)testSubStringSegmentsWithin {

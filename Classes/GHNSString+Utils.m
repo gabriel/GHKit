@@ -59,6 +59,11 @@
   return ![NSString gh_isBlank:self];
 }
 
++ (NSString *)gh_present:(NSString *)s {
+  if ([s gh_isPresent]) return s;
+  return nil;
+}
+
 - (BOOL)gh_isEqualIgnoreCase:(NSString *)s {
 	return [self compare:s options:NSCaseInsensitiveSearch] == NSOrderedSame;
 }

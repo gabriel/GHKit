@@ -84,6 +84,12 @@
 - (BOOL)gh_isPresent;
 
 /*!
+ Returns string if present, not empty or whitespace.
+ @" ", @"" returns nil.
+ */
++ (NSString *)gh_present:(NSString *)s;
+
+/*!
  Create attributed string that truncates in the middle.
  
  @result Attributed string that truncates in the middle.

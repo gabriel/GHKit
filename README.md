@@ -53,7 +53,7 @@ date = [date gh_addDays:-1];
 
 ***Strings:***
 
-`GHNSString+Utils.h`: Stripping, reversing, counting, UUID and more.
+`GHNSString+Utils.h`: Stripping, reversing, counting and more.
 
 ```objc
 [NSString gh_isBlank:@"  "]; // YES
@@ -61,6 +61,8 @@ date = [date gh_addDays:-1];
 [@"  some text " gh_strip]; // @"some text"
 [@" " gh_isPresent]; // NO
 [@"abc" gh_isPresent]; // YES
+[NSString gh_present:@" "]; // nil
+[NSString gh_present:@"some text"]; // @"some text"
 
 [@"abc" gh_reverse]; // @"cba"
 
@@ -68,6 +70,9 @@ date = [date gh_addDays:-1];
 
 [NSString gh_localizedStringForTimeInterval:30]; // "half a minute"
 [NSString gh_abbreviatedStringForTimeInterval:30]; // @"30s"
+
+[@"WWW.test.com" gh_startsWith:@"www." options:NSCaseInsensitiveSearch]; // YES
+[@"foo:bar" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch]; // @"bar"
 ```
 
 ***URLs:***

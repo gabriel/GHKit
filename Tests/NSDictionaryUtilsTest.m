@@ -86,8 +86,10 @@
 }
 
 - (void)testJSON {
-  NSString *JSONString = [@{@"key1": @(2), @"key2": @(3.1), @"key3": @YES} gh_toJSONString:nil];
-  GHAssertEqualStrings(@"{\"key2\":3.1,\"key1\":2,\"key3\":true}", JSONString, nil);
+  NSDictionary *dict = @{@"key1": @(2), @"key2": @(3.1), @"key3": @YES};
+  NSString *JSONString = [dict gh_toJSONString:nil];
+  NSDictionary *dict2 = [NSJSONSerialization JSONObjectWithData:[JSONString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+  GHAssertEqualObjects(dict, dict2, nil);
 }
 
 @end
