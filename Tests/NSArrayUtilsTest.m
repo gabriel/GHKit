@@ -134,4 +134,10 @@
   GHAssertEqualStrings(@"[\"string\",2,3.1,true]", JSONString, nil);
 }
 
+- (void)testUniq {
+  NSArray *uniq = [@[@(1), @(1), @(3)] gh_uniq];
+  NSArray *expected = @[@(1), @(3)];
+  GHAssertEqualObjects(uniq, expected, nil);
+}
+
 @end

@@ -113,4 +113,19 @@
  */
 - (NSString *)gh_toJSONString:(NSError **)error;
 
+/*!
+ Except last object.
+ */
+- (NSArray *)gh_exceptLast;
+
+/*!
+ New array with object appended.
+ */
+- (NSArray *)gh_copyAppend:(id)obj;
+
+/*!
+  Uniqify (de-dupe) an array.
+ */
+- (NSArray *)gh_uniq;
+
 @end

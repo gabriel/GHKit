@@ -168,6 +168,14 @@
   GHAssertEquals(5.0f, [@"5.0.1" floatValue], nil);
 }
 
+- (void)testSplit {
+  GHAssertEqualStrings(@"", [@"" gh_splitReverseWithString:@""], nil);
+  GHAssertEqualStrings(@"", [@"<<<g@foo.com>" gh_firstSplitWithString:@"<" options:0], nil);
+  GHAssertEqualStrings(@"Test Blah <<", [@"Test Blah <<<g@foo.com>" gh_firstSplitWithString:@"<" options:0], nil);
+  GHAssertEqualStrings(@"<<g@foo.com>", [@"Test Blah <<<g@foo.com>" gh_lastSplitWithString:@"<" options:0], nil);
+  GHAssertEqualStrings(@"g@foo.com>", [@"Test Blah <<<g@foo.com>" gh_splitReverseWithString:@"<"], nil);
+}
+
 #if !TARGET_OS_IPHONE
 - (void)testTruncateMiddle {
   NSAttributedString *attributedString = [@"This is a test" gh_truncateMiddle];

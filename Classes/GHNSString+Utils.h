@@ -203,16 +203,22 @@
 + (NSMutableCharacterSet *)gh_characterSetsUnion:(NSArray *)characterSets;
 
 /*!
- Get last part of string separated by the specified string. 
+ Get last part of string separated by the (first occurence of the) specified string.
  
      [@"foo:bar" gh_lastSplitWithString:@":" options:0] => bar
      [@"foo:bar:bar" gh_lastSplitWithString:@":" options:0] => bar:bar
 
  @param s String to split on
  @param options Options
- @result Last part of string split by string. If no string is found, returns self.
+ @result Split by string. If no string is found, returns self.
 */
 - (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options;
+
+- (NSString *)gh_firstSplitWithString:(NSString *)s options:(NSStringCompareOptions)options;
+
+/*!
+*/
+- (NSString *)gh_splitReverseWithString:(NSString *)s;
 
 /*!
  Components separated by string with option to include separator.

@@ -31,6 +31,7 @@
 #endif
 
 #import "GHNSString+Utils.h"
+#import "GHNSArray+Utils.h"
 
 @implementation NSString(GHUtils)
 
@@ -95,12 +96,25 @@
   return (range.location != NSNotFound);
 }
 
+- (NSString *)gh_firstSplitWithString:(NSString *)s options:(NSStringCompareOptions)options {
+  NSRange range = [self rangeOfString:s options:options];
+  if (range.location != NSNotFound) {
+    if (range.location == 0) return @"";
+    return [self substringWithRange:NSMakeRange(0, self.length - range.location - 1)];
+  }
+  return self;
+}
+
 - (NSString *)gh_lastSplitWithString:(NSString *)s options:(NSStringCompareOptions)options {
   NSRange range = [self rangeOfString:s options:options];
   if (range.location != NSNotFound) {
     return [self substringWithRange:NSMakeRange(range.location + [s length], [self length] - range.location - [s length])];
   }
   return self;
+}
+
+- (NSString *)gh_splitReverseWithString:(NSString *)s {
+  return [[self componentsSeparatedByString:s] lastObject];
 }
 
 - (NSArray *)gh_componentsSeparatedByString:(NSString *)separator include:(BOOL)include {
@@ -265,7 +279,6 @@
   free(argList);
   return result;
 }
-
 
 @end
 

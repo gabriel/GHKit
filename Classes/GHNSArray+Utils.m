@@ -95,6 +95,10 @@
   }  
 }
 
+- (NSArray *)gh_uniq {
+  return [[NSOrderedSet orderedSetWithArray:self] array];
+}
+
 - (NSArray *)gh_filter:(BOOL(^)(id obj, NSInteger index))filterBlock { 
   id filteredArray = [NSMutableArray arrayWithCapacity:[self count]];
   NSInteger i = 0;
@@ -111,6 +115,19 @@
   NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:error];
   if (data) return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
   return nil;
+}
+
+- (NSArray *)gh_exceptLast {
+  if (self.count == 0) return self;
+  if (self.count == 1) return @[];
+  return [self subarrayWithRange:NSMakeRange(0, self.count - 1)];
+}
+
+- (NSArray *)gh_copyAppend:(id)obj {
+  if (!obj) return self;
+  NSMutableArray *array = [self mutableCopy];
+  [array addObject:obj];
+  return array;
 }
 
 @end

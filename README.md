@@ -50,6 +50,16 @@ date = [date gh_addDays:-1];
 [date gh_timeAgo:NO]; // @"1 day"
 ```
 
+***Arrays:***
+
+`GHNSArray+Utils.h`: Random object, safe object at index, uniq, compact
+
+```objc
+[@[@(1), @(2), @(3)] gh_random]; // Random object
+[@[@(1), @(1), @(3)] gh_uniq]; // @[@(1), @(3)]
+[@[] gh_objectAtIndex:0]; // nil (Safe objectAtIndex)
+[@[@(1), NSNull.null] gh_compact]; // @[@(1)]
+```
 
 ***Strings:***
 
