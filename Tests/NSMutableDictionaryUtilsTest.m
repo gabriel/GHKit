@@ -8,7 +8,7 @@
 
 #import "GHNSMutableDictionary+Utils.h"
 
-@interface NSMutableDictionaryUtilsTest : GHTestCase { }
+@interface NSMutableDictionaryUtilsTest : GRTestCase { }
 @end
 
 @implementation NSMutableDictionaryUtilsTest
@@ -24,7 +24,7 @@
                                    nil];
   
 	[dict gh_mutableCompact];
-  GHAssertEqualObjects(dict, expected, nil);
+  GRAssertEqualObjects(dict, expected);
   
   NSMutableDictionary *dict2 = [GHDict(@"key2", nil, @"key1", @"1") mutableCopy];
   
@@ -32,7 +32,7 @@
                                    @"1", @"key1",
                                    nil];
   [dict2 gh_mutableCompact];
-  GHAssertEqualObjects(dict2, expected2, nil);
+  GRAssertEqualObjects(dict2, expected2);
 }
 
 @end

@@ -8,18 +8,18 @@
 
 #import "GHNSObject+Utils.h"
 
-@interface NSObjectUtilsTest : GHTestCase { }
+@interface NSObjectUtilsTest : GRTestCase { }
 @end
 
 @implementation NSObjectUtilsTest
 
 - (void)testNotNSNull {
 	id foo = nil;
-	GHAssertFalse([foo gh_isNotNSNull], nil);
+	GRAssertFalse([foo gh_isNotNSNull]);
 	foo = [NSNull null];
-	GHAssertFalse([foo gh_isNotNSNull], nil);
+	GRAssertFalse([foo gh_isNotNSNull]);
 	foo = @"1";
-	GHAssertTrue([foo gh_isNotNSNull], nil);
+	GRAssertTrue([foo gh_isNotNSNull]);
 }
 
 @end

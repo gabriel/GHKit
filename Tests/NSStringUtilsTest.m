@@ -8,7 +8,7 @@
 
 #import "GHNSString+Utils.h"
 
-@interface NSStringUtilsTest : GHTestCase { }
+@interface NSStringUtilsTest : GRTestCase { }
 @end
 
 @implementation NSStringUtilsTest
@@ -16,88 +16,88 @@
 #if !TARGET_OS_IPHONE
 - (void)testMimeTypes {
   NSString *mimeType = [@"pdf" gh_mimeTypeForExtension];
-  GHAssertEqualObjects(@"application/pdf", mimeType, @"Should be pdf mime type");
+  GRAssertEqualObjects(@"application/pdf", mimeType, @"Should be pdf mime type");
 }
 #endif
 
 - (void)testContainsAny {
 	NSString *s = @"TestUppercase";
-	GHAssertTrue([s gh_containsAny:[NSCharacterSet uppercaseLetterCharacterSet]], nil);
+	GRAssertTrue([s gh_containsAny:[NSCharacterSet uppercaseLetterCharacterSet]]);
 }
 
 - (void)testLastSplitWithString {
-	GHAssertEqualObjects(@"bar", [@"foo:bar" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");
-	GHAssertEqualObjects(@"foobar", [@"foobar" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");
+	GRAssertEqualObjects(@"bar", [@"foo:bar" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");
+	GRAssertEqualObjects(@"foobar", [@"foobar" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");
 	
-	GHAssertEqualObjects(@"foobar", [@"foobar" gh_lastSplitWithString:@"" options:NSCaseInsensitiveSearch], @"Split is invalid");
-	GHAssertEqualObjects(@"ar", [@"foobar" gh_lastSplitWithString:@"oob" options:NSCaseInsensitiveSearch], @"Split is invalid");
+	GRAssertEqualObjects(@"foobar", [@"foobar" gh_lastSplitWithString:@"" options:NSCaseInsensitiveSearch], @"Split is invalid");
+	GRAssertEqualObjects(@"ar", [@"foobar" gh_lastSplitWithString:@"oob" options:NSCaseInsensitiveSearch], @"Split is invalid");
   
-  GHAssertEqualObjects(@"bar:baz", [@"foo:bar:baz" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");	
+  GRAssertEqualObjects(@"bar:baz", [@"foo:bar:baz" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch], @"Split is invalid");	
 }
 
 - (void)testSeparate1 {	
 	NSArray *expected = [NSArray arrayWithObjects:@"foo", @":", @":", @"bar", nil];	
 	NSArray *separated = [@"foo::bar" gh_componentsSeparatedByString:@":" include:YES];
-	GHAssertEqualObjects(separated, expected, nil);
+	GRAssertEqualObjects(separated, expected);
 }
 
 - (void)testSeparate2 {	
 	NSArray *expected = [NSArray arrayWithObjects:@"foo", @"\n", @"bar", nil];	
 	NSArray *separated = [@"foo\nbar" gh_componentsSeparatedByString:@"\n" include:YES];
-	GHAssertEqualObjects(separated, expected, nil);
+	GRAssertEqualObjects(separated, expected);
 }
 
 - (void)testSeparate3 {	
 	NSArray *expected = [NSArray arrayWithObjects:@"foo", @"\n", @"\n", @"bar", @"\n", nil];	
 	NSArray *separated = [@"foo\n\nbar\n" gh_componentsSeparatedByString:@"\n" include:YES];
-	GHAssertEqualObjects(separated, expected, nil);
+	GRAssertEqualObjects(separated, expected);
 }
 
 - (void)testReverse {
-	GHAssertEqualStrings([@"reversetest" gh_reverse], @"tsetesrever", nil); // odd # of letters
-	GHAssertEqualStrings([@"reverseit!" gh_reverse], @"!tiesrever", nil); // even # of letters
+	GRAssertEqualStrings([@"reversetest" gh_reverse], @"tsetesrever"); // odd # of letters
+	GRAssertEqualStrings([@"reverseit!" gh_reverse], @"!tiesrever"); // even # of letters
 }
 
 - (void)testStartsWith {
-  GHAssertTrue([@"www.test.com" gh_startsWith:@"www." options:0], nil);
-  GHAssertTrue([@"www.test.com" gh_startsWith:@"www.test.com" options:0], nil);
-  GHAssertFalse([@"www.test.com" gh_startsWith:@"" options:0], nil);
+  GRAssertTrue([@"www.test.com" gh_startsWith:@"www." options:0]);
+  GRAssertTrue([@"www.test.com" gh_startsWith:@"www.test.com" options:0]);
+  GRAssertFalse([@"www.test.com" gh_startsWith:@"" options:0]);
   
-  GHAssertTrue([@"www.test.com" gh_startsWith:@"WWW." options:NSCaseInsensitiveSearch], nil);
-  GHAssertTrue([@"WWW.test.com" gh_startsWith:@"www." options:NSCaseInsensitiveSearch], nil);
-  GHAssertTrue([@"www.test.com" gh_startsWith:@"WWW.test.com" options:NSCaseInsensitiveSearch], nil);
-  GHAssertFalse([@"www.test.com" gh_startsWith:@"" options:NSCaseInsensitiveSearch], nil);
+  GRAssertTrue([@"www.test.com" gh_startsWith:@"WWW." options:NSCaseInsensitiveSearch]);
+  GRAssertTrue([@"WWW.test.com" gh_startsWith:@"www." options:NSCaseInsensitiveSearch]);
+  GRAssertTrue([@"www.test.com" gh_startsWith:@"WWW.test.com" options:NSCaseInsensitiveSearch]);
+  GRAssertFalse([@"www.test.com" gh_startsWith:@"" options:NSCaseInsensitiveSearch]);
 }
 
 - (void)testEndsWith {
-  GHAssertTrue([@"path/" gh_endsWith:@"/" options:0], nil);
-  GHAssertFalse([@"path" gh_endsWith:@"/" options:0], nil);  
-  GHAssertTrue([@"path-" gh_endsWith:@"-" options:NSLiteralSearch], nil);
+  GRAssertTrue([@"path/" gh_endsWith:@"/" options:0]);
+  GRAssertFalse([@"path" gh_endsWith:@"/" options:0]);  
+  GRAssertTrue([@"path-" gh_endsWith:@"-" options:NSLiteralSearch]);
 
-  GHAssertTrue([@"www.test.com" gh_endsWith:@".com" options:0], nil);
-  GHAssertTrue([@"www.test.com" gh_endsWith:@"www.test.com" options:0], nil);
-  GHAssertFalse([@"www.test.com" gh_endsWith:@"" options:0], nil);
+  GRAssertTrue([@"www.test.com" gh_endsWith:@".com" options:0]);
+  GRAssertTrue([@"www.test.com" gh_endsWith:@"www.test.com" options:0]);
+  GRAssertFalse([@"www.test.com" gh_endsWith:@"" options:0]);
   
-  GHAssertTrue([@"www.test.com" gh_endsWith:@".COM" options:NSCaseInsensitiveSearch], nil);
-  GHAssertTrue([@"www.test.com" gh_endsWith:@"www.test.COM" options:NSCaseInsensitiveSearch], nil);
-  GHAssertFalse([@"www.test.com" gh_endsWith:@"" options:NSCaseInsensitiveSearch], nil);
+  GRAssertTrue([@"www.test.com" gh_endsWith:@".COM" options:NSCaseInsensitiveSearch]);
+  GRAssertTrue([@"www.test.com" gh_endsWith:@"www.test.COM" options:NSCaseInsensitiveSearch]);
+  GRAssertFalse([@"www.test.com" gh_endsWith:@"" options:NSCaseInsensitiveSearch]);
 }
 
 - (void)testCount {
-	GHAssertTrue([@"\n \n\n   \n" gh_count:@"\n"] == 4, nil);
-  GHAssertTrue([@"ababababcde" gh_count:@"ab"] == 4, nil);
-	GHAssertTrue([@"\n" gh_count:@"\n"] == 1, nil);
-	GHAssertTrue([@"" gh_count:@"\n"] == 0, nil);
-	GHAssertTrue([@" " gh_count:@"\n"] == 0, nil);
+	GRAssertTrue([@"\n \n\n   \n" gh_count:@"\n"] == 4);
+  GRAssertTrue([@"ababababcde" gh_count:@"ab"] == 4);
+	GRAssertTrue([@"\n" gh_count:@"\n"] == 1);
+	GRAssertTrue([@"" gh_count:@"\n"] == 0);
+	GRAssertTrue([@" " gh_count:@"\n"] == 0);
 }
 
 - (void)testPresent {
-  GHAssertNil([@" " gh_present], nil);
-  GHAssertEqualStrings([@"s" gh_present], @"s", nil);
+  GRAssertNil([@" " gh_present]);
+  GRAssertEqualStrings([@"s" gh_present], @"s");
   
-  GHAssertTrue([@"s" gh_isPresent], nil);
-  GHAssertFalse([@" " gh_isPresent], nil);
-  GHAssertFalse([@"" gh_isPresent], nil);
+  GRAssertTrue([@"s" gh_isPresent]);
+  GRAssertFalse([@" " gh_isPresent]);
+  GRAssertFalse([@"" gh_isPresent]);
 }
 
 - (void)testSubStringSegmentsWithin {
@@ -108,24 +108,24 @@
 												[GHNSStringSegment string:@"This " match:NO],
 												[GHNSStringSegment string:@"is a" match:YES],
                          [GHNSStringSegment string:@" test." match:NO], nil];
-	GHAssertEqualObjects(segments1, expected1, @"Segments is invalid");		
+	GRAssertEqualObjects(segments1, expected1, @"Segments is invalid");		
 	
 	NSString *test2 = @"This is a test.";
 	NSArray *segments2 = [test2 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected2 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." match:NO], nil];
-	GHAssertEqualObjects(segments2, expected2, @"Segments is invalid");	
+	GRAssertEqualObjects(segments2, expected2, @"Segments is invalid");	
 	
 	NSString *test3 = @"<START>This is a test.<END>";
 	NSArray *segments3 = [test3 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected3 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." match:YES], nil];
-	GHAssertEqualObjects(segments3, expected3, @"Segments is invalid");	
+	GRAssertEqualObjects(segments3, expected3, @"Segments is invalid");	
 
 	NSString *test4 = @"<START>This is a test.<END> ";
 	NSArray *segments4 = [test4 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected4 = [NSArray arrayWithObjects:
 												[GHNSStringSegment string:@"This is a test." match:YES],
 												[GHNSStringSegment string:@" " match:NO], nil];
-	GHAssertEqualObjects(segments4, expected4, @"Segments is invalid");	
+	GRAssertEqualObjects(segments4, expected4, @"Segments is invalid");	
 	
 	NSString *test5 = @" <START>This is a test.<END> <END>";
 	NSArray *segments5 = [test5 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
@@ -133,53 +133,53 @@
 												[GHNSStringSegment string:@" " match:NO],
 												[GHNSStringSegment string:@"This is a test." match:YES],
 												[GHNSStringSegment string:@" <END>" match:NO], nil];
-	GHAssertEqualObjects(segments5, expected5, @"Segments is invalid");	
+	GRAssertEqualObjects(segments5, expected5, @"Segments is invalid");	
 	
 	// TODO: Ok to kill the start token?
 	NSString *test6 = @"<START>This is a test.";
 	NSArray *segments6 = [test6 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected6 = [NSArray arrayWithObjects:[GHNSStringSegment string:@"This is a test." match:YES], nil];
-	GHAssertEqualObjects(segments6, expected6, @"Segments is invalid");	
+	GRAssertEqualObjects(segments6, expected6, @"Segments is invalid");	
 	
 	// TODO: Return nil on empty string input?
 	NSString *test7 = @"";
 	NSArray *segments7 = [test7 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
 	NSArray *expected7 = [NSArray arrayWithObjects:nil];
-	GHAssertEqualObjects(segments7, expected7, @"Segments is invalid");	
+	GRAssertEqualObjects(segments7, expected7, @"Segments is invalid");	
 }
 
 - (void)testRightStrip {
 	NSString *text = @"this is a string to right strip   \t";
 	NSString *expected = @"this is a string to right strip";
-	GHAssertEqualStrings([text gh_rightStrip], expected, nil);
+	GRAssertEqualStrings([text gh_rightStrip], expected);
 }
 
 - (void)testLeftStrip {
 	NSString *text = @"\t   this is a string to left strip";
 	NSString *expected = @"this is a string to left strip";
-	GHAssertEqualStrings([text gh_leftStrip], expected, nil);
+	GRAssertEqualStrings([text gh_leftStrip], expected);
 }
 
 - (void)testIsEqualIgnoreCase {
-	GHAssertTrue([@"FOoO" gh_isEqualIgnoreCase:@"fooO"], nil);
+	GRAssertTrue([@"FOoO" gh_isEqualIgnoreCase:@"fooO"]);
 }
 
 - (void)testFloatValue {
-  GHAssertEquals(5.0f, [@"5.0.1" floatValue], nil);
+  GRAssertEquals(5.0f, [@"5.0.1" floatValue]);
 }
 
 - (void)testSplit {
-  GHAssertEqualStrings(@"", [@"" gh_splitReverseWithString:@""], nil);
-  GHAssertEqualStrings(@"", [@"<<<g@foo.com>" gh_firstSplitWithString:@"<" options:0], nil);
-  GHAssertEqualStrings(@"Test Blah <<", [@"Test Blah <<<g@foo.com>" gh_firstSplitWithString:@"<" options:0], nil);
-  GHAssertEqualStrings(@"<<g@foo.com>", [@"Test Blah <<<g@foo.com>" gh_lastSplitWithString:@"<" options:0], nil);
-  GHAssertEqualStrings(@"g@foo.com>", [@"Test Blah <<<g@foo.com>" gh_splitReverseWithString:@"<"], nil);
+  GRAssertEqualStrings(@"", [@"" gh_splitReverseWithString:@""]);
+  GRAssertEqualStrings(@"", [@"<<<g@foo.com>" gh_firstSplitWithString:@"<" options:0]);
+  GRAssertEqualStrings(@"Test Blah <<", [@"Test Blah <<<g@foo.com>" gh_firstSplitWithString:@"<" options:0]);
+  GRAssertEqualStrings(@"<<g@foo.com>", [@"Test Blah <<<g@foo.com>" gh_lastSplitWithString:@"<" options:0]);
+  GRAssertEqualStrings(@"g@foo.com>", [@"Test Blah <<<g@foo.com>" gh_splitReverseWithString:@"<"]);
 }
 
 #if !TARGET_OS_IPHONE
 - (void)testTruncateMiddle {
   NSAttributedString *attributedString = [@"This is a test" gh_truncateMiddle];
-  GHTestLog(@"attributedString=%@", attributedString);
+  GRTestLog(@"attributedString=%@", attributedString);
 }
 #endif
 	

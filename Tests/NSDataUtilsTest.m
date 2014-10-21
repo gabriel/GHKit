@@ -8,7 +8,7 @@
 
 #import "GHNSData+Utils.h"
 
-@interface NSDataUtilsTest : GHTestCase { }
+@interface NSDataUtilsTest : GRTestCase { }
 @end
 
 @implementation NSDataUtilsTest
@@ -16,7 +16,7 @@
 - (void)testHexString {
   NSString *testString = @"test string";
   NSData *data = [testString dataUsingEncoding:NSUTF8StringEncoding];
-  GHAssertEqualStrings(@"7465737420737472696E67", [data gh_hexString], nil);
+  GRAssertEqualStrings(@"7465737420737472696E67", [data gh_hexString]);
 }
 
 @end

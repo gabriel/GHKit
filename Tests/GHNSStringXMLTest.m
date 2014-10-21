@@ -9,7 +9,7 @@
 
 #import "GHNSString+XML.h"
 
-@interface GHNSStringXMLTest : GHTestCase { }
+@interface GHNSStringXMLTest : GRTestCase { }
 @end
 
 @implementation GHNSStringXMLTest
@@ -17,7 +17,7 @@
 // TODO(gabe): Fix me
 - (void)_test {
   NSString *escaped = [NSString gh_stringWithFormatForXML:@"Foo &amp; Bar = %@", @"Foo & Bar", nil];
-  GHAssertEqualStrings(@"Foo &amp; Bar = Foo &amp; Bar", escaped, nil);
+  GRAssertEqualStrings(@"Foo &amp; Bar = Foo &amp; Bar", escaped);
 }
 
 @end

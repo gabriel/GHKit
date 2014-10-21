@@ -1,5 +1,5 @@
-platform :ios, '6.0'
+platform :ios, "7.0"
 
 target :GHKitTests do
-  pod 'GHUnit'
+  pod "GRUnit", :path => "../GRUnit/"
 end

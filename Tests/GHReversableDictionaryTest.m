@@ -8,7 +8,7 @@
 
 #import "GHReversableDictionary.h"
 
-@interface GHReversableDictionaryTest : GHTestCase { }
+@interface GHReversableDictionaryTest : GRTestCase { }
 @end
 
 @implementation GHReversableDictionaryTest
@@ -20,10 +20,10 @@
                                    nil] autorelease];
   [dict setObject:@"value3" forKey:@"key3"];
   
-  GHAssertEqualStrings([dict objectForKey:@"key1"], @"value1", nil);
-  GHAssertEqualStrings([dict keyForObject:@"value1"], @"key1", nil);
-  GHAssertEqualStrings([dict objectForKey:@"key3"], @"value3", nil);
-  GHAssertEqualStrings([dict keyForObject:@"value3"], @"key3", nil);
+  GRAssertEqualStrings([dict objectForKey:@"key1"], @"value1");
+  GRAssertEqualStrings([dict keyForObject:@"value1"], @"key1");
+  GRAssertEqualStrings([dict objectForKey:@"key3"], @"value3");
+  GRAssertEqualStrings([dict keyForObject:@"value3"], @"key3");
 
 }
 

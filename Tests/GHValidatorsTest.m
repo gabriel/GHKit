@@ -10,54 +10,54 @@
 #import "GHNSDate+Utils.h"
 
 
-@interface GHValidatorsTest : GHTestCase { }
+@interface GHValidatorsTest : GRTestCase { }
 @end
 
 @implementation GHValidatorsTest
 
 - (void)testValidateEmail {
-  GHAssertTrue([GHValidators isEmailAddress:@"test@domain.com"], @"Should be valid");
-  GHAssertFalse([GHValidators isEmailAddress:@"foo"], @"Should be invalid");
-  GHAssertFalse([GHValidators isEmailAddress:@""], @"Should be invalid");
-  GHAssertFalse([GHValidators isEmailAddress:nil], @"Should be invalid");
-  GHAssertFalse([GHValidators isEmailAddress:@"~gabrielh@gmail.com"], @"Should be invalid");
-  GHAssertTrue([GHValidators isEmailAddress:@"gabrielh@gmail.commmmmmm"], @"Should be valid");
+  GRAssertTrue([GHValidators isEmailAddress:@"test@domain.com"]);
+  GRAssertFalse([GHValidators isEmailAddress:@"foo"]);
+  GRAssertFalse([GHValidators isEmailAddress:@""]);
+  GRAssertFalse([GHValidators isEmailAddress:nil]);
+  GRAssertFalse([GHValidators isEmailAddress:@"~gabrielh@gmail.com"]);
+  GRAssertTrue([GHValidators isEmailAddress:@"gabrielh@gmail.commmmmmm"]);
 }
 
 - (void)testValidateCreditCard {
-  GHAssertFalse([GHValidators isCreditCardNumber:@" "], @"Should be invalid");
-  GHAssertFalse([GHValidators isCreditCardNumber:@""], @"Should be invalid");
-  GHAssertFalse([GHValidators isCreditCardNumber:nil], @"Should be invalid");
-  GHAssertTrue([GHValidators isCreditCardNumber:@"49927398716"], @"Should be valid");
-  GHAssertFalse([GHValidators isCreditCardNumber:@"1234"], @"Should be invalid");
-  GHAssertFalse([GHValidators isCreditCardNumber:@"abc"], @"Should be invalid");
+  GRAssertFalse([GHValidators isCreditCardNumber:@" "]);
+  GRAssertFalse([GHValidators isCreditCardNumber:@""]);
+  GRAssertFalse([GHValidators isCreditCardNumber:nil]);
+  GRAssertTrue([GHValidators isCreditCardNumber:@"49927398716"]);
+  GRAssertFalse([GHValidators isCreditCardNumber:@"1234"]);
+  GRAssertFalse([GHValidators isCreditCardNumber:@"abc"]);
 }
 
 - (void)testValidateCreditCardExpiration {
   NSDate *date = [NSDate gh_dateWithDay:1 month:12 year:2011 timeZone:nil];
   
   // Valid
-  GHAssertTrue([GHValidators isCreditCardExpiration:@"01/12" date:date], @"Should be valid");
-  GHAssertTrue([GHValidators isCreditCardExpiration:@"1/12" date:date], @"Should be valid");
-  GHAssertTrue([GHValidators isCreditCardExpiration:@"1/2012" date:date], @"Should be valid");
-  GHAssertTrue([GHValidators isCreditCardExpiration:@"01/12" date:date], @"Should be valid");
+  GRAssertTrue([GHValidators isCreditCardExpiration:@"01/12" date:date]);
+  GRAssertTrue([GHValidators isCreditCardExpiration:@"1/12" date:date]);
+  GRAssertTrue([GHValidators isCreditCardExpiration:@"1/2012" date:date]);
+  GRAssertTrue([GHValidators isCreditCardExpiration:@"01/12" date:date]);
   
   // Empty
-  GHAssertFalse([GHValidators isCreditCardExpiration:@" " date:date], @"Should be invalid");
-  GHAssertFalse([GHValidators isCreditCardExpiration:@"" date:date], @"Should be invalid");
-  GHAssertFalse([GHValidators isCreditCardExpiration:nil date:date], @"Should be invalid");
+  GRAssertFalse([GHValidators isCreditCardExpiration:@" " date:date]);
+  GRAssertFalse([GHValidators isCreditCardExpiration:@"" date:date]);
+  GRAssertFalse([GHValidators isCreditCardExpiration:nil date:date]);
 
   // Expired but valid on the one day
-  GHAssertTrue([GHValidators isCreditCardExpiration:@"11/11" date:date], @"Should be valid");
+  GRAssertTrue([GHValidators isCreditCardExpiration:@"11/11" date:date]);
   NSDate *nextDay = [NSDate gh_dateWithDay:2 month:12 year:2011 timeZone:nil];
-  GHAssertFalse([GHValidators isCreditCardExpiration:@"11/11" date:nextDay], @"Should be invalid");
+  GRAssertFalse([GHValidators isCreditCardExpiration:@"11/11" date:nextDay]);
   
   // Invalid month or year
-  GHAssertFalse([GHValidators isCreditCardExpiration:@"13/12" date:date], @"Should be invalid");
-  GHAssertFalse([GHValidators isCreditCardExpiration:@"0/12" date:date], @"Should be invalid");
+  GRAssertFalse([GHValidators isCreditCardExpiration:@"13/12" date:date]);
+  GRAssertFalse([GHValidators isCreditCardExpiration:@"0/12" date:date]);
   
   // Expired
-  GHAssertFalse([GHValidators isCreditCardExpiration:@"1/2010" date:date], @"Should be invalid");
+  GRAssertFalse([GHValidators isCreditCardExpiration:@"1/2010" date:date]);
 }
 
 @end

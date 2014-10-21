@@ -8,7 +8,7 @@
 
 #import "GHNSStringEnumerator.h"
 
-@interface GHNSStringEnumeratorTest : GHTestCase {}
+@interface GHNSStringEnumeratorTest : GRTestCase {}
 @end
 
 @implementation GHNSStringEnumeratorTest
@@ -20,7 +20,7 @@
 	
 	NSArray *results = [enumerator allObjects];
 	NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
-	GHAssertEqualObjects(results, expected, nil);
+	GRAssertEqualObjects(results, expected);
 }
 
 - (void)testCharacterSet2 {
@@ -30,7 +30,7 @@
 	
 	NSArray *results = [enumerator allObjects];
 	NSArray *expected = [NSArray arrayWithObjects:@"  ", @"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
-	GHAssertEqualObjects(results, expected, nil);
+	GRAssertEqualObjects(results, expected);
 }
 
 - (void)testString {
@@ -40,7 +40,7 @@
 	
 	NSArray *results = [enumerator allObjects];
 	NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't\n", @" ", @"patch", @" ", @"blues", nil];
-	GHAssertEqualObjects(results, expected, nil);
+	GRAssertEqualObjects(results, expected);
 }
 
 

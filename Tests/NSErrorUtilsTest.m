@@ -8,7 +8,7 @@
 
 #import "GHNSError+Utils.h"
 
-@interface NSErrorUtilsTest : GHTestCase { }
+@interface NSErrorUtilsTest : GRTestCase { }
 @end
 
 @implementation NSErrorUtilsTest
@@ -18,7 +18,7 @@
 //		[NSException raise:NSGenericException format:@"my reason"];
 //	} @catch(NSException *e) {
 //		NSError *error = [NSError gh_errorFromException:e];
-//		GHTestLog(@"Error: %@", error);
+//		GRTestLog(@"Error: %@", error);
 //	}
 //}
 
@@ -28,7 +28,7 @@
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:detailedError] forKey:@"NSDetailedErrors"];
 	NSError *error = [NSError errorWithDomain:@"Test" code:-1 userInfo:userInfo];
 	NSString *fullDescription = [error gh_fullDescription];
-	GHTestLog(@"Full description: %@", fullDescription);
+	GRTestLog(@"Full description: %@", fullDescription);
 }
 
 @end

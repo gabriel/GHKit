@@ -8,7 +8,7 @@
 
 #import "GHNSFileManager+Utils.h"
 
-@interface NSFileManagerUtilsTest : GHTestCase { }
+@interface NSFileManagerUtilsTest : GRTestCase { }
 @end
 
 
@@ -17,17 +17,17 @@
 - (void)testEnsureDirectory {
 	NSError *error = nil;
 	NSString *path = [NSFileManager gh_temporaryFile:nil deleteIfExists:YES error:&error];
-	if (error) GHFail(@"Error: %@", error);
+	if (error) GRFail(@"Error: %@", error);
 	BOOL success = [NSFileManager gh_ensureDirectoryExists:path created:nil error:&error];
-	if (error) GHFail(@"Error: %@", error);
-	GHAssertTrue(success, nil);
+	if (error) GRFail(@"Error: %@", error);
+	GRAssertTrue(success);
 }
 
 - (void)testFileSize {
   NSString *path = [NSFileManager gh_pathToResource:@"test.file"];
-  GHAssertTrue([NSFileManager gh_exist:path], nil);
+  GRAssertTrue([NSFileManager gh_exist:path]);
   NSNumber *fileSize = [NSFileManager gh_fileSize:path error:nil];
-  GHAssertEquals([fileSize longValue], 10L, nil);
+  GRAssertEquals([fileSize longValue], 10L);
 }
 
 @end
