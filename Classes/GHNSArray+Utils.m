@@ -123,10 +123,9 @@
   return [self subarrayWithRange:NSMakeRange(0, self.count - 1)];
 }
 
-- (NSArray *)gh_copyAppend:(id)obj {
-  if (!obj) return self;
+- (NSArray *)gh_arrayByRemovingObject:(id)obj {
   NSMutableArray *array = [self mutableCopy];
-  [array addObject:obj];
+  [array removeObject:obj];
   return array;
 }
 

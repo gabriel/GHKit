@@ -96,6 +96,16 @@
  */
 - (NSAttributedString *)gh_truncateMiddle;
 
+/*!
+ Get characters as an array of single length strings.
+ */
+- (NSArray *)gh_characters;
+
+/*!
+ Remove accents.
+ */
+- (NSString *)gh_removeAccents;
+
 #if !TARGET_OS_IPHONE
 /*!
  Get mime type for extension.

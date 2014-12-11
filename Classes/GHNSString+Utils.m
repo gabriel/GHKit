@@ -280,6 +280,19 @@
   return result;
 }
 
+// From http://stackoverflow.com/questions/4158646/most-efficient-way-to-iterate-over-all-the-chars-in-an-nsstring
+- (NSArray *)gh_characters {
+  NSMutableArray  *chars = [NSMutableArray array];
+  [self enumerateSubstringsInRange:NSMakeRange(0, [self length]) options:NSStringEnumerationByComposedCharacterSequences usingBlock: ^(NSString *inSubstring, NSRange inSubstringRange, NSRange inEnclosingRange, BOOL *outStop) {
+    [chars addObject:inSubstring];
+  }];
+  return chars;
+}
+
+- (NSString *)gh_removeAccents {
+  return [self stringByFoldingWithOptions:NSDiacriticInsensitiveSearch locale:[NSLocale currentLocale]];
+}
+
 @end
 
 @implementation GHNSStringSegment

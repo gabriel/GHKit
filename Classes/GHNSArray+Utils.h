@@ -119,13 +119,13 @@
 - (NSArray *)gh_exceptLast;
 
 /*!
- New array with object appended.
- */
-- (NSArray *)gh_copyAppend:(id)obj;
-
-/*!
   Uniqify (de-dupe) an array.
  */
 - (NSArray *)gh_uniq;
+
+/*!
+ New array with object removed.
+ */
+- (NSArray *)gh_arrayByRemovingObject:(id)obj;
 
 @end

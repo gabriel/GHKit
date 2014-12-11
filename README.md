@@ -83,6 +83,8 @@ date = [date gh_addDays:-1];
 
 [@"WWW.test.com" gh_startsWith:@"www." options:NSCaseInsensitiveSearch]; // YES
 [@"foo:bar" gh_lastSplitWithString:@":" options:NSCaseInsensitiveSearch]; // @"bar"
+
+[@"e̊gâds" gh_characters]; // @[@"e̊", @"g", @"â", @"d", @"s"];
 ```
 
 ***URLs:***

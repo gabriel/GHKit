@@ -113,3 +113,12 @@ typedef void (^GHTargetBlock)(id sender);
 #define GHOrNull(obj) (obj ? obj : NSNull.null)
 
 #define GHIfNull(obj, val) ([obj isEqual:NSNull.null] ? val : obj)
+
+#define GHEquals(obj1, obj2) ((!obj1 && !obj2) || [obj1 isEqual:obj2])
+
+#define GHNSStringFromNSData(data) ([[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding])
+#define GHNSDataFromNSString(str) ([str dataUsingEncoding:NSUTF8StringEncoding])
+
+#define GHNSDataFromBase64String(str) ([[NSData alloc] initWithBase64EncodedString:str options:0])
+#define GHBase64StringFromNSData(data) ([data base64EncodedDataWithOptions:0])
+
