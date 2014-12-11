@@ -19,4 +19,9 @@
   GRAssertFalse(GHEquals(@(1), nil));
 }
 
+- (void)testBase64 {
+  GHBase64StringFromNSData([NSData data]);
+  GHNSDataFromBase64String(@"");
+}
+
 @end

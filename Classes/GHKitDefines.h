@@ -120,5 +120,5 @@ typedef void (^GHTargetBlock)(id sender);
 #define GHNSDataFromNSString(str) ([str dataUsingEncoding:NSUTF8StringEncoding])
 
 #define GHNSDataFromBase64String(str) ([[NSData alloc] initWithBase64EncodedString:str options:0])
-#define GHBase64StringFromNSData(data) ([data base64EncodedDataWithOptions:0])
+#define GHBase64StringFromNSData(data) ([data base64EncodedStringWithOptions:0])
 
