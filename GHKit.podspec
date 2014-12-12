@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "GHKit"
-  s.version      = "1.0.17"
+  s.version      = "1.0.18"
   s.summary      = "Objective-C categories and utilities"
   s.homepage     = "https://github.com/gabriel/gh-kit"
   s.license      = "MIT"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.osx.platform =  :osx, "10.8"
   s.osx.deployment_target = "10.8"
-  s.osx.source_files = "Classes", "Classes/MacOSX"
+  s.osx.source_files = "Classes"
 
   s.requires_arc = true
 

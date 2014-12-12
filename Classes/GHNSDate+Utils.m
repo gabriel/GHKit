@@ -34,7 +34,7 @@ NSString *const kDateFormatShortMonthFullYearTime = @"LLL d, yyyy hh:mm a";
 
 @implementation NSDate(GHUtils)
 
-NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit | NSWeekdayCalendarUnit;
+NSUInteger const kUnitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay | NSCalendarUnitWeekday;
 
 + (NSDate *)_gh_dateFromDate:(NSDate *)date day:(NSInteger)day month:(NSInteger)month year:(NSInteger)year 
                      addDay:(NSInteger)addDay addMonth:(NSInteger)addMonth addYear:(NSInteger)addYear 
@@ -91,7 +91,7 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 }
 
 - (NSInteger)gh_dayForTimeZone:(NSTimeZone *)timeZone {
-  return [[self gh_dateComponentsFromFlags:NSDayCalendarUnit timeZone:timeZone] day];
+  return [[self gh_dateComponentsFromFlags:NSCalendarUnitDay timeZone:timeZone] day];
 }
 
 - (NSInteger)gh_month {
@@ -99,7 +99,7 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 }
 
 - (NSInteger)gh_monthForTimeZone:(NSTimeZone *)timeZone {
-  return [[self gh_dateComponentsFromFlags:NSMonthCalendarUnit timeZone:timeZone] month];
+  return [[self gh_dateComponentsFromFlags:NSCalendarUnitMonth timeZone:timeZone] month];
 }
 
 - (NSInteger)gh_year {
@@ -107,7 +107,7 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 }
 
 - (NSInteger)gh_yearForTimeZone:(NSTimeZone *)timeZone {
-  return [[self gh_dateComponentsFromFlags:NSYearCalendarUnit timeZone:timeZone] year];
+  return [[self gh_dateComponentsFromFlags:NSCalendarUnitYear timeZone:timeZone] year];
 }
 
 + (NSArray *)gh_monthSymbols {

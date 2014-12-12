@@ -168,7 +168,7 @@
  */
 + (NSString *)gh_decode:(NSString *)s;
 
-#if !TARGET_OS_IPHONE
+#if TARGET_OS_OSX
 
 /*!
  Copy URL to pasteboard. For Mac OS X only.
