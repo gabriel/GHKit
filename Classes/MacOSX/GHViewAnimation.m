@@ -35,7 +35,7 @@
   rect = [tempView bounds];
   [tempView setHidden:hide];
   [view setFrame:rect];
-  return [tempView autorelease];
+  return tempView;
 }
 
 - (void)prepareSubviewOfView:(NSView *)view {
@@ -57,14 +57,14 @@
   // Note: view does not need to be unhidden manually as in the other cases. This is because the fade in
 	// effect will do it for you.
 
-	NSViewAnimation	*animation = [[[NSViewAnimation alloc] initWithViewAnimations:
+	NSViewAnimation	*animation = [[NSViewAnimation alloc] initWithViewAnimations:
     [NSArray arrayWithObjects:
       // Old view is set to fade out
 			[NSDictionary dictionaryWithObjectsAndKeys:fromView_, NSViewAnimationTargetKey, NSViewAnimationFadeOutEffect, NSViewAnimationEffectKey, nil],
 			// New view is set to fade in
 			[NSDictionary dictionaryWithObjectsAndKeys:toView_, NSViewAnimationTargetKey, NSViewAnimationFadeInEffect, NSViewAnimationEffectKey, nil],
     nil]
-  ] autorelease];
+                                 ];
   return animation;
 }
 
@@ -78,7 +78,7 @@
 	// If a previous animation resulted in a zero frame, it set it to hidden. We have to unhide it manually.
 	[toView_ setHidden:NO];
 			
-	NSViewAnimation *animation = [[[NSViewAnimation alloc] initWithViewAnimations:
+	NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:
     [NSArray arrayWithObjects:
       // The left "viewport" shrinks to zero-width on the left side
 			[NSDictionary dictionaryWithObjectsAndKeys:fromView_, NSViewAnimationTargetKey, [NSValue valueWithRect:NSMakeRect(NSMinX(rect), NSMinY(rect), 0.0, NSHeight(rect))], NSViewAnimationEndFrameKey, nil],
@@ -86,7 +86,7 @@
 			// in bounds.
 			[NSDictionary dictionaryWithObjectsAndKeys:toView_, NSViewAnimationTargetKey, [NSValue valueWithRect:rect], NSViewAnimationEndFrameKey, nil], 
     nil]
-  ] autorelease];
+                                 ];
   return animation;
 }
 
@@ -101,7 +101,7 @@
 	// If a previous animation resulted in a zero frame, it set it to hidden. We have to unhide it manually.
 	[toView_ setHidden:NO];
 			
-	NSViewAnimation *animation = [[[NSViewAnimation alloc] initWithViewAnimations:
+	NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:
     [NSArray arrayWithObjects:
     // Old view frame gets moved to the left, out of bounds.
       [NSDictionary dictionaryWithObjectsAndKeys:fromView_, NSViewAnimationTargetKey, [NSValue valueWithRect:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))], NSViewAnimationEndFrameKey, nil],
@@ -109,7 +109,7 @@
       // in bounds. Note, this is the same as in the "Move In" case.
       [NSDictionary dictionaryWithObjectsAndKeys:toView_, NSViewAnimationTargetKey, [NSValue valueWithRect:rect], NSViewAnimationEndFrameKey, nil], 
     nil]
-  ] autorelease];
+                                ];
   return animation;
 }
  
@@ -129,14 +129,14 @@
 	// Make the subview such that it's right edge is flush with its superview/viewport.
 	[[[toView_ subviews] objectAtIndex:0] setFrame:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
 			
-  NSViewAnimation *animation = [[[NSViewAnimation alloc] initWithViewAnimations:
+  NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:
     [NSArray arrayWithObjects:
       // The left "viewport" shrinks to zero-width
 			[NSDictionary dictionaryWithObjectsAndKeys:fromView_, NSViewAnimationTargetKey,	[NSValue valueWithRect:NSMakeRect(NSMinX(rect), NSMinY(rect), 0.0, NSHeight(rect))], NSViewAnimationEndFrameKey, nil],
 					// The right view port expands to encompass the full bounds.
 			[NSDictionary dictionaryWithObjectsAndKeys:toView_, NSViewAnimationTargetKey, [NSValue valueWithRect:rect], NSViewAnimationEndFrameKey, nil],
     nil]
-  ] autorelease];
+                                ];
   return animation;
 }
 
@@ -155,14 +155,14 @@
 	// Make the subview such that it's right edge is flush with its superview/viewport.
 	[[[toView_ subviews] objectAtIndex:0] setFrame:NSMakeRect(NSMinX(rect) - NSWidth(rect), NSMinY(rect), NSWidth(rect), NSHeight(rect))];
 
-	NSViewAnimation *animation = [[[NSViewAnimation alloc] initWithViewAnimations:
+	NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:
     [NSArray arrayWithObjects:
       // The left "viewport" shrinks to zero-width
 			[NSDictionary dictionaryWithObjectsAndKeys:fromView_, NSViewAnimationTargetKey,	[NSValue valueWithRect:NSMakeRect(NSMinX(rect), NSMinY(rect), 0.0, NSHeight(rect))], NSViewAnimationEndFrameKey, nil],
 			// The right view port expands to encompass the full bounds.
       [NSDictionary dictionaryWithObjectsAndKeys:toView_, NSViewAnimationTargetKey,	[NSValue valueWithRect:rect], NSViewAnimationEndFrameKey, nil],
     nil]
-  ] autorelease];
+                                ];
   return animation;
 }
 

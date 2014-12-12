@@ -12,6 +12,8 @@
 //  appreciated but not required.
 //
 
+#import <Foundation/Foundation.h>
+
 /*! 
  For resolving symlinks and aliases.
  

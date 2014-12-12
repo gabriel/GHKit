@@ -142,22 +142,17 @@
   
 	CFURLRef url = CFURLCreateWithFileSystemPath
   (kCFAllocatorDefault, (CFStringRef)self, kCFURLPOSIXPathStyle, NO);
-	if (url != NULL)
-	{
+	if (url != NULL) {
 		FSRef fsRef;
-		if (CFURLGetFSRef(url, &fsRef))
-		{
+		if (CFURLGetFSRef(url, &fsRef)) {
 			Boolean targetIsFolder, wasAliased;
-			OSErr err = FSResolveAliasFileWithMountFlags(
-                                                   &fsRef, false, &targetIsFolder, &wasAliased, kResolveAliasFileNoUI);
+			OSErr err = FSResolveAliasFileWithMountFlags(&fsRef, false, &targetIsFolder, &wasAliased, kResolveAliasFileNoUI);
 			if ((err == noErr) && wasAliased)
 			{
 				CFURLRef resolvedUrl = CFURLCreateFromFSRef(kCFAllocatorDefault, &fsRef);
 				if (resolvedUrl != NULL)
 				{
-					resolvedPath =
-          [(id)CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle)
-           autorelease];
+          resolvedPath = (id)CFBridgingRelease(CFURLCopyFileSystemPath(resolvedUrl, kCFURLPOSIXPathStyle));
 					CFRelease(resolvedUrl);
 				}
 			}

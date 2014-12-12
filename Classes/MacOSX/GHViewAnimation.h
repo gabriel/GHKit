@@ -2,6 +2,9 @@
 //  GHViewAnimation.h
 //
 
+#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
+
 typedef enum {
 	GHViewAnimationDissolve, 
   GHViewAnimationMoveIn, 

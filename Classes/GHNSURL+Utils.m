@@ -26,6 +26,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <AppKit/AppKit.h>
 
 #import "GHNSURL+Utils.h"
 
