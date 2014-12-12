@@ -82,6 +82,7 @@
 		00CC43231A3A6E7A006118A9 /* GHNSUserDefaults+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022B2154DF1C5003BAAC3 /* GHNSUserDefaults+Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CC43251A3A6E7A006118A9 /* GHReversableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022B4154DF1C5003BAAC3 /* GHReversableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00CC43271A3A6E7B006118A9 /* GHValidators.h in Headers */ = {isa = PBXBuildFile; fileRef = 00D022B6154DF1C5003BAAC3 /* GHValidators.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00CC432A1A3A7013006118A9 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC43291A3A7013006118A9 /* AppKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +107,7 @@
 		007DA669154E055C008574F9 /* GHKit-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHKit-Prefix.pch"; sourceTree = "<group>"; };
 		00CC42521A3A62D5006118A9 /* libGHKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGHKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CC42AF1A3A6E3B006118A9 /* GHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00CC43291A3A7013006118A9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		00D0227F154DF1C5003BAAC3 /* GHKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKit.h; sourceTree = "<group>"; };
 		00D02280154DF1C5003BAAC3 /* GHKitDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKitDefines.h; sourceTree = "<group>"; };
 		00D02281154DF1C5003BAAC3 /* GHKitIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GHKitIOS.h; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CC432A1A3A7013006118A9 /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +326,7 @@
 		00D022D6154DF1EB003BAAC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				00CC43291A3A7013006118A9 /* AppKit.framework */,
 				001CF5E618AEB0C900D830A2 /* UIKit.framework */,
 				BE4A18D151E44782867D4732 /* libPods-TestsIOS.a */,
 				4AD44FBB2E6D933AE3C742FF /* libPods-TestsIOS.a */,

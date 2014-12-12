@@ -26,7 +26,9 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#if TARGET_OS_OSX
 #import <AppKit/AppKit.h>
+#endif
 
 #import "GHNSURL+Utils.h"
 
@@ -154,7 +156,7 @@
   return CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR("")));
 }
 
-#if !TARGET_OS_IPHONE
+#if TARGET_OS_OSX
 
 - (void)gh_copyLinkToPasteboard {  
   NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
