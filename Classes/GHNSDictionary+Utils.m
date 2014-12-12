@@ -118,7 +118,7 @@
   id value = [self objectForKey:key];
 	if (!value || [value isEqual:[NSNull null]]) return nil;
   NSAssert([value isKindOfClass:[NSString class]], @"Value must be a Base64 string");
-  return [[[NSData alloc] initWithBase64EncodedString:value options:0] autorelease];
+  return [[NSData alloc] initWithBase64EncodedString:value options:0];
 }
 
 - (id)gh_objectForKey:(id)key withDefault:(id)defaultValue {
@@ -160,7 +160,7 @@
     if (obj != [NSNull null])
       [dict setObject:obj forKey:key];
   }
-  return [dict autorelease];
+  return dict;
 }
 
 - (NSString *)gh_queryString {
@@ -169,7 +169,7 @@
 
 - (NSString *)gh_toJSONString:(NSError **)error {
   NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:error];
-  if (data) return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+  if (data) return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
   return nil;
 }
 

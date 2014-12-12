@@ -5,6 +5,8 @@
 //  Created by Gabriel Handford on 1/13/09.
 //
 
+#import <GRUnit/GRUnit.h>
+
 #import "GHNSURL+Utils.h"
 #import "GHNSDictionary+NSNull.h"
 

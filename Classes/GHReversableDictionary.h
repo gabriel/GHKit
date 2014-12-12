@@ -27,6 +27,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  Reversable dictionary, where keys and values point to each other.
  */

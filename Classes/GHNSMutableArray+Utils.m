@@ -34,7 +34,6 @@
 - (void)gh_insertObjects:(NSArray *)objects atIndex:(NSInteger)index {
 	NSIndexSet *indexes = [[NSIndexSet alloc] initWithIndexesInRange:NSMakeRange(index, [objects count])];
 	[self insertObjects:objects atIndexes:indexes];
-	[indexes release];
 }
 
 - (NSUInteger)gh_replaceObject:(id)objectToReplace withObject:(id)object {
@@ -54,9 +53,9 @@
 }
 
 - (id)gh_removeLastObject {  
-  id obj = [[self lastObject] retain];
+  id obj = [self lastObject];
   if (obj) [self removeLastObject];
-  return [obj autorelease];
+  return obj;
 }
 
 @end

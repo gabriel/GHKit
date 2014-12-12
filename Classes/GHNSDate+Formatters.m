@@ -76,7 +76,7 @@
   NSInteger offset = [timeZone secondsFromGMTForDate:normalDate];
   NSInteger localOffset = [localTimeZone secondsFromGMTForDate:normalDate];
   NSTimeInterval difference = localOffset - offset;
-  return [[[NSDate alloc] initWithTimeInterval:difference sinceDate:normalDate] autorelease];
+  return [[NSDate alloc] initWithTimeInterval:difference sinceDate:normalDate];
 }
 
 - (NSString *)gh_formatRFC822 {
@@ -92,10 +92,10 @@
 }
 
 + (NSDateFormatter *)_gh_RFC822DateFormatter {
-  NSDateFormatter *RFC822DateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+  NSDateFormatter *RFC822DateFormatter = [[NSDateFormatter alloc] init];
   [RFC822DateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
   // Need to force US locale when generating otherwise it might not be 822 compatible
-  [RFC822DateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];    
+  [RFC822DateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
   [RFC822DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
   [RFC822DateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss ZZZ"];
   return RFC822DateFormatter;
@@ -105,7 +105,7 @@
   static dispatch_once_t once;
   static NSDateFormatter *gRFC822DateFormatter;
   dispatch_once(&once, ^{
-    gRFC822DateFormatter = [[self _gh_RFC822DateFormatter] retain];
+    gRFC822DateFormatter = [self _gh_RFC822DateFormatter];
   });
   return gRFC822DateFormatter;
 }
@@ -114,15 +114,15 @@
   // The ZZZZZ format for the +00:00 timezone format was added to iOS 6 and is not supported under iOS 5 or earlier.
   
   // Example: 2007-10-18T16:05:10.000Z  
-  NSDateFormatter *ISO8601DateFormatter1 = [[[NSDateFormatter alloc] init] autorelease];
+  NSDateFormatter *ISO8601DateFormatter1 = [[NSDateFormatter alloc] init];
   // Need to force US locale when generating otherwise it might not be 8601 compatible
-  [ISO8601DateFormatter1 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+  [ISO8601DateFormatter1 setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
   [ISO8601DateFormatter1 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"];
   
   // Example: 2007-10-18T16:05:10Z
-  NSDateFormatter *ISO8601DateFormatter2 = [[[NSDateFormatter alloc] init] autorelease];
+  NSDateFormatter *ISO8601DateFormatter2 = [[NSDateFormatter alloc] init];
   // Need to force US locale when generating otherwise it might not be 8601 compatible
-  [ISO8601DateFormatter2 setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"] autorelease]];
+  [ISO8601DateFormatter2 setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
   [ISO8601DateFormatter2 setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZZZZZ"];
   
   return @[ISO8601DateFormatter1, ISO8601DateFormatter2];
@@ -132,17 +132,17 @@
   static dispatch_once_t once;
   static NSArray *gISO8601DateFormatters;
   dispatch_once(&once, ^{
-    gISO8601DateFormatters = [[self _gh_ISO8601DateFormatters] retain];
+    gISO8601DateFormatters = [self _gh_ISO8601DateFormatters];
   });
   return gISO8601DateFormatters;
 }
 
 + (NSDateFormatter *)_gh_RFC1123DateFormatter {
   // Example: "Wed, 01 Mar 2006 12:00:00 GMT"
-  NSDateFormatter *RFC1123DateFormatter = [[[NSDateFormatter alloc] init] autorelease];     
+  NSDateFormatter *RFC1123DateFormatter = [[NSDateFormatter alloc] init];
   [RFC1123DateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
   // Need to force US locale when generating otherwise it might not be 1123 compatible
-  [RFC1123DateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];    
+  [RFC1123DateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
   [RFC1123DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
   [RFC1123DateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss zzz"];	
   return RFC1123DateFormatter;
@@ -152,16 +152,16 @@
   static dispatch_once_t once;
   static NSDateFormatter *gRFC1123DateFormatter;
   dispatch_once(&once, ^{
-    gRFC1123DateFormatter = [[self _gh_RFC1123DateFormatter] retain];
+    gRFC1123DateFormatter = [self _gh_RFC1123DateFormatter];
   });
   return gRFC1123DateFormatter;
 }
 
 + (NSDateFormatter *)_gh_RFC850DateFormatter {
   // Example: Sunday, 06-Nov-94 08:49:37 GMT
-  NSDateFormatter *gh_rfc850DateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+  NSDateFormatter *gh_rfc850DateFormatter = [[NSDateFormatter alloc] init];
   [gh_rfc850DateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-  [gh_rfc850DateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
+  [gh_rfc850DateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
   [gh_rfc850DateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
   [gh_rfc850DateFormatter setDateFormat:@"EEEE, dd-MMM-yy HH:mm:ss zzz"];
   return gh_rfc850DateFormatter;
@@ -171,16 +171,16 @@
   static dispatch_once_t once;
   static NSDateFormatter *gRFC850DateFormatter;
   dispatch_once(&once, ^{
-    gRFC850DateFormatter = [[self _gh_RFC850DateFormatter] retain];
+    gRFC850DateFormatter = [self _gh_RFC850DateFormatter];
   });
   return gRFC850DateFormatter;
 }
 
 + (NSDateFormatter *)_gh_ascTimeDateFormatter {
   // Example: Sun Nov  6 08:49:37 1994
-  NSDateFormatter *gh_ascTimeDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+  NSDateFormatter *gh_ascTimeDateFormatter = [[NSDateFormatter alloc] init];
   [gh_ascTimeDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-  [gh_ascTimeDateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"] autorelease]];
+  [gh_ascTimeDateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
   [gh_ascTimeDateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
   [gh_ascTimeDateFormatter setDateFormat:@"EEE MMM d HH:mm:ss yyyy"];
   return gh_ascTimeDateFormatter;
@@ -190,7 +190,7 @@
   static dispatch_once_t once;
   static NSDateFormatter *gAscTimeDateFormatter;
   dispatch_once(&once, ^{
-    gAscTimeDateFormatter = [[self _gh_ascTimeDateFormatter] retain];
+    gAscTimeDateFormatter = [self _gh_ascTimeDateFormatter];
   });
   return gAscTimeDateFormatter;
 }

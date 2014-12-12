@@ -24,6 +24,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  For supporting dictionaries with nil values.
  */

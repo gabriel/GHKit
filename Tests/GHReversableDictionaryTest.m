@@ -6,6 +6,7 @@
 //  Copyright 2010. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHReversableDictionary.h"
 
 @interface GHReversableDictionaryTest : GRTestCase { }

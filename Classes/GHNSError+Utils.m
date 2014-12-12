@@ -70,7 +70,7 @@
 - (NSString *)gh_fullDescription {
 	NSMutableString *errorDescription = [[NSMutableString alloc] init];
 	[self gh_fullDescription:errorDescription level:0];
-	return [errorDescription autorelease];
+  return errorDescription;
 }
 
 

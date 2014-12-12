@@ -26,6 +26,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 // Common date format constant: 'Dec 12, 2008 4:34 PM'
 extern NSString *const kDateFormatShortMonthFullYearTime;
 

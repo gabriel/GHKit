@@ -6,6 +6,7 @@
 //  Copyright 2009. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHNSStringEnumerator.h"
 
 @interface GHNSStringEnumeratorTest : GRTestCase {}

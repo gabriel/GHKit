@@ -87,10 +87,9 @@
     else found = YES;
   }
   if (found) {
-    return [array autorelease];
+    return array;
   } else {
     // No NSNulls were found so release array copy and return self
-    [array release];
     return self;
   }  
 }
@@ -113,7 +112,7 @@
 
 - (NSString *)gh_toJSONString:(NSError **)error {
   NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:error];
-  if (data) return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+  if (data) return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
   return nil;
 }
 
@@ -126,6 +125,14 @@
 - (NSArray *)gh_arrayByRemovingObject:(id)obj {
   NSMutableArray *array = [self mutableCopy];
   [array removeObject:obj];
+  return array;
+}
+
++ (NSArray *)gh_arrayWithArrays:(NSArray *)arrays {
+  NSMutableArray *array = [NSMutableArray array];
+  for (NSArray *a in arrays) {
+    [array addObjectsFromArray:a];
+  }
   return array;
 }
 

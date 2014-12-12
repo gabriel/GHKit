@@ -6,6 +6,7 @@
 //  Copyright 2010. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHNSMutableDictionary+Utils.h"
 
 @interface NSMutableDictionaryUtilsTest : GRTestCase { }
@@ -26,11 +27,9 @@
 	[dict gh_mutableCompact];
   GRAssertEqualObjects(dict, expected);
   
-  NSMutableDictionary *dict2 = [GHDict(@"key2", nil, @"key1", @"1") mutableCopy];
+  NSMutableDictionary *dict2 = [@{@"key2": NSNull.null, @"key1": @"1"} mutableCopy];
   
-  NSMutableDictionary *expected2 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   @"1", @"key1",
-                                   nil];
+  NSMutableDictionary *expected2 = [@{@"key1": @"1"} mutableCopy];
   [dict2 gh_mutableCompact];
   GRAssertEqualObjects(dict2, expected2);
 }

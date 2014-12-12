@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 rel.me. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHNSData+Utils.h"
 
 @interface NSDataUtilsTest : GRTestCase { }

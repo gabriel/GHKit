@@ -41,8 +41,8 @@
 	if ((self = [super init])) {
 		_scanner = [[NSScanner alloc] initWithString:string];
 		_scanner.charactersToBeSkipped = nil;
-		_separatorCharacterSet = [separatorCharacterSet retain];
-		_separatorString = [separatorString retain];
+		_separatorCharacterSet = separatorCharacterSet;
+		_separatorString = separatorString;
 		_inSeparator = YES;
 	}
 	return self;
@@ -54,13 +54,6 @@
 
 - (id)initWithString:(NSString *)string separatorString:(NSString *)separatorString {
 	return [self initWithString:string separatorCharacterSet:nil separatorString:separatorString];
-}
-
-- (void)dealloc {
-	[_scanner release];
-	[_separatorCharacterSet release];
-	[_separatorString release];
-	[super dealloc];
 }
 
 - (NSString *)nextString {

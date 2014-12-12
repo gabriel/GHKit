@@ -24,6 +24,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  Utilities for arrays.
  */
@@ -127,5 +129,10 @@
  New array with object removed.
  */
 - (NSArray *)gh_arrayByRemovingObject:(id)obj;
+
+/*!
+ Array from arrays.
+ */
++ (NSArray *)gh_arrayWithArrays:(NSArray *)arrays;
 
 @end

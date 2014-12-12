@@ -55,7 +55,6 @@
       [keysToRemove addObject:key];
   }
   [self removeObjectsForKeys:keysToRemove];
-  [keysToRemove release];
 }
 
 @end

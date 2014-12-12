@@ -26,6 +26,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  Utilities for URLs, for example, encoding, escaping, parsing, splitting out or sorting query params, and more.
  */

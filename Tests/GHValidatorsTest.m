@@ -6,6 +6,7 @@
 //  Copyright 2010 Yelp. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHValidators.h"
 #import "GHNSDate+Utils.h"
 

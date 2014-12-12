@@ -5,6 +5,7 @@
 //  Copyright 2008 rel.me. Some rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHNSString+TimeInterval.h"
 
 @interface NSStringTimeIntervalTest : GRTestCase { }

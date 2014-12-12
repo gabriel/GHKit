@@ -63,9 +63,10 @@
     
     if (!valueDescription) continue;
     
-    if (encoded) key = [self gh_encodeComponent:key];
+    NSString *keyToEncode = key;
+    if (encoded) keyToEncode = [self gh_encodeComponent:key];
     if (encoded) valueDescription = [self gh_encodeComponent:valueDescription];
-    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", key, valueDescription]];
+    [queryStrings addObject:[NSString stringWithFormat:@"%@=%@", keyToEncode, valueDescription]];
   }
   return queryStrings;
 }
@@ -134,22 +135,22 @@
 
 + (NSString *)gh_encode:(NSString *)s {	
 	// Characters to maybe leave unescaped? CFSTR("~!@#$&*()=:/,;?+'")
-	return [NSMakeCollectable(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("#"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8)) autorelease];
+  return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, CFSTR("#"), CFSTR("%^{}[]\"\\"), kCFStringEncodingUTF8));
 }
 
 + (NSString *)gh_encodeComponent:(NSString *)s {  
 	// Characters to maybe leave unescaped? CFSTR("~!*()'")
-  return [NSMakeCollectable(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8)) autorelease];
+  return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\"), kCFStringEncodingUTF8));
 }
 
 + (NSString *)gh_escapeAll:(NSString *)s {
 	// Characters to escape: @#$%^&{}[]=:/,;?+"\~!*()'
-  return [NSMakeCollectable(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\~!*()'"), kCFStringEncodingUTF8)) autorelease];	
+  return CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)s, NULL, CFSTR("@#$%^&{}[]=:/,;?+\"\\~!*()'"), kCFStringEncodingUTF8));
 }
 
 + (NSString *)gh_decode:(NSString *)s {
 	if (!s) return nil;
-	return [NSMakeCollectable(CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR(""))) autorelease];
+  return CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(NULL, (CFStringRef)s, CFSTR("")));
 }
 
 #if !TARGET_OS_IPHONE

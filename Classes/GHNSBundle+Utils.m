@@ -42,7 +42,7 @@
 }
 
 - (NSString *)gh_loadStringDataFromResource:(NSString *)resource {
-	return [[[NSString alloc] initWithData:[self gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding] autorelease];
+	return [[NSString alloc] initWithData:[self gh_loadDataFromResource:resource] encoding:NSUTF8StringEncoding];
 }
 
 - (NSURL *)gh_URLForResource:(NSString *)resource {

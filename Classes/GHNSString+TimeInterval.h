@@ -26,6 +26,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
 
 /*!
  Utilities for generating time ago in words.

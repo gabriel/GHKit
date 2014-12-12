@@ -6,6 +6,7 @@
 //  Copyright 2008 rel.me. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHNSString+Utils.h"
 
 @interface NSStringUtilsTest : GRTestCase { }

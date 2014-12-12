@@ -6,6 +6,7 @@
 //  Copyright 2009. All rights reserved.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHNSNumber+Utils.h"
 
 @interface NSNumberUtilsTest : GRTestCase { }

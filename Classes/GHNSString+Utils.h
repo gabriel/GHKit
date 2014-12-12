@@ -25,6 +25,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  Utilities for strings, for example, stripping, reversing, counting, UUID, MD5 and more.
  */
@@ -88,13 +90,6 @@
  @" ", @"" returns nil.
  */
 - (NSString *)gh_present;
-
-/*!
- Create attributed string that truncates in the middle.
- 
- @result Attributed string that truncates in the middle.
- */
-- (NSAttributedString *)gh_truncateMiddle;
 
 /*!
  Get characters as an array of single length strings.
@@ -267,16 +262,6 @@
  http://www.codecollector.net/view/4900E3BB-032E-4E89-81C7-34097E98C286
  */
 - (NSString *)gh_rot13;
-
-/*!
-  Create string with format from array of arguments.
-  Arguments must be objective-c objects.
-  WARNING: This assumption seems totally dangerous.
- 
-  @param format Format
-  @param arguments Arguments
-  */
-+ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments;
 
 @end
 

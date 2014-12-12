@@ -69,18 +69,6 @@
 	return [self compare:s options:NSCaseInsensitiveSearch] == NSOrderedSame;
 }
 
-- (NSAttributedString *)gh_truncateMiddle {
-  static NSDictionary *gh_gTruncateMiddle = nil;
-  if (!gh_gTruncateMiddle) {
-    NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
-    [style setLineBreakMode:NSLineBreakByTruncatingMiddle];
-    gh_gTruncateMiddle = [[NSDictionary alloc] initWithObjectsAndKeys:style, NSParagraphStyleAttributeName, nil];
-		[style release];
-  }
- 
-  return [[[NSAttributedString alloc] initWithString:self attributes:gh_gTruncateMiddle] autorelease];
-}
-
 #if !TARGET_OS_IPHONE
 - (NSString *)gh_mimeTypeForExtension {
 	// TODO(gabe): Doesn't look like css extension gets the mime type?
@@ -194,7 +182,7 @@
 	
 	NSString *s = [[NSString alloc] initWithCharacters:buffer length:length];
 	free(buffer);
-	return [s autorelease];
+  return s;
 }
 
 - (NSInteger)gh_count:(NSString *)s {
@@ -272,14 +260,6 @@
   return [NSString stringWithCString:newString encoding:NSASCIIStringEncoding];
 }
 
-+ (id)gh_stringWithFormat:(NSString *)format arguments:(NSArray *)arguments {
-  char *argList = (char *)malloc(sizeof(NSString *) * [arguments count]);
-  [arguments getObjects:(id *)argList];
-  NSString *result = [[[NSString alloc] initWithFormat:format arguments:(void *)argList] autorelease];
-  free(argList);
-  return result;
-}
-
 // From http://stackoverflow.com/questions/4158646/most-efficient-way-to-iterate-over-all-the-chars-in-an-nsstring
 - (NSArray *)gh_characters {
   NSMutableArray  *chars = [NSMutableArray array];
@@ -299,19 +279,14 @@
 
 - (id)initWithString:(NSString *)string match:(BOOL)match {
 	if ((self = [super init])) {
-		_string = [string retain];
+		_string = string;
 		_match = match;
 	}
 	return self;	
 }
 
-- (void)dealloc {
-	[_string release];
-	[super dealloc];
-}
-
 + (GHNSStringSegment *)string:(NSString *)string match:(BOOL)match {
-	return [[[self alloc] initWithString:string match:match] autorelease];
+  return [[self alloc] initWithString:string match:match];
 }
 
 - (BOOL)isEqual:(id)obj {

@@ -26,6 +26,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  Utilites for dealing with numbers, for example, human readable file size, ordinals, random numbers.
  */

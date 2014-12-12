@@ -55,12 +55,6 @@
   return self;
 }
 
-- (void)dealloc {
-  [_dict release];
-  [_reversedDict release];
-  [super dealloc];
-}
-
 - (void)setObject:(id)obj forKey:(id)key {
   [_dict setObject:obj forKey:key];
   [_reversedDict setObject:key forKey:obj];

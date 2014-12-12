@@ -137,11 +137,11 @@
 + (NSNumber *)gh_bool:(BOOL)b {		
   if (!b) {
 		static NSNumber *NumberForNo = NULL;
-		if (NumberForNo == NULL) NumberForNo = [[NSNumber numberWithBool:NO] retain];
+    if (NumberForNo == NULL) NumberForNo = [NSNumber numberWithBool:NO];
     return NumberForNo;
   } else {
 		static NSNumber *NumberForYes = NULL;
-    if (NumberForYes == NULL) NumberForYes = [[NSNumber numberWithBool:YES] retain];
+    if (NumberForYes == NULL) NumberForYes = [NSNumber numberWithBool:YES];
     return NumberForYes;
   }
 }

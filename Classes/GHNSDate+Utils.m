@@ -113,7 +113,6 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 + (NSArray *)gh_monthSymbols {
   NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
   NSArray *monthSymbols = [dateFormatter standaloneMonthSymbols];
-  [dateFormatter release];
   return monthSymbols;
 }
 
@@ -167,7 +166,6 @@ NSUInteger const kUnitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayC
 		NSString *specialWeekday = [self gh_weekday:dateFormatter]; 
 	 formatted = [NSString stringWithFormat:@"%@, %@", specialWeekday, formatted];
 	}
-	[dateFormatter release];
 	return formatted;
 }
 

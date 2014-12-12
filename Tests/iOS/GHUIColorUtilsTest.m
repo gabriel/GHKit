@@ -27,6 +27,7 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <GRUnit/GRUnit.h>
 #import "GHUIColor+Utils.h"
 #import "GHKitDefines.h"
 

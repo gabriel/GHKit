@@ -26,6 +26,8 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+
 /*!
  Utilities for NSFileManager, for example, file size, exists, generating temporary or unique
  file paths.

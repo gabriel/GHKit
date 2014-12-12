@@ -46,8 +46,6 @@
 		key = va_arg(args, id);
 	} while(key);
 	NSDictionary *dict = [self dictionaryWithObjects:values forKeys:keys];
-	[keys release];
-	[values release];
 	return dict;
 }
 
