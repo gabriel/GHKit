@@ -15,4 +15,9 @@
  */
 - (NSString *)gh_hexString;
 
+/*!
+ Get IP address string from data object.
+ */
+- (NSString *)gh_IPAddressAsString;
+
 @end
