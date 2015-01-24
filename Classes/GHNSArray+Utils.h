@@ -113,7 +113,7 @@
 /*!
  Convert array to JSON string.
  */
-- (NSString *)gh_toJSONString:(NSError **)error;
+- (NSString *)gh_toJSON:(NSJSONWritingOptions)options error:(NSError **)error;
 
 /*!
  Except last object.

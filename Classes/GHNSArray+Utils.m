@@ -110,8 +110,8 @@
   return filteredArray; 
 }
 
-- (NSString *)gh_toJSONString:(NSError **)error {
-  NSData *data = [NSJSONSerialization dataWithJSONObject:self options:0 error:error];
+- (NSString *)gh_toJSON:(NSJSONWritingOptions)options error:(NSError **)error {
+  NSData *data = [NSJSONSerialization dataWithJSONObject:self options:options error:error];
   if (data) return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
   return nil;
 }

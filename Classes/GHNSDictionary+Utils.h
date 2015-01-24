@@ -216,6 +216,6 @@
 /*!
  Create JSON string for dictionary.
  */
-- (NSString *)gh_toJSONString:(NSError **)error;
+- (NSString *)gh_toJSON:(NSJSONWritingOptions)options error:(NSError **)error;
 
 @end
