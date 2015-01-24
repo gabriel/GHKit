@@ -87,7 +87,8 @@
 
 - (void)testJSON {
   NSDictionary *dict = @{@"key1": @(2), @"key2": @(3.1), @"key3": @YES};
-  NSString *JSONString = [dict gh_toJSONString:nil];
+  NSString *JSONString = [dict gh_toJSON:NSJSONWritingPrettyPrinted error:nil];
+  GRTestLog(@"%@", JSONString);
   NSDictionary *dict2 = [NSJSONSerialization JSONObjectWithData:[JSONString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
   GRAssertEqualObjects(dict, dict2);
 }

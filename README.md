@@ -61,6 +61,15 @@ date = [date gh_addDays:-1];
 [@[@(1), NSNull.null] gh_compact]; // @[@(1)]
 ```
 
+***Dictionaries:***
+
+`GHDictionary+Utils.h`:
+
+```objc
+NSDictionary *dict = @{@"key1": @(2), @"key2": @(3.1), @"key3": @YES};
+NSString *JSONString = [dict gh_toJSON:NSJSONWritingPrettyPrinted error:nil];
+```
+
 ***Strings:***
 
 `GHNSString+Utils.h`: Stripping, reversing, counting and more.

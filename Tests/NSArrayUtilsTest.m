@@ -131,7 +131,7 @@
 }
 
 - (void)testJSON {
-  NSString *JSONString = [@[@"string", @(2), @(3.1), @YES] gh_toJSONString:nil];
+  NSString *JSONString = [@[@"string", @(2), @(3.1), @YES] gh_toJSON:NSJSONWritingPrettyPrinted error:nil];
   GRAssertEqualStrings(@"[\"string\",2,3.1,true]", JSONString);
 }
 
