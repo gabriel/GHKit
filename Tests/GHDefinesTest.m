@@ -6,19 +6,21 @@
 //  Copyright (c) 2014 rel.me. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHKitDefines.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface GHDefinesTest : GRTestCase { }
+@import GHKit;
+
+@interface GHDefinesTest : XCTestCase { }
 @end
 
 @implementation GHDefinesTest
 
 - (void)testEquals {
-  GRAssertTrue(GHEquals((id)nil, nil));
-  GRAssertTrue(GHEquals(@(1), @(1)));
-  GRAssertFalse(GHEquals((id)nil, @(1)));
-  GRAssertFalse(GHEquals(@(1), nil));
+  XCTAssertTrue(GHEquals((id)nil, nil));
+  XCTAssertTrue(GHEquals(@(1), @(1)));
+  XCTAssertFalse(GHEquals((id)nil, @(1)));
+  XCTAssertFalse(GHEquals(@(1), nil));
 }
 
 - (void)testBase64 {

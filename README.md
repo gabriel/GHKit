@@ -1,18 +1,12 @@
-GHKit
-========
+# GHKit
 
 The GHKit framework is a set of extensions and utilities for Mac OS X and iOS.
 
-Install (CocoaPods)
--------
+## Podfile
 
-1. Add `pod 'GHKit'` to your Podfile
-1. Run `pod install`
+    pod "MPMessagePack"
 
-See [CocoaPods](http://cocoapods.org/) for more details.
-
-Usage
------
+## Usage
 
 GHKit defines various categories and general purpose utilities.
 

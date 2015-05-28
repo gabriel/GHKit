@@ -6,25 +6,27 @@
 //  Copyright 2010. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHReversableDictionary.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface GHReversableDictionaryTest : GRTestCase { }
+@import GHKit;
+
+@interface GHReversableDictionaryTest : XCTestCase { }
 @end
 
 @implementation GHReversableDictionaryTest
 
 - (void)test {
-  GHReversableDictionary *dict = [[[GHReversableDictionary alloc] initWithObjectsAndKeys:
+  GHReversableDictionary *dict = [[GHReversableDictionary alloc] initWithObjectsAndKeys:
                                    @"value1", @"key1",
                                    @"value2", @"key2",
-                                   nil] autorelease];
+                                  nil];
   [dict setObject:@"value3" forKey:@"key3"];
   
-  GRAssertEqualStrings([dict objectForKey:@"key1"], @"value1");
-  GRAssertEqualStrings([dict keyForObject:@"value1"], @"key1");
-  GRAssertEqualStrings([dict objectForKey:@"key3"], @"value3");
-  GRAssertEqualStrings([dict keyForObject:@"value3"], @"key3");
+  XCTAssertEqualObjects([dict objectForKey:@"key1"], @"value1");
+  XCTAssertEqualObjects([dict keyForObject:@"value1"], @"key1");
+  XCTAssertEqualObjects([dict objectForKey:@"key3"], @"value3");
+  XCTAssertEqualObjects([dict keyForObject:@"value3"], @"key3");
 
 }
 

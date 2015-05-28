@@ -6,10 +6,12 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSError+Utils.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSErrorUtilsTest : GRTestCase { }
+@import GHKit;
+
+@interface NSErrorUtilsTest : XCTestCase { }
 @end
 
 @implementation NSErrorUtilsTest
@@ -19,7 +21,7 @@
 //		[NSException raise:NSGenericException format:@"my reason"];
 //	} @catch(NSException *e) {
 //		NSError *error = [NSError gh_errorFromException:e];
-//		GRTestLog(@"Error: %@", error);
+//		NSLog(@"Error: %@", error);
 //	}
 //}
 
@@ -29,7 +31,7 @@
 	NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[NSArray arrayWithObject:detailedError] forKey:@"NSDetailedErrors"];
 	NSError *error = [NSError errorWithDomain:@"Test" code:-1 userInfo:userInfo];
 	NSString *fullDescription = [error gh_fullDescription];
-	GRTestLog(@"Full description: %@", fullDescription);
+	NSLog(@"Full description: %@", fullDescription);
 }
 
 @end

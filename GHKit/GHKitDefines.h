@@ -33,7 +33,7 @@
 #define GHCGSizeToString(size) NSStringFromSize(NSSizeFromCGSize(size))
 #define GHCGPointToString(point) NSStringFromPoint(NSPointFromCGPoint(point))
 
-#define GRAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread")
+#define XCTAssertMainThread() NSAssert([NSThread isMainThread], @"Should be on main thread")
 
 // Default epsilon for float comparisons
 #define GH_EPSILON 1.0E-5

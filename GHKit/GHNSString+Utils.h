@@ -92,6 +92,14 @@
 - (NSString *)gh_present;
 
 /*!
+ Returns self if not empty or whitespace, otherwise value.
+
+ @param value
+ @return self or value
+ */
+- (NSString *)gh_present:(NSString *)value;
+
+/*!
  Get characters as an array of single length strings.
  */
 - (NSArray *)gh_characters;

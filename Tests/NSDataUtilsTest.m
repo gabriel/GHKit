@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 rel.me. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSData+Utils.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSDataUtilsTest : GRTestCase { }
+@import GHKit;
+
+@interface NSDataUtilsTest : XCTestCase { }
 @end
 
 @implementation NSDataUtilsTest
@@ -17,7 +19,7 @@
 - (void)testHexString {
   NSString *testString = @"test string";
   NSData *data = [testString dataUsingEncoding:NSUTF8StringEncoding];
-  GRAssertEqualStrings(@"7465737420737472696E67", [data gh_hexString]);
+  XCTAssertEqualObjects(@"7465737420737472696E67", [data gh_hexString]);
 }
 
 @end

@@ -6,21 +6,23 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSObject+Utils.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSObjectUtilsTest : GRTestCase { }
+@import GHKit;
+
+@interface NSObjectUtilsTest : XCTestCase { }
 @end
 
 @implementation NSObjectUtilsTest
 
 - (void)testNotNSNull {
 	id foo = nil;
-	GRAssertFalse([foo gh_isNotNSNull]);
+	XCTAssertFalse([foo gh_isNotNSNull]);
 	foo = [NSNull null];
-	GRAssertFalse([foo gh_isNotNSNull]);
+	XCTAssertFalse([foo gh_isNotNSNull]);
 	foo = @"1";
-	GRAssertTrue([foo gh_isNotNSNull]);
+	XCTAssertTrue([foo gh_isNotNSNull]);
 }
 
 @end

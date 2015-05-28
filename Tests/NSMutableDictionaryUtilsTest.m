@@ -6,10 +6,12 @@
 //  Copyright 2010. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSMutableDictionary+Utils.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSMutableDictionaryUtilsTest : GRTestCase { }
+@import GHKit;
+
+@interface NSMutableDictionaryUtilsTest : XCTestCase { }
 @end
 
 @implementation NSMutableDictionaryUtilsTest
@@ -25,13 +27,13 @@
                                    nil];
   
 	[dict gh_mutableCompact];
-  GRAssertEqualObjects(dict, expected);
+  XCTAssertEqualObjects(dict, expected);
   
   NSMutableDictionary *dict2 = [@{@"key2": NSNull.null, @"key1": @"1"} mutableCopy];
   
   NSMutableDictionary *expected2 = [@{@"key1": @"1"} mutableCopy];
   [dict2 gh_mutableCompact];
-  GRAssertEqualObjects(dict2, expected2);
+  XCTAssertEqualObjects(dict2, expected2);
 }
 
 @end

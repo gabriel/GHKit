@@ -6,10 +6,12 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSDictionary+NSNull.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSDictionaryNSNullTest : GRTestCase { }
+@import GHKit;
+
+@interface NSDictionaryNSNullTest : XCTestCase { }
 @end
 
 @implementation NSDictionaryNSNullTest
@@ -17,25 +19,25 @@
 - (void)testNilValues {
 	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
 	NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:[NSNull null], @"key1", @"value2",  @"key2", [NSNull null], @"key3", nil];	
-	GRAssertEqualObjects(dict, expected);
+	XCTAssertEqualObjects(dict, expected);
 }
 
 - (void)testPrematureNilKeyDoesntCrash {
 	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, nil, @"", @"", nil, nil];
 	NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:[NSNull null], @"key1", nil];	
-	GRAssertEqualObjects(dict, expected);
+	XCTAssertEqualObjects(dict, expected);
 }
 
 //- (void)testValueForKey {
 //	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
 //	id value = [dict valueForKey:@"key1"];
-//	GRAssertNil(value, @"Should handle in KVC");
+//	XCTAssertNil(value, @"Should handle in KVC");
 //}
 
 - (void)testEmpty {
 	NSDictionary *dict = [NSDictionary gh_dictionaryWithKeysAndObjectsMaybeNil:nil];
 	NSDictionary *expected = [NSDictionary dictionary];	
-	GRAssertEqualObjects(dict, expected);	
+	XCTAssertEqualObjects(dict, expected);	
 }
 
 - (NSDictionary *)_testVAList:(id)obj ignoreNil:(BOOL)ignoreNil keysAndObjects:(id)firstKey, ... {
@@ -49,11 +51,11 @@
 - (void)testVAList {
 	NSDictionary *dict = [self _testVAList:nil ignoreNil:NO keysAndObjects:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
 	NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:[NSNull null], @"key1", @"value2",  @"key2", [NSNull null], @"key3", nil];	
-	GRAssertEqualObjects(dict, expected);
+	XCTAssertEqualObjects(dict, expected);
   
   NSDictionary *dict2 = [self _testVAList:nil ignoreNil:YES keysAndObjects:@"key1", nil, @"key2", @"value2", @"key3", nil, nil];
 	NSDictionary *expected2 = [NSDictionary dictionaryWithObjectsAndKeys:@"value2",  @"key2", nil];	
-	GRAssertEqualObjects(dict2, expected2);
+	XCTAssertEqualObjects(dict2, expected2);
 
 }
 

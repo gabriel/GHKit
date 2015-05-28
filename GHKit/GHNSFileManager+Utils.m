@@ -53,6 +53,7 @@
 }
 
 + (NSString *)gh_temporaryFile:(NSString *)appendPath deleteIfExists:(BOOL)deleteIfExists error:(NSError **)error {
+  NSParameterAssert(appendPath);
   NSString *tmpFile = NSTemporaryDirectory();
 	if (appendPath) tmpFile = [tmpFile stringByAppendingPathComponent:appendPath];
   if (deleteIfExists && [self gh_exist:tmpFile]) {

@@ -6,10 +6,12 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSStringEnumerator.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface GHNSStringEnumeratorTest : GRTestCase {}
+@import GHKit;
+
+@interface GHNSStringEnumeratorTest : XCTestCase {}
 @end
 
 @implementation GHNSStringEnumeratorTest
@@ -21,7 +23,7 @@
 	
 	NSArray *results = [enumerator allObjects];
 	NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
-	GRAssertEqualObjects(results, expected);
+	XCTAssertEqualObjects(results, expected);
 }
 
 - (void)testCharacterSet2 {
@@ -31,7 +33,7 @@
 	
 	NSArray *results = [enumerator allObjects];
 	NSArray *expected = [NSArray arrayWithObjects:@"  ", @"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
-	GRAssertEqualObjects(results, expected);
+	XCTAssertEqualObjects(results, expected);
 }
 
 - (void)testString {
@@ -41,7 +43,7 @@
 	
 	NSArray *results = [enumerator allObjects];
 	NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't\n", @" ", @"patch", @" ", @"blues", nil];
-	GRAssertEqualObjects(results, expected);
+	XCTAssertEqualObjects(results, expected);
 }
 
 

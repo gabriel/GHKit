@@ -6,10 +6,12 @@
 //  Copyright 2009. All rights reserved.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHNSFileManager+Utils.h"
+#import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSFileManagerUtilsTest : GRTestCase { }
+@import GHKit;
+
+@interface NSFileManagerUtilsTest : XCTestCase { }
 @end
 
 
@@ -17,18 +19,18 @@
 
 - (void)testEnsureDirectory {
 	NSError *error = nil;
-	NSString *path = [NSFileManager gh_temporaryFile:nil deleteIfExists:YES error:&error];
-	if (error) GRFail(@"Error: %@", error);
+  NSString *path = [NSFileManager gh_temporaryFile:@"Test" deleteIfExists:YES error:&error];
+	if (error) XCTFail(@"Error: %@", error);
 	BOOL success = [NSFileManager gh_ensureDirectoryExists:path created:nil error:&error];
-	if (error) GRFail(@"Error: %@", error);
-	GRAssertTrue(success);
+	if (error) XCTFail(@"Error: %@", error);
+	XCTAssertTrue(success);
 }
 
 - (void)testFileSize {
   NSString *path = [NSFileManager gh_pathToResource:@"test.file"];
-  GRAssertTrue([NSFileManager gh_exist:path]);
+  XCTAssertTrue([NSFileManager gh_exist:path]);
   NSNumber *fileSize = [NSFileManager gh_fileSize:path error:nil];
-  GRAssertEquals([fileSize longValue], 10L);
+  XCTAssertEqual([fileSize longValue], 10L);
 }
 
 @end

@@ -37,7 +37,7 @@
      
      NSArray *results = [enumerator allObjects];
      NSArray *expected = [NSArray arrayWithObjects:@"matz", @" ", @"can't", @"\n ", @"patch", @" ", @"blues", nil];
-     GRAssertEqualObjects(results, expected, nil);
+     XCTAssertEqualObjects(results, expected, nil);
 
  */
 @interface GHNSStringEnumerator : NSEnumerator {
