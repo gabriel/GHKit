@@ -4,7 +4,7 @@ The GHKit framework is a set of extensions and utilities for Mac OS X and iOS.
 
 ## Podfile
 
-    pod "MPMessagePack"
+    pod "GHKit"
 
 ## Usage
 
