@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 rel.me. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
 
 @interface UIImage (GHUtils)
 
++ (NSString *)gh_mimeType:(NSString *)name;
+
 - (UIImage *)gh_imageFlippedHorizontal;
 
 - (UIImage *)gh_imageMaskWithColor:(UIColor *)maskColor;
-
-// This might be tiff data?
-- (NSData *)gh_data;
 
 - (UIImage *)gh_imageByRotatingImageUpright;
 

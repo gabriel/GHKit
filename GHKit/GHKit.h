@@ -72,5 +72,6 @@ FOUNDATION_EXPORT const unsigned char GHKitVersionString[];
 #import <GHKit/GHCGUtils.h>
 #import <GHKit/GHUIColor+Utils.h>
 #import <GHKit/GHUIImage+Utils.h>
+#import <GHKit/GHUIUtils.h>
 #endif
 

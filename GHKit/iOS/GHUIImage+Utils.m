@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 rel.me. All rights reserved.
 //
 
+#import <MobileCoreServices/MobileCoreServices.h>
+
 #import "GHUIImage+Utils.h"
 #import "GHCGUtils.h"
 
@@ -34,8 +36,10 @@
   return newImage;
 }
 
-- (NSData *)gh_data {
-  return (id)CFBridgingRelease(CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage)));
++ (NSString *)gh_mimeType:(NSString *)name {
+  CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)[name pathExtension], NULL);
+  NSString *mimeType = CFBridgingRelease(UTTypeCopyPreferredTagWithClass (UTI, kUTTagClassMIMEType));
+  return mimeType;
 }
 
 + (UIImage *)gh_imageFromDrawOperations:(void(^)(CGContextRef context))drawOperations size:(CGSize)size opaque:(BOOL)opaque {

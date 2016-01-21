@@ -73,6 +73,7 @@
 		00689A611B178C4900E1D982 /* GHValidatorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D023B0154DF89A003BAAC3 /* GHValidatorsTest.m */; };
 		00689A621B178C4900E1D982 /* NSDataUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034B49818863336000C92B2 /* NSDataUtilsTest.m */; };
 		00689A631B178C4900E1D982 /* GHDefinesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EDFE4319F9B22D00308E59 /* GHDefinesTest.m */; };
+		00E206931C518AD60095FD56 /* GHUIUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 00E206911C518AD60095FD56 /* GHUIUtils.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		00D023C9154DF8A5003BAAC3 /* NSURLUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLUtilsTest.m; sourceTree = "<group>"; };
 		00D0247A154DFE94003BAAC3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		00E1A6C0182311F400BBDFBD /* GHKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = GHKit.podspec; sourceTree = "<group>"; };
+		00E206911C518AD60095FD56 /* GHUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHUIUtils.h; sourceTree = "<group>"; };
+		00E206921C518AD60095FD56 /* GHUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUIUtils.m; sourceTree = "<group>"; };
 		00E248481845578E008C720D /* GHUIImage+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GHUIImage+Utils.h"; sourceTree = "<group>"; };
 		00E248491845578E008C720D /* GHUIImage+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GHUIImage+Utils.m"; sourceTree = "<group>"; };
 		00EDFE4319F9B22D00308E59 /* GHDefinesTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHDefinesTest.m; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				00D022BE154DF1C5003BAAC3 /* GHUIColor+Utils.m */,
 				002E85FE185A8D360019B5E6 /* GHCGUtils.h */,
 				002E85FF185A8D360019B5E6 /* GHCGUtils.m */,
+				00E206911C518AD60095FD56 /* GHUIUtils.h */,
+				00E206921C518AD60095FD56 /* GHUIUtils.m */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E206931C518AD60095FD56 /* GHUIUtils.h in Headers */,
 				00689A231B17895A00E1D982 /* GHKit.h in Headers */,
 				00689A2D1B17895A00E1D982 /* GHNSDictionary+NSNull.h in Headers */,
 				00689A251B17895A00E1D982 /* GHNSArray+Utils.h in Headers */,
