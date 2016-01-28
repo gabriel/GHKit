@@ -140,7 +140,7 @@
 	// TODO: Return nil on empty string input?
 	NSString *test7 = @"";
 	NSArray *segments7 = [test7 gh_substringSegmentsWithinStart:@"<START>" end:@"<END>"];
-	NSArray *expected7 = [NSArray arrayWithObjects:nil];
+  NSArray *expected7 = @[];
 	XCTAssertEqualObjects(segments7, expected7);	
 }
 
