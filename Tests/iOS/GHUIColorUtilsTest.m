@@ -27,9 +27,9 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import <GRUnit/GRUnit.h>
-#import "GHUIColor+Utils.h"
-#import "GHKitDefines.h"
+#import <XCTest/XCTest.h>
+
+#import <GHKit/GHKit.h>
 
 @interface GHUIColorUtilsTest : XCTestCase { }
 @end

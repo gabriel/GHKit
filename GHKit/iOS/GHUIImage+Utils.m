@@ -39,6 +39,7 @@
 + (NSString *)gh_mimeType:(NSString *)name {
   CFStringRef UTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)[name pathExtension], NULL);
   NSString *mimeType = CFBridgingRelease(UTTypeCopyPreferredTagWithClass (UTI, kUTTagClassMIMEType));
+  CFRelease(UTI);
   return mimeType;
 }
 

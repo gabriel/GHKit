@@ -27,7 +27,7 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for MPMessagePack.
+//! Project version number for GHKit.
 FOUNDATION_EXPORT double GHKitVersionNumber;
 
 //! Project version string for Testing.
