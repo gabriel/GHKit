@@ -78,7 +78,7 @@
 - (NSString *)gh_mimeTypeForExtension {
 	// TODO(gabe): Doesn't look like css extension gets the mime type?
   CFStringRef uti = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)self, NULL);
-  NSString *mime = (__bridge NSString *)UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType);
+  NSString *mime = CFBridgingRelease(UTTypeCopyPreferredTagWithClass(uti, kUTTagClassMIMEType));
   CFRelease(uti);
   return mime;
 }
