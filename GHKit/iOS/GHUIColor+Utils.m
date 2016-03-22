@@ -71,7 +71,7 @@
 
 - (GH_RGBA)gh_rgba {
 	const CGFloat *components = CGColorGetComponents(self.CGColor);
-	GH_RGBA color;
+  GH_RGBA color = { .red = 0, .green = 0, .blue = 0, .alpha = 1 };
 	CGColorSpaceModel colorSpaceModel = CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
 	if (colorSpaceModel == kCGColorSpaceModelRGB) {
 		color.red = components[0];
